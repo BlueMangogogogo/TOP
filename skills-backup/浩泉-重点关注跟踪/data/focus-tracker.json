@@ -1,0 +1,243 @@
+{
+  "version": "1.0",
+  "createdAt": "2026-05-06T18:39:00+08:00",
+  "lastUpdated": "2026-05-09T14:27:00+08:00",
+  "settings": {
+    "maxItemsPerBatch": 5,
+    "coreThreshold": 20,
+    "inactiveCleanupDays": 14
+  },
+  "items": [
+    {
+      "id": "stock-601208",
+      "type": "stock",
+      "code": "601208",
+      "setcode": "1",
+      "name": "东材科技",
+      "status": "active",
+      "priority": "core",
+      "addedAt": "2026-05-06T18:44:00+08:00",
+      "addedReason": "用户直接加入",
+      "tags": [
+        "AI-PCB材料",
+        "电子树脂",
+        "CCL上游",
+        "化工新材料"
+      ],
+      "conceptChain": "电子树脂 → CCL覆铜板 → PCB → AI服务器/高速通信",
+      "lastChecked": "2026-05-08"
+    },
+    {
+      "id": "stock-600176",
+      "type": "stock",
+      "code": "600176",
+      "setcode": "1",
+      "name": "中国巨石",
+      "status": "active",
+      "priority": "core",
+      "addedAt": "2026-05-06T18:44:00+08:00",
+      "addedReason": "用户直接加入",
+      "tags": [
+        "电子布/电子纱",
+        "CCL-PCB上游",
+        "AI算力材料",
+        "玻纤"
+      ],
+      "conceptChain": "电子纱 → 电子布 → CCL覆铜板 → PCB → AI服务器/高速通信",
+      "lastChecked": "2026-05-08"
+    },
+    {
+      "id": "stock-603308",
+      "type": "stock",
+      "code": "603308",
+      "setcode": "1",
+      "name": "应流股份",
+      "status": "active",
+      "priority": "core",
+      "addedAt": "2026-05-06T20:16:00+08:00",
+      "addedReason": "用户直接加入",
+      "tags": [
+        "燃气轮机叶片",
+        "商业航天",
+        "核电",
+        "高端装备"
+      ],
+      "conceptChain": "高温合金精密铸造 → 燃气轮机/航空发动机叶片 → 燃机/航发整机 → AI算力电力建设",
+      "lastChecked": "2026-05-08"
+    },
+    {
+      "id": "stock-300139",
+      "type": "stock",
+      "code": "300139",
+      "setcode": "0",
+      "name": "晓程科技",
+      "status": "active",
+      "priority": "core",
+      "addedAt": "2026-05-06T21:30:00+08:00",
+      "addedReason": "用户主动加入关注；Q1业绩爆发+308%；黄金概念核心标的",
+      "tags": [
+        "黄金概念",
+        "金矿开采",
+        "贵金属",
+        "光伏发电",
+        "芯片"
+      ],
+      "conceptChain": "金矿勘探开采(加纳三座金矿) → 黄金冶炼/销售(境外收入98.62%) → 全球黄金市场 | 辅线:太阳能发电(国内电站)+智能仪表SoC芯片",
+      "lastChecked": "2026-05-08"
+    },
+    {
+      "id": "stock-300136",
+      "type": "stock",
+      "code": "300136",
+      "setcode": "0",
+      "name": "信维通信",
+      "status": "active",
+      "priority": "core",
+      "addedAt": "2026-05-06T21:53:00+08:00",
+      "addedReason": "用户主动加入关注；手机天线龙头+苹果产业链核心；多概念叠加(低空/卫星/机器人/AI眼镜)",
+      "tags": [
+        "消费电子",
+        "手机天线龙头",
+        "苹果产业链",
+        "卫星通信",
+        "低空经济",
+        "机器人"
+      ],
+      "conceptChain": "天线/射频模组 → 消费电子整机(手机/笔电/可穿戴) → 苹果/北美大客户 → 全球品牌厂商 | 第二曲线:高精密连接器+天线 → 低轨卫星通信/低空飞行器/智能汽车 → AI终端+机器人",
+      "lastChecked": "2026-05-08"
+    },
+    {
+      "id": "stock-600744",
+      "type": "stock",
+      "code": "600744",
+      "setcode": "1",
+      "name": "华银电力",
+      "status": "active",
+      "priority": "core",
+      "addedAt": "2026-05-06T22:05:00+08:00",
+      "addedReason": "用户主动加入关注；热电联产+虚拟电厂+碳中和多重概念；年内涨停14次股性活跃；大唐集团旗下湖南火电龙头",
+      "tags": [
+        "火电",
+        "虚拟电厂",
+        "碳中和",
+        "绿色电力",
+        "新能源转型"
+      ],
+      "conceptChain": "火力发电(湖南最大) → 电力供应(大唐集团旗下) → 虚拟电厂(负荷聚合)/碳交易(深碳交所75%股东) → 碳中和 | 转型方向:光伏+风电+水电 → 绿色电力",
+      "lastChecked": "2026-05-08"
+    },
+    {
+      "id": "stock-300475",
+      "type": "stock",
+      "code": "300475",
+      "setcode": "0",
+      "name": "香农芯创",
+      "status": "active",
+      "priority": "core",
+      "addedAt": "2026-05-06T22:12:00+08:00",
+      "addedReason": "用户主动加入关注；Q1净利暴增7835%；存储芯片自研+分销双轮驱动；海普存储SSD年度盈利",
+      "tags": [
+        "存储芯片",
+        "芯片分销龙头",
+        "数据中心",
+        "绩优股",
+        "商业航天"
+      ],
+      "conceptChain": "半导体芯片代理分销 → 存储芯片(自研海普DDR4/DDR5/eSSD) → 数据中心/AI服务器 → 阿里/腾讯/字节等互联网大客户 | 辅线:蓝箭航天(2.89%)→商业航天 | 控股股东:基石资本(硬科技投资平台)",
+      "lastChecked": "2026-05-08"
+    },
+    {
+      "id": "stock-688523",
+      "type": "stock",
+      "code": "688523",
+      "setcode": "1",
+      "name": "航天环宇",
+      "status": "active",
+      "priority": "core",
+      "addedAt": "2026-05-09T14:27:00+08:00",
+      "addedReason": "用户主动加入关注；航天军工核心标的，卫星通信相控阵天线市占率超70%；涉及低空经济/商业航天/大飞机/卫星导航多概念",
+      "tags": [
+        "卫星通信天线",
+        "相控阵天线",
+        "商业航天",
+        "低空经济",
+        "无人机",
+        "大飞机",
+        "军工航天装备",
+        "C919供应链"
+      ],
+      "conceptChain": "卫星通信相控阵天线(市占率>70%) + 无人机复材机身结构 → 航空航天工装/零部件制造 → 低空经济/商业航天/大飞机/卫星导航",
+      "lastChecked": "2026-05-09"
+    },
+    {
+      "id": "sector-880672",
+      "type": "sector",
+      "code": "880672",
+      "setcode": "1",
+      "name": "存储芯片",
+      "status": "active",
+      "priority": "core",
+      "addedAt": "2026-05-06T22:12:00+08:00",
+      "addedReason": "用户主动加入关注；AI算力链核心上游；国产替代主线",
+      "tags": [
+        "存储芯片",
+        "AI算力上游",
+        "国产替代",
+        "半导体"
+      ],
+      "conceptChain": "存储芯片(DRAM/NAND/SSD) → AI数据中心/服务器 → 国产替代 → 全球半导体产业链",
+      "lastChecked": "2026-05-08"
+    },
+    {
+      "id": "sector-881459",
+      "type": "sector",
+      "code": "881459",
+      "setcode": "1",
+      "name": "电力",
+      "status": "active",
+      "priority": "core",
+      "addedAt": "2026-05-06T20:16:00+08:00",
+      "addedReason": "用户直接加入",
+      "tags": [
+        "公用事业",
+        "电力",
+        "传统行业"
+      ],
+      "lastChecked": "2026-05-08"
+    },
+    {
+      "id": "sector-880548",
+      "type": "sector",
+      "code": "880548",
+      "setcode": "1",
+      "name": "商业航天",
+      "status": "active",
+      "priority": "core",
+      "addedAt": "2026-05-06T20:16:00+08:00",
+      "addedReason": "用户直接加入",
+      "tags": [
+        "商业航天",
+        "国防军工",
+        "高端制造"
+      ],
+      "lastChecked": "2026-05-08"
+    },
+    {
+      "id": "sector-880703",
+      "type": "sector",
+      "code": "880703",
+      "setcode": "1",
+      "name": "人形机器人",
+      "status": "active",
+      "priority": "core",
+      "addedAt": "2026-05-06T20:16:00+08:00",
+      "addedReason": "用户直接加入",
+      "tags": [
+        "人形机器人",
+        "具身智能",
+        "AI应用"
+      ],
+      "lastChecked": "2026-05-08"
+    }
+  ]
+}
