@@ -1,0 +1,28 @@
+{
+  "last_updated": "2026-05-24 23:25:59",
+  "total": 2,
+  "daily_count": 2,
+  "industry_count": 0,
+  "reports": [
+    {
+      "id": "2026-05-24-5月25日 周度盘前策略",
+      "date": "2026-05-24",
+      "display_date": "5月24日",
+      "type": "daily",
+      "category": "周度盘前",
+      "title": "5月25日 周度盘前策略",
+      "relative_path": "reports/2026-05-24/5月25日 周度盘前策略.html",
+      "size_kb": 19.1
+    },
+    {
+      "id": "2026-05-16-5月15日深度复盘",
+      "date": "2026-05-16",
+      "display_date": "5月16日",
+      "type": "daily",
+      "category": "深度复盘",
+      "title": "5月15日深度复盘",
+      "relative_path": "reports/2026-05-16/5月15日深度复盘.html",
+      "size_kb": 18.1
+    }
+  ]
+}

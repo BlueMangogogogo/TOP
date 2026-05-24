@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5月25日 周度盘前策略</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>5月25日 周度盘前策略</h1>
+  <div class="meta">
+    📅 2026年5月24日（周日）| 本周5个交易日 | TdxClaw AI 自动生成 | 仅供参考
+  </div>
+</header>
+
+<h2>🌍 假期全球市场汇总</h2>
+<h3>外盘走势（假期累计·5月22日收盘）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th style="text-align: center;">上周末收盘</th>
+<th>5/22收盘</th>
+<th style="text-align: center;">假期涨跌</th>
+<th>关键事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道指</td>
+<td style="text-align: center;">50009</td>
+<td>50286</td>
+<td style="text-align: center;">+0.55%</td>
+<td>创历史收盘新高</td>
+</tr>
+<tr>
+<td>纳指</td>
+<td style="text-align: center;">26270</td>
+<td>26293</td>
+<td style="text-align: center;">+0.09%</td>
+<td>存储概念大涨</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td style="text-align: center;">7433</td>
+<td>7446</td>
+<td style="text-align: center;">+0.17%</td>
+<td>连涨8周</td>
+</tr>
+<tr>
+<td>德国DAX</td>
+<td style="text-align: center;">24690</td>
+<td>24607</td>
+<td style="text-align: center;">-0.34%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>黄金</td>
+<td style="text-align: center;">$4542</td>
+<td>$4542</td>
+<td style="text-align: center;">基本持平</td>
+<td>4500美元关口博弈</td>
+</tr>
+<tr>
+<td>WTI原油</td>
+<td style="text-align: center;">—</td>
+<td>—</td>
+<td style="text-align: center;">跌约2%</td>
+<td>美伊协议草案利空</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td style="text-align: center;">—</td>
+<td>—</td>
+<td style="text-align: center;">—</td>
+<td>加息预期支撑</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>外盘情绪：<strong>中性偏多</strong>。美股科技仍在创新高（苹果市值4.48万亿续新高），存储芯片方向强势映射A股。但需警惕——财报季基本结束，市场焦点转向周四PCE数据，通胀超预期可能触发加息恐慌。美伊"五五开"停火协议对原油构成压力，但对全球经济是潜在利好。</p>
+</div>
+<h3>假期重大消息（按影响强度排序）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>事件</th>
+<th>影响板块</th>
+<th>情绪</th>
+<th style="text-align: center;">强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>美伊据报达成协议草案，霍尔木兹海峡有望恢复通航</td>
+<td>原油/航运/黄金</td>
+<td>利好全球、利空原油</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>美股存储概念暴涨（ARM+16%、闪迪+10%、西部数据+5%）</td>
+<td>A股存储芯片/半导体</td>
+<td>强利好</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>周五A股强势反弹：PCB+6.35%、CPO+5.35%、消费电子+3.54%</td>
+<td>科技/AI硬件</td>
+<td>情绪修复</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>长安汽车内幕交易案：员工精准买入获利400万被罚1669万</td>
+<td>长安汽车/华为链</td>
+<td>短期冲击有限</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>水泥行业第二轮涨价潮（反内卷政策催化）</td>
+<td>水泥/建材</td>
+<td>利好但落地存疑</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>中芯国际收购中芯北方49%股权获证监会批复</td>
+<td>半导体制造</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>7</td>
+<td>美联储沃勒：下次利率调整"加息或降息概率各半"</td>
+<td>全球风险资产</td>
+<td>中性偏鹰</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>8</td>
+<td>国务院常务会议研究推进全国统一大市场建设</td>
+<td>全局</td>
+<td>中长期利好</td>
+<td style="text-align: center;">⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🔍 重点新闻情绪催化验证</h3>
+<ul>
+<li>
+<p><strong>美伊协议草案</strong>：特朗普声称"五五开"，伊朗表态"既很远又很近"。霍尔木兹海峡若恢复通航，全球通胀压力缓解（航运成本下降+原油供给恢复），对A股全局偏利好。利空原油/贵金属（黄金ETF 5月转为净流出53亿），利好制造业成本端。但协议不确定性极大，不宜过度交易。</p>
+</li>
+<li>
+<p><strong>美股存储概念暴涨</strong>：ARM（+16%）、闪迪（+10%）对A股存储芯片/半导体方向形成强映射。周五A股存储芯片板块已提前反映（加权评分120+），但美股周五涨幅更大，周一A股存储方向可能高开。关注：兆易创新、北京君正、江波龙等存储标的。</p>
+</li>
+<li>
+<p><strong>周五A股强势反弹</strong>：周四上证暴跌-2.04%后，周五PCB概念（+6.35%）、CPO概念（+5.35%）、消费电子（+3.54%）强势领涨，两市成交2.90万亿放量。资金进攻榜显示PCB单日流入率+6.44%、苹果概念+6.32%、CPO+4.64%，单日资金回补力度大。但波段流入率仍为负（PCB-0.56%、CPO-0.67%），说明30日趋势尚未转向。</p>
+</li>
+<li>
+<p><strong>概念区分</strong>：存储芯片（三星/美光涨价映射）≠ AI算力/CPO（英伟达产业链）≠ PCB/消费电子（苹果产业链+5G终端）。存储芯片看涨价周期，CPO看AI算力基建，消费电子看苹果创新周期+换机潮。三个方向逻辑独立。</p>
+</li>
+</ul>
+<h2>💰 上周板块资金趋势回顾</h2>
+<blockquote>
+<p>数据来源：onechart.top 近5个交易日趋势 + 板块资金雷达</p>
+</div>
+<h3>上周资金进攻榜TOP5变化</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">周一(5/18)</th>
+<th style="text-align: center;">周二(5/19)</th>
+<th style="text-align: center;">周三(5/20)</th>
+<th style="text-align: center;">周四(5/21)</th>
+<th style="text-align: center;">周五(5/22)</th>
+<th>趋势</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCB概念</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">🔥#1(6.44%)</td>
+<td>🆕爆发</td>
+</tr>
+<tr>
+<td>CPO概念</td>
+<td style="text-align: center;">#4</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">#4</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">🔥#2(4.64%)</td>
+<td>↗回升</td>
+</tr>
+<tr>
+<td>芯片</td>
+<td style="text-align: center;">#1</td>
+<td style="text-align: center;">#1</td>
+<td style="text-align: center;">#2</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">#3(2.50%)</td>
+<td>→稳定在榜</td>
+</tr>
+<tr>
+<td>5G概念</td>
+<td style="text-align: center;">#3</td>
+<td style="text-align: center;">#3</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">#4(4.40%)</td>
+<td>↗回升</td>
+</tr>
+<tr>
+<td>消费电子</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">#6</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">#5(3.14%)</td>
+<td>↗回升</td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight">
+<p>💡 <strong>关键发现</strong>：周四（5/21）是全线暴跌日，整个进攻榜评分大幅下移（第一名仅111.9 vs 常态120+），几乎所有板块单日流入率为负。周五（5/22）强势反弹，PCB+苹果概念+CPO单日大额净流入，但波段（30日）流入率仍为负值——<strong>说明30日大资金仍在净流出，周五是短线资金回补而非机构建仓</strong>。</p>
+</div>
+<h3>上周资金持续在榜板块（30日稳定）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">连续在榜</th>
+<th style="text-align: center;">波段流入率趋势</th>
+<th style="text-align: center;">上周涨幅</th>
+<th>本周预期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>芯片</td>
+<td style="text-align: center;">30天</td>
+<td style="text-align: center;">负值但稳定</td>
+<td style="text-align: center;">+3.08%(周五)</td>
+<td>存储映射+国产替代双驱动</td>
+</tr>
+<tr>
+<td>数据中心</td>
+<td style="text-align: center;">30天</td>
+<td style="text-align: center;">负值(-0.94%)</td>
+<td style="text-align: center;">+2.62%(周五)</td>
+<td>关注算力需求+电力催化</td>
+</tr>
+<tr>
+<td>消费电子</td>
+<td style="text-align: center;">29天</td>
+<td style="text-align: center;">负值(-0.53%)</td>
+<td style="text-align: center;">+3.54%(周五)</td>
+<td>苹果创新周期</td>
+</tr>
+<tr>
+<td>5G概念</td>
+<td style="text-align: center;">28天</td>
+<td style="text-align: center;">负值(-0.62%)</td>
+<td style="text-align: center;">+4.40%(周五)</td>
+<td>通信基建+AI硬件</td>
+</tr>
+</tbody>
+</table></div>
+<h3>⚠️ 周四暴跌板块（5/21退潮信号）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">当日单日流入率</th>
+<th style="text-align: center;">当日涨跌</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人形机器人</td>
+<td style="text-align: center;">-2.73%</td>
+<td style="text-align: center;">-1.55%</td>
+<td>高位回落，警惕退潮</td>
+</tr>
+<tr>
+<td>机器人概念</td>
+<td style="text-align: center;">-3.36%</td>
+<td style="text-align: center;">-2.52%</td>
+<td>全线退潮</td>
+</tr>
+<tr>
+<td>新能源车</td>
+<td style="text-align: center;">-3.49%</td>
+<td style="text-align: center;">-2.50%</td>
+<td>持续弱势</td>
+</tr>
+<tr>
+<td>汽车电子</td>
+<td style="text-align: center;">-3.78%</td>
+<td style="text-align: center;">-2.38%</td>
+<td>跟跌</td>
+</tr>
+</tbody>
+</table></div>
+<div class="warning">
+<p>⚠️ <strong>概念区分提醒</strong>：机器人/人形机器人方向（减速器、电机、传感器）与AI算力/CPO/PCB是不同逻辑。机器人在5/15达到高潮（Figure F.03催化）后，上周持续退潮。本周若无新催化，机器人方向或继续调整。</p>
+</div>
+<h2>🎯 本周主线预判</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th>关注标的</th>
+<th>预期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI算力/光通信/PCB</td>
+<td>美股科技创新高+存储映射+周五强势反弹</td>
+<td>CPO龙头、PCB龙头、光通信</td>
+<td>⭐⭐强</td>
+</tr>
+<tr>
+<td>存储芯片</td>
+<td>ARM+16%、闪迪+10%映射+涨价周期</td>
+<td>兆易创新、北京君正、江波龙</td>
+<td>⭐⭐强</td>
+</tr>
+<tr>
+<td>苹果产业链</td>
+<td>苹果续创新高+消费电子旺季预期</td>
+<td>立讯精密、歌尔股份</td>
+<td>⭐中</td>
+</tr>
+<tr>
+<td>半导体设备/制造</td>
+<td>中芯国际收购获批+国产替代逻辑</td>
+<td>中芯国际、北方华创</td>
+<td>⭐中</td>
+</tr>
+<tr>
+<td>电力/能源</td>
+<td>数据中心电力缺口+美伊缓和利好制造业</td>
+<td>大唐发电、电力IT</td>
+<td>⭐中</td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight">
+<p>💡 <strong>上周五判断回顾</strong>（5/15深度复盘）："明日关注机器人持续性、两市成交、上证支撑4114/4082/4050"。验证结果：上证周四最低4074一度跌破4082支撑，但周五收于4112.90回到支撑上方，4082支撑基本有效。机器人方向确实退潮（5/21大跌），预判准确。</p>
+</div>
+<h2>⚠️ 本周风险日历</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>日期</th>
+<th>风险事件</th>
+<th>影响方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>周一(5/25)</td>
+<td>美股港股韩股休市，A股独立交易</td>
+<td>量能可能偏弱</td>
+</tr>
+<tr>
+<td>周二(5/26)</td>
+<td>小米、小马智行公布财报</td>
+<td>消费电子/AI方向</td>
+</tr>
+<tr>
+<td>周三(5/27)</td>
+<td>长鑫科技科创板IPO上会；拼多多、快手财报</td>
+<td>存储芯片/半导体</td>
+</tr>
+<tr>
+<td>周四(5/28)</td>
+<td><strong>美国4月核心PCE（预计+3.8%）</strong> + 理想/富途/迈威尔财报</td>
+<td>⭐⭐⭐全球风险偏好</td>
+</tr>
+<tr>
+<td>周五(5/29)</td>
+<td>日本5月东京CPI</td>
+<td>亚太市场</td>
+</tr>
+<tr>
+<td>周日(5/31)</td>
+<td>中国5月官方制造业PMI</td>
+<td>A股情绪</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>🔴 <strong>本周最大风险</strong>：周四美国PCE数据。市场预计同比+3.8%（战前约2.8%），若超预期可能触发美联储加息恐慌。美联储沃勒已明示"加息或降息概率各半"，PCE将决定天平倾向哪边。</p>
+</div>
+<h2>📌 策略建议</h2>
+<h3>仓位建议</h3>
+<ul>
+<li><strong>当前环境</strong>：外盘偏多（美股连涨8周）+ 内盘技术反弹（周五V形修复）+ 周四PCE重大不确定性</li>
+<li><strong>建议仓位</strong>：5-6成，周四PCE前不宜满仓</li>
+<li><strong>节奏</strong>：周一（独立交易）可能偏弱，周二周三关注财报催化，周四PCE前适度减仓</li>
+</ul>
+<h3>进攻方向</h3>
+<ul>
+<li><strong>AI算力硬件（PCB/CPO/光通信）</strong>：周五单日资金流入最强，且美股科技映射持续。若周一高开不追，等回踩机会</li>
+<li><strong>存储芯片</strong>：美股存储暴涨映射最直接，长鑫科技IPO上会（周三）也是催化。但需警惕高开低走</li>
+<li><strong>消费电子/苹果链</strong>：苹果持续创新高，6月WWDC预期。中短线逻辑</li>
+</ul>
+<h3>防守方向</h3>
+<ul>
+<li><strong>电力/公用事业</strong>：数据中心电力需求是长期逻辑，且防御属性强</li>
+<li><strong>中特估/红利</strong>：若周四PCE引发加息恐慌，资金可能回流防御</li>
+</ul>
+<h3>风险应对</h3>
+<ul>
+<li><strong>若周一A股独立交易量能萎缩（&lt;2万亿）</strong>：不支持持续上涨，减仓观望</li>
+<li><strong>若周四PCE超预期（&gt;4%）</strong>：全球Risk-off，A股大概率跟跌，建议周三提前减至3成</li>
+<li><strong>若美伊协议正式签署</strong>：利好全球风险偏好，利空原油黄金，利好制造业+航运</li>
+<li><strong>上证关键位</strong>：支撑4080-4100（MA60附近），压力4200（前高），突破4200可看高一线</li>
+</ul>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年5月25日 00:00</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

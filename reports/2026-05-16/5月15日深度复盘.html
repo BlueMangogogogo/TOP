@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5月15日深度复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>5月15日深度复盘</h1>
+  <div class="meta">
+    📅 2026年5月15日（周五）收盘 | TdxClaw AI 自动生成 | 仅供参考
+  </div>
+</header>
+
+<h2>📊 指数全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>4135.39</td>
+<td>-1.02%（-42.53点）</td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>约1.52万亿</td>
+<td>放量（较前日+2%，连续三日1.3-1.5万亿）</td>
+</tr>
+<tr>
+<td>涨停</td>
+<td>72家</td>
+<td>昨日约60家</td>
+</tr>
+<tr>
+<td>跌停</td>
+<td>44家（含ST约35家）</td>
+<td>真实跌停约9家</td>
+</tr>
+<tr>
+<td>上涨/下跌</td>
+<td>约2800家/1900家</td>
+<td>V形探底回升，盘中一度超3000家下跌</td>
+</tr>
+<tr>
+<td>主力资金</td>
+<td>净流出约690亿</td>
+<td>连续净流出</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>上证压力位：4192（今日高点）/ 4245-4259（5月13-14日高点区域）/ 4260（前高）
+上证支撑位：4114（今日低点）/ 4082-4090（MA20区域）/ 4050（MA60上方）</p>
+<p>情绪判断：<strong>中性偏谨慎</strong>。V形回升显示买盘承接，但尾盘未能翻红、主力持续流出、量能未明显放大，短期仍有回踩压力。</p>
+</div>
+<h2>🌍 外盘与宏观</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>收盘</th>
+<th>涨跌</th>
+<th>对A股影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纳指</td>
+<td>26402</td>
+<td>+0.88%</td>
+<td>科技股映射积极，芯片/AI方向</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7444</td>
+<td>+0.77%</td>
+<td>续创新高</td>
+</tr>
+<tr>
+<td>道指</td>
+<td>50000+</td>
+<td>+0.75%</td>
+<td>三个月首上50000</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td>—</td>
+<td>—</td>
+<td>中美缓和偏利好</td>
+</tr>
+<tr>
+<td>黄金</td>
+<td>4656美元</td>
+<td>-1.07%</td>
+<td>风险偏好上升</td>
+</tr>
+<tr>
+<td>北向资金</td>
+<td>—</td>
+<td>—</td>
+<td>需盘中数据确认</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>美股科技股强势：英伟达七连涨（+4%，市值5.71万亿），Cerebras上市+68%，博通+5%（市值2.08万亿）。外围环境对A股科技方向偏积极。</p>
+</div>
+<h2>📰 今日核心新闻简报</h2>
+<p><strong>最重要的8条，按影响强度排序：</strong></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>新闻</th>
+<th>影响板块</th>
+<th>情绪</th>
+<th>强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Figure F.03人形机器人直播连续工作超30小时</td>
+<td>人形机器人、减速器、电机</td>
+<td>强利好</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>韩国无水氢氟酸大幅上调价格</td>
+<td>氟化工、电子化学品</td>
+<td>强利好</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>研究称数据中心面临55GW电力缺口</td>
+<td>电力、算力基础设施</td>
+<td>利好</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>英伟达H200获准向中国销售，联想等受益</td>
+<td>AI算力、服务器</td>
+<td>利好</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>特朗普访华，中美关系释放缓和信号</td>
+<td>全局情绪、中概股</td>
+<td>中性偏利好</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>美股三大指数续创新高，英伟达七连涨</td>
+<td>芯片、AI、A股映射</td>
+<td>利好</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>7</td>
+<td>SpaceX IPO最快下周发布招股书</td>
+<td>商业航天</td>
+<td>利好</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>8</td>
+<td>华虹半导体Q1净利+513%，中芯国际+0.4%</td>
+<td>半导体制造</td>
+<td>中性</td>
+<td>⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>重点新闻情绪催化验证</h3>
+<ul>
+<li>
+<p><strong>Figure F.03机器人催化</strong>：人形机器人板块共振强烈——巨轮智能（首板，RV减速器）、雷赛智能（首板，无框力矩电机+灵巧手，25年交付12万台+同比20倍）、方正电机（首板，关节电机）、骏亚科技（首板，PCB已导入头部客户）集体涨停。资金面：雷赛智能主力净流入约1.59亿，方正电机主力净流入约1.35亿，三丰智能主力净流入4.7亿。<strong>板块强度高，具备持续催化逻辑</strong>。</p>
+<div class="warning">
+<p>⚠️ 概念区分：机器人关节电机/减速器（巨轮、方正电机、雷赛）是核心硬件方向，与AI软件/大模型是不同的投资逻辑。此轮由硬件突破驱动，关注有实际订单交付的标的（雷赛已获数十家主流客户批量订单）。</p>
+</div>
+</li>
+<li>
+<p><strong>韩国氢氟酸涨价催化</strong>：中巨芯-U（+20.01%，科创板，电子级氢氟酸优势产品，主力净流入3.66亿）、多氟多（+10.02%，涨停打开4次，换手板，UPSSS级氢氟酸国内首个突破者）、中欣氟材（一字板+10.00%，萤石→氢氟酸→氟化工完整产业链）。<strong>逻辑清晰——上游原材料涨价直接利好已有产能的龙头。</strong></p>
+<div class="warning">
+<p>⚠️ 概念区分：氟化工≠通用化工。电子级氢氟酸（用于芯片制造清洗/蚀刻）与制冷剂级氢氟酸是完全不同的产品和逻辑。中巨芯面向存储/逻辑芯片客户，多氟多兼有六氟磷酸锂（锂电池电解液）逻辑。</p>
+</div>
+</li>
+<li>
+<p><strong>数据中心电力缺口催化</strong>：大唐发电（涨停，8天7板，数据中心电力需求+水电资产），但涨停打开6次，封板不稳，需警惕短期过热。</p>
+</li>
+</ul>
+<h2>🔥 今日最强主线</h2>
+<h3>板块涨幅 TOP 热点方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>方向</th>
+<th>核心驱动</th>
+<th>龙头股</th>
+<th>主力资金信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>人形机器人</td>
+<td>Figure F.03直播催化</td>
+<td>雷赛智能+10.01%、巨轮智能+9.95%、方正电机+10.03%</td>
+<td>多股主力净流入过亿</td>
+</tr>
+<tr>
+<td>2</td>
+<td>氟化工/电子化学品</td>
+<td>韩国氢氟酸涨价</td>
+<td>中巨芯-U+20.01%（3.66亿）、多氟多+10.02%（换手板）</td>
+<td>主力大幅流入</td>
+</tr>
+<tr>
+<td>3</td>
+<td>电力/数据中心</td>
+<td>55GW缺口研究</td>
+<td>大唐发电+10.00%（8天7板）</td>
+<td>分歧明显（涨停打开6次）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PEEK材料</td>
+<td>中研股份12亿投资</td>
+<td>三丰智能+19.94%（4.7亿流入）</td>
+<td>资金关注度高</td>
+</tr>
+<tr>
+<td>5</td>
+<td>AI算力/PCB</td>
+<td>英伟达H200+CPO</td>
+<td>骏亚科技+10.01%（光模块PCB已打样）</td>
+<td>板块联动</td>
+</tr>
+</tbody>
+</table></div>
+<h3>主线持续性分析</h3>
+<ul>
+<li><strong>人形机器人</strong>：⭐⭐⭐⭐⭐ 最强主线。Figure持续突破+雷赛智能等公司已进入批量交付阶段，从"概念"到"订单"的质变。25年无框电机交付12万台，26年产能规划200万台。<strong>下周重点关注</strong>，但要警惕短期涨幅过大的回踩。</li>
+<li><strong>电子化学品/氟化工</strong>：⭐⭐⭐⭐ 韩国涨价值接利好国内产能，中巨芯（电子级硝酸+氢氟酸已批量供存储芯片客户）是核心标的。<strong>持续性取决于海外价格走势。</strong></li>
+<li><strong>AI算力硬件</strong>：⭐⭐⭐ 英伟达H200放行是实质利好，但板块已有一定涨幅，关注低位补涨标的而非追高。</li>
+<li><strong>电力</strong>：⭐⭐ 反复活跃但龙头炸板频繁，数据中心逻辑中期成立，短期不宜追。</li>
+</ul>
+<h3>💰 onechart.top 资金进攻参考</h3>
+<blockquote>
+<p>注：onechart.top 为 Vue SPA 应用，需浏览器交互查看实时数据。交易日 17:00-17:30 自动同步。
+用户可在 PC 浏览器打开 https://onechart.top/ 查看「资金进攻榜」TOP10 和「排名飙升榜」。</p>
+<p><strong>使用建议</strong>：重点看波段流入率+单日流入率+排名变化均持续上升的概念板块。若某板块连续3-5天在资金进攻榜但股价未大涨 → 机构逐步建仓，可提前关注。</p>
+</div>
+<h2>🎯 核心个股拆解</h2>
+<h3>雷赛智能（002979）— 机器人核心硬件·订单兑现</h3>
+<ul>
+<li><strong>今日表现</strong>：+10.01%，成交1.98亿，封单1.59亿</li>
+<li><strong>异动原因</strong>：Figure机器人直播催化 + 机构调研后市场重估</li>
+<li><strong>产业链位置</strong>：运动控制核心部件 → 人形机器人关节/灵巧手（国内80%主流厂商供应商）</li>
+<li><strong>技术面</strong>：今日放量涨停突破前高，MACD零轴上方金叉发散</li>
+<li><strong>资金信号</strong>：主力净流入1.59亿</li>
+<li><strong>关注价值</strong>：高 — 25年无框电机交付12万台（同比20倍），26年规划200万台，从概念到批量交付的稀缺标的</li>
+</ul>
+<h3>中巨芯-U（688549）— 电子化学品·存储芯片上游</h3>
+<ul>
+<li><strong>今日表现</strong>：+20.01%（科创板涨停），成交9.41亿，换手12.13%</li>
+<li><strong>异动原因</strong>：韩国氢氟酸涨价直接利好，公司电子级氢氟酸/硝酸已批量供存储芯片制造</li>
+<li><strong>产业链位置</strong>：电子湿化学品+电子特气+前驱体 → 逻辑/存储芯片制造</li>
+<li><strong>技术面</strong>：放量20cm涨停，突破所有短期均线</li>
+<li><strong>资金信号</strong>：主力净流入3.66亿</li>
+<li><strong>关注价值</strong>：高 — 国产替代+海外涨价双重逻辑，但科创板20cm波动大</li>
+</ul>
+<h3>多氟多（002407）— 氟化工+锂电双逻辑</h3>
+<ul>
+<li><strong>今日表现</strong>：+10.02%（换手板，涨停打开4次），成交37.36亿</li>
+<li><strong>异动原因</strong>：韩国氢氟酸涨价+自身UPSSS级氢氟酸技术龙头地位</li>
+<li><strong>产业链位置</strong>：氢氟酸 → 六氟磷酸锂（锂电池电解液）+ 电子级氢氟酸（芯片）</li>
+<li><strong>技术面</strong>：涨停打开4次，分歧大，封成比仅3.7</li>
+<li><strong>资金信号</strong>：龙虎榜级别成交（37亿），关注后续是否有机构接力</li>
+<li><strong>关注价值</strong>：中 — 基本面扎实但短线分歧大，等回踩确认</li>
+</ul>
+<h3>大唐发电（601991）— 电力·高波动</h3>
+<ul>
+<li><strong>今日表现</strong>：+10.00%（8天7板），涨停打开6次，成交20.82亿</li>
+<li><strong>异动原因</strong>：数据中心55GW电力缺口催化+水电资产+国企改革</li>
+<li><strong>产业链位置</strong>：火电/水电 → 电力供应 → 虚拟电厂 → 数据中心</li>
+<li><strong>技术面</strong>：8天7板已是妖股级别，MACD高位钝化</li>
+<li><strong>资金信号</strong>：封成比仅1.08，封板极不稳定</li>
+<li><strong>关注价值</strong>：低 — 建议观望，短期过热，追高风险极大</li>
+</ul>
+<h2>⚠️ 风险预警</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>风险类型</th>
+<th>内容</th>
+<th>影响标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高位回踩</td>
+<td>上证从4259高点连续两日回调至4135，短期可能继续探MA20（4080-4090）</td>
+<td>全市场</td>
+</tr>
+<tr>
+<td>业绩地雷</td>
+<td>*ST闻泰连续8跌停，ST板块多股跌停</td>
+<td>ST板块、绩差股</td>
+</tr>
+<tr>
+<td>外围不确定性</td>
+<td>美联储PPI高企（4月+6%），降息预期基本消失</td>
+<td>高估值科技股</td>
+</tr>
+<tr>
+<td>解禁/减持</td>
+<td>理工导航股东拟减持不超3%</td>
+<td>理工导航、众源新材</td>
+</tr>
+</tbody>
+</table></div>
+<h2>🔭 明日推演（下周一 5月18日）</h2>
+<h3>明日关注方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th>关注标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人形机器人延续</td>
+<td>Figure催化+订单兑现逻辑，关注分化后的真龙头</td>
+<td>雷赛智能（订单龙头）、巨轮智能（减速器）</td>
+</tr>
+<tr>
+<td>电子化学品</td>
+<td>韩国涨价逻辑，关注是否扩散到更多氟化工标的</td>
+<td>中巨芯-U、多氟多（等回踩）</td>
+</tr>
+<tr>
+<td>AI算力硬件</td>
+<td>英伟达H200放行+美股映射，关注PCB/CPO方向</td>
+<td>骏亚科技（光模块PCB）、CPO概念</td>
+</tr>
+<tr>
+<td>低吸机会</td>
+<td>上证若回踩4080-4100区间，关注被错杀的绩优股</td>
+<td>关注北向资金流入方向</td>
+</tr>
+</tbody>
+</table></div>
+<h3>策略建议</h3>
+<ul>
+<li><strong>持仓者</strong>：人形机器人方向可持有，但连续大涨后建议设好移动止盈；电力方向（大唐发电）建议减仓保护利润</li>
+<li><strong>观望者</strong>：等上证回踩MA20（4080-4100）确认支撑后再入场，或在机器人板块分化后关注回踩买点</li>
+<li><strong>风险位</strong>：若上证跌破4080（MA20），短线仓位降低至5成以下；若跌破4000，则进入防守模式</li>
+</ul>
+<h3>明日观察要点</h3>
+<ol>
+<li>人形机器人板块是否出现分化——龙头继续走强还是板块整体退潮？</li>
+<li>上证4114低点能否守住，量能是否继续维持1.3万亿以上</li>
+<li>周末消息面（特朗普访华后续、SpaceX IPO进展、海外AI动态）</li>
+<li>北向资金周一开盘后的动向——如果转为净流入则是积极信号</li>
+</ol>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
