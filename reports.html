@@ -5,7 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TdxClaw 分析报告中心</title>
 <style>
+/* ===== CSS Variables ===== */
 :root {
+  --bg: #ffffff;
+  --bg2: #f8f9fa;
+  --bg3: #e9ecef;
+  --border: #dee2e6;
+  --text: #2c2c2c;
+  --text2: #555;
+  --text3: #888;
+  --accent: #d4a017;
+  --accent-rgb: 212,160,23;
+  --accent2: #c0392b;
+  --green: #26c961;
+  --blue: #2b7bd6;
+  --blue-rgb: 43,123,214;
+  --purple: #7c3aed;
+  --orange: #d97706;
+  --font: system-ui, -apple-system, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.dark {
   --bg: #0a0e17;
   --bg2: #0d1525;
   --bg3: #111d33;
@@ -14,13 +34,15 @@
   --text2: #7b93b8;
   --text3: #556688;
   --accent: #ebb543;
-  --accent2: #ef5350;
+  --accent-rgb: 235,181,67;
   --green: #26c961;
   --blue: #60c0ff;
+  --blue-rgb: 96,192,255;
   --purple: #a78bfa;
   --orange: #ff9800;
-  --font: system-ui, -apple-system, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
+
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 body {
   font-family: var(--font);
@@ -30,6 +52,7 @@ body {
   font-size: 14px;
   overflow: hidden;
   height: 100vh;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* ===== Top Bar ===== */
@@ -43,6 +66,7 @@ body {
   padding: 0 20px;
   flex-shrink: 0;
   z-index: 100;
+  transition: background 0.3s, border-color 0.3s;
 }
 .topbar .brand {
   font-size: 16px;
@@ -52,9 +76,9 @@ body {
   align-items: center;
   gap: 8px;
 }
-.topbar .brand span { color: var(--text); font-weight: 400; font-size: 13px; }
-.topbar .nav-links { display: flex; gap: 16px; align-items: center; }
-.topbar .nav-links a {
+.topbar .brand span { color: var(--text2); font-weight: 400; font-size: 13px; }
+.topbar .nav-links { display: flex; gap: 10px; align-items: center; }
+.topbar .nav-links a, .theme-btn {
   color: var(--text2);
   text-decoration: none;
   font-size: 13px;
@@ -62,12 +86,25 @@ body {
   border-radius: 4px;
   transition: all 0.2s;
   border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font);
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
-.topbar .nav-links a:hover, .topbar .nav-links a.active {
+.topbar .nav-links a:hover, .theme-btn:hover {
   color: var(--accent);
   border-color: var(--accent);
-  background: rgba(235,181,67,0.06);
+  background: rgba(var(--accent-rgb),0.06);
 }
+.topbar .nav-links a.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb),0.08);
+  font-weight: 600;
+}
+.theme-btn { font-size: 16px; padding: 4px 8px; }
 
 /* ===== Layout ===== */
 .layout {
@@ -82,11 +119,13 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: background 0.3s, border-color 0.3s;
 }
 .main {
   flex: 1;
   overflow-y: auto;
   padding: 20px 24px;
+  transition: background 0.3s;
 }
 .main::-webkit-scrollbar { width: 6px; }
 .main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
@@ -98,6 +137,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  transition: border-color 0.3s;
 }
 .filter-btn {
   display: flex;
@@ -116,7 +156,7 @@ body {
 }
 .filter-btn:hover { background: var(--bg3); color: var(--text); }
 .filter-btn.active {
-  background: rgba(235,181,67,0.08);
+  background: rgba(var(--accent-rgb),0.08);
   border-color: var(--accent);
   color: var(--accent);
   font-weight: 600;
@@ -129,263 +169,134 @@ body {
   padding: 1px 7px;
   border-radius: 10px;
 }
-.filter-btn.active .count { background: rgba(235,181,67,0.15); color: var(--accent); }
+.filter-btn.active .count { background: rgba(var(--accent-rgb),0.15); color: var(--accent); }
 
 /* ===== Timeline ===== */
-.timeline {
-  flex: 1;
-  overflow-y: auto;
-  padding: 8px 12px;
-}
+.timeline { flex: 1; overflow-y: auto; padding: 8px 12px; }
 .timeline::-webkit-scrollbar { width: 4px; }
 .timeline::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-.timeline-month {
-  margin-bottom: 2px;
-}
 .timeline-month-header {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--text3);
-  padding: 10px 8px 6px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 12px; font-weight: 700; color: var(--text3);
+  padding: 10px 8px 6px; text-transform: uppercase; letter-spacing: 1px;
 }
 .timeline-date {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 8px 6px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 13px;
-  color: var(--text2);
-  transition: all 0.15s;
-  border-left: 2px solid transparent;
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 8px 6px 16px; border-radius: 4px;
+  cursor: pointer; font-size: 13px; color: var(--text2);
+  transition: all 0.15s; border-left: 2px solid transparent;
 }
 .timeline-date:hover { background: var(--bg3); color: var(--text); }
 .timeline-date.active {
-  background: rgba(96,192,255,0.06);
-  border-left-color: var(--blue);
-  color: var(--blue);
-  font-weight: 600;
+  background: rgba(var(--blue-rgb),0.06);
+  border-left-color: var(--blue); color: var(--blue); font-weight: 600;
 }
-.timeline-date .dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--text3);
-  flex-shrink: 0;
-}
+.timeline-date .dot { width:6px; height:6px; border-radius:50%; background:var(--text3); flex-shrink:0; }
 .timeline-date.active .dot { background: var(--blue); }
-.timeline-date .report-count {
-  margin-left: auto;
-  font-size: 11px;
-  color: var(--text3);
-}
-.timeline-date.active .report-count { color: var(--blue); }
+.timeline-date .report-count { margin-left: auto; font-size: 11px; color: var(--text3); }
 
 /* ===== Main Content ===== */
-.main-header {
-  margin-bottom: 20px;
-}
-.main-header h2 {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text);
-}
-.main-header .subtitle {
-  font-size: 13px;
-  color: var(--text2);
-  margin-top: 4px;
-}
-.empty-state {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--text3);
-}
+.main-header { margin-bottom: 20px; }
+.main-header h2 { font-size: 20px; font-weight: 700; color: var(--text); }
+.main-header .subtitle { font-size: 13px; color: var(--text2); margin-top: 4px; }
+.empty-state { text-align: center; padding: 60px 20px; color: var(--text3); }
 .empty-state .icon { font-size: 48px; margin-bottom: 16px; }
 .empty-state p { font-size: 15px; margin-bottom: 6px; }
 
 /* ===== Report Cards ===== */
 .report-list { display: flex; flex-direction: column; gap: 8px; }
 .report-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s;
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; background: var(--bg2);
+  border: 1px solid var(--border); border-radius: 8px;
+  cursor: pointer; transition: all 0.2s;
+  box-shadow: var(--shadow);
 }
-.report-card:hover {
-  border-color: var(--accent);
-  background: rgba(235,181,67,0.03);
-}
+.report-card:hover { border-color: var(--accent); }
 .star-btn {
-  width: 32px; height: 32px;
-  border: none;
-  background: transparent;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.2s;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 32px; height: 32px; border: none; background: transparent;
+  font-size: 18px; cursor: pointer; border-radius: 6px;
+  transition: all 0.2s; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
   color: var(--text3);
 }
 .star-btn:hover { background: var(--bg3); color: var(--accent); }
 .star-btn.starred { color: var(--accent); }
 .report-info { flex: 1; min-width: 0; }
 .report-info .title {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 14px; font-weight: 600; color: var(--text);
+  margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.report-info .meta {
-  font-size: 12px;
-  color: var(--text3);
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
+.report-info .meta { font-size: 12px; color: var(--text3); display: flex; gap: 12px; align-items: center; }
 .report-badge {
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-weight: 600;
-  white-space: nowrap;
-  flex-shrink: 0;
+  font-size: 11px; padding: 2px 8px; border-radius: 10px;
+  font-weight: 600; white-space: nowrap; flex-shrink: 0;
 }
-.badge-daily { background: rgba(96,192,255,0.1); color: var(--blue); }
-.badge-industry { background: rgba(167,139,250,0.1); color: var(--purple); }
+.badge-daily { background: rgba(var(--blue-rgb),0.1); color: var(--blue); }
+.badge-industry { background: rgba(var(--purple,124,58,237),0.1); color: var(--purple); }
 
 .date-divider {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--text3);
-  padding: 16px 0 4px 4px;
-  border-bottom: 1px solid var(--border);
+  font-size: 13px; font-weight: 700; color: var(--text3);
+  padding: 16px 0 4px 4px; border-bottom: 1px solid var(--border);
   margin-bottom: 8px;
 }
 .date-divider:first-child { padding-top: 0; }
 
 /* ===== Modal ===== */
 .modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s;
+  position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+  z-index: 1000; display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.25s;
 }
-.modal-overlay.open {
-  opacity: 1;
-  pointer-events: auto;
-}
+.dark .modal-overlay { background: rgba(0,0,0,0.85); }
+.modal-overlay.open { opacity: 1; pointer-events: auto; }
 .modal-container {
-  width: 96vw;
-  height: 94vh;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  width: 96vw; height: 94vh;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 10px; display: flex; flex-direction: column;
+  overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  transition: background 0.3s;
 }
 .modal-topbar {
-  height: 44px;
-  background: var(--bg2);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  flex-shrink: 0;
+  height: 44px; background: var(--bg2); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px; flex-shrink: 0; transition: background 0.3s;
 }
 .modal-topbar .modal-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  flex: 1;
-  margin-right: 12px;
+  font-size: 14px; font-weight: 600; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  flex: 1; margin-right: 12px;
 }
 .modal-actions { display: flex; gap: 8px; align-items: center; }
 .modal-btn {
-  width: 32px; height: 32px;
-  border: 1px solid var(--border);
-  background: var(--bg3);
-  color: var(--text2);
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
+  width: 32px; height: 32px; border: 1px solid var(--border);
+  background: var(--bg3); color: var(--text2); border-radius: 6px;
+  cursor: pointer; font-size: 16px; display: flex;
+  align-items: center; justify-content: center; transition: all 0.2s;
 }
 .modal-btn:hover { background: var(--border); color: var(--text); }
-.modal-btn.close:hover { background: rgba(239,83,80,0.15); color: var(--accent2); border-color: var(--accent2); }
-.modal-body {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-}
-.modal-body iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: #fff;
-}
+.modal-btn.close:hover { background: rgba(192,57,43,0.15); color: var(--accent2); border-color: var(--accent2); }
+.modal-body { flex: 1; position: relative; overflow: hidden; }
+.modal-body iframe { width: 100%; height: 100%; border: none; background: #fff; transition: background 0.3s; }
+.dark .modal-body iframe { background: #0a0e17; }
 .modal-loading {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text3);
-  font-size: 14px;
+  position: absolute; inset: 0; display: flex;
+  align-items: center; justify-content: center;
+  color: var(--text3); font-size: 14px;
 }
 .modal-loading .spinner {
-  width: 32px; height: 32px;
-  border: 3px solid var(--border);
-  border-top-color: var(--accent);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-  margin-right: 10px;
+  width: 32px; height: 32px; border: 3px solid var(--border);
+  border-top-color: var(--accent); border-radius: 50%;
+  animation: spin 0.8s linear infinite; margin-right: 10px;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* ===== Toast ===== */
 .toast {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 13px;
-  z-index: 2000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: var(--bg2); border: 1px solid var(--border);
+  color: var(--text); padding: 10px 20px; border-radius: 8px;
+  font-size: 13px; z-index: 2000; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s; box-shadow: var(--shadow);
 }
 .toast.show { opacity: 1; }
 
@@ -401,15 +312,6 @@ body {
 }
 @media (max-width: 480px) {
   .sidebar { display: none; }
-  .mobile-filter-bar {
-    display: flex;
-    gap: 6px;
-    padding: 10px 12px;
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-    overflow-x: auto;
-  }
-  .mobile-filter-bar .filter-btn { white-space: nowrap; font-size: 12px; padding: 6px 10px; }
 }
 </style>
 </head>
@@ -421,12 +323,12 @@ body {
   <div class="nav-links">
     <a href="reports.html" class="active">📄 分析报告</a>
     <a href="/TOP/">📈 板块雷达</a>
+    <button class="theme-btn" onclick="toggleTheme()" id="theme-btn" title="切换日间/夜间模式">☀️</button>
   </div>
 </div>
 
 <!-- Main Layout -->
 <div class="layout">
-  <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
     <div class="filters">
       <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">
@@ -443,24 +345,17 @@ body {
       </button>
     </div>
     <div class="timeline" id="timeline">
-      <div style="text-align:center;padding:30px 0;color:var(--text3);font-size:13px">
-        <div class="spinner" style="margin:0 auto 10px;width:24px;height:24px;border-width:2px"></div>
-        加载中...
-      </div>
+      <div style="text-align:center;padding:30px 0;color:var(--text3);font-size:13px">加载中...</div>
     </div>
   </div>
 
-  <!-- Main Content -->
   <div class="main" id="main-content">
     <div class="main-header">
       <h2 id="main-title">📋 全部报告</h2>
       <div class="subtitle" id="main-subtitle">正在加载报告数据...</div>
     </div>
     <div id="report-area">
-      <div class="empty-state">
-        <div class="icon">⏳</div>
-        <p>正在加载报告列表...</p>
-      </div>
+      <div class="empty-state"><div class="icon">⏳</div><p>正在加载报告列表...</p></div>
     </div>
   </div>
 </div>
@@ -477,26 +372,129 @@ body {
       </div>
     </div>
     <div class="modal-body">
-      <div class="modal-loading" id="modal-loading">
-        <div class="spinner"></div> 加载报告中...
-      </div>
+      <div class="modal-loading" id="modal-loading"><div class="spinner"></div> 加载报告中...</div>
       <iframe id="modal-iframe" src="" style="display:none" onload="onIframeLoad()"></iframe>
     </div>
   </div>
 </div>
 
-<!-- Toast -->
 <div class="toast" id="toast"></div>
 
 <script>
+// ===== Theme =====
+const THEME_KEY = 'tdxclaw_report_theme';
+
+function getTheme() {
+  return localStorage.getItem(THEME_KEY) || 'light';
+}
+
+function applyTheme(theme) {
+  const isDark = theme === 'dark';
+  document.documentElement.classList.toggle('dark', isDark);
+  document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️';
+  document.getElementById('theme-btn').title = isDark ? '切换到日间模式' : '切换到夜间模式';
+  localStorage.setItem(THEME_KEY, theme);
+
+  // Apply to open iframe
+  const iframe = document.getElementById('modal-iframe');
+  if (iframe && iframe.contentDocument) {
+    injectIframeTheme(iframe, isDark);
+  }
+}
+
+function toggleTheme() {
+  const current = getTheme();
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+}
+
+// Inject dark/light theme into same-origin iframe
+function injectIframeTheme(iframe, isDark) {
+  try {
+    const doc = iframe.contentDocument;
+    if (!doc || !doc.head) return;
+    const id = 'tdxclaw-theme-override';
+    let style = doc.getElementById(id);
+    if (isDark) {
+      if (!style) {
+        style = doc.createElement('style');
+        style.id = id;
+        doc.head.appendChild(style);
+      }
+      style.textContent = `
+        /* TdxClaw Dark Theme Override */
+        :root { color-scheme: dark; }
+        body {
+          background: #0a0e17 !important;
+          color: #d0ddf0 !important;
+        }
+        header {
+          background: transparent !important;
+          border-bottom-color: #1a2f50 !important;
+        }
+        header h1 { color: #d0ddf0 !important; }
+        header .meta { color: #7b93b8 !important; }
+        h2 { color: #d0ddf0 !important; border-left-color: #ebb543 !important; }
+        h3, h4 { color: #c0d0e8 !important; }
+        p, li { color: #b0c0d8 !important; }
+        strong { color: #e0e8f8 !important; }
+        .table-wrapper { border-color: #1a2f50 !important; }
+        table { background: #0d1525 !important; }
+        thead th {
+          background: #1a2a40 !important;
+          color: #ebb543 !important;
+          border-bottom-color: #2a3a50 !important;
+        }
+        tbody td {
+          border-bottom-color: #152238 !important;
+          color: #c0d0e0 !important;
+        }
+        tbody tr:nth-child(even) { background: #0f1828 !important; }
+        tbody tr:nth-child(odd) { background: #0a1220 !important; }
+        tbody tr:hover { background: rgba(235,181,67,0.06) !important; }
+        .highlight {
+          background: rgba(235,181,67,0.08) !important;
+          border-left-color: #ebb543 !important;
+          color: #d8c890 !important;
+        }
+        .warning {
+          background: rgba(192,57,43,0.08) !important;
+          border-left-color: #c0392b !important;
+          color: #e8a0a0 !important;
+        }
+        footer {
+          border-top-color: #1a2f50 !important;
+          color: #556688 !important;
+        }
+        footer strong { color: #7b93b8 !important; }
+        hr { border-top-color: #1a2f50 !important; }
+        a { color: #60c0ff !important; }
+        blockquote {
+          background: rgba(235,181,67,0.05) !important;
+          border-left-color: #ebb543 !important;
+        }
+        code { background: #1a2a40 !important; color: #ffd700 !important; }
+        .tag { background: rgba(235,181,67,0.1) !important; color: #d4a017 !important; }
+        .tag-red { background: rgba(192,57,43,0.1) !important; color: #e88 !important; }
+        img { filter: brightness(0.9); }
+      `;
+    } else {
+      if (style) style.remove();
+    }
+  } catch(e) {
+    // Cross-origin iframe - cannot inject
+  }
+}
+
 // ===== State =====
 let allReports = [];
 let currentFilter = 'all';
 let currentDate = null;
 let currentModalReport = null;
 
-// ===== Init =====
-document.addEventListener('DOMContentLoaded', loadReports);
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(getTheme());
+  loadReports();
+});
 
 async function loadReports() {
   try {
@@ -507,64 +505,45 @@ async function loadReports() {
     renderTimeline();
     setFilter('all');
   } catch (e) {
-    console.error('加载报告索引失败:', e);
     document.getElementById('report-area').innerHTML = `
-      <div class="empty-state">
-        <div class="icon">📭</div>
-        <p>暂无报告数据</p>
-        <p style="font-size:12px;color:var(--text3)">报告索引尚未生成，请先运行同步脚本</p>
-      </div>`;
-    document.getElementById('main-subtitle').textContent = '报告索引加载失败';
+      <div class="empty-state"><div class="icon">📭</div>
+      <p>暂无报告数据</p><p style="font-size:12px;color:var(--text3)">报告索引尚未生成</p></div>`;
     document.getElementById('timeline').innerHTML = '<div style="text-align:center;padding:30px;color:var(--text3)">无数据</div>';
   }
 }
 
-// ===== Timeline =====
 function renderTimeline() {
   const dates = [...new Set(allReports.map(r => r.date))].sort().reverse();
   const container = document.getElementById('timeline');
-
   if (dates.length === 0) {
     container.innerHTML = '<div style="text-align:center;padding:30px;color:var(--text3)">无数据</div>';
     return;
   }
-
-  let html = '';
-  let currentMonth = '';
+  let html = '', currentMonth = '';
   for (const date of dates) {
     const month = date.substring(0, 7);
     if (month !== currentMonth) {
       currentMonth = month;
       const [y, m] = month.split('-');
-      html += `<div class="timeline-month"><div class="timeline-month-header">${y}年${parseInt(m)}月</div>`;
+      html += `<div class="timeline-month"><div class="timeline-month-header">${y}年${parseInt(m)}月</div></div>`;
     }
     const count = allReports.filter(r => r.date === date).length;
     const [y, m, d] = date.split('-');
-    const activeClass = currentDate === date ? ' active' : '';
-    html += `<div class="timeline-date${activeClass}" data-date="${date}" onclick="selectDate('${date}')">
-      <span class="dot"></span>
-      ${parseInt(m)}月${parseInt(d)}日
-      <span class="report-count">${count}篇</span>
-    </div>`;
+    const cls = currentDate === date ? ' active' : '';
+    html += `<div class="timeline-date${cls}" data-date="${date}" onclick="selectDate('${date}')">
+      <span class="dot"></span>${parseInt(m)}月${parseInt(d)}日<span class="report-count">${count}篇</span></div>`;
   }
-  html += '</div>';
   container.innerHTML = html;
 }
 
-// ===== Filter =====
 function setFilter(filter) {
-  currentFilter = filter;
-  currentDate = null;
-
+  currentFilter = filter; currentDate = null;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   document.querySelector(`.filter-btn[data-filter="${filter}"]`)?.classList.add('active');
   document.querySelectorAll('.timeline-date').forEach(d => d.classList.remove('active'));
-
   let filtered = getFilteredReports();
   renderReportList(filtered);
-
-  const titles = { all: '📋 全部报告', daily: '📅 日报', industry: '🔬 行业报告', starred: '⭐ 我的收藏' };
-  document.getElementById('main-title').textContent = titles[filter] || '报告列表';
+  document.getElementById('main-title').textContent = {all:'📋 全部报告',daily:'📅 日报',industry:'🔬 行业报告',starred:'⭐ 我的收藏'}[filter]||'报告列表';
   document.getElementById('main-subtitle').textContent = `共 ${filtered.length} 篇报告`;
 }
 
@@ -573,15 +552,9 @@ function selectDate(date) {
   document.querySelectorAll('.timeline-date').forEach(d => d.classList.remove('active'));
   const el = document.querySelector(`.timeline-date[data-date="${date}"]`);
   if (el) el.classList.add('active');
-
   let filtered = allReports.filter(r => r.date === date);
-  if (currentFilter === 'starred') {
-    const starred = getStarred();
-    filtered = filtered.filter(r => starred.has(r.id));
-  } else if (currentFilter !== 'all') {
-    filtered = filtered.filter(r => r.type === currentFilter);
-  }
-
+  if (currentFilter === 'starred') { const s = getStarred(); filtered = filtered.filter(r => s.has(r.id)); }
+  else if (currentFilter !== 'all') filtered = filtered.filter(r => r.type === currentFilter);
   renderReportList(filtered);
   const [y, m, d] = date.split('-');
   document.getElementById('main-title').textContent = `📅 ${parseInt(m)}月${parseInt(d)}日`;
@@ -589,142 +562,88 @@ function selectDate(date) {
 }
 
 function getFilteredReports() {
-  let reports = allReports;
-  if (currentFilter === 'starred') {
-    const starred = getStarred();
-    reports = reports.filter(r => starred.has(r.id));
-  } else if (currentFilter !== 'all') {
-    reports = reports.filter(r => r.type === currentFilter);
-  }
-  return reports;
+  let r = allReports;
+  if (currentFilter === 'starred') { const s = getStarred(); r = r.filter(x => s.has(x.id)); }
+  else if (currentFilter !== 'all') r = r.filter(x => x.type === currentFilter);
+  return r;
 }
 
-// ===== Report List =====
 function renderReportList(reports) {
   const area = document.getElementById('report-area');
   if (reports.length === 0) {
-    const msgs = {
-      all: '暂无报告数据',
-      daily: '暂无日报报告',
-      industry: '暂无行业报告',
-      starred: '还没有收藏任何报告，点击 ⭐ 来收藏吧！'
-    };
-    area.innerHTML = `<div class="empty-state"><div class="icon">📭</div><p>${msgs[currentFilter] || '暂无数据'}</p></div>`;
+    const msgs = {all:'暂无报告数据',daily:'暂无日报报告',industry:'暂无行业报告',starred:'还没有收藏任何报告，点击 ⭐ 来收藏吧！'};
+    area.innerHTML = `<div class="empty-state"><div class="icon">📭</div><p>${msgs[currentFilter]||'暂无数据'}</p></div>`;
     return;
   }
-
-  // Group by date if showing all/filtered without date selection
   let html = '<div class="report-list">';
   if (!currentDate) {
     const dates = [...new Set(reports.map(r => r.date))].sort().reverse();
     for (const date of dates) {
       const [y, m, d] = date.split('-');
       html += `<div class="date-divider">📅 ${parseInt(m)}月${parseInt(d)}日</div>`;
-      const dateReports = reports.filter(r => r.date === date);
-      for (const r of dateReports) {
-        html += renderCard(r);
-      }
+      reports.filter(r => r.date === date).forEach(r => html += renderCard(r));
     }
   } else {
-    for (const r of reports) {
-      html += renderCard(r);
-    }
+    reports.forEach(r => html += renderCard(r));
   }
   html += '</div>';
   area.innerHTML = html;
-
-  // Update star buttons
   updateStarButtons();
 }
 
 function renderCard(r) {
-  const badgeClass = r.type === 'daily' ? 'badge-daily' : 'badge-industry';
-  const badgeText = r.type === 'daily' ? r.category : '行业报告';
-  const starred = getStarred().has(r.id);
-  const starClass = starred ? ' starred' : '';
-  return `
-    <div class="report-card" onclick="openReport('${r.id}')">
-      <button class="star-btn${starClass}" onclick="event.stopPropagation();toggleStar('${r.id}')" data-report-id="${r.id}">
-        ${starred ? '⭐' : '☆'}
-      </button>
-      <div class="report-info">
-        <div class="title">${r.title}</div>
-        <div class="meta">
-          <span>📅 ${r.display_date}</span>
-          <span>📄 ${r.size_kb}KB</span>
-        </div>
-      </div>
-      <span class="report-badge ${badgeClass}">${badgeText}</span>
-    </div>`;
+  const b = r.type === 'daily' ? 'badge-daily' : 'badge-industry';
+  const bt = r.type === 'daily' ? r.category : '行业报告';
+  const st = getStarred().has(r.id);
+  return `<div class="report-card" onclick="openReport('${r.id}')">
+    <button class="star-btn${st?' starred':''}" onclick="event.stopPropagation();toggleStar('${r.id}')" data-report-id="${r.id}">${st?'⭐':'☆'}</button>
+    <div class="report-info"><div class="title">${r.title}</div><div class="meta"><span>📅 ${r.display_date}</span><span>📄 ${r.size_kb}KB</span></div></div>
+    <span class="report-badge ${b}">${bt}</span></div>`;
 }
 
-// ===== Stars (localStorage) =====
 function getStarred() {
-  try {
-    return new Set(JSON.parse(localStorage.getItem('tdxclaw_starred') || '[]'));
-  } catch { return new Set(); }
+  try { return new Set(JSON.parse(localStorage.getItem('tdxclaw_starred')||'[]')); }
+  catch { return new Set(); }
 }
-
-function toggleStar(reportId) {
-  const starred = getStarred();
-  if (starred.has(reportId)) {
-    starred.delete(reportId);
-    showToast('已取消收藏');
-  } else {
-    starred.add(reportId);
-    showToast('⭐ 已加入收藏');
-  }
-  localStorage.setItem('tdxclaw_starred', JSON.stringify([...starred]));
-  updateStarButtons();
-  updateCounts();
+function toggleStar(id) {
+  const s = getStarred();
+  s.has(id) ? s.delete(id) : s.add(id);
+  localStorage.setItem('tdxclaw_starred', JSON.stringify([...s]));
+  showToast(s.has(id) ? '⭐ 已加入收藏' : '已取消收藏');
+  updateStarButtons(); updateCounts();
   if (currentFilter === 'starred') setFilter('starred');
 }
-
 function updateStarButtons() {
-  const starred = getStarred();
-  document.querySelectorAll('.star-btn[data-report-id]').forEach(btn => {
-    const id = btn.getAttribute('data-report-id');
-    if (starred.has(id)) {
-      btn.classList.add('starred');
-      btn.textContent = '⭐';
-    } else {
-      btn.classList.remove('starred');
-      btn.textContent = '☆';
-    }
+  const s = getStarred();
+  document.querySelectorAll('.star-btn[data-report-id]').forEach(b => {
+    const id = b.getAttribute('data-report-id');
+    b.classList.toggle('starred', s.has(id));
+    b.textContent = s.has(id) ? '⭐' : '☆';
   });
 }
-
 function updateCounts() {
-  const total = allReports.length;
-  const daily = allReports.filter(r => r.type === 'daily').length;
-  const industry = allReports.filter(r => r.type === 'industry').length;
-  const starred = getStarred().size;
-
-  document.getElementById('count-all').textContent = total;
-  document.getElementById('count-daily').textContent = daily;
-  document.getElementById('count-industry').textContent = industry;
-  document.getElementById('count-starred').textContent = starred;
+  document.getElementById('count-all').textContent = allReports.length;
+  document.getElementById('count-daily').textContent = allReports.filter(r=>r.type==='daily').length;
+  document.getElementById('count-industry').textContent = allReports.filter(r=>r.type==='industry').length;
+  document.getElementById('count-starred').textContent = getStarred().size;
 }
 
 // ===== Modal =====
 function openReport(reportId) {
   const report = allReports.find(r => r.id === reportId);
   if (!report) return;
-
   currentModalReport = report;
   document.getElementById('modal-title').textContent = report.title;
-  document.getElementById('modal-iframe').style.display = 'none';
+  const iframe = document.getElementById('modal-iframe');
+  iframe.style.display = 'none';
   document.getElementById('modal-loading').style.display = 'flex';
-  document.getElementById('modal-iframe').src = report.relative_path;
-
-  const starred = getStarred().has(reportId);
-  document.getElementById('modal-star-btn').textContent = starred ? '⭐' : '☆';
-  document.getElementById('modal-star-btn').style.color = starred ? 'var(--accent)' : 'var(--text2)';
-
+  iframe.src = report.relative_path;
+  const st = getStarred().has(reportId);
+  document.getElementById('modal-star-btn').textContent = st ? '⭐' : '☆';
+  document.getElementById('modal-star-btn').style.color = st ? 'var(--accent)' : 'var(--text2)';
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function closeModal(e) {
   if (e && e.target !== document.getElementById('modal-overlay')) return;
   document.getElementById('modal-overlay').classList.remove('open');
@@ -732,31 +651,26 @@ function closeModal(e) {
   document.body.style.overflow = '';
   currentModalReport = null;
 }
-
 function onIframeLoad() {
   document.getElementById('modal-loading').style.display = 'none';
   document.getElementById('modal-iframe').style.display = 'block';
+  // Inject theme into iframe
+  injectIframeTheme(document.getElementById('modal-iframe'), getTheme() === 'dark');
 }
-
 function toggleModalStar() {
   if (!currentModalReport) return;
   toggleStar(currentModalReport.id);
-  const starred = getStarred().has(currentModalReport.id);
-  document.getElementById('modal-star-btn').textContent = starred ? '⭐' : '☆';
-  document.getElementById('modal-star-btn').style.color = starred ? 'var(--accent)' : 'var(--text2)';
+  const st = getStarred().has(currentModalReport.id);
+  document.getElementById('modal-star-btn').textContent = st ? '⭐' : '☆';
+  document.getElementById('modal-star-btn').style.color = st ? 'var(--accent)' : 'var(--text2)';
 }
 
-// ===== Keyboard =====
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-// ===== Toast =====
 let toastTimer;
 function showToast(msg) {
   const el = document.getElementById('toast');
-  el.textContent = msg;
-  el.classList.add('show');
+  el.textContent = msg; el.classList.add('show');
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.classList.remove('show'), 2000);
 }
