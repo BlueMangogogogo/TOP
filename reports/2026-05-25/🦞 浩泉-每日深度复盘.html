@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🦞 浩泉-每日深度复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🦞 浩泉-每日深度复盘</h1>
+  <div class="meta">
+    📅 2026年05月25日 23:03
+  </div>
+</header>
+
+<p><strong>日期：2026年5月25日（周一）</strong>
+<strong>市场状态：交易活跃 · 结构性分化</strong></p>
+<hr>
+<h2>一、盘面概览</h2>
+<h3>1.1 核心指数</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证收盘价</td>
+<td><strong>4152.57</strong></td>
+<td>+0.96%</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>15856.61</td>
+<td>+1.66%</td>
+</tr>
+<tr>
+<td>两市成交总额</td>
+<td><strong>3.21万亿</strong></td>
+<td>较上日放量约12%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>1.2 涨跌统计</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>涨停家数（含ST）</td>
+<td><strong>128家</strong></td>
+</tr>
+<tr>
+<td>跌停家数（含ST）</td>
+<td>24家</td>
+</tr>
+<tr>
+<td>上涨/下跌家数</td>
+<td>1028↑ / 1280↓（上证）</td>
+</tr>
+<tr>
+<td>沪深主力净流出</td>
+<td>-156.35亿</td>
+</tr>
+</tbody>
+</table></div>
+<h3>1.3 关键技术位（上证）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>点位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MA20</td>
+<td>~4144（今日站上✅）</td>
+</tr>
+<tr>
+<td>MA60</td>
+<td>~4080-4100 区域</td>
+</tr>
+<tr>
+<td>MA120</td>
+<td>~4000-4020 区域</td>
+</tr>
+<tr>
+<td>近期前高</td>
+<td>4258.86（5月14日）</td>
+</tr>
+<tr>
+<td>近期前低</td>
+<td>4067.75（5月22日）</td>
+</tr>
+<tr>
+<td>支撑位</td>
+<td>4120-4144（MA20/前低区域）</td>
+</tr>
+<tr>
+<td>压力位</td>
+<td>4170-4200（前期密集区）、4258（前高）</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>技术解读</strong>：上周四（5/21）大跌-2.04%测试MA60后，连续两日反弹站回MA20。今日放量小阳线，多头确认了支撑有效性，但上方面临4170-4200筹码密集区，若量能持续放大，有望挑战前高4258。</p>
+<hr>
+<h2>二、板块热度与资金流向</h2>
+<h3>2.1 今日最强方向（按主力净流入）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th style="text-align: center;">主力净流入(亿)</th>
+<th>代表性个股</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🥇</td>
+<td><strong>半导体</strong></td>
+<td style="text-align: center;">+197.25</td>
+<td>中芯国际+18.8%、华虹公司+20%、通富微电+10%、长电科技+10%</td>
+</tr>
+<tr>
+<td>🥈</td>
+<td>通信设备</td>
+<td style="text-align: center;">+45.89</td>
+<td>新易盛+8.6%、天孚通信+6.5%、中际旭创+5.3%</td>
+</tr>
+<tr>
+<td>🥉</td>
+<td>电力</td>
+<td style="text-align: center;">+33.96</td>
+<td>京能电力+10%、华电能源+10%、华电辽能+10%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.2 PCB概念（独立爆发方向）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>个股</th>
+<th style="text-align: center;">涨幅</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>长海股份</td>
+<td style="text-align: center;">+20.0%</td>
+<td>电子毡是CEM-3覆铜板基材</td>
+</tr>
+<tr>
+<td>宏和科技</td>
+<td style="text-align: center;">+10.0%</td>
+<td>AI服务器PCB核心上游玻纤布</td>
+</tr>
+<tr>
+<td>鹏鼎控股</td>
+<td style="text-align: center;">+10.0%</td>
+<td>全球最大PCB公司，Vera Rubin受益</td>
+</tr>
+<tr>
+<td>光华科技</td>
+<td style="text-align: center;">+10.0%</td>
+<td>PCB化学品+固态电池</td>
+</tr>
+<tr>
+<td>博杰股份</td>
+<td style="text-align: center;">+10.0%</td>
+<td>光通信PCB检测设备</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.3 其他活跃方向</h3>
+<ul>
+<li><strong>商业航天</strong>：SpaceX提交纳斯达克S-1 → 风华高科(2连板)、博云新材、王子新材</li>
+<li><strong>煤矿安全</strong>：山西煤矿拉网式监察 → 梅安森(一字板)、山东矿机、云鼎科技(一字板)</li>
+<li><strong>机器人/具身智能</strong>：宇树科技6月1日IPO上会 → 科瑞技术、麦迪科技、华兴源创</li>
+<li><strong>算力/Token经济</strong>：三大运营商齐发Token服务 → 莲花控股(3板)、贵广网络、麦格米特</li>
+</ul>
+<h3>2.4 板块资金雷达 — 趋势判断</h3>
+<p><strong>半导体</strong>：今日出现严重资金过热信号 — 单日主力净流入197亿，中芯国际成交372亿（两市第一量），华虹公司涨停打开12次。属于"重大事件催化+资金集中涌入"的强情绪驱动，短期大概率出现分歧。</p>
+<p><strong>通信设备/光模块</strong>：趋势性走强，光纤涨价+800G/1.6T放量逻辑同时驱动，剑桥科技5日2板、新易盛等连续放量上攻。机构建仓信号明确。</p>
+<p><strong>电力</strong>：数据中心55GW电力缺口叙事持续发酵，京能电力9日6板。但注意：该方向已连续上榜&gt;7天，今日流入率相对前几日有所放缓，短线需警惕退潮。</p>
+<hr>
+<h2>三、新闻情绪催化验证</h2>
+<h3>🔥 超级催化：华为发表半导体"韬定律"</h3>
+<blockquote>
+<p>华为正式提出以"时间缩微"替代"几何缩微"，通过逻辑折叠、3D堆叠等技术绕开先进光刻机限制，并以381款量产芯片证明可行性。</p>
+</div>
+<ul>
+<li><strong>真实影响力：极高</strong> — 这是中国企业在全球半导体领域首次提出产业指导原则</li>
+<li><strong>传导路径：</strong></li>
+<li>→ <strong>先进封装</strong>（3D堆叠最直接受益）：长电科技、通富微电、华天科技、甬矽电子（批量涨停）</li>
+<li>→ <strong>晶圆代工</strong>（国产替代信心）：中芯国际+18.8%、华虹公司+20%</li>
+<li>→ <strong>存储芯片</strong>（HBM/3D NAND）：东芯股份+20%、雅克科技+10%（HBM材料）</li>
+<li>→ <strong>功率半导体</strong>：新洁能+10%（一字板）</li>
+<li>⚠️ <strong>注意概念区分</strong>：半导体封装≠半导体设计≠存储芯片≠AI芯片。今日涨停板包含各类半导体子方向，短线资金可能混淆炒作，需区分哪些是真正与"韬定律"直接相关的3D堆叠/先进封装环节。</li>
+</ul>
+<h3>🔥 中层催化：英伟达Vera Rubin PCB价值量暴增</h3>
+<blockquote>
+<p>行业拆解显示英伟达下一代Vera Rubin机架PCB价值量大增</p>
+</div>
+<ul>
+<li>传导：宏和科技(2板)、鹏鼎控股(2板)、光华科技(2板)、长海股份(+20%)</li>
+<li>PCB概念已连续2个交易日走强，龙头梯队完整</li>
+</ul>
+<h3>📌 其他重要催化</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>传导方向</th>
+<th style="text-align: center;">强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SpaceX提交纳斯达克S-1</td>
+<td>商业航天</td>
+<td style="text-align: center;">中</td>
+</tr>
+<tr>
+<td>光纤价格暴涨+交货延长至20周</td>
+<td>光通信</td>
+<td style="text-align: center;">强</td>
+</tr>
+<tr>
+<td>宇树科技IPO上会</td>
+<td>机器人/具身智能</td>
+<td style="text-align: center;">中</td>
+</tr>
+<tr>
+<td>开源鸿蒙机器人OS发布</td>
+<td>机器人</td>
+<td style="text-align: center;">弱</td>
+</tr>
+<tr>
+<td>数据中心55GW电力缺口</td>
+<td>电力</td>
+<td style="text-align: center;">持续</td>
+</tr>
+<tr>
+<td>山西煤矿拉网式监察</td>
+<td>煤矿安全</td>
+<td style="text-align: center;">短期</td>
+</tr>
+</tbody>
+</table></div>
+<h3>⚠️ 风险事件</h3>
+<ul>
+<li><strong>恒为科技</strong>跌停：第一供应商2.59亿采购额真实性遭质疑+监管问询函</li>
+<li><strong>国光电器</strong>跌停：因信息披露违规被广东证监局出具警示函</li>
+<li><strong>智度股份</strong>跌停：控制权结构/关联交易/会计处理问题被监管</li>
+</ul>
+<hr>
+<h2>四、核心个股拆解</h2>
+<h3>4.1 中芯国际（688981）⭐️⭐️⭐️⭐️⭐️</h3>
+<ul>
+<li><strong>表现</strong>：+18.79%，成交372.50亿（两市第一）</li>
+<li><strong>概念定位</strong>：晶圆代工龙头，"韬定律"最核心映射标的</li>
+<li><strong>技术面</strong>：放量突破前期平台，单日成交额创历史新高</li>
+<li><strong>资金信号</strong>：主力净流入37.25亿（全市场第一），龙虎榜显示瑞银+机构+国泰海通多路资金合力买入</li>
+<li><strong>关注价值</strong>：半导体情绪标杆，明日走势决定板块持续性。若高开低走则板块退潮确认</li>
+</ul>
+<h3>4.2 通富微电（002156）⭐️⭐️⭐️⭐️</h3>
+<ul>
+<li><strong>表现</strong>：+9.99%，涨停打开5次最终回封</li>
+<li><strong>概念定位</strong>：国内第二/全球第四封测巨头，为AMD、华为海思、寒武纪提供封测</li>
+<li><strong>技术面</strong>：放量涨停逼近前高</li>
+<li><strong>资金信号</strong>：主力净流入20.57亿，换手充分</li>
+<li><strong>关注价值</strong>：先进封装最纯正标的之一，跌停开后反复博弈后回封，显示多空分歧较大但多方最终占优</li>
+</ul>
+<h3>4.3 剑桥科技（603083）⭐️⭐️⭐️⭐️</h3>
+<ul>
+<li><strong>表现</strong>：+10.00%，5日2板</li>
+<li><strong>概念定位</strong>：800G/1.6T光模块+光纤涨价双催化</li>
+<li><strong>技术面</strong>：突破前期整理平台，量价配合良好</li>
+<li><strong>资金信号</strong>：主力净流入12.16亿</li>
+<li><strong>关注价值</strong>：光通信方向新龙头，若明日继续走强则光通信方向确立独立主线</li>
+</ul>
+<h3>4.4 鹏鼎控股（002938）⭐️⭐️⭐️⭐️</h3>
+<ul>
+<li><strong>表现</strong>：+10.00%，2连板T字板</li>
+<li><strong>概念定位</strong>：全球最大PCB公司，苹果核心供应商+Vera Rubin受益</li>
+<li><strong>技术面</strong>：2连板缩量T字，筹码锁定良好</li>
+<li><strong>资金信号</strong>：封单17.9亿，封成比7.49</li>
+<li><strong>关注价值</strong>：PCB方向龙头，若明日继续3连板则板块持续性确认</li>
+</ul>
+<h3>4.5 莲花控股（600186）⭐️⭐️⭐️</h3>
+<ul>
+<li><strong>表现</strong>：+10.04%，5日3板，涨停打开25次</li>
+<li><strong>概念定位</strong>：算力租赁（智算中心建设）+ 味精主业增长</li>
+<li><strong>技术面</strong>：高换手涨停，25次打开后仍回封显示顽强</li>
+<li><strong>资金信号</strong>：龙虎榜博弈激烈</li>
+<li><strong>关注价值</strong>：算力方向妖股化特征明显，追高风险极大，但代表市场对Token经济叙事的认可度</li>
+</ul>
+<hr>
+<h2>五、明日（5月26日）推演与策略</h2>
+<h3>5.1 明日关键变量</h3>
+<ol>
+<li><strong>半导体板块持续性</strong>：197亿单日流入是否能持续？若不持续，退潮速度会很快</li>
+<li><strong>外盘指引缺失</strong>：美股今晚休市（阵亡将士纪念日），A股明日独立运行</li>
+<li><strong>量能变化</strong>：若两市成交额回落至2.8万亿以下，则反弹动能不足</li>
+</ol>
+<h3>5.2 关注方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th style="text-align: center;">优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>半导体（先进封装子方向）</strong></td>
+<td>韬定律直接映射，但今日过热，等分歧低吸</td>
+<td style="text-align: center;">⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>PCB/光通信</strong></td>
+<td>Vera Rubin+光纤涨价双催化，机构建仓迹象</td>
+<td style="text-align: center;">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>商业航天</strong></td>
+<td>SpaceX上市催化，短期题材</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>电力</strong></td>
+<td>连续上榜&gt;7天，注意退潮风险</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>5.3 三条观察要点</h3>
+<ol>
+<li><strong>半导体分歧程度</strong>：若中芯国际明日高开低走且成交额明显萎缩，则板块分歧确认→谨慎；若高开高走封住，则"韬定律"被市场充分认可→可积极</li>
+<li><strong>PCB方向能否独立走出来</strong>：鹏鼎控股若3连板，宏和科技若3连板，则PCB有望脱离半导体成为独立主线</li>
+<li><strong>情绪极端化风险</strong>：今日128家涨停，情绪偏热。若明日炸板率&gt;30%，则需警惕情绪退潮</li>
+</ol>
+<h3>5.4 策略建议</h3>
+<ul>
+<li><strong>持仓半导体方向</strong>：明日早盘高开可适度减仓锁定利润，等盘中分歧稳定后再考虑接回</li>
+<li><strong>PCB/光通信方向</strong>：龙头持续走强可加仓，但追高需谨慎</li>
+<li><strong>电力方向</strong>：建议逢高减仓，连续上榜天数过多+流入率放缓</li>
+<li><strong>新开仓方向</strong>：关注机器人/具身智能（宇树科技IPO前窗口期）</li>
+</ul>
+<hr>
+<h2>📊 数据来源</h2>
+<ul>
+<li>通达信行情数据</li>
+<li>通达信概念板块数据</li>
+<li>问小达资讯/公告系统</li>
+<li>onechart.top 板块雷达</li>
+</ul>
+<hr>
+<h2>⚠️ 免责声明</h2>
+<p><strong>股市有风险，入市需谨慎。</strong> 本报告为复盘分析，基于公开数据整理，仅供参考，不构成任何投资建议。报告中的分析判断仅代表基于数据的个人观点，不对任何因使用本报告内容所引发的直接或间接损失承担责任。投资者应当基于自身风险承受能力，独立做出投资决策。</p>
+<hr>
+<p><em>报告生成时间：2026-05-25 23:00 CST | 浩泉-智能复盘系统</em></p>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年05月25日 23:03</p>
+</footer>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-05-25 22:44:38",
-  "total": 9,
-  "daily_count": 4,
+  "last_updated": "2026-05-25 23:03:57",
+  "total": 10,
+  "daily_count": 5,
   "industry_count": 5,
   "reports": [
     {
@@ -73,6 +73,16 @@
       "title": "百岁山-美股到A股映射全景",
       "relative_path": "reports/2026-05-25/百岁山-美股到A股映射全景.html",
       "size_kb": 28.1
+    },
+    {
+      "id": "2026-05-25-🦞 浩泉-每日深度复盘",
+      "date": "2026-05-25",
+      "display_date": "5月25日",
+      "type": "daily",
+      "category": "深度复盘",
+      "title": "🦞 浩泉-每日深度复盘",
+      "relative_path": "reports/2026-05-25/🦞 浩泉-每日深度复盘.html",
+      "size_kb": 18.1
     },
     {
       "id": "2026-05-24-5月25日 周度盘前策略",
