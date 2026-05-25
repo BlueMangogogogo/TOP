@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-05-25 22:36:54",
-  "total": 3,
+  "last_updated": "2026-05-25 22:39:45",
+  "total": 5,
   "daily_count": 3,
-  "industry_count": 0,
+  "industry_count": 2,
   "reports": [
     {
       "id": "2026-05-25-5月25日 早盘扫描",
@@ -13,6 +13,26 @@
       "title": "5月25日 早盘扫描",
       "relative_path": "reports/2026-05-25/5月25日 早盘扫描.html",
       "size_kb": 8.7
+    },
+    {
+      "id": "2026-05-25-涨价猎手3.0-全板块深拆-龙头全覆盖",
+      "date": "2026-05-25",
+      "display_date": "5月25日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "涨价猎手3.0-全板块深拆-龙头全覆盖",
+      "relative_path": "reports/2026-05-25/涨价猎手3.0-全板块深拆-龙头全覆盖.html",
+      "size_kb": 28.1
+    },
+    {
+      "id": "2026-05-25-百岁山-美股到A股映射全景",
+      "date": "2026-05-25",
+      "display_date": "5月25日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "百岁山-美股到A股映射全景",
+      "relative_path": "reports/2026-05-25/百岁山-美股到A股映射全景.html",
+      "size_kb": 28.1
     },
     {
       "id": "2026-05-24-5月25日 周度盘前策略",
