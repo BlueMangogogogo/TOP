@@ -1,9 +1,19 @@
 {
-  "last_updated": "2026-05-25 00:12:32",
-  "total": 2,
-  "daily_count": 2,
+  "last_updated": "2026-05-25 22:36:54",
+  "total": 3,
+  "daily_count": 3,
   "industry_count": 0,
   "reports": [
+    {
+      "id": "2026-05-25-5月25日 早盘扫描",
+      "date": "2026-05-25",
+      "display_date": "5月25日",
+      "type": "daily",
+      "category": "早盘扫描",
+      "title": "5月25日 早盘扫描",
+      "relative_path": "reports/2026-05-25/5月25日 早盘扫描.html",
+      "size_kb": 8.7
+    },
     {
       "id": "2026-05-24-5月25日 周度盘前策略",
       "date": "2026-05-24",
