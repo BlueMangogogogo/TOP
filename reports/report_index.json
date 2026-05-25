@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-05-25 22:42:31",
-  "total": 6,
+  "last_updated": "2026-05-25 22:44:38",
+  "total": 9,
   "daily_count": 4,
-  "industry_count": 2,
+  "industry_count": 5,
   "reports": [
     {
       "id": "2026-05-25-5月25日 午盘扫描",
@@ -23,6 +23,36 @@
       "title": "5月25日 早盘扫描",
       "relative_path": "reports/2026-05-25/5月25日 早盘扫描.html",
       "size_kb": 8.7
+    },
+    {
+      "id": "2026-05-25-AI-PCB报告-Rubin时代深度总结",
+      "date": "2026-05-25",
+      "display_date": "5月25日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "AI-PCB报告-Rubin时代深度总结",
+      "relative_path": "reports/2026-05-25/AI-PCB报告-Rubin时代深度总结.html",
+      "size_kb": 35.3
+    },
+    {
+      "id": "2026-05-25-华为韬定律-先进封装国产替代映射",
+      "date": "2026-05-25",
+      "display_date": "5月25日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "华为韬定律-先进封装国产替代映射",
+      "relative_path": "reports/2026-05-25/华为韬定律-先进封装国产替代映射.html",
+      "size_kb": 23.2
+    },
+    {
+      "id": "2026-05-25-华为韬定律-半导体新范式受益图谱",
+      "date": "2026-05-25",
+      "display_date": "5月25日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "华为韬定律-半导体新范式受益图谱",
+      "relative_path": "reports/2026-05-25/华为韬定律-半导体新范式受益图谱.html",
+      "size_kb": 21.2
     },
     {
       "id": "2026-05-25-涨价猎手3.0-全板块深拆-龙头全覆盖",

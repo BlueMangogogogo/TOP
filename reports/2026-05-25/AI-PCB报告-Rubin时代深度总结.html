@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI PCB 报告 · Rubin 时代深度总结</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>AI PCB 报告 · Rubin 时代深度总结</h1>
+  <div class="meta">
+    📅 2026年5月25日
+  </div>
+</header>
+
+<p><strong>报告名称</strong>：AI PCB 报告 — Rubin 时代深度（18 图完整版）
+<strong>核心主题</strong>：从 GB200 到 Rubin Ultra，AI 服务器 PCB 的四代跃迁全景分析
+<strong>来源</strong>：AI 行业深度研究（基于 SemiAnalysis、摩根士丹利、NVIDIA 官方数据）</p>
+<hr>
+<h2>报告核心论点</h2>
+<blockquote>
+<p><strong>单柜 PCB 价值从 GB200 ~$25,000 → Rubin NVL144 ~$70,000 → Rubin Ultra NVL576 ~$160,000+，2 年 x6 倍跃迁。PCB 不是被动跟随，是 AI 升级的"主动赢家"。</strong></p>
+</div>
+<hr>
+<h2>一、18 个模块逐一总结</h2>
+<h3>模块 00（Page 1）：报告开篇 — AI PCB · Rubin 时代入门定位</h3>
+<p><strong>核心内容</strong>：定义 Rubin 时代的 PCB 整体格局。</p>
+<ul>
+<li><strong>Rubin NVL144 不是一块板，是 5 块板的协同战</strong>：</li>
+<li>HPM Bianca 高速主板（24 层，M8/M6，HVLP4）</li>
+<li>Midplane 中央背板（44 层，M9，Q-Glass，HVLP4）← <strong>全新增量</strong></li>
+<li>CX9 NIC 网卡 HDI 子卡（22 层 HDI，M9+M6）</li>
+<li>CPX 推理子卡（22 层 HDI，Rubin CPX 专属）</li>
+<li>
+<p>NVSwitch 交换板（32 层，M8+）</p>
+</li>
+<li>
+<p><strong>三大材料端关键升级</strong>：
+  1. <strong>CCL 等级</strong>：M7 → M9（Dk 从 3.4 → 3.0）
+  2. <strong>铜箔</strong>：HVLP3 → HVLP4（表面粗糙度 &lt;0.6um）
+  3. <strong>Midplane</strong>：从"无"到 44 层全新 PCB 品类</p>
+</li>
+</ul>
+<blockquote>
+<p>"看不懂 GB200→Rubin 的板子升级，就看不懂沪电/胜宏/生益为什么涨。"</p>
+</div>
+<hr>
+<h3>模块 01（Page 2）：四代代际对比 — GB200 → Rubin Ultra</h3>
+<p><strong>核心内容</strong>：GB200（2024）→ GB300（2025）→ Rubin NVL144（2026H2）→ Rubin Ultra NVL576（2027H2）四代全景。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>GB200</th>
+<th>GB300</th>
+<th>Rubin NVL144</th>
+<th>Rubin Ultra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主板层数</td>
+<td>22 层</td>
+<td>22+OAM</td>
+<td>24 层</td>
+<td>26 层</td>
+</tr>
+<tr>
+<td>CCL 等级</td>
+<td>M7</td>
+<td>M7+PTFE</td>
+<td>M8/M9</td>
+<td>M9+Q-Glass</td>
+</tr>
+<tr>
+<td>铜箔</td>
+<td>HVLP3</td>
+<td>HVLP3</td>
+<td>HVLP4</td>
+<td>HVLP4/5</td>
+</tr>
+<tr>
+<td>玻璃布</td>
+<td>E-Glass</td>
+<td>低介电+E</td>
+<td>Q-Glass 石英</td>
+<td>100% Q-Glass</td>
+</tr>
+<tr>
+<td>背板互联</td>
+<td>Cable Cartridge</td>
+<td>Cable Cartridge</td>
+<td>PCB Midplane 44层</td>
+<td>PCB Midplane 78层</td>
+</tr>
+<tr>
+<td>单柜 PCB 价值</td>
+<td>~$25,000</td>
+<td>~$36,000</td>
+<td>~$70,000</td>
+<td>~$160,000+</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>三个核心变化点（决定受益标的）</strong>：
+1. <strong>Midplane 从无到有</strong> → 沪电股份、景旺电子
+2. <strong>CCL 从 M7→M9</strong> → 生益科技、东材科技、华正新材
+3. <strong>新增 x2 块 22 层 HDI 子卡</strong> → 胜宏科技、联能</p>
+<hr>
+<h3>模块 02（Page 3）：五大 PCB 工程解剖</h3>
+<p><strong>核心内容</strong>：逐块拆解五块 PCB 的工程参数、升级点、受益标的。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>PCB 名称</th>
+<th>层数</th>
+<th>CCL 等级</th>
+<th>铜箔/布</th>
+<th>核心升级点</th>
+<th>核心受益</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HPM Bianca 主板</td>
+<td>24 层</td>
+<td>M8/M6</td>
+<td>HVLP4</td>
+<td>22→24层，承载 2 Vera CPU + 4 Rubin GPU</td>
+<td><strong>胜宏科技</strong></td>
+</tr>
+<tr>
+<td>Midplane 中央背板</td>
+<td>44→78 层</td>
+<td>M9</td>
+<td>HVLP4+Q布</td>
+<td>取代 cable cartridge，全新品类</td>
+<td><strong>沪电股份、景旺电子</strong></td>
+</tr>
+<tr>
+<td>NVSwitch 交换板</td>
+<td>32 层</td>
+<td>M8+</td>
+<td>HVLP4+DK2</td>
+<td>26→32层(+23%)，224G PAM4 适配</td>
+<td>沪电、景旺、方正科技</td>
+</tr>
+<tr>
+<td>CX9 NIC HDI 子卡</td>
+<td>22 层 HDI</td>
+<td>M9+M6</td>
+<td>HVLP4+Q布</td>
+<td>全新 HDI 品类，800G ConnectX-9</td>
+<td><strong>胜宏科技、联能</strong></td>
+</tr>
+<tr>
+<td>CPX 子卡 HDI</td>
+<td>22 层 HDI</td>
+<td>M9+M6</td>
+<td>HVLP4+Q布</td>
+<td>Rubin CPX 专属，8 GDDR7 GPU</td>
+<td>胜宏、中京电子</td>
+</tr>
+<tr>
+<td>Kyber Midplane</td>
+<td>78 层</td>
+<td>M9+Q-Glass</td>
+<td>HVLP5</td>
+<td>2027 Ultra 终极背板</td>
+<td>沪电、生益、东材</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h3>模块 03（Page 4）：层数升级背后的物理原理</h3>
+<p><strong>核心内容</strong>：信号速率翻倍 → 损耗预算减半 → 必须加层。</p>
+<ul>
+<li><strong>NVLink 5 (112G PAM4)</strong> → <strong>NVLink 6 (224G PAM4)</strong> → 损耗预算从 30dB → 16dB</li>
+<li>每对差分对必须夹在两层地之间屏蔽 + 224G 需要更宽微带线 → <strong>单层容量不够，只能加层</strong></li>
+<li><strong>四个投资变量</strong>：</li>
+<li>32 层分水岭：能做 32 层以上 Ultra-Low-Loss PCB 全球仅 3 家</li>
+<li>44 层 Midplane：Rubin 最大单一价值蛋糕（$27K/rack）</li>
+<li>78 层终极考验：Kyber 整柜级，压合 3 次，良率断崖式下降</li>
+<li>CPX HDI 新增：渗透率每提升 10%，HDI 厂订单 +5%</li>
+</ul>
+<hr>
+<h3>模块 04（Page 5）：CCL 等级 M4→M9 介电常数</h3>
+<p><strong>核心内容</strong>：Megtron 是日本松下定义的行业标准，Dk 越低越贵。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>CCL 等级</th>
+<th>Dk</th>
+<th>Df</th>
+<th>价格/m²</th>
+<th>典型应用</th>
+<th>大陆能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M4 (FR-4)</td>
+<td>4.4</td>
+<td>0.020</td>
+<td>$20</td>
+<td>消费电子</td>
+<td>完全自给</td>
+</tr>
+<tr>
+<td>M6 (Megtron 6)</td>
+<td>3.7</td>
+<td>0.005</td>
+<td>$60</td>
+<td>GB200 低端</td>
+<td>生益/华正可量产</td>
+</tr>
+<tr>
+<td>M7 (Megtron 7)</td>
+<td>3.4</td>
+<td>0.002</td>
+<td>$120</td>
+<td>GB200/300 主流</td>
+<td>沪电/胜宏可量产</td>
+</tr>
+<tr>
+<td>M8 (Megtron 8)</td>
+<td>3.1</td>
+<td>0.0012</td>
+<td>$180</td>
+<td>Rubin 主板必须</td>
+<td>仅生益送样，2026 量产</td>
+</tr>
+<tr>
+<td>M9 (Megtron 8+)</td>
+<td>3.0</td>
+<td>0.0007</td>
+<td>$300+</td>
+<td>Rubin Midplane/CPX 必须</td>
+<td>仅生益送样</td>
+</tr>
+<tr>
+<td>M10</td>
+<td>&lt;3.0</td>
+<td>&lt;0.0005</td>
+<td>研发中</td>
+<td>Ultra Kyber/Feynman</td>
+<td>东材科技联合开发</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>M9 为何全球仅 3 家能量产</strong>：碳氢树脂配方 + Q-Glass 石英布 + HVLP4/5 铜箔，三项同时上 M9 等级，任何一个不达标整板报废。M7 良率 85% → M8 良率 70% → M9 良率 ~50%。</li>
+</ul>
+<hr>
+<h3>模块 05（Page 6）：Midplane 深挖 — GB→Rubin 最大变量</h3>
+<p><strong>核心内容</strong>：Midplane 不是"PCB 升级"，是"无中生有"的全新品类。</p>
+<ul>
+<li><strong>GB 时代用铜缆的四大痛点</strong>：组装 2 小时、易松动、飞线复杂、无法支持 224G</li>
+<li><strong>Rubin PCB Midplane 的五大优势</strong>：组装 5 分钟、零松动、无线缆设计、支持 224G、可服务性好</li>
+<li><strong>信号路径</strong>：Strata 主板 → Paladin HD2 → Midplane (M9+Q-Glass 44层) → Paladin HD2 → Orchid/CPX 子卡</li>
+<li><strong>Midplane 演进</strong>：</li>
+<li>Rubin NVL144：44 层，0.02m²/块，18 块/rack，~$27K</li>
+<li>Kyber NVL576：78 层 (26+26+26)，整柜级，~$50K+，占整柜 PCB 38%</li>
+<li><strong>5 个关注点</strong>：认证壁垒（12-18 个月）、大陆厂 44 层能做/78 层只 1-2 家、良率是关键（每提升 5% 毛利率 +8-10pp）、Paladin HD2 连接器配套（Amphenol 全球独家）、钻孔设备交期 6-12 个月</li>
+</ul>
+<hr>
+<h3>模块 06（Page 7）：玻璃布 E-Glass→Q-Glass 演进</h3>
+<p><strong>核心内容</strong>：玻璃布占 CCL 体积 40%+，是 PCB 信号性能的真正决定性因素。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>玻璃布等级</th>
+<th>Dk</th>
+<th>Df</th>
+<th>价格/吨</th>
+<th>适配 CCL</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E-Glass</td>
+<td>6.0</td>
+<td>6.0</td>
+<td>~$10K</td>
+<td>M4/M6</td>
+<td>消费电子（淘汰中）</td>
+</tr>
+<tr>
+<td>NE-Glass (Low-Dk1)</td>
+<td>4.7</td>
+<td>2.5</td>
+<td>~$25K</td>
+<td>M6/M7</td>
+<td>GB200</td>
+</tr>
+<tr>
+<td>NER (Low-Dk2)</td>
+<td>4.2-4.6</td>
+<td>1.7-2.3</td>
+<td>~$100K</td>
+<td>M7/M8</td>
+<td>Rubin 主板必须</td>
+</tr>
+<tr>
+<td>NEZ (Low-Dk3)</td>
+<td>~4.0</td>
+<td>~1.0</td>
+<td>~$150K</td>
+<td>M8/M9</td>
+<td>Rubin Ultra 准备</td>
+</tr>
+<tr>
+<td>Q-Glass</td>
+<td>3.8</td>
+<td>0.8-1.0</td>
+<td>$200K+</td>
+<td>M9</td>
+<td>Rubin Midplane 必须</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>日本日东纺 (Nittobo) 一家垄断 90%</strong>，2025/8 涨价 20%，2026 上半年可能再涨 15-20%</li>
+<li><strong>大陆突围路线</strong>：宏和科技（超薄布 + NE2 量产）、中材科技（国内唯一 NE2 量产）、中国巨石（高纯玻纤）</li>
+<li><strong>跳代策略</strong>：跳过 NER（专利在日东纺），直接攻 Q-Glass（石英纤维原料 + 编织工艺，大陆不输日本）</li>
+</ul>
+<hr>
+<h3>模块 07（Page 8）：HVLP 铜箔 — 趋肤效应物理</h3>
+<p><strong>核心内容</strong>：频率越高，电流越集中在导体表面。224G 信号穿透深度仅 2-3um，铜箔表面粗糙度 &gt;3um 则信号"翻山越岭"导致损耗暴增。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>铜箔等级</th>
+<th>Rz (um)</th>
+<th>适配频率</th>
+<th>价格/吨</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard</td>
+<td>6-10</td>
+<td>&lt;1 GHz</td>
+<td>$10K</td>
+<td>消费电子</td>
+</tr>
+<tr>
+<td>VLP</td>
+<td>2-4</td>
+<td>&lt;28 GHz</td>
+<td>$25K</td>
+<td>通信设备</td>
+</tr>
+<tr>
+<td>HVLP3</td>
+<td>1.5-2</td>
+<td>&lt;56 GHz</td>
+<td>$45K</td>
+<td>GB200/300 主流</td>
+</tr>
+<tr>
+<td>HVLP4</td>
+<td>0.8-1.2</td>
+<td>&lt;112 GHz</td>
+<td>$75K</td>
+<td>Rubin 主板必须</td>
+</tr>
+<tr>
+<td>HVLP5</td>
+<td>0.3-0.5</td>
+<td>&lt;224 GHz</td>
+<td>$120K</td>
+<td>Rubin Ultra Kyber</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>日韩占 85%+</strong>，大陆 12% 快速增长中。HVLP4 月产能缺口 15-20%</li>
+<li><strong>全球玩家</strong>：三井 30% → 古河 ~14% → ILJIN ~12% → 福田 ~10% → 隆扬+铜冠+嘉元 ~12%</li>
+<li><strong>关键变量</strong>：HVLP4 缺口、HVLP5 2027 突破、跨境并购（诺德收购卢森堡铜箔）、铜箔价值量 3 年 x6 倍</li>
+</ul>
+<hr>
+<h3>模块 08（Page 9）：信号速率 224G→448G 工程挑战</h3>
+<p><strong>核心内容</strong>：NVLink 6 双向 SerDes 是 PCB 升级的核心驱动力。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>SerDes 代次</th>
+<th>速率</th>
+<th>Baud Rate</th>
+<th>对应世代</th>
+<th>损耗预算</th>
+<th>必须 PCB 材料</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVLink 4</td>
+<td>56G</td>
+<td>28 GHz</td>
+<td>H100</td>
+<td>~40 dB</td>
+<td>M6 + HVLP3 + NE-Glass</td>
+</tr>
+<tr>
+<td>NVLink 5</td>
+<td>112G</td>
+<td>56 GHz</td>
+<td>GB200/300</td>
+<td>~30 dB</td>
+<td>M7 + HVLP3 + NER</td>
+</tr>
+<tr>
+<td>NVLink 6</td>
+<td>224G</td>
+<td>56 GHz (双向)</td>
+<td>Rubin</td>
+<td>~16 dB</td>
+<td>M8/M9 + HVLP4 + Q-Glass</td>
+</tr>
+<tr>
+<td>NVLink 6+</td>
+<td>448G</td>
+<td>75 GHz</td>
+<td>Rubin Ultra</td>
+<td>~10 dB</td>
+<td>M9 + HVLP5 + 100% Q-Glass</td>
+</tr>
+<tr>
+<td>CPO</td>
+<td>896G+</td>
+<td>~150 GHz</td>
+<td>Feynman</td>
+<td>&lt;6 dB</td>
+<td>光信号替代电信号</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>224G 拐点 2026</strong>：大陆 PCB 厂的"分水岭考试"。已通过 224G 验证：沪电、胜宏、生益、景旺 (Delta 认证)</li>
+<li><strong>16 dB 危险</strong>：三大材料厂 (CCL/铜箔/玻璃布) 必须同时升级，缺一不可</li>
+<li><strong>CPO 2029 颠覆</strong>：长距离 PCB 走线需求骤减，但 2027 前不构成威胁</li>
+</ul>
+<hr>
+<h3>模块 09（Page 10）：HDI 阶数与工艺难度</h3>
+<p><strong>核心内容</strong>：HDI 阶数 = 激光钻孔次数 + 压合次数 = 工艺难度的"指数"。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>阶数</th>
+<th>结构</th>
+<th>钻孔次数</th>
+<th>价格倍数</th>
+<th>良率</th>
+<th>线宽 (um)</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 阶</td>
+<td>1+N+1</td>
+<td>1 次</td>
+<td>1x</td>
+<td>95%</td>
+<td>75</td>
+<td>手机/手表</td>
+</tr>
+<tr>
+<td>2 阶</td>
+<td>2+N+2</td>
+<td>2 次</td>
+<td>1.5x</td>
+<td>85%</td>
+<td>60</td>
+<td>中端通信</td>
+</tr>
+<tr>
+<td>3 阶</td>
+<td>3+N+3</td>
+<td>3 次</td>
+<td>2.5x</td>
+<td>70%</td>
+<td>50</td>
+<td>高端通信</td>
+</tr>
+<tr>
+<td>4 阶</td>
+<td>4+N+4</td>
+<td>4 次</td>
+<td>5x</td>
+<td>55%</td>
+<td>40</td>
+<td>GB200 主板</td>
+</tr>
+<tr>
+<td>5 阶</td>
+<td>5+N+5</td>
+<td>5 次</td>
+<td>10x</td>
+<td>50%</td>
+<td>30</td>
+<td>GB300/Rubin CX9/CPX</td>
+</tr>
+<tr>
+<td>6 阶</td>
+<td>6+N+6</td>
+<td>6 次</td>
+<td>19x+</td>
+<td>25%</td>
+<td>20</td>
+<td>Rubin Ultra Kyber</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>5 阶 HDI 大陆仅 3 家</strong>：胜宏科技（第一供应商）、沪电股份、联能科技</li>
+<li><strong>6 阶 HDI 全球 &lt;3 家</strong>：2026 突破 = Rubin Ultra 入场券</li>
+<li><strong>良率杠杆</strong>：良率每提升 5%，毛利率多 10-12 个点</li>
+<li><strong>设备瓶颈</strong>：4 阶以上必须 UV 激光钻孔机，日本三菱+LPKF 独家</li>
+</ul>
+<hr>
+<h3>模块 10（Page 11）：单柜 PCB 价值金字塔</h3>
+<p><strong>核心内容</strong>：GB300 $35K → Rubin NVL144 $117K (+233%) → Rubin Ultra $160K+ (+370%)</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>PCB 板</th>
+<th>数量/柜</th>
+<th>GB300 单价</th>
+<th>Rubin 单价</th>
+<th>GB300 总值</th>
+<th>Rubin 总值</th>
+<th>变化驱动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bianca 主板</td>
+<td>18</td>
+<td>$1,540</td>
+<td>$2,000</td>
+<td>$27,720</td>
+<td>$36,000</td>
+<td>22→24 层，HVLP3→HVLP4</td>
+</tr>
+<tr>
+<td>NVSwitch</td>
+<td>9</td>
+<td>$700</td>
+<td>$1,100</td>
+<td>$6,300</td>
+<td>$9,900</td>
+<td>26→32 层，M8 升级</td>
+</tr>
+<tr>
+<td>Midplane ★新</td>
+<td>18</td>
+<td>$0</td>
+<td>$1,500</td>
+<td>$0</td>
+<td>$27,000</td>
+<td>全新品类，替代 cable</td>
+</tr>
+<tr>
+<td>Orchid 模块 ★新</td>
+<td>72</td>
+<td>$0</td>
+<td>—</td>
+<td>$0</td>
+<td>$19,440</td>
+<td>全新模块，CX9+OSFP+NVMe+CPX</td>
+</tr>
+<tr>
+<td>BF-4 DPU ★新</td>
+<td>18</td>
+<td>$0</td>
+<td>$400</td>
+<td>$0</td>
+<td>$7,200</td>
+<td>新增 BlueField-4 DPU</td>
+</tr>
+<tr>
+<td>PDB 电源板</td>
+<td>18</td>
+<td>$60</td>
+<td>$120</td>
+<td>$1,080</td>
+<td>$2,160</td>
+<td>12→14 层，厚铜</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><strong>$35,100</strong></td>
+<td><strong>$116,700</strong></td>
+<td><strong>+$81,600 (+233%)</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>四大价值驱动因素</strong>：
+1. 新增 PCB 品类（56%）：Midplane + Orchid + BF-4 = $53K
+2. 现有板层数升级（18%）：Bianca + NVSwitch + PDB
+3. CCL 材料跃迁（12%）：M7→M8/M9
+4. 面积扩大 + 物理换代（12%）</p>
+<hr>
+<h3>模块 11（Page 12）：上游卡脖子 vs 大陆突围</h3>
+<p><strong>核心内容</strong>：日本一国扼住整个 AI PCB 上游。</p>
+<ul>
+<li><strong>四级卡脖子等级</strong>：</li>
+<li>L1 致命卡死（3 个）：Q-Glass 玻璃布（日东纺 90%）、HVLP5 铜箔（三井/隆扬/古河）、M9 树脂（日立化成 95%）</li>
+<li>L2 紧供应（3 个）：HVLP4 铜箔、NER 玻璃布、NEZ 玻璃布</li>
+<li>L3 可替代（2 个）：M8 CCL、UV 激光钻孔机</li>
+<li>
+<p>L4 完全自主（1 个）：Standard/VLP 铜箔</p>
+</li>
+<li>
+<p><strong>日本三大公司各卡一段</strong>：</p>
+</li>
+<li>日东纺 (Nittobo) → 玻璃布 90% + Q-Glass</li>
+<li>三井金属 → HVLP4 铜箔 30% + HVLP5 铜箔</li>
+<li>日立化成 + Showa → M9 树脂 95%</li>
+</ul>
+<hr>
+<h3>模块 12（Page 13）：国产替代时间表</h3>
+<p><strong>核心内容</strong>：8 大环节 × 三代 = 24 个具体时间窗。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>环节</th>
+<th>核心大陆厂</th>
+<th>GB200 (2024)</th>
+<th>GB300 (2025)</th>
+<th>Rubin (2026H2)</th>
+<th>Rubin Ultra (2027H2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCB 制造</td>
+<td>沪电/胜宏</td>
+<td>35%</td>
+<td>50%</td>
+<td>60%</td>
+<td>65%</td>
+</tr>
+<tr>
+<td>5 阶 HDI</td>
+<td>胜宏</td>
+<td>25%</td>
+<td>40%</td>
+<td>55%</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>M8 CCL</td>
+<td>生益</td>
+<td>0%</td>
+<td>5%</td>
+<td>35%</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>M9 CCL</td>
+<td>生益</td>
+<td>0%</td>
+<td>0%</td>
+<td>5%</td>
+<td>45%</td>
+</tr>
+<tr>
+<td>HVLP4 铜箔</td>
+<td>铜冠/诺德</td>
+<td>0%</td>
+<td>5%</td>
+<td>25%</td>
+<td>35%</td>
+</tr>
+<tr>
+<td>HVLP5 铜箔</td>
+<td>隆扬电子</td>
+<td>0%</td>
+<td>0%</td>
+<td>5%</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>NE2 玻纤布</td>
+<td>宏和/中材</td>
+<td>0%</td>
+<td>5%</td>
+<td>25%</td>
+<td>40%</td>
+</tr>
+<tr>
+<td>Q-Glass</td>
+<td>宏和科技</td>
+<td>0%</td>
+<td>0%</td>
+<td>3%</td>
+<td>12%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>大陆 PCB 三大梯队</strong>：
+- <strong>Tier 1 已上车</strong>：沪电股份、胜宏科技、生益科技、景旺电子、方正科技
+- <strong>Tier 2 突破期</strong>：东材科技、铜冠铜箔、宏和科技、中材科技、诺德股份
+- <strong>Tier 3 Ultra 弹性</strong>：隆扬电子、中英科技、华正新材、南亚新材、深南电路</p>
+<hr>
+<h3>模块 13（Page 14）：全球玩家七国演义</h3>
+<p><strong>核心内容</strong>：全球 AI PCB 市场份额 — 台湾 30%、大陆 25%、日韩 22%、其他 23%。</p>
+<p><strong>NVIDIA 供应链核心玩家</strong>：
+- <strong>台湾</strong>：臻鼎 (ZDT) — 全球最大，Bianca + Switch 主力；欣兴电子 (Unimicron) — ABF 载板龙头
+- <strong>大陆</strong>：胜宏科技 — HDI 主力，全球显卡 PCB 50%；沪电股份 — 高多层板北美 80%；生益科技 — 大陆唯一 M9 CCL
+- <strong>韩国</strong>：三星电机 — FC-BGA 载板，二供地位
+- <strong>日本</strong>：Ibiden — ABF 载板全球第一，NVIDIA GPU 封装载板独家
+- <strong>美国</strong>：TTM Technologies — 国防+AI 双驱动
+- <strong>奥地利</strong>：AT&amp;S — ABF 载板，2026 扩产</p>
+<p><strong>玩家定位四象限</strong>：大陆军团正从"右下（低价+低技术）"向"右上（高价+高技术）"快速突破。</p>
+<hr>
+<h3>模块 14（Page 15）：重仓评分矩阵</h3>
+<p><strong>核心内容</strong>：6 维度 × 12 标的评分（认证/技术/价值/产能/业绩/估值）。</p>
+<p><strong>三档配置建议</strong>：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>档位</th>
+<th>评分</th>
+<th>标的</th>
+<th>配置逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>核心仓</strong></td>
+<td>21+</td>
+<td>沪电股份、胜宏科技、生益科技</td>
+<td>已在 NVIDIA BoM，业绩兑现度高，Rubin 升级直接受益</td>
+</tr>
+<tr>
+<td><strong>进攻仓</strong></td>
+<td>17-20</td>
+<td>景旺电子、方正科技、东材科技、宏和科技</td>
+<td>2026 H1 M8+NE2+HVLP4 "三重拐点"，提前布局赔率最大</td>
+</tr>
+<tr>
+<td><strong>期权仓</strong></td>
+<td>14-16</td>
+<td>隆扬电子、铜冠铜箔、中英科技、中材科技、诺德股份</td>
+<td>押 Rubin Ultra 2027 时代 HVLP5/PTFE/NE2 大突破</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>四大风险</strong>：
+1. 估值已透支（胜宏 PE 60+，沪电 PE 35+）
+2. NVIDIA 砍价（Q-Glass→Q+E 混压降成本 20%）
+3. 时间错位（Rubin 量产可能延期到 2027 H1）
+4. CPO 长期颠覆（2029+ CPO 普及，高多层板需求拐点）</p>
+<hr>
+<h3>模块 15（Page 16）：三级警报 + 催化剂时间表</h3>
+<p><strong>核心内容</strong>：24 个月事件驱动时间线 + 绿/黄/红三级仓位管理。</p>
+<p><strong>10 大关键事件时间线</strong>：
+- 26 Q1：GTC 2026 公布 Rubin 技术参数 → 胜宏/沪电
+- 26 Q1：生益 M8 CCL 量产 → 毛利率 +5pp
+- 26 Q2：25 年报 + 26Q1 业绩验证 → 全部 PCB 龙头
+- 26 Q2-Q3：NE2 玻纤布国产爆发 → 中材/宏和
+- 26 H2：Rubin NVL144 量产 → PCB 订单 x3
+- 26 Q4：NVIDIA Q-Glass 评估（是否降级）→ 宏和/中材
+- 27 Q1：Q-Glass 国产突破 → 宏和/中材估值重定价
+- 27 Q1：GTC 2027 + Ultra 揭幕 → 隆扬/东材
+- 27 Q2：HVLP5 量产突破 → 隆扬电子
+- 27 H2：Rubin Ultra 量产 → 核心仓兑现</p>
+<p><strong>三级警报机制</strong>：
+- 🟢 绿灯加仓：量产提前 / 国产化突破 / 业绩超预期 / 日企涨价
+- 🟡 黄灯观察：量产推迟 3-6 月 / Q-Glass 降级 / 业绩符合预期 / PE&gt;70
+- 🔴 红灯减仓：量产推迟 1 年以上 / 业绩大幅低于预期 / 美国制裁 / CPO 超预期</p>
+<hr>
+<h3>模块 16（Page 17）：数据核对附录</h3>
+<p><strong>核心内容</strong>：所有产业数据 + 业绩兑现度逐条核对到原始来源。</p>
+<p><strong>7 大标的业绩核对</strong>：
+- 沪电股份：25H1 净利 ~26.7 亿 (+47%)，北美占比 78% ✅
+- 胜宏科技：26Q1 净利 9.18 亿 (+339%)，HDI 良率 85%+ ✅
+- 生益科技：25H1 净利 8.6-9.2 亿 (+432-471%)，M9 送样 ✅
+- 景旺电子：24Q4 通过 Delta 认证，Switch Tray 放量 ✅
+- 隆扬电子：Rz=1.5um 量产，通过台光/生益等认证，Rubin 送样未确认 ⚠️
+- 东材科技：M9 碳氢树脂确认供深南客户，M10 联合开发为市场传闻 ⚠️
+- 宏和科技：NE2 已量产，NVIDIA 直接认证未明确 ⚠️</p>
+<p><strong>6 大数据缺口（诚实披露）</strong>：Rubin 参数未官宣、大陆直供份额不公开、隆扬/东材 Rubin 状态待确认、单板单价估算偏差、Q-Glass 100% 是否降级、Rubin 量产时间可能延期。</p>
+<hr>
+<h3>模块 17（Page 18）：Rubin Ultra Kyber — 78 层终极一跳</h3>
+<p><strong>核心内容</strong>：Oberon (NVL144) → Kyber (NVL576) 架构级重写。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>Oberon (Rubin)</th>
+<th>Kyber (Ultra)</th>
+<th>变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCB 层数</td>
+<td>44 层</td>
+<td>78 层 (26+26+26)</td>
+<td>+77%</td>
+</tr>
+<tr>
+<td>厚度</td>
+<td>4.5mm</td>
+<td>7.5mm</td>
+<td>+67%</td>
+</tr>
+<tr>
+<td>CCL</td>
+<td>M9</td>
+<td>M9+ (新一代)</td>
+<td>升级</td>
+</tr>
+<tr>
+<td>铜箔</td>
+<td>HVLP4</td>
+<td>HVLP5 ★</td>
+<td>升级</td>
+</tr>
+<tr>
+<td>玻璃布</td>
+<td>Q-Glass 部分</td>
+<td>100% Q-Glass</td>
+<td>升级</td>
+</tr>
+<tr>
+<td>SerDes</td>
+<td>224G</td>
+<td>448G</td>
+<td>翻倍</td>
+</tr>
+<tr>
+<td>HDI 阶数</td>
+<td>5+12+5</td>
+<td>6+12+6</td>
+<td>+1 阶</td>
+</tr>
+<tr>
+<td>单块价值</td>
+<td>~$1,500</td>
+<td>~$3,000+</td>
+<td>翻倍</td>
+</tr>
+<tr>
+<td>单柜 Midplane</td>
+<td>~$27K</td>
+<td>~$54K</td>
+<td>x2</td>
+</tr>
+<tr>
+<td>Midplane 占比</td>
+<td>23%</td>
+<td><strong>38%（第一蛋糕）</strong></td>
+<td>+15pp</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>四个最终判断</strong>：
+1. Midplane 取代 Bianca 成为第一蛋糕 → 沪电股份（Midplane 已通过认证）
+2. HVLP5 是 Kyber 必需 → 隆扬电子（国内唯一接近三井）
+3. M10 CCL 联合开发 → 东材科技（大陆唯一进 NVIDIA R&amp;D 链）
+4. 6 阶 HDI 准入考试 → 胜宏科技（5/6 阶量产 + 良率 85%+）</p>
+<hr>
+<h2>二、A 股核心受益标的梳理</h2>
+<h3>按产业链环节分类</h3>
+<div class="codehilite"><pre><span></span><code>AI PCB 产业链全景
+├── 上游材料
+│   ├── CCL（覆铜板）
+│   │   ├── ★ 生益科技 (600183) — 大陆唯一 M9 CCL 送样 NVIDIA，M8 已量产
+│   │   ├── 华正新材 (603186) — M8/M9 跟进，第二梯队
+│   │   └── 南亚新材 (688519) — 高频高速覆铜板布局，M8 跟进
+│   ├── 玻璃布
+│   │   ├── ★ 宏和科技 (603256) — 全球超薄电子布龙头，月产 10 万米，NE2 量产
+│   │   ├── 中材科技 (002080) — 国内唯一 NE2 量产，绑定胜宏
+│   │   └── 中国巨石 (600176) — 高纯玻纤，华正 CCL 一体
+│   ├── 铜箔
+│   │   ├── ★ 隆扬电子 (301389) — HVLP4 量产，HVLP5 国内唯一接近三井水平
+│   │   ├── 铜冠铜箔 (301217) — HVLP4 量产，送样 Rubin
+│   │   ├── 嘉元科技 (688388) — HVLP3-4 量产
+│   │   └── 诺德股份 (600110) — 收购卢森堡铜箔，切入斗山-NVIDIA 供应链
+│   ├── 树脂
+│   │   └── ★ 东材科技 (601208) — NVIDIA GB300 封装树脂全球独家，M9/M10 碳氢树脂
+│   └── PTFE 高频材料
+│       └── 中英科技 (300936) — PTFE 高频覆铜板全球 6.4%，市值仅 31 亿
+│
+├── 中游 PCB 制造
+│   ├── ★ 沪电股份 (002463) — 高多层板北美 80% 份额，Midplane 主力供应商
+│   ├── ★ 胜宏科技 (300476) — HDI 主力，全球显卡 PCB 50% 份额，26Q1 净利 +339%
+│   ├── 景旺电子 (603228) — 2024Q4 通过 Delta 认证，Switch Tray 高多层板
+│   ├── 方正科技 (600601) — Gamma 认证，供 Mellanox
+│   ├── 中京电子 (002579) — 高端 HDI 产能利用率 90%+
+│   └── 深南电路 (002916) — ABF 载板突破进展（Tier 3）
+│
+├── 设备
+│   ├── 大族数控 (301200) — UV 激光钻孔机 + 机械钻孔机国产替代
+│   └── 大族激光 (002008) — UV 激光器
+│
+├── 连接器
+│   └── 立讯精密 (002475) — Paladin HD2 高速连接器认证中
+│
+└── 光模块（长期变量）
+    ├── 中际旭创 (300308) — CPO 光模块
+    └── 新易盛 (300502) — 光模块
+</code></pre></div>
+
+<h3>按投资优先级排序</h3>
+<h4>🏆 Tier 1 — 核心仓（已在 NVIDIA BoM，业绩已兑现）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>名称</th>
+<th>核心逻辑</th>
+<th>关键数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>002463</td>
+<td><strong>沪电股份</strong></td>
+<td>高多层板北美 80% 份额，Midplane 主力，GB300 订单排到 26Q2</td>
+<td>25H1 净利 ~26.7 亿 (+47%)</td>
+</tr>
+<tr>
+<td>300476</td>
+<td><strong>胜宏科技</strong></td>
+<td>AI HDI 第一供应商，全球显卡 PCB 50%，5/6 阶 HDI 良率 85%+</td>
+<td>26Q1 净利 9.18 亿 (+339%)</td>
+</tr>
+<tr>
+<td>600183</td>
+<td><strong>生益科技</strong></td>
+<td>大陆唯一 M9 CCL 送样 NVIDIA，M8 已量产，上游卡位最优</td>
+<td>25H1 净利 8.6-9.2 亿 (+432-471%)</td>
+</tr>
+</tbody>
+</table></div>
+<h4>🚀 Tier 2 — 进攻仓（2026 H1 三重拐点，弹性 5-10 倍）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>名称</th>
+<th>核心逻辑</th>
+<th>关键催化剂</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>603228</td>
+<td><strong>景旺电子</strong></td>
+<td>Delta 认证 Switch Tray 高多层板，Rubin 增量显著</td>
+<td>25Q1-Q3 高多层板收入显著放量</td>
+</tr>
+<tr>
+<td>601208</td>
+<td><strong>东材科技</strong></td>
+<td>NVIDIA GB300 封装树脂全球独家，M9/M10 碳氢树脂联合开发</td>
+<td>M10 若通过验证，2027 直接进入 BoM</td>
+</tr>
+<tr>
+<td>600601</td>
+<td><strong>方正科技</strong></td>
+<td>Gamma 认证供 Mellanox，估值合理</td>
+<td>Rubin 订单放量</td>
+</tr>
+<tr>
+<td>603256</td>
+<td><strong>宏和科技</strong></td>
+<td>全球超薄电子布龙头，NE2 量产通过 NVIDIA 认证</td>
+<td>Nittobo 涨价直接受益，Q-Glass 跳代机会</td>
+</tr>
+</tbody>
+</table></div>
+<h4>🎯 Tier 3 — 期权仓（押 Rubin Ultra 2027 跃迁，市值小赔率高）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>名称</th>
+<th>核心逻辑</th>
+<th>关键催化剂</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>301389</td>
+<td><strong>隆扬电子</strong></td>
+<td>HVLP5 国内唯一接近三井水平，通过台光认证</td>
+<td>2026 突破 HVLP5 量产 = 2027 大单</td>
+</tr>
+<tr>
+<td>301217</td>
+<td><strong>铜冠铜箔</strong></td>
+<td>HVLP4 量产，弹性较好</td>
+<td>2026 H2 量产关键节点</td>
+</tr>
+<tr>
+<td>300936</td>
+<td><strong>中英科技</strong></td>
+<td>PTFE 高频覆铜板全球 6.4%，市值仅 31 亿</td>
+<td>弹性最大但客户集中度低</td>
+</tr>
+<tr>
+<td>002080</td>
+<td><strong>中材科技</strong></td>
+<td>国内唯一 NE2 量产，绑定胜宏</td>
+<td>NE2 玻纤爆发受益</td>
+</tr>
+<tr>
+<td>600110</td>
+<td><strong>诺德股份</strong></td>
+<td>收购卢森堡铜箔，切入斗山-NVIDIA</td>
+<td>并购式突围</td>
+</tr>
+<tr>
+<td>603186</td>
+<td><strong>华正新材</strong></td>
+<td>M8/M9 跟进，第二梯队</td>
+<td>若 2026-2027 突破 M8/M9 量产弹性极大</td>
+</tr>
+</tbody>
+</table></div>
+<h4>🔧 设备/连接器/光模块配套</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>名称</th>
+<th>核心逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>301200</td>
+<td>大族数控</td>
+<td>UV 激光钻孔机国产替代，PCB 厂设备降本关键</td>
+</tr>
+<tr>
+<td>002008</td>
+<td>大族激光</td>
+<td>UV 激光器，设备交期 12-18 月，国产替代紧迫</td>
+</tr>
+<tr>
+<td>002475</td>
+<td>立讯精密</td>
+<td>Paladin HD2 高速连接器认证中（Amphenol 独家替代机会）</td>
+</tr>
+<tr>
+<td>002916</td>
+<td>深南电路</td>
+<td>ABF 载板突破进展，大陆 PCB 最大边界（Tier 3）</td>
+</tr>
+<tr>
+<td>300308</td>
+<td>中际旭创</td>
+<td>CPO 光模块，2029+ 长期变量</td>
+</tr>
+<tr>
+<td>300502</td>
+<td>新易盛</td>
+<td>光模块，CPO 长期变量</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>三、关键跟踪信号</h2>
+<h3>季度/月度必看指标</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>信号</th>
+<th>频率</th>
+<th>影响标的</th>
+<th>解读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVIDIA 季报（数据中心业务）</td>
+<td>每季 2/5/8/11 月</td>
+<td>全部</td>
+<td>是否提到 Rubin 量产时间表</td>
+</tr>
+<tr>
+<td>生益科技季报（M8/M9 进度）</td>
+<td>每季</td>
+<td>生益科技</td>
+<td>M9 量产 = 重磅信号</td>
+</tr>
+<tr>
+<td>TPCA 月度数据</td>
+<td>每月 25 日</td>
+<td>沪电/胜宏</td>
+<td>台湾 PCB 产值环比 = NVIDIA 上游订单</td>
+</tr>
+<tr>
+<td>Nittobo IR 公告（涨价）</td>
+<td>每季</td>
+<td>宏和/中材</td>
+<td>涨价幅度 = 供需紧张 = 国产替代弹性</td>
+</tr>
+<tr>
+<td>沪电/胜宏月度产销</td>
+<td>每月</td>
+<td>沪电/胜宏</td>
+<td>高端 HDI 出货环比 + ASP 变化</td>
+</tr>
+<tr>
+<td>ABF 载板涨价</td>
+<td>不定期</td>
+<td>深南电路</td>
+<td>Ibiden/Unimicron/AT&amp;S 涨价频率</td>
+</tr>
+</tbody>
+</table></div>
+<h3>关键事件节点</h3>
+<ul>
+<li><strong>2026 Q1</strong>：GTC 2026 公布 Rubin 具体参数 → 最大催化剂</li>
+<li><strong>2026 Q2</strong>：年报+Q1 业绩验证 → 业绩兑现</li>
+<li><strong>2026 Q2-Q3</strong>：NE2 玻纤布国产爆发 → 中材/宏和</li>
+<li><strong>2026 H2</strong>：Rubin NVL144 量产 → PCB 订单 x3</li>
+<li><strong>2027 H1</strong>：GTC 2027 + Ultra 揭幕 → 下一波行情起点</li>
+<li><strong>2027 H2</strong>：Rubin Ultra 量产 → 核心仓兑现</li>
+</ul>
+<hr>
+<p><em>注：以上标的均为报告原文提及的 A 股公司，投资决策需结合独立研究和风险评估。报告部分数据基于推测（SemiAnalysis/大摩预测），NVIDIA 最终规格以 GTC 2026 官方公布为准。</em></p>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年5月25日</p>
+</footer>
+
+</body>
+</html>
