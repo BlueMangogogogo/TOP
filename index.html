@@ -21,8 +21,6 @@ a{color:var(--blue);text-decoration:none}button{font-family:inherit}
 .btn-accent{background:var(--blue)!important;color:#fff!important;border-color:var(--blue)!important;font-weight:600}
 .btn-accent:hover{background:var(--cyan)!important;border-color:var(--cyan)!important}
 .btn-accent.active{background:var(--cyan)!important;border-color:var(--cyan)!important}
-.btn-report{padding:7px 18px;border:1px solid var(--magenta);border-radius:8px;background:rgba(219,39,119,.08);color:var(--magenta);cursor:pointer;font-size:13px;font-weight:600;text-decoration:none;transition:.2s;white-space:nowrap}
-.btn-report:hover{background:rgba(219,39,119,.16)}
 .search-bar{max-width:1900px;margin:0 auto;padding:14px 32px 10px;display:flex;gap:10px;align-items:center}
 .search-bar input{flex:1;padding:9px 16px;border:1px solid var(--border);border-radius:8px;background:var(--bg2);color:var(--text);font-size:14px;outline:none}
 .search-bar input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
@@ -108,7 +106,7 @@ a{color:var(--blue);text-decoration:none}button{font-family:inherit}
 
 <div class="top-bar">
   <div><span class="brand">📊 板块资金雷达</span><span class="tagline" id="headerDate">通达信概念板块 · 2026-05-25 · 269个板块</span></div>
-  <div class="right"><a href="https://bluemangogogogo.github.io/TOP/reports.html" class="btn-report" target="_blank">📄 分析报告</a><span class="future">未来已来</span><button class="theme-btn" onclick="toggleTheme()" title="切换主题">☀️</button><button id="btnAll" class="btn-accent" onclick="toggleAll()">📋 全部板块</button></div>
+  <div class="right"><span class="future">未来已来</span><button class="theme-btn" onclick="toggleTheme()" title="切换主题">☀️</button><button id="btnAll" class="btn-accent" onclick="toggleAll()">📋 全部板块</button></div>
 </div>
 
 <div class="search-bar">
