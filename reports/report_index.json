@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-05-26 23:05:20",
-  "total": 12,
-  "daily_count": 7,
+  "last_updated": "2026-05-26 23:19:05",
+  "total": 13,
+  "daily_count": 8,
   "industry_count": 5,
   "reports": [
     {
@@ -23,6 +23,16 @@
       "title": "午盘扫描 — 2026年5月26日",
       "relative_path": "reports/2026-05-26/午盘扫描 — 2026年5月26日.html",
       "size_kb": 13.9
+    },
+    {
+      "id": "2026-05-26-📊 浩泉深度复盘 — 2026年5月26日（周二）",
+      "date": "2026-05-26",
+      "display_date": "5月26日",
+      "type": "daily",
+      "category": "深度复盘",
+      "title": "📊 浩泉深度复盘 — 2026年5月26日（周二）",
+      "relative_path": "reports/2026-05-26/📊 浩泉深度复盘 — 2026年5月26日（周二）.html",
+      "size_kb": 18.4
     },
     {
       "id": "2026-05-25-5月25日 午盘扫描",
