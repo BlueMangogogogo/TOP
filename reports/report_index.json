@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-05-27 19:23:21",
-  "total": 14,
-  "daily_count": 9,
+  "last_updated": "2026-05-27 19:32:43",
+  "total": 15,
+  "daily_count": 10,
   "industry_count": 5,
   "reports": [
     {
@@ -13,6 +13,16 @@
       "title": "5月27日 早盘扫描",
       "relative_path": "reports/2026-05-27/5月27日 早盘扫描.html",
       "size_kb": 8.3
+    },
+    {
+      "id": "2026-05-27-午盘扫描",
+      "date": "2026-05-27",
+      "display_date": "5月27日",
+      "type": "daily",
+      "category": "午盘扫描",
+      "title": "午盘扫描",
+      "relative_path": "reports/2026-05-27/午盘扫描.html",
+      "size_kb": 10.8
     },
     {
       "id": "2026-05-26-5月27日 早盘扫描",
