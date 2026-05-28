@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>浩泉每日深度复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>浩泉每日深度复盘</h1>
+  <div class="meta">
+    📅 2026年05月28日 23:03
+  </div>
+</header>
+
+<p><strong>日期：2026年5月28日（周四）</strong> | <strong>上证收盘：4098.64</strong> | <strong>两市成交：2.97万亿</strong></p>
+<hr>
+<h2>一、大盘速览</h2>
+<p>上证指数今日探底回升，早盘低开4080后最低下探至<strong>4055.83</strong>，随后震荡回升，尾盘收于<strong>4098.64</strong>，微涨<strong>+0.12%</strong>，终结两连阴。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘点位</th>
+<th>涨跌幅</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>4098.64</td>
+<td>+0.12%</td>
+<td>全日振幅1.35%</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>15861.89</td>
+<td>+0.80%</td>
+<td>强于沪指</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>—</td>
+<td><strong>+1.96%</strong></td>
+<td>盘中一度跌超1%后V转</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>两市成交总额：2.97万亿</strong>，较前日缩量约2704亿元（-8%），为连续两日缩量。放量/缩量定性：<strong>缩量企稳</strong>。</p>
+<p><strong>涨跌家数：上涨3018家</strong>，下跌约1650家，涨跌比约<strong>1.8:1</strong>，赚钱效应回暖。</p>
+<p><strong>涨停126家（含ST）/ 跌停12家（含ST）</strong>，市场情绪中性偏暖，非ST真实跌停仅少数。</p>
+<p><strong>炸板率</strong>：今日多只高位股开板次数较多（天通股份13次、科瑞技术20次、有研新材9次、沃格光电7次、华电能源7次），显示资金高位分歧加剧。</p>
+<hr>
+<h2>二、技术面：关键支撑与压力</h2>
+<p><strong>均线系统：</strong>
+- MA20（约4148）：短线压力，今日收盘仍低于MA20
+- MA60（约4120）：中期均线，前期多次在此获支撑
+- MA120（约4020）：长期支撑线，今日最低4055未触及</p>
+<p><strong>压力位：</strong>
+- 近端：4100-4120（整数关+MA60）
+- 中端：4150（MA20）
+- 远端：4200-4258（前期高点区域，5月14日创年内最高4258.86）</p>
+<p><strong>支撑位：</strong>
+- 近端：4055（今日低点）
+- 中端：4020（MA120）
+- 远端：3950-4000（3月低点支撑区）</p>
+<p><strong>形态判断：</strong> 上证在4258见顶后连续回调两周，今日在4055处获得支撑收出下影阳线，短期止跌信号出现。但MA20已拐头向下，MACD死叉运行，短期仍在震荡筑底格局中。</p>
+<hr>
+<h2>三、主线题材拆解</h2>
+<h3>🔥 主线一：PCB/覆铜板/电子材料（今日最强主线）</h3>
+<p><strong>催化</strong>：英伟达下一代Vera Rubin机架PCB价值量大增；英伟达VR200 NVL72服务器将使用约60万个MLCC；台积电3nm下半年涨价15%</p>
+<p><strong>涨停核心梯队：</strong>
+| 股票 | 板数 | 核心逻辑 |
+|------|------|---------|
+| 宝鼎科技 | 16天10板 | 电子铜箔+覆铜板，国内全流程龙头 |
+| 中京电子 | 3连板 | 柔性电路板(FPC)，人形机器人+PCB |
+| 博杰股份 | 5天3板 | 划片机+玻璃基板，京东方康宁合作 |
+| 宏和科技 | 5天3板 | 电子级玻璃纤维布龙头，AI服务器PCB核心上游 |
+| 诺德股份 | 首板 | HVLP铜箔通过下游认证，一季度扭亏 |
+| 金安国纪 | 首板 | 覆铜板+电子级玻纤布 |
+| 中国巨石 | 首板 | 世界玻纤龙头，扩产电子布 |
+| 东方材料 | 首板 | PCB电子油墨+东方超算 |</p>
+<p><strong>20cm方向：</strong>
+- 本川智能（+20%）：PCB概念+通信设备
+- 奕东电子（+20%）：液冷+连接器，进入全球顶级AI算力平台供应链</p>
+<p><strong>概念定位强调</strong>：PCB概念 ≠ 半导体设计 ≠ 芯片制造。当前交易的核心逻辑是<strong>AI算力硬件升级带来的PCB用量和价值量双重提升</strong>，属于硬件基础设施受益链，与华为芯片替代逻辑是两个独立方向。</p>
+<hr>
+<h3>🔥 主线二：半导体/芯片（持续活跃）</h3>
+<p><strong>催化</strong>：华为发布半导体"韬定律"；台积电3nm下半年涨价15%，明年或再涨10%；国家大基金领投DeepSeek</p>
+<p><strong>涨停核心：</strong>
+- 中兴通讯（首板）：全球通信设备巨头+中兴微电子，华为芯片催化+6G核心玩家
+- 有研新材（首板）：12英寸高纯钽/钴靶材批量应用
+- 光智科技（+20%）：红外光学全产业链，MEMS芯片+Q1利润增61%
+- 燕东微（+20%）：半导体晶圆制造
+- 万通发展（首板）：数渡科技PCIe5.0交换芯片
+- 沃格光电（3天2板）：玻璃基封装载板批量送样</p>
+<p><strong>资金分化</strong>：江丰电子虽涨10.71%但主力净流出5700万，显示高位兑现压力；寒武纪主力净流入6.18亿，机构资金仍在核心品种上布局。</p>
+<hr>
+<h3>🔥 主线三：MLCC/被动元件</h3>
+<p><strong>催化</strong>：英伟达VR200 NVL72服务器将使用约60万个MLCC</p>
+<ul>
+<li>风华高科（8天4板）：国内被动元件龙头，MLCC已批量导入AI服务器</li>
+<li>鸿远电子（5天2板）：航天级MLCC供应商</li>
+<li>皖维高新（首板）：MLCC用PVB树脂，一字板</li>
+<li>江海股份（2连板）：超级电容产品适配GB300方案</li>
+</ul>
+<hr>
+<h3>🔥 主线四：金刚石散热/新材料</h3>
+<p><strong>催化</strong>：金刚石散热应用爆发</p>
+<ul>
+<li>黄河旋风（5天4板）：金刚石-碳化硅复合材料国际先进水平</li>
+<li>四方达（+20%）：CVD金刚石，控股子公司MPCVD技术</li>
+<li>恒盛能源（5天3板）：MPCVD金刚石生产，切入GPU散热</li>
+</ul>
+<hr>
+<h3>🔥 主线五：电力/能源</h3>
+<p><strong>催化</strong>：南方电网电力负荷提前一个月创新高；数据中心面临55GW电力缺口</p>
+<ul>
+<li>华电能源（4连板）：华电集团旗下，黑龙江最大发电运营商，多次开板分歧</li>
+<li>粤电力A（2连板）：广东最大电力上市公司，60亿光伏投资</li>
+<li>浙江新能（首板）：浙能集团新能源平台</li>
+</ul>
+<hr>
+<h3>🔥 主线六：商业航天</h3>
+<p><strong>催化</strong>：SpaceX向SEC提交S-1注册声明，将在纳斯达克上市</p>
+<ul>
+<li>云南锗业（首板）：空间卫星电池用锗晶片，年产125万片</li>
+<li>再升科技（首板）：为SpaceX出口超高温绝热材料</li>
+</ul>
+<hr>
+<h2>四、板块资金雷达趋势分析</h2>
+<p>（基于板块资金雷达HTML数据，今日269个概念板块）</p>
+<p><strong>资金进攻方向（波段流入率TOP方向）：</strong>
+- PCB概念、芯片相关：连续多日在榜，机构持续加仓
+- MLCC/被动元件：近期新上榜，流入加速
+- 金刚石散热：短期爆发型流入
+- 光通信/CPO：光纤涨价催化，联特科技+20%主力净流入7.72亿</p>
+<p><strong>退潮信号：</strong>
+- 前期高标股出现明显分化，部分高位断板后反包失败
+- 个别强势板块内部资金博弈加剧（炸板率高）
+- 电力板块华电能源4连板但7次开板，筹码松动</p>
+<p><strong>机构建仓信号（连续3-5天在榜+流入率上升+股价未大涨）：</strong>
+- 覆铜板/玻纤布方向（中国巨石、宏和科技等相对低位启动）
+- MLCC上游材料（皖维高新低位一字板启动）</p>
+<hr>
+<h2>五、新闻情绪催化验证</h2>
+<p><strong>今日TOP5新闻及市场映射：</strong></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>新闻</th>
+<th>影响板块</th>
+<th>实际涨幅</th>
+<th>持续性判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中美关税谈判：双方原则同意对等降税框架（各300亿+美元）</td>
+<td>出口链/外贸</td>
+<td>大盘情绪提振</td>
+<td>中期偏积极</td>
+</tr>
+<tr>
+<td>国家大基金领投DeepSeek首轮融资</td>
+<td>AI/算力</td>
+<td>寒武纪+3.84%</td>
+<td>强持续</td>
+</tr>
+<tr>
+<td>字节跳动自研CPU</td>
+<td>半导体设备</td>
+<td>芯片板块+1.55%</td>
+<td>中短期</td>
+</tr>
+<tr>
+<td>2026世界智能产业博览会</td>
+<td>具身智能/低空</td>
+<td>机器人概念小涨</td>
+<td>短期脉冲</td>
+</tr>
+<tr>
+<td>SpaceX纳斯达克上市</td>
+<td>商业航天</td>
+<td>云南锗业涨停</td>
+<td>短期脉冲</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>概念区分警示</strong>：AI算力（PCB、液冷、光模块）≠ AI应用（DeepSeek概念、智能体）≠ 半导体国产替代（芯片设计/制造）。今日三者同时走强但有逻辑差异，资金更偏好硬件基础设施方向。</p>
+<hr>
+<h2>六、核心个股拆解</h2>
+<h3>1. 中兴通讯（000063）— 首板</h3>
+<ul>
+<li><strong>表现</strong>：午后13:45强势封板，成交22.7亿，封单5.84亿，封成比6.84</li>
+<li><strong>原因</strong>：华为半导体"韬定律"+台积电涨价催化通信/芯片板块</li>
+<li><strong>概念定位</strong>：通信设备+芯片（中兴微电子），非单纯AI概念</li>
+<li><strong>技术面</strong>：低位首板，前期震荡整理充分</li>
+<li><strong>资金信号</strong>：午后直线拉升，大单封板，机构资金介入明确</li>
+<li><strong>关注价值</strong>：千亿市值龙头首板，具有板块号召力，明日溢价预期强</li>
+</ul>
+<h3>2. 奕东电子（301123）— 20cm首板</h3>
+<ul>
+<li><strong>表现</strong>：高开高走封板，成交4.38亿，主力净流入2.39亿</li>
+<li><strong>原因</strong>：液冷已进入全球顶级AI算力平台供应链，Q1扭亏</li>
+<li><strong>概念定位</strong>：液冷散热+连接器一体化，PCB概念属性也强</li>
+<li><strong>技术面</strong>：20cm涨停突破前期平台，放量换手充分</li>
+<li><strong>资金信号</strong>：主力大幅净买入，机构+游资共振</li>
+<li><strong>关注价值</strong>：液冷赛道核心标的，业绩拐点+产业趋势双重驱动</li>
+</ul>
+<h3>3. 江海股份（002484）— 2连板</h3>
+<ul>
+<li><strong>表现</strong>：早盘快速封板，封成比17.6，封板质量高</li>
+<li><strong>原因</strong>：超级电容产品适配GB300方案</li>
+<li><strong>概念定位</strong>：超级电容（独特稀缺性），区别于普通MLCC、PCB</li>
+<li><strong>技术面</strong>：连板启动，量价配合良好</li>
+<li><strong>资金信号</strong>：封板坚决，抛压极轻</li>
+<li><strong>关注价值</strong>：GB300供应链新标的，超级电容赛道稀缺性高</li>
+</ul>
+<h3>4. 风华高科（000636）— 8天4板</h3>
+<ul>
+<li><strong>表现</strong>：换手板涨停，成交21.9亿，多次开板</li>
+<li><strong>原因</strong>：MLCC批量导入AI服务器+机器人客户</li>
+<li><strong>概念定位</strong>：被动元件龙头，MLCC核心受益AI算力</li>
+<li><strong>技术面</strong>：高位换手博弈，8天4板显示资金分歧加大</li>
+<li><strong>资金信号</strong>：多次开板但最终回封，多空激烈</li>
+<li><strong>关注价值</strong>：龙头地位稳固，但短期追高风险上升</li>
+</ul>
+<hr>
+<h2>七、明日（5月29日）推演与策略</h2>
+<h3>方向判断</h3>
+<ol>
+<li>
+<p><strong>大盘</strong>：上证在4055获支撑后有望反弹，目标先看4100-4120（MA60），若放量突破则上看4150。但2.97万亿仍是缩量格局，反弹高度受限。</p>
+</li>
+<li>
+<p><strong>主线延续性</strong>：PCB/电子材料主线逻辑最硬（英伟达产业链），预计仍有持续性；半导体内部将分化，资金向龙头集中；金刚石散热方向今日爆发但持续性待验证。</p>
+</li>
+<li>
+<p><strong>风险点</strong>：明日周五+月末，谨防尾盘兑现压力；美国4月核心PCE数据今晚公布，对全球风险偏好有影响。</p>
+</li>
+</ol>
+<h3>策略建议</h3>
+<ul>
+<li><strong>短线</strong>：聚焦PCB/覆铜板低位首板品种（中国巨石、东方材料等），回避高位多次炸板股</li>
+<li><strong>中线</strong>：MLCC/超级电容方向跟踪江海股份、风华高科分歧低吸机会</li>
+<li><strong>观察</strong>：中兴通讯作为千亿龙头能否二连板，将决定芯片板块明日情绪</li>
+</ul>
+<h3>3条明日观察要点</h3>
+<ol>
+<li><strong>成交量是否回升</strong>：若两市成交重回3万亿以上，反弹持续性更强；若继续缩量，警惕冲高回落</li>
+<li><strong>PCB主线涨停梯队</strong>：宝鼎科技（10板高度龙）+中京电子（3板）+低位首板能否形成梯队接力</li>
+<li><strong>半导体方向能否扩散</strong>：中兴通讯若二连板，将带动通信设备、6G等衍生方向</li>
+</ol>
+<hr>
+<h2>八、外盘与商品速览</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>品种</th>
+<th>收盘</th>
+<th>涨跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道琼斯</td>
+<td>50644.28</td>
+<td>+0.36%（历史新高）</td>
+</tr>
+<tr>
+<td>纳斯达克</td>
+<td>26674.73</td>
+<td>+0.07%（历史新高）</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7520.36</td>
+<td>+0.02%（历史新高）</td>
+</tr>
+<tr>
+<td>WTI原油</td>
+<td>88.68美元/桶</td>
+<td><strong>-5.55%</strong></td>
+</tr>
+<tr>
+<td>布伦特原油</td>
+<td>94.29美元/桶</td>
+<td>-5.31%</td>
+</tr>
+<tr>
+<td>人民币CNY</td>
+<td>6.7800</td>
+<td>创2023年2月以来逾三年新高</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td>—</td>
+<td>低位运行</td>
+</tr>
+</tbody>
+</table></div>
+<p>美股三大指数同步创历史新高，科技股领涨（美光科技+3.6%、台积电+2%）。油价因美伊局势降温大跌超5%，利好全球风险资产。人民币持续走强至6.78，有利于外资持续流入A股。</p>
+<hr>
+<h2>九、重大公告与事件</h2>
+<ol>
+<li><strong>中美经贸</strong>：双方原则同意讨论对等降税框架，规模各300亿美元或更多</li>
+<li><strong>DeepSeek融资</strong>：国家大基金领投首轮融资接近尾声，升至国家级AI战略平台</li>
+<li><strong>字节跳动</strong>：自研CPU以满足AI基础设施需求</li>
+<li><strong>外资持股A股</strong>：各类境外投资者持有A股流通市值超4万亿元（深交所全球投资者大会）</li>
+<li><strong>公募基金</strong>：4月总规模增长超1.8万亿达39.36万亿，再创新高</li>
+<li><strong>贵州茅台</strong>：完成回购218.86万股，金额约30亿元</li>
+<li><strong>长鑫科技</strong>：IPO审核状态变更为提交注册</li>
+</ol>
+<hr>
+<h2>⚠️ 免责声明</h2>
+<p><strong>本复盘报告由AI自动生成，仅供参考，不构成任何投资建议。</strong></p>
+<p>报告中的所有分析、判断和推演均基于公开数据和资讯，不保证完整性和准确性。市场有风险，投资需谨慎。任何投资决策应由投资者独立判断并自行承担风险。过往表现不代表未来收益。</p>
+<p><strong>报告生成时间：2026年5月28日 23:00（自动生成）</strong></p>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年05月28日 23:03</p>
+</footer>
+
+</body>
+</html>
