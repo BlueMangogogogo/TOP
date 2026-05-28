@@ -545,9 +545,9 @@ body {
       </select>
       <label>日报类型（选择日报时生效）</label>
       <select id="upload-daily-type">
-        <option value="早盘扫描">早盘扫描</option>
-        <option value="午盘扫描">午盘扫描</option>
-        <option value="深度复盘">深度复盘</option>
+        <option value="早盘扫描">早盘复盘</option>
+        <option value="午盘扫描">午盘复盘</option>
+        <option value="深度复盘">晚盘复盘</option>
         <option value="周度盘前">周度盘前</option>
         <option value="其他">其他</option>
       </select>
@@ -645,6 +645,28 @@ let currentModalReport = null;
 let pendingDeleteId = null;
 let pendingAction = null;
 let openDropdownId = null;
+
+// ===== Utils =====
+const WEEKDAYS = ['周日','周一','周二','周三','周四','周五','周六'];
+function getWeekday(dateStr) { return WEEKDAYS[new Date(dateStr).getDay()]; }
+function formatDateWithWeekday(dateStr) {
+  const [y, m, d] = dateStr.split('-');
+  return `${parseInt(m)}月${parseInt(d)}日 ${getWeekday(dateStr)}`;
+}
+
+// Daily report sort order
+const DAILY_ORDER = {'早盘扫描':0,'午盘扫描':1,'深度复盘':2,'周度盘前':3};
+function dailySortKey(r) { return DAILY_ORDER[r.category] ?? 99; }
+
+// Generate display title for daily reports
+function getDailyTitle(r) {
+  const dateStr = r.date;
+  const [y, m, d] = dateStr.split('-');
+  const wd = getWeekday(dateStr);
+  const cat = r.category || '日报';
+  const catName = cat === '深度复盘' ? '晚盘复盘' : (cat === '早盘扫描' ? '早盘复盘' : (cat === '午盘扫描' ? '午盘复盘' : cat));
+  return `${parseInt(m)}月${parseInt(d)}日 ${wd} ${catName}`;
+}
 
 // ===== Recycle Bin =====
 function getRecycleBin() {
@@ -793,7 +815,7 @@ function renderTimeline() {
     const [y, m, d] = date.split('-');
     const cls = currentDate === date ? ' active' : '';
     html += `<div class="timeline-date${cls}" data-date="${date}" onclick="selectDate('${date}')">
-      <span class="dot"></span>${parseInt(m)}月${parseInt(d)}日<span class="report-count">${count}篇</span></div>`;
+      <span class="dot"></span>${formatDateWithWeekday(date)}<span class="report-count">${count}篇</span></div>`;
   }
   container.innerHTML = html;
 }
@@ -821,8 +843,7 @@ function selectDate(date) {
   else if (currentFilter !== 'all') filtered = filtered.filter(r => r.type === currentFilter);
   else filtered = filtered.filter(r => !isInRecycleBin(r.id));
   renderReportList(filtered);
-  const [y, m, d] = date.split('-');
-  document.getElementById('main-title').textContent = `📅 ${parseInt(m)}月${parseInt(d)}日`;
+  document.getElementById('main-title').textContent = `📅 ${formatDateWithWeekday(date)}`;
   document.getElementById('main-subtitle').textContent = `共 ${filtered.length} 篇报告`;
 }
 
@@ -845,12 +866,25 @@ function renderReportList(reports) {
   if (!currentDate) {
     const dates = [...new Set(reports.map(r => r.date))].sort().reverse();
     for (const date of dates) {
-      const [y, m, d] = date.split('-');
-      html += `<div class="date-divider">📅 ${parseInt(m)}月${parseInt(d)}日</div>`;
-      reports.filter(r => r.date === date).forEach(r => html += renderCard(r));
+      html += `<div class="date-divider">📅 ${formatDateWithWeekday(date)}</div>`;
+      const dateReports = reports.filter(r => r.date === date);
+      // Sort: daily reports by order (早盘→午盘→晚盘), then industry
+      dateReports.sort((a, b) => {
+        if (a.type === 'daily' && b.type === 'daily') return dailySortKey(a) - dailySortKey(b);
+        if (a.type === 'daily') return -1;
+        if (b.type === 'daily') return 1;
+        return 0;
+      }).forEach(r => html += renderCard(r));
     }
   } else {
-    reports.forEach(r => html += renderCard(r));
+    // Also sort when viewing a single date
+    const sorted = [...reports].sort((a, b) => {
+      if (a.type === 'daily' && b.type === 'daily') return dailySortKey(a) - dailySortKey(b);
+      if (a.type === 'daily') return -1;
+      if (b.type === 'daily') return 1;
+      return 0;
+    });
+    sorted.forEach(r => html += renderCard(r));
   }
   html += '</div>';
   area.innerHTML = html;
@@ -866,12 +900,13 @@ function renderCard(r) {
 
   const st = getStarred().has(r.id);
   const daysLeft = isInRecycle ? getRecycleRemainingDays(r.id) : 0;
+  const displayTitle = r.type === 'daily' ? getDailyTitle(r) : r.title;
 
   return `<div class="report-card${isInRecycle?' deleted':''}" onclick="${isInRecycle ? '' : `openReport('${r.id}')`}">
     <button class="star-btn${st?' starred':''}" onclick="event.stopPropagation();toggleStar('${r.id}')" data-report-id="${r.id}">${st?'⭐':'☆'}</button>
     <div class="report-info">
-      <div class="title">${r.title}${isInRecycle ? `<span class="recycle-badge">${daysLeft}天后永久删除</span>` : ''}</div>
-      <div class="meta"><span>📅 ${r.display_date}</span><span>📄 ${r.size_kb}KB</span></div>
+      <div class="title">${displayTitle}${isInRecycle ? `<span class="recycle-badge">${daysLeft}天后永久删除</span>` : ''}</div>
+      <div class="meta"><span>📅 ${formatDateWithWeekday(r.date)}</span><span>📄 ${r.size_kb}KB</span></div>
     </div>
     <span class="report-badge ${badgeClass}">${badgeText}</span>
     <div style="position:relative">
