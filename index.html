@@ -26,8 +26,14 @@ a{color:var(--blue);text-decoration:none}button{font-family:inherit}
 .search-bar{max-width:1900px;margin:0 auto;padding:14px 32px 10px;display:flex;gap:10px;align-items:center}
 .search-bar input{flex:1;padding:9px 16px;border:1px solid var(--border);border-radius:8px;background:var(--bg2);color:var(--text);font-size:14px;outline:none}
 .search-bar input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
-.search-bar input[type="date"]{flex:0 0 150px;width:150px;cursor:pointer;padding:9px 8px;color:var(--text);font-size:13px}
-.search-bar input[type="date"]::-webkit-calendar-picker-indicator{filter:invert(0.4)}
+.date-nav{display:flex;align-items:center;gap:4px;flex-shrink:0}
+.date-nav button{width:36px;height:36px;border:1px solid var(--border);border-radius:8px;background:var(--bg3);color:var(--text);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .15s;user-select:none;-webkit-user-select:none}
+.date-nav button:hover{background:var(--blue);color:#fff;border-color:var(--blue);transform:scale(1.08)}
+.date-nav button:active{transform:scale(0.95);background:var(--cyan);border-color:var(--cyan)}
+.search-bar input[type="date"]{width:140px;cursor:pointer;padding:8px 10px;color:var(--text);font-size:14px;font-weight:600;border:2px solid var(--border);border-radius:8px;transition:all .15s;text-align:center}
+.search-bar input[type="date"]:hover{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.search-bar input[type="date"]:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.18)}
+.search-bar input[type="date"]::-webkit-calendar-picker-indicator{filter:invert(0.4);cursor:pointer;padding:4px}
 [data-theme="dark"] .search-bar input[type="date"]::-webkit-calendar-picker-indicator{filter:invert(0.8)}
 .mode-btns{display:flex;gap:4px}
 .mode-btns button{padding:7px 16px;border:1px solid var(--border);border-radius:8px;background:var(--bg3);color:var(--t2);cursor:pointer;font-size:13px;transition:.2s;white-space:nowrap}
@@ -113,7 +119,7 @@ a{color:var(--blue);text-decoration:none}button{font-family:inherit}
 
 <div class="search-bar">
   <input type="text" id="searchInput" placeholder="🔍 搜索板块代码或名称…" oninput="doSearch()">
-  <input type="date" id="datePicker" value="2026-05-28" min="2026-04-08" max="dates" onchange="changeDate(this.value)">
+  <div class="date-nav"><button onclick="prevDate()" title="上一交易日">◀</button><input type="date" id="datePicker" value="2026-05-28" min="2026-04-08" max="dates" onchange="changeDate(this.value)"><button onclick="nextDate()" title="下一交易日">▶</button></div>
   <div class="mode-btns">
     <button class="mode-active" onclick="setMode('band')">波段流入率</button>
     <button onclick="setMode('inflow')">单日流入率</button>
@@ -170,6 +176,14 @@ function reversed(arr){return arr.slice().reverse()}
 
 ALL=buildAllData(curDate);DATA=buildData(ALL);
 
+function prevDate(){
+  let i=DATES.indexOf(curDate);
+  if(i>0){let d=DATES[i-1];document.getElementById('datePicker').value=d;changeDate(d)}
+}
+function nextDate(){
+  let i=DATES.indexOf(curDate);
+  if(i<DATES.length-1){let d=DATES[i+1];document.getElementById('datePicker').value=d;changeDate(d)}
+}
 function changeDate(d){
   if(!HIST[d]){
     let nd=DATES.find(dd=>dd>=d);
