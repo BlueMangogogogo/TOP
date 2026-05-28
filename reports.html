@@ -22,8 +22,10 @@
   --blue-rgb: 43,123,214;
   --purple: #7c3aed;
   --orange: #d97706;
+  --red: #e74c3c;
   --font: system-ui, -apple-system, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --radius: 8px;
 }
 .dark {
   --bg: #0a0e17;
@@ -40,6 +42,7 @@
   --blue-rgb: 96,192,255;
   --purple: #a78bfa;
   --orange: #ff9800;
+  --red: #ff6b6b;
   --shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
@@ -78,7 +81,7 @@ body {
 }
 .topbar .brand span { color: var(--text2); font-weight: 400; font-size: 13px; }
 .topbar .nav-links { display: flex; gap: 10px; align-items: center; }
-.topbar .nav-links a, .theme-btn {
+.topbar .nav-links a, .theme-btn, .upload-btn {
   color: var(--text2);
   text-decoration: none;
   font-size: 13px;
@@ -93,7 +96,7 @@ body {
   align-items: center;
   gap: 4px;
 }
-.topbar .nav-links a:hover, .theme-btn:hover {
+.topbar .nav-links a:hover, .theme-btn:hover, .upload-btn:hover {
   color: var(--accent);
   border-color: var(--accent);
   background: rgba(var(--accent-rgb),0.06);
@@ -105,6 +108,15 @@ body {
   font-weight: 600;
 }
 .theme-btn { font-size: 16px; padding: 4px 8px; }
+.upload-btn {
+  background: rgba(var(--blue-rgb),0.08);
+  border-color: var(--blue);
+  color: var(--blue);
+  font-weight: 600;
+}
+.upload-btn:hover {
+  background: rgba(var(--blue-rgb),0.15);
+}
 
 /* ===== Layout ===== */
 .layout {
@@ -195,7 +207,7 @@ body {
 .timeline-date .report-count { margin-left: auto; font-size: 11px; color: var(--text3); }
 
 /* ===== Main Content ===== */
-.main-header { margin-bottom: 20px; }
+.main-header { margin-bottom: 20px; display:flex; align-items:center; justify-content:space-between; }
 .main-header h2 { font-size: 20px; font-weight: 700; color: var(--text); }
 .main-header .subtitle { font-size: 13px; color: var(--text2); margin-top: 4px; }
 .empty-state { text-align: center; padding: 60px 20px; color: var(--text3); }
@@ -207,11 +219,16 @@ body {
 .report-card {
   display: flex; align-items: center; gap: 12px;
   padding: 14px 16px; background: var(--bg2);
-  border: 1px solid var(--border); border-radius: 8px;
+  border: 1px solid var(--border); border-radius: var(--radius);
   cursor: pointer; transition: all 0.2s;
   box-shadow: var(--shadow);
+  position: relative;
 }
 .report-card:hover { border-color: var(--accent); }
+.report-card.deleted {
+  opacity: 0.5;
+  border-color: var(--red);
+}
 .star-btn {
   width: 32px; height: 32px; border: none; background: transparent;
   font-size: 18px; cursor: pointer; border-radius: 6px;
@@ -233,6 +250,45 @@ body {
 }
 .badge-daily { background: rgba(var(--blue-rgb),0.1); color: var(--blue); }
 .badge-industry { background: rgba(var(--purple,124,58,237),0.1); color: var(--purple); }
+.badge-uploaded { background: rgba(var(--green),0.1); color: var(--green); }
+
+/* ===== More Button (ellipsis) ===== */
+.more-btn {
+  width: 32px; height: 32px; border: none; background: transparent;
+  font-size: 18px; cursor: pointer; border-radius: 6px;
+  transition: all 0.2s; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text3);
+  position: relative;
+}
+.more-btn:hover { background: var(--bg3); color: var(--text); }
+
+/* ===== Dropdown Menu ===== */
+.dropdown {
+  position: absolute;
+  right: 0; top: 100%;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 200;
+  min-width: 140px;
+  overflow: hidden;
+  display: none;
+}
+.dropdown.open { display: block; }
+.dropdown-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px;
+  font-size: 13px; color: var(--text2);
+  cursor: pointer; transition: all 0.15s;
+  border: none; background: transparent;
+  width: 100%; text-align: left;
+  font-family: var(--font);
+}
+.dropdown-item:hover { background: var(--bg3); color: var(--text); }
+.dropdown-item.danger { color: var(--red); }
+.dropdown-item.danger:hover { background: rgba(var(--red),0.08); }
 
 .date-divider {
   font-size: 13px; font-weight: 700; color: var(--text3);
@@ -240,6 +296,80 @@ body {
   margin-bottom: 8px;
 }
 .date-divider:first-child { padding-top: 0; }
+
+/* ===== Confirm Dialog ===== */
+.dialog-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  z-index: 1500; display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.2s;
+}
+.dialog-overlay.open { opacity: 1; pointer-events: auto; }
+.dialog-box {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px; max-width: 380px; width: 90%;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+.dialog-box h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+.dialog-box p { font-size: 14px; color: var(--text2); margin-bottom: 20px; line-height: 1.5; }
+.dialog-actions { display: flex; gap: 10px; justify-content: flex-end; }
+.dialog-btn {
+  padding: 8px 20px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--bg3); color: var(--text2); cursor: pointer;
+  font-size: 13px; font-family: var(--font); font-weight: 600;
+  transition: all 0.2s;
+}
+.dialog-btn:hover { background: var(--border); color: var(--text); }
+.dialog-btn.danger {
+  background: var(--red); color: #fff; border-color: var(--red);
+}
+.dialog-btn.danger:hover { opacity: 0.85; }
+
+/* ===== Upload Modal ===== */
+.upload-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  z-index: 1500; display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.2s;
+}
+.upload-overlay.open { opacity: 1; pointer-events: auto; }
+.upload-box {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px; max-width: 480px; width: 90%;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+.upload-box h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+.upload-zone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 30px 20px;
+  text-align: center;
+  color: var(--text3);
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 16px;
+}
+.upload-zone:hover, .upload-zone.dragover {
+  border-color: var(--blue);
+  background: rgba(var(--blue-rgb),0.04);
+  color: var(--blue);
+}
+.upload-zone .icon { font-size: 32px; margin-bottom: 8px; }
+.upload-zone p { font-size: 13px; }
+.upload-inputs { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.upload-inputs label { font-size: 13px; color: var(--text2); font-weight: 600; }
+.upload-inputs input, .upload-inputs select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px;
+  background: var(--bg); color: var(--text); font-size: 13px;
+  font-family: var(--font);
+}
+.upload-inputs input:focus, .upload-inputs select:focus {
+  outline: none; border-color: var(--blue);
+}
+
+/* ===== Recycle Bin Indicator ===== */
+.recycle-badge {
+  font-size: 11px; background: rgba(var(--red),0.1); color: var(--red);
+  padding: 1px 6px; border-radius: 8px; margin-left: 4px;
+}
 
 /* ===== Modal ===== */
 .modal-overlay {
@@ -323,6 +453,7 @@ body {
   <div class="nav-links">
     <a href="reports.html" class="active">📄 分析报告</a>
     <a href="/TOP/">📈 板块雷达</a>
+    <button class="upload-btn" onclick="openUploadDialog()" title="上传报告">📤 上传报告</button>
     <button class="theme-btn" onclick="toggleTheme()" id="theme-btn" title="切换日间/夜间模式">☀️</button>
   </div>
 </div>
@@ -343,6 +474,9 @@ body {
       <button class="filter-btn" data-filter="starred" onclick="setFilter('starred')">
         ⭐ 我的收藏 <span class="count" id="count-starred">0</span>
       </button>
+      <button class="filter-btn" data-filter="recycle" onclick="setFilter('recycle')">
+        🗑️ 回收站 <span class="count" id="count-recycle">0</span>
+      </button>
     </div>
     <div class="timeline" id="timeline">
       <div style="text-align:center;padding:30px 0;color:var(--text3);font-size:13px">加载中...</div>
@@ -351,8 +485,10 @@ body {
 
   <div class="main" id="main-content">
     <div class="main-header">
-      <h2 id="main-title">📋 全部报告</h2>
-      <div class="subtitle" id="main-subtitle">正在加载报告数据...</div>
+      <div>
+        <h2 id="main-title">📋 全部报告</h2>
+        <div class="subtitle" id="main-subtitle">正在加载报告数据...</div>
+      </div>
     </div>
     <div id="report-area">
       <div class="empty-state"><div class="icon">⏳</div><p>正在加载报告列表...</p></div>
@@ -360,7 +496,7 @@ body {
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Report Modal -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
   <div class="modal-container" onclick="event.stopPropagation()">
     <div class="modal-topbar">
@@ -378,11 +514,60 @@ body {
   </div>
 </div>
 
+<!-- Confirm Dialog -->
+<div class="dialog-overlay" id="dialog-overlay">
+  <div class="dialog-box">
+    <h3 id="dialog-title">确认删除</h3>
+    <p id="dialog-message">确定要删除这份报告吗？删除后将移至回收站，30天后永久删除。</p>
+    <div class="dialog-actions">
+      <button class="dialog-btn" onclick="closeDialog()">取消</button>
+      <button class="dialog-btn danger" id="dialog-confirm" onclick="confirmAction()">删除</button>
+    </div>
+  </div>
+</div>
+
+<!-- Upload Modal -->
+<div class="upload-overlay" id="upload-overlay" onclick="closeUploadDialog(event)">
+  <div class="upload-box" onclick="event.stopPropagation()">
+    <h3>📤 上传报告</h3>
+    <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
+      <div class="icon">📄</div>
+      <p>点击选择 HTML 文件，或将文件拖拽至此处</p>
+    </div>
+    <input type="file" id="file-input" accept=".html,.htm" style="display:none" onchange="onFileSelected(this)">
+    <div class="upload-inputs">
+      <label>报告标题</label>
+      <input type="text" id="upload-title" placeholder="输入报告标题">
+      <label>报告分类</label>
+      <select id="upload-category">
+        <option value="daily">📅 日报</option>
+        <option value="industry">🔬 行业报告</option>
+      </select>
+      <label>日报类型（选择日报时生效）</label>
+      <select id="upload-daily-type">
+        <option value="早盘扫描">早盘扫描</option>
+        <option value="午盘扫描">午盘扫描</option>
+        <option value="深度复盘">深度复盘</option>
+        <option value="周度盘前">周度盘前</option>
+        <option value="其他">其他</option>
+      </select>
+    </div>
+    <div class="dialog-actions">
+      <button class="dialog-btn" onclick="closeUploadDialog()">取消</button>
+      <button class="dialog-btn" style="background:var(--blue);color:#fff;border-color:var(--blue)" onclick="doUpload()">上传</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
 // ===== Theme =====
 const THEME_KEY = 'tdxclaw_report_theme';
+const RECYCLE_KEY = 'tdxclaw_recycle_bin';
+const STAR_KEY = 'tdxclaw_starred';
+const UPLOAD_KEY = 'tdxclaw_uploaded';
+const RECYCLE_DAYS = 30;
 
 function getTheme() {
   return localStorage.getItem(THEME_KEY) || 'light';
@@ -394,8 +579,6 @@ function applyTheme(theme) {
   document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️';
   document.getElementById('theme-btn').title = isDark ? '切换到日间模式' : '切换到夜间模式';
   localStorage.setItem(THEME_KEY, theme);
-
-  // Apply to open iframe
   const iframe = document.getElementById('modal-iframe');
   if (iframe && iframe.contentDocument) {
     injectIframeTheme(iframe, isDark);
@@ -407,7 +590,6 @@ function toggleTheme() {
   applyTheme(current === 'dark' ? 'light' : 'dark');
 }
 
-// Inject dark/light theme into same-origin iframe
 function injectIframeTheme(iframe, isDark) {
   try {
     const doc = iframe.contentDocument;
@@ -421,16 +603,9 @@ function injectIframeTheme(iframe, isDark) {
         doc.head.appendChild(style);
       }
       style.textContent = `
-        /* TdxClaw Dark Theme Override */
         :root { color-scheme: dark; }
-        body {
-          background: #0a0e17 !important;
-          color: #d0ddf0 !important;
-        }
-        header {
-          background: transparent !important;
-          border-bottom-color: #1a2f50 !important;
-        }
+        body { background: #0a0e17 !important; color: #d0ddf0 !important; }
+        header { background: transparent !important; border-bottom-color: #1a2f50 !important; }
         header h1 { color: #d0ddf0 !important; }
         header .meta { color: #7b93b8 !important; }
         h2 { color: #d0ddf0 !important; border-left-color: #ebb543 !important; }
@@ -439,39 +614,18 @@ function injectIframeTheme(iframe, isDark) {
         strong { color: #e0e8f8 !important; }
         .table-wrapper { border-color: #1a2f50 !important; }
         table { background: #0d1525 !important; }
-        thead th {
-          background: #1a2a40 !important;
-          color: #ebb543 !important;
-          border-bottom-color: #2a3a50 !important;
-        }
-        tbody td {
-          border-bottom-color: #152238 !important;
-          color: #c0d0e0 !important;
-        }
+        thead th { background: #1a2a40 !important; color: #ebb543 !important; border-bottom-color: #2a3a50 !important; }
+        tbody td { border-bottom-color: #152238 !important; color: #c0d0e0 !important; }
         tbody tr:nth-child(even) { background: #0f1828 !important; }
         tbody tr:nth-child(odd) { background: #0a1220 !important; }
         tbody tr:hover { background: rgba(235,181,67,0.06) !important; }
-        .highlight {
-          background: rgba(235,181,67,0.08) !important;
-          border-left-color: #ebb543 !important;
-          color: #d8c890 !important;
-        }
-        .warning {
-          background: rgba(192,57,43,0.08) !important;
-          border-left-color: #c0392b !important;
-          color: #e8a0a0 !important;
-        }
-        footer {
-          border-top-color: #1a2f50 !important;
-          color: #556688 !important;
-        }
+        .highlight { background: rgba(235,181,67,0.08) !important; border-left-color: #ebb543 !important; color: #d8c890 !important; }
+        .warning { background: rgba(192,57,43,0.08) !important; border-left-color: #c0392b !important; color: #e8a0a0 !important; }
+        footer { border-top-color: #1a2f50 !important; color: #556688 !important; }
         footer strong { color: #7b93b8 !important; }
         hr { border-top-color: #1a2f50 !important; }
         a { color: #60c0ff !important; }
-        blockquote {
-          background: rgba(235,181,67,0.05) !important;
-          border-left-color: #ebb543 !important;
-        }
+        blockquote { background: rgba(235,181,67,0.05) !important; border-left-color: #ebb543 !important; }
         code { background: #1a2a40 !important; color: #ffd700 !important; }
         .tag { background: rgba(235,181,67,0.1) !important; color: #d4a017 !important; }
         .tag-red { background: rgba(192,57,43,0.1) !important; color: #e88 !important; }
@@ -480,9 +634,7 @@ function injectIframeTheme(iframe, isDark) {
     } else {
       if (style) style.remove();
     }
-  } catch(e) {
-    // Cross-origin iframe - cannot inject
-  }
+  } catch(e) {}
 }
 
 // ===== State =====
@@ -490,10 +642,110 @@ let allReports = [];
 let currentFilter = 'all';
 let currentDate = null;
 let currentModalReport = null;
+let pendingDeleteId = null;
+let pendingAction = null;
+let openDropdownId = null;
 
+// ===== Recycle Bin =====
+function getRecycleBin() {
+  try { return JSON.parse(localStorage.getItem(RECYCLE_KEY) || '[]'); }
+  catch { return []; }
+}
+
+function saveRecycleBin(bin) {
+  // Auto-expire items older than 30 days
+  const now = Date.now();
+  const keep = bin.filter(item => (now - item.deletedAt) < RECYCLE_DAYS * 86400000);
+  localStorage.setItem(RECYCLE_KEY, JSON.stringify(keep));
+  return keep;
+}
+
+function moveToRecycleBin(reportId) {
+  const bin = getRecycleBin();
+  if (!bin.find(item => item.id === reportId)) {
+    bin.push({ id: reportId, deletedAt: Date.now() });
+    saveRecycleBin(bin);
+  }
+}
+
+function restoreFromRecycleBin(reportId) {
+  let bin = getRecycleBin();
+  bin = bin.filter(item => item.id !== reportId);
+  localStorage.setItem(RECYCLE_KEY, JSON.stringify(bin));
+}
+
+function permanentDelete(reportId) {
+  let bin = getRecycleBin();
+  bin = bin.filter(item => item.id !== reportId);
+  localStorage.setItem(RECYCLE_KEY, JSON.stringify(bin));
+  // Also remove from uploaded
+  let uploaded = getUploadedReports();
+  delete uploaded[reportId];
+  localStorage.setItem(UPLOAD_KEY, JSON.stringify(uploaded));
+}
+
+function isInRecycleBin(reportId) {
+  const bin = getRecycleBin();
+  return bin.some(item => item.id === reportId);
+}
+
+function getRecycleRemainingDays(reportId) {
+  const bin = getRecycleBin();
+  const item = bin.find(i => i.id === reportId);
+  if (!item) return 0;
+  const elapsed = Date.now() - item.deletedAt;
+  return Math.max(0, Math.ceil((RECYCLE_DAYS * 86400000 - elapsed) / 86400000));
+}
+
+// ===== Uploaded Reports =====
+function getUploadedReports() {
+  try { return JSON.parse(localStorage.getItem(UPLOAD_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function addUploadedReport(reportId, data) {
+  const uploaded = getUploadedReports();
+  uploaded[reportId] = data;
+  localStorage.setItem(UPLOAD_KEY, JSON.stringify(uploaded));
+}
+
+function isUploadedReport(reportId) {
+  const uploaded = getUploadedReports();
+  return reportId in uploaded;
+}
+
+// ===== Star =====
+function getStarred() {
+  try { return new Set(JSON.parse(localStorage.getItem(STAR_KEY)||'[]')); }
+  catch { return new Set(); }
+}
+function toggleStar(id) {
+  const s = getStarred();
+  s.has(id) ? s.delete(id) : s.add(id);
+  localStorage.setItem(STAR_KEY, JSON.stringify([...s]));
+  showToast(s.has(id) ? '⭐ 已加入收藏' : '已取消收藏');
+  updateStarButtons(); updateCounts();
+  if (currentFilter === 'starred') setFilter('starred');
+}
+function updateStarButtons() {
+  const s = getStarred();
+  document.querySelectorAll('.star-btn[data-report-id]').forEach(b => {
+    const id = b.getAttribute('data-report-id');
+    b.classList.toggle('starred', s.has(id));
+    b.textContent = s.has(id) ? '⭐' : '☆';
+  });
+}
+
+// ===== Init =====
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme(getTheme());
   loadReports();
+  // Close dropdown on outside click
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.more-btn') && !e.target.closest('.dropdown')) {
+      closeAllDropdowns();
+    }
+  });
 });
 
 async function loadReports() {
@@ -501,6 +753,15 @@ async function loadReports() {
     const resp = await fetch('reports/report_index.json?' + Date.now());
     const data = await resp.json();
     allReports = data.reports || [];
+    // Add uploaded reports
+    const uploaded = getUploadedReports();
+    for (const [id, info] of Object.entries(uploaded)) {
+      if (!allReports.find(r => r.id === id)) {
+        allReports.push(info);
+      }
+    }
+    // Clean expired recycle bin items
+    saveRecycleBin(getRecycleBin());
     updateCounts();
     renderTimeline();
     setFilter('all');
@@ -513,7 +774,8 @@ async function loadReports() {
 }
 
 function renderTimeline() {
-  const dates = [...new Set(allReports.map(r => r.date))].sort().reverse();
+  const activeReports = allReports.filter(r => !isInRecycleBin(r.id));
+  const dates = [...new Set(activeReports.map(r => r.date))].sort().reverse();
   const container = document.getElementById('timeline');
   if (dates.length === 0) {
     container.innerHTML = '<div style="text-align:center;padding:30px;color:var(--text3)">无数据</div>';
@@ -527,7 +789,7 @@ function renderTimeline() {
       const [y, m] = month.split('-');
       html += `<div class="timeline-month"><div class="timeline-month-header">${y}年${parseInt(m)}月</div></div>`;
     }
-    const count = allReports.filter(r => r.date === date).length;
+    const count = activeReports.filter(r => r.date === date).length;
     const [y, m, d] = date.split('-');
     const cls = currentDate === date ? ' active' : '';
     html += `<div class="timeline-date${cls}" data-date="${date}" onclick="selectDate('${date}')">
@@ -543,7 +805,8 @@ function setFilter(filter) {
   document.querySelectorAll('.timeline-date').forEach(d => d.classList.remove('active'));
   let filtered = getFilteredReports();
   renderReportList(filtered);
-  document.getElementById('main-title').textContent = {all:'📋 全部报告',daily:'📅 日报',industry:'🔬 行业报告',starred:'⭐ 我的收藏'}[filter]||'报告列表';
+  const titles = {all:'📋 全部报告',daily:'📅 日报',industry:'🔬 行业报告',starred:'⭐ 我的收藏',recycle:'🗑️ 回收站'};
+  document.getElementById('main-title').textContent = titles[filter]||'报告列表';
   document.getElementById('main-subtitle').textContent = `共 ${filtered.length} 篇报告`;
 }
 
@@ -554,7 +817,9 @@ function selectDate(date) {
   if (el) el.classList.add('active');
   let filtered = allReports.filter(r => r.date === date);
   if (currentFilter === 'starred') { const s = getStarred(); filtered = filtered.filter(r => s.has(r.id)); }
+  else if (currentFilter === 'recycle') { filtered = filtered.filter(r => isInRecycleBin(r.id)); }
   else if (currentFilter !== 'all') filtered = filtered.filter(r => r.type === currentFilter);
+  else filtered = filtered.filter(r => !isInRecycleBin(r.id));
   renderReportList(filtered);
   const [y, m, d] = date.split('-');
   document.getElementById('main-title').textContent = `📅 ${parseInt(m)}月${parseInt(d)}日`;
@@ -564,15 +829,16 @@ function selectDate(date) {
 function getFilteredReports() {
   let r = allReports;
   if (currentFilter === 'starred') { const s = getStarred(); r = r.filter(x => s.has(x.id)); }
-  else if (currentFilter !== 'all') r = r.filter(x => x.type === currentFilter);
+  else if (currentFilter === 'recycle') { r = r.filter(x => isInRecycleBin(x.id)); }
+  else { r = r.filter(x => !isInRecycleBin(x.id)); if (currentFilter !== 'all') r = r.filter(x => x.type === currentFilter); }
   return r;
 }
 
 function renderReportList(reports) {
   const area = document.getElementById('report-area');
   if (reports.length === 0) {
-    const msgs = {all:'暂无报告数据',daily:'暂无日报报告',industry:'暂无行业报告',starred:'还没有收藏任何报告，点击 ⭐ 来收藏吧！'};
-    area.innerHTML = `<div class="empty-state"><div class="icon">📭</div><p>${msgs[currentFilter]||'暂无数据'}</p></div>`;
+    const msgs = {all:'暂无报告数据',daily:'暂无日报报告',industry:'暂无行业报告',starred:'还没有收藏任何报告，点击 ⭐ 来收藏吧！',recycle:'回收站是空的'};
+    area.innerHTML = `<div class="empty-state"><div class="icon">${currentFilter==='recycle'?'🗑️':'📭'}</div><p>${msgs[currentFilter]||'暂无数据'}</p></div>`;
     return;
   }
   let html = '<div class="report-list">';
@@ -592,40 +858,206 @@ function renderReportList(reports) {
 }
 
 function renderCard(r) {
-  const b = r.type === 'daily' ? 'badge-daily' : 'badge-industry';
-  const bt = r.type === 'daily' ? r.category : '行业报告';
+  const isUploaded = isUploadedReport(r.id);
+  const isInRecycle = isInRecycleBin(r.id);
+  let badgeClass = r.type === 'daily' ? 'badge-daily' : 'badge-industry';
+  let badgeText = r.type === 'daily' ? (r.category || '日报') : '行业报告';
+  if (isUploaded) { badgeClass = 'badge-uploaded'; badgeText = '用户上传'; }
+
   const st = getStarred().has(r.id);
-  return `<div class="report-card" onclick="openReport('${r.id}')">
+  const daysLeft = isInRecycle ? getRecycleRemainingDays(r.id) : 0;
+
+  return `<div class="report-card${isInRecycle?' deleted':''}" onclick="${isInRecycle ? '' : `openReport('${r.id}')`}">
     <button class="star-btn${st?' starred':''}" onclick="event.stopPropagation();toggleStar('${r.id}')" data-report-id="${r.id}">${st?'⭐':'☆'}</button>
-    <div class="report-info"><div class="title">${r.title}</div><div class="meta"><span>📅 ${r.display_date}</span><span>📄 ${r.size_kb}KB</span></div></div>
-    <span class="report-badge ${b}">${bt}</span></div>`;
+    <div class="report-info">
+      <div class="title">${r.title}${isInRecycle ? `<span class="recycle-badge">${daysLeft}天后永久删除</span>` : ''}</div>
+      <div class="meta"><span>📅 ${r.display_date}</span><span>📄 ${r.size_kb}KB</span></div>
+    </div>
+    <span class="report-badge ${badgeClass}">${badgeText}</span>
+    <div style="position:relative">
+      <button class="more-btn" onclick="event.stopPropagation();toggleDropdown('${r.id}', this)">⋯</button>
+      <div class="dropdown" id="dropdown-${r.id}">
+        ${isInRecycle
+          ? `<button class="dropdown-item" onclick="event.stopPropagation();restoreReport('${r.id}')">♻️ 恢复报告</button>
+             <button class="dropdown-item danger" onclick="event.stopPropagation();permanentDeleteDialog('${r.id}')">🗑️ 永久删除</button>`
+          : `<button class="dropdown-item danger" onclick="event.stopPropagation();deleteDialog('${r.id}')">🗑️ 删除报告</button>`
+        }
+      </div>
+    </div>
+  </div>`;
 }
 
-function getStarred() {
-  try { return new Set(JSON.parse(localStorage.getItem('tdxclaw_starred')||'[]')); }
-  catch { return new Set(); }
+// ===== Dropdown =====
+function toggleDropdown(reportId, btn) {
+  closeAllDropdowns();
+  const dd = document.getElementById('dropdown-' + reportId);
+  if (dd) {
+    dd.classList.toggle('open');
+    openDropdownId = dd.classList.contains('open') ? reportId : null;
+  }
 }
-function toggleStar(id) {
-  const s = getStarred();
-  s.has(id) ? s.delete(id) : s.add(id);
-  localStorage.setItem('tdxclaw_starred', JSON.stringify([...s]));
-  showToast(s.has(id) ? '⭐ 已加入收藏' : '已取消收藏');
-  updateStarButtons(); updateCounts();
-  if (currentFilter === 'starred') setFilter('starred');
+
+function closeAllDropdowns() {
+  document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+  openDropdownId = null;
 }
-function updateStarButtons() {
-  const s = getStarred();
-  document.querySelectorAll('.star-btn[data-report-id]').forEach(b => {
-    const id = b.getAttribute('data-report-id');
-    b.classList.toggle('starred', s.has(id));
-    b.textContent = s.has(id) ? '⭐' : '☆';
-  });
+
+// ===== Delete / Restore =====
+function deleteDialog(reportId) {
+  closeAllDropdowns();
+  pendingDeleteId = reportId;
+  pendingAction = 'delete';
+  const report = allReports.find(r => r.id === reportId);
+  document.getElementById('dialog-title').textContent = '确认删除';
+  document.getElementById('dialog-message').textContent = `确定要删除「${report?.title || '此报告'}」吗？删除后将移至回收站，30天后永久删除。`;
+  document.getElementById('dialog-confirm').textContent = '删除';
+  document.getElementById('dialog-overlay').classList.add('open');
 }
+
+function permanentDeleteDialog(reportId) {
+  closeAllDropdowns();
+  pendingDeleteId = reportId;
+  pendingAction = 'permanent';
+  const report = allReports.find(r => r.id === reportId);
+  document.getElementById('dialog-title').textContent = '⚠️ 永久删除';
+  document.getElementById('dialog-message').textContent = `确定要永久删除「${report?.title || '此报告'}」吗？此操作不可恢复！`;
+  document.getElementById('dialog-confirm').textContent = '永久删除';
+  document.getElementById('dialog-overlay').classList.add('open');
+}
+
+function confirmAction() {
+  if (!pendingDeleteId) return;
+  if (pendingAction === 'delete') {
+    moveToRecycleBin(pendingDeleteId);
+    showToast('🗑️ 已移至回收站');
+  } else if (pendingAction === 'permanent') {
+    permanentDelete(pendingDeleteId);
+    allReports = allReports.filter(r => r.id !== pendingDeleteId);
+    showToast('已永久删除');
+  }
+  pendingDeleteId = null;
+  pendingAction = null;
+  closeDialog();
+  updateCounts();
+  renderTimeline();
+  setFilter(currentFilter);
+}
+
+function restoreReport(reportId) {
+  closeAllDropdowns();
+  restoreFromRecycleBin(reportId);
+  showToast('♻️ 已恢复报告');
+  updateCounts();
+  renderTimeline();
+  setFilter(currentFilter);
+}
+
+function closeDialog() {
+  document.getElementById('dialog-overlay').classList.remove('open');
+  pendingDeleteId = null;
+  pendingAction = null;
+}
+
 function updateCounts() {
-  document.getElementById('count-all').textContent = allReports.length;
-  document.getElementById('count-daily').textContent = allReports.filter(r=>r.type==='daily').length;
-  document.getElementById('count-industry').textContent = allReports.filter(r=>r.type==='industry').length;
+  const active = allReports.filter(r => !isInRecycleBin(r.id));
+  const recycled = allReports.filter(r => isInRecycleBin(r.id));
+  document.getElementById('count-all').textContent = active.length;
+  document.getElementById('count-daily').textContent = active.filter(r=>r.type==='daily').length;
+  document.getElementById('count-industry').textContent = active.filter(r=>r.type==='industry').length;
   document.getElementById('count-starred').textContent = getStarred().size;
+  document.getElementById('count-recycle').textContent = recycled.length;
+}
+
+// ===== Upload =====
+let uploadFileContent = null;
+let uploadFileName = '';
+
+function openUploadDialog() {
+  uploadFileContent = null;
+  uploadFileName = '';
+  document.getElementById('upload-title').value = '';
+  document.getElementById('file-input').value = '';
+  document.getElementById('upload-zone').querySelector('p').textContent = '点击选择 HTML 文件，或将文件拖拽至此处';
+  document.getElementById('upload-overlay').classList.add('open');
+
+  // Setup drag and drop
+  const zone = document.getElementById('upload-zone');
+  zone.ondragover = (e) => { e.preventDefault(); zone.classList.add('dragover'); };
+  zone.ondragleave = () => zone.classList.remove('dragover');
+  zone.ondrop = (e) => {
+    e.preventDefault();
+    zone.classList.remove('dragover');
+    if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+  };
+}
+
+function closeUploadDialog(e) {
+  if (e && e.target !== document.getElementById('upload-overlay')) return;
+  document.getElementById('upload-overlay').classList.remove('open');
+}
+
+function onFileSelected(input) {
+  if (input.files.length) handleFile(input.files[0]);
+}
+
+function handleFile(file) {
+  if (!file.name.endsWith('.html') && !file.name.endsWith('.htm')) {
+    showToast('⚠️ 仅支持 HTML 文件');
+    return;
+  }
+  uploadFileName = file.name;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    uploadFileContent = e.target.result;
+    document.getElementById('upload-zone').querySelector('p').textContent = `✅ 已选择: ${file.name} (${(file.size/1024).toFixed(1)}KB)`;
+    // Auto-fill title from filename
+    if (!document.getElementById('upload-title').value) {
+      let title = file.name.replace(/\.(html|htm)$/i, '');
+      document.getElementById('upload-title').value = title;
+    }
+  };
+  reader.readAsText(file);
+}
+
+function doUpload() {
+  if (!uploadFileContent) {
+    showToast('⚠️ 请先选择文件');
+    return;
+  }
+  const title = document.getElementById('upload-title').value.trim() || uploadFileName;
+  const category = document.getElementById('upload-category').value;
+  const dailyType = document.getElementById('upload-daily-type').value;
+  const today = new Date().toISOString().split('T')[0];
+  const reportId = `${today}-upload-${Date.now()}`;
+
+  // Store the HTML content in localStorage (with size limit check)
+  const contentKey = `tdxclaw_content_${reportId}`;
+  try {
+    localStorage.setItem(contentKey, uploadFileContent);
+  } catch(e) {
+    showToast('⚠️ 文件过大，无法存储（浏览器限制约5MB）');
+    return;
+  }
+
+  const reportData = {
+    id: reportId,
+    date: today,
+    display_date: `${parseInt(today.split('-')[1])}月${parseInt(today.split('-')[2])}日`,
+    type: category,
+    category: category === 'daily' ? dailyType : '行业报告',
+    title: title,
+    relative_path: `#content:${reportId}`,
+    size_kb: parseFloat((uploadFileContent.length / 1024).toFixed(1)),
+    isUploaded: true
+  };
+
+  addUploadedReport(reportId, reportData);
+  allReports.unshift(reportData);
+  closeUploadDialog();
+  showToast('📤 报告上传成功！');
+  updateCounts();
+  renderTimeline();
+  setFilter('all');
 }
 
 // ===== Modal =====
@@ -637,26 +1069,45 @@ function openReport(reportId) {
   const iframe = document.getElementById('modal-iframe');
   iframe.style.display = 'none';
   document.getElementById('modal-loading').style.display = 'flex';
-  iframe.src = report.relative_path;
+
+  // Check if it's an uploaded report with local content
+  if (report.relative_path && report.relative_path.startsWith('#content:')) {
+    const contentKey = `tdxclaw_content_${report.id}`;
+    const content = localStorage.getItem(contentKey) || '<p>内容已丢失</p>';
+    iframe.srcdoc = content;
+    iframe.removeAttribute('src');
+    iframe.onload = () => {
+      document.getElementById('modal-loading').style.display = 'none';
+      iframe.style.display = 'block';
+      injectIframeTheme(iframe, getTheme() === 'dark');
+    };
+  } else {
+    iframe.removeAttribute('srcdoc');
+    iframe.src = report.relative_path;
+  }
+
   const st = getStarred().has(reportId);
   document.getElementById('modal-star-btn').textContent = st ? '⭐' : '☆';
   document.getElementById('modal-star-btn').style.color = st ? 'var(--accent)' : 'var(--text2)';
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+
 function closeModal(e) {
   if (e && e.target !== document.getElementById('modal-overlay')) return;
   document.getElementById('modal-overlay').classList.remove('open');
   document.getElementById('modal-iframe').src = '';
+  document.getElementById('modal-iframe').removeAttribute('srcdoc');
   document.body.style.overflow = '';
   currentModalReport = null;
 }
+
 function onIframeLoad() {
   document.getElementById('modal-loading').style.display = 'none';
   document.getElementById('modal-iframe').style.display = 'block';
-  // Inject theme into iframe
   injectIframeTheme(document.getElementById('modal-iframe'), getTheme() === 'dark');
 }
+
 function toggleModalStar() {
   if (!currentModalReport) return;
   toggleStar(currentModalReport.id);
@@ -665,7 +1116,13 @@ function toggleModalStar() {
   document.getElementById('modal-star-btn').style.color = st ? 'var(--accent)' : 'var(--text2)';
 }
 
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeModal();
+    closeDialog();
+    closeUploadDialog();
+  }
+});
 
 let toastTimer;
 function showToast(msg) {
