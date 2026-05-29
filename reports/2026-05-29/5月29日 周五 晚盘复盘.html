@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5月29日 周五 晚盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>5月29日 周五 晚盘复盘</h1>
+  <div class="meta">
+    📅 2026年05月29日 19:16
+  </div>
+</header>
+
+<hr>
+<h2>🔍 上期验证（5月27日深度复盘）</h2>
+<blockquote>
+<p><strong>上期三大观察要点验证：</strong></p>
+</div>
+<ol>
+<li>✅ <strong>上证能否守住MA60（4065）</strong>：今日盘中最低探至4055点逼近MA60，尾盘收于4068.57点，MA60暂时守住但已是"贴线运行"，下周开盘即面临方向选择。</li>
+<li>✅ <strong>电力板块是否扩散</strong>：今日电力板块低开高走全面爆发，从火电（华电能源5连板）向绿电（珈伟新能+11%）扩散，<strong>主线地位完全确立</strong>，远超上期预期。</li>
+<li>⚠️ <strong>成交量能否恢复</strong>：成交额3.34万亿放量3535亿，但属于<strong>杀跌放量</strong>而非良性放量，科技板块集体踩踏贡献了大部分放量。</li>
+</ol>
+<blockquote>
+<p><strong>上期风险预警兑现情况：</strong>
+- "机器人/算力等前期主线板块资金加速撤离，需防范多杀多"→ <strong>完全兑现</strong>，科创50暴跌5.04%，半导体主力净流出171.61亿，多杀多惨烈上演。</p>
+</div>
+<hr>
+<h2>📊 一、指数全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>变动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td><strong>4068.57</strong></td>
+<td>📉 -0.73%（-30.16点）</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>—</td>
+<td>📉 -1.81%</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>—</td>
+<td>📉 -2.11%</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>—</td>
+<td>📉 <strong>-5.04%</strong></td>
+</tr>
+<tr>
+<td>北证50</td>
+<td>—</td>
+<td>📉 -3.24%</td>
+</tr>
+<tr>
+<td>开盘/最高/最低</td>
+<td>4098/4108/<strong>4055</strong></td>
+<td>盘中振幅1.30%</td>
+</tr>
+<tr>
+<td>两市成交额</td>
+<td><strong>3.34万亿</strong></td>
+<td>放量3535亿 vs 昨日2.97万亿</td>
+</tr>
+<tr>
+<td>涨停家数</td>
+<td><strong>67</strong></td>
+<td>含ST</td>
+</tr>
+<tr>
+<td>跌停家数</td>
+<td><strong>59</strong></td>
+<td>含ST</td>
+</tr>
+<tr>
+<td>上涨家数</td>
+<td><strong>1,542</strong></td>
+<td>仅28.4%个股上涨</td>
+</tr>
+<tr>
+<td>下跌家数</td>
+<td><strong>3,884</strong></td>
+<td>普跌格局</td>
+</tr>
+<tr>
+<td>炸板率</td>
+<td>约<strong>30%</strong></td>
+<td>封板率70%</td>
+</tr>
+<tr>
+<td>市场情绪</td>
+<td><strong>极度分化</strong></td>
+<td>冰火两重天</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>📌 <strong>核心判断</strong>：五月收官之战呈现极致的风格分化。上证指数在4055-4108区间震荡，尾盘收于MA60（4065）上方仅3点，均线系统（5/10/20/30日）全部空头排列，技术面偏空。但指数跌幅远小于科创50的-5.04%，核心原因是电力、白酒、零售等权重板块逆势大涨对冲了科技板块的暴跌。<strong>这不是系统性风险，而是典型的"高低切换+风格再平衡"。</strong></p>
+</div>
+<hr>
+<h2>🌍 二、外盘与宏观环境</h2>
+<h3>隔夜美股（5月28日收盘）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘</th>
+<th>涨跌幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道琼斯</td>
+<td>50,644.28</td>
+<td>+0.36%</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7,520.36</td>
+<td>+0.02%</td>
+</tr>
+<tr>
+<td>纳斯达克</td>
+<td>26,674.73</td>
+<td>+0.07%</td>
+</tr>
+<tr>
+<td>VIX恐慌指数</td>
+<td>15.76</td>
+<td>-3.25%</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>美股三大指数小幅收涨，但道指创历史新高，纳指仅微涨0.07%，科技股动能不足。VIX回落至15.76显示短期恐慌情绪缓和，但美股期货盘后走低（纳指期货-0.68%）。</p>
+</div>
+<h3>汇率与大宗商品</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>品种</th>
+<th>数值</th>
+<th>变动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>美元指数</td>
+<td>99.20</td>
+<td>+0.10%</td>
+</tr>
+<tr>
+<td>在岸人民币</td>
+<td>6.7816</td>
+<td>上调42点</td>
+</tr>
+<tr>
+<td>WTI原油</td>
+<td>89.11美元/桶</td>
+<td>—</td>
+</tr>
+<tr>
+<td>黄金</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<h3>宏观数据</h3>
+<ul>
+<li>🔴 <strong>美国PCE物价指数</strong>：4月同比+3.8%，创2023年5月以来最高；核心PCE +3.3%，创2023年11月来新高。<strong>滞胀信号强化</strong>——消费疲软+通胀加剧。</li>
+<li>🔴 <strong>美国Q1 GDP</strong>：下修至1.6%，远低于市场预期2%，消费支出环比仅增0.1%。</li>
+<li>🟢 <strong>国务院印发《城市更新"十五五"规划》</strong>：推动城镇基础设施延伸、因城施策增加改善性住房供给，地产链政策利好。</li>
+<li>🟡 <strong>商务部回应欧盟新钢铁关税</strong>：7月1日欧盟拟实施新钢铁关税，贸易摩擦风险升温。</li>
+</ul>
+<hr>
+<h2>📰 三、核心新闻简报（按影响强度排序）</h2>
+<ol>
+<li>
+<p>🔴🔴🔴 <strong>国家大基金二期密集减持半导体股</strong> — 5月累计减持7只半导体股，套现约75亿元；全月28家半导体公司发布减持公告。大基金从"输血"转向"抽血"，对市场信心冲击极大，直接引发今日半导体板块崩盘式下跌。<strong>影响：直接催化，科技股集体踩踏。</strong></p>
+</li>
+<li>
+<p>🔴🔴 <strong>美国滞胀数据加剧</strong> — PCE同比3.8%创2年新高+GDP下修至1.6%，美联储降息预期推迟至Q4，全球科技估值承压。<strong>影响：间接压制，高估值科技板块杀估值。</strong></p>
+</li>
+<li>
+<p>🔴🔴 <strong>长鑫存储近300亿IPO冲击</strong> — 月末流动性"抽血"，叠加MSCI指数调整，机构被动调仓引发科技股连锁卖压。<strong>影响：流动性冲击，月末效应放大波动。</strong></p>
+</li>
+<li>
+<p>🟢🟢 <strong>南方电网负荷破历史极值+高温天气</strong> — 电力需求暴增，火电/绿电/电网设备全线受益。<strong>影响：电力板块涨停潮的直接催化。</strong></p>
+</li>
+<li>
+<p>🟢🟢 <strong>白酒行业底部确认</strong> — 中信证券/中信建投集体喊话"底部已至"，看好2026年白酒十年周期大底。<strong>影响：白酒板块逆势大涨3.52%的核心催化。</strong></p>
+</li>
+<li>
+<p>🟢 <strong>国务院城市更新规划+地产政策</strong> — 因城施策增加改善性住房供给，规范发展住房租赁市场。<strong>影响：地产链走强（万科A涨停），零售/建材联动。</strong></p>
+</li>
+</ol>
+<blockquote>
+<p><strong>新闻情绪催化验证</strong>：今日电力板块暴涨与大基金减持+高温天气催化高度相关；白酒暴涨与券商底部喊话高度相关；半导体崩盘与大基金减持+滞胀数据高度相关。市场对政策/消息面的反应极度敏感且高效。</p>
+</div>
+<hr>
+<h2>📈 四、板块涨幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>涨幅</th>
+<th>主力净流入</th>
+<th>催化因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>白酒</td>
+<td><strong>+3.52%</strong></td>
+<td>+17.9亿（白酒概念）</td>
+<td>券商集体喊话底部+资金避险</td>
+</tr>
+<tr>
+<td>2</td>
+<td>电力（火电）</td>
+<td><strong>+3.0%+</strong></td>
+<td>+44.78亿</td>
+<td>高温催化+南方电网负荷破极值+防御属性</td>
+</tr>
+<tr>
+<td>3</td>
+<td>零售/新零售</td>
+<td><strong>+2.5%+</strong></td>
+<td>新零售净额110.8亿</td>
+<td>消费复苏预期+城市更新政策</td>
+</tr>
+<tr>
+<td>4</td>
+<td>免税店</td>
+<td><strong>+2.0%+</strong></td>
+<td>+108.5亿</td>
+<td>避险资金流入+消费回暖</td>
+</tr>
+<tr>
+<td>5</td>
+<td>地产链</td>
+<td><strong>+1.5%+</strong></td>
+<td>—</td>
+<td>城市更新十五五规划+估值修复</td>
+</tr>
+</tbody>
+</table></div>
+<h3>涨停核心个股</h3>
+<ul>
+<li><strong>华电能源</strong>：5连板（电力龙头）</li>
+<li><strong>粤电力A</strong>：3连板（电力）</li>
+<li><strong>晋控电力/华能国际/深南电A</strong>：涨停（电力）</li>
+<li><strong>酒鬼酒</strong>：涨停（白酒龙头）</li>
+<li><strong>中国中免</strong>：涨停（免税龙头）</li>
+<li><strong>万科A</strong>：涨停（地产龙头）</li>
+<li><strong>香江控股</strong>：5连板（地产）</li>
+<li><strong>步步高</strong>：4天3板（零售）</li>
+</ul>
+<hr>
+<h2>📉 五、板块跌幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>跌幅</th>
+<th>主力净流出</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>半导体</td>
+<td><strong>-4.61%</strong></td>
+<td>-171.61亿</td>
+<td>大基金减持+估值泡沫+获利盘出逃</td>
+</tr>
+<tr>
+<td>2</td>
+<td>存储芯片</td>
+<td><strong>-4.0%+</strong></td>
+<td>大幅流出</td>
+<td>半导体链式下跌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>光学光电子</td>
+<td><strong>-3.5%+</strong></td>
+<td>大幅流出</td>
+<td>京东方A跌停+消费电子退潮</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PCB概念</td>
+<td><strong>-3.0%+</strong></td>
+<td>大幅流出</td>
+<td>华塑控股跌停+CCL涨价下游承压</td>
+</tr>
+<tr>
+<td>5</td>
+<td>通信设备</td>
+<td><strong>-2.5%+</strong></td>
+<td>大幅流出</td>
+<td>光模块高位回落+批量跌停</td>
+</tr>
+</tbody>
+</table></div>
+<h3>跌停核心个股</h3>
+<ul>
+<li><strong>京东方A</strong>：跌停（光学光电子龙头）</li>
+<li><strong>华天科技</strong>：跌停（半导体封装）</li>
+<li><strong>晶方科技</strong>：跌停（半导体封测）</li>
+<li><strong>华塑控股</strong>：跌停（PCB）</li>
+<li><strong>中芯国际</strong>：盘中跌超9%（芯片龙头）</li>
+<li><strong>寒武纪/海光信息</strong>：大幅下挫（AI芯片）</li>
+</ul>
+<hr>
+<h2>🎯 六、主线持续性分析</h2>
+<h3>当前主线：电力板块</h3>
+<ul>
+<li><strong>持续天数</strong>：约7天（5月22日起持续走强）</li>
+<li><strong>状态</strong>：🟢 <strong>加速加强中</strong></li>
+<li><strong>证据</strong>：从火电扩散至绿电/电网设备/储能，龙头华电能源5连板，主力净流入44.78亿。南方电网负荷破历史极值+全国高温预警持续，基本面催化充足。</li>
+<li><strong>与上期对比</strong>：5月27日判断"电力板块是否扩散"→ 今日全面扩散，主线地位从"待确认"升级为"完全确立"。</li>
+</ul>
+<h3>新晋主线：白酒/大消费</h3>
+<ul>
+<li><strong>爆发日期</strong>：5月28日午后异动 → 5月29日全面爆发</li>
+<li><strong>状态</strong>：🟡 <strong>首次爆发，需观察持续性</strong></li>
+<li><strong>证据</strong>：白酒概念加权评分1.51，在榜仅6天；券商集体喊话底部，酒鬼酒涨停，贵州茅台涨超2%。</li>
+<li><strong>风险</strong>：消费板块反弹多为防御性质，缺乏产业趋势支撑，持续性存疑。</li>
+</ul>
+<h3>退潮主线：半导体/AI算力</h3>
+<ul>
+<li><strong>状态</strong>：🔴 <strong>中期调整确认</strong></li>
+<li><strong>证据</strong>：科创50暴跌5.04%，半导体主力净流出171.61亿，大基金减持75亿，PE中位数181倍。近5日芯片/AI/CPO板块主力资金合计流出超2000亿。</li>
+<li><strong>与上期对比</strong>：5月27日预警"机器人/算力等前期主线板块资金加速撤离"→ 今日惨烈兑现，从预警变为现实。</li>
+</ul>
+<hr>
+<h2>📡 七、板块资金雷达趋势</h2>
+<h3>进攻榜TOP10（5月29日）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>在榜天数</th>
+<th>加权评分</th>
+<th>波段流入率</th>
+<th>单日净额(亿)</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>含H股</td>
+<td>34</td>
+<td>0.86</td>
+<td>-2.79%</td>
+<td>118.0</td>
+<td>蓝筹防御</td>
+</tr>
+<tr>
+<td>2</td>
+<td>通达信88</td>
+<td>37</td>
+<td>-0.16</td>
+<td>-0.96%</td>
+<td>114.0</td>
+<td>中性偏弱</td>
+</tr>
+<tr>
+<td>3</td>
+<td>一带一路</td>
+<td>38</td>
+<td>-0.69</td>
+<td>-1.14%</td>
+<td>113.8</td>
+<td>弱势</td>
+</tr>
+<tr>
+<td>4</td>
+<td>中特估</td>
+<td>17</td>
+<td>0.79</td>
+<td>-2.75%</td>
+<td>113.2</td>
+<td>🟢 新晋关注</td>
+</tr>
+<tr>
+<td>5</td>
+<td>绿色电力</td>
+<td>37</td>
+<td>-0.86</td>
+<td>-1.09%</td>
+<td>111.0</td>
+<td>电力扩散</td>
+</tr>
+<tr>
+<td>6</td>
+<td>新零售</td>
+<td>15</td>
+<td>0.39</td>
+<td>-2.46%</td>
+<td>110.8</td>
+<td>消费回暖</td>
+</tr>
+<tr>
+<td>7</td>
+<td>创新药</td>
+<td>12</td>
+<td>0.33</td>
+<td>-3.90%</td>
+<td>109.8</td>
+<td>底部蓄力</td>
+</tr>
+<tr>
+<td>8</td>
+<td>白酒概念</td>
+<td>6</td>
+<td>1.51</td>
+<td>-5.03%</td>
+<td>108.6</td>
+<td>🟢 强势新入</td>
+</tr>
+<tr>
+<td>9</td>
+<td>免税概念</td>
+<td>2</td>
+<td>2.10</td>
+<td>-3.33%</td>
+<td>108.5</td>
+<td>🟢 爆发信号</td>
+</tr>
+<tr>
+<td>10</td>
+<td>储能</td>
+<td>41</td>
+<td>-2.83</td>
+<td>0.31%</td>
+<td>108.4</td>
+<td>⚠️ 高位滞涨</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🟢 机构建仓信号</h3>
+<ul>
+<li><strong>白酒概念</strong>：加权1.51，在榜仅6天，评分持续走高，股价尚在底部区域。券商集体喊话底部+资金流入加速，符合"建仓初期"特征。</li>
+<li><strong>中特估</strong>：加权0.79，在榜17天，评分稳步上升。含H股+中特估组合走强，反映大资金从科技转向低估值蓝筹的配置调整。</li>
+<li><strong>创新药</strong>：加权0.33，在榜12天，底部蓄力中。PE处历史低位+集采利空出尽，中期建仓窗口。</li>
+</ul>
+<h3>🔴 短线退潮信号</h3>
+<ul>
+<li><strong>芯片/半导体</strong>：前一日加权2.08→今日加权0.00（实质已跌出进攻榜），大基金减持+主力流出171.61亿，中期顶部确认。</li>
+<li><strong>CPO概念</strong>：前一日加权3.14→今日跌出TOP15，高位光模块"易中天"三巨头此前创历史新高后急转直下，典型高位出货。</li>
+<li><strong>储能</strong>：在榜41天（超长），加权-2.83转负，波段流入率仅0.31%近乎停滞，高位滞涨→退潮风险大。</li>
+</ul>
+<h3>📈 排名飙升</h3>
+<ul>
+<li><strong>免税概念</strong>：新入榜第9名，加权2.10，在榜仅2天。中国中免涨停带动，短线爆发力强。</li>
+<li><strong>白酒概念</strong>：加权1.51，排名快速上升，在榜6天即进入TOP10。底部反转信号明确。</li>
+</ul>
+<hr>
+<h2>🔬 八、核心个股拆解</h2>
+<h3>华电能源（600726）— 电力龙头5连板</h3>
+<ul>
+<li><strong>涨跌幅</strong>：+10.01%（5连板）</li>
+<li><strong>所属板块</strong>：电力/火电</li>
+<li><strong>催化因素</strong>：南方电网负荷破历史极值+全国高温预警+电力需求暴增</li>
+<li><strong>技术分析</strong>：5连板后进入加速段，成交量持续放大，短线情绪极高。但5连板后随时面临分歧断板风险，需关注换手率与承接力。</li>
+<li><strong>风险提示</strong>：5连板后追高风险极大，明日若大幅高开可能直接分歧，不适合追涨。</li>
+</ul>
+<h3>中芯国际（688981）— 芯片龙头暴跌</h3>
+<ul>
+<li><strong>涨跌幅</strong>：约-9%+（盘中一度跌超9%）</li>
+<li><strong>所属板块</strong>：半导体/芯片</li>
+<li><strong>催化因素</strong>：大基金H股持仓降至8%以下+减持预期+板块估值泡沫</li>
+<li><strong>技术分析</strong>：放量长阴跌破多条均线支撑，MACD日线死叉确认，短期支撑位在前低附近。半导体PE中位数181倍，估值回归压力巨大。</li>
+<li><strong>风险提示</strong>：中期调整可能持续2-4周，不宜抄底。大基金减持周期一旦开启，通常持续1-2个月。</li>
+</ul>
+<h3>酒鬼酒（000799）— 白酒底部反转龙头</h3>
+<ul>
+<li><strong>涨跌幅</strong>：+10.00%（涨停）</li>
+<li><strong>所属板块</strong>：白酒/消费</li>
+<li><strong>催化因素</strong>：券商集体喊话底部+资金避险流入+消费复苏预期</li>
+<li><strong>技术分析</strong>：底部放量涨停，突破近20日均线压制，是典型的底部反转信号。但白酒板块历史上底部反转后常有2-3次回踩确认。</li>
+<li><strong>风险提示</strong>：底部反转初期波动大，需观察3-5天持续性。若下周回踩不破今日涨停价，则反转确认。</li>
+</ul>
+<h3>万科A（000002）— 地产链龙头涨停</h3>
+<ul>
+<li><strong>涨跌幅</strong>：+10.00%（涨停）</li>
+<li><strong>所属板块</strong>：房地产/城市更新</li>
+<li><strong>催化因素</strong>：国务院《城市更新"十五五"规划》+因城施策增加改善性住房+超跌反弹</li>
+<li><strong>技术分析</strong>：底部放量涨停，突破5日/10日均线，短期有继续冲高动能。但地产板块受政策面影响极大，持续性取决于政策落地节奏。</li>
+<li><strong>风险提示</strong>：地产基本面尚未实质改善，涨停后易冲高回落，短线为主。</li>
+</ul>
+<hr>
+<h2>⚠️ 九、风险预警</h2>
+<ol>
+<li>🔴 <strong>MA60保卫战即将打响</strong>：上证4068.57距MA60（4065）仅3点，下周一若低开跌破则可能引发加速下行，技术面破位后支撑位下移至4000点整数关口。</li>
+<li>🔴 <strong>科技股杀跌可能扩散</strong>：今日半导体暴跌5%，但尚未看到止跌信号。大基金减持周期+估值回归可能持续2-4周，期间不排除从半导体扩散至其他科技子板块（AI、通信、消费电子）。</li>
+<li>🟡 <strong>放量杀跌非良性信号</strong>：3.34万亿放量中大部分来自科技板块的恐慌性卖出，若下周初继续放量下跌则需警惕流动性风险。</li>
+<li>🟡 <strong>月末效应叠加</strong>：5月收官+MSCI调整+长鑫存储近300亿IPO，月末资金面偏紧可能延续至下周初。</li>
+<li>🟢 <strong>电力/消费过热风险</strong>：电力板块已连涨7天，白酒今日爆发，若下周高位分歧则防御板块也可能补跌。</li>
+</ol>
+<hr>
+<h2>🔮 十、明日推演（下周一6月1日）</h2>
+<h3>乐观情景（概率25%）</h3>
+<ul>
+<li>科技板块超跌反弹，半导体/芯片止跌企稳，科创50在30日均线获支撑。</li>
+<li>电力/消费板块继续走强，上证指数重返4100点上方。</li>
+<li>成交额维持3万亿+，市场人气修复。</li>
+<li><strong>触发条件</strong>：周末无重大利空+科技板块缩量止跌+北向资金回流。</li>
+</ul>
+<h3>中性情景（概率45%）</h3>
+<ul>
+<li>上证指数在4050-4100区间窄幅震荡，MA60反复争夺。</li>
+<li>科技板块分化，半导体继续调整但跌幅收窄，部分超跌个股反弹。</li>
+<li>电力板块高位分歧（涨停板减少但龙头仍在），白酒/消费冲高回落。</li>
+<li>成交额缩至2.8-3.0万亿。</li>
+<li><strong>最可能走势</strong>：指数低位震荡+板块继续高低切换。</li>
+</ul>
+<h3>悲观情景（概率30%）</h3>
+<ul>
+<li>上证指数跌破MA60（4065），快速下探4000点整数关口。</li>
+<li>科技板块恐慌蔓延至AI/通信/消费电子，跌停家数进一步增加。</li>
+<li>电力/消费板块高位补跌，市场缺乏领涨方向。</li>
+<li>成交额继续放大至3.5万亿+，放量杀跌加速。</li>
+<li><strong>触发条件</strong>：周末大基金减持公告继续+美伊局势恶化+人民币贬值。</li>
+</ul>
+<hr>
+<h2>💡 十一、策略建议</h2>
+<h3>仓位建议：<strong>3-4成</strong></h3>
+<ul>
+<li>指数技术面偏空，MA60岌岌可危，降低仓位防范系统性风险。</li>
+<li>若下周一指数站稳4065上方，可维持4成；若跌破4065，降至3成以下。</li>
+</ul>
+<h3>关注方向</h3>
+<ol>
+<li>🟢 <strong>电力板块（核心持仓）</strong>：高温催化+负荷破极值+主力持续流入，7天主线确立。关注火电（华能国际/粤电力A）→绿电（珈伟新能）→电网设备扩散路径。</li>
+<li>🟢 <strong>白酒/消费（观察建仓）</strong>：券商底部喊话+资金流入加速，底部反转信号初现。观察3-5天持续性，若回踩不破则可逢低布局。</li>
+<li>🟢 <strong>中特估/高股息（防御配置）</strong>：含H股+中特估加权转正，大资金配置方向明确。适合作为底仓防守。</li>
+<li>🟡 <strong>创新药（中期布局）</strong>：PE处历史低位+集采利空出尽，12天在榜蓄力中，适合中期分批建仓。</li>
+</ol>
+<h3>回避方向</h3>
+<ol>
+<li>🔴 <strong>半导体/芯片</strong>：大基金减持周期+估值回归，中期调整刚刚开始，严禁抄底。</li>
+<li>🔴 <strong>CPO/光模块</strong>：高位"易中天"三巨头历史新高后急转直下，典型高位出货，远离。</li>
+<li>🔴 <strong>消费电子/PCB</strong>：京东方A跌停+华塑控股跌停，板块趋势转弱，短线回避。</li>
+<li>🔴 <strong>机器人/AI应用</strong>：前期主线退潮确认，资金持续撤离，等待超跌后再评估。</li>
+</ol>
+<h3>操作节奏</h3>
+<ul>
+<li><strong>下周一关键看4065</strong>：早盘若直接低开跌破4065，不急于加仓，等待4000点附近再评估。</li>
+<li><strong>科技股不要抄底</strong>：大基金减持周期中"接飞刀"风险极大，至少等2周观察减持公告密度是否下降。</li>
+<li><strong>电力注意高位分歧</strong>：5连板后华电能源分歧概率极大，若断板不要追涨，等回踩5日均线再考虑。</li>
+<li><strong>消费类逢低布局</strong>：白酒/零售/免税底部反转初期，可在回踩时小仓位试探。</li>
+</ul>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | onechart.top | 东方财富 | 生成时间：2026年05月29日 19:16</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
