@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-05-29 19:40:41",
-  "total": 20,
-  "daily_count": 15,
+  "last_updated": "2026-05-29 20:10:31",
+  "total": 21,
+  "daily_count": 16,
   "industry_count": 5,
   "reports": [
     {
@@ -203,6 +203,16 @@
       "title": "5月29日 周五 早盘复盘",
       "relative_path": "reports/2026-05-29/5月29日 周五 早盘复盘.html",
       "size_kb": 7.8
+    },
+    {
+      "id": "2026-05-29-5月29日 周五 午盘复盘",
+      "date": "2026-05-29",
+      "display_date": "5月29日",
+      "type": "daily",
+      "category": "午盘扫描",
+      "title": "5月29日 周五 午盘复盘",
+      "relative_path": "reports/2026-05-29/5月29日 周五 午盘复盘.html",
+      "size_kb": 9.1
     }
   ]
 }
