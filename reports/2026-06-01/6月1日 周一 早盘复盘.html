@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月1日 周一 早盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月1日 周一 早盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月01日 08:00
+  </div>
+</header>
+
+<h2>隔夜外盘</h2>
+<p>上周五（5月29日）美股三大指数再创历史新高：</p>
+<ul>
+<li>道琼斯：51032.46（<span style="color:red">+0.72%</span>），首次站上51000点</li>
+<li>纳斯达克：26972.62（<span style="color:red">+0.20%</span>）</li>
+<li>标普500：7580.06（<span style="color:red">+0.22%</span>），连涨9周</li>
+<li>VIX：~15，逼近14低位，市场极度乐观</li>
+<li>美元指数：98.98</li>
+<li>原油（WTI）：87.70美元/桶（<span style="color:green">-0.94%</span>），美伊停火框架协议压制油价</li>
+<li>黄金：4496.29美元/盎司，地缘风险支撑高位运行</li>
+<li>A50期货：15757.38（<span style="color:green">-0.04%</span>），微跌持平</li>
+</ul>
+<p>美股5月全线上涨：道指+2.78%、纳指+8.36%、标普+5.15%，科技股领跑。VIX持续低位需警惕情绪反转风险。</p>
+<h2>上周五A股回顾</h2>
+<p>5月29日A股五月收官日放量下跌：</p>
+<ul>
+<li>上证指数：4068.57（<span style="color:green">-0.73%</span>）</li>
+<li>深证成指：-1.81%</li>
+<li>创业板指：-2.11%</li>
+<li>科创50：<span style="color:green">-5.04%</span>，领跌市场</li>
+<li>成交额：3.34万亿元，放量超3500亿</li>
+</ul>
+<p>盘面冰火两重天：算力、光模块、半导体高位股杀跌，电力、公用事业逆势飘红。</p>
+<h2>盘前重大消息</h2>
+<ol>
+<li><strong>《求是》重磅发文</strong>：习近平总书记发表《前瞻布局和发展未来产业》，定调全力发展量子、氢能、脑机、具身智能、6G，加快AI算力基础设施建设，强化半导体自主可控</li>
+<li><strong>四部门联合发文</strong>：中央网信办等印发《2026年提升全民数字素养与技能工作要点》，全链条普及AI、深化AI场景落地</li>
+<li><strong>5月PMI数据出炉</strong>：制造业PMI 50.0%（连3月荣枯线上），非制造业PMI 50.1%（环比+0.7pct），高技术制造PMI 52.9%表现亮眼</li>
+<li><strong>城市更新"十五五"规划发布</strong>：国务院印发，2030年前改造11.5万老旧小区，总投资10-15万亿</li>
+<li><strong>核心指数大换血</strong>：深证成指/创业板指6月1日生效调整；上证50/沪深300/科创50于6月12日调整，预计带来1000-1500亿被动增量资金</li>
+<li><strong>央行流动性宽松</strong>：逆回购持续加码，DR007维持低位；科技创新再贷款额度提至1.2万亿，利率1.25%</li>
+<li><strong>国资国企改革新方案</strong>：《关于进一步深化国资国企改革的方案（2026-2029年）》已下发</li>
+</ol>
+<h2>今日关注方向</h2>
+<ul>
+<li><strong>AI算力+硬科技</strong>：《求是》定调新质生产力+全民AI政策+指数纳入硬科技龙头+千亿被动资金锁定，光模块/CPO、AI服务器、半导体封测方向受益</li>
+<li><strong>城市更新+基建+中特估</strong>：十五五规划10-15万亿投资+低估值高分红+险资配置，建筑央企、建材、管网升级方向确定性强</li>
+<li><strong>电力+储能+绿电</strong>：南方电网负荷20次创新高+AI算力耗电+算电协同+高股息避险，电网设备、储能、绿电龙头有望延续强势</li>
+</ul>
+<h2>风险提示</h2>
+<ul>
+<li>科创50上周五暴跌5.04%，高位科技股杀跌风险仍在，需警惕无业绩纯炒作小票补跌</li>
+<li>风华高科、宝鼎科技已辟谣与英伟达合作，伪龙头情绪退潮后或继续补跌</li>
+<li>制造业PMI 50%处于荣枯线边缘，消费品和高耗能行业PMI已回落至荣枯线下</li>
+<li>VIX持续低位暗示美股过度乐观，叠加美伊协议不确定性，外盘回调风险需关注</li>
+<li>指数调整换血可能导致千亿资金调仓，短期个股波动加剧</li>
+</ul>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年06月01日 08:00</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
