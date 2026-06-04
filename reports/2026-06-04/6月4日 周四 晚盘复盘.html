@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月4日 周四 晚盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月4日 周四 晚盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月04日 19:10
+  </div>
+</header>
+
+<h2>指数全景</h2>
+<ul>
+<li>上证指数：4057.78（-0.64%，-26.19点）</li>
+<li>深证成指：15661.57（-0.27%，-43.14点）</li>
+<li>创业板指：4088.88（-0.83%，-34.10点）</li>
+<li>科创综指：2067.28（+0.69%，逆市飘红）</li>
+<li>沪深300：4904.75（-0.69%，-34.06点）</li>
+<li>支撑位：4050（半年线） | 压力位：4080~4100</li>
+<li>两市成交额：2.76万亿（大幅缩量 vs 昨日3.13万亿，缩量3726亿，降幅11.9%）</li>
+<li>涨停家数：91 | 跌停家数：34</li>
+<li>上涨家数：1339 | 下跌家数：4120 | 平盘：59</li>
+<li>炸板率：26.61% | 封板率：73.39%（33股封板未遂）</li>
+<li>市场情绪：<strong>低迷</strong> — 超4100股下跌，亏钱效应显著，仅科创板逆势走强</li>
+</ul>
+<blockquote>
+<p><strong>vs 上期（6/2晚盘复盘）对比</strong>：上期判断"AI产业链从软到硬切换"持续验证——今日存储芯片、工业气体、半导体产业链继续领涨，AI应用方向持续退潮。上期提示的"4050支撑位"今日盘中再次有效，沪指最低4053.67后企稳。上期成交额2.77万亿→今日2.76万亿，连续缩量显示资金观望情绪加重。</p>
+</div>
+<h2>外盘与宏观环境</h2>
+<ul>
+<li>隔夜美股（6/3收盘）：道琼斯50687.07（-1.21%）| 纳斯达克26853.98（-0.89%）| 标普500 7553.68（-0.74%）</li>
+<li>中概股：金龙指数-2.47%，金山云-7.01%，富途-5.65%，阿里巴巴-2.76%，拼多多-3.15%</li>
+<li>原油：WTI 96美元/桶附近（+2.4%，本周累涨9.6%）| 布伦特超98美元/桶</li>
+<li>黄金：跌至4430美元/盎司以下（-1.4%）</li>
+<li>LME铜：-1.5% | 有色金属承压</li>
+<li>美元指数：99.24（+0.07%）| 美元/人民币：6.7733</li>
+<li>美联储褐皮书：10个辖区经济轻微至温和增长，能源成本上升是通胀压力主因；市场已计入年底前至少加息25bp</li>
+<li>比特币：跌至65385美元（2月新低），与SpaceX IPO争夺流动性</li>
+</ul>
+<blockquote>
+<p><strong>外盘影响</strong>：隔夜美股三大指数全线收跌（英伟达-3.62%领跌AI板块），叠加美伊冲突升级、原油大涨、中概股普跌，是今日A股低开并全天弱势震荡的主要外部压力源。</p>
+</div>
+<h2>核心新闻简报（按强度排序）</h2>
+<ol>
+<li>
+<p>🔴 <strong>美伊冲突全面升级</strong> — 伊朗弹道导弹袭击科威特国际机场致1人死亡；美军在霍尔木兹海峡附近发动空袭；伊朗称打击美军驱逐舰。霍尔木兹海峡重新开放仍无时间表。→ 影响：原油持续暴涨（WTI逼近96美元），能源板块获支撑，但全球风险偏好急剧下降，资金涌入黄金后今日回落</p>
+</li>
+<li>
+<p>🔴 <strong>SpaceX锁定史上最大IPO</strong> — 发行价135美元，6月12日纳斯达克上市（代码SPCX），估值1.77万亿美元，募资750亿美元。马斯克有望成首位万亿富豪。→ 影响：短期虹吸全球流动性，比特币暴跌至65000美元关口；长期利好商业航天概念</p>
+</li>
+<li>
+<p>🟡 <strong>世界半导体贸易统计组织大幅上调预测</strong> — 2026年全球半导体市场规模将达1.51万亿美元，较2025年增长近90%。→ 影响：半导体产业链全线走强，存储芯片、先进封装、工业气体等细分方向爆发</p>
+</li>
+<li>
+<p>🟡 <strong>TrendForce大幅上调存储器产值预估</strong> — 2026年全球存储器产值由5516亿上修至8893亿美元；2027年预计突破1.28万亿美元（+44%）。→ 影响：存储芯片板块今日大涨，盈方微、大为股份等涨停，佰维存储+8.60%</p>
+</li>
+<li>
+<p>🟡 <strong>黄仁勋预计今夜访韩</strong> — 覆盖半导体合作伙伴，短线资金埋伏存储芯片方向新催化。→ 影响：与新闻3、4叠加，存储芯片成为今日最强方向</p>
+</li>
+<li>
+<p>🟢 <strong>英特尔发布18A制程至强6+处理器</strong> — 盘后一度跳涨近10%，收涨超6%。→ 影响：先进封装、硅片等方向获情绪传导</p>
+</li>
+<li>
+<p>🟢 <strong>煤炭安检+焦煤期货涨超4%</strong> — 5月下旬煤矿大面积停产安检，焦煤期现货同步走强。→ 影响：煤炭板块延续强势，大有能源4连板</p>
+</li>
+<li>
+<p>🟢 <strong>京东方A新增CPO概念</strong> — 公司2024年投资9.93亿建设玻璃基封装载板试验线，已送样并进入技术测试。→ 影响：京东方A涨停创年内新高，带动玻璃基板概念</p>
+</li>
+</ol>
+<p>新闻情绪催化验证：今日半导体/存储芯片/工业气体板块大涨与新闻3、4、5高度相关；煤炭板块走强与新闻7高度相关；有色金属暴跌则与美伊冲突推动美元走强+铜价下跌（LME铜-1.5%）直接相关。</p>
+<h2>板块涨幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>涨幅</th>
+<th>主力净流入</th>
+<th>催化因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>电子（半导体）</td>
+<td>+2.26%</td>
+<td>逾535亿</td>
+<td>全球半导体产值暴增+黄仁勋访韩+英特尔18A发布</td>
+</tr>
+<tr>
+<td>2</td>
+<td>机械设备</td>
+<td>+1.22%</td>
+<td>逾96亿</td>
+<td>先进封装设备需求+半导体扩产传导</td>
+</tr>
+<tr>
+<td>3</td>
+<td>煤炭</td>
+<td>+0.89%</td>
+<td>—</td>
+<td>安检停产+焦煤期货涨4%+IEA上调煤炭投资预测</td>
+</tr>
+<tr>
+<td>4</td>
+<td>存储芯片</td>
+<td>大涨</td>
+<td>—</td>
+<td>TrendForce上调产值至8893亿+黄仁勋访韩催化</td>
+</tr>
+<tr>
+<td>5</td>
+<td>工业气体</td>
+<td>活跃</td>
+<td>—</td>
+<td>六氟化钨出口价涨118%+半导体上游材料需求</td>
+</tr>
+</tbody>
+</table></div>
+<h2>板块跌幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>跌幅</th>
+<th>主力净流出</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>有色金属</td>
+<td>-2.87%</td>
+<td>—</td>
+<td>LME铜-1.5%+美元走强+美伊冲突压制风险偏好</td>
+</tr>
+<tr>
+<td>2</td>
+<td>综合</td>
+<td>-2.85%</td>
+<td>—</td>
+<td>小盘股补跌，资金向科技主线集中</td>
+</tr>
+<tr>
+<td>3</td>
+<td>商贸零售</td>
+<td>-2.49%</td>
+<td>—</td>
+<td>消费复苏不及预期，中央商场/中百集团跌停</td>
+</tr>
+<tr>
+<td>4</td>
+<td>酿酒/白酒</td>
+<td>跌幅居前</td>
+<td>—</td>
+<td>高端消费承压，风格切换资金流出防御板块</td>
+</tr>
+<tr>
+<td>5</td>
+<td>石油</td>
+<td>走低</td>
+<td>—</td>
+<td>虽油价涨但A股石油股已高位回落，获利盘出逃</td>
+</tr>
+</tbody>
+</table></div>
+<h2>主线持续性分析</h2>
+<ul>
+<li><strong>当前主线：半导体/存储芯片</strong>，持续6天（自5/29暴跌后5/30开始反弹），<strong>加强中</strong> — 资金从CPO→存储芯片→工业气体轮动扩散，产业链纵深不断拓展，马太效应显著</li>
+<li><strong>新晋主线：工业气体</strong>，今日首次爆发 — 中船特气20CM涨停，六氟化钨出口价暴涨118%催化，从半导体材料端切入</li>
+<li><strong>退潮方向：AI应用</strong>（AIGC/AI营销/AI智能体）持续第4天退潮，6/1-6/4累计跌幅显著</li>
+<li><strong>上期判断验证</strong>：6/2晚盘复盘判断"AI从软到硬结构性切换"，今日进一步确认——存储芯片、工业气体、先进封装等硬件方向加速，AI应用方向继续失血</li>
+</ul>
+<h2>板块资金雷达趋势</h2>
+<h3>进攻榜TOP10</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>在榜天数</th>
+<th>波段流入率</th>
+<th>单日净额</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>光通信</td>
+<td>39天</td>
+<td>87.2%</td>
+<td>126.7亿</td>
+<td>🔴进攻</td>
+</tr>
+<tr>
+<td>2</td>
+<td>CPO概念</td>
+<td>45天</td>
+<td>105.4%</td>
+<td>125.6亿</td>
+<td>🔴进攻</td>
+</tr>
+<tr>
+<td>3</td>
+<td>芯片</td>
+<td>47天</td>
+<td>123.6%</td>
+<td>125.0亿</td>
+<td>—</td>
+</tr>
+<tr>
+<td>4</td>
+<td>存储芯片</td>
+<td>39天</td>
+<td>59.4%</td>
+<td>122.7亿</td>
+<td>—</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第三代半导体</td>
+<td>42天</td>
+<td>66.8%</td>
+<td>121.2亿</td>
+<td>—</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5G概念</td>
+<td>47天</td>
+<td>11.3%</td>
+<td>120.2亿</td>
+<td>—</td>
+</tr>
+<tr>
+<td>7</td>
+<td>先进封装</td>
+<td>43天</td>
+<td>72.5%</td>
+<td>119.4亿</td>
+<td>—</td>
+</tr>
+<tr>
+<td>8</td>
+<td>数据中心</td>
+<td>51天</td>
+<td>-15.6%</td>
+<td>119.0亿</td>
+<td>⚠️流入率转负</td>
+</tr>
+<tr>
+<td>9</td>
+<td>汽车芯片</td>
+<td>36天</td>
+<td>42.7%</td>
+<td>118.9亿</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10</td>
+<td>商业航天</td>
+<td>42天</td>
+<td>25.3%</td>
+<td>118.8亿</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<h3>机构建仓信号</h3>
+<p>🟢 <strong>关注建仓：EDA概念</strong> — 排名飙升111位（#191→#80），半导体设计工具国产替代逻辑，当前在榜天数短、流入率刚启动</p>
+<p>🟢 <strong>关注建仓：培育钻石</strong> — 排名飙升56位（#87→#31），工业金刚石+半导体散热新材料概念</p>
+<p>🟢 <strong>关注建仓：可控核聚变</strong> — 排名飙升54位（#96→#42），超导材料+能源革命预期</p>
+<h3>短线退潮信号</h3>
+<p>🔴 <strong>建议撤退：超级电容</strong> — 排名暴跌112位（#50→#162），在榜仅2天即大幅回落，短线资金出逃明显</p>
+<p>🔴 <strong>建议撤退：黄金概念</strong> — 排名下降62位（#57→#119），金价冲高回落+美伊和谈预期压制避险需求</p>
+<p>🔴 <strong>建议警惕：玻璃基板</strong> — 排名下降58位（#36→#94），虽京东方A涨停但板块整体资金撤退，注意区分个股与板块</p>
+<h3>排名飙升</h3>
+<p>📈 <strong>EDA概念</strong>，上升111位 — 半导体上游设计工具，国产替代刚需</p>
+<p>📈 <strong>超临界发电</strong>，上升79位 — 能源安全+煤电升级改造</p>
+<p>📈 <strong>电子纸</strong>，上升69位 — 低功耗显示+AI终端新方向</p>
+<h2>核心个股拆解</h2>
+<h3>京东方A（000725）</h3>
+<ul>
+<li>涨跌幅：+10.02% 涨停</li>
+<li>所属板块：玻璃基板 / CPO概念（新增）</li>
+<li>催化因素：①6/3同花顺新增CPO概念标签；②公司调研披露9.93亿玻璃基封装载板试验线已送样、部分客户通过概念认证进入技术测试；③OLED产品出货占比提升</li>
+<li>技术分析：涨停创年内新高，放量突破前期平台，封单资金超12亿元（今日封单最大），短线强势确立</li>
+<li>风险提示：公司明确表示玻璃基板尚未批量生产，良率未达量产水平，何时达标具重大不确定性。概念炒作成分较重</li>
+</ul>
+<h3>中船特气（688146）</h3>
+<ul>
+<li>涨跌幅：+20.00% 20CM涨停</li>
+<li>所属板块：工业气体 / 半导体材料 / 中船系</li>
+<li>催化因素：①海关数据显示4月六氟化钨出口均价149.79美元/千克，较1月涨117.9%；②半导体材料国产替代加速；③中船系整体活跃</li>
+<li>技术分析：20CM涨停开盘即封死，量能充沛，科创板龙头标杆</li>
+<li>风险提示：估值已不低，后续需关注六氟化钨出口价格的持续性</li>
+</ul>
+<h3>大有能源（600403）</h3>
+<ul>
+<li>涨跌幅：+10.00% 4连板</li>
+<li>所属板块：煤炭</li>
+<li>催化因素：①煤矿安检停产持续；②焦煤期货涨超4%；③IEA预测2026年全球煤炭投资1800亿美元（2012年以来最高）</li>
+<li>技术分析：4连板为当前市场最高板，短线情绪标杆</li>
+<li>风险提示：4连板后获利盘丰厚，随时面临分歧兑现。煤炭板块整体PE已不低</li>
+</ul>
+<h3>中国铝业（601600）</h3>
+<ul>
+<li>涨跌幅：-6.58%</li>
+<li>所属板块：有色金属</li>
+<li>催化因素：①LME铜-1.5%带动有色全线回调；②美元指数走强压制金属价格；③前期涨幅较大获利盘出逃</li>
+<li>技术分析：放量大阴线跌破5日线，短期头部形态初现</li>
+<li>风险提示：有色板块短期承压，但供给侧逻辑未变，回调后或有二波机会</li>
+</ul>
+<h3>中央商场（600280）</h3>
+<ul>
+<li>涨跌幅：跌停</li>
+<li>所属板块：商贸零售</li>
+<li>催化因素：①消费数据持续疲软；②零售板块整体走弱；③资金从消费防御转向科技进攻</li>
+<li>技术分析：放量跌停破位，趋势性下跌</li>
+<li>风险提示：消费复苏不及预期，零售板块短期难以扭转</li>
+</ul>
+<h2>风险预警</h2>
+<ul>
+<li>⚠️ <strong>成交量持续萎缩</strong>：今日2.76万亿较6/3缩量3726亿，较5/29的3.34万亿缩量17%，量价背离信号值得关注</li>
+<li>⚠️ <strong>美伊冲突不确定性</strong>：霍尔木兹海峡若长期封闭，原油暴涨→通胀→美联储加息预期升温，对全球风险资产构成系统性风险</li>
+<li>⚠️ <strong>SpaceX IPO虹吸效应</strong>：1.77万亿美元估值+750亿美元募资，6/12上市前后可能虹吸全球流动性（比特币已暴跌至65000美元）</li>
+<li>⚠️ <strong>半导体交易拥挤度</strong>：东吴证券提示AI硬件交易拥挤度攀升至历史高位，微观结构恶化迹象显现</li>
+<li>⚠️ <strong>风格极端分化</strong>：连续2日超3700股下跌，"指数弱+个股更弱"格局持续，亏钱效应扩散</li>
+<li>⚠️ <strong>京东方A概念炒作风险</strong>：公司明确玻璃基板尚未量产，当前涨幅主要靠CPO标签新增+市场情绪推动</li>
+</ul>
+<h2>明日推演</h2>
+<ul>
+<li><strong>乐观情景（概率25%）</strong>：黄仁勋访韩释放存储芯片重大利好 + 美伊和谈取得实质进展 → 科技股延续强势+周期股企稳反弹，上证收复4080点</li>
+<li><strong>中性情景（概率50%）</strong>：市场继续缩量震荡，半导体主线内部轮动（从存储芯片→先进封装/EDA），上证在4050-4080区间窄幅整理，个股分化持续</li>
+<li><strong>悲观情景（概率25%）</strong>：美伊冲突再度升级（霍尔木兹海峡完全封锁）+ SpaceX IPO前全球流动性收紧 → 上证跌破4050支撑，回踩4030半年线甚至4000整数关口</li>
+</ul>
+<h2>策略建议</h2>
+<ul>
+<li><strong>仓位建议：5成</strong> — 市场缩量+外盘不确定，控制仓位等待方向选择</li>
+<li><strong>关注方向</strong>：</li>
+<li>🔴 半导体产业链（存储芯片→先进封装→EDA→工业气体），关注产业链纵深轮动</li>
+<li>🔴 煤炭板块（安检+焦煤涨价+IEA预测三重催化），但追高需谨慎</li>
+<li>🟡 商业航天（SpaceX IPO 6/12上市前主题催化）</li>
+<li>🟡 CPO/光通信（虽今日分化但资金雷达仍居进攻榜前2，趋势未破）</li>
+<li><strong>回避方向</strong>：</li>
+<li>🟢 有色金属（美元走强+铜价下跌双杀）</li>
+<li>🟢 商贸零售/大消费（消费复苏持续不及预期）</li>
+<li>🟢 AI应用方向（AIGC/AI营销/短剧游戏，资金持续流出4天）</li>
+<li>🟢 超级电容/黄金概念（板块资金雷达排名暴跌，短线退潮信号明确）</li>
+</ul>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年06月04日 19:10</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
