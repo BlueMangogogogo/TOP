@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月5日 周五 午盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月5日 周五 午盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月05日 11:30
+  </div>
+</header>
+
+<h2>上午全景</h2>
+<ul>
+<li>上证指数：<span style="color:red">4075.31（+0.43%）</span></li>
+<li>深证成指：<span style="color:green">15623.57（-0.24%）</span></li>
+<li>创业板指：<span style="color:green">4055.23（-0.82%）</span></li>
+<li>科创50：<span style="color:green">-1.70%</span></li>
+<li>北证50：<span style="color:red">+6.74%</span></li>
+<li>两市成交额：18829亿（放量）</li>
+<li>涨停家数：60 | 跌停家数：12</li>
+<li>上涨家数：4011 | 下跌家数：1419</li>
+<li>炸板率：28%（封板率72%）</li>
+</ul>
+<h2>上午最强板块</h2>
+<ol>
+<li><strong>玻璃基板/光学光电子</strong> +7%以上 — 催化：AI算力需求井喷拉动光模块及上游玻璃基板需求，TGV技术突破加速替代传统PCB，2026年被视为玻璃基板商业化元年（台积电等推进方案落地），机构预测全球市场规模从186亿美元增至2030年320亿美元</li>
+<li><strong>6G/通信设备</strong> — 催化：工信部6月4日印发6G创新发展部省协同试点专项行动通知，标志着6G从实验室迈向工程化和产业化阶段，中兴通讯大涨超7%</li>
+<li><strong>光伏玻璃/BC电池</strong> — 催化：新能源装机需求持续+光伏玻璃供需改善预期</li>
+<li><strong>商业航天/射频天线</strong> — 催化：卫星互联网建设加速+6G概念外溢</li>
+<li><strong>石化/海运</strong> — 催化：周期品涨价预期+地缘运价支撑</li>
+</ol>
+<h2>上午最弱板块</h2>
+<ol>
+<li><strong>电力</strong> — 前期涨幅过大资金获利了结，建投能源跌超5%</li>
+<li><strong>煤炭/燃气</strong> — 高位回调，资金"高切低"明显</li>
+<li><strong>存储半导体</strong> — 渠道库存高企+市场传出谷歌TurboQuant AI内存压缩算法引发存储需求减少担忧，江波龙、东微半导跌超6%</li>
+<li><strong>电脑硬件</strong> — 跟随半导体整体走弱</li>
+</ol>
+<h2>异动个股</h2>
+<ul>
+<li><strong>京东方A</strong>（000725）：涨停，二连板，玻璃基板龙头，主力净流入超30亿元</li>
+<li><strong>沃格光电</strong>（603773）：涨停，玻璃基板核心标的</li>
+<li><strong>雷曼光电</strong>（300162）：涨停，光学光电子概念</li>
+<li><strong>金瑞矿业</strong>（600714）：涨停，玻璃基板原料石英砂</li>
+<li><strong>中兴通讯</strong>（000063）：涨超7%，6G政策催化龙头</li>
+<li><strong>烽火通信</strong>（600498）：涨停，6G概念</li>
+<li><strong>大有能源</strong>（600503）：5连板，煤炭高标</li>
+<li><strong>上海石化</strong>（600688）：3连板，碳纤维概念</li>
+<li><strong>东方碳素</strong>（北交所）：涨近30%，非金属新材料</li>
+<li><strong>建投能源</strong>（000600）：跌超5%，电力高位回调</li>
+<li><strong>江波龙</strong>（301308）：跌超6%，存储芯片恐慌性下跌</li>
+</ul>
+<h2>下午关注</h2>
+<ul>
+<li><strong>关注方向1</strong>：玻璃基板概念午后能否延续强势，京东方A二连板后封单力度及板块扩散程度，若持续走强可能带动面板、Mini LED等光学产业链联动</li>
+<li><strong>关注方向2</strong>：6G概念午后资金跟进情况，中兴通讯作为中军标的走势对整个通信板块的指引作用，关注盛路通信、通宇通讯等能否二次上攻</li>
+<li><strong>关注方向3</strong>：北证50暴涨6.74%背后的小盘股情绪外溢，关注北交所个股是否带动主板低位小盘补涨</li>
+<li><strong>关注方向4</strong>：半导体存储方向恐慌是否扩散，午后若不能止跌可能拖累科创50进一步走弱</li>
+<li><strong>关注方向5</strong>：两市半日成交1.88万亿已放量，午后需关注量能持续性，若全天成交破3万亿则短线情绪高涨</li>
+</ul>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年06月05日 11:30</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
