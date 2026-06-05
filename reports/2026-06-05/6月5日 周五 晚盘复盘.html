@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月5日 周五 晚盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月5日 周五 晚盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月05日 19:20
+  </div>
+</header>
+
+<h2>指数全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘</th>
+<th>涨跌幅</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>4027.74</td>
+<td><span style="color:green">-0.74%</span></td>
+<td>冲高回落，失守60日和120日均线</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>15314.70</td>
+<td><span style="color:green">-2.21%</span></td>
+<td>午后急跌</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>3957.94</td>
+<td><span style="color:green">-3.20%</span></td>
+<td>放量跌破4000关口！</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>1668.33</td>
+<td><span style="color:green">-4.01%</span></td>
+<td>硬科技抱团松动</td>
+</tr>
+<tr>
+<td>北证50</td>
+<td>—</td>
+<td><span style="color:red">+5.59%</span></td>
+<td>小盘题材逆市暴涨</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>支撑位</strong>：4000（心理关口）| 4030（近期密集成交区）</li>
+<li><strong>压力位</strong>：4053（60日均线）| 4080（前期反弹高点）</li>
+<li><strong>两市成交额</strong>：3.07万亿（放量3115亿 vs 昨日2.76万亿）</li>
+<li><strong>涨停家数</strong>：75 | <strong>跌停家数</strong>：12</li>
+<li><strong>上涨家数</strong>：3277 | <strong>下跌家数</strong>：2113</li>
+<li><strong>炸板率</strong>：约40% | <strong>市场情绪</strong>：极端分化</li>
+</ul>
+<blockquote>
+<p>⚡ <strong>今日核心矛盾</strong>：指数暴跌但个股涨多跌少！创业板指跌3.2%破4000，但全市场59%个股收红。这是典型的"权重砸盘、小票唱戏"格局——CPO三巨头、半导体、电力等权重板块集体暴跌拖累指数，而机器人、玻璃基板、6G等中小盘题材逆市爆发。</p>
+</div>
+<h2>外盘与宏观环境</h2>
+<h3>隔夜美股（6月4日收盘）</h3>
+<ul>
+<li>道琼斯：51561.93（<span style="color:red">+1.73%</span>）——再创历史新高</li>
+<li>纳斯达克：26830.96（<span style="color:green">-0.09%</span>）</li>
+<li>标普500：7584.31（<span style="color:red">+0.41%</span>）</li>
+<li>费城半导体：<span style="color:green">-5%+</span></li>
+</ul>
+<h3>关键美股个股</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>个股</th>
+<th>涨跌幅</th>
+<th>要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>博通</td>
+<td><span style="color:green">-12.6%</span></td>
+<td>Q3 AI收入指引160亿低于买方172亿预期，史上最大单日市值蒸发</td>
+</tr>
+<tr>
+<td>美光</td>
+<td><span style="color:green">-7.74%</span></td>
+<td>博通连锁反应，股价失守1000美元</td>
+</tr>
+<tr>
+<td>ARM</td>
+<td><span style="color:green">-8%+</span></td>
+<td>半导体板块恐慌性抛售</td>
+</tr>
+<tr>
+<td>英伟达</td>
+<td><span style="color:red">+1.92%</span></td>
+<td>逆势收红，AI需求地基未动摇</td>
+</tr>
+<tr>
+<td>AMD</td>
+<td><span style="color:green">-3.56%</span></td>
+<td>芯片股普跌</td>
+</tr>
+</tbody>
+</table></div>
+<h3>大宗商品与外汇</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>品种</th>
+<th>价格</th>
+<th>涨跌幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WTI原油</td>
+<td>92.65美元/桶</td>
+<td><span style="color:green">-0.42%</span></td>
+</tr>
+<tr>
+<td>布伦特原油</td>
+<td>95.03美元/桶</td>
+<td><span style="color:green">-2.84%</span></td>
+</tr>
+<tr>
+<td>现货黄金</td>
+<td>4478.94美元/盎司</td>
+<td><span style="color:red">+0.09%</span></td>
+</tr>
+<tr>
+<td>伦铜</td>
+<td>13904美元/吨</td>
+<td><span style="color:red">+0.86%</span></td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td>99.425</td>
+<td><span style="color:green">-0.02%</span></td>
+</tr>
+<tr>
+<td>VIX</td>
+<td>15.18-16.80区间</td>
+<td>相对温和</td>
+</tr>
+</tbody>
+</table></div>
+<h3>欧洲股市（6月4日收盘）</h3>
+<ul>
+<li>德国DAX：24944.95（<span style="color:red">+0.60%</span>）</li>
+<li>法国CAC40：8244.29（<span style="color:red">+1.15%</span>）</li>
+<li>英国富时100：10360.32（<span style="color:red">+0.27%</span>）</li>
+</ul>
+<h3>今日宏观数据</h3>
+<ul>
+<li>美国5月非农就业数据即将公布（6月6日），市场预期偏谨慎</li>
+<li>日本央行6月15-16日议息会议临近，若加息可能引发全球科技股估值重估</li>
+<li>EIA天然气库存增加950亿立方英尺，总量25780亿立方英尺</li>
+</ul>
+<h2>核心新闻简报（按强度排序）</h2>
+<h3>1. 🔴 博通财报"爆雷"——全球半导体抛售潮</h3>
+<ul>
+<li><strong>事件</strong>：博通Q2营收221.9亿美元（同比+48%），AI半导体收入108亿美元（同比+143%），但Q3指引AI收入160亿美元低于买方模型172亿，且全年1000亿目标未上调</li>
+<li><strong>影响</strong>：博通单日暴跌12.6%、美光-7.74%，两家公司单日合计市值蒸发约3800亿美元（约2.58万亿人民币），均创史上最大单日市值蒸发纪录</li>
+<li><strong>对A股冲击</strong>：CPO三巨头集体放量暴跌，中际旭创-7.81%创历史天量（583亿成交），存储芯片/先进封装/英伟达概念全线重挫</li>
+<li><strong>判断</strong>：本质是"预期跑太快"而非AI需求崩塌——博通AI收入仍在143%高增，但70倍PE估值下"差一口气"就触发获利了结</li>
+</ul>
+<h3>2. 🔴 电力板块集体崩塌——高位获利盘出逃</h3>
+<ul>
+<li><strong>事件</strong>：电力板块暴跌，火力发电板块跌4%，广西能源、华电能源、豫能控股多股跌停</li>
+<li><strong>影响</strong>：建投能源-7.4%、大唐发电-6.92%、华能蒙电-6.83%等跟跌</li>
+<li><strong>原因</strong>：前期涨幅过大（豫能控股一周涨22.66%），叠加市场风格切换从防御转向成长题材，获利盘集中兑现</li>
+</ul>
+<h3>3. 🟡 华为发布CloudRobo——机器人概念全面爆发</h3>
+<ul>
+<li><strong>事件</strong>：华为云在INSPIRE创想者大会上发布"行业AI梦工厂·具身智能专区"，全球首个全流程具身智能开发平台CloudRobo月内公测</li>
+<li><strong>影响</strong>：机器人概念逆市暴涨，中大力德4天2板、绿的谐波逼近20CM涨停创历史新高、科力尔涨停、丰光精密涨停</li>
+<li><strong>催化验证</strong>：减速器板块雷达排名从93飙升至第9，人形机器人从21升至第3</li>
+</ul>
+<h3>4. 🟡 玻璃基板全线涨停——AI封装新方向</h3>
+<ul>
+<li><strong>事件</strong>：Intel、台积电、三星、苹果纷纷转向玻璃封装材料，玻璃热膨胀系数与硅高度匹配</li>
+<li><strong>影响</strong>：雷曼光电20%涨停、沃格光电涨停创历史新高、金瑞矿业涨停、京东方A一度涨停（市值2400亿）、海目星涨超13%</li>
+<li><strong>催化验证</strong>：玻璃基板板块指数涨幅一度超5%，光纤预制棒价格从22-30元暴涨至160元（+550%）</li>
+</ul>
+<h3>5. 🟡 6G概念盘中异动</h3>
+<ul>
+<li><strong>事件</strong>：创远信科30%涨停、武汉凡谷/特发信息/顺络电子10%涨停</li>
+<li><strong>影响</strong>：6G概念板块涨幅接近3%，与玻璃基板形成联动</li>
+</ul>
+<h3>6. 🟢 SpaceX AI营收预测暴涨100倍</h3>
+<ul>
+<li><strong>事件</strong>：高盛预测SpaceX AI业务2030年营收将达3220亿美元（2025年32亿的100倍），整体营收4740亿美元</li>
+<li><strong>影响</strong>：利多AI情绪，但受博通事件压制未能体现</li>
+</ul>
+<h3>新闻情绪催化验证</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>今日上涨板块</th>
+<th>对应新闻</th>
+<th>相关度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机器人概念</td>
+<td>华为CloudRobo发布</td>
+<td>⭐⭐⭐⭐⭐ 高度相关</td>
+</tr>
+<tr>
+<td>玻璃基板</td>
+<td>Intel/台积电玻璃封装</td>
+<td>⭐⭐⭐⭐⭐ 高度相关</td>
+</tr>
+<tr>
+<td>6G概念</td>
+<td>6G标准推进</td>
+<td>⭐⭐⭐⭐ 相关</td>
+</tr>
+<tr>
+<td>电力大跌</td>
+<td>获利盘出逃+风格切换</td>
+<td>⭐⭐⭐⭐ 高度相关</td>
+</tr>
+<tr>
+<td>CPO暴跌</td>
+<td>博通财报冲击</td>
+<td>⭐⭐⭐⭐⭐ 高度相关</td>
+</tr>
+</tbody>
+</table></div>
+<h2>板块涨幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>涨幅</th>
+<th>主力净流入</th>
+<th>催化因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>减速器</td>
+<td>+3.25%</td>
+<td>+28.22亿</td>
+<td>华为CloudRobo+机器人产业链纵深扩散</td>
+</tr>
+<tr>
+<td>2</td>
+<td>玻璃基板</td>
+<td>+5%+</td>
+<td>—</td>
+<td>Intel/台积电/三星转向玻璃封装</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6G概念</td>
+<td>+3%</td>
+<td>+69.53亿</td>
+<td>6G标准推进+通信产业链联动</td>
+</tr>
+<tr>
+<td>4</td>
+<td>人形机器人</td>
+<td>+1.49%</td>
+<td>+28.22亿</td>
+<td>具身智能平台催化</td>
+</tr>
+<tr>
+<td>5</td>
+<td>航天装备</td>
+<td>+1.19%</td>
+<td>+93.97亿</td>
+<td>商业航天+国防军工双催化</td>
+</tr>
+</tbody>
+</table></div>
+<h2>板块跌幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>跌幅</th>
+<th>主力净流出</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>电力/火电</td>
+<td>-4.0%</td>
+<td>—</td>
+<td>高位获利盘集中兑现，一周涨超20%后崩塌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>存储芯片</td>
+<td>-2.62%</td>
+<td>-598.04亿</td>
+<td>博通/美光连锁反应，SK海力士暴跌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CPO概念</td>
+<td>-3.75%</td>
+<td>—</td>
+<td>中际旭创天量暴跌-7.81%，主力净流出63.81亿</td>
+</tr>
+<tr>
+<td>4</td>
+<td>半导体/芯片</td>
+<td>-5.98%</td>
+<td>—</td>
+<td>全球芯片股恐慌性抛售</td>
+</tr>
+<tr>
+<td>5</td>
+<td>培育钻石/MLCC</td>
+<td>-2%+</td>
+<td>—</td>
+<td>前期AI高位分支补跌</td>
+</tr>
+</tbody>
+</table></div>
+<h2>主线持续性分析</h2>
+<h3>🔴 旧主线退潮：AI硬件（CPO/光通信/存储芯片）</h3>
+<ul>
+<li><strong>持续天数</strong>：45-50天（从4月初中期起步）</li>
+<li><strong>状态</strong>：<strong>剧烈退潮中</strong></li>
+<li><strong>证据</strong>：</li>
+<li>CPO雷达排名：3→83，评分从1.22暴跌至-1.20</li>
+<li>光通信排名：9→56，评分从0.66转负至-0.38</li>
+<li>存储芯片排名：1→123，评分从2.35暴跌至-1.71</li>
+<li>先进封装排名：4→105，评分从1.66转负至-1.00</li>
+<li>英伟达概念排名：26→109，评分从0.45转负至-0.49</li>
+<li><strong>对比上期判断</strong>：昨日报告判断"从软到硬切换延续第4天"，今日确认AI硬件主线彻底退潮，CPO/光通信从进攻榜前2跌至80名开外</li>
+</ul>
+<h3>🟢 新主线确立：机器人/具身智能</h3>
+<ul>
+<li><strong>持续天数</strong>：今日首次爆发确认</li>
+<li><strong>状态</strong>：<strong>强势启动</strong></li>
+<li><strong>证据</strong>：</li>
+<li>机器人概念雷达排名：16→1，评分从-0.67飙升至1.04</li>
+<li>人形机器人排名：21→3，评分从-0.07飙升至1.49</li>
+<li>减速器排名：93→9，评分从-0.28暴涨至3.25（全场最高！）</li>
+<li>华为CloudRobo+具身智能平台双重催化</li>
+<li>产业链纵深扩散：从机器人本体→减速器/谐波→新型工业化</li>
+</ul>
+<h3>🟡 辅线加强：商业航天/国防军工</h3>
+<ul>
+<li><strong>商业航天</strong>：排名18→4，评分从-0.21升至1.19，连续46天在榜</li>
+<li><strong>国防军工</strong>：排名34→6，评分从-0.58升至1.26</li>
+</ul>
+<h2>板块资金雷达趋势</h2>
+<h3>进攻榜TOP10</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>在榜天数</th>
+<th>评分</th>
+<th>波段流入率</th>
+<th>单日净额</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>机器人概念</td>
+<td>53天</td>
+<td>1.04</td>
+<td>111.43%</td>
+<td>122.88亿</td>
+<td>🟢 主力加仓</td>
+</tr>
+<tr>
+<td>2</td>
+<td>新能源车</td>
+<td>55天</td>
+<td>0.75</td>
+<td>113.10%</td>
+<td>121.80亿</td>
+<td>🟡 观察中</td>
+</tr>
+<tr>
+<td>3</td>
+<td>人形机器人</td>
+<td>42天</td>
+<td>1.49</td>
+<td>123.68%</td>
+<td>121.38亿</td>
+<td>🟢 强势启动</td>
+</tr>
+<tr>
+<td>4</td>
+<td>商业航天</td>
+<td>46天</td>
+<td>1.19</td>
+<td>118.36%</td>
+<td>121.09亿</td>
+<td>🟢 持续流入</td>
+</tr>
+<tr>
+<td>5</td>
+<td>芯片</td>
+<td>51天</td>
+<td>-0.13</td>
+<td>113.05%</td>
+<td>120.50亿</td>
+<td>🔴 流入率转负</td>
+</tr>
+<tr>
+<td>6</td>
+<td>国防军工</td>
+<td>40天</td>
+<td>1.26</td>
+<td>109.47%</td>
+<td>120.38亿</td>
+<td>🟢 排名飙升</td>
+</tr>
+<tr>
+<td>7</td>
+<td>人工智能</td>
+<td>47天</td>
+<td>0.69</td>
+<td>96.32%</td>
+<td>120.30亿</td>
+<td>🟡 弱势反弹</td>
+</tr>
+<tr>
+<td>8</td>
+<td>新型工业化</td>
+<td>34天</td>
+<td>2.21</td>
+<td>119.37%</td>
+<td>119.56亿</td>
+<td>🟢 强势启动</td>
+</tr>
+<tr>
+<td>9</td>
+<td>减速器</td>
+<td>9天</td>
+<td>3.25</td>
+<td>126.52%</td>
+<td>119.34亿</td>
+<td>🟢🟢 最强信号！</td>
+</tr>
+<tr>
+<td>10</td>
+<td>DeepSeek概念</td>
+<td>42天</td>
+<td>0.59</td>
+<td>93.14%</td>
+<td>118.85亿</td>
+<td>🟡 走弱</td>
+</tr>
+</tbody>
+</table></div>
+<h3>机构建仓信号</h3>
+<p>🟢 <strong>减速器</strong> — 9天在榜，评分3.25全场最高，流入率126.52%且上升，华为催化下产业链纵深扩散，股价尚处启动初期
+🟢 <strong>新型工业化</strong> — 34天在榜，评分2.21急升，流入率119.37%持续上升，机器人产业链上游核心方向
+🟢 <strong>人形机器人</strong> — 42天在榜，评分1.49大幅跳升，流入率123.68%，CloudRobo催化下具备持续上行动力</p>
+<h3>短线退潮信号</h3>
+<p>🔴 <strong>存储芯片</strong> — 42天在榜，今日排名从1暴跌至123，评分从2.35转负至-1.71，博通冲击下资金大幅出逃
+🔴 <strong>CPO概念</strong> — 48天在榜，排名从3暴跌至83，评分从1.22转负至-1.20，中际旭创天量暴跌标志抱团瓦解
+🔴 <strong>先进封装</strong> — 46天在榜，排名从4暴跌至105，评分从1.66转负至-1.00
+🔴 <strong>英伟达概念</strong> — 39天在榜，排名从26暴跌至109，评分从0.45转负至-0.49</p>
+<h3>排名飙升</h3>
+<p>📈 <strong>减速器</strong>：排名从93→9（上升84位！），评分-0.28→3.25，具身智能最强支线
+📈 <strong>国防军工</strong>：排名从34→6（上升28位），评分-0.58→1.26
+📈 <strong>新型工业化</strong>：排名从73→8（上升65位），评分-0.64→2.21
+📈 <strong>人形机器人</strong>：排名从21→3（上升18位），评分-0.07→1.49
+📈 <strong>6G概念</strong>：排名从30开外→18，评分转正</p>
+<h3>排名暴跌</h3>
+<p>📉 <strong>存储芯片</strong>：排名从1→123（下降122位！）
+📉 <strong>先进封装</strong>：排名从4→105（下降101位！）
+📉 <strong>CPO概念</strong>：排名从3→83（下降80位！）
+📉 <strong>英伟达概念</strong>：排名从26→109（下降83位！）
+📉 <strong>第三代半导体</strong>：排名从11→113（下降102位！）</p>
+<h2>核心个股拆解</h2>
+<h3>中际旭创（300308）— CPO龙头天量暴跌</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:green">-7.81%</span></li>
+<li><strong>所属板块</strong>：CPO概念/光通信</li>
+<li><strong>成交额</strong>：583.25亿元（刷新上市历史天量，A股历史第四）</li>
+<li><strong>主力资金</strong>：净流出63.81亿元</li>
+<li><strong>催化因素</strong>：博通财报冲击引发CPO抱团瓦解，高位获利盘恐慌出逃</li>
+<li><strong>技术分析</strong>：放量跌破5日均线，短期形成"天量天价"见顶信号</li>
+<li><strong>风险提示</strong>：583亿天量换手意味着主力大举出货，短期反弹空间有限</li>
+</ul>
+<h3>绿的谐波（688017）— 机器人龙头创历史新高</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:red">逼近20CM涨停</span></li>
+<li><strong>所属板块</strong>：人形机器人/减速器</li>
+<li><strong>催化因素</strong>：华为CloudRobo催化+具身智能平台落地</li>
+<li><strong>技术分析</strong>：突破前期平台创历史新高，量价配合良好</li>
+<li><strong>风险提示</strong>：短期涨幅过快，需关注回调风险</li>
+</ul>
+<h3>沃格光电（603773）— 玻璃基板龙头</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:red">+9.97%涨停</span></li>
+<li><strong>所属板块</strong>：玻璃基板/MiniLED/先进封装</li>
+<li><strong>总市值</strong>：302.52亿元</li>
+<li><strong>催化因素</strong>：Intel/台积电/三星玻璃封装趋势+MiniLED业务增长</li>
+<li><strong>技术分析</strong>：涨停创历史新高，连续强势上攻</li>
+<li><strong>风险提示</strong>：短期涨幅过大，需防高位震荡</li>
+</ul>
+<h3>京东方A（000725）— 2400亿巨头异动</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:red">一度涨停</span></li>
+<li><strong>所属板块</strong>：玻璃基板/面板</li>
+<li><strong>催化因素</strong>：玻璃封装基板新方向+面板周期回暖</li>
+<li><strong>技术分析</strong>：放量突破，巨量资金涌入</li>
+<li><strong>风险提示</strong>：市值2400亿，持续涨停难度较大</li>
+</ul>
+<h3>豫能控股（001896）— 电力龙头跌停</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:green">-8.10%跌停</span></li>
+<li><strong>所属板块</strong>：火力发电</li>
+<li><strong>催化因素</strong>：前期一周涨22.66%后获利盘集中出逃</li>
+<li><strong>技术分析</strong>：高位放量大阴线，短期见顶信号明确</li>
+<li><strong>风险提示</strong>：电力板块整体退潮，回避高位电力股</li>
+</ul>
+<h2>风险预警</h2>
+<ol>
+<li>🔴 <strong>创业板破位风险</strong>：创业板指今日放量跌破4000关口（3957.94），若明日不能快速收回，技术面将形成"破位—反抽—再下"的经典下跌中继形态</li>
+<li>🔴 <strong>科创50加速下行</strong>：科创50跌4.01%，硬科技抱团明显松动，半导体/存储芯片等方向资金持续流出</li>
+<li>🔴 <strong>CPO/光通信高位筹码松动</strong>：中际旭创天量暴跌+主力百亿级出逃，标志AI硬件极致抱团瓦解，后续可能反复杀跌</li>
+<li>🟡 <strong>博通事件传导尚未结束</strong>：博通/美光合计蒸发3800亿美元市值，SK海力士等亚洲半导体跟跌，A股半导体板块可能仍有下行空间</li>
+<li>🟡 <strong>日本央行6月15-16日议息会议</strong>：若加息落地可能引发全球科技股估值重估</li>
+<li>🟡 <strong>美国非农数据</strong>：6月6日（明日）公布5月非农就业数据，若超预期可能强化美联储鹰派立场</li>
+<li>🟢 <strong>上证4000点心理支撑</strong>：今日收4027.74距4000仅27点，若跌破可能触发技术性恐慌</li>
+</ol>
+<h2>明日推演</h2>
+<h3>乐观情景（概率25%）</h3>
+<ul>
+<li>博通冲击一次性释放完毕，半导体板块低开高走企稳</li>
+<li>机器人/具身智能主线延续强势，减速器/新型工业化继续扩散</li>
+<li>创业板指在3950-3980区域获得支撑后反弹，重新站上4000</li>
+<li>上证指数收复4050一线</li>
+<li>条件：非农数据温和+半导体企稳+机器人持续发酵</li>
+</ul>
+<h3>中性情景（概率45%）</h3>
+<ul>
+<li>市场继续分化：机器人/具身智能/商业航天等新主线活跃，但CPO/半导体/电力等旧方向继续调整</li>
+<li>创业板指在3920-4000区间震荡筑底</li>
+<li>上证指数围绕4000-4050窄幅波动</li>
+<li>成交额维持在2.8-3万亿区间</li>
+<li>条件：非农数据中性+板块轮动延续</li>
+</ul>
+<h3>悲观情景（概率30%）</h3>
+<ul>
+<li>非农超预期→美联储鹰派预期升温，叠加博通冲击余波</li>
+<li>CPO/半导体继续杀跌拖累创业板，创业板指跌破3900</li>
+<li>上证跌破4000心理关口，向3950-3980寻求支撑</li>
+<li>机器人概念冲高回落，新主线无法承接旧主线退出的资金</li>
+<li>条件：非农超预期+半导体继续杀跌+新主线承接不足</li>
+</ul>
+<h2>策略建议</h2>
+<ul>
+<li><strong>仓位建议</strong>：5成（降低至中性偏低水平）</li>
+<li><strong>关注方向</strong>：</li>
+<li>🟢 机器人/具身智能产业链（减速器&gt;人形机器人&gt;新型工业化）</li>
+<li>🟢 玻璃基板/先进封装新方向（关注沃格光电/京东方A等龙头回踩机会）</li>
+<li>🟢 商业航天/国防军工（连续在榜+流入率上升）</li>
+<li>🟢 光纤光缆/预制棒（供需缺口+价格暴涨550%）</li>
+<li><strong>回避方向</strong>：</li>
+<li>🔴 CPO/光通信（极致抱团瓦解，短期回避）</li>
+<li>🔴 存储芯片/半导体（博通冲击传导尚未结束）</li>
+<li>🔴 电力/火电（高位获利盘出逃，趋势性退潮）</li>
+<li>🔴 前期AI高位分支（MLCC/先进封装/液冷等补跌风险）</li>
+</ul>
+<h3>对比上期判断验证</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>上期判断</th>
+<th>今日验证</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"从软到硬"切换延续第4天</td>
+<td>AI硬件全面退潮，"硬"也崩了</td>
+<td>❌ 硬件也退潮了</td>
+</tr>
+<tr>
+<td>CPO/光通信仍居进攻榜前2</td>
+<td>CPO排名3→83，光通信9→56</td>
+<td>❌ 彻底退潮</td>
+</tr>
+<tr>
+<td>半导体产业链纵深扩散</td>
+<td>半导体排名暴跌，资金全面流出</td>
+<td>❌ 扩散中断</td>
+</tr>
+<tr>
+<td>隐含假设：AI硬件主线延续</td>
+<td>华为CloudRobo催化机器人接棒</td>
+<td>⚡ 主线切换</td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight">
+<p>💡 <strong>关键修正</strong>：昨日"从软到硬"的判断需要升级——今日行情表明，"从硬到更硬"的路径被博通冲击打断，资金并非在AI内部轮动，而是<strong>跨主线切换</strong>：从AI硬件（CPO/光通信/存储芯片）→具身智能（机器人/减速器/新型工业化）。这是6月以来最剧烈的一次主线切换。</p>
+</div>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年06月05日 19:20</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
