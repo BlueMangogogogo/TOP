@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月8日 周一 晚盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月8日 周一 晚盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月08日 21:50
+  </div>
+</header>
+
+<hr>
+<h2>指数全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘</th>
+<th>涨跌幅</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3959.34</td>
+<td><span style="color:#16a34a">-1.70%</span></td>
+<td>失守4000点，日内最高4007.49，最低3927.85</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>14821.19</td>
+<td><span style="color:#16a34a">-3.22%</span></td>
+<td>大幅下挫</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>3811.79</td>
+<td><span style="color:#16a34a">-3.69%</span></td>
+<td>跌幅居首</td>
+</tr>
+<tr>
+<td>科创综指</td>
+<td>1955.28</td>
+<td><span style="color:#16a34a">-3.46%</span></td>
+<td>科技杀跌重灾区</td>
+</tr>
+<tr>
+<td>北证50</td>
+<td>1316.31</td>
+<td><span style="color:#c0392b">+1.33%</span></td>
+<td>逆势走强，小市值低估值避风港</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>支撑位</strong>：3930（第一支撑，今日最低3927.85已击穿后回拉）| 3900（强支撑，筹码密集区+政策底预期）</li>
+<li><strong>压力位</strong>：4000-4010（原支撑变压力，整数关口+套牢盘密集）| 4045（第二压力位）</li>
+<li><strong>两市成交额</strong>：2.82万亿（缩量 vs 昨日3.10万亿，缩量8.93%）</li>
+<li><strong>涨停家数</strong>：62 | <strong>跌停家数</strong>：50</li>
+<li><strong>上涨家数</strong>：655 | <strong>下跌家数</strong>：4513（超九成个股下跌，赚钱效应仅16.38%）</li>
+<li><strong>炸板率</strong>：21% | <strong>市场情绪</strong>：<strong>极度低迷</strong>，恐慌性普跌</li>
+</ul>
+<div class="warning">
+<p>⚠️ <strong>关键信号</strong>：今日缩量暴跌+4000点失守，但炸板率仅21%说明涨停板质量尚可，空头力量主要砸向高位科技股而非无差别抛售。北证50逆势飘红+银行获16亿净流入，"高切低"信号极其明确。</p>
+</div>
+<hr>
+<h2>外盘与宏观环境</h2>
+<h3>隔夜美股（6月5日周五）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘</th>
+<th>涨跌幅</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道琼斯</td>
+<td>50,866.78</td>
+<td>-1.35%</td>
+<td>-695点</td>
+</tr>
+<tr>
+<td>纳斯达克</td>
+<td>25,709.43</td>
+<td>-4.18%</td>
+<td>创2025年4月以来最大单日跌幅</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7,383.74</td>
+<td>-2.64%</td>
+<td>创2025年10月以来最大单日跌幅</td>
+</tr>
+<tr>
+<td>费城半导体</td>
+<td>—</td>
+<td><strong>-10%+</strong></td>
+<td>创2020年3月以来最大单日跌幅</td>
+</tr>
+</tbody>
+</table></div>
+<h3>亚太市场</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>市场</th>
+<th>表现</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>韩国KOSPI</td>
+<td><strong>-8.4%</strong></td>
+<td>触发一级熔断，暂停交易20分钟！三星-9.27%，SK海力士-8.02%</td>
+</tr>
+<tr>
+<td>日经225</td>
+<td><strong>-3%+</strong></td>
+<td>软银集团-9%+，铠侠-8%+</td>
+</tr>
+<tr>
+<td>MSCI亚太</td>
+<td>-2%+</td>
+<td>全线下挫</td>
+</tr>
+</tbody>
+</table></div>
+<h3>关键宏观数据</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VIX恐慌指数</td>
+<td>21.51</td>
+<td><strong>飙升39.68%</strong>，恐慌急剧升温</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td>100.08</td>
+<td>+0.64%，走强压制新兴市场</td>
+</tr>
+<tr>
+<td>COMEX黄金</td>
+<td>4,352.00</td>
+<td>-3.40%，避险资产同遭抛售</td>
+</tr>
+<tr>
+<td>NYMEX原油</td>
+<td>90.19</td>
+<td>-3.07%，需求担忧+避险出逃</td>
+</tr>
+</tbody>
+</table></div>
+<h3>宏观催化链</h3>
+<pre class="codehilite"><code>美国5月非农超预期 → 降息预期降温/加息概率上升
+        ↓
+美债收益率上行 → 全球高估值成长股集体杀估值
+        ↓
+伊朗6月7日向以色列发射多波导弹 → 中东地缘风险升级
+        ↓
+美股&quot;黑色星期五&quot;(6/5) → 亚太&quot;黑色星期一&quot;(6/8)
+  ├→ 韩国KOSPI熔断
+  ├→ 日经225暴跌3%+
+  └→ A股三大指数集体重挫
+</code></pre>
+
+<hr>
+<h2>核心新闻简报（按强度排序）</h2>
+<h3>🔴 P0级 — 直接决定今日行情</h3>
+<p><strong>1. 美国5月非农大超预期，全球科技股杀估值</strong>
+- 美国5月非农就业数据远超市场预期，美联储降息预期大幅降温，甚至出现加息预期
+- 费城半导体指数暴跌超10%，英伟达、美光、AMD全线重挫
+- <strong>影响</strong>：全球AI/半导体估值锚松动，A股科技股首当其冲，半导体行业今日净流出219.33亿</p>
+<p><strong>2. 伊朗向以色列发射多波导弹，中东冲突升级</strong>
+- 6月7日，伊朗向以色列发射多波导弹，地缘风险急剧升温
+- 避险资产反而遭抛售（黄金-3.40%），反映流动性危机特征
+- <strong>影响</strong>：风险偏好全面收缩，资金从高风险资产撤出涌入银行/能源等防御板块</p>
+<p><strong>3. 韩国KOSPI暴跌8%+触发熔断</strong>
+- 三星电子-9.27%，SK海力士-8.02%，芯片供应链恐慌性抛售
+- 这是韩国股市今年第三次、历史第九次熔断
+- <strong>影响</strong>：亚太半导体产业链信心崩塌，A股半导体/存储芯片/消费电子跟跌</p>
+<h3>🟡 P1级 — 结构性影响</h3>
+<p><strong>4. 证监会四项新规6月8日落地</strong>
+- 量化交易约束：上交所严禁为量化提供独立通道，3个月内整改
+- 私募全链条监管：严查短线爆炒、违规募资、资金配资、联合坐庄
+- 港股通风控：券商强制弹窗警示高风险标的
+- 跨境违规资金整治：封堵灰色套利通道
+- <strong>影响</strong>：游资炒作小票路径被封死，高位无业绩标的面临持续出清</p>
+<p><strong>5. 公募半年考核倒计时，强制调仓进行中</strong>
+- 6月30日为半年考核"截屏节点"
+- 风格漂移基金必须在6月中旬前清理违规仓位（如消费基金重仓AI/半导体）
+- <strong>影响</strong>：高位科技板块持续面临公募抛压，低位蓝筹获增量配置</p>
+<p><strong>6. 黄仁勋GTC Taipei官宣物理AI战略</strong>
+- NVIDIA Cosmos 3正式发布，面向物理AI/具身智能
+- 英伟达与SK海力士达成多年期技术合作，覆盖Vera Rubin/RTX Spark/Jetson Thor
+- 英伟达与LG合作，直指人形机器人
+- <strong>影响</strong>：机器人/物理AI概念逆势暴涨，成为今日唯一亮点</p>
+<h3>🟢 P2级 — 中长期影响</h3>
+<p><strong>7. 宇树科技IPO过会，人形机器人第一股即将登陆</strong>
+- 宇树科技成功过会并提交注册，预计三季度上市
+- 云深处、乐聚智能IPO已受理
+- <strong>影响</strong>：人形机器人产业化加速，中线利好机器人产业链</p>
+<p><strong>8. 央行行长潘功胜会见香港银行公会代表团</strong>
+- 双方就深化内地与香港金融互联互通、离岸人民币市场建设交流
+- <strong>影响</strong>：中长期利好港股通和人民币国际化</p>
+<h3>新闻情绪催化验证</h3>
+<p>今日市场呈现<strong>"外围冲击+政策阵痛"双杀</strong>格局：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块表现</th>
+<th>对应新闻</th>
+<th>相关度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>半导体/芯片暴跌</td>
+<td>非农超预期+费城半导体-10%+韩国熔断</td>
+<td>✅ <strong>高度相关</strong></td>
+</tr>
+<tr>
+<td>机器人逆势暴涨</td>
+<td>黄仁勋Cosmos 3+英伟达LG合作+物理AI</td>
+<td>✅ <strong>高度相关</strong></td>
+</tr>
+<tr>
+<td>银行/油气走强</td>
+<td>公募调仓+避险+高切低</td>
+<td>✅ <strong>高度相关</strong></td>
+</tr>
+<tr>
+<td>高位科技股集体杀跌</td>
+<td>证监会新规+私募出清+公募漂移清理</td>
+<td>✅ <strong>高度相关</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>板块涨幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>涨幅</th>
+<th>主力净流入</th>
+<th>催化因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>油服工程</td>
+<td><span style="color:#c0392b">+1.29%</span></td>
+<td>2.20亿</td>
+<td>中东冲突升级+原油高企+避险</td>
+</tr>
+<tr>
+<td>2</td>
+<td>工程机械</td>
+<td><span style="color:#c0392b">+0.79%</span></td>
+<td>4.78亿</td>
+<td>低估值防御+基建预期</td>
+</tr>
+<tr>
+<td>3</td>
+<td>银行Ⅱ</td>
+<td><span style="color:#c0392b">+0.42%</span></td>
+<td>16.01亿</td>
+<td>高股息避风港+公募调仓流入</td>
+</tr>
+<tr>
+<td>4</td>
+<td>物理AI（概念）</td>
+<td><span style="color:#c0392b">逆势大涨</span></td>
+<td>—</td>
+<td>黄仁勋Cosmos 3+英伟达LG合作</td>
+</tr>
+<tr>
+<td>5</td>
+<td>机器人概念</td>
+<td><span style="color:#c0392b">逆势走强</span></td>
+<td>通用设备5.23亿</td>
+<td>宇树IPO+特斯拉量产在即+政策支持</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>注：物理AI和机器人为概念板块，申万行业分类中归入通用设备/自动化设备，此处分开列示以突出结构性亮点。</p>
+</div>
+<h2>板块跌幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>跌幅</th>
+<th>主力净流出</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>工业金属</td>
+<td><span style="color:#16a34a">-5.38%</span></td>
+<td>-51.54亿</td>
+<td>全球衰退预期+美元走强+前期涨幅过大</td>
+</tr>
+<tr>
+<td>2</td>
+<td>半导体</td>
+<td><span style="color:#16a34a">-5.05%</span></td>
+<td><strong>-219.33亿</strong></td>
+<td>费城半导体-10%+韩国熔断+公募出清</td>
+</tr>
+<tr>
+<td>3</td>
+<td>消费电子</td>
+<td><span style="color:#16a34a">-4.50%</span></td>
+<td>-69.92亿</td>
+<td>供应链恐慌+估值杀跌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>通信设备</td>
+<td><span style="color:#16a34a">-4.11%</span></td>
+<td>-98.35亿</td>
+<td>CPO/光通信高位补跌</td>
+</tr>
+<tr>
+<td>5</td>
+<td>电网设备</td>
+<td><span style="color:#16a34a">-4.05%</span></td>
+<td>-40.22亿</td>
+<td>前期高位+资金出逃</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>主线持续性分析</h2>
+<h3>与上期（6/5周五）对比验证</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>上期判断</th>
+<th>今日验证</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"6月最剧烈主线切换！AI硬件从进攻榜前5暴跌至80-120名外"</td>
+<td>✅ 今日AI硬件继续暴跌，半导体-5.05%、CPO大跌、通信设备-4.11%</td>
+<td><strong>判断正确</strong>，AI硬件退潮加速</td>
+</tr>
+<tr>
+<td>"机器人/减速器/具身智能全线接管进攻榜"</td>
+<td>✅ 机器人逆势暴涨，物理AI概念异军突起</td>
+<td><strong>判断正确且加强</strong>，机器人主线确立</td>
+</tr>
+<tr>
+<td>"'从软到硬'需修正为'跨主线切换'"</td>
+<td>✅ 今日出现"从科技到防御"的更高层级切换，银行+油气+工程机械接棒</td>
+<td><strong>判断进一步升级</strong>，从行业内部切换升级为风格大切换</td>
+</tr>
+</tbody>
+</table></div>
+<h3>当前主线</h3>
+<ul>
+<li><strong>当前主线</strong>：<strong>机器人/物理AI</strong>，持续第4天，<strong>加强中</strong></li>
+<li>催化链：黄仁勋Cosmos 3 → 英伟达LG合作 → 宇树IPO → 特斯拉量产 → 埃斯顿/绿的谐波涨停</li>
+<li>
+<p>今日逆势暴涨验证了"不畏大盘调整"的主线韧性</p>
+</li>
+<li>
+<p><strong>退潮主线</strong>：<strong>AI硬件（CPO/存储芯片/半导体）</strong>，退潮第4天，<strong>加速崩塌中</strong></p>
+</li>
+<li>费城半导体-10%+韩国熔断构成外部核弹</li>
+<li>证监会新规+公募调仓构成内部出清</li>
+<li>
+<p>今日半导体净流出219.33亿，为所有行业之最</p>
+</li>
+<li>
+<p><strong>新晋主线</strong>：<strong>高股息防御（银行/油气/煤炭）</strong>，今日首次系统性走强</p>
+</li>
+<li>银行获16亿净流入（全市场第一），中信银行+3%、农业银行+3%</li>
+<li>中国神华创18年新高</li>
+<li>这是"高切低"格局的防御端</li>
+</ul>
+<hr>
+<h2>板块资金雷达趋势</h2>
+<blockquote>
+<p>基于hist_metrics.json最近3日数据（6/3-6/5）分析，6/8数据待daily_pipeline更新</p>
+</div>
+<h3>进攻榜TOP10（6月5日数据）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>在榜天数</th>
+<th>波段流入率</th>
+<th>单日净额(亿)</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>机器人概念</td>
+<td>54天</td>
+<td>1.114</td>
+<td>-201.46</td>
+<td>⚠️ 高位分化</td>
+</tr>
+<tr>
+<td>2</td>
+<td>新能源车</td>
+<td>56天</td>
+<td>1.131</td>
+<td>-220.41</td>
+<td>⚠️ 资金流出</td>
+</tr>
+<tr>
+<td>3</td>
+<td>人形机器人</td>
+<td>43天</td>
+<td>1.237</td>
+<td>-135.14</td>
+<td>🟡 分化但流入率高</td>
+</tr>
+<tr>
+<td>4</td>
+<td>商业航天</td>
+<td>47天</td>
+<td>1.184</td>
+<td>+93.97</td>
+<td>🟢 资金回流</td>
+</tr>
+<tr>
+<td>5</td>
+<td>芯片</td>
+<td>52天</td>
+<td>1.130</td>
+<td><strong>-598.04</strong></td>
+<td>🔴 <strong>巨量出逃</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td>国防军工</td>
+<td>41天</td>
+<td>1.095</td>
+<td>+93.70</td>
+<td>🟢 资金回流</td>
+</tr>
+<tr>
+<td>7</td>
+<td>人工智能</td>
+<td>48天</td>
+<td>0.963</td>
+<td>-116.15</td>
+<td>🔴 流入率转负</td>
+</tr>
+<tr>
+<td>8</td>
+<td>新型工业化</td>
+<td>35天</td>
+<td>1.194</td>
+<td>+27.88</td>
+<td>🟢 稳健流入</td>
+</tr>
+<tr>
+<td>9</td>
+<td>减速器</td>
+<td>10天</td>
+<td>1.265</td>
+<td>+28.22</td>
+<td>🟢 新晋强势</td>
+</tr>
+<tr>
+<td>10</td>
+<td>DeepSeek概念</td>
+<td>43天</td>
+<td>0.931</td>
+<td>-51.26</td>
+<td>🔴 流入率下降</td>
+</tr>
+</tbody>
+</table></div>
+<h3>3日趋势对比</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>6/3排名</th>
+<th>6/4排名</th>
+<th>6/5排名</th>
+<th>趋势判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机器人概念</td>
+<td>#13</td>
+<td>—</td>
+<td><strong>#1</strong></td>
+<td>📈 <strong>飙升入榜首席</strong></td>
+</tr>
+<tr>
+<td>存储芯片</td>
+<td>#4</td>
+<td><strong>#1</strong></td>
+<td>—</td>
+<td>📉 跌出进攻榜</td>
+</tr>
+<tr>
+<td>光通信</td>
+<td><strong>#1</strong></td>
+<td>#9</td>
+<td>—</td>
+<td>📉 <strong>大幅下滑</strong></td>
+</tr>
+<tr>
+<td>CPO概念</td>
+<td>#2</td>
+<td>#3</td>
+<td>—</td>
+<td>📉 持续下滑</td>
+</tr>
+<tr>
+<td>减速器</td>
+<td>—</td>
+<td>—</td>
+<td>#9</td>
+<td>📈 <strong>新晋入榜</strong></td>
+</tr>
+<tr>
+<td>芯片</td>
+<td>#3</td>
+<td>#2</td>
+<td>#5</td>
+<td>⚠️ 排名下滑+巨量流出</td>
+</tr>
+</tbody>
+</table></div>
+<h3>机构建仓信号</h3>
+<p>🟢 <strong>关注建仓：减速器</strong> — 连续10天在榜，流入率1.265（进攻榜最高），排名从榜外飙升至第9，股价尚未充分反映资金流入</p>
+<p>🟢 <strong>关注建仓：商业航天</strong> — 47天在榜，流入率1.184，近3日净流入93.97亿，国防军工板块联动走强</p>
+<p>🟢 <strong>关注建仓：新型工业化</strong> — 35天在榜，流入率1.194，稳健流入不受科技杀跌影响</p>
+<h3>短线退潮信号</h3>
+<p>🔴 <strong>建议撤退：芯片</strong> — 52天在榜，今日巨量流出598.04亿，流入率从1.19降至1.13，排名从#2降至#5，费城半导体暴跌构成外部核弹</p>
+<p>🔴 <strong>建议撤退：CPO概念</strong> — 从6/3的#2暴跌至6/5跌出TOP10，净流出374.83亿，光通信同步暴跌-190.42亿</p>
+<p>🔴 <strong>建议撤退：人工智能</strong> — 流入率降至0.963（已低于1.0），净流出116.15亿，DeepSeek概念同步退潮</p>
+<h3>排名飙升</h3>
+<p>📈 <strong>排名飙升：机器人概念</strong>，从6/3的#13飙升至6/5的#1，上升12位，叠加今日黄仁勋物理AI催化</p>
+<p>📈 <strong>排名飙升：减速器</strong>，新晋入榜即达#9，流入率1.265为进攻榜最高</p>
+<p>📈 <strong>排名飙升：国防军工</strong>，6/5排名第6，近3日净流入93.70亿+商业航天联动</p>
+<hr>
+<h2>核心个股拆解</h2>
+<h3>巨能股份（830968）— 北交所"30CM"涨停</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:#c0392b">+30%</span>（北交所30CM涨停）</li>
+<li><strong>所属板块</strong>：机器人概念/减速器</li>
+<li><strong>催化因素</strong>：黄仁勋Cosmos 3物理AI催化+英伟达LG合作+宇树IPO+特斯拉量产在即，北交所低估值标的获资金挖掘</li>
+<li><strong>技术分析</strong>：北证50逆势+1.33%，巨能股份30CM涨停说明机器人主线向北交所扩散</li>
+<li><strong>风险提示</strong>：北交所流动性较差，30CM涨停后追高风险极大</li>
+</ul>
+<h3>埃斯顿（002747）— 机器人龙头涨停</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:#c0392b">+10.04%</span>（涨停收盘34.12元）</li>
+<li><strong>所属板块</strong>：机器人概念/人形机器人/减速器</li>
+<li><strong>催化因素</strong>：①黄仁勋官宣英伟达与LG合作直指人形机器人 ②中国科学院工业AI研究所与埃斯顿签署具身智能机器人联合攻关协议 ③英伟达发布Cosmos 3物理AI平台 ④宇树科技IPO过会</li>
+<li><strong>技术分析</strong>：在大盘暴跌1.70%的背景下逆势涨停，显示极强主线韧性；港股埃斯顿H股同步+12.33%</li>
+<li><strong>风险提示</strong>：短期涨幅过大，若大盘企稳反弹时可能面临获利回吐</li>
+</ul>
+<h3>中重科技（601135）— 4连板</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:#c0392b">+10.02%</span>（4连板）</li>
+<li><strong>所属板块</strong>：工程机械</li>
+<li><strong>催化因素</strong>：低估值防御+基建预期+工程机械板块唯一上涨行业（+0.79%）</li>
+<li><strong>技术分析</strong>：4连板为今日最高连板（剔除大有能源6连板ST），封板质量好</li>
+<li><strong>风险提示</strong>：连板高度已高，5板为短期天花板，追板风险大</li>
+</ul>
+<h3>大有能源（600403）— 6连板</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:#c0392b">涨停</span>（6连板）</li>
+<li><strong>所属板块</strong>：煤炭</li>
+<li><strong>催化因素</strong>：中国神华创18年新高+煤炭高股息防御+中东冲突推升能源价格预期</li>
+<li><strong>风险提示</strong>：6连板为今日最高连板，但属于防御品种，连板数偏高需警惕补跌</li>
+</ul>
+<h3>东微半导（688385）/ 宏微科技（688265）— 跌超10%</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:#16a34a">-10%+</span></li>
+<li><strong>所属板块</strong>：半导体</li>
+<li><strong>催化因素</strong>：费城半导体-10%+韩国KOSPI熔断+公募调仓出清+证监会新规压制游资</li>
+<li><strong>技术分析</strong>：半导体板块净流出219.33亿为全市场之最，短期支撑位不明</li>
+<li><strong>风险提示</strong>：全球半导体估值重构尚未结束，不宜抄底</li>
+</ul>
+<hr>
+<h2>风险预警</h2>
+<h3>🔴 高危风险</h3>
+<ol>
+<li>
+<p><strong>全球科技股估值重构加速</strong>
+   - 费城半导体单日-10%、KOSPI熔断-8.4%，全球半导体恐慌尚未结束
+   - A股半导体/CPO/通信设备仍有继续补跌空间
+   - 预计影响周期：1-2周</p>
+</li>
+<li>
+<p><strong>公募半年考核调仓窗口</strong>
+   - 6月中旬前为强制调仓期，高位科技仍面临系统性卖压
+   - 半导体、AI应用、消费电子是重灾区
+   - 预计影响周期：至6月15日</p>
+</li>
+<li>
+<p><strong>中东地缘风险不确定</strong>
+   - 伊朗-以色列冲突仍在升级中，任何进一步军事行动都可能引发全球risk-off
+   - 原油若突破95美元将加大通胀担忧
+   - 预计影响周期：不确定，取决于局势</p>
+</li>
+</ol>
+<h3>🟡 中度风险</h3>
+<ol start="4">
+<li>
+<p><strong>证监会新规阵痛期</strong>
+   - 量化通道限制3个月整改期，短期流动性可能受损
+   - 私募出清导致高位小票持续失血
+   - 预计影响周期：1-3个月</p>
+</li>
+<li>
+<p><strong>缩量下跌趋势</strong>
+   - 今日成交2.82万亿较昨日缩量8.93%，缩量下跌意味着买盘不足
+   - 若明日继续缩量至2.5万亿以下，则确认空头主导
+   - 预计影响周期：1-5天</p>
+</li>
+</ol>
+<h3>🟢 机会型风险</h3>
+<ol start="6">
+<li><strong>机器人主线拥挤度风险</strong>
+   - 机器人概念在6/5已为进攻榜#1，今日又逆势暴涨
+   - 若短期涨幅过快，可能出现高位分歧和获利回吐
+   - 预计影响周期：3-5天</li>
+</ol>
+<hr>
+<h2>明日推演</h2>
+<h3>乐观情景（概率25%）</h3>
+<p><strong>触发条件</strong>：伊朗-以色列局势暂缓 + 美股周一晚反弹 + A股超跌后技术性反弹</p>
+<ul>
+<li>沪指低开后在3900-3930区间获支撑，午盘回升至3950-3980</li>
+<li>机器人/物理AI继续走强，成为反弹先锋</li>
+<li>半导体/CPO超跌后技术性反抽，但力度有限</li>
+<li>成交量回升至3万亿以上</li>
+</ul>
+<p><strong>关键观察点</strong>：今晚美股是否企稳（纳指若止跌则A股反弹概率大增）</p>
+<h3>中性情景（概率45%）</h3>
+<p><strong>触发条件</strong>：美股窄幅震荡 + 中东局势僵持 + A股弱势整理</p>
+<ul>
+<li>沪指在3920-3980区间窄幅震荡，围绕3950一线拉锯</li>
+<li>板块继续分化：机器人/防御走强 vs 科技继续出清</li>
+<li>成交量维持2.5-2.8万亿</li>
+<li>半导体可能有小幅技术性反弹但难扭转趋势</li>
+</ul>
+<p><strong>关键观察点</strong>：北向资金流向（今日净流入29.52亿，若持续流入蓝筹则支撑中性偏强）</p>
+<h3>悲观情景（概率30%）</h3>
+<p><strong>触发条件</strong>：中东冲突进一步升级 + 美股继续暴跌 + A股恐慌性出逃</p>
+<ul>
+<li>沪指击穿3900，下探3850-3880区间</li>
+<li>涨停家数降至30以下，跌停扩至80+</li>
+<li>成交放量至3.5万亿+（恐慌性抛售）</li>
+<li>科技股全面补跌，机器人主线也可能被拖累</li>
+<li>VIX进一步升至25+</li>
+</ul>
+<p><strong>关键观察点</strong>：伊朗-以色列是否出现更大规模军事行动</p>
+<hr>
+<h2>策略建议</h2>
+<h3>仓位建议：3成（从5成降至3成）</h3>
+<blockquote>
+<p>大幅降仓应对"外围冲击+政策阵痛"双杀格局，保留3成仓位用于机器人主线</p>
+</div>
+<h3>关注方向</h3>
+<ol>
+<li>
+<p><strong>🤖 机器人/物理AI</strong>（核心持仓方向）
+   - 催化链持续：Cosmos 3 → LG合作 → 宇树IPO → 特斯拉量产
+   - 关注：减速器（流入率1.265最高）、人形机器人、具身智能
+   - 个股方向：绿的谐波、埃斯顿、鼎智科技（注意追高风险）</p>
+</li>
+<li>
+<p><strong>🏦 高股息防御</strong>（避风港配置）
+   - 银行（16亿净流入全市场第一）、煤炭（神华18年新高）、油气
+   - 中东冲突若持续升级，能源板块有进一步催化</p>
+</li>
+<li>
+<p><strong>🚀 商业航天/军工</strong>（中线布局）
+   - 47天在榜+流入率1.184+93.97亿净流入
+   - 低空经济、卫星导航联动</p>
+</li>
+<li>
+<p><strong>🏭 新型工业化</strong>（稳健标的）
+   - 35天在榜+流入率1.194，受科技杀跌影响小</p>
+</li>
+</ol>
+<h3>回避方向</h3>
+<ol>
+<li><strong>🚫 半导体/CPO/存储芯片</strong> — 全球估值重构+公募出清+韩国熔断，短期抄底极危</li>
+<li><strong>🚫 高位AI应用（AIGC/AI营销/DeepSeek概念）</strong> — 流入率已转负，私募出清压力大</li>
+<li><strong>🚫 消费电子/通信设备</strong> — 供应链恐慌+估值杀跌，净流出均超69亿</li>
+<li><strong>🚫 无业绩支撑的高位小票</strong> — 证监会新规封死游资炒作路径，面临持续出清</li>
+</ol>
+<h3>操作节奏</h3>
+<ul>
+<li><strong>开盘</strong>：观察美股今晚走势，若纳指企稳则A股低开高走概率大</li>
+<li><strong>上午</strong>：关注沪指3900-3930支撑，若击穿3900则减仓至2成</li>
+<li><strong>下午</strong>：关注机器人板块是否延续强势，若逆势走强可小幅加仓</li>
+<li><strong>尾盘</strong>：关注北向资金净流入是否延续（今日+29.52亿），若持续流入蓝筹则支撑市场底部</li>
+</ul>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 东方财富 | 同花顺 | 生成时间：2026年06月08日 21:50</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
