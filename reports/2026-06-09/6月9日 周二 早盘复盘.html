@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月9日 周二 早盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月9日 周二 早盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月09日 08:00
+  </div>
+</header>
+
+<h2>隔夜外盘</h2>
+<ul>
+<li>道琼斯：50,786.01（<span style="color:green">-0.16%</span>）</li>
+<li>纳斯达克：约25,930（<span style="color:red">+0.86%</span>）</li>
+<li>标普500：7,405.73（<span style="color:red">+0.30%</span>）</li>
+<li>VIX：18.05（<span style="color:green">-4.60%</span>）</li>
+<li>美元指数：100.07（<span style="color:red">+0.66%</span>）</li>
+<li>原油：WTI约91美元/桶，布伦特约93.3美元/桶（中东局势推升后高位回落）</li>
+<li>黄金：约4,340美元/盎司（<span style="color:green">-0.52%</span>）</li>
+<li>A50期货：15,374（<span style="color:red">+0.14%</span>）</li>
+</ul>
+<h2>盘前重大消息</h2>
+<ol>
+<li><strong>OpenAI秘密提交S-1招股说明书</strong>：已向美国SEC秘密提交IPO申请草案，但尚未确定上市时间表，科技股IPO再添重磅</li>
+<li><strong>SpaceX IPO获超额认购</strong>：发行5.556亿股，每股135美元，募资约750亿美元，公司估值约1.8万亿美元，周三收盘后结束机构申购</li>
+<li><strong>苹果WWDC推出AI版Siri</strong>：搭载智能技术的全新Siri上线，升级全平台视觉智能功能，苹果股价盘中涨3.3%后转跌1.2%</li>
+<li><strong>央行持续投放流动性</strong>：6月8日开展2185亿元7天逆回购（净投放2075亿元），6月9日继续开展1530亿元逆回购，操作利率1.40%</li>
+<li><strong>科创再贷款扩容</strong>：从8000亿扩容至1.2万亿，直接支持半导体、AI、算力等硬科技企业研发扩产</li>
+<li><strong>国家数据局发布数据集规范化建设指引</strong>：利好存储芯片、算力服务器等AI基础设施板块</li>
+<li><strong>中东局势暂缓但不确定性仍存</strong>：以色列内塔尼亚胡宣布对伊朗"暂不还击"，但警告若恢复攻击将以武力回应</li>
+<li><strong>美国5月非农大超预期</strong>：新增就业17.2万人，远超预期的8.5万人，失业率4.3%符合预期，市场加息预期升温</li>
+<li><strong>人形机器人预定火爆</strong>：优必选消费级超仿生人形机器人首发预订超2110台</li>
+</ol>
+<h2>今日关注方向</h2>
+<ul>
+<li><strong>AI与半导体</strong>：OpenAI IPO+苹果AI版Siri+科创再贷款+国家数据政策四重催化，科技主线有望延续强势，关注存储芯片、算力服务器、AI应用方向</li>
+<li><strong>人形机器人</strong>：优必选预售超预期，产业链关注度提升，减速器、传感器、执行器等核心零部件或有表现</li>
+<li><strong>能源与地缘</strong>：中东冲突推升油价至高位，油气、黄金板块短期博弈机会增加，但需警惕局势缓和后的回落风险</li>
+</ul>
+<h2>风险提示</h2>
+<ul>
+<li>中东地缘冲突存在升级可能，若伊朗—以色列局势再度恶化，将冲击全球风险偏好并推升避险情绪</li>
+<li>美国5月非农远超预期，市场对美联储加息预期升温，美元走强与美债收益率上行可能压制新兴市场资金流入</li>
+<li>A股昨日遭遇"黑色周一"（上证跌1.70%），情绪修复需要时间；MSCI及指数样本调整生效，关注被动配置资金流向与风格切换</li>
+</ul>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年06月09日 08:00</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
