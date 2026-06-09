@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月9日 周二 晚盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月9日 周二 晚盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月09日 23:15
+  </div>
+</header>
+
+<h2>指数全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘</th>
+<th>涨跌幅</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>4010.03</td>
+<td><span style="color:#c0392b">+1.28%</span></td>
+<td>收复4000点！日内最高4015，最低3978</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>15268.71</td>
+<td><span style="color:#c0392b">+3.02%</span></td>
+<td>大幅反弹，距前日低点反弹超447点</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>3961.75</td>
+<td><span style="color:#c0392b">+3.93%</span></td>
+<td>领涨主板，科技成长王者归来</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>—</td>
+<td><span style="color:#c0392b">+4.17%</span></td>
+<td>全场最强指数！半导体全线爆发</td>
+</tr>
+<tr>
+<td>科创综指</td>
+<td>—</td>
+<td><span style="color:#c0392b">+3.82%</span></td>
+<td>科创板全面反弹</td>
+</tr>
+<tr>
+<td>北证50</td>
+<td>—</td>
+<td><span style="color:#c0392b">+1.64%</span></td>
+<td>延续上涨，但涨幅较昨日收窄</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>支撑位</strong>：3978（今日最低，5日均线附近）| 3930（第一强支撑，昨日低点区域）</li>
+<li><strong>压力位</strong>：4045-4060（第二压力位，前期平台下沿）| 4080（上方套牢盘密集区）</li>
+<li><strong>两市成交额</strong>：2.64万亿（缩量 vs 昨日2.82万亿，缩量6.4%）</li>
+<li><strong>涨停家数</strong>：142 | <strong>跌停家数</strong>：19</li>
+<li><strong>上涨家数</strong>：3212 | <strong>下跌家数</strong>：1847</li>
+<li><strong>炸板率</strong>：18.86% | <strong>市场情绪</strong>：<strong>明显回暖</strong>，从极度低迷修复至正常偏强</li>
+<li><strong>封板率</strong>：81.14%（高质量封板，做多意愿强烈）</li>
+</ul>
+<div class="warning">
+<p>⚠️ <strong>关键信号</strong>：缩量反弹+涨停142家（vs昨日62家）+跌停仅19家（vs昨日50家），市场情绪急速V型修复！但缩量反包说明昨日割肉离场的资金多数未能接回，浮筹出清后抛压极轻。科创50单日+4.17%为近期最强，科技主线强势回归。</p>
+</div>
+<h2>外盘与宏观环境</h2>
+<h3>隔夜美股（6月8日周一）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘</th>
+<th>涨跌幅</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道琼斯</td>
+<td>50,786.01</td>
+<td>-0.16%</td>
+<td>窄幅震荡，跌势暂止</td>
+</tr>
+<tr>
+<td>纳斯达克</td>
+<td>25,929.66</td>
+<td><span style="color:#c0392b">+0.86%</span></td>
+<td>从6/5暴跌-4.18%后首日反弹</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7,405.73</td>
+<td><span style="color:#c0392b">+0.30%</span></td>
+<td>企稳反弹</td>
+</tr>
+<tr>
+<td>费城半导体</td>
+<td>—</td>
+<td><span style="color:#c0392b">+5.6%</span></td>
+<td>从6/5暴跌-10%后强势反弹！</td>
+</tr>
+</tbody>
+</table></div>
+<h3>亚太市场</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>市场</th>
+<th>表现</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>韩国KOSPI</td>
+<td><span style="color:#c0392b">+4%+</span></td>
+<td>触发向上熔断！SK海力士+16%，三星+9%</td>
+</tr>
+<tr>
+<td>日经225</td>
+<td><span style="color:#c0392b">+2.17%</span></td>
+<td>强势反弹</td>
+</tr>
+<tr>
+<td>恒生指数</td>
+<td>-0.36%</td>
+<td>窄幅震荡</td>
+</tr>
+</tbody>
+</table></div>
+<h3>关键宏观数据</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VIX恐慌指数</td>
+<td>约18-19（预估）</td>
+<td>从21.51大幅回落，恐慌消退</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td>99.94</td>
+<td>-0.07%，走弱利好新兴市场</td>
+</tr>
+<tr>
+<td>COMEX黄金</td>
+<td>4,349.32</td>
+<td>-0.32%，避险需求降温</td>
+</tr>
+<tr>
+<td>NYMEX原油</td>
+<td>89.68</td>
+<td>-1.77%，美伊谈判进展致油价回落</td>
+</tr>
+</tbody>
+</table></div>
+<h3>宏观催化链（今日逆转逻辑）</h3>
+<pre class="codehilite"><code>6/5 美股&quot;黑色星期五&quot; → 6/8 亚太&quot;黑色星期一&quot;
+        ↓
+6/8晚 美股半导体强力反弹(费城+5.6%)
+        ↓
+6/9 韩国KOSPI向上熔断(SK海力士+16%，三星+9%)
+        ↓
+黄仁勋敦促SK海力士扩产 + 英伟达多年合作锁定 → AI存储景气度再确认
+        ↓
+PPE树脂断供(PCB核心原料) → PCB全产业链暴涨
+        ↓
+半导体硅片涨价预期 → 国产替代加速
+        ↓
+A股科技全线反攻！沪指收复4000点，科创50+4.17%
+</code></pre>
+
+<h2>核心新闻简报（按强度排序）</h2>
+<h3>🔴 P0级 — 直接决定今日行情</h3>
+<p><strong>1. PPE树脂全球断供，PCB全产业链暴涨</strong>
+- 沙特朱拜勒工业区（供应全球约70%高纯PPE树脂）因3月底霍尔木兹海峡航运受阻停产，后遭导弹袭击，复产无望
+- 6月初海外库存见底，全球高端PPE"断供、缺货、无价无市"
+- PCB价格较3月最高飙升40%，国内电子级PPE价格从12万元/吨飙至60万元/吨，涨幅400%
+- 电子布年内完成5轮提价，均价达7.4元/米，较去年三季度低点翻倍
+- <strong>影响</strong>：PCB板块二十余只涨停，电子化学品+8.26%全行业第一，玻璃玻纤+8.38%</p>
+<p><strong>2. 黄仁勋再发声，AI存储景气度确认</strong>
+- 英伟达CEO公开敦促SK海力士加速产能扩产，明确当前翻倍产能仍无法匹配需求
+- 英伟达与SK海力士官宣多年合作计划，锁定先进存储供应，黄仁勋称"协议期限将超两年且有能力持续续约"
+- 三星HBM4获英伟达认证
+- <strong>影响</strong>：存储芯片集体反弹，SK海力士+16%（韩国）、三星+9%，A股半导体设备ETF+6.71%</p>
+<p><strong>3. 半导体硅片涨价预期启动</strong>
+- 国内半导体硅片厂商在取消销售折让（变相提价）后，开始明确酝酿新一轮直接挂牌价上涨
+- 价格传导正式从晶圆厂向下游材料端延伸，硅片供需天平发生实质性倾斜
+- <strong>影响</strong>：沪硅产业+20.01%涨停，晶丰明源+20.00%涨停，上海合晶近+18%</p>
+<h3>🟡 P1级 — 结构性影响</h3>
+<p><strong>4. 美伊谈判进入"最后关头"，油价回落</strong>
+- 特朗普称美伊谈判将在"两到三天内"达成协议
+- 伊朗与以色列先后宣布停火
+- <strong>影响</strong>：原油-1.77%，油气板块今日大幅调整，大有能源-9%+，通源石油-9%+</p>
+<p><strong>5. 苹果WWDC26发布Siri AI</strong>
+- 苹果在全球开发者大会上发布"Siri AI"，支持对话交互、屏幕读取、应用互动
+- 库克谢幕演讲
+- <strong>影响</strong>：AI应用概念受提振，电信ETF+1.57%，大唐电信/海能达涨停</p>
+<p><strong>6. SpaceX+OpenAI超级IPO潮</strong>
+- SpaceX首次公开募股获大幅超额认购，预计募资750亿美元
+- OpenAI提交IPO申请，计划估值1万亿美元
+- <strong>影响</strong>：商业航天/AI概念中长期利好</p>
+<h3>🟢 P2级 — 中长期影响</h3>
+<p><strong>7. 指数成分股大换血</strong>
+- 上交所和中证指数公司官宣6月12日收盘后调整样本股，上证50、沪深300、科创50等全部调整
+- 富时罗素新增兆易创新、澜起科技等5只科技股，6月18日生效
+- MSCI中国A股指数新增19只成份股，集中在AI算力基础设施、光通信领域
+- <strong>影响</strong>：被动资金将被迫配置新调入标的，短期利好调入个股</p>
+<p><strong>8. 央行5000亿逆回购持续操作</strong>
+- 市场流动性充裕，国家明确托底
+- <strong>影响</strong>：指数底部有支撑，系统性风险可控</p>
+<h3>新闻情绪催化验证</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块表现</th>
+<th>对应新闻</th>
+<th>相关度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCB/电子化学品暴涨</td>
+<td>PPE树脂断供+电子布5轮提价</td>
+<td>✅ <strong>高度相关</strong></td>
+</tr>
+<tr>
+<td>半导体/存储芯片强势反弹</td>
+<td>黄仁勋发声+硅片涨价+费城半导体反弹</td>
+<td>✅ <strong>高度相关</strong></td>
+</tr>
+<tr>
+<td>油气/煤炭大跌</td>
+<td>美伊谈判进展+原油回落</td>
+<td>✅ <strong>高度相关</strong></td>
+</tr>
+<tr>
+<td>光通信/CPO回暖</td>
+<td>全球AI算力景气确认+存储扩产</td>
+<td>✅ <strong>高度相关</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h2>板块涨幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>涨幅</th>
+<th>主力净流入</th>
+<th>催化因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>玻璃玻纤</td>
+<td><span style="color:#c0392b">+8.38%</span></td>
+<td>大额净流入</td>
+<td>PPE断供+电子布5轮提价+PCB需求爆发</td>
+</tr>
+<tr>
+<td>2</td>
+<td>电子化学品</td>
+<td><span style="color:#c0392b">+8.26%</span></td>
+<td>大额净流入</td>
+<td>PPE树脂断供+半导体材料涨价</td>
+</tr>
+<tr>
+<td>3</td>
+<td>元件</td>
+<td><span style="color:#c0392b">+7.28%</span></td>
+<td>大额净流入</td>
+<td>PCB产业链传导+覆铜板提价</td>
+</tr>
+<tr>
+<td>4</td>
+<td>半导体设备</td>
+<td><span style="color:#c0392b">+6.71%</span></td>
+<td>52亿（半导体合计）</td>
+<td>黄仁勋扩产+硅片涨价+国产替代</td>
+</tr>
+<tr>
+<td>5</td>
+<td>能源金属</td>
+<td><span style="color:#c0392b">+5%+</span></td>
+<td>净流入</td>
+<td>AI服务器功耗飙升+储能配套+锂电复苏</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>注：电子板块整体主力净流入200.95亿，为当日资金流入规模最大赛道</p>
+</div>
+<h2>板块跌幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>跌幅</th>
+<th>主力净流出</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>油气开采及服务</td>
+<td><span style="color:#16a34a">-3%+</span></td>
+<td>大额净流出</td>
+<td>美伊谈判进展+油价-1.77%+地缘溢价消退</td>
+</tr>
+<tr>
+<td>2</td>
+<td>煤炭开采加工</td>
+<td><span style="color:#16a34a">-2%+</span></td>
+<td>大额净流出</td>
+<td>避险退潮+高股息板块获利回吐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>白酒</td>
+<td><span style="color:#16a34a">-1.5%+</span></td>
+<td>净流出</td>
+<td>防御品种轮动回落+消费数据偏弱</td>
+</tr>
+<tr>
+<td>4</td>
+<td>石油石化</td>
+<td><span style="color:#16a34a">-1%+</span></td>
+<td>净流出</td>
+<td>同油气逻辑</td>
+</tr>
+<tr>
+<td>5</td>
+<td>房地产</td>
+<td><span style="color:#16a34a">-1%+</span></td>
+<td>净流出</td>
+<td>政策预期未兑现+资金切出</td>
+</tr>
+</tbody>
+</table></div>
+<h2>主线持续性分析</h2>
+<h3>与上期（6/8周一）对比验证</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>上期判断</th>
+<th>今日验证</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"风格大切换——从科技→防御的高层级切换确立"</td>
+<td>❌ <strong>判断需修正！</strong>今日科技全面暴涨，防御板块回落</td>
+<td>防御→科技切换仅持续1天即被逆转，"高切低"为短期避险而非趋势性切换</td>
+</tr>
+<tr>
+<td>"机器人/物理AI独立于大盘走强验证主线韧性"</td>
+<td>⚠️ 部分正确，机器人仍强但今日非最强方向</td>
+<td>机器人延续走强，但半导体/PCB成为今日更亮眼的反弹主力</td>
+</tr>
+<tr>
+<td>"AI硬件（半导体/CPO/通信设备）加速崩塌第4天"</td>
+<td>❌ <strong>判断错误！</strong>AI硬件今日强势反弹</td>
+<td>外围半导体反弹+产业催化（硅片涨价+PPE断供）扭转了杀跌趋势</td>
+</tr>
+<tr>
+<td>"银行16亿净流入+油气走强=高切低信号"</td>
+<td>⚠️ 短命信号，银行/油气今日回落</td>
+<td>昨日的高切低信号被今日科技反攻证伪，本质是恐慌性避险而非风格切换</td>
+</tr>
+<tr>
+<td>"3成仓位"</td>
+<td>过于保守，今日应加仓至5-6成</td>
+<td>缩量反弹说明浮筹已清，但仓位仍需控制</td>
+</tr>
+</tbody>
+</table></div>
+<h3>当前主线</h3>
+<ul>
+<li><strong>当前主线</strong>：<strong>半导体/PCB产业链</strong>，今日强势回归！</li>
+<li>催化链：PPE断供→PCB提价→硅片涨价→存储扩产→国产替代</li>
+<li>这是"AI硬件主线"的2.0版本——从CPO/光通信扩散至半导体材料/PCB/电子化学品</li>
+<li>
+<p>与6/5之前的AI硬件主线不同，本轮聚焦<strong>上游材料+国产替代</strong>，逻辑更硬</p>
+</li>
+<li>
+<p><strong>延续主线</strong>：<strong>机器人/物理AI</strong>，持续第5天，仍在走强但分化加剧</p>
+</li>
+<li>减速器/人形机器人继续获资金关注</li>
+<li>
+<p>但今日涨幅让位于半导体，出现"科技内部轮动"特征</p>
+</li>
+<li>
+<p><strong>退潮主线</strong>：<strong>高股息防御（银行/油气/煤炭）</strong>，退潮第1天</p>
+</li>
+<li>昨日还被视为"新晋主线"，今日即遭获利回吐</li>
+<li>证明昨日仅为恐慌避险，非趋势性风格切换</li>
+<li>
+<p>大有能源从6连板至今日跌超9%，标志性退潮信号</p>
+</li>
+<li>
+<p><strong>新晋方向</strong>：<strong>能源金属/锂电</strong>，午后拉升</p>
+</li>
+<li>AI服务器整柜功耗从130kW向600kW推进，储能和热管理材料用量走陡</li>
+<li>盛新锂能涨停，赣锋锂业/永兴材料跟涨</li>
+</ul>
+<h2>板块资金雷达趋势</h2>
+<blockquote>
+<p>基于hist_metrics.json最近3日数据（6/4-6/8）分析</p>
+</div>
+<h3>进攻榜TOP10（6月8日数据）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>在榜天数</th>
+<th>波段流入率</th>
+<th>单日净额(亿)</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>含H股</td>
+<td>43天</td>
+<td>—</td>
+<td>113.8</td>
+<td>⚠️ 防御属性</td>
+</tr>
+<tr>
+<td>2</td>
+<td>机器人概念</td>
+<td>57天</td>
+<td>—</td>
+<td>111.5</td>
+<td>🟡 高位延续</td>
+</tr>
+<tr>
+<td>3</td>
+<td>人形机器人</td>
+<td>46天</td>
+<td>—</td>
+<td>110.0</td>
+<td>🟡 分化中延续</td>
+</tr>
+<tr>
+<td>4</td>
+<td>一带一路</td>
+<td>48天</td>
+<td>—</td>
+<td>109.8</td>
+<td>⚠️ 主题杂糅</td>
+</tr>
+<tr>
+<td>5</td>
+<td>人工智能</td>
+<td>51天</td>
+<td>—</td>
+<td>109.7</td>
+<td>🟡 今日可能回升</td>
+</tr>
+<tr>
+<td>6</td>
+<td>新能源车</td>
+<td>59天</td>
+<td>—</td>
+<td>109.6</td>
+<td>🟡 分化</td>
+</tr>
+<tr>
+<td>7</td>
+<td>通达信88</td>
+<td>46天</td>
+<td>—</td>
+<td>108.9</td>
+<td>—</td>
+</tr>
+<tr>
+<td>8</td>
+<td>DeepSeek概念</td>
+<td>46天</td>
+<td>—</td>
+<td>108.8</td>
+<td>⚠️ AI应用端偏弱</td>
+</tr>
+<tr>
+<td>9</td>
+<td>减速器</td>
+<td>13天</td>
+<td>—</td>
+<td>108.3</td>
+<td>🟢 新晋强势</td>
+</tr>
+<tr>
+<td>10</td>
+<td>工业软件</td>
+<td>5天</td>
+<td>3.087</td>
+<td>108.2</td>
+<td>🟢 新晋且流入率极高！</td>
+</tr>
+</tbody>
+</table></div>
+<h3>6/8资金流出TOP5（概念板块）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>净流出(亿)</th>
+<th>今日可能变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>芯片</td>
+<td>-492.58</td>
+<td>⚡ 今日可能大幅回流！</td>
+</tr>
+<tr>
+<td>2</td>
+<td>数据中心</td>
+<td>-317.10</td>
+<td>⚡ 伴随半导体反弹</td>
+</tr>
+<tr>
+<td>3</td>
+<td>消费电子</td>
+<td>-286.47</td>
+<td>⚡ 有望修复</td>
+</tr>
+<tr>
+<td>4</td>
+<td>储能</td>
+<td>-275.96</td>
+<td>⚡ 能源金属午后异动</td>
+</tr>
+<tr>
+<td>5</td>
+<td>新能源车</td>
+<td>-262.89</td>
+<td>⚡ 分化</td>
+</tr>
+</tbody>
+</table></div>
+<h3>机构建仓信号</h3>
+<p>🟢 <strong>关注建仓：工业软件</strong> — 仅5天在榜即入TOP10，流入率3.087为全场最高！股价尚未充分反映资金流入，今日工业软件板块大概率继续走强</p>
+<p>🟢 <strong>关注建仓：减速器</strong> — 13天在榜，作为机器人产业链上游核心部件，独立于大盘调整，流入稳健</p>
+<p>🟢 <strong>关注建仓：PCB/电子化学品</strong> — 今日PPE断供催化下全线爆发，为6/8数据未覆盖的新方向，预计6/9数据将显示大量资金涌入</p>
+<h3>短线退潮信号</h3>
+<p>🔴 <strong>建议撤退：油气/煤炭</strong> — 美伊谈判进展+油价回落，地缘溢价消退，昨日的高股息防御逻辑已被证伪</p>
+<p>🔴 <strong>建议撤退：DeepSeek概念/AI应用</strong> — 46天在榜但AI应用端持续弱于硬件端，资金从软向硬的结构性转移仍在延续</p>
+<h3>排名飙升</h3>
+<p>📈 <strong>排名飙升：工业软件</strong>，6/5排名第6→6/8排名第10（但流入率3.087全场最高，实质排名应更靠前）</p>
+<p>📈 <strong>排名预升：PCB/存储芯片/半导体</strong>，6/8净流出巨大但今日全面反弹，预计6/9数据将显示排名飙升</p>
+<h2>核心个股拆解</h2>
+<h3>沪硅产业（688126）— 20CM涨停！半导体硅片龙头</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:#c0392b">+20.01%</span></li>
+<li><strong>所属板块</strong>：半导体/硅片</li>
+<li><strong>催化因素</strong>：①国内半导体硅片酝酿新一轮直接挂牌价上涨 ②硅片供需天平发生实质性倾斜 ③科创50+4.17%带动龙头溢价</li>
+<li><strong>技术分析</strong>：20CM涨停，成交额65.16亿，换手率7.98%，流通市值866.76亿，大市值龙头涨停说明机构资金主导</li>
+<li><strong>风险提示</strong>：短期涨幅过大，明日可能高开低走；硅片涨价预期仍需实际落地验证</li>
+</ul>
+<h3>晶丰明源（688368）— 20CM涨停</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:#c0392b">+20.00%</span></li>
+<li><strong>所属板块</strong>：半导体/电源管理芯片</li>
+<li><strong>催化因素</strong>：半导体产业链全线爆发+前期超跌反弹</li>
+<li><strong>技术分析</strong>：成交额8.66亿元，委买队列堆满，封板质量极佳</li>
+<li><strong>风险提示</strong>：20CM涨停后波动极大，需关注次日竞价情况</li>
+</ul>
+<h3>圣泉集团 — 一字涨停</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:#c0392b">涨停（一字板）</span></li>
+<li><strong>所属板块</strong>：PCB/电子化学品</li>
+<li><strong>催化因素</strong>：PPE树脂断供的直接受益标的！圣泉集团主营电子树脂（含PPE树脂路线），被市场直接对标为全球断供事件的替代受益标的</li>
+<li><strong>技术分析</strong>：一字涨停说明资金认可度极高，买盘远超卖盘</li>
+<li><strong>风险提示</strong>：PPE断供为短期事件驱动，若沙特复产预期升温则逻辑证伪</li>
+</ul>
+<h3>新易盛（300502）— 全市场资金净流入第一</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:#c0392b">大涨</span></li>
+<li><strong>所属板块</strong>：CPO/光通信</li>
+<li><strong>催化因素</strong>：AI算力景气确认+前期超跌反弹</li>
+<li><strong>技术分析</strong>：单日主力净流入21.55亿为全市场首位，大资金抄底信号明确</li>
+<li><strong>风险提示</strong>：CPO板块前期累计跌幅较大，反弹不等于反转，需观察持续性</li>
+</ul>
+<h3>金安国纪（002636）— 2连板</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:#c0392b">+10%</span>（2连板）</li>
+<li><strong>所属板块</strong>：PCB概念</li>
+<li><strong>催化因素</strong>：PPE断供+电子布5轮提价+PCB价格飙升40%</li>
+<li><strong>技术分析</strong>：2连板续创历史新高，量价配合良好</li>
+<li><strong>风险提示</strong>：2连板后追高风险增大，需关注板块整体持续性</li>
+</ul>
+<h3>大有能源（600403）— 从6连板到暴跌</h3>
+<ul>
+<li><strong>涨跌幅</strong>：<span style="color:#16a34a">-9%+</span></li>
+<li><strong>所属板块</strong>：煤炭</li>
+<li><strong>催化因素</strong>：美伊谈判进展→油价回落→能源避险逻辑消退→前期6连板获利盘集中兑现</li>
+<li><strong>技术分析</strong>：从6连板到跌超9%，典型的"断头铡"形态，短期头部确认</li>
+<li><strong>风险提示</strong>：煤炭/油气板块整体退潮，不宜抄底</li>
+</ul>
+<h2>风险预警</h2>
+<h3>🔴 高危风险</h3>
+<ol>
+<li>
+<p><strong>缩量反弹的持续性存疑</strong>
+   - 今日2.64万亿较昨日缩量6.4%，连续两日缩量
+   - 缩量反包说明昨日割肉资金未接回，若明日不能放量至2.8万亿+则反弹可靠性降低
+   - 预计影响周期：1-3天</p>
+</li>
+<li>
+<p><strong>PPE断供事件驱动可能昙花一现</strong>
+   - 若沙特复产或替代供应渠道打通，PCB/电子化学品暴涨逻辑将被证伪
+   - 高盛和央视财经报道的涨价幅度(400%)过于极端，市场可能过度反应
+   - 预计影响周期：3-7天</p>
+</li>
+<li>
+<p><strong>公募半年考核调仓尚未结束</strong>
+   - 6月中旬前仍为强制调仓期，高位科技仍面临卖压
+   - 但今日科技暴涨说明部分公募已提前调仓完毕开始回补
+   - 预计影响周期：至6月15日</p>
+</li>
+</ol>
+<h3>🟡 中度风险</h3>
+<ol start="4">
+<li>
+<p><strong>美伊谈判不确定性</strong>
+   - 特朗普此前多次声称即将达成协议均未实现，"两到三天内"可能再次落空
+   - 若谈判破裂，油价将再次飙升，油气板块可能快速反弹
+   - 预计影响周期：不确定</p>
+</li>
+<li>
+<p><strong>半导体反弹可能只是超跌技术性反抽</strong>
+   - 费城半导体6/5暴跌-10%后6/8反弹+5.6%，但距前高仍有距离
+   - A股半导体今日暴涨但基本面未发生根本性变化（硅片涨价预期尚未落地）
+   - 预计影响周期：3-5天</p>
+</li>
+</ol>
+<h3>🟢 机会型风险</h3>
+<ol start="6">
+<li><strong>科技板块反弹过快可能引发二次回踩</strong>
+   - 科创50单日+4.17%为近期罕见，短期获利盘丰厚
+   - 若明日高开低走则形成"反弹陷阱"
+   - 预计影响周期：1-2天</li>
+</ol>
+<h2>明日推演</h2>
+<h3>乐观情景（概率30%）</h3>
+<p><strong>触发条件</strong>：美股半导体继续反弹 + PPE断供消息持续发酵 + 量能放大至2.8万亿+</p>
+<ul>
+<li>沪指高开高走，挑战4045-4060压力区</li>
+<li>半导体/PCB延续强势，但内部开始分化（龙头继续涨停，跟风股冲高回落）</li>
+<li>机器人板块轮动走强，与半导体形成"双主线"共振</li>
+<li>成交量回升至2.8万亿以上，确认反弹有效</li>
+<li><strong>关键观察点</strong>：今晚美股费城半导体能否延续反弹</li>
+</ul>
+<h3>中性情景（概率45%）</h3>
+<p><strong>触发条件</strong>：美股窄幅震荡 + A股缩量分化</p>
+<ul>
+<li>沪指在4000-4030区间震荡整固，消化今日获利盘</li>
+<li>板块分化：半导体/PCB冲高回落，机器人/能源金属接力</li>
+<li>涨停家数降至80-100家，跌停维持20家以内</li>
+<li>成交量维持2.5-2.7万亿</li>
+<li><strong>关键观察点</strong>：北向资金流向及板块轮动节奏</li>
+</ul>
+<h3>悲观情景（概率25%）</h3>
+<p><strong>触发条件</strong>：美股再度大跌 + 美伊谈判破裂 + PPE断供被辟谣</p>
+<ul>
+<li>沪指再次失守4000点，回踩3950-3970区间</li>
+<li>今日涨停的半导体/PCB个股大面积低开，追高资金被套</li>
+<li>油气/煤炭因谈判破裂再度走强，风格再次混乱</li>
+<li>成交量维持低位2.4-2.5万亿</li>
+<li><strong>关键观察点</strong>：PPE断供消息是否被证伪或沙特复产预期</li>
+</ul>
+<h2>策略建议</h2>
+<h3>仓位建议：5成（从3成提升至5成）</h3>
+<blockquote>
+<p>市场情绪V型修复+科技主线回归+缩量说明浮筹出清，适度加仓。但缩量反弹+外围不确定性仍存，不宜满仓。</p>
+</div>
+<h3>关注方向</h3>
+<ol>
+<li>
+<p><strong>🔧 半导体/PCB产业链</strong>（核心加仓方向）
+   - 催化链：PPE断供→PCB提价→硅片涨价→存储扩产→国产替代
+   - 关注：半导体硅片（沪硅产业）、PCB材料（圣泉集团/金安国纪）、存储芯片
+   - ⚠️ 注意：优先选择有实质涨价支撑的龙头，纯概念炒作标的冲高后需止盈</p>
+</li>
+<li>
+<p><strong>🤖 机器人/减速器</strong>（延续持有方向）
+   - 催化链持续：Cosmos 3 → LG合作 → 宇树IPO → 特斯拉量产
+   - 关注：减速器（流入率最高）、人形机器人、具身智能
+   - ⚠️ 注意：今日涨幅让位于半导体，需观察是否形成"科技双主线"共振</p>
+</li>
+<li>
+<p><strong>⚡ 能源金属/锂电</strong>（新晋关注方向）
+   - AI服务器功耗飙升逻辑 + 锂电行业底部复苏
+   - 关注：盛新锂能、赣锋锂业、永兴材料
+   - ⚠️ 注意：午后异动但持续性待验证，轻仓试探</p>
+</li>
+<li>
+<p><strong>📡 光通信/CPO</strong>（超跌反弹观察方向）
+   - 新易盛21.55亿净流入为全市场第一，机构抄底信号明确
+   - 关注：新易盛、中兴通讯、亨通光电
+   - ⚠️ 注意：反弹不等于反转，需观察2-3日确认</p>
+</li>
+</ol>
+<h3>回避方向</h3>
+<ol>
+<li><strong>🛢️ 油气/煤炭</strong> — 地缘溢价消退+获利回吐，短期退潮明确</li>
+<li><strong>🍺 白酒/消费</strong> — 防御退潮+消费数据偏弱，资金切出</li>
+<li><strong>🏢 房地产</strong> — 政策预期未兑现，持续弱势</li>
+</ol>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年06月09日 23:15</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

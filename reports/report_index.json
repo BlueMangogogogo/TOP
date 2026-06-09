@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-06-09 23:32:21",
-  "total": 39,
-  "daily_count": 34,
+  "last_updated": "2026-06-09 23:45:55",
+  "total": 40,
+  "daily_count": 35,
   "industry_count": 5,
   "reports": [
     {
@@ -393,6 +393,16 @@
       "title": "6月9日 周二 午盘复盘",
       "relative_path": "reports/2026-06-09/6月9日 周二 午盘复盘.html",
       "size_kb": 10.3
+    },
+    {
+      "id": "2026-06-09-6月9日 周二 晚盘复盘",
+      "date": "2026-06-09",
+      "display_date": "6月9日",
+      "type": "daily",
+      "category": "深度复盘",
+      "title": "6月9日 周二 晚盘复盘",
+      "relative_path": "reports/2026-06-09/6月9日 周二 晚盘复盘.html",
+      "size_kb": 30.4
     }
   ]
 }
