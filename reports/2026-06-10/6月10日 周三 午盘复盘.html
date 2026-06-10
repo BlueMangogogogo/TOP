@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月10日 周三 午盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月10日 周三 午盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月10日 11:40
+  </div>
+</header>
+
+<h2>上午全景</h2>
+<ul>
+<li><strong>上证指数</strong>：3986.66（<span style="color:#00aa00">-0.58%</span>）</li>
+<li><strong>深证成指</strong>：<span style="color:#00aa00">-1.94%</span></li>
+<li><strong>创业板指</strong>：<span style="color:#00aa00">-2.29%</span></li>
+<li><strong>科创50</strong>：<span style="color:#00aa00">-0.02%</span></li>
+<li><strong>北证50</strong>：<span style="color:#00aa00">-2.24%</span></li>
+<li>两市半日成交额：<strong>17302亿</strong>（放量约1164亿）</li>
+<li>涨停家数：<strong>55</strong> | 跌停家数：<strong>34</strong></li>
+<li>上涨家数：<strong>1112</strong> | 下跌家数：<strong>4346</strong></li>
+<li>连板股：15只 | 封板率：77% | 炸板率：23%</li>
+</ul>
+<h2>上午最强板块</h2>
+<ol>
+<li><strong>工业气体</strong> +领涨 — 催化：芯片产业链上游材料需求爆发，和远气体5天3板领衔</li>
+<li><strong>光刻胶</strong> +紧跟 — 催化：半导体材料国产替代加速，与工业气体形成联动</li>
+<li><strong>环氧丙烷</strong> +活跃 — 催化：化工品涨价预期+半导体材料需求共振</li>
+<li><strong>银行</strong> +全线飘红 — 催化：年度分红季六大行分红4274亿创新高，建设银行股价续创历史新高</li>
+<li><strong>保险</strong> +大幅拉升 — 催化：估值修复+利率企稳，中国人寿涨超4%</li>
+<li><strong>啤酒</strong> +明显走强 — 催化：世界杯催化+消费旺季，惠泉啤酒涨停</li>
+<li><strong>半导体材料</strong> +延续强势 — 催化：雅克科技、有研新材涨停，国产替代逻辑深化</li>
+<li><strong>旅游/影视</strong> +逆势活跃 — 催化：暑期旅游预订高峰+暑期档票房破4亿</li>
+</ol>
+<h2>上午最弱板块</h2>
+<ol>
+<li><strong>超导</strong> -领跌</li>
+<li><strong>铜缆高速连接</strong> -受美股光通信暴跌拖累</li>
+<li><strong>机器人</strong> -前期热点退潮，美湖股份跌停</li>
+<li><strong>电网设备</strong> -普跌</li>
+<li><strong>煤炭采选</strong> -安泰集团跌超7%</li>
+<li><strong>贵金属</strong> -避险情绪降温</li>
+<li><strong>光通信</strong> -受外围暴跌影响，三安光电跌停</li>
+<li><strong>消费电子</strong> -板块下挫</li>
+</ol>
+<h2>异动个股</h2>
+<ul>
+<li><strong>天娱数科</strong>（002354）：4连板涨停，AI应用概念全市场高度标杆，但板块梯队断层</li>
+<li><strong>宗申动力</strong>（001696）：3连板涨停，低空经济概念独苗</li>
+<li><strong>金安国纪</strong>（002636）：3连板涨停，PCB板块延续强势</li>
+<li><strong>和远气体</strong>：5天3板，工业气体+芯片双概念</li>
+<li><strong>拓维信息</strong>：涨停，算力板块封单规模突出</li>
+<li><strong>建设银行</strong>（601939）：涨超2%，股价续创历史新高，分红季催化</li>
+<li><strong>中国人寿</strong>（601628）：涨超4%，保险板块领涨</li>
+<li><strong>华安证券</strong>（600909）：大涨5%，券商板块异动</li>
+<li><strong>三安光电</strong>（600703）：跌停，光通信受美股暴跌拖累</li>
+<li><strong>泰和新材</strong>：跌停，高位标的断板走弱</li>
+</ul>
+<h2>下午关注</h2>
+<ul>
+<li><strong>关注方向1：芯片主线延续性</strong> — 上午"科技铁三角"（芯片+算力+通信）初成，午后观察首板封单能否维持，若芯片主线持续强化则短线可跟踪</li>
+<li><strong>关注方向2：高低切是否加速</strong> — 高位老题材（超导、机器人）断板走弱，资金明显切换至低位半导体材料/化工方向，午后若高位股继续杀跌，低位新主线承接力度是关键</li>
+<li><strong>关注方向3：大金融护盘力度</strong> — 银行保险券商午前异动拉升，午后能否持续带动指数企稳3970-3980点支撑区间</li>
+<li><strong>关注方向4：天娱数科4板后走势</strong> — 全市场高度标杆，但板块梯队断层严重，一旦炸板可能冲击短线情绪</li>
+</ul>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 东方财富 | 同花顺 | 生成时间：2026年06月10日 11:40</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
