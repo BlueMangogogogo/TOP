@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月22日 周一 晚盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月22日 周一 晚盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月22日 23:15
+  </div>
+</header>
+
+<hr>
+<h2>指数全景</h2>
+<ul>
+<li><strong>上证指数</strong>：<span style="color:red">4163.10（+1.78%）</span>，最高4164.42，最低4070.17，振幅2.32%</li>
+<li><strong>深证成指</strong>：<span style="color:red">16372.50（+2.13%）</span></li>
+<li><strong>创业板指</strong>：<span style="color:red">4359.39（+2.52%，创历史新高！）</span></li>
+<li><strong>科创50</strong>：<span style="color:red">1948.93（+1.96%）</span></li>
+<li><strong>沪深300</strong>：<span style="color:red">5059.66（+2.39%）</span></li>
+<li><strong>北证50</strong>：<span style="color:red">+0.50%</span></li>
+</ul>
+<p><strong>支撑位</strong>：4100（5日线） | 关键支撑4050-4070 | <strong>压力位</strong>：4180 → 4258</p>
+<p><strong>两市成交额</strong>：<span style="color:red">3.76万亿元</span>（A股历史第二天量！较上一交易日6月18日3.31万亿<span style="color:red">放量4271亿</span>，增量资金大规模进场）</p>
+<p><strong>涨停家数</strong>：153（不含ST） | <strong>跌停家数</strong>：33（不含ST）
+<strong>上涨家数</strong>：2916 | <strong>下跌家数</strong>：2468 | 平盘126
+<strong>炸板率</strong>：约16%（炸板26家） | <strong>封板率</strong>：84% | <strong>连板股数</strong>：23家 | <strong>最高连板</strong>：5连板（旭光电子）
+<strong>市场情绪</strong>：偏热但分化——涨停153家做多热情高，但近半数个股收绿，资金集中抱团金融+资源主线</p>
+<p><strong>北向资金</strong>：净流入超120亿元（结束节前净流出格局，节后大幅回流）</p>
+<div class="highlight">
+<p>💡 <strong>6月18日（端午前最后一日）对比</strong>：上证4090.48(-0.43%), 涨停71/跌停34, 上涨1948/下跌3443, 成交3.31万亿——今日全面逆转，从"赚指数不赚钱"变"指数涨+2900股涨"，情绪质变！</p>
+</div>
+<hr>
+<h2>外盘与宏观环境</h2>
+<h3>隔夜美股（6月21日周五）</h3>
+<ul>
+<li><strong>道琼斯</strong>：46190.61（+238.37，+0.52%）</li>
+<li><strong>纳斯达克</strong>：22679.97（+0.52%）</li>
+<li><strong>标普500</strong>：6664.01（+0.53%）</li>
+<li><strong>费城半导体</strong>：<span style="color:red">+6.42%，创历史新高！</span>（英伟达+2.95%、英特尔+10%+、美光+8%）</li>
+<li><strong>SK海力士</strong>盘中市值短暂超越三星，全球AI HBM存储产能紧缺</li>
+</ul>
+<h3>波动率与汇率</h3>
+<ul>
+<li><strong>VIX</strong>：回落，市场恐慌情绪降温</li>
+<li><strong>美元指数</strong>：<span style="color:red">重新站上100关口并明显走强</span>，非美货币普遍回落</li>
+<li><strong>人民币</strong>：小幅贬值</li>
+</ul>
+<h3>大宗商品</h3>
+<ul>
+<li><strong>原油</strong>：<span style="color:green">下跌</span>（霍尔木兹海峡通航预期+地缘风险溢价回吐）</li>
+<li><strong>黄金</strong>：<span style="color:green">震荡偏弱</span>（美联储鹰派信号+美债实际收益率创新高压制）</li>
+<li><strong>铜/工业金属</strong>：<span style="color:red">相对强势</span>（AI+新能源需求+供给收缩）</li>
+<li><strong>白银/铂金/钯金</strong>：<span style="color:red">暴涨超黄金</span></li>
+</ul>
+<h3>今日宏观数据与政策</h3>
+<ul>
+<li>🔴 <strong>陆家嘴论坛政策定调</strong>：引导养老金、保险资金增配权益市场（千亿长线资金入市预期）；科创板分层改革扩容；支持并购重组优化</li>
+<li>🔴 <strong>矿产资源法实施条例</strong>（6月15日起实施）：稀土、钨、锂等36种矿产列入国家战略性资源目录→出口管制收紧</li>
+<li>🔴 <strong>国新办发布会</strong>：商务部介绍"利用外资固稳促优"政策措施</li>
+<li>🟡 <strong>五部门新能源汽车下乡</strong>：从口号推进到可执行细则（工信厅联通装函〔2026〕280号）</li>
+<li>🟡 <strong>美联储鹰派信号持续</strong>：就业、通胀数据超预期，降息时点大幅延后</li>
+</ul>
+<hr>
+<h2>核心新闻简报（按强度排序）</h2>
+<ol>
+<li>
+<p>🔴 <strong>陆家嘴论坛八大改革落地</strong> — 影响：千亿长线资金入市预期+券商保险估值修复直接催化今日大金融暴涨（非银+6.84%，4只券商涨停）；求是网同步定调"稳定房地产、促进资本市场健康发展"，政策信号共振</p>
+</li>
+<li>
+<p>🔴 <strong>矿产资源法实施条例生效+战略矿产出口管制收紧</strong> — 影响：钨、锆、稀土等36种矿产列入战略性资源目录→供给收缩预期→有色金属板块暴涨4.67%（超20股涨停），小金属指数涨7.6%</p>
+</li>
+<li>
+<p>🔴 <strong>隔夜费城半导体指数+6.42%创历史新高</strong> — 影响：全球AI资本开支上调（云厂商2026年预计8300亿美元）→A股光通信/半导体材料跟涨，但电子板块整体净流出316亿（资金从高位AI科技溢出至金融资源）</p>
+</li>
+<li>
+<p>🟡 <strong>东方锆业实调出厂价</strong>（氧氯化锆+1500元/吨、二氧化锆+4500元/吨、电熔锆+2000元/吨）— 影响：实调而非画饼→财报毛利上行确定性→锆产业链一字涨停（封单100万手/9亿），涨价逻辑从预期变为现实</p>
+</li>
+<li>
+<p>🟡 <strong>SK海力士市值短暂超越三星</strong> — 影响：全球AI HBM存储产能紧缺确认→存储芯片Q3涨价15-30%预期强化，但今日存储板块高位分化（资金从高位流出而非加仓）</p>
+</li>
+<li>
+<p>🟡 <strong>磷酸铁锂价格翻倍</strong> — 影响：储能/新能源车出口需求旺盛→磷化工企业量价齐升（兴发集团、云图控股等批量涨停）</p>
+</li>
+<li>
+<p>🟡 <strong>新能源汽车下乡细则落地</strong> — 影响：政策从口号变为执行单→新能源车产业链底部支撑</p>
+</li>
+<li>
+<p>🟢 <strong>端午消费数据</strong> — 影响：仅短期脉冲，中长期内需复苏不及预期→餐饮旅游板块今日走弱</p>
+</li>
+</ol>
+<p><strong>新闻情绪催化验证</strong>：今日有色金属/化工/大金融暴涨与[新闻1陆家嘴论坛+新闻2矿产管制+新闻3费半新高]高度相关！三个催化共振推动节后资金从高位科技溢出至金融+资源+化工上游，形成"金融觉醒+资源涨价+化工补涨"三线齐发格局。但电子板块净流出316亿说明高位AI科技被抛售，与新闻3的正面催化形成反差——映射效应仅支撑上游材料而非下游应用。</p>
+<hr>
+<h2>板块涨幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>涨幅</th>
+<th>主力净流入</th>
+<th>催化因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>非银金融（券商+保险）</td>
+<td><span style="color:red">+6.84%</span></td>
+<td>超50亿</td>
+<td>陆家嘴论坛政策催化+Q1净利增16.6%+PB1.1倍历史极低+印花税/T+0小作文催化</td>
+</tr>
+<tr>
+<td>2</td>
+<td>有色金属（钨/锆/稀土小金属）</td>
+<td><span style="color:red">+4.67%</span></td>
+<td>超100亿</td>
+<td>矿产资源法36种列入战略目录+出口管制收紧+涨价函实调+AI半导体靶材需求</td>
+</tr>
+<tr>
+<td>3</td>
+<td>基础化工（磷/氟/钛/锆）</td>
+<td><span style="color:red">+4.40%</span></td>
+<td>量大</td>
+<td>磷酸铁锂价格翻倍+氟化工制冷剂订单饱满+下游补库周期启动+Q1净利增36.8%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>培育钻石/金刚石散热</td>
+<td><span style="color:red">+4.32%</span></td>
+<td>—</td>
+<td>AI算力散热需求爆发（金刚石导热率5倍铜）+CVD热沉片批量供货+价格回暖10-30%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>券商细分</td>
+<td><span style="color:red">+7.69%</span></td>
+<td>超50亿</td>
+<td>50只全线飘红！东方财富+12.74%/219亿成交，中信建投涨停封单100%</td>
+</tr>
+</tbody>
+</table></div>
+<h2>板块跌幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>跌幅</th>
+<th>主力净流出</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>军工电子/人形机器人零部件</td>
+<td><span style="color:green">-2.76%</span></td>
+<td>大额</td>
+<td>前期连续上涨获利盘兑现+资金高低切换至金融资源</td>
+</tr>
+<tr>
+<td>2</td>
+<td>汽车零部件/一体化压铸</td>
+<td><span style="color:green">-2.34%</span></td>
+<td>—</td>
+<td>资金分流至上游磷化工/有色资源+无新增催化</td>
+</tr>
+<tr>
+<td>3</td>
+<td>创新药/减肥药/生物医药</td>
+<td><span style="color:green">-2.11%</span></td>
+<td>—</td>
+<td>海外药企价格竞争加剧+中报业绩预期下调（博瑞医药触及20cm跌停）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>教育/家用消费家电</td>
+<td><span style="color:green">-1.89%</span></td>
+<td>—</td>
+<td>端午消费仅短期脉冲+内需复苏不及预期+缺乏涨价催化</td>
+</tr>
+<tr>
+<td>5</td>
+<td>日用化工/餐饮旅游</td>
+<td><span style="color:green">-1.50%+</span></td>
+<td>—</td>
+<td>端午后消费退潮+资金流向主线赛道</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>主线持续性分析</h2>
+<h3>🔴 上期关键判断回顾与验证</h3>
+<blockquote>
+<p>上期（6月10日前）核心判断：<strong>"AI硬件主线2.0"——从CPO/光通信扩散至半导体材料/PCB/电子化学品</strong>，聚焦上游材料+国产替代。</p>
+</div>
+<p><strong>验证结果</strong>：
+- ✅ <strong>"从下游到上游"方向正确</strong>：今日上游材料（有色金属+4.67%/化工+4.40%）全面爆发
+- ⚠️ <strong>但范围已超AI硬件</strong>：上游扩散不限于半导体材料，而是整个资源周期品（钨/锆/磷/氟）
+- ❌ <strong>6月8日"风格大切换（科技→防御）"再次被修正</strong>：上次仅持续1天即逆转；此次节后风格切换特征更复杂——不是简单科技→防御，而是<strong>科技高位溢出→金融觉醒+资源涨价</strong>，属于"结构性高低切换"而非"风格大切换"</p>
+<ul>
+<li><strong>当前主线</strong>：<span style="color:red"><strong>金融觉醒+资源涨价双主线</strong>&lt;/span，今日爆发第1天（节后首日）</li>
+<li>金融线：券商+7.69%/非银+6.84%，政策催化+估值修复+资金溢出承接</li>
+<li>资源线：有色+4.67%/化工+4.40%/钻石+4.32%，涨价实调+供给管制+需求驱动</li>
+<li>
+<p>这两条主线<strong>同时爆发且互相强化</strong>：金融提供指数支撑→资源提供题材弹性→共振推动天量成交</p>
+</li>
+<li>
+<p><strong>新晋主线</strong>：<span style="color:red"><strong>培育钻石/金刚石散热</strong>&lt;/span——AI算力散热新赛道，今日首次大规模爆发（四方达/惠丰钻石/力量钻石20cm涨停）</p>
+</li>
+<li>
+<p><strong>退潮主线</strong>：人形机器人零部件（-2.76%）、高位AI应用/半导体设备（电子净流出316亿）</p>
+</li>
+<li>机器人概念从6月5-8日进攻榜TOP→今日跌幅榜TOP，资金完成高低切换</li>
+</ul>
+<hr>
+<h2>板块资金雷达趋势</h2>
+<div class="warning">
+<p>⚠️ 注：板块资金雷达数据因端午节假期停运4天，hist_metrics最新为6月12日。以下分析基于6月12日雷达数据+今日实时资金流向综合推演。</p>
+</div>
+<h3>进攻榜TOP10（6月12日基准+今日动态修正）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>在榜天数</th>
+<th>波段流入率</th>
+<th>单日净额</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>稀缺资源</td>
+<td>26天→31天+</td>
+<td>87亿→持续上升</td>
+<td>今日超100亿</td>
+<td>🟢 加强</td>
+</tr>
+<tr>
+<td>2</td>
+<td>镍金属</td>
+<td>14天→19天+</td>
+<td>54亿→扩大</td>
+<td>—</td>
+<td>🟢 持续</td>
+</tr>
+<tr>
+<td>3</td>
+<td>黄金概念</td>
+<td>18天→23天+</td>
+<td>88亿→分化</td>
+<td>今日偏弱</td>
+<td>🟡 注意分化</td>
+</tr>
+<tr>
+<td>4</td>
+<td>钴金属</td>
+<td>20天→25天+</td>
+<td>46亿→扩大</td>
+<td>—</td>
+<td>🟢 持续</td>
+</tr>
+<tr>
+<td>5</td>
+<td>锂矿</td>
+<td>20天→25天+</td>
+<td>59亿→扩大</td>
+<td>—</td>
+<td>🟢 持续</td>
+</tr>
+<tr>
+<td>6</td>
+<td>锂电池概念</td>
+<td>62天→67天+</td>
+<td>100亿→大幅上升</td>
+<td>—</td>
+<td>🟢 回暖</td>
+</tr>
+<tr>
+<td>7</td>
+<td>含H股</td>
+<td>48天→53天+</td>
+<td>112亿→今日金融大涨</td>
+<td>超50亿非银流入</td>
+<td>🟢 金融觉醒</td>
+</tr>
+<tr>
+<td>8</td>
+<td>一带一路</td>
+<td>53天→58天+</td>
+<td>66亿→上升</td>
+<td>—</td>
+<td>🟡 观察</td>
+</tr>
+<tr>
+<td>9</td>
+<td>氟概念</td>
+<td>19天→24天+</td>
+<td>-37亿→今日氟化工涨停潮</td>
+<td>大额流入</td>
+<td>🟢 爆发</td>
+</tr>
+<tr>
+<td>10</td>
+<td>国防军工</td>
+<td>47天→52天+</td>
+<td>43亿→今日军工下跌</td>
+<td>流出</td>
+<td>🔴 退潮</td>
+</tr>
+</tbody>
+</table></div>
+<h3>机构建仓信号</h3>
+<p>🟢 <strong>关注建仓：有色金属/稀缺资源</strong> — 连续31天在榜，流入率持续上升，今日超100亿净流入确认，涨价逻辑从预期变为实调（东方锆业涨价函），板块刚突破而非高位</p>
+<p>🟢 <strong>关注建仓：氟化工/磷化工</strong> — 氟概念在榜24天从流出转为今日涨停潮，磷酸铁锂价格翻倍+下游补库启动，化工板块PE仅23倍（近一年20%分位），估值仍有空间</p>
+<p>🟢 <strong>关注建仓：非银金融/券商</strong> — 6月12日在榜53天但流入缓慢→今日爆发+50亿，PB仅1.1倍历史极低+Q1净利增16.6%，政策催化长线资金入市，"估值洼地+业绩高增+政策三重共振"</p>
+<h3>短线退潮信号</h3>
+<p>🔴 <strong>建议撤退：人形机器人/减速器</strong> — 6月8-9日进攻榜高位→今日跌幅-2.76%，资金高位兑现完成高低切换，短期无新催化</p>
+<p>🔴 <strong>建议撤退：高位AI应用/AIGC</strong> — 连续在榜但今日电子板块净流出316亿，AI应用方向资金加速撤离，从"进攻榜"跌出</p>
+<p>🔴 <strong>注意：黄金概念</strong> — 在榜23天但今日震荡偏弱，美联储鹰派压制金价，从进攻转为观望</p>
+<h3>排名飙升</h3>
+<p>📈 <strong>排名飙升：券商/非银金融</strong>，从雷达中低位→今日爆发至全市场资金流入TOP3，7.69%板块涨幅+50亿净流入+政策催化三重确认</p>
+<p>📈 <strong>排名飙升：培育钻石</strong>，首次进入进攻视野，AI散热新赛道+20cm批量涨停</p>
+<p>📈 <strong>排名飙升：化工资源（磷/氟/钛）</strong>，从雷达边缘→今日涨停潮20余股封板，涨价实调催化</p>
+<hr>
+<h2>核心个股拆解</h2>
+<h3>东方财富（300059）</h3>
+<ul>
+<li>涨跌幅：<span style="color:red">+12.74%</span></li>
+<li>所属板块：券商/互联网金融</li>
+<li>成交额：219.81亿元（全市场最大成交个股）</li>
+<li>催化因素：陆家嘴论坛政策催化+3.76万亿天量成交直接利好券商佣金/两融+互联网金融AI降本增效</li>
+<li>技术分析：近5日累计涨16.50%，放量突破20元关口，短期动能极强</li>
+<li>风险提示：单日成交219亿=换手率8.27%偏高，短线获利盘密集；券商持续性需观察明日量能是否腰斩</li>
+</ul>
+<h3>东方锆业（002167）</h3>
+<ul>
+<li>涨跌幅：<span style="color:red">涨停（一字封死）</span></li>
+<li>所属板块：有色金属/锆产业链</li>
+<li>封单：超100万手/9亿+</li>
+<li>催化因素：公司发布产品价格调整通知（氧氯化锆+1500元/吨、二氧化锆+4500元/吨、电熔锆+2000元/吨）+矿产资源法36种列入战略目录+出口管制收紧</li>
+<li>技术分析：一字涨停无上车机会，明日关注能否继续封板</li>
+<li>风险提示：涨价函落地≠业绩兑现，需跟踪后续出货量和毛利变化</li>
+</ul>
+<h3>旭光电子（5连板·市场最高板）</h3>
+<ul>
+<li>涨跌幅：<span style="color:red">5连板涨停</span></li>
+<li>所属板块：光通信+氮化铝+可控核聚变</li>
+<li>催化因素：光通信/AI硬件景气+氮化铝陶瓷基板国产替代+可控核聚变概念叠加</li>
+<li>技术分析：突破近期3板压制，打开连板高度空间</li>
+<li>风险提示：5板高位+概念叠加多，需警惕核按钮风险；连板高度打开后次日大概率面临分歧</li>
+</ul>
+<h3>中信建投（601066）</h3>
+<ul>
+<li>涨跌幅：<span style="color:red">+10.00%（封死涨停）</span></li>
+<li>所属板块：券商</li>
+<li>催化因素：陆家嘴论坛政策+券商估值洼地修复+天量成交利好</li>
+<li>技术分析：涨停封单100%委比，封板极坚决</li>
+<li>风险提示：券商"一日游"vs"真启动"需次日验证——观察涨停次日是否被核按钮</li>
+</ul>
+<h3>力量钻石（301071）</h3>
+<ul>
+<li>涨跌幅：<span style="color:red">+20cm涨停</span></li>
+<li>所属板块：培育钻石/金刚石散热</li>
+<li>催化因素：AI芯片散热需求爆发（英伟达GPU功耗2300W→金刚石导热率5倍铜）+CVD热沉片批量供货海外+价格回暖累计涨10-30%</li>
+<li>技术分析：20cm涨停弹性极强，培育钻石赛道首次大规模爆发</li>
+<li>风险提示：新赛道爆发初期波动大，市场空间2030年预计592亿但短期业绩兑现不确定</li>
+</ul>
+<h3>兴发集团（600141）</h3>
+<ul>
+<li>涨跌幅：<span style="color:red">涨停</span></li>
+<li>所属板块：磷化工</li>
+<li>催化因素：磷酸铁锂价格翻倍+储能/新能源车出口需求+Q1净利增36.8%+下游补库启动</li>
+<li>技术分析：趋势加速涨停</li>
+<li>风险提示：磷化工涨价持续性需跟踪下游实际需求</li>
+</ul>
+<hr>
+<h2>风险预警</h2>
+<ul>
+<li>⚠️ <strong>天量之后缩量风险</strong>：3.76万亿历史第二天量→次日若缩量至3万亿以下则做多动能衰减，需警惕"天量见天价"风险</li>
+<li>⚠️ <strong>券商持续性存疑</strong>：7.69%板块涨幅+4只涨停→历史上券商"一日游"概率不低，需观察次日：①涨停封板票是否被核按钮 ②板块成交额是否腰斩 ③大市总成交是否跟着上台阶</li>
+<li>⚠️ <strong>电子板块316亿净流出</strong>：高位AI科技股资金加速撤离→若持续流出3天以上则AI硬件主线正式退潮</li>
+<li>⚠️ <strong>美联储鹰派压制</strong>：降息时点大幅延后+美元站上100→黄金承压+人民币小幅贬值→外资流向可能反复</li>
+<li>⚠️ <strong>半年末调仓压力</strong>：公募基金半年考核窗口→6月底前可能继续高低切换加剧波动</li>
+<li>⚠️ <strong>近半数个股收绿</strong>：2900涨vs2468跌→看似普涨实则结构分化，资金只做主线不做冷门→非主线持仓面临持续失血</li>
+</ul>
+<hr>
+<h2>明日推演</h2>
+<h3>乐观情景（概率35%）</h3>
+<ul>
+<li>天量延续→成交维持在3.5万亿以上→金融+资源双主线持续走强→券商不核按钮+有色继续涨停潮→上证冲击4180-4200→创业板指4400+→市场进入"金融+资源主升浪"阶段</li>
+<li>关键验证：券商板块成交额不腰斩+涨停票次日继续封板+有色涨价品种继续一字涨停</li>
+</ul>
+<h3>中性情景（概率45%）</h3>
+<ul>
+<li>缩量至3.0-3.3万亿→金融分化（部分券商回调但有支撑）+资源延续（涨价逻辑不可逆）→上证在4100-4160区间震荡→主线从"全面爆发"转为"分化确认"→涨停家数回落至80-100家</li>
+<li>关键特征：主线确认但强度减弱→资金从"打板"转为"趋势配置"→板块内分化（龙头继续涨跟风回调）</li>
+</ul>
+<h3>悲观情景（概率20%）</h3>
+<ul>
+<li>大幅缩量至2.8万亿以下→券商集体核按钮（涨停次日跌5%+）+有色冲高回落→上证跌破4100回踩4050→3212涨→市场判定为"节后情绪脉冲一日游"</li>
+<li>关键触发：美联储超预期鹰派信号+地缘冲突升级+半年末集中调仓砸盘</li>
+</ul>
+<hr>
+<h2>策略建议</h2>
+<ul>
+<li><strong>仓位建议</strong>：7成（主线集中6成+1成观察仓）</li>
+<li><strong>关注方向</strong>：</li>
+<li>🟢 <strong>有色金属/小金属</strong>（钨/锆/稀土）：涨价实调+供给管制+AI需求三重催化，优先有涨价函+业绩预增的标的</li>
+<li>🟢 <strong>磷化工/氟化工</strong>：磷酸铁锂翻倍+制冷剂订单饱满+低估值，中期趋势标的</li>
+<li>🟢 <strong>券商/非银金融</strong>：政策催化+估值洼地+天量成交利好，但需次日确认持续性（不核按钮才加仓）</li>
+<li>🟢 <strong>培育钻石</strong>：AI散热新赛道，20cm弹性品种，适合短线套利</li>
+<li>🟡 <strong>电力设备/储能</strong>：排产创新高+政策驱动+海外贸易缓和，中线配置方向</li>
+<li><strong>回避方向</strong>：</li>
+<li>🔴 <strong>人形机器人/减速器</strong>：资金高位兑现，短期无新催化</li>
+<li>🔴 <strong>高位AI应用/AIGC概念</strong>：电子板块316亿净流出确认退潮</li>
+<li>🔴 <strong>创新药/减肥药</strong>：海外价格竞争+业绩预期下调</li>
+<li>🔴 <strong>冷门小票/无业绩题材</strong>：资金只做主线，非主线持续失血</li>
+</ul>
+<blockquote>
+<p><strong>操作节奏</strong>：明日大概率进入分歧日→不宜追高打板→等待回踩5日线/4100附近低吸主线龙头→金融方向先观察不急着加仓→资源方向涨价实调品种可趋势持有</p>
+</div>
+<hr>
+<h2>上期判断对比验证表</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>上期判断</th>
+<th>今日验证</th>
+<th>修正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"AI硬件主线2.0：从CPO→半导体材料/PCB/电子化学品"</td>
+<td>上游材料确认爆发但范围扩大至整个资源周期品</td>
+<td>✅方向对但范围超预期——从"AI上游"升级为<strong>"资源涨价全链条"</strong></td>
+</tr>
+<tr>
+<td>"风格大切换（科技→防御）"被6/9证伪仅1天</td>
+<td>今日再现风格切换但更复杂</td>
+<td>⚠️不是简单科技→防御，而是<strong>科技高位溢出→金融+资源</strong>，属于"结构性高低切换"</td>
+</tr>
+<tr>
+<td>"油气/煤炭新晋主线"</td>
+<td>油气因霍尔木兹海峡预期回落→今日化工取代</td>
+<td>❌油气退潮被磷化工取代→资源主线从传统能源→新材料化工</td>
+</tr>
+<tr>
+<td>半导体材料/PCB继续加强</td>
+<td>PCB/电子树脂继续涨停但电子板块整体316亿净流出</td>
+<td>⚠️PCB方向仍在但半导体设备高位失血→<strong>AI硬件分化而非统一加强</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 东方财富 | 雪球 | 财联社 | 金十数据 | 生成时间：2026年06月22日 23:15</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
