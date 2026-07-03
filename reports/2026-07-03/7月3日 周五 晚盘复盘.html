@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7月3日 周五 晚盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>7月3日 周五 晚盘复盘</h1>
+  <div class="meta">
+    📅 2026年07月03日 23:15
+  </div>
+</header>
+
+<h2>指数全景</h2>
+<ul>
+<li><strong>上证指数</strong>：4043.64（+0.37%），开盘4031.34，最高4073.88，最低4027.26，振幅1.17%</li>
+<li><strong>深证成指</strong>：15597.51（+0.64%）</li>
+<li><strong>创业板指</strong>：4019.93（+0.07%，<strong>冲高回落！</strong>早盘+1.58%→收盘仅+0.07%，涨幅几乎全部回吐）</li>
+<li><strong>科创50</strong>：1975.60（-0.59%）</li>
+<li><strong>北证50</strong>：+1.71%（唯一强势主要指数）</li>
+<li><strong>支撑位</strong>：4027（今日最低点）| 关键支撑4000-4028（昨日收盘位+整数关口） | <strong>压力位</strong>：4074 → 4100 → 4175</li>
+<li><strong>两市成交额</strong>：3.18万亿元（较昨日3.45万亿<strong>缩量2680亿</strong>，6月18日以来最低成交额）</li>
+<li><strong>涨停家数</strong>：160 | <strong>跌停家数</strong>：24</li>
+<li><strong>上涨家数</strong>：3804 | <strong>下跌家数</strong>：1628</li>
+<li><strong>炸板率</strong>：约20% | <strong>封板率</strong>：约80% | <strong>市场情绪</strong>：分化修复——3804涨vs1628跌面子上好看，但创业板冲高回落+缩量2680亿说明反弹质量不高</li>
+<li><strong>北向资金</strong>：净流出61.8亿（其中42亿卖出半导体+消费电子标的）</li>
+<li><strong>主力资金</strong>：净流出87.1亿（创业板净流出107.68亿，科创板净流出54.92亿，沪深300净流入50.12亿）</li>
+</ul>
+<p>💡 <strong>与7月2日对比</strong>：昨日上证4028.90(-2.03%)单边暴跌→今日4043.64(+0.37%)弱修复；昨日创业板-5.71%→今日仅+0.07%（早盘+1.58%收盘仅+0.07%，涨幅几乎全部回吐！）；昨日3.45万亿→今日缩量2680亿至3.18万亿（6月18日以来最低）；昨日3162跌2219涨→今日3804涨1628跌；昨日156涨停41跌停→今日160涨停24跌停。<strong>表面看"修复反弹"，但缩量+创业板冲高回落+北向继续流出61.8亿=反弹质量堪忧，更像是昨日暴跌后的技术性喘息而非趋势反转。</strong></p>
+<h2>外盘与宏观环境</h2>
+<h3>隔夜美股（7月2日US收盘→A股7月3日隔夜）</h3>
+<ul>
+<li><strong>道琼斯</strong>：+1.14%（<strong>创历史新高！</strong>）52305附近</li>
+<li><strong>纳斯达克</strong>：-0.87%</li>
+<li><strong>标普500</strong>：-0.01%</li>
+<li><strong>费城半导体</strong>：继续暴跌！闪迪-14.13%，泰瑞达-13.63%，科磊-11.55%，美光-6%+，英特尔-5%+</li>
+<li><strong>特斯拉</strong>：-7.64%</li>
+<li><strong>苹果</strong>：+4.75%</li>
+<li><strong>Meta</strong>：-4.87%（前一交易日+8.8%→今日逆转暴跌！云计算计划被解读为"算力过剩"）</li>
+<li><strong>"七姐妹"分化</strong>：道指靠苹果+工业股创新高，纳指靠半导体拖累收跌</li>
+</ul>
+<p>⚠️ <strong>重要提醒</strong>：7月3日（周五）美股因独立日假期休市一日，7月4日凌晨1:00后期货交易提前结束。周末无美股数据参考，下周一(7/6)开盘前需关注周末突发消息。</p>
+<h3>亚太市场（7月3日）</h3>
+<ul>
+<li><strong>恒生指数</strong>：小幅波动</li>
+<li><strong>日经225</strong>：半导体链承压</li>
+</ul>
+<h3>波动率与汇率</h3>
+<ul>
+<li><strong>VIX</strong>：约16.4（隔夜回落但半导体恐慌仍在）</li>
+<li><strong>美元指数</strong>：约101（美联储鹰派持续压制）</li>
+<li><strong>人民币</strong>：中间价约6.82附近，在岸小幅波动</li>
+<li><strong>两融余额</strong>：降37亿，减的主要是高位科技股融资盘</li>
+</ul>
+<h3>大宗商品</h3>
+<ul>
+<li><strong>COMEX黄金</strong>：4135.50美元/盎司（+1.30%）— 美国ADP就业仅9.8万（远低于预期11.8万）→降息预期升温→金价暴涨！</li>
+<li><strong>COMEX白银</strong>：61.44美元/盎司（+1.54%）</li>
+<li><strong>WTI原油</strong>：68.69美元/桶（+0.16%）— 7月3日24时国内油价下调窗口，预计下调760元/吨（95号汽油重回7元时代）</li>
+<li><strong>布伦特原油</strong>：71.80美元/桶（+0.32%）</li>
+<li><strong>铜</strong>：现货价格持续高位</li>
+<li><strong>国内汽柴油</strong>：7月3日24时第13轮调价，预计下调760-800元/吨，95号重回7元时代</li>
+</ul>
+<h3>今日宏观数据与政策</h3>
+<ul>
+<li>🔴 <strong>美国6月ADP就业仅9.8万</strong>（预期11.8万，前值12.2万）→远低于预期→美联储7月加息概率降至18%→降息预期升温→黄金暴涨+A股贵金属全线涨停</li>
+<li>🔴 <strong>央行10000亿买断式逆回购操作</strong>（7月6日执行，3个月期限）→史上最大规模单次流动性注入→市场解读为"央行提前对冲7月流动性缺口"</li>
+<li>🔴 <strong>A股交易新规7月6日起正式施行</strong>→三大要点：①优化基金收盘交易机制（最后3分钟不可撤单）②扩展盘后固定价格交易适用品种 ③主板ST股涨跌幅提至10%</li>
+<li>🟡 <strong>三部门调整车船税优惠</strong>（2027年1月1日起取消节能汽车减半征税+取消纯电动商用车免税）→新能源商用车成本增加→短期利空新能源商用车板块</li>
+<li>🟡 <strong>ISM制造业PMI从54%回落至53.3%</strong>→美国经济边际放缓信号</li>
+<li>🟢 <strong>全球央行购金创纪录</strong>：89%储备管理者预计继续增持黄金，45%央行明确12个月内增持→黄金核心逻辑强化</li>
+</ul>
+<h2>核心新闻简报（按强度排序）</h2>
+<ol>
+<li>🔴 <strong>宇树科技科创板IPO注册获批（104天最快纪录，募资42.02亿）</strong> — 影响：人形机器人产业链全线爆发！三花智控净流入21.88亿（全市场第一）+绿的谐波20cm涨停+埃斯顿4天3板+拓普集团/卧龙电驱/汇川技术等涨停→宇树链+Optimus链双催化共振</li>
+<li>🔴 <strong>摩根士丹利年内第二次翻倍上调人形机器人出货预测（2.8万→5万台，2030年→44.6万台）</strong> — 影响：产业景气确认信号→减速器/电机/传感器等核心零部件板块全线暴涨→机器人净流入178亿（全市场最大板块级流入）</li>
+<li>🔴 <strong>美国ADP就业仅9.8万（远低于预期）+全球央行购金创纪录</strong> — 影响：降息预期升温→COMEX黄金+1.30%→A股贵金属6.69%暴涨+招金/赤峰2连板+四川黄金/西部黄金/山金国际涨停→与上期"建议撤退贵金属"判断<strong>完全逆转！</strong></li>
+<li>🔴 <strong>美股半导体持续崩塌（闪迪-14%/泰瑞达-13.6%/科磊-11.5%）+Meta云计算"算力过剩"误读</strong> — 影响：A股半导体继续暴跌→电子净流出193亿+芯片近150亿流出+存储芯片百亿流出→A股科技链与美股映射效应持续恶化</li>
+<li>🟡 <strong>特斯拉Optimus首条量产线安装完成（规划扩至40条）+优必选U1系列发布（订单破13361台）</strong> — 影响：机器人量产从"预期"→"现实"→汽零+减速器+电机同源产业链全面受益→汽车零部件+4.03%净流入35.91亿</li>
+<li>🟡 <strong>北向资金净流出61.8亿（42亿卖半导体+消费电子）</strong> — 影响：外资继续撤离科技链→大资金方向明确（科技→机器人+黄金）→与6月23日1573亿主力出逃方向一致但规模缩减</li>
+<li>🟡 <strong>央行10000亿买断式逆回购+A股新规7月6日施行</strong> — 影响：流动性对冲+交易制度优化→长期利好但短期增加不确定性→券商/银行尾盘小幅走强</li>
+<li>🟡 <strong>三部门取消新能源商用车车船税优惠</strong> — 影响：2027年起纯电动商用车不再免税→短期利空新能源商用车板块，但乘用车不受影响</li>
+<li>🟢 <strong>同花顺App盘中崩溃（已修复）</strong> — 影响：短期恐慌但迅速恢复→无实质影响</li>
+<li>🟢 <strong>国内油价7月3日24时下调760元/吨</strong> — 影响：95号汽油重回7元时代→消费端利好但能源板块承压</li>
+</ol>
+<p><strong>新闻情绪催化验证</strong>：今日机器人板块暴涨与[新闻1宇树IPO+新闻2大摩上调+新闻5特斯拉量产]三重催化<strong>高度相关</strong>！✅验证成功。贵金属暴涨与[新闻3ADP就业+全球购金]<strong>高度相关</strong>！✅验证成功。半导体暴跌与[新闻4美股半导体崩塌]<strong>高度相关</strong>！✅验证成功。但[新闻7央行万亿逆回购]对金融板块催化<strong>偏弱</strong>——银行小幅走强但未爆发，说明流动性利好被科技恐慌对冲。</p>
+<h2>板块涨幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>涨幅</th>
+<th>主力净流入</th>
+<th>催化因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>贵金属/黄金概念</td>
+<td>+6.69%</td>
+<td>32.76亿</td>
+<td>ADP就业远低于预期→降息预期升温+全球央行购金创纪录+COMEX黄金+1.30%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>人形机器人</td>
+<td>涨逾3%（ETF+9.55%）</td>
+<td>152亿（概念178亿）</td>
+<td>宇树IPO+大摩翻倍上调+特斯拉量产线+优必选订单</td>
+</tr>
+<tr>
+<td>3</td>
+<td>汽车零部件</td>
+<td>+4.03%</td>
+<td>35.91亿</td>
+<td>机器人量产→汽零同源+6月新能源车批发151万同比+22%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>减速器/电机</td>
+<td>涨幅居前</td>
+<td>大额流入</td>
+<td>人形机器人核心零部件（RV+谐波+行星滚柱丝杠占整机成本近50%）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>国防军工</td>
+<td>涨幅居前</td>
+<td>16.07亿</td>
+<td>军工7月日历效应+全年采购订单落地+地缘避险属性</td>
+</tr>
+</tbody>
+</table></div>
+<h2>板块跌幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>跌幅</th>
+<th>主力净流出</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>半导体/芯片</td>
+<td>-3%+</td>
+<td>193亿（电子全板块）+近150亿（芯片概念）</td>
+<td>美股半导体持续崩塌+闪迪-14%/美光-6%+Meta算力过剩误读+高位兑现</td>
+</tr>
+<tr>
+<td>2</td>
+<td>存储芯片</td>
+<td>大幅下跌</td>
+<td>百亿级别</td>
+<td>美光科技-10.57%传导+三星DRAM涨价被市场解读为"利好出尽"</td>
+</tr>
+<tr>
+<td>3</td>
+<td>电子化工/光刻胶</td>
+<td>大幅下跌</td>
+<td>大额流出</td>
+<td>多氟多触及跌停+容大感光/南大光电/华特气体大幅跳水</td>
+</tr>
+<tr>
+<td>4</td>
+<td>氟化工/制冷剂</td>
+<td>跌幅居前</td>
+<td>大额流出</td>
+<td>上期氟概念score=6.32→今日退潮+高位兑现</td>
+</tr>
+<tr>
+<td>5</td>
+<td>传媒/通信</td>
+<td>跌幅居前</td>
+<td>29.88亿（传媒）+6.68亿（通信）</td>
+<td>AI营销高位退潮+算力链持续失血</td>
+</tr>
+</tbody>
+</table></div>
+<p>⚠️ <strong>电子板块净流出193亿=全市场最大出血点！</strong>加上传媒29.88亿+通信6.68亿=科技链合计流出超230亿。与6月23日科技链流出1600亿相比规模大幅缩减，但方向一致——科技链仍在持续失血。</p>
+<h2>主线持续性分析</h2>
+<h3>🔴 上期关键判断回顾与验证（6月23日→7月3日，跨10个交易日）</h3>
+<p><strong>上期（6月23日）核心判断："医药觉醒主线+科技硬件退潮"</strong></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>上期判断</th>
+<th>今日验证</th>
+<th>修正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"医药觉醒（创新药/CXO/减肥药）爆发第1天"</td>
+<td>7月3日医药分化（非主线）→创新药/CXO涨幅有限</td>
+<td>⚠️ 医药主线存活约2-3天后退潮→7月初仅分化跟随</td>
+</tr>
+<tr>
+<td>"创新药净流入20亿+十余股涨停→关注建仓"</td>
+<td>7月3日创新药雷达score=3.76（从进攻榜高位回落）</td>
+<td>⚠️ 医药从"爆发"→"分化"→"跟随"，未成持续主线</td>
+</tr>
+<tr>
+<td>"科技硬件退潮第5天加速崩塌"</td>
+<td>今日电子-193亿+芯片-150亿→退潮延续至第14天！</td>
+<td>❌ 退潮未衰减反而持续！从316亿→800亿→193亿（规模缩减但方向不变）</td>
+</tr>
+<tr>
+<td>"资源涨价1日游后崩塌→建议撤退"</td>
+<td>今日贵金属+6.69%暴涨→<strong>完全逆转！</strong></td>
+<td>❌❌ 上期"撤退贵金属"判断再次被证伪！ADP就业催化+全球购金→黄金从退潮→暴涨</td>
+</tr>
+<tr>
+<td>"主线切换频率越来越快→高频轮动"</td>
+<td>7月初：机器人主线爆发+黄金暴涨→2条新主线同时确立</td>
+<td>⚠️ 主线存活期略有延长（机器人已有3天+），但切换仍频繁</td>
+</tr>
+<tr>
+<td>"明日悲观35%：创业板破4100"</td>
+<td>7月2日创业板确实暴跌至4017→7月3日仅弱修复至4019</td>
+<td>✅ 验证成功！创业板破4100后反弹无力</td>
+</tr>
+</tbody>
+</table></div>
+<h3>当前主线判断</h3>
+<ul>
+<li><strong>当前主线</strong>：<strong>人形机器人产业链</strong>，今日爆发确认第3天（7月1日已有苗头→7月2日逆势活跃→7月3日全面爆发）</li>
+<li>催化三重共振：宇树IPO+大摩翻倍上调+特斯拉量产线+优必选订单</li>
+<li>净流入178亿（全市场最大板块级流入）+40余股涨停</li>
+<li>产业链纵深：减速器→电机→传感器→丝杠→控制器→本体→汽零延伸</li>
+<li><strong>当前主线</strong>：<strong>贵金属/黄金</strong>，今日爆发第1天</li>
+<li>催化：ADP就业远低于预期+全球央行购金创纪录+COMEX黄金+1.30%</li>
+<li>招金/赤峰2连板+四川/西部/山金涨停+净流入32.76亿</li>
+<li>⚠️ 但注意：6月23日黄金暴跌-9.69%（涨停→跌停180度翻转）→贵金属波动极大</li>
+<li><strong>退潮主线</strong>：半导体/科技硬件——退潮第14天！</li>
+<li>电子净流出193亿+芯片近150亿+存储百亿+光刻胶崩塌</li>
+<li>美股半导体持续崩塌传导+Meta算力过剩误读+高位兑现+半年末调仓</li>
+<li><strong>退潮主线</strong>：AI营销/传媒——退潮延续</li>
+<li>传媒净流出29.88亿+蓝色光标净流出7.95亿</li>
+</ul>
+<p>💡 <strong>6月下旬→7月初主线演变</strong>：6/23医药觉醒→6/24-29医药分化退潮→7/1半导体暴跌→7/2科技链崩塌+黄金逆势→<strong>7/3机器人全面爆发+黄金暴涨确认</strong>——主线从"医药"切换至"机器人+黄金"双线并行，科技链持续退潮14天未衰减。</p>
+<h2>板块资金雷达趋势</h2>
+<h3>进攻榜TOP10（2026-07-02数据，7月3日pipeline更新后数据待补充）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>在榜天数</th>
+<th>波段流入率</th>
+<th>单日净额</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>工业气体</td>
+<td>days=19</td>
+<td>wave_rate=-28.44（转负！）</td>
+<td>单日+1.93亿</td>
+<td>🟡 <strong>高位分化</strong>—score8.66最高但流入率转负</td>
+</tr>
+<tr>
+<td>2</td>
+<td>存储芯片</td>
+<td>days=66</td>
+<td>wave_rate=-602.17（巨负！）</td>
+<td>单日+1.35亿</td>
+<td>🔴 <strong>严重退潮</strong>—长在榜但巨量净流出</td>
+</tr>
+<tr>
+<td>3</td>
+<td>减肥药</td>
+<td>days=8</td>
+<td>wave_rate=+1.39</td>
+<td>单日+1.83亿</td>
+<td>🟢 <strong>持续建仓</strong>—短期在榜+正流入率</td>
+</tr>
+<tr>
+<td>4</td>
+<td>氟概念</td>
+<td>days=28</td>
+<td>wave_rate=-46.63（转负！）</td>
+<td>单日+1.91亿</td>
+<td>🔴 <strong>退潮</strong>—今日氟化工跌幅居前验证</td>
+</tr>
+<tr>
+<td>5</td>
+<td>CXO概念</td>
+<td>days=8</td>
+<td>wave_rate=-4.74</td>
+<td>单日+1.79亿</td>
+<td>🟡 <strong>分化观察</strong>—医药链跟随但未成主线</td>
+</tr>
+<tr>
+<td>6</td>
+<td>光刻机</td>
+<td>days=47</td>
+<td>wave_rate=-97.87（巨负！）</td>
+<td>单日+1.38亿</td>
+<td>🔴 <strong>退潮</strong>—今日光刻胶/电子化工全线暴跌</td>
+</tr>
+<tr>
+<td>7</td>
+<td>仿制药</td>
+<td>days=8</td>
+<td>wave_rate=+1.39</td>
+<td>单日+1.82亿</td>
+<td>🟢 <strong>建仓</strong>—医药防守方向</td>
+</tr>
+<tr>
+<td>8</td>
+<td>EDA概念</td>
+<td>days=5</td>
+<td>wave_rate=-12.09</td>
+<td>单日+1.25亿</td>
+<td>🟡 <strong>分化</strong>—半导体细分退潮</td>
+</tr>
+<tr>
+<td>9</td>
+<td>鸡肉</td>
+<td>days=3</td>
+<td>wave_rate=+1.30</td>
+<td>单日+1.70亿</td>
+<td>🟢 <strong>新波段</strong>—农业防守</td>
+</tr>
+<tr>
+<td>10</td>
+<td>创新药</td>
+<td>days=22</td>
+<td>wave_rate=+14.16</td>
+<td>单日+1.94亿</td>
+<td>🟢 <strong>回暖</strong>—但今日非主线</td>
+</tr>
+</tbody>
+</table></div>
+<p>⚠️ <strong>雷达数据解读</strong>：7月2日进攻榜仍以工业气体/存储芯片/氟概念为主，但这些板块7月3日全线退潮或暴跌！说明<strong>雷达数据滞后1天</strong>——7月3日的新主线（机器人+黄金）尚未体现在进攻榜中，需要pipeline更新后才能看到完整变化。</p>
+<h3>机构建仓信号</h3>
+<p>🟢 <strong>关注建仓：人形机器人产业链</strong> — 今日净流入178亿（全市场最大！）+40余股涨停+宇树IPO+大摩翻倍上调+特斯拉量产线→<strong>产业链景气从"预期"→"现实"确认</strong>→减速器/电机/传感器/丝杠等核心零部件是最佳建仓方向</p>
+<p>🟢 <strong>关注建仓：贵金属/黄金</strong> — 今日净流入32.76亿+多股涨停+ADP就业催化+全球央行购金创纪录→但⚠️6月23日黄金从涨停→跌停180度翻转历史教训→建议<strong>短线参与但不重仓</strong></p>
+<p>🟢 <strong>关注建仓：减肥药/CXO</strong> — 雷达days=8+score=7.10（减肥药）+6.01（CXO）+正流入率→医药防守方向，中线配置价值</p>
+<p>🟢 <strong>关注建仓：军工</strong> — 7月日历效应+全年订单落地+净流入16.07亿+地缘避险→中线配置方向</p>
+<h3>短线退潮信号</h3>
+<p>🔴 <strong>建议撤退：半导体/芯片全链</strong> — 电子净流出193亿+芯片近150亿+存储百亿+光刻胶崩塌→美股半导体持续崩塌传导→退潮第14天方向不变</p>
+<p>🔴 <strong>建议撤退：氟化工/工业气体</strong> — 雷达氟概念wave_rate转负-46.63+工业气体wave_rate转负-28.44→今日全线退潮验证→高位兑现加速</p>
+<p>🔴 <strong>建议撤退：AI营销/传媒</strong> — 传媒净流出29.88亿+蓝色光标7.95亿流出→算力链"过剩"误读催化退潮</p>
+<p>🔴 <strong>注意：存储芯片</strong> — 雷达days=66但wave_rate=-602.17（巨量净流出！）→长在榜但实质严重退潮→任何存储芯片持仓应止损</p>
+<h3>排名飙升</h3>
+<p>📈 <strong>排名飙升：人形机器人</strong> — 今日净流入178亿+40余股涨停+三花智控21.88亿全市场第一→从7月2日逆势活跃→7月3日全面爆发→<strong>下期雷达进攻榜必将大幅上升</strong></p>
+<p>📈 <strong>排名飙升：减速器/电机</strong> — 绿的谐波20cm涨停+中大力德涨停+雷赛智能2连板→机器人核心零部件方向确认</p>
+<p>📈 <strong>排名飙升：贵金属</strong> — 从6月23日跌停潮→7月3日涨停潮→180度翻转→但波动极大需谨慎</p>
+<h2>核心个股拆解</h2>
+<h3>三花智控（002050）</h3>
+<ul>
+<li>涨跌幅：涨停</li>
+<li>所属板块：人形机器人/汽车零部件</li>
+<li>催化因素：宇树科技核心战略供应商（关节组件+热管理）+特斯拉Optimus链+大摩翻倍上调</li>
+<li>主力净流入：<strong>21.88亿</strong>（全市场个股第一！）</li>
+<li>技术分析：涨停+21.88亿净流入=机构级确认信号→机器人产业链龙头地位确立</li>
+<li>风险提示：需关注明日是否延续强势→若核按钮则短期见顶</li>
+</ul>
+<h3>绿的谐波（688017）</h3>
+<ul>
+<li>涨跌幅：<strong>+20%涨停</strong>（科创板弹性）</li>
+<li>所属板块：减速器/人形机器人</li>
+<li>催化因素：谐波减速器龙头+人形机器人核心零部件（减速器占整机成本近50%）+宇树+Optimus双链</li>
+<li>技术分析：20cm涨停+游资主导弹性票→趋势加速信号</li>
+<li>风险提示：科创板波动大→次日可能大幅震荡→不建议追涨停板</li>
+</ul>
+<h3>招金黄金（600547）</h3>
+<ul>
+<li>涨跌幅：涨停（<strong>2连板</strong>）</li>
+<li>所属板块：贵金属/黄金概念</li>
+<li>催化因素：ADP就业远低于预期→降息预期升温+全球央行购金创纪录+COMEX黄金+1.30%</li>
+<li>技术分析：2连板确认黄金主线+板块多股涨停共振</li>
+<li>风险提示：⚠️ <strong>6月23日黄金从涨停→跌停180度翻转历史教训</strong>→贵金属波动极大→2连板后可能遭遇核按钮→短线参与不重仓</li>
+</ul>
+<h3>埃斯顿（002747）</h3>
+<ul>
+<li>涨跌幅：<strong>4天3板</strong></li>
+<li>所属板块：人形机器人/工业机器人</li>
+<li>催化因素：宇树IPO+大摩上调+特斯拉量产线+国产机器人本体龙头</li>
+<li>技术分析：4天3板=连板高度空间打开→机器人方向确认</li>
+<li>风险提示：连板高位风险→明日分歧日可能遭遇核按钮</li>
+</ul>
+<h3>京东方A（000725）</h3>
+<ul>
+<li>涨跌幅：下跌</li>
+<li>所属板块：电子/面板</li>
+<li>主力净流出：<strong>50.52亿</strong>（全市场个股净流出第一！）</li>
+<li>催化因素：电子板块全线退潮+美股半导体传导+高位兑现</li>
+<li>技术分析：50.52亿净流出+电子板块退潮14天→确认高位趋势反转</li>
+<li>风险提示：科技链任何反弹都是减仓机会而非加仓信号</li>
+</ul>
+<h3>中际旭创（300308）</h3>
+<ul>
+<li>涨跌幅：下跌</li>
+<li>所属板块：CPO/光通信</li>
+<li>主力净流出：20.03亿</li>
+<li>催化因素：CPO退潮延续+算力过剩误读+高位兑现</li>
+<li>技术分析：持续净流出→CPO退潮不可逆</li>
+<li>风险提示：与6月23日35亿流出方向一致→CPO/光通信持续失血→任何反弹应止损撤离</li>
+</ul>
+<h2>风险预警</h2>
+<ul>
+<li>⚠️ <strong>创业板冲高回落——反弹质量堪忧</strong>：早盘+1.58%→收盘+0.07%，涨幅几乎全部回吐→说明上攻动能不足，昨日暴跌后的技术性喘息而非趋势反转</li>
+<li>⚠️ <strong>缩量2680亿至3.18万亿（6月18日以来最低）</strong>：增量资金完全缺席→存量腾挪→后续若继续缩量则反弹更弱</li>
+<li>⚠️ <strong>北向资金净流出61.8亿（42亿卖半导体+消费电子）</strong>：外资继续撤离科技链→与6月23日方向一致</li>
+<li>⚠️ <strong>美股半导体持续崩塌传导</strong>：闪迪-14%/泰瑞达-13.6%/科磊-11.55%→A股电子-193亿→映射效应持续恶化→7月6日(下周一)美股开盘后半导体可能继续承压</li>
+<li>⚠️ <strong>周末无美股数据参考</strong>：7月3日美股休市→7月4日-5日无外盘指引→7月6日开盘前需关注周末突发消息（特朗普施压美联储+中东地缘+半导体链）</li>
+<li>⚠️ <strong>A股交易新规7月6日施行</strong>：ST股涨跌幅提至10%→部分ST股波动加大+基金收盘机制改变→短期增加不确定性</li>
+<li>⚠️ <strong>贵金属波动极高风险</strong>：6月23日涨停→跌停180度翻转→今日涨停→<strong>可能再次翻转</strong>→追涨风险极大</li>
+<li>⚠️ <strong>机器人产业链估值泡沫风险</strong>：绿的谐波20cm涨停+埃斯顿4天3板→短期涨幅过大→分歧日可能大幅震荡</li>
+<li>⚠️ <strong>半年末调仓余波</strong>：7月初仍受6月底公募考核调仓影响→高位科技股继续失血</li>
+</ul>
+<h2>明日推演（7月6日周一，美股休市后首个交易日+A股新规首日）</h2>
+<h3>乐观情景（概率25%）</h3>
+<ul>
+<li>机器人主线持续→减速器/电机继续涨停潮+黄金延续强势→科技超跌反弹（半导体/CPO跌幅放缓）→上证在4050-4100区间站稳→成交恢复至3.3万亿以上→美股7月6日开盘半导体企稳止跌</li>
+<li>关键验证：机器人次日不核按钮+三花/埃斯顿继续封板+黄金不翻转+成交额回升+美股7月6日半导体止跌</li>
+</ul>
+<h3>中性情景（概率40%）</h3>
+<ul>
+<li>机器人分化（龙头继续但跟风回调）+黄金分化（龙头2连板但跟风回落）→科技继续弱势（流出放缓但不反转）→上证4030-4060区间震荡→成交维持3.0-3.3万亿→涨停回落至100-120家</li>
+<li>关键特征：新规首日增加不确定性→ST波动加大→基金收盘机制改变→市场需要适应期</li>
+<li>A股交易新规施行日→可能出现短期波动加剧→但长期利好市场秩序</li>
+</ul>
+<h3>悲观情景（概率35%）</h3>
+<ul>
+<li>机器人"分歧日"→涨停次日核按钮+黄金再次翻转（涨停→跌停！）→科技继续崩塌（半导体流出超200亿）→上证跌破4000回踩3980→成交缩至2.8万亿以下→美股7月6日开盘半导体继续暴跌→创业板破4000→市场判定为"7月第一轮恐慌出清"</li>
+<li>关键触发：美股7月6日半导体继续暴跌+新规首日异常波动+特朗普施压美联储发酵+中东地缘升级+机器人产业链分歧兑现</li>
+</ul>
+<p>⚠️ <strong>悲观概率维持35%</strong>——原因：①创业板冲高回落反弹质量不高 ②缩量2680亿增量资金缺席 ③北向继续流出61.8亿 ④美股半导体传导持续 ⑤周末无外盘参考增加不确定性 ⑥新规首日波动加剧风险。但比6月23日悲观概率持平，因为机器人主线有产业逻辑支撑（非纯题材炒作）。</p>
+<h2>策略建议</h2>
+<ul>
+<li><strong>仓位建议</strong>：<strong>5成</strong>（主线3成+观察仓2成，比上期4成小幅加仓）</li>
+<li><strong>关注方向</strong>：</li>
+<li>🟢 <strong>人形机器人产业链</strong>（主线第3天确认）：宇树IPO+大摩上调+特斯拉量产→产业链景气确认→<strong>减速器/电机/传感器/丝杠是最佳方向</strong>→但不追涨停板，等回踩5日线低吸</li>
+<li>🟢 <strong>贵金属/黄金</strong>（主线第1天）：ADP催化+全球购金→但⚠️波动极大→<strong>短线参与不重仓</strong>，6月23日涨停→跌停翻转教训</li>
+<li>🟡 <strong>军工</strong>：7月日历效应+订单落地+避险属性→中线配置方向</li>
+<li>🟡 <strong>减肥药/CXO</strong>：雷达建仓信号+医药防守方向→中线布局</li>
+<li>🟡 <strong>汽车零部件</strong>：机器人同源+新能源车数据回暖→关注产业链延伸</li>
+<li><strong>回避方向</strong>：</li>
+<li>🔴 <strong>半导体/芯片全链</strong>：193亿净流出+退潮14天→任何科技链反弹都是减仓机会</li>
+<li>🔴 <strong>存储芯片/CPO/光通信</strong>：百亿级流出+美股传导→持续失血不可逆</li>
+<li>🔴 <strong>氟化工/工业气体</strong>：雷达退潮信号+今日全线暴跌验证→高位兑现加速</li>
+<li>🔴 <strong>AI营销/传媒</strong>：算力过剩误读催化+净流出29.88亿→退潮延续</li>
+<li>🔴 <strong>冷门小票/无产业逻辑题材</strong>：资金只做主线→非主线持续失血</li>
+</ul>
+<p>⚠️ <strong>操作节奏</strong>：7月6日（下周一）是A股新规首日+美股休市后首个交易日→不确定性增大→①不追涨停板 ②机器人等回踩5日线低吸 ③黄金短线参与不重仓 ④科技链任何反弹都是减仓机会而非加仓信号 ⑤新规首日可能出现异常波动→保持耐心不急躁</p>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 东方财富 | 新浪财经 | 财联社 | 金十数据 | 生成时间：2026年07月03日 23:15</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

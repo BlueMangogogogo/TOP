@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-07-03 23:18:14",
-  "total": 53,
-  "daily_count": 48,
+  "last_updated": "2026-07-03 23:24:53",
+  "total": 54,
+  "daily_count": 49,
   "industry_count": 5,
   "reports": [
     {
@@ -533,6 +533,16 @@
       "title": "7月3日 周五 早盘复盘",
       "relative_path": "reports/2026-07-03/7月3日 周五 早盘复盘.html",
       "size_kb": 8.7
+    },
+    {
+      "id": "2026-07-03-7月3日 周五 晚盘复盘",
+      "date": "2026-07-03",
+      "display_date": "7月3日",
+      "type": "daily",
+      "category": "深度复盘",
+      "title": "7月3日 周五 晚盘复盘",
+      "relative_path": "reports/2026-07-03/7月3日 周五 晚盘复盘.html",
+      "size_kb": 32.3
     }
   ]
 }
