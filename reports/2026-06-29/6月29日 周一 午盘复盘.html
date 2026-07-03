@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月29日 周一 午盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月29日 周一 午盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月29日 11:30
+  </div>
+</header>
+
+<h2>上午全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>点位</th>
+<th>涨跌幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>4034.08</td>
+<td><span style="color:red">+0.17%</span></td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>15591.37</td>
+<td><span style="color:green">-1.21%</span></td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>4140.65</td>
+<td><span style="color:green">-1.28%</span></td>
+</tr>
+<tr>
+<td>科创综指</td>
+<td>—</td>
+<td><span style="color:red">+0.36%</span></td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>—</td>
+<td>盘中<span style="color:red">涨超4%</span></td>
+</tr>
+<tr>
+<td>沪深300</td>
+<td>4871.03</td>
+<td><span style="color:red">+0.06%</span></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>两市半日成交：<strong>2.50万亿元</strong>（放量约761亿）</li>
+<li>涨停家数：约60 | 跌停家数：约15</li>
+<li>上涨家数：1911 | 下跌家数：3524（超六成个股走弱）</li>
+<li>炸板率：约35%</li>
+<li>北向资金：上午净流出约27亿</li>
+</ul>
+<blockquote>
+<p>📌 <strong>核心特征</strong>：沪强深弱极致分化——沪指微涨护盘，深成指创业板跌超1%，超3500只个股下跌。半年末最后一个交易日，机构大规模调仓换股，高位AI算力获利兑现，低位医药防御板块暴力拉升。</p>
+</div>
+<h2>上午最强板块</h2>
+<ol>
+<li><strong>创新药/CRO</strong> — 飙涨约7% — 催化：医保目录初审557个药品通过（343个近五年新药创历史新高）+ 前期持续超跌反弹需求 + 减肥药临床数据催化。科创创新药ETF涨10.13%领跑全市场，CRO概念飙涨7%，万邦医药/广生堂/舒泰神/佰仁医疗20cm涨停</li>
+<li><strong>可控核聚变/核电</strong> — 多股涨停 — 催化：高端制造产业政策加码 + 新型核聚变技术落地预期。百利电气/联创光电/中核科技/中国核建清一色涨停</li>
+<li><strong>半导体设备/工业气体</strong> — 走强 — 催化：存储芯片国产替代重大利好落地 + 海外存储巨头加大对华投资 + 半导体级氢氟酸涨价20-30%。柏诚股份4天3板，凯美特气涨停</li>
+<li><strong>氟化工/新材料</strong> — 走强 — 催化：半导体级氢氟酸量价齐升 + 国产替代逻辑</li>
+<li><strong>高股息防御（白酒/煤炭/黄金）</strong> — 贵州茅台<span style="color:red">+3%</span> — 催化：半年末资金避险需求 + 低位补涨逻辑</li>
+</ol>
+<h2>上午最弱板块</h2>
+<ol>
+<li><strong>CPO/光模块</strong> — 长盈通<span style="color:green">20cm跌停</span> — 催化：前期累计涨幅巨大 + 估值拥挤 + 利好兑现完毕 + 技术面破位引发踩踏。长飞光纤/华脉科技/通鼎互联大跌</li>
+<li><strong>PCB/玻纤/覆铜板</strong> — 大跌 — 催化：上游原材料涨价压制利润 + 短期炒作透支 + 高位筹码松动。通信ETF跌4.72%</li>
+<li><strong>AI算力服务器/液冷硬件</strong> — 全线走弱 — 催化：高位获利盘集体兑现 + 半年末机构调仓出逃</li>
+<li><strong>通信/5G</strong> — 通信ETF跌约4.7% — 催化：跟随CPO/光模块下行</li>
+<li><strong>能源金属/锂矿</strong> — 走弱 — 催化：下游需求复苏不及预期 + 资金规避周期高位品种</li>
+</ol>
+<h2>异动个股</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>个股</th>
+<th>代码</th>
+<th>涨跌幅</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>万邦医药</td>
+<td>301520</td>
+<td><span style="color:red">+20%</span>涨停</td>
+<td>创新药主线龙头，医保目录利好催化</td>
+</tr>
+<tr>
+<td>广生堂</td>
+<td>300436</td>
+<td><span style="color:red">+20%</span>涨停</td>
+<td>创新药板块爆发</td>
+</tr>
+<tr>
+<td>舒泰神</td>
+<td>300204</td>
+<td><span style="color:red">+20%</span>涨停</td>
+<td>医药全线拉升</td>
+</tr>
+<tr>
+<td>佰仁医疗</td>
+<td>—</td>
+<td><span style="color:red">+20%</span>涨停</td>
+<td>医药生物</td>
+</tr>
+<tr>
+<td>太龙药业</td>
+<td>—</td>
+<td><span style="color:red">涨停</span></td>
+<td>开盘3分钟垂直封板</td>
+</tr>
+<tr>
+<td>凯莱英</td>
+<td>—</td>
+<td><span style="color:red">涨停</span></td>
+<td>CRO龙头，海外订单回暖</td>
+</tr>
+<tr>
+<td>华工科技</td>
+<td>—</td>
+<td><span style="color:red">+8.8%</span></td>
+<td>主力净流入19.20亿全市场第一，激光设备</td>
+</tr>
+<tr>
+<td>恒瑞医药</td>
+<td>—</td>
+<td><span style="color:red">+5~6%</span></td>
+<td>主力净流入8.58亿，创新药龙头</td>
+</tr>
+<tr>
+<td>长盈通</td>
+<td>688143</td>
+<td><span style="color:green">-20%</span>跌停</td>
+<td>CPO/光模块重挫踩踏</td>
+</tr>
+<tr>
+<td>长飞光纤</td>
+<td>601869</td>
+<td><span style="color:green">大跌</span></td>
+<td>光模块板块领跌</td>
+</tr>
+</tbody>
+</table></div>
+<h2>连板梯队</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>层级</th>
+<th>个股</th>
+<th>板块</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5天3板</td>
+<td>海南海药</td>
+<td>医药中成药</td>
+</tr>
+<tr>
+<td>4天3板</td>
+<td>柏诚股份</td>
+<td>半导体工业气体</td>
+</tr>
+<tr>
+<td>3连板</td>
+<td>威派格</td>
+<td>基建水务</td>
+</tr>
+<tr>
+<td>3天2板</td>
+<td>宁波中百</td>
+<td>零售消费</td>
+</tr>
+<tr>
+<td>2连板</td>
+<td>百润股份、兴业股份</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<div class="warning">
+<p>⚠️ 连板高度大幅压缩，无5板以上高标，梯队断层严重，短线游资进攻意愿衰退。</p>
+</div>
+<h2>下午关注</h2>
+<ul>
+<li>🔍 <strong>关注方向1：医药主线午后能否持续</strong> — 创新药/CRO上午暴力拉升，午后关注是否扩散至中药、医疗器械等细分方向</li>
+<li>🔍 <strong>关注方向2：半导体/科创50午后走势</strong> — 科创50盘中涨超4%，若午后放量可带动科技板块反弹</li>
+<li>🔍 <strong>关注方向3：沪指4000点支撑</strong> — 上午探底回升放量，止跌信号初现；午后若进一步放量拉升，可能全线翻红</li>
+<li>⚠️ <strong>风险提示</strong>：高位AI算力/CPO午后是否进一步杀跌；跌停家数若持续增加则优先观望</li>
+</ul>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年06月29日 11:30</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

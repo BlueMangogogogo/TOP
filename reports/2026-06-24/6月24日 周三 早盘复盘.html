@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月24日 周三 早盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月24日 周三 早盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月24日 08:00
+  </div>
+</header>
+
+<h2>隔夜外盘</h2>
+<p>隔夜美股科技股遭遇罕见抛售，半导体板块成为重灾区，恐慌指数飙升，全球风险资产承压：</p>
+<ul>
+<li><strong>道琼斯</strong>：51666.84（<span style="color:green">-0.09%</span>，-45.87点）</li>
+<li><strong>纳斯达克</strong>：25587.04（<span style="color:green">-2.21%</span>，-579.56点）</li>
+<li><strong>标普500</strong>：7365.46（<span style="color:green">-1.44%</span>，-107.33点）</li>
+<li><strong>费城半导体指数</strong>：<span style="color:green">-7.87%</span>（创6月5日以来最大单日跌幅）</li>
+<li><strong>VIX恐慌指数</strong>：20.31（<span style="color:red">+18%</span>，升至逾一周新高）</li>
+<li><strong>美元指数</strong>：101.408（<span style="color:red">+0.38%</span>，单周涨幅近三个月最大）</li>
+<li><strong>WTI原油</strong>：73.91美元/桶（<span style="color:green">-0.23%</span>）</li>
+<li><strong>布伦特原油</strong>：77.70美元/桶（<span style="color:green">-0.14%</span>）</li>
+<li><strong>现货黄金</strong>：<span style="color:green">失守4090美元/盎司</span>（-0.50%），期货跌破4100（-1.24%）</li>
+<li><strong>白银期货</strong>：<span style="color:green">-6.15%</span>，失守62美元/盎司</li>
+<li><strong>A50期货</strong>：夜盘收<span style="color:red">+0.45%</span>，盘前高开<span style="color:red">+0.60%</span></li>
+<li><strong>中概金龙指数</strong>：<span style="color:green">-0.60%</span></li>
+</ul>
+<p><strong>半导体崩盘细节</strong>：美光科技<span style="color:green">-13%</span>+、闪迪<span style="color:green">-13.75%</span>、ARM<span style="color:green">-10%</span>+、高通/应用材料<span style="color:green">-8%</span>+、台积电/英特尔<span style="color:green">-6%</span>+、英伟达<span style="color:green">-4.03%</span>、三倍做多半导体ETF<span style="color:green">-23%</span>。韩国KOSPI指数<span style="color:green">暴跌9.99%</span>触发年内第四次熔断，三星/SK海力士各<span style="color:green">-12%</span>，杠杆ETF踩踏加剧跌幅。</p>
+<h2>盘前重大消息</h2>
+<ol>
+<li><strong>美联储加息预期跳升</strong>：CME利率期货隐含加息幅度从25bp跃升至50bp（两次累计加息），5月非农新增17.2万人远超预期8.8万，十年期美债收益率稳于4.5%附近</li>
+<li><strong>半导体行业周期见顶信号</strong>：NAND Flash产能过剩问题未因AI需求消除，费城半导体指数单日近8%跌幅，全球芯片股集体崩盘</li>
+<li><strong>Alphabet纳入道琼斯指数</strong>：取代威瑞森通信，科技龙头市场主导地位进一步巩固</li>
+<li><strong>俄罗斯考虑禁止柴油出口</strong>：副总理诺瓦克表示正动用燃料储备，伊朗再度宣布关闭霍尔木兹海峡</li>
+<li><strong>德国全国铁路暂停运营</strong>：数字无线系统中断，全境铁路停运</li>
+<li><strong>SpaceX拟首次发行美国高等级债券</strong>：募资250亿美元</li>
+<li><strong>立讯精密通过港交所上市聆讯</strong></li>
+</ol>
+<h2>昨日A股回顾</h2>
+<p>沪指收盘4106点<span style="color:green">-1.37%</span>，创业板<span style="color:green">-3.84%</span>（近7个月最大单日跌幅），成交3.47万亿元（较前日缩量2900亿）。高位AI算力小票两天跌穿20%，医药CRO板块87%个股飘红，北向尾盘扫入12亿元消费ETF，市场呈现极端分化格局。</p>
+<h2>今日关注方向</h2>
+<ul>
+<li><strong>医药CRO/创新药</strong>：板块持续逆势走强，睿智医药、新华制药等盘前人气居前，资金避险偏好明显</li>
+<li><strong>半导体设备国产替代</strong>：隔夜全球半导体崩盘，但A股科创半导体设备ETF近20日涨幅超27%，国产替代逻辑可能强化</li>
+<li><strong>消费ETF/蓝筹防御</strong>：北向资金尾盘增持消费ETF，半年末窗口下低估值蓝筹或受青睐</li>
+</ul>
+<h2>风险提示</h2>
+<ul>
+<li>美联储加息预期从25bp跳升至50bp，全球流动性边际收紧信号明确，高估值成长股承压最大</li>
+<li>半导体板块全球崩盘或传导至A股科技线，科创50虽创新高但分化加剧，超4000只个股下跌，赚钱效应极度集中</li>
+<li>美元指数单周近三个月最大涨幅，黄金白银原油齐跌，"流动性紧缩+避险买美元"组合与2020年3月和2022年9月高度相似</li>
+<li>韩国KOSPI熔断示范效应，杠杆ETF踩踏机制值得警惕</li>
+</ul>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年06月24日 08:00</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

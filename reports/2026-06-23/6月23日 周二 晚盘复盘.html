@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月23日 周二 晚盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月23日 周二 晚盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月23日 19:15
+  </div>
+</header>
+
+<h2>指数全景</h2>
+<ul>
+<li><strong>上证指数</strong>：<span style="color:green">4106.25（-1.37%）</span>，开盘4153.59，最高4175.35，最低4085.59，振幅2.26%</li>
+<li><strong>深证成指</strong>：<span style="color:green">15854.20（-3.17%）</span>，前日16372.50</li>
+<li><strong>创业板指</strong>：<span style="color:green">4192.19（-3.84%，阴包阳！）</span>，前日4359.39(+2.52%)，今日跌幅完全覆盖昨日涨幅</li>
+<li><strong>科创50</strong>：<span style="color:green">-1.68%</span>，前日1948.93</li>
+<li><strong>科创综指</strong>：<span style="color:green">-1.31%</span></li>
+<li><strong>北证50</strong>：<span style="color:red">+0.77%</span>（唯一逆势飘红的主要指数）</li>
+<li><strong>沪深300</strong>：<span style="color:green">约-2.39%</span></li>
+</ul>
+<p><strong>支撑位</strong>：4085（今日最低点） | 关键支撑4050-4070（前日深V起点） | <strong>压力位</strong>：4175 → 4180 → 4258</p>
+<p><strong>两市成交额</strong>：<span style="color:green">3.47万亿元</span>（较昨日3.76万亿<span style="color:green">缩量2961亿</span>，增量资金大幅退潮）</p>
+<p><strong>涨停家数</strong>：124（不含ST） | <strong>跌停家数</strong>：53（不含ST）
+<strong>上涨家数</strong>：2764 | <strong>下跌家数</strong>：2644 | 平盘105
+涨幅9%以上：144只 | 跌幅9%以上：86只
+<strong>封板率</strong>：63.27% | <strong>炸板率</strong>：36.73% | <strong>最高连板</strong>：5连板（江钨装备）
+<strong>市场情绪</strong>：低迷分化——涨停124家仍有活跃度，但36.73%炸板率偏高说明打板难度大增；主力净流出1573亿创近期新高，大资金出逃散户接盘</p>
+<p><strong>北向资金</strong>：待公布（预计净流出，外资借亚太恐慌链止盈）</p>
+<div class="highlight">
+<p>💡 <strong>与6月22日对比</strong>：昨日上证4163.10(+1.78%)深V反转→今日4106.25(-1.37%)高开低走；昨日3.76万亿历史第二天量→今日缩量2961亿至3.47万亿；昨日涨停153→今日124；昨日封板率84%→今日63.27%（大幅下降）；<strong>创业板阴包阳结构确认——昨日2.52%涨幅被今日3.84%跌幅完全吞噬</strong>，短期上攻动能衰竭信号明确。</p>
+</div>
+<h2>外盘与宏观环境</h2>
+<h3>隔夜美股（6月22日周一）</h3>
+<ul>
+<li><strong>道琼斯</strong>：50668.97（+24.69，+0.05%）</li>
+<li><strong>纳斯达克</strong>：26917.47（+242.74，+0.91%）</li>
+<li><strong>标普500</strong>：7563.63（+43.27，+0.58%）</li>
+<li><strong>费城半导体</strong>：前日+6.42%创历史新高→今日未延续</li>
+</ul>
+<h3>亚太市场惨烈（6月23日）</h3>
+<ul>
+<li>🔴 <strong>韩国KOSPI</strong>：<span style="color:green">-9.99%，触发熔断！</span>三星电子跌7-8%，SK海力士跌11%+，外资单日抛约2万亿韩元</li>
+<li>🔴 <strong>日经225</strong>：<span style="color:green">-3.55%</span>，铠侠-15%，软银-10%，东京电子-6%+</li>
+<li>🔴 <strong>恒生指数</strong>：<span style="color:green">-1.27%</span></li>
+<li>🔴 <strong>恒生科技</strong>：<span style="color:green">-3%+</span>，MiniMax-16%，智谱-10%</li>
+</ul>
+<h3>波动率与汇率</h3>
+<ul>
+<li><strong>VIX</strong>：约16.40（隔夜回落，但亚太恐慌补偿）</li>
+<li><strong>美元指数</strong>：<span style="color:red">101.024（站稳101！）</span>，美联储鹰派信号压制</li>
+<li><strong>人民币</strong>：中间价6.8150，在岸6.7773，小幅贬值</li>
+</ul>
+<h3>大宗商品</h3>
+<ul>
+<li><strong>原油</strong>：<span style="color:green">NYMEX 88.34（-0.63%）</span>，霍尔木兹海峡通航预期+地缘风险回吐</li>
+<li><strong>黄金</strong>：<span style="color:green">COMEX 4524.08（-0.18%），现货失守4150美元！</span>日内跌幅超1%，高盛下调年末金价预测至4900美元（砍500美元）</li>
+<li><strong>铜</strong>：<span style="color:red">长江现货1#铜104590元/吨</span>（A股有色金属板块-7.24%大跌与铜价方向背离→期货强现货弱）</li>
+<li><strong>白银/铂金</strong>：跟随黄金下跌</li>
+</ul>
+<h3>今日宏观数据与政策</h3>
+<ul>
+<li>🔴 <strong>《中华人民共和国金融法（草案）》首次提请全国人大常委会审议</strong>——核心"管合法更要管非法、全面加强金融监管"，为资本市场长期稳定注入法治框架</li>
+<li>🔴 <strong>商务部等发布《利用外资固稳促优行动方案》</strong>——支持外资参与医药产业，研究药品分段生产细则，扩大生物技术及外商独资医院开放试点</li>
+<li>🔴 <strong>国家药监局发布2025年《中国新药注册临床试验进展年度报告》</strong>——临床试验总量首次突破5000项创历史新高！新药2997项同比增18%</li>
+<li>🟡 <strong>汽车流通消费改革试点</strong>——40个城市入选（天津/沈阳/扬州/渭南等各具特色）</li>
+<li>🟡 <strong>夏季达沃斯论坛开幕（大连）</strong>——硬科技、储能、高端制造</li>
+<li>🟡 <strong>火山引擎原动力大会开幕</strong>——算力、大模型、AI应用催化</li>
+<li>🟢 <strong>美联储鹰派持续</strong>——降息时点大幅延后，美元站上101压制金价</li>
+</ul>
+<h2>核心新闻简报（按强度排序）</h2>
+<ol>
+<li>🔴 <strong>韩国KOSPI暴跌9.99%触发熔断+亚太科技链集体崩盘</strong> — 影响：三星/SK海力士跌幅10%+→A股半导体/存储/光通信全链恐慌跟随→兆易创新-7%（主力净流出57亿全市场第一）+中际旭创流出35亿+澜起科技24.6亿→科技硬件成今日最大出血点</li>
+<li>🔴 <strong>金融法草案首次审议</strong> — 影响：长期利好金融监管法治化→银行/券商今日逆势飘红（中国银行+3%/长江证券涨停两连板）→但短期增加不确定性，市场避险情绪升温</li>
+<li>🔴 <strong>外资医药开放方案+临床试验5000项历史新高</strong> — 影响：政策转向从"控费"→"鼓励创新"→创新药板块逆势暴涨（十余股涨停）+CXO概念回暖→与上期"回避创新药"判断完全逆转！</li>
+<li>🟡 <strong>高盛下调金价预测500美元至4900美元</strong> — 影响：美联储不降息判断→贵金属板块-9.69%全天最惨→逾20股跌停（中金黄金/山金国际/赤峰黄金等）→昨日有色+4.67%暴涨→今日-7.24%暴跌，完全逆转</li>
+<li>🟡 <strong>尾盘30分钟1573亿主力资金疯狂出逃</strong> — 影响：超大单+大单净流出超1500亿 vs 中单+小单净流入超1400亿→"大资金跑散户接"格局→后续承接力不足风险极高</li>
+<li>🟡 <strong>三星HBM4销售额突破10亿美元</strong>（仅4个多月） — 影响：存储芯片长期景气确认→但今日存储板块-311亿净流出→"利好出尽即利空"，高位兑现</li>
+<li>🟡 <strong>火山引擎原动力大会+达沃斯论坛开幕</strong> — 影响：算力/AI应用催化密集→但AI板块今日全线暴跌（数据中心-559亿/人工智能-277亿/5G-516亿）→催化失效</li>
+<li>🟢 <strong>端午消费数据亮眼</strong> — 影响：人均预订金额+16%/酒店间夜量+30%/大学生预订+80%→旅游酒店今日走强但持续性存疑</li>
+</ol>
+<p><strong>新闻情绪催化验证</strong>：今日医药板块暴涨与[新闻3外资医药开放+临床试验新高]高度相关！✅验证成功。但[新闻7火山引擎+达沃斯催化]对科技板块完全失效——外盘恐慌+高位浮盈盘兑现压倒了所有国内催化，映射效应彻底断裂。</p>
+<h2>板块涨幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>涨幅</th>
+<th>主力净流入</th>
+<th>催化因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>医药生物（创新药/CXO/减肥药）</td>
+<td>集体暴涨</td>
+<td>20.05亿（创新药）+4.92亿（减肥药）</td>
+<td>外资医药开放+临床试验5000项新高+政策从控费转鼓励创新+估值历史底部</td>
+</tr>
+<tr>
+<td>2</td>
+<td>银行</td>
+<td>+2-3%</td>
+<td>约28.69亿</td>
+<td>金融法草案审议+高股息避险+息差趋稳</td>
+</tr>
+<tr>
+<td>3</td>
+<td>券商</td>
+<td>分化（长江涨停+其他跟涨）</td>
+<td>小幅流入</td>
+<td>金融法+陆家嘴论坛延续催化+估值修复</td>
+</tr>
+<tr>
+<td>4</td>
+<td>旅游酒店/纺织服饰</td>
+<td>涨幅居前</td>
+<td>—</td>
+<td>端午消费数据亮眼+大学生预订+80%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>猪肉/公路铁路运输/房地产</td>
+<td>涨幅居前</td>
+<td>—</td>
+<td>防御避险+内需复苏预期</td>
+</tr>
+</tbody>
+</table></div>
+<h2>板块跌幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>跌幅</th>
+<th>主力净流出</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>贵金属</td>
+<td><span style="color:green">-9.69%</span></td>
+<td>大额</td>
+<td>高盛砍金价预测500美元+美联储不降息+现货黄金失守4150→逾20股跌停</td>
+</tr>
+<tr>
+<td>2</td>
+<td>有色金属（工业金属/稀土/小金属）</td>
+<td><span style="color:green">-7.24%</span></td>
+<td>-266.71亿</td>
+<td>昨日+4.67%→今日-7.24%完全逆转！浮盈盘踩踏+韩国崩盘传导+期货强现货弱背离</td>
+</tr>
+<tr>
+<td>3</td>
+<td>PCB/CPO/光通信/数据中心</td>
+<td><span style="color:green">大幅下跌</span></td>
+<td>-559亿（数据中心）-460亿（CPO）-296亿（光通信）</td>
+<td>亚太半导体崩盘+兆易创新57亿流出+中际旭创35亿+高位兑现</td>
+</tr>
+<tr>
+<td>4</td>
+<td>新能源车/储能/锂电池</td>
+<td><span style="color:green">大幅下跌</span></td>
+<td>-440亿（新能源车）-323亿（锂电池）-327亿（储能）</td>
+<td>高位兑现+韩国电动车供应链恐慌+资金防御切换</td>
+</tr>
+<tr>
+<td>5</td>
+<td>机器人/5G/汽车电子</td>
+<td><span style="color:green">大幅下跌</span></td>
+<td>-387亿（机器人）-516亿（5G）-352亿（汽车电子）</td>
+<td>前期涨幅过大+资金全面撤离科技链</td>
+</tr>
+</tbody>
+</table></div>
+<div class="warning">
+<p>⚠️ 行业资金流出排名前六：电子-559亿+有色-267亿+半导体-217亿+元件-201亿+通信-187亿+电力设备-179亿=<strong>合计超1600亿，几乎等于全天全部主力净流出！</strong></p>
+</div>
+<h2>主线持续性分析</h2>
+<h3>🔴 上期关键判断回顾与验证</h3>
+<p><strong>上期（6月22日）核心判断："金融觉醒+资源涨价双主线"</strong></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>上期判断</th>
+<th>今日验证</th>
+<th>修正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"金融觉醒+资源涨价双主线，今日爆发第1天"</td>
+<td>金融分化（长江涨停但整体不强）+资源暴跌-7.24%</td>
+<td>❌ <strong>双主线仅存活1天即崩塌！</strong>类似6/8"风格大切换"仅持续1天</td>
+</tr>
+<tr>
+<td>"券商7.69%/50只全线飘红"</td>
+<td>长江证券两连板但其他券商分化不强</td>
+<td>⚠️ 券商从"全面爆发"→"龙头分化"，强度大幅衰减</td>
+</tr>
+<tr>
+<td>"有色金属+4.67%/超20股涨停"</td>
+<td>有色-7.24%/逾20股跌停！完全逆转</td>
+<td>❌ <strong>昨日涨停→今日跌停，180度翻转！</strong>浮盈盘踩踏+外盘传导</td>
+</tr>
+<tr>
+<td>"培育钻石AI散热新赛道首次爆发"</td>
+<td>培育钻石雷达days从5.99→-3.83（退潮信号）</td>
+<td>⚠️ score仍9.87最高但波段流入率转负，排名不变但动能衰减</td>
+</tr>
+<tr>
+<td>"创新药/减肥药→回避方向"</td>
+<td>创新药逆势暴涨十余股涨停+净流入20亿！</td>
+<td>❌ <strong>完全逆转！</strong>上期回避→今日最强主线</td>
+</tr>
+<tr>
+<td>"电子板块316亿净流出→AI硬件退潮"</td>
+<td>今日电子559亿净流出+芯片800亿流出</td>
+<td>❌ 退潮加速！从316亿→800亿，流出量翻2.5倍</td>
+</tr>
+<tr>
+<td>"天量见天价风险"</td>
+<td>缩量2961亿+三大指数全线下跌</td>
+<td>✅ <strong>验证成功！</strong>3.76万亿→3.47万亿+创业板阴包阳</td>
+</tr>
+<tr>
+<td>"明日中性45%：缩量至3.0-3.3万亿+分化"</td>
+<td>实际3.47万亿+大跌（比中性更差）</td>
+<td>⚠️ 推演方向对了但幅度超预期</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>核心修正</strong>：上期"金融觉醒+资源涨价"双主线<strong>仅存活1天</strong>即崩塌——与6月8日"风格大切换"同样"一日游"。此次崩塌更惨烈：资源线从+4.67%→-7.24%（涨停→跌停），说明节后首日的天量爆发是<strong>浮盈盘集中释放而非增量资金趋势进场</strong>。</p>
+<h3>当前主线判断</h3>
+<ul>
+<li><strong>当前主线</strong>：<span style="color:red"><strong>医药觉醒（创新药/CXO/减肥药）</strong></span>，今日爆发第1天</li>
+<li>创新药净流入20亿+减肥药4.92亿+免疫治疗2.90亿+维生素3.45亿+辅助生殖8.31亿</li>
+<li>催化三重共振：政策从控费→鼓励创新+临床试验5000项新高+估值历史底部</li>
+<li><strong>退潮主线</strong>：科技硬件（芯片-800亿/CPO-460亿/数据中心-559亿）——退潮第5天加速崩塌</li>
+<li><strong>退潮主线</strong>：资源涨价（有色-7.24%/贵金属-9.69%/稀土跌停潮）——1日即崩，浮盈踩踏</li>
+<li><strong>新晋主线</strong>：银行/金融法概念——政策催化+避险属性，但强度需明日验证</li>
+</ul>
+<div class="warning">
+<p>⚠️ <strong>6月主线切换周期回顾</strong>：6/5 CPO→机器人(跨主线切换)→6/8 科技→防御(风格大切换，1日游)→6/9 科技反弹→6/22 金融+资源(结构性高低切换)→<strong>6/23 医药觉醒+科技资源崩塌</strong>——主线切换频率越来越快，每条主线存活期越来越短，市场进入"高频轮动+快速证伪"模式！</p>
+</div>
+<h2>板块资金雷达趋势</h2>
+<h3>进攻榜TOP10（2026-06-23 最新数据）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>在榜天数(波段)</th>
+<th>波段流入率</th>
+<th>单日净额信号</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>培育钻石</td>
+<td>days=-3.83(从5.99转负！)</td>
+<td>score=9.87</td>
+<td>流入率转负</td>
+<td>🟡 <strong>高位退潮</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>CXO概念</td>
+<td>days=-0.15(从-0.77回暖)</td>
+<td>score=5.64</td>
+<td>医药政策催化</td>
+<td>🟢 <strong>回暖确认</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>工业气体</td>
+<td>days=-1.36(从2.43转负)</td>
+<td>score=5.06</td>
+<td>流出加速</td>
+<td>🟡 <strong>注意分化</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>免疫治疗</td>
+<td>days=1.28(从-1.44转正！)</td>
+<td>score=4.64</td>
+<td>新波段启动</td>
+<td>🟢 <strong>新波段</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td>减肥药</td>
+<td>days=1.82(从-1.24转正！)</td>
+<td>score=4.22</td>
+<td>新波段启动</td>
+<td>🟢 <strong>新波段</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td>氟概念</td>
+<td>days=-3.89(从4.98暴跌！)</td>
+<td>score=4.14</td>
+<td>资源退潮</td>
+<td>🔴 <strong>退潮</strong></td>
+</tr>
+<tr>
+<td>7</td>
+<td>创新药</td>
+<td>days=2.38(从-1.52转正！)</td>
+<td>score=3.75</td>
+<td><strong>最强新波段！</strong></td>
+<td>🟢 <strong>强势建仓</strong></td>
+</tr>
+<tr>
+<td>8</td>
+<td>维生素</td>
+<td>days=2.15(从-0.71转正)</td>
+<td>score=3.54</td>
+<td>医药链扩散</td>
+<td>🟢 <strong>跟随启动</strong></td>
+</tr>
+<tr>
+<td>9</td>
+<td>辅助生殖</td>
+<td>days=3.46(从-1.53转正！)</td>
+<td>score=3.15</td>
+<td>医药链扩散</td>
+<td>🟢 <strong>跟随启动</strong></td>
+</tr>
+<tr>
+<td>10</td>
+<td>合成生物</td>
+<td>days=-0.82(从-2.92回暖)</td>
+<td>score=2.92</td>
+<td>半回暖</td>
+<td>🟡 <strong>观察</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>机构建仓信号</h3>
+<p>🟢 <strong>关注建仓：创新药/CXO</strong> — 创新药days从-1.52→2.38(新波段确认)+净流入20.05亿+政策三重催化+估值历史底部。CXO概念days从-0.77→-0.15(持续回暖)+海外投融资回暖+国内BD交易火热→<strong>上期"回避创新药"判断已被今日盘面彻底证伪，需立即修正为"关注建仓"！</strong></p>
+<p>🟢 <strong>关注建仓：减肥药/免疫治疗</strong> — 减肥药days从-1.24→1.82+净流入4.92亿；免疫治疗days从-1.44→1.28+净流入2.90亿——医药子线从"退潮"→"新波段启动"的共振信号</p>
+<p>🟢 <strong>关注建仓：银行/金融法概念</strong> — 金融法草案催化+银行净流入28.69亿+避险属性+估值极低（PB0.5-0.6倍），中线配置价值凸显</p>
+<h3>短线退潮信号</h3>
+<p>🔴 <strong>建议撤退：芯片/半导体全链</strong> — 芯片板块今日净流出800.59亿（全市场最大出血点！）+存储芯片-311亿+数据中心-559亿+CPO-460亿+5G-516亿——<strong>科技硬件退潮第5天，流出量从316亿→800亿加速崩塌</strong>，任何科技链持仓都应止损撤离</p>
+<p>🔴 <strong>建议撤退：有色金属/贵金属</strong> — 有色-7.24%/贵金属-9.69%/稀土跌停潮+有色净流出267亿——昨日涨停→今日跌停的180度翻转说明浮盈盘踩踏已启动，<strong>资源涨价主线1日游后崩塌</strong></p>
+<p>🔴 <strong>建议撤退：机器人/新能源车链</strong> — 机器人-387亿+新能源车-440亿+储能-327亿+锂电池-323亿——高位兑现+外盘恐慌传导</p>
+<p>🔴 <strong>注意：培育钻石</strong> — score仍9.87最高但days从5.99→-3.83(波段流入率转负)，动能衰减明显，排名维持但实质已退潮</p>
+<h3>排名飙升</h3>
+<p>📈 <strong>排名飙升：创新药</strong>，从雷达边缘→今日净流入20亿+板块十余股涨停+政策三重催化，进攻榜新波段确认(days从-1.52→2.38)</p>
+<p>📈 <strong>排名飙升：辅助生殖/免疫治疗/减肥药</strong>，医药子线集体从负→正(days转正)，新波段启动信号群</p>
+<h2>核心个股拆解</h2>
+<h3>长江证券（000783）</h3>
+<ul>
+<li>涨跌幅：<span style="color:red">涨停（两连板）</span></li>
+<li>所属板块：券商/金融法概念</li>
+<li>催化因素：金融法草案首次审议+陆家嘴论坛延续催化+券商估值修复</li>
+<li>技术分析：两连板说明券商龙头仍有韧性，但其他券商分化不强→"龙头独舞"而非"板块齐攻"</li>
+<li>风险提示：券商持续性需观察明日：①涨停是否被核按钮 ②板块成交额是否萎缩 ③长江证券能否3连板打开空间</li>
+</ul>
+<h3>卫星化学（002648）</h3>
+<ul>
+<li>涨跌幅：<span style="color:red">涨停</span></li>
+<li>所属板块：化工/业绩驱动</li>
+<li>催化因素：2026年半年度业绩预告→预计归母净利润60-70亿，同比+118-155%！扣非56-67亿同比+96-131%</li>
+<li>封单金额：6.63亿元（全市场最大封单）</li>
+<li>技术分析：业绩大增催化+化工板块估值底部→趋势涨停</li>
+<li>风险提示：化工板块今日并非主线→需关注明日化工方向是否有持续催化</li>
+</ul>
+<h3>赛升药业（300485）</h3>
+<ul>
+<li>涨跌幅：<span style="color:red">+18%</span></li>
+<li>所属板块：创新药/生物医药</li>
+<li>催化因素：外资医药开放+临床试验5000项新高+政策转向鼓励创新+估值底部</li>
+<li>技术分析：20%涨幅（创业板弹性）+板块十余股涨停共振→主线确认</li>
+<li>风险提示：医药板块持续性需明日验证——历史上医药"脉冲一日游"也不少见</li>
+</ul>
+<h3>江钨装备（600397）— 5连板（市场最高板）</h3>
+<ul>
+<li>涨跌幅：<span style="color:red">5连板涨停</span></li>
+<li>所属板块：小金属/钨产业链/并购重组</li>
+<li>催化因素：定增19亿收购3家钨/钽铌制品公司+矿产资源法36种列入战略目录</li>
+<li>技术分析：5板打开连板高度空间→但有色板块今日暴跌→明日大概率分歧</li>
+<li>风险提示：⚠️ <strong>板块崩塌+连板高位双重风险</strong>——有色-7.24%意味着板块环境恶化，5连板在崩塌环境中极易遭遇核按钮</li>
+</ul>
+<h3>兆易创新（603986）— A股今日最大出血点</h3>
+<ul>
+<li>涨跌幅：<span style="color:green">-7.06%</span></li>
+<li>所属板块：芯片/存储芯片</li>
+<li>主力净流出：<span style="color:green">57亿</span>（全市场第一！）</li>
+<li>全日成交：<span style="color:green">391亿</span>（全市场成交额最大个股）</li>
+<li>催化因素：韩国KOSPI崩盘传导+科技链恐慌+高位浮盈盘集中兑现</li>
+<li>技术分析：放量大跌+天量成交+主力57亿出逃→确认高位趋势反转</li>
+<li>风险提示：⚠️ 存储芯片HBM4催化"利好出尽即利空"→后续若有反弹可能只是超跌反弹而非趋势反转</li>
+</ul>
+<h3>中际旭创（300308）</h3>
+<ul>
+<li>涨跌幅：<span style="color:green">约-5%</span></li>
+<li>所属板块：CPO/光通信</li>
+<li>主力净流出：<span style="color:green">35亿</span></li>
+<li>催化因素：亚太半导体链恐慌+CPO高位兑现+数据中心-559亿</li>
+<li>技术分析：CPO概念从进攻榜高位→今日净流出460亿板块级别崩塌</li>
+<li>风险提示：⚠️ CPO/光通信退潮第5天加速，流出量持续放大，短期无反转信号</li>
+</ul>
+<h2>风险预警</h2>
+<ul>
+<li>⚠️ <strong>创业板阴包阳确认——短期上攻动能衰竭</strong>：昨日+2.52%被今日-3.84%完全覆盖，技术面看调整仍有惯性，创业板可能回探4100-4200区间</li>
+<li>⚠️ <strong>1573亿主力净流出=大资金跑散户接</strong>：超大单+大单净流出超1500亿 vs 中单+小单净流入1400亿→承接力不足→后续若继续流出则踩踏加剧</li>
+<li>⚠️ <strong>科技硬件退潮加速</strong>：芯片800亿+数据中心559亿+CPO460亿+5G516亿→流出量从316亿→800亿→1600亿级别→<strong>第5天退潮仍在加速而非衰减！</strong></li>
+<li>⚠️ <strong>资源涨价主线1日游后崩塌</strong>：昨日有色+4.67%→今日-7.24%→涨停→跌停180度翻转→说明节后天量是浮盈释放而非趋势进场</li>
+<li>⚠️ <strong>韩国KOSPI熔断+亚太链恐慌</strong>：外资借韩国节点集中止盈→韩国散户强平→传导日股→亚太共振→<strong>A股外资流向可能持续恶化</strong></li>
+<li>⚠️ <strong>美联储鹰派+美元站上101</strong>：降息延后+美元走强→黄金承压+人民币贬值→外资配置A股意愿下降</li>
+<li>⚠️ <strong>半年末调仓压力</strong>：公募半年考核→6月底前高低切换加剧→非主线持仓持续失血</li>
+<li>⚠️ <strong>主线切换频率加速</strong>：6月每条主线存活期越来越短（CPO3天→机器人3天→金融+资源1天→医药第1天）→市场进入高频轮动模式，追涨风险极大</li>
+</ul>
+<h2>明日推演</h2>
+<h3>乐观情景（概率20%）</h3>
+<ul>
+<li>医药主线持续→创新药/CXO继续涨停潮+银行延续走强→科技超跌反弹（芯片/CPO跌深反弹5-10%）→上证在4100-4150企稳→成交维持3.4万亿以上→韩国市场企稳止跌→亚太恐慌链暂缓</li>
+<li>关键验证：创新药次日不核按钮+涨停票继续封板+医药板块成交额上台阶+韩国KOSPI不再暴跌</li>
+</ul>
+<h3>中性情景（概率45%）</h3>
+<ul>
+<li>医药分化（龙头继续但跟风回调）+银行/券商分化→科技继续弱势（流出放缓但不反转）→上证4080-4120区间震荡→成交缩至3.0-3.3万亿→涨停回落至80-100家</li>
+<li>关键特征：主线从"全面爆发"→"龙头分化确认"→资金从"打板"→"趋势配置"→医药子线内部分化（创新药强/CXO跟随/减肥药回调）</li>
+<li>美光科技6月24日财报→若超预期则存储芯片可能有1日反弹</li>
+</ul>
+<h3>悲观情景（概率35%）</h3>
+<ul>
+<li>医药"一日游"→创新药涨停次日核按钮+银行回落→科技继续崩塌（芯片流出超500亿）→上证跌破4050回踩4000→成交缩至2.8万亿以下→韩国恐慌延续传导→创业板破4100→市场判定为"6月最后一轮恐慌出清"</li>
+<li>关键触发：美光财报不及预期+美联储再鹰派+半年末集中调仓砸盘+韩国杠杆ETF再平衡被动卖压</li>
+</ul>
+<div class="warning">
+<p>⚠️ <strong>悲观概率从上期20%上调至35%</strong>——原因：①创业板阴包阳技术面恶化 ②1573亿主力出逃非情绪而是成体系调仓 ③韩国熔断级恐慌传导尚未消化 ④科技链流出仍在加速而非衰减 ⑤主线存活期越来越短（市场信心下降）</p>
+</div>
+<h2>策略建议</h2>
+<ul>
+<li><strong>仓位建议</strong>：<span style="color:green"><strong>4成</strong></span>（主线2.5成+观察仓1.5成，比上期7成大幅降仓）</li>
+<li><strong>关注方向</strong>：</li>
+<li>🟢 <strong>创新药/CXO/减肥药</strong>（医药主线第1天）：政策三重催化+估值底部+净流入确认→但需次日验证持续性（不核按钮才加仓）</li>
+<li>🟢 <strong>银行/金融法概念</strong>：避险属性+估值极低+政策催化→中线配置方向，不追涨但可逢低布局</li>
+<li>🟡 <strong>化工/业绩驱动</strong>（卫星化学等）：半年度业绩预告大增+估值底部→但板块不是主线，仅适合精选个股</li>
+<li>🟡 <strong>关注美光科技6月24日财报</strong>→若超预期则存储芯片可能1日反弹→但仅短线套利不追高</li>
+<li><strong>回避方向</strong>：</li>
+<li>🔴 <strong>芯片/半导体全链</strong>：800亿净流出+退潮第5天加速→任何科技链持仓应止损撤离</li>
+<li>🔴 <strong>有色金属/贵金属</strong>：1日游后崩塌+跌停潮→浮盈踩踏已启动</li>
+<li>🔴 <strong>CPO/光通信/数据中心</strong>：460亿+559亿流出→退潮不可逆</li>
+<li>🔴 <strong>机器人/新能源车/储能</strong>：高位兑现+外盘传导→继续撤退</li>
+<li>🔴 <strong>冷门小票/无业绩题材</strong>：资金只做主线→非主线持续失血</li>
+</ul>
+<div class="warning">
+<p>⚠️ <strong>操作节奏</strong>：明日大概率进入分歧日→主线存活期缩短→追涨风险极高→①不追涨停板 ②等回踩5日线/4080附近低吸医药龙头 ③银行可逢低布局不做短线 ④科技链任何反弹都是减仓机会而非加仓信号</p>
+</div>
+<h2>上期判断对比验证表</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>上期判断</th>
+<th>今日验证</th>
+<th>修正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"金融觉醒+资源涨价双主线"</td>
+<td>金融分化+资源暴跌-7.24%</td>
+<td>❌ <strong>双主线1日游后崩塌！</strong>从"结构性高低切换"→"浮盈踩踏出清"</td>
+</tr>
+<tr>
+<td>"券商7.69%/50只全线飘红"</td>
+<td>长江证券两连板但其他分化</td>
+<td>⚠️ 从"全面爆发"→"龙头独舞"，强度大幅衰减</td>
+</tr>
+<tr>
+<td>"有色金属+4.67%/超20股涨停"</td>
+<td>有色-7.24%/逾20股跌停</td>
+<td>❌ <strong>180度翻转！</strong>涨停→跌停，浮盈踩踏</td>
+</tr>
+<tr>
+<td>"创新药/减肥药→回避方向"</td>
+<td>创新药暴涨+净流入20亿</td>
+<td>❌ <strong>完全逆转！</strong>需修正为"关注建仓"</td>
+</tr>
+<tr>
+<td>"电子316亿净流出→AI硬件退潮"</td>
+<td>电子559亿+芯片800亿流出</td>
+<td>❌ <strong>退潮加速！</strong>流出量翻2.5倍</td>
+</tr>
+<tr>
+<td>"天量见天价风险"</td>
+<td>缩量+大跌验证</td>
+<td>✅ <strong>验证成功</strong></td>
+</tr>
+<tr>
+<td>"培育钻石AI散热新赛道"</td>
+<td>雷达days从5.99→-3.83</td>
+<td>⚠️ score维持但动能转负→高位退潮</td>
+</tr>
+<tr>
+<td>"明日中性45%缩量分化"</td>
+<td>实际缩量+大跌(超预期)</td>
+<td>⚠️ 方向对了但幅度超预期</td>
+</tr>
+</tbody>
+</table></div>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 东方财富 | 雪球 | 财联社 | 金十数据 | 生成时间：2026年06月23日 19:15</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

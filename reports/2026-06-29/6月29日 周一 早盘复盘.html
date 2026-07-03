@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6月29日 周一 早盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>6月29日 周一 早盘复盘</h1>
+  <div class="meta">
+    📅 2026年06月29日 08:00
+  </div>
+</header>
+
+<h2>隔夜外盘</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数/品种</th>
+<th>收盘</th>
+<th>涨跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道琼斯</td>
+<td>51,876.11</td>
+<td><span style="color:green">-0.09%</span></td>
+</tr>
+<tr>
+<td>纳斯达克</td>
+<td>25,297.62</td>
+<td><span style="color:green">-0.24%</span></td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7,354.02</td>
+<td><span style="color:green">-0.05%</span></td>
+</tr>
+<tr>
+<td>VIX恐慌指数</td>
+<td>18.41</td>
+<td><span style="color:red">+9.71%（周度）</span></td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td>101.36</td>
+<td><span style="color:green">-0.15%</span></td>
+</tr>
+<tr>
+<td>COMEX黄金</td>
+<td>4,037.10美元/盎司</td>
+<td><span style="color:green">-0.26%</span></td>
+</tr>
+<tr>
+<td>WTI原油</td>
+<td>71.46美元/桶</td>
+<td><span style="color:green">-0.64%</span></td>
+</tr>
+<tr>
+<td>布伦特原油</td>
+<td>75.26美元/桶</td>
+<td><span style="color:red">+2.06%</span></td>
+</tr>
+<tr>
+<td>纳斯达克中国金龙</td>
+<td>—</td>
+<td><span style="color:red">+0.7%</span></td>
+</tr>
+<tr>
+<td>A50期货夜盘</td>
+<td>—</td>
+<td><span style="color:red">+0.76%</span>（主力合约早盘续涨0.59%）</td>
+</tr>
+</tbody>
+</table></div>
+<p>美股三大指数周五小幅收跌，纳指周线累计<span style="color:green">-4.6%</span>，日线五连跌；费城半导体指数暴跌<span style="color:green">5.29%</span>，存储芯片、硬盘板块重挫。美元指数因核心PCE骤降而急挫，离岸人民币暴力拉升击穿关键阻力位，A50期货夜盘收涨0.76%后早盘低开续涨0.59%。</p>
+<h2>盘前重大消息</h2>
+<ol>
+<li><strong>美国核心PCE物价指数降至近三年低位</strong>：美联储最关注通胀锚松动，降息预期升温，美元指数断崖式急挫，中美货币政策形成罕见"鸽派共振"</li>
+<li><strong>央行Q2货币政策例会释放宽松信号</strong>：明确出现"坚定加大逆周期调节力度"、"进一步推动实体经济融资成本稳中有降"的进阶表述，总量工具箱即将再打开</li>
+<li><strong>证监会启动"资本清澈·打击伪市值管理"专项行动</strong>：凌晨同步披露多起信息披露造假案查办进度，直接点名疑似与游资配合"信息型操纵"的个别标的，与近期PCB、玻璃基板、液冷等概念股异动公告形成逻辑闭环</li>
+<li><strong>新质生产力阶段性指导意见深夜发布</strong>：对AI、低空经济、生物制造给出更清晰量化目标与时间节点，从"撒胡椒面"式普惠转向核心技术攻关清单精准突破，强调"耐心资本"培育</li>
+<li><strong>退市新规执行过渡期口径明确</strong>：交易所深夜发布说明，对触及财务类退市指标公司严格按时间表推进，不存在宽泛豁免空间，"应退尽退"原则再次强调</li>
+<li><strong>央行近两日连续千亿级逆回购操作</strong>：期限从7天向14天品种倾斜，明确跨季资金面维稳意图，但交易所质押式回购利率尾盘脉冲式冲高，非银机构季末轧平头寸压力真实存在</li>
+</ol>
+<h2>上周五A股回顾</h2>
+<p>上证指数<span style="color:green">跌2.26%</span>报4,027.26点（创3个月最大单日跌幅，盘中触及4,007.86点险守4000关口），深证成指<span style="color:green">跌3.44%</span>，创业板指<span style="color:green">跌4.07%</span>，科创50<span style="color:green">跌1.65%</span>。两市成交约3.55万亿元，790只上涨、4,646只下跌，亏钱效应集中释放。半导体硅片、玻璃纤维逆势上涨，算力硬件CPO、光纤方向领跌。</p>
+<h2>今日关注方向</h2>
+<ul>
+<li><strong>流动性反转主线</strong>：央行鸽派信号+美元急挫+人民币拉升的"三重共振"，生物医药、高端半导体设备等流动性敏感型超跌板块有望估值修复</li>
+<li><strong>硬科技政策主线</strong>：新质生产力指导意见精准划定核心技术攻关清单，AI算力PCB硬核企业、液冷全产业链布局企业、玻璃基板量产工艺突破企业获政策加持，但需甄别真成长与纯题材</li>
+<li><strong>高股息白马主线</strong>：人民币强势反攻引导外资北上，重资产高护城河高股息标的重新焕发生机；港股互联网龙头前期超跌但现金流充沛，迎来估值修复窗口</li>
+<li><strong>退市风险警示线</strong>：退市口径刚性化+监管打击伪市值管理，绩差股、壳资源、ST板块面临集中抛售压力，半年度末机构合规清仓行动加速执行</li>
+</ul>
+<h2>风险提示</h2>
+<ul>
+<li>美股纳指周线跌4.6%、半导体板块暴跌5.29%，外部科技股风险传导仍存</li>
+<li>半年度末非银机构资金面结构性紧张，高杠杆账户面临流动性挤压被动抛售</li>
+<li>监管"长牙带刺"清场概念炒作，PCB/玻璃基板/液冷等热门赛道真假分化剧烈，纯题材标的面临证伪风险</li>
+<li>退市新规刚性执行，尾部公司壳价值系统性崩塌不可逆</li>
+</ul>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年06月29日 08:00</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

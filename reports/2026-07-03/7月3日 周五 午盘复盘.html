@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7月3日 周五 午盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>7月3日 周五 午盘复盘</h1>
+  <div class="meta">
+    📅 2026年07月03日 11:40
+  </div>
+</header>
+
+<h2>上午全景</h2>
+<ul>
+<li>上证指数：<span style="color:red">4056.78（+0.69%）</span></li>
+<li>深证成指：<span style="color:red">15714.23（+1.39%）</span></li>
+<li>创业板指：<span style="color:red">4080.57（+1.58%）</span></li>
+<li>科创50：<span style="color:red">2008.07（+1.05%）</span></li>
+<li>北证50：<span style="color:red">+1.52%</span></li>
+<li>两市成交额：2.07万亿（缩量约1833亿）</li>
+<li>涨停家数：113 | 跌停家数：9</li>
+<li>上涨家数：3526 | 下跌家数：1856</li>
+<li>炸板率：约30%</li>
+</ul>
+<h2>上午最强板块</h2>
+<ol>
+<li><span style="color:red">贵金属/黄金 +8%</span> — 催化：美国ADP就业仅9.8万大幅低于预期+ISM制造业PMI低于预期→美联储加息预期推迟至12月+全球央行增持黄金比例创调查新高89%+沪金期货涨近3%重回900元/克；赤峰黄金/招金黄金2连板，四川黄金/西部黄金/山金国际涨停</li>
+<li><span style="color:red">人形机器人/减速器/电机 +3%~9%</span> — 催化：宇树科技科创板IPO注册获批（"具身智能第一股"）+特斯拉机器人量产推进+优必选U1系列订单突破13361台（较去年10倍增长）+摩根士丹利上调2026年出货预测至5万台；埃斯顿4天3板，双环传动4天2板，中大力德/杭齿前进/日发精机涨停，凯龙高科20%涨停，雷赛智能2连板，卧龙电驱成交27.8亿涨停</li>
+<li><span style="color:red">PCB/玻璃玻纤</span> — 催化：PCB扩产带动玻纤需求+深南电路涨停市值突破3100亿+中国巨石涨停2连板</li>
+<li><span style="color:red">电网设备/特高压</span> — 催化：华明装备/金智科技涨停+政策推动新型电力系统建设</li>
+<li><span style="color:red">航天军工</span> — 催化：低位补涨+国防预算增长预期</li>
+</ol>
+<h2>上午最弱板块</h2>
+<ol>
+<li><span style="color:green">半导体产业链（光刻胶/电子特气/先进封装/HBM存储）</span> — 隔夜美股半导体暴跌（闪迪-14%/科磊-11%/西部数据-9%/美光-5%/英特尔-5%）+上半年涨幅巨大+季度末机构调仓；北方华创盘中触及跌停，微导纳米/珂玛科技跌超10%</li>
+<li><span style="color:green">光模块/CPO</span> — 外销占比高品种抛压最重+英伟达技术大牛跳槽VCSEL路线重塑CPO格局信号引发担忧</li>
+<li><span style="color:green">化学制品/氟化工</span> — 跟随半导体产业链走弱</li>
+<li><span style="color:green">AI营销/游戏</span> — 高位题材退潮</li>
+<li><span style="color:green">小金属</span> — 高位资源股调整</li>
+</ol>
+<h2>异动个股</h2>
+<ul>
+<li><span style="color:red">赤峰黄金（600988）</span>：2连板，贵金属龙头，美国就业数据超预期降温催化金价飙升</li>
+<li><span style="color:red">招金黄金（600547）</span>：2连板，开盘秒板，黄金板块全面爆发</li>
+<li><span style="color:red">埃斯顿（002747）</span>：4天3板，人形机器人领涨龙头，宇树科技IPO催化</li>
+<li><span style="color:red">深南电路（002916）</span>：涨停，市值突破3100亿，PCB龙头</li>
+<li><span style="color:red">恒尚节能（603137）</span>：4连板，全场最高空间板（并购重组逻辑）</li>
+<li><span style="color:red">凯龙高科（300130）</span>：20%涨停，机器人细分</li>
+<li><span style="color:red">雷赛智能（002979）</span>：2连板一字涨停，机器人运动控制龙头</li>
+<li><span style="color:green">北方华创（002371）</span>：盘中触及跌停，半导体龙头遭机构减仓</li>
+<li><span style="color:green">奥康国际（603001）</span>：2连跌停，半日成交仅124万，流动性枯竭</li>
+</ul>
+<h2>连板梯队</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>层级</th>
+<th>个股</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5连板</td>
+<td>ST东智</td>
+</tr>
+<tr>
+<td>4连板</td>
+<td>ST京蓝、ST康佳A、恒尚节能</td>
+</tr>
+<tr>
+<td>4天3板</td>
+<td>埃斯顿（机器人）、星网锐捷</td>
+</tr>
+<tr>
+<td>3连板</td>
+<td>ST洲际、ST际华、宜宾纸业、中通国脉</td>
+</tr>
+<tr>
+<td>2连板</td>
+<td>赤峰黄金、招金黄金、雷赛智能、深南电路、中国巨石</td>
+</tr>
+</tbody>
+</table></div>
+<div class="warning">
+<p>⚠️ 连板榜超半数为ST风险股，属游资抱团炒作，散户追高极易接最后一棒！</p>
+</div>
+<h2>下午关注</h2>
+<ul>
+<li><strong>关注方向1</strong>：沪指能否放量站上20日均线（约4060点）——上午最高4062.78点一度"刺破"但回落至4056.78，下午能否守住是关键；站稳则"假破位"成立，冲高回落则调整压力未解</li>
+<li><strong>关注方向2</strong>：科创50能否守住2000点——半导体板块企稳核心指标，守住并上行则调整可能到位</li>
+<li><strong>关注方向3</strong>：量能能否回补——缩量反弹可持续一天但难持续一周，需观察下午量能是否回升至3.4万亿以上</li>
+<li><strong>关注方向4</strong>：贵金属板块持续性——紧盯美联储后续表态，赤峰/招金已2连板追高需谨慎</li>
+<li><strong>规避方向</strong>：ST连板妖股（游资抱团松动风险极大）+ 半导体产业链联动杀跌</li>
+</ul>
+<h2>市场特征总结</h2>
+<p>上午走出<strong>缩量反弹+高低切换</strong>行情：三大指数全线飘红，超3500只个股上涨，赚钱效应显著回暖；但成交额缩减约1833亿至2.07万亿，属场内存量腾挪而非增量入场。资金从高位AI硬件（半导体/CPO/存储）出逃，流入低位机器人、贵金属、军工、中小盘制造——典型"赚小票亏权重"的极端分化格局。</p>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 东方财富 | 雪球 | 百家号 | 新浪财经 | 生成时间：2026年07月03日 11:40</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
