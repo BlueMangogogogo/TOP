@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7月7日 周二 早盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>7月7日 周二 早盘复盘</h1>
+  <div class="meta">
+    📅 2026年07月07日 08:00
+  </div>
+</header>
+
+<h2>隔夜外盘</h2>
+<p>美股独立日假期后强劲开门红，三大指数齐涨：</p>
+<ul>
+<li>道琼斯：<span style="color:red">53055.91（+0.29%）</span>，历史首次突破53000点，创收盘新高</li>
+<li>纳斯达克：<span style="color:red">26121.16（+1.12%）</span></li>
+<li>标普500：<span style="color:red">7537.43（+0.72%）</span></li>
+<li>VIX恐慌指数：<span style="color:green">15.57（-1.52%）</span>，市场风险偏好回升</li>
+<li>美元指数：<span style="color:red">101.08（+0.21%）</span></li>
+<li>COMEX黄金：<span style="color:red">4200.2美元/盎司（+1.81%）</span>，强势突破4200美元整数关口</li>
+<li>NYMEX原油：<span style="color:green">68.55美元/桶（-0.20%）</span>，需求担忧压制油价</li>
+<li>布伦特原油：<span style="color:green">71.84美元/桶</span></li>
+<li>富时A50期货：<span style="color:red">约14952（微涨）</span>，突破近一个月盘整箱体上沿</li>
+</ul>
+<p>美股科技股与半导体领涨：特斯拉+6%、西部数据+7%、AMD+6%、台积电+4%、Meta+3%、阿斯麦+3%。微软小跌近1%。</p>
+<h2>盘前重大消息</h2>
+<ol>
+<li>
+<p><strong>央行货币政策会议释放宽松信号</strong>：央行深夜公告明确"加大逆周期调节力度"，措辞强调"保持流动性充裕"及"推动实际贷款利率下行"，市场解读三季度降准降息窗口提前打开。DR007已连续运行于政策利率下方，资金面进入冗余状态。</p>
+</li>
+<li>
+<p><strong>证监会密集回应市场关切</strong>：深夜就分红、退市及交易制度释放一揽子政策信号——退市新规力度升级（财务造假识别、审计追责技术升级），市值管理纳入考核体系研究推进，鼓励一年多次分红，A股加速从"融资市"向"投资市"转型。</p>
+</li>
+<li>
+<p><strong>全球资本"高低切换"启动</strong>：美国最新就业数据大幅低于预期，美元指数与十年期美债收益率承压，交易员上调美联储年内降息押注。纳斯达克中国金龙指数大幅拉涨，离岸人民币急速升值，外资对中国核心资产重获定价权。</p>
+</li>
+<li>
+<p><strong>程序化交易新规今日正式实施</strong>：沪深北三大交易所程序化交易管理实施细则7月7日起施行，量化交易监管进入新阶段，高频报撤单等行为将受严格约束。</p>
+</li>
+<li>
+<p><strong>黄金突破4200美元</strong>：地缘风险与货币贬值担忧驱动金价创近期新高，避险资产持续受追捧。</p>
+</li>
+</ol>
+<h2>今日关注方向</h2>
+<ul>
+<li><strong>大金融板块</strong>：央行宽松信号直接利好银行、地产，困境反转式抢筹可能启动</li>
+<li><strong>核心资产/中特估</strong>：外资回流+汇率升值红利叠加，白酒、新能源龙头、创新药等或迎价值重估</li>
+<li><strong>半导体/AI产业链</strong>：美股芯片股大涨映射+大基金三期催化，集成电路国产替代主线持续</li>
+<li><strong>高股息红利股</strong>：市值管理考核+多次分红政策推动，红利策略确定性增强</li>
+</ul>
+<h2>风险提示</h2>
+<ul>
+<li>高开低走风险：三大消息虽指向向上变盘，但若早盘增量资金不足，解套盘与短线获利盘可能形成高开低走</li>
+<li>量化新规冲击：程序化交易监管收紧可能影响短线交易活跃度，部分高频策略受限</li>
+<li>量能验证关键：早盘前30分钟全市场成交额需同比放大40%以上，否则变盘信号存疑</li>
+<li>外盘情绪传导不确定性：美股虽涨但摩根士丹利警示半导体动能减弱，资金轮动方向仍需观察</li>
+</ul>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年07月07日 08:00</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

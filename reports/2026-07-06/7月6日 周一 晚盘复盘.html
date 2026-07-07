@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7月6日 周一 晚盘复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>7月6日 周一 晚盘复盘</h1>
+  <div class="meta">
+    📅 2026年07月06日 20:50
+  </div>
+</header>
+
+<hr>
+<h2>指数全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘点位</th>
+<th>涨跌幅</th>
+<th>vs上期(7/3)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>4041.24</td>
+<td>-0.06%</td>
+<td>4043.64(+0.37%)→4041.24(-0.06%)</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>15416.80</td>
+<td>-1.16%</td>
+<td>15597.51(+0.64%)→15416.80(-1.16%)</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>3948.86</td>
+<td><strong>-1.77%</strong></td>
+<td>4019.93(+0.07%)→3948.86(-1.77%)！</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>1975.60区域</td>
+<td><strong>+1.04%</strong></td>
+<td>逆势上涨！</td>
+</tr>
+<tr>
+<td>北证50</td>
+<td>—</td>
+<td><strong>-3.25%</strong></td>
+<td>大幅补跌</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>支撑位</strong>：3701（日线）| 3527（周线）</li>
+<li><strong>压力位</strong>：4105（日线强阻力）| 4214（周线阻力）</li>
+<li>上证收盘4041.24介于阻力3969与强阻力4105之间，尚未触及强阻力</li>
+<li><strong>两市成交额</strong>：31124亿（缩量928亿 vs 7/3的31800亿）← 6月18日以来持续缩量！</li>
+<li><strong>涨停家数</strong>：71 | <strong>跌停家数</strong>：54</li>
+<li><strong>上涨家数</strong>：1876 | <strong>下跌家数</strong>：3541（占比66%！）</li>
+<li><strong>炸板率</strong>：42.74%（53股封板未遂）| <strong>封板率</strong>：57.26%</li>
+<li><strong>市场情绪</strong>：<strong>低迷偏防御</strong>——跌多涨少+缩量+炸板率高+主力净流出872亿</li>
+</ul>
+<blockquote>
+<p>⚡ <strong>上期验证</strong>：7/3晚盘复盘判断"创业板冲高回落说明反弹只是技术性喘息而非趋势反转"→<strong>今日完全验证！</strong>创业板从+0.07%(7/3收盘)暴跌至-1.77%(7/6收盘)，三天累计跌近2%。上期"缩量2680亿=反弹质量堪忧"→今日继续缩量928亿，确认反弹仅是喘息而非反转。</p>
+</div>
+<hr>
+<h2>外盘与宏观环境</h2>
+<h3>隔夜美股（7/2周四收盘，7/3因独立日休市）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘</th>
+<th>涨跌幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道琼斯</td>
+<td>52,900.07</td>
+<td><strong>+1.14%（创历史新高！）</strong></td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7,483.24</td>
+<td>+0.01%</td>
+</tr>
+<tr>
+<td>纳斯达克综合</td>
+<td>25,832.67</td>
+<td>-0.80%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>7/6美股盘前（今晚开盘前）</h3>
+<ul>
+<li>纳斯达克100期货涨1.17%，道指期货跌0.13%，标普期货涨0.41%</li>
+<li><strong>存储芯片盘前大涨</strong>：西部数据、闪迪涨超4%，英特尔、迈威尔科技、安森美、AMD跟涨</li>
+<li><strong>英伟达被曝Kyber机架量产或推至2028年</strong>→算力硬件远期预期弱化</li>
+</ul>
+<h3>大宗商品与汇率</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>品种</th>
+<th>价格</th>
+<th>变动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COMEX黄金</td>
+<td>4,135.50美元/盎司</td>
+<td><strong>+1.30%</strong>（非农弱+降息预期）</td>
+</tr>
+<tr>
+<td>COMEX白银</td>
+<td>61.44美元/盎司</td>
+<td>+1.54%</td>
+</tr>
+<tr>
+<td>WTI原油</td>
+<td>67.6美元/桶附近</td>
+<td>-1.4%（连续4周下跌）</td>
+</tr>
+<tr>
+<td>LME铜</td>
+<td>—</td>
+<td>基本金属多数下跌</td>
+</tr>
+<tr>
+<td>VIX恐慌指数</td>
+<td>16.15</td>
+<td>-2.65%（两周低点，恐慌情绪消退）</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td>跌破97关口</td>
+<td>非农弱→降息预期→美元走弱</td>
+</tr>
+<tr>
+<td>离岸人民币</td>
+<td>涨破6.79</td>
+<td>创一周新高，利好外资流入</td>
+</tr>
+</tbody>
+</table></div>
+<h3>今日宏观数据与政策</h3>
+<ol>
+<li>🔴 <strong>央行1万亿买断式逆回购</strong>：7/6开展1万亿91天期操作，到期8000亿，净投放2000亿，<strong>结束连续3个月缩量进程</strong>→流动性边际宽松信号</li>
+<li>🔴 <strong>A股交易新规正式施行</strong>：主板+ETF新增盘后固定价格交易(15:05-15:30)；ST股涨跌幅5%→10%</li>
+<li>🟡 <strong>SEAJ大幅上调日本半导体设备产值预测</strong>→半导体设备景气确认</li>
+<li>🟡 <strong>6月非农就业大幅低于预期</strong>（9.8万 vs 预期11.8万）→美联储加息预期降温</li>
+<li>🟢 <strong>美丽中国建设"十五五"规划印发</strong>→新能源催化</li>
+</ol>
+<hr>
+<h2>核心新闻简报（按强度排序）</h2>
+<ol>
+<li>
+<p>🔴 <strong>A股交易新规7月6日正式施行</strong> — 影响：ST股涨跌幅5%→10%波动空间翻倍，盘后固定价格交易扩展至主板+ETF，尾盘流动性改善但价格操纵空间也增大。<strong>市场制度层面的重大变革日。</strong></p>
+</li>
+<li>
+<p>🔴 <strong>央行1万亿买断式逆回购（净投放2000亿）</strong> — 影响：结束3月缩量，流动性边际宽松信号明确。利好成长/科技板块风险偏好，但今日市场实际表现为资金逃离科技→防御，说明短期政策利好被风格切换压制。</p>
+</li>
+<li>
+<p>🔴 <strong>EDA概念全线暴涨</strong> — 影响：概伦电子20cm涨停、华大九天+14%、广立微/安路科技跟涨。韬定律从理论走向工程落地催化EDA成为半导体新突破口。<strong>与上期"半导体退潮延续第14天"判断产生分化——EDA/先进封装逆势崛起vs存储芯片/CPO继续退潮。</strong></p>
+</li>
+<li>
+<p>🟡 <strong>猪价坐火箭</strong> — 影响：外三元均价10.70元/kg，单周涨幅12.74%。畜牧养殖ETF+4.30%领涨全市场。产业端加速出清信号+中邮证券看好三四季度猪价反弹。<strong>猪周期反转预期成为今日最强防御主线。</strong></p>
+</li>
+<li>
+<p>🟡 <strong>创新药连续爆发（第3天）</strong> — 影响：首药控股20cm涨停、罗欣药业涨停、甘李药业涨停。国家药监局优化细胞与基因治疗药品审评审批征求意见+国产创新药密集获批。创新药ETF+7.24%（周涨幅）。</p>
+</li>
+<li>
+<p>🟡 <strong>煤炭板块暴涨</strong> — 影响：昊华能源涨停、陕西煤业/中国神华跟涨。预计7月四次阶段性高温→电厂日耗上升→催化煤价反弹。煤炭ETF+4.22%。</p>
+</li>
+<li>
+<p>🟡 <strong>存储芯片三重利好</strong> — 影响：三星Q3 DRAM提价20%、涨价预期上调（DDR3季环比+32%）、业绩炸裂（江波龙半年报净利预增62204%-74394%）。<strong>但今日存储芯片板块反而大幅净流出，说明短期获利回吐压力巨大。</strong></p>
+</li>
+<li>
+<p>🟢 <strong>北大发布全球首款存算一体类脑芯片</strong> — 影响：AI推理性能远超高端GPU，功耗仅1/18。利好相变存储材料、先进封装、边缘算力产业链。</p>
+</li>
+<li>
+<p>🟢 <strong>美股盘前存储芯片大涨+SEAJ上调预测</strong> — 影响：日本半导体设备产值预测大幅上调，西部数据/闪迪盘前+4%，今晚开盘可能催化A股半导体明日反弹。</p>
+</li>
+<li>
+<p>🟢 <strong>离岸人民币涨破6.79</strong> — 影响：美元走弱+非农弱→外资流入预期提升。</p>
+</li>
+</ol>
+<p><strong>新闻情绪催化验证</strong>：今日畜牧养殖(+4.30%)/煤炭(+4.22%)/创新药(+7.24%周涨)的暴涨与猪价火箭/高温催化/药监局政策<strong>高度相关</strong>；EDA暴涨与韬定律工程落地<strong>高度相关</strong>；但央行万亿利好并未催化科技反弹→<strong>短期风格切换压制了政策利好</strong>。</p>
+<hr>
+<h2>板块涨幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>涨幅</th>
+<th>主力净流入</th>
+<th>催化因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>畜牧养殖</td>
+<td>+4.30%</td>
+<td>大幅流入</td>
+<td>猪价单周涨12.74%，猪周期反转预期</td>
+</tr>
+<tr>
+<td>2</td>
+<td>煤炭开采</td>
+<td>+4.22%</td>
+<td>流入</td>
+<td>7月四次高温催化煤价反弹</td>
+</tr>
+<tr>
+<td>3</td>
+<td>石油/能源</td>
+<td>+3.70%</td>
+<td>流入</td>
+<td>防御+周期风格切换</td>
+</tr>
+<tr>
+<td>4</td>
+<td>创新药/医药</td>
+<td>+7.24%(周)</td>
+<td>+21.9亿(7/3数据)</td>
+<td>药监局政策+国产创新药密集获批</td>
+</tr>
+<tr>
+<td>5</td>
+<td>银行/红利</td>
+<td>+1.78%</td>
+<td>招商银行+3.42亿</td>
+<td>高股息防御+央行流动性宽松</td>
+</tr>
+</tbody>
+</table></div>
+<h2>板块跌幅TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>跌幅</th>
+<th>主力净流出</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>机器人</td>
+<td><strong>-4.69%</strong></td>
+<td>大幅流出</td>
+<td>前期暴涨后获利回吐+英伟达Kyber推至2028年远期弱化</td>
+</tr>
+<tr>
+<td>2</td>
+<td>港股通信息技术</td>
+<td>-3.65%</td>
+<td>流出</td>
+<td>科技成长板块集体调整</td>
+</tr>
+<tr>
+<td>3</td>
+<td>卫星/商业航天</td>
+<td>-3.22%</td>
+<td>流出</td>
+<td>算力硬件高位回调</td>
+</tr>
+<tr>
+<td>4</td>
+<td>光伏</td>
+<td>-2.39%</td>
+<td>流出</td>
+<td>美丽中国规划利好未能抵消风格切换</td>
+</tr>
+<tr>
+<td>5</td>
+<td>消费电子</td>
+<td>-2.28%</td>
+<td>流出</td>
+<td>PCB/光纤等算力硬件子板块退潮</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>从行业分布看：涨停个股中机械设备11股居首、电子7股、基础化工6股→<strong>半导体产业链（EDA+先进封装）仍是涨停主力</strong>，但整体电子板块-4.30%大幅下跌→内部极端分化！</p>
+</div>
+<hr>
+<h2>主线持续性分析</h2>
+<ul>
+<li><strong>当前主线1：创新药/医药</strong>，持续25天（创新药在榜），<strong>加强中</strong>——减肥药流入率1.82、CXO流入率1.67、创新药流入率1.78，三条医药线共振爆发。今日首药控股20cm涨停验证。</li>
+<li><strong>当前主线2：人形机器人产业链</strong>，持续67天（在榜），<strong>分化退潮中</strong>——今日机器人ETF-4.69%暴跌！减速器/外骨骼机器人虽在榜但流入率已开始分化。浙商证券认为"短期情绪与估值的再平衡，而非基本面逻辑的逆转"。</li>
+<li><strong>新晋主线1：猪周期/畜牧养殖</strong>，今日首次爆发——猪价单周涨12.74%催化，畜牧养殖ETF+4.30%领涨全市场。中邮证券看好三四季度猪价反弹+27Q1或进入新一轮上行周期。</li>
+<li><strong>新晋主线2：EDA/先进封装</strong>，今日爆发——概伦电子20cm涨停、华大九天+14%。韬定律工程落地催化。半导体内部从"存储芯片退潮"→"EDA/先进封装崛起"的结构性切换。</li>
+<li><strong>退潮主线：PCB/CPO/光纤</strong>——中国巨石跌停、杭电股份跌停、国际复材/德福科技跌超10%。算力硬件高位回调延续，上期"半导体退潮第14天"→今日第17天（但内部EDA分化崛起）。</li>
+</ul>
+<blockquote>
+<p>🔑 <strong>上期对比</strong>：7/3判断"人形机器人+贵金属双主线"→今日机器人-4.69%暴跌确认<strong>分化退潮</strong>，但贵金属(COMEX黄金+1.30%)继续走强→<strong>上期"建议撤退贵金属"判断第三次被证伪！</strong>连续三次(6/23→6/28→7/3→7/6)贵金属撤退信号均被市场否定，说明贵金属主线韧性远超预期。</p>
+</div>
+<hr>
+<h2>板块资金雷达趋势（基于7/3数据，7/6数据待pipeline更新）</h2>
+<h3>进攻榜TOP10</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>在榜天数</th>
+<th>波段流入率</th>
+<th>单日净额</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>存储芯片</td>
+<td>69天</td>
+<td>1.23</td>
+<td>-221亿</td>
+<td>⚠️ 在榜久+净流出=退潮信号</td>
+</tr>
+<tr>
+<td>2</td>
+<td>减肥药</td>
+<td>11天</td>
+<td>1.82</td>
+<td>+11.2亿</td>
+<td>🟢 流入率高+净流入=加强</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CXO概念</td>
+<td>11天</td>
+<td>1.67</td>
+<td>+4.8亿</td>
+<td>🟢 医药线共振加强</td>
+</tr>
+<tr>
+<td>4</td>
+<td>创新药</td>
+<td>25天</td>
+<td>1.78</td>
+<td>+21.9亿</td>
+<td>🟢 持续流入=主线确认</td>
+</tr>
+<tr>
+<td>5</td>
+<td>减速器</td>
+<td>20天</td>
+<td>1.36</td>
+<td>+73亿</td>
+<td>⚠️ 今日-4.69%→分化</td>
+</tr>
+<tr>
+<td>6</td>
+<td>人形机器人</td>
+<td>67天</td>
+<td>1.17</td>
+<td>+134亿</td>
+<td>🔴 今日暴跌=退潮信号</td>
+</tr>
+<tr>
+<td>7</td>
+<td>芯片</td>
+<td>83天</td>
+<td>1.09</td>
+<td>-321.8亿</td>
+<td>🔴 在榜久+巨额净流出=强退潮</td>
+</tr>
+<tr>
+<td>8</td>
+<td>仿制药</td>
+<td>11天</td>
+<td>1.71</td>
+<td>+3.5亿</td>
+<td>🟢 医药线扩散</td>
+</tr>
+<tr>
+<td>9</td>
+<td>外骨骼机器人</td>
+<td>9天</td>
+<td>1.67</td>
+<td>+30.5亿</td>
+<td>⚠️ 新晋但今日分化</td>
+</tr>
+<tr>
+<td>10</td>
+<td>先进封装</td>
+<td>73天</td>
+<td>1.13</td>
+<td>-121.9亿</td>
+<td>⚠️ 但今日EDA逆势爆发</td>
+</tr>
+</tbody>
+</table></div>
+<h3>机构建仓信号</h3>
+<p>🟢 <strong>关注建仓：创新药</strong> — 连续25天在榜，流入率1.78上升，今日首药控股20cm涨停验证。国家药监局优化审评审批政策+国产创新药密集获批=行业景气反转确认。</p>
+<p>🟢 <strong>关注建仓：减肥药/CXO</strong> — 11天在榜，流入率1.82/1.67高位，净流入持续。医药线三条共振爆发，机构资金持续加仓迹象明显。</p>
+<p>🟢 <strong>关注建仓：EDA/先进封装</strong> — 韬定律工程落地催化+概伦电子20cm涨停+华大九天+14%。半导体内部结构性切换信号，从存储芯片退潮→EDA崛起。</p>
+<h3>短线退潮信号</h3>
+<p>🔴 <strong>建议撤退：人形机器人产业链</strong> — 在榜67天，今日-4.69%暴跌，资金加速流出。虽然浙商证券认为"短期情绪与估值的再平衡，而非基本面逻辑的逆转"，但短期退潮趋势明确，建议等待缩量止跌后再考虑回补。</p>
+<p>🔴 <strong>建议撤退：PCB/CPO/光纤</strong> — 中国巨石跌停、杭电股份跌停、算力硬件高位回调延续第17天。英伟达Kyber机架量产推至2028年进一步弱化远期预期。</p>
+<p>🔴 <strong>建议撤退：存储芯片</strong> — 在榜69天但净流出221亿(7/3)+-321亿(芯片整体)，今日虽有三重利好但板块仍净流出→获利回吐压力巨大。江波龙半年报炸裂但股价已充分反映预期。</p>
+<h3>排名飙升</h3>
+<p>📈 <strong>排名飙升：减肥药</strong> — 流入率1.82在榜11天，从防御性医药→进攻性减肥药切换，是医药主线内最强的进攻信号。</p>
+<p>📈 <strong>排名飙升：仿制药/免疫治疗</strong> — 医药线扩散信号，多条医药赛道同时爆发=行业级别景气反转而非单一题材。</p>
+<hr>
+<h2>核心个股拆解</h2>
+<h3>概伦电子（688206）</h3>
+<ul>
+<li>涨跌幅：<strong>+20.00%（20cm涨停！）</strong></li>
+<li>所属板块：EDA概念/先进封装/半导体</li>
+<li>催化因素：韬定律从理论走向工程落地→EDA成为半导体产业链关键胜负手；北大存算一体类脑芯片发布催化先进封装概念</li>
+<li>技术分析：20cm涨停封板，封单力度强，半导体内部从存储芯片退潮→EDA崛起的结构性切换领头羊</li>
+<li>风险提示：半导体整体板块-4.30%大幅下跌，EDA逆势但需观察后续持续性</li>
+</ul>
+<h3>首药控股（688197）</h3>
+<ul>
+<li>涨跌幅：<strong>+20.00%（触及20cm涨停！）</strong></li>
+<li>所属板块：创新药/医药</li>
+<li>催化因素：国家药监局优化细胞与基因治疗药品审评审批征求意见+国产创新药密集获批+创新药指数周涨+7.24%</li>
+<li>技术分析：创新药主线持续25天加强中，三条医药线(创新药+减肥药+CXO)共振爆发</li>
+<li>风险提示：医药板块估值修复加速但需关注后续业绩兑现节奏</li>
+</ul>
+<h3>紫光股份（000063）</h3>
+<ul>
+<li>涨跌幅：<strong>+10.01%（涨停！）</strong></li>
+<li>主力净流入：15.72亿（全市场第一！）</li>
+<li>所属板块：交换机/液冷服务器/IT服务</li>
+<li>催化因素：交换机概念表现活跃+液冷服务器逆势走强（大元泵业/宏盛股份/海鸥股份涨停）</li>
+<li>技术分析：交换机+液冷是算力硬件调整中逆势崛起的新方向，菲菱科思20cm涨停+星网锐捷5天4板共振</li>
+<li>风险提示：算力硬件整体退潮第17天，交换机/液冷能否成为新的结构性突破口需观察</li>
+</ul>
+<h3>黄河旋风（600172）</h3>
+<ul>
+<li>涨跌幅：<strong>+10.02%（涨停！）</strong></li>
+<li>主力净流入：12.70亿</li>
+<li>所属板块：培育钻石/超硬材料/半导体切割</li>
+<li>催化因素：培育钻石（黄河旋风3天2板）+半导体切割材料概念</li>
+<li>技术分析：培育钻石+超硬材料在半导体材料国产替代逻辑下逆势走强</li>
+<li>风险提示：培育钻石板块持续性存疑，需关注后续订单验证</li>
+</ul>
+<h3>昊华能源（601101）</h3>
+<ul>
+<li>涨跌幅：<strong>涨停！</strong></li>
+<li>所属板块：煤炭开采</li>
+<li>催化因素：7月预计四次阶段性高温→电厂日耗上升→催化煤价反弹</li>
+<li>技术分析：煤炭ETF+4.22%领涨防御板块，高温催化+风格切换共振</li>
+<li>风险提示：煤炭属于短期催化型反弹，长期仍受新能源替代压力</li>
+</ul>
+<h3>中国巨石（600176）</h3>
+<ul>
+<li>涨跌幅：<strong>跌停！</strong></li>
+<li>所属板块：PCB概念/玻璃基板</li>
+<li>催化因素：算力硬件高位回调+PCB退潮延续</li>
+<li>技术分析：PCB概念退潮信号明确，国际复材/德福科技跌超10%共振</li>
+<li>风险提示：上期"算力硬件退潮第14天"→今日第17天，退潮趋势延续</li>
+</ul>
+<hr>
+<h2>风险预警</h2>
+<ol>
+<li>
+<p>🔴 <strong>创业板趋势性下跌风险</strong>：从+0.07%(7/3)→-1.77%(7/6)→失守4000关口至3948.86。上期判断"反弹只是技术性喘息"→今日确认趋势性下跌而非短期调整。60日均线缩量止跌信号尚未出现。</p>
+</li>
+<li>
+<p>🔴 <strong>缩量持续恶化</strong>：6月18日以来持续缩量，今日31124亿(缩量928亿)。缩量+3541家下跌+主力净流出872亿=市场信心严重不足。</p>
+</li>
+<li>
+<p>🔴 <strong>机器人主线退潮加速</strong>：-4.69%暴跌，前期暴涨后估值严重脱离基本面（多只翻倍股发布风险公告）。短期退潮趋势明确。</p>
+</li>
+<li>
+<p>🟡 <strong>半导体内部极端分化</strong>：EDA逆势爆发vs存储芯片/CPO暴跌。板块内部分化达到极致水平，意味着半导体整体仍处于调整期而非反转期。</p>
+</li>
+<li>
+<p>🟡 <strong>北证50-3.25%补跌</strong>：小微盘股补跌信号，前期强势品种开始退潮。</p>
+</li>
+<li>
+<p>🟡 <strong>ST股涨跌幅扩大至10%</strong>：波动空间翻倍，投机风险显著放大。</p>
+</li>
+<li>
+<p>🟢 <strong>流动性边际宽松</strong>：央行万亿逆回购净投放2000亿，结束3月缩量。但短期利好被风格切换压制。</p>
+</li>
+</ol>
+<hr>
+<h2>明日推演</h2>
+<h3>乐观情景（概率25%）</h3>
+<ul>
+<li>条件：今晚美股存储芯片大涨催化→明日半导体反弹+央行万亿流动性利好释放→科技止跌回升</li>
+<li>推演：上证尝试冲击4105强阻力，创业板缩量止跌于3940附近，EDA/先进封装继续爆发+半导体反弹</li>
+<li>关键信号：成交额回升至3.2万亿以上+北向资金净流入+科技板块止跌</li>
+</ul>
+<h3>中性情景（概率50%）</h3>
+<ul>
+<li>条件：美股温和上涨→A股延续分化震荡，防御+科技共存</li>
+<li>推演：上证在4000-4100区间震荡，创业板在3930-3970窄幅波动，防御板块(煤炭/养殖/银行)继续走强但涨幅收敛，科技板块分化（EDA/交换机/液冷逆势vs机器人/CPO继续调整）</li>
+<li>关键信号：成交额3.0-3.1万亿+1876涨3541跌格局延续+封板率55-60%</li>
+</ul>
+<h3>悲观情景（概率25%）</h3>
+<ul>
+<li>条件：美股大跌/地缘冲突升级→创业板跌破3900→恐慌性抛售</li>
+<li>推演：上证跌破4000向3701日线支撑靠拢，创业板跌破3900创新低，全市场超4000家下跌，涨停低于50只，缩量至2.8万亿以下</li>
+<li>关键信号：成交额低于2.8万亿+跌停超80只+北向大幅净流出+VIX飙升</li>
+</ul>
+<hr>
+<h2>策略建议</h2>
+<ul>
+<li><strong>仓位建议</strong>：5成（降低仓位应对趋势性下跌风险）</li>
+<li><strong>关注方向</strong>：</li>
+<li>🟢 创新药/医药主线（25天在榜+流入率1.78+三条医药线共振）</li>
+<li>🟢 EDA/先进封装（韬定律催化+半导体内部结构性切换）</li>
+<li>🟢 畜牧养殖/猪周期（猪价单周+12.74%+产业出清信号）</li>
+<li>🟢 交换机/液冷服务器（算力硬件调整中逆势新方向）</li>
+<li>🟢 黄金/贵金属（COMEX+1.30%+第三次验证主线韧性）</li>
+<li><strong>回避方向</strong>：</li>
+<li>🔴 人形机器人产业链（短期退潮明确，等待缩量止跌）</li>
+<li>🔴 PCB/CPO/光纤（算力硬件退潮第17天）</li>
+<li>🔴 存储芯片（获利回吐压力巨大，三重利好未能阻止净流出）</li>
+<li>🔴 光伏/消费电子（风格切换压制+板块自身弱势）</li>
+</ul>
+<div class="warning">
+<p>⚠️ <strong>关键策略修正</strong>：上期"建议撤退贵金属"连续第三次被证伪→<strong>本次修正为关注贵金属方向</strong>。历史教训：6/23→6/28→7/3三次撤退信号均被否定，说明在降息预期+央行购金+美元走弱的三重支撑下，贵金属主线韧性远超短期技术信号判断。</p>
+</div>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant + 东方财富 + 新浪财经 + WebSearch | 生成时间：2026年07月06日 20:50</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
