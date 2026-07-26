@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>03 MLCC产业格局与A股标的统一比较</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>03 MLCC产业格局与A股标的统一比较</h1>
+  <div class="meta">
+    📅 2026年7月22日
+  </div>
+</header>
+
+<h2>一、比较原则</h2>
+<p>A股“MLCC概念”包含三种商业模型，若混在一起比较，会得出错误结论：</p>
+<ol>
+<li><strong>民用规模型MLCC</strong>：面向消费、家电、通信、工业、汽车和服务器，重视产能、良率、成本与全球客户认证。代表为三环集团、风华高科。</li>
+<li><strong>高可靠陶瓷电容</strong>：主要面向军工、航空航天及高可靠场景，批量较小、认证严格、毛利较高。代表为火炬电子、鸿远电子。</li>
+<li><strong>高可靠多品类元件平台</strong>：核心产品可能并非MLCC，但拥有多层瓷介电容业务。宏达电子核心仍是钽电容，2025年多层瓷介电容收入约2.08亿元，占营收约11.04%，应列为相邻参照。</li>
+</ol>
+<p>产业链材料与耗材公司包括国瓷材料、洁美科技、博迁新材；顺络电子属于被动元件平台参照。军品与民品的价格、订单、回款、库存和估值体系不同，毛利率不能直接横比。</p>
+<h2>二、全球产业结构</h2>
+<p>MLCC全球市场长期由村田、三星电机、太阳诱电、TDK、国巨等主导。行业壁垒集中在：</p>
+<ul>
+<li>超细高纯介质粉体与配方</li>
+<li>超薄流延和高精度印刷</li>
+<li>多层叠层、共烧与收缩控制</li>
+<li>高容量、高压、高频、高温和车规一致性</li>
+<li>全球头部客户的长期认证</li>
+<li>规模制造下的良率和成本</li>
+</ul>
+<p>中国厂商在常规民用、中低容量和部分高端规格持续突破，但全球高端份额仍低。本轮产业机会来自三条线：</p>
+<ol>
+<li>AI服务器、数据中心电源与高速互连增加单机MLCC及精密陶瓷器件价值量。</li>
+<li>汽车电子、电驱、域控制器和智能座舱提升高可靠、高压MLCC需求。</li>
+<li>地缘与供应链安全推动本土认证，但认证到大批量收入通常需要较长时间。</li>
+</ol>
+<p>周期风险在于：价格修复可能同时包含补库和结构性需求。若终端销售未持续改善，补库结束后价格和订单会重新承压。</p>
+<h2>三、2025年财务统一比较</h2>
+<h3>1. 直接产品与相邻高可靠组</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>公司</th>
+<th>商业模型</th>
+<th style="text-align: right;">2025营收</th>
+<th style="text-align: right;">归母净利</th>
+<th style="text-align: right;">毛利率</th>
+<th style="text-align: right;">ROE</th>
+<th style="text-align: right;">2026Q1营收同比</th>
+<th style="text-align: right;">2026Q1净利同比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>三环集团</td>
+<td>民用MLCC＋电子陶瓷平台</td>
+<td style="text-align: right;">90.07亿</td>
+<td style="text-align: right;">26.18亿</td>
+<td style="text-align: right;">42.14%</td>
+<td style="text-align: right;">12.62%</td>
+<td style="text-align: right;">+46.25%</td>
+<td style="text-align: right;">+48.48%</td>
+</tr>
+<tr>
+<td>风华高科</td>
+<td>民用MLCC＋阻容感全品类</td>
+<td style="text-align: right;">57.56亿</td>
+<td style="text-align: right;">2.83亿</td>
+<td style="text-align: right;">17.75%</td>
+<td style="text-align: right;">2.29%</td>
+<td style="text-align: right;">+18.90%</td>
+<td style="text-align: right;">+37.14%</td>
+</tr>
+<tr>
+<td>火炬电子</td>
+<td>高可靠陶瓷电容＋贸易＋材料</td>
+<td style="text-align: right;">41.21亿</td>
+<td style="text-align: right;">3.20亿</td>
+<td style="text-align: right;">27.13%</td>
+<td style="text-align: right;">5.51%</td>
+<td style="text-align: right;">+77.16%</td>
+<td style="text-align: right;">-62.82%</td>
+</tr>
+<tr>
+<td>鸿远电子</td>
+<td>高可靠瓷介电容＋代理业务</td>
+<td style="text-align: right;">17.94亿</td>
+<td style="text-align: right;">2.50亿</td>
+<td style="text-align: right;">44.39%</td>
+<td style="text-align: right;">5.77%</td>
+<td style="text-align: right;">-11.98%</td>
+<td style="text-align: right;">+60.00%*</td>
+</tr>
+<tr>
+<td>宏达电子</td>
+<td>高可靠钽电容为核心，多品类平台</td>
+<td style="text-align: right;">18.87亿</td>
+<td style="text-align: right;">4.01亿</td>
+<td style="text-align: right;">58.41%</td>
+<td style="text-align: right;">7.99%</td>
+<td style="text-align: right;">+11.68%</td>
+<td style="text-align: right;">+70.77%</td>
+</tr>
+</tbody>
+</table></div>
+<p>* 鸿远电子2026Q1归母净利润增长受非经常性项目影响，扣非净利润同比约下降31%，不能只看表面增速。</p>
+<p>三环的优势非常清楚：规模最大、利润绝对额最高、2026Q1收入与利润同步高增，毛利率显著高于民用规模对手风华高科。风华拥有较完整的阻容感产品和国资平台，但2025年盈利能力弱，高端产品良率与效益释放仍需验证。</p>
+<p>火炬电子2026Q1收入暴增而利润大降，反映贸易与产品结构变化，不能用收入增速直接代表自产业务景气。鸿远和宏达的高毛利来自高可靠市场与产品结构，不能据此推断其民用大批量MLCC成本优于三环。</p>
+<h3>2. 产业链参照组</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>公司</th>
+<th>产业位置</th>
+<th style="text-align: right;">2025营收</th>
+<th style="text-align: right;">归母净利</th>
+<th style="text-align: right;">毛利率</th>
+<th style="text-align: right;">ROE</th>
+<th style="text-align: right;">2026Q1营收同比</th>
+<th style="text-align: right;">2026Q1净利同比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>国瓷材料</td>
+<td>陶瓷粉体与先进陶瓷材料</td>
+<td style="text-align: right;">45.83亿</td>
+<td style="text-align: right;">6.10亿</td>
+<td style="text-align: right;">37.57%</td>
+<td style="text-align: right;">8.80%</td>
+<td style="text-align: right;">+9.15%</td>
+<td style="text-align: right;">+4.79%</td>
+</tr>
+<tr>
+<td>洁美科技</td>
+<td>载带、离型膜等耗材</td>
+<td style="text-align: right;">21.00亿</td>
+<td style="text-align: right;">2.20亿</td>
+<td style="text-align: right;">33.41%</td>
+<td style="text-align: right;">7.25%</td>
+<td style="text-align: right;">+22.52%</td>
+<td style="text-align: right;">+41.59%</td>
+</tr>
+<tr>
+<td>博迁新材</td>
+<td>镍粉等电子浆料材料</td>
+<td style="text-align: right;">11.52亿</td>
+<td style="text-align: right;">2.19亿</td>
+<td style="text-align: right;">32.64%</td>
+<td style="text-align: right;">13.49%</td>
+<td style="text-align: right;">+64.02%</td>
+<td style="text-align: right;">+49.64%</td>
+</tr>
+<tr>
+<td>顺络电子</td>
+<td>电感及被动元件平台</td>
+<td style="text-align: right;">67.45亿</td>
+<td style="text-align: right;">10.21亿</td>
+<td style="text-align: right;">36.64%</td>
+<td style="text-align: right;">15.66%</td>
+<td style="text-align: right;">+15.34%</td>
+<td style="text-align: right;">-23.71%</td>
+</tr>
+</tbody>
+</table></div>
+<p>产业链公司赚取不同环节利润：</p>
+<ul>
+<li>国瓷材料代表粉体和材料平台，受高端陶瓷与多行业需求驱动。</li>
+<li>洁美科技的弹性来自被动元件产量、载带消耗和离型膜国产化。</li>
+<li>博迁新材受镍粉等材料价格、产能利用率和高端规格渗透影响，利润弹性较大。</li>
+<li>顺络电子以电感为核心，能反映被动元件平台化和汽车、通信需求，但不是MLCC直接对手。</li>
+</ul>
+<h2>四、2026-07-21估值与市值比较</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>公司</th>
+<th style="text-align: right;">市值</th>
+<th style="text-align: right;">PE-TTM</th>
+<th style="text-align: right;">PB</th>
+<th style="text-align: right;">近一年涨幅约</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>三环集团</td>
+<td style="text-align: right;">2138亿</td>
+<td style="text-align: right;">74.3倍</td>
+<td style="text-align: right;">9.54倍</td>
+<td style="text-align: right;">+221.6%</td>
+</tr>
+<tr>
+<td>风华高科</td>
+<td style="text-align: right;">513亿</td>
+<td style="text-align: right;">166.9倍</td>
+<td style="text-align: right;">4.11倍</td>
+<td style="text-align: right;">+217.0%</td>
+</tr>
+<tr>
+<td>火炬电子</td>
+<td style="text-align: right;">222亿</td>
+<td style="text-align: right;">88.0倍</td>
+<td style="text-align: right;">3.61倍</td>
+<td style="text-align: right;">+25.3%</td>
+</tr>
+<tr>
+<td>鸿远电子</td>
+<td style="text-align: right;">109亿</td>
+<td style="text-align: right;">38.0倍</td>
+<td style="text-align: right;">2.41倍</td>
+<td style="text-align: right;">-11.5%</td>
+</tr>
+<tr>
+<td>宏达电子</td>
+<td style="text-align: right;">209亿</td>
+<td style="text-align: right;">47.4倍</td>
+<td style="text-align: right;">4.01倍</td>
+<td style="text-align: right;">+44.5%</td>
+</tr>
+<tr>
+<td>国瓷材料</td>
+<td style="text-align: right;">597亿</td>
+<td style="text-align: right;">96.8倍</td>
+<td style="text-align: right;">8.28倍</td>
+<td style="text-align: right;">+218.8%</td>
+</tr>
+<tr>
+<td>洁美科技</td>
+<td style="text-align: right;">281亿</td>
+<td style="text-align: right;">120.3倍</td>
+<td style="text-align: right;">9.15倍</td>
+<td style="text-align: right;">+188.4%</td>
+</tr>
+<tr>
+<td>博迁新材</td>
+<td style="text-align: right;">387亿</td>
+<td style="text-align: right;">159.3倍</td>
+<td style="text-align: right;">21.98倍</td>
+<td style="text-align: right;">+279.4%</td>
+</tr>
+<tr>
+<td>顺络电子</td>
+<td style="text-align: right;">338亿</td>
+<td style="text-align: right;">35.0倍</td>
+<td style="text-align: right;">5.32倍</td>
+<td style="text-align: right;">+44.2%</td>
+</tr>
+</tbody>
+</table></div>
+<p>估值普遍处于高位，表明市场交易的已不只是2025年利润，而是AI需求、涨价与国产替代的远期预期。低利润基数公司PE更容易失真，因此不能简单按PE高低排序。</p>
+<h2>五、市场表现与题材结构</h2>
+<p>以2026-07-21收盘相对不同起点计算：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>公司</th>
+<th style="text-align: right;">较2026-06-23</th>
+<th style="text-align: right;">较2026-04-23</th>
+<th style="text-align: right;">较2026-01-22</th>
+<th style="text-align: right;">较2025-07-22</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>三环集团</td>
+<td style="text-align: right;">-26.1%</td>
+<td style="text-align: right;">+53.4%</td>
+<td style="text-align: right;">+104.7%</td>
+<td style="text-align: right;">+221.6%</td>
+</tr>
+<tr>
+<td>风华高科</td>
+<td style="text-align: right;">-36.9%</td>
+<td style="text-align: right;">+100.0%</td>
+<td style="text-align: right;">+114.4%</td>
+<td style="text-align: right;">+217.0%</td>
+</tr>
+<tr>
+<td>火炬电子</td>
+<td style="text-align: right;">-24.7%</td>
+<td style="text-align: right;">+34.2%</td>
+<td style="text-align: right;">+17.6%</td>
+<td style="text-align: right;">+25.3%</td>
+</tr>
+<tr>
+<td>鸿远电子</td>
+<td style="text-align: right;">-34.6%</td>
+<td style="text-align: right;">-10.0%</td>
+<td style="text-align: right;">-17.5%</td>
+<td style="text-align: right;">-11.5%</td>
+</tr>
+<tr>
+<td>宏达电子</td>
+<td style="text-align: right;">-37.8%</td>
+<td style="text-align: right;">+6.9%</td>
+<td style="text-align: right;">-3.0%</td>
+<td style="text-align: right;">+44.5%</td>
+</tr>
+<tr>
+<td>国瓷材料</td>
+<td style="text-align: right;">-34.0%</td>
+<td style="text-align: right;">+66.4%</td>
+<td style="text-align: right;">+84.4%</td>
+<td style="text-align: right;">+218.8%</td>
+</tr>
+<tr>
+<td>洁美科技</td>
+<td style="text-align: right;">-32.8%</td>
+<td style="text-align: right;">+36.0%</td>
+<td style="text-align: right;">+72.2%</td>
+<td style="text-align: right;">+188.4%</td>
+</tr>
+<tr>
+<td>博迁新材</td>
+<td style="text-align: right;">-34.0%</td>
+<td style="text-align: right;">+28.4%</td>
+<td style="text-align: right;">+90.3%</td>
+<td style="text-align: right;">+279.4%</td>
+</tr>
+<tr>
+<td>顺络电子</td>
+<td style="text-align: right;">-36.6%</td>
+<td style="text-align: right;">+18.0%</td>
+<td style="text-align: right;">+4.9%</td>
+<td style="text-align: right;">+44.2%</td>
+</tr>
+<tr>
+<td>沪深300</td>
+<td style="text-align: right;">-3.7%</td>
+<td style="text-align: right;">-1.0%</td>
+<td style="text-align: right;">+0.3%</td>
+<td style="text-align: right;">+15.1%</td>
+</tr>
+</tbody>
+</table></div>
+<p>结论有两层：</p>
+<ul>
+<li>一年维度，民用MLCC与上游材料形成了极强主题行情，三环是容量与辨识度核心，博迁体现材料弹性。</li>
+<li>近一个月，各标的普遍回撤25%至38%，远弱于沪深300，说明板块处于高位分歧与估值消化阶段。</li>
+</ul>
+<p>7月21日多只标的大涨，更多是业绩、回购和板块共振下的集体修复，尚不足以证明新的独立主升已经形成。</p>
+<h2>六、各公司在产业链中的正确角色</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>角色</th>
+<th>公司</th>
+<th>适合观察的核心指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>民用MLCC综合核心</td>
+<td>三环集团</td>
+<td>电子元件收入、MLCC量价、高端客户、毛利率、光通信增长</td>
+</tr>
+<tr>
+<td>民用MLCC产能与弹性</td>
+<td>风华高科</td>
+<td>产能利用率、良率、产品价格、毛利率、高端收入占比</td>
+</tr>
+<tr>
+<td>军用高可靠陶瓷电容</td>
+<td>火炬电子、鸿远电子</td>
+<td>军工订单、自产业务占比、应收回款、代理业务波动</td>
+</tr>
+<tr>
+<td>高可靠元件平台</td>
+<td>宏达电子</td>
+<td>钽电容、MLCC子业务、模块产品、军工与民品结构</td>
+</tr>
+<tr>
+<td>粉体材料</td>
+<td>国瓷材料</td>
+<td>MLCC粉体、高端材料、价格与客户认证</td>
+</tr>
+<tr>
+<td>制程耗材</td>
+<td>洁美科技</td>
+<td>载带销量、离型膜放量、稼动率与库存周期</td>
+</tr>
+<tr>
+<td>金属粉体弹性</td>
+<td>博迁新材</td>
+<td>镍粉价格、出货、良率、客户与新材料拓展</td>
+</tr>
+<tr>
+<td>被动元件平台参照</td>
+<td>顺络电子</td>
+<td>电感、汽车电子、通信与海外收入</td>
+</tr>
+</tbody>
+</table></div>
+<h2>七、统一结论</h2>
+<ul>
+<li><strong>产业综合实力</strong>：三环集团第一。</li>
+<li><strong>民用MLCC盈利质量</strong>：三环显著领先风华。</li>
+<li><strong>高可靠小批量毛利率</strong>：宏达、鸿远较高，但商业模型不同。</li>
+<li><strong>材料弹性</strong>：博迁、国瓷、洁美分别对应金属粉体、陶瓷粉体与耗材，不构成同一梯队。</li>
+<li><strong>市场容量与机构可交易性</strong>：三环断层领先。</li>
+<li><strong>当前估值性价比</strong>：多数MLCC主题标的均已被显著重估，三环基本面最好，但也无法免疫估值压缩。</li>
+</ul>
+<div class="warning">
+<p>⚠ 不能将上述公司套入“龙头、中军、弹性、跟风”的单一资金梯队。它们分别处于民用品、军用品、材料和耗材环节，股价同涨可能来自同一宏观叙事，并不代表存在稳定的资金传导关系。</p>
+</div>
+<h2>数据来源</h2>
+<p>Tushare 2025年报、2026Q1财务与2026-07-21行情；TDX公司概要、公告和机构持仓；三环集团及同业年度报告。鸿远电子为研究过程中补充的直接高可靠瓷介电容参照，宏达电子调整为相邻多品类平台参照。</p>
+<blockquote>
+<p>本报告仅用于研究，不构成投资建议。</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年7月22日</p>
+</footer>
+
+</body>
+</html>

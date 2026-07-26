@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>00 三环集团MLCC系统研究：执行摘要与最终判断</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>00 三环集团MLCC系统研究：执行摘要与最终判断</h1>
+  <div class="meta">
+    📅 2026年7月22日
+  </div>
+</header>
+
+<div class="highlight">
+<p>📊 <strong>一句话判断</strong>：三环集团已经同时具备A股MLCC方向的产业核心、市场核心和机构核心身份，但当前只能定义为“有条件的长期核心资产”，不能把好公司、强产业趋势与任何价格都值得长期持有画等号。</p>
+</div>
+<h2>一、四重核心身份判断</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>身份</th>
+<th>判断</th>
+<th style="text-align: right;">置信度</th>
+<th>核心依据</th>
+<th>主要限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>产业核心</td>
+<td><strong>成立</strong></td>
+<td style="text-align: right;">高</td>
+<td>中国内地最大MLCC供应商；全球MLCC约第九、份额约2%至2.5%；陶瓷粉体到元件垂直一体化；陶瓷插芯及套筒全球份额约70%</td>
+<td>在全球高端MLCC领域仍属于追赶者，份额、微型化、高容高压和定价权远弱于日韩龙头</td>
+</tr>
+<tr>
+<td>市场核心</td>
+<td><strong>成立，但趋势已受损</strong></td>
+<td style="text-align: right;">高</td>
+<td>2025-07-22至2026-07-21上涨约221.6%，远超沪深300约15.1%；总市值约2138亿元、成交活跃度显著领先A股同业</td>
+<td>相对2026-06-23高点区间已回撤约26.1%；7月21日反弹具有板块共振属性，不能据单日上涨确认新主升</td>
+</tr>
+<tr>
+<td>机构核心</td>
+<td><strong>相对成立</strong></td>
+<td style="text-align: right;">中高</td>
+<td>2026Q1香港中央结算持股升至8.80%，阿布达比投资局持股0.85%；H股17名基石投资者认购35.55百万股，金额4.55亿美元；券商覆盖广</td>
+<td>机构持仓包含指数被动资金；2026H1公募数据尚未完整披露；基石锁定认购不等于未来持续增持</td>
+</tr>
+<tr>
+<td>长期核心持有</td>
+<td><strong>公司条件成立，价格条件暂不充分</strong></td>
+<td style="text-align: right;">中高</td>
+<td>多业务电子陶瓷平台、盈利与现金流质量好、资产负债表稳健、2026H1增长加速</td>
+<td>2026-07-21 PE-TTM约74.3倍；按卖方2026年盈利预测，对应约53至64倍前瞻PE，估值已透支相当部分成长预期</td>
+</tr>
+</tbody>
+</table></div>
+<h2>二、最重要的结论</h2>
+<h3>1. 三环集团的价值不只来自MLCC</h3>
+<p>2025年公司营业收入90.07亿元。其中招股书按主营业务口径披露88.69亿元：</p>
+<ul>
+<li>电子元件33.08亿元，占主营收入37.3%，毛利率41.3%</li>
+<li>通信器件25.94亿元，占29.3%，毛利率42.6%</li>
+<li>电子及陶瓷材料19.59亿元，占22.1%，毛利率36.6%</li>
+<li>设备组件6.02亿元，占6.8%，毛利率57.7%</li>
+<li>其他主营4.05亿元，占4.6%</li>
+</ul>
+<p>电子元件板块主要由MLCC拉动，但还包含MLCI及固定电阻器。公司并未在公开财报中单独披露2025年纯MLCC收入，因此市场常见的“MLCC收入33.08亿元”属于宽口径简化，不能当成精确事实。</p>
+<p>真正的核心能力是以陶瓷材料为底座，把粉体配方、成型、烧结、精密加工和规模制造复用于MLCC、光通信陶瓷器件、陶瓷封装基座、基片、SOFC隔膜片和精密结构件。这使公司更接近“先进电子陶瓷平台”，而非单一MLCC周期股。</p>
+<h3>2. 产业地位强，但全球MLCC地位仍处追赶层</h3>
+<ul>
+<li>中国内地MLCC厂商中，三环集团规模和盈利能力领先。</li>
+<li>招股书及第三方行业资料显示，公司全球MLCC排名约第九，2024年份额约2%；部分2025年资料口径约2.5%。</li>
+<li>陶瓷插芯及套筒全球份额约70%，晶振陶瓷封装基座约40%，这些业务的全球地位明显高于MLCC。</li>
+<li>公司拥有从陶瓷粉体到元件的全流程能力，构成成本、良率、迭代速度和供应安全壁垒。</li>
+<li>但在超小尺寸、高容量、高耐压、高温稳定性和车规一致性等高端环节，与村田、太阳诱电、三星电机仍有明显差距。</li>
+</ul>
+<p>因此，“国产MLCC核心”成立，“全球MLCC核心”尚未成立。</p>
+<h3>3. 2026年增长已经由叙事进入业绩验证</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align: right;">2025年</th>
+<th style="text-align: right;">2026Q1</th>
+<th style="text-align: right;">2026H1预告</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>营业收入</td>
+<td style="text-align: right;">90.07亿元，+22.13%</td>
+<td style="text-align: right;">26.81亿元，+46.25%</td>
+<td style="text-align: right;">未披露</td>
+</tr>
+<tr>
+<td>归母净利润</td>
+<td style="text-align: right;">26.18亿元，+19.54%</td>
+<td style="text-align: right;">7.91亿元，+48.48%</td>
+<td style="text-align: right;">17.94至20.41亿元，+45%至65%</td>
+</tr>
+<tr>
+<td>扣非净利润</td>
+<td style="text-align: right;">22.49亿元，+16.39%</td>
+<td style="text-align: right;">7.22亿元，+60.82%</td>
+<td style="text-align: right;">16.53至19.20亿元，+55%至80%</td>
+</tr>
+<tr>
+<td>毛利率</td>
+<td style="text-align: right;">42.14%</td>
+<td style="text-align: right;">43.49%</td>
+<td style="text-align: right;">待半年报</td>
+</tr>
+</tbody>
+</table></div>
+<p>公司明确说明，2026H1增长由两条主线驱动：</p>
+<ol>
+<li>MLCC客户认可度与行业景气提升，部分规格价格修复，销量和销售额较大幅增长。</li>
+<li>全球数据中心建设加快，插芯及套筒等光通信产品销售增长。</li>
+</ol>
+<p>这比单纯“AI服务器会多用多少颗MLCC”的主题估算更可靠，因为它已经体现在公司业绩预告中。</p>
+<h3>4. 财务质量优秀，但Q1现金流需要后续确认</h3>
+<p>2021至2025年营业收入复合增速约9.7%，归母净利润复合增速约6.8%。2023至2025年经营现金流净额分别为17.19、24.03、28.78亿元，经营现金流/归母净利润均约1.09至1.10。</p>
+<p>按“经营现金流减购建长期资产支付现金”的简单口径，2022至2025年自由现金流约9.49、11.73、17.64、22.98亿元，明显改善。</p>
+<p>但2026Q1经营现金流仅1.57亿元，同比下降约35%，同期应收账款由2025年末21.59亿元增至23.70亿元，存货由23.92亿元增至26.10亿元。单季具有季节性，尚不能判定恶化，但半年报应验证利润增长能否重新转化为现金。</p>
+<h2>三、当前估值与长期持有条件</h2>
+<p>截至2026-07-21：</p>
+<ul>
+<li>A股收盘107.54元，总市值约2137.75亿元</li>
+<li>PE-TTM 74.31倍，PB 9.54倍</li>
+<li>H股收盘101.80港元，较100.30港元发行价仅高约1.5%</li>
+<li>卖方2026年归母净利润预测大致33.3至40.0亿元，对应当前约53至64倍前瞻PE</li>
+<li>卖方2027年归母净利润预测大致42.75至49.72亿元，对应当前约43至50倍前瞻PE</li>
+</ul>
+<div class="warning">
+<p>⚠ <strong>价格判断</strong>：当前价格已经隐含高端MLCC放量、光通信持续高景气和盈利预测不断上修。公司质量足以进入长期核心观察池，但当前估值缺少明显安全垫。</p>
+</div>
+<p>长期核心持有需同时满足四项条件：</p>
+<ol>
+<li><strong>产业条件</strong>：高端MLCC规格、客户认证和量产占比持续提高，高容扩产项目按计划推进。</li>
+<li><strong>盈利条件</strong>：未来两年利润复合增速维持20%左右，毛利率保持40%左右或更高。</li>
+<li><strong>现金流条件</strong>：年度经营现金流/归母净利润回到1倍附近，应收和存货增速不过度领先收入。</li>
+<li><strong>估值条件</strong>：前瞻估值回到能由可验证增长覆盖的区间。作为框架，2027年PE约35至40倍对应卖方预测下约75至100元；30至35倍约65至88元。该区间高度依赖盈利预测兑现，不构成目标价。</li>
+</ol>
+<h2>四、对交易与配置的含义</h2>
+<h3>对短线/波段</h3>
+<ul>
+<li>三环仍是MLCC方向最重要的趋势锚和成交容量核心。</li>
+<li>近20日显著跑输指数，说明前期主升后的筹码仍在消化。</li>
+<li>7月21日业绩预告与回购推动大涨，但同业普涨，宜观察后续是否出现缩量回踩承接、相对板块重新走强和盈利预测继续上修。</li>
+<li>不宜把单日18.15%的反弹直接定义为趋势恢复。</li>
+</ul>
+<h3>对中长期</h3>
+<ul>
+<li>适合放入“核心观察池”，持续跟踪，而非在高估值阶段无条件锁仓。</li>
+<li>更理想的长期配置窗口来自两种情形：价格下降而基本面不破，或盈利上修使估值自然消化。</li>
+<li>若高端份额、现金流和毛利率未能兑现，即使行业叙事仍热，也应降低“长期核心”评级。</li>
+</ul>
+<h2>五、最终排序</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>三环集团在A股相关标的中的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>民用MLCC规模与盈利质量</td>
+<td>第一梯队，综合第一</td>
+</tr>
+<tr>
+<td>全球高端MLCC技术与份额</td>
+<td>追赶者</td>
+</tr>
+<tr>
+<td>电子陶瓷平台化能力</td>
+<td>A股最强之一</td>
+</tr>
+<tr>
+<td>机构覆盖与流动性</td>
+<td>显著第一</td>
+</tr>
+<tr>
+<td>市场趋势辨识度</td>
+<td>板块核心锚</td>
+</tr>
+<tr>
+<td>当前估值性价比</td>
+<td>偏低</td>
+</tr>
+<tr>
+<td>长期核心资产资格</td>
+<td>有条件成立</td>
+</tr>
+</tbody>
+</table></div>
+<h2>六、关键风险</h2>
+<ul>
+<li>AI服务器、汽车电子等高端MLCC需求增速低于预期</li>
+<li>价格修复主要由补库推动，终端需求不足导致再度降价</li>
+<li>高容MLCC扩产与良率爬坡慢于预期</li>
+<li>日系龙头技术和产能领先优势持续扩大</li>
+<li>光通信陶瓷器件景气回落</li>
+<li>H股募资项目回报不及预期，股本摊薄先于利润增长</li>
+<li>高估值下盈利略低于预期引发剧烈估值压缩</li>
+</ul>
+<h2>主要来源</h2>
+<ul>
+<li>三环集团2025年年度报告，深交所，2026-03-28</li>
+<li>三环集团H股招股章程，港交所，2026-06-30</li>
+<li>三环集团2026年半年度业绩预告，深交所，2026-07-21</li>
+<li>三环集团回购报告书及首次回购公告，深交所，2026-07-21至22</li>
+<li>Tushare财务、行情、股东数据，截至2026-07-21</li>
+<li>TDX机构持仓、公告与研报一致预期数据，截至2026-07-22</li>
+</ul>
+<blockquote>
+<p>本报告用于研究与跟踪，不构成任何投资建议。估值区间建立在卖方预测之上，预测变化会显著改变结论。</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年7月22日</p>
+</footer>
+
+</body>
+</html>

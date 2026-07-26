@@ -1,9 +1,79 @@
 {
-  "last_updated": "2026-07-07 23:01:25",
-  "total": 59,
+  "last_updated": "2026-07-26 23:30:00",
+  "total": 66,
   "daily_count": 54,
-  "industry_count": 5,
+  "industry_count": 12,
   "reports": [
+    {
+      "id": "2026-07-22-三环集团MLCC执行摘要",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "深度研究",
+      "title": "00 三环集团MLCC系统研究：执行摘要与最终判断",
+      "relative_path": "reports/2026-07-22/00 三环集团MLCC系统研究：执行摘要与最终判断.html",
+      "size_kb": 14.7
+    },
+    {
+      "id": "2026-07-22-三环集团业务与竞争力",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "深度研究",
+      "title": "01 三环集团业务与竞争力：电子陶瓷平台的真实边界",
+      "relative_path": "reports/2026-07-22/01 三环集团业务与竞争力：电子陶瓷平台的真实边界.html",
+      "size_kb": 13.8
+    },
+    {
+      "id": "2026-07-22-三环集团财务质量与估值",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "深度研究",
+      "title": "02 三环集团财务质量与估值：好公司与好价格的分界",
+      "relative_path": "reports/2026-07-22/02 三环集团财务质量与估值：好公司与好价格的分界.html",
+      "size_kb": 18.2
+    },
+    {
+      "id": "2026-07-22-MLCC产业格局与A股比较",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "深度研究",
+      "title": "03 MLCC产业格局与A股标的统一比较",
+      "relative_path": "reports/2026-07-22/03 MLCC产业格局与A股标的统一比较.html",
+      "size_kb": 19.4
+    },
+    {
+      "id": "2026-07-22-三环集团机构持仓",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "深度研究",
+      "title": "04 三环集团机构持仓与真实认可度",
+      "relative_path": "reports/2026-07-22/04 三环集团机构持仓与真实认可度.html",
+      "size_kb": 11.5
+    },
+    {
+      "id": "2026-07-22-三环集团催化与市场地位",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "深度研究",
+      "title": "05 三环集团近期催化、市场地位与长期持有条件",
+      "relative_path": "reports/2026-07-22/05 三环集团近期催化、市场地位与长期持有条件.html",
+      "size_kb": 12.7
+    },
+    {
+      "id": "2026-07-22-三环集团数据口径与跟踪",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "深度研究",
+      "title": "06 三环集团MLCC研究：数据口径、来源与持续跟踪清单",
+      "relative_path": "reports/2026-07-22/06 三环集团MLCC研究：数据口径、来源与持续跟踪清单.html",
+      "size_kb": 13.3
+    },
     {
       "id": "2026-05-28-5月28日 午盘扫描",
       "date": "2026-05-28",

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04 三环集团机构持仓与真实认可度</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>04 三环集团机构持仓与真实认可度</h1>
+  <div class="meta">
+    📅 2026年7月22日
+  </div>
+</header>
+
+<h2>一、判断框架</h2>
+<p>机构认可不能只看“机构家数”。需要同时观察：</p>
+<ol>
+<li>持股比例和绝对数量</li>
+<li>连续性与增减方向</li>
+<li>资金属性：主动、公募、被动指数、外资、主权基金、产业资本</li>
+<li>披露季节性：半年报和年报披露最完整，Q1/Q3基金汇总天然不完整</li>
+<li>估值行为：机构持有不代表当前价格仍有安全边际</li>
+</ol>
+<h2>二、A股前十大股东的可验证变化</h2>
+<h3>1. 香港中央结算显著增加</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>报告期</th>
+<th style="text-align: right;">持股数量</th>
+<th style="text-align: right;">总股本占比</th>
+<th style="text-align: right;">环比变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025-12-31</td>
+<td style="text-align: right;">1.2169亿股</td>
+<td style="text-align: right;">6.35%</td>
+<td style="text-align: right;">+4105万股</td>
+</tr>
+<tr>
+<td>2026-03-31</td>
+<td style="text-align: right;">1.6872亿股</td>
+<td style="text-align: right;">8.80%</td>
+<td style="text-align: right;">+4703万股</td>
+</tr>
+</tbody>
+</table></div>
+<p>香港中央结算持股在一季度明显增加，是机构认可度增强的强证据。但该账户包含深股通及不同境外投资者，不能把它视为单一机构的长期主动持仓。</p>
+<h3>2. 主权资金进入</h3>
+<p>2026Q1前十大股东中，阿布达比投资局自有资金持有1625.41万股，占总股本0.85%。主权资金进入提高了长期资金质量，但单一报告期仍不足以证明持续增持，需要观察后续季度。</p>
+<h3>3. 被动指数资金变化</h3>
+<p>2025年末前十大流通股东包含：</p>
+<ul>
+<li>华泰柏瑞沪深300ETF约2216万股</li>
+<li>易方达创业板ETF约2390万股</li>
+<li>易方达沪深300ETF约1582万股</li>
+<li>华夏沪深300ETF约1206万股</li>
+</ul>
+<p>2026Q1部分ETF持股下降，其中华泰柏瑞沪深300ETF降至约1081万股，易方达创业板ETF降至约1221万股。指数基金变化受份额申赎、指数权重与市值波动影响，不能直接解释为主动基金看空。</p>
+<p>同时，中国证券金融持股由2750万股降至1890万股。机构结构呈现“部分被动与稳定资金下降，境外与主权资金增加”的混合状态。</p>
+<h2>三、TDX基金持仓口径的同业比较</h2>
+<p>TDX机构汇总第二结果集更接近基金持仓比例。2025年末可作为横向参照：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>公司</th>
+<th style="text-align: right;">2025年末基金持仓比例代理值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>三环集团</td>
+<td style="text-align: right;">约15.75%</td>
+</tr>
+<tr>
+<td>火炬电子</td>
+<td style="text-align: right;">约9.27%</td>
+</tr>
+<tr>
+<td>鸿远电子</td>
+<td style="text-align: right;">约8.60%</td>
+</tr>
+<tr>
+<td>宏达电子</td>
+<td style="text-align: right;">约7.09%</td>
+</tr>
+<tr>
+<td>风华高科</td>
+<td style="text-align: right;">约2.88%</td>
+</tr>
+</tbody>
+</table></div>
+<p>该数据适合比较相对覆盖度，不宜与前十大股东占比直接相加。TDX预设转换字段曾出现错位，本报告使用原始结果校正字段：T002为报告期、T003为机构家数、T005为累计持股数量、T007为持股市值、T008为持股比例、T010为比例变化、T014为期末股价。</p>
+<p>结论是：在直接及相邻MLCC标的中，三环的基金覆盖明显领先，但并非所有持仓都属于长期主动资金。</p>
+<h2>四、H股基石投资者</h2>
+<p>H股招股章程披露：</p>
+<ul>
+<li>17名基石投资者合计认购35,550,000股H股</li>
+<li>认购金额合计4.55亿美元</li>
+<li>占基础全球发售71,364,300股的49.81%</li>
+<li>按基础发行后总股本计算，约占1.79%</li>
+</ul>
+<p>公开名单包括Taibai Investments、JPMorgan Asset Management Asia Pacific、CPE River、Ninety One Asia、Alibaba Investment、GSAM、IvyRock、Metazone、Verition Fund等。</p>
+<h3>这说明什么</h3>
+<ul>
+<li>公司能够吸引主权背景、国际资管、产业资本和对冲基金参与，国际资本认可度显著高于A股MLCC同业。</li>
+<li>接近一半基础发行由基石锁定，提升H股发行确定性。</li>
+<li>A+H平台提高海外融资、客户合作和国际覆盖能力。</li>
+</ul>
+<h3>这不说明什么</h3>
+<ul>
+<li>基石认购不等同于上市后二级市场持续买入。</li>
+<li>锁定期结束后的持仓行为未知。</li>
+<li>H股2026-07-21收盘101.80港元，只比100.30港元发行价高约1.5%，说明国际二级市场并未给予大幅溢价。</li>
+<li>A股和H股投资者结构、流动性和估值体系不同，不能直接用基石名单证明A股估值合理。</li>
+</ul>
+<h2>五、卖方覆盖与盈利预期</h2>
+<p>2026年公司获得国信、中金、中泰、华创、华安、中邮、国投等多家券商覆盖，多数评级为买入、推荐或优于大市。公开预测中：</p>
+<ul>
+<li>2026年归母净利润约33.3至40.0亿元</li>
+<li>2027年约42.75至49.72亿元</li>
+<li>2028年约51亿元以上的预测较常见</li>
+</ul>
+<p>覆盖密度和盈利预测可见度显著高于风华、火炬、鸿远与宏达。这提高了机构定价效率，也意味着一旦实际业绩低于一致预期，估值反应会更迅速。</p>
+<h2>六、机构核心身份是否成立</h2>
+<h3>支持证据</h3>
+<ol>
+<li>市值和流动性足以容纳大规模机构资金。</li>
+<li>沪深300、创业板等指数资金长期持有。</li>
+<li>香港中央结算2026Q1显著增持。</li>
+<li>阿布达比投资局进入前十大股东。</li>
+<li>H股基石阵容和认购规模强。</li>
+<li>卖方覆盖广，盈利预测体系完整。</li>
+</ol>
+<h3>限制证据</h3>
+<ol>
+<li>2026H1公募持仓截至7月22日尚未完整披露。</li>
+<li>Q1部分ETF和中国证券金融持股下降。</li>
+<li>机构持仓可能在股价大涨后发生再平衡，无法从历史持仓推导当前意愿。</li>
+<li>A股PE-TTM约74倍，机构认可与估值安全是两个问题。</li>
+</ol>
+<div class="highlight">
+<p>📊 <strong>结论</strong>：三环集团已经是A股MLCC及电子陶瓷方向的机构核心标的，认可度显著高于直接同业；但当前证据只能证明“机构愿意配置”，不能证明“机构认为107.54元仍便宜”。</p>
+</div>
+<h2>七、后续验证清单</h2>
+<ul>
+<li>2026中报基金持仓比例和主动基金名单</li>
+<li>香港中央结算是否继续增加或转为下降</li>
+<li>阿布达比投资局是否持续持有</li>
+<li>H股基石锁定期安排及解禁后的持仓</li>
+<li>新增主动公募是否集中在高点买入</li>
+<li>2026年三、四季度盈利预测上修或下修数量</li>
+<li>A/H两地价格、成交量与估值差异</li>
+</ul>
+<h2>数据来源</h2>
+<ul>
+<li>Tushare前十大股东及流通股东，2025年末与2026Q1</li>
+<li>三环集团H股招股章程第255至261页附近基石投资者章节</li>
+<li>TDX机构持仓原始结果与研报评级一致预期</li>
+<li>三环集团及同业公开报告</li>
+</ul>
+<blockquote>
+<p>本报告仅用于研究，不构成投资建议。</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年7月22日</p>
+</footer>
+
+</body>
+</html>

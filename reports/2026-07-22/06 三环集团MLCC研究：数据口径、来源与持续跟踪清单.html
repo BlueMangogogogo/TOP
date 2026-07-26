@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>06 三环集团MLCC研究：数据口径、来源与持续跟踪清单</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>06 三环集团MLCC研究：数据口径、来源与持续跟踪清单</h1>
+  <div class="meta">
+    📅 2026年7月22日
+  </div>
+</header>
+
+<h2>一、研究时点与范围</h2>
+<ul>
+<li>数据截止：2026-07-22</li>
+<li>最新完整年度：2025年年报</li>
+<li>最新完整季度：2026Q1</li>
+<li>最新业绩信息：2026H1业绩预告，未经审计</li>
+<li>最新A/H行情：2026-07-21收盘</li>
+<li>历史财务：原则上覆盖2021至2025年</li>
+<li>同业：三环、风华、火炬、鸿远、宏达；产业链参照国瓷、洁美、博迁、顺络</li>
+</ul>
+<h2>二、核心口径定义</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>本报告口径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>营业收入</td>
+<td>A股中国企业会计准则合并口径</td>
+</tr>
+<tr>
+<td>主营分部收入</td>
+<td>H股招股章程分产品口径，不含A股年报其他业务收入</td>
+</tr>
+<tr>
+<td>毛利率</td>
+<td>Tushare财务指标与公司年报交叉核验</td>
+</tr>
+<tr>
+<td>简单自由现金流</td>
+<td>经营现金流净额－购建固定资产、无形资产和其他长期资产支付现金</td>
+</tr>
+<tr>
+<td>市值</td>
+<td>Tushare <code>total_mv</code>，单位从万元换算为亿元</td>
+</tr>
+<tr>
+<td>PE-TTM、PB</td>
+<td>Tushare 2026-07-21每日指标</td>
+</tr>
+<tr>
+<td>区间涨跌幅</td>
+<td>2026-07-21收盘价/起点收盘价－1，未复权价格口径</td>
+</tr>
+<tr>
+<td>机构持仓</td>
+<td>TDX机构汇总、Tushare前十大股东、H股基石三类证据分开使用</td>
+</tr>
+<tr>
+<td>前瞻PE</td>
+<td>2026-07-21总市值/卖方预测归母净利润，不采用未经说明的目标价</td>
+</tr>
+</tbody>
+</table></div>
+<h2>三、关键数据源</h2>
+<h3>1. 公司官方资料</h3>
+<ul>
+<li><a href="http://disc.static.szse.cn/disc/disk03/finalpage/2026-03-28/fc0859eb-3914-44e8-ba5c-ef462593333e.PDF">三环集团2025年年度报告</a></li>
+<li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0630/2026063000324_c.pdf">三环集团H股招股章程</a></li>
+<li><a href="http://disc.static.szse.cn/disc/disk03/finalpage/2026-07-07/999289df-6cb8-4676-a912-a5938276117e.PDF">H股发行价格公告</a></li>
+<li><a href="http://disc.static.szse.cn/disc/disk03/finalpage/2026-07-21/2fb3c3d4-fe00-430f-8404-0def3f570e64.PDF">2026年半年度业绩预告</a></li>
+<li><a href="http://disc.static.szse.cn/disc/disk03/finalpage/2026-07-21/f92c4186-2a74-45c3-b13c-e72c41284298.PDF">回购报告书</a></li>
+<li><a href="http://disc.static.szse.cn/disc/disk03/finalpage/2026-07-22/97bedf82-669b-40ec-861b-3396d48f6b7b.PDF">首次回购公告</a></li>
+<li><a href="http://disc.static.szse.cn/disc/disk03/finalpage/2026-06-30/85a19ad3-27db-46cb-b357-a201872b44e9.PDF">风华高科严重异常波动公告</a></li>
+<li><a href="http://disc.static.szse.cn/disc/disk03/finalpage/2026-04-24/1dcc2893-8eb7-4975-ad52-884eba6392a7.PDF">宏达电子2025年年度报告</a></li>
+</ul>
+<h3>2. 结构化数据</h3>
+<ul>
+<li>Tushare：年报、季报、财务指标、资产负债表、现金流、主营构成、前十大股东、A/H行情及估值</li>
+<li>TDX Finance：公司概要、公告检索、机构持仓、研报一致预期、实时行情</li>
+<li>AkShare Research：券商研报标题、评级与摘要</li>
+</ul>
+<h3>3. 本地原始资料</h3>
+<ul>
+<li><code>sources/三环集团_H股招股书_20260630.pdf</code></li>
+<li>既有MLCC催化跟踪资料只作为线索，正式数字均以当前官方和结构化数据重新核验</li>
+</ul>
+<h2>四、已识别的数据冲突与处理</h2>
+<h3>1. 90.07亿元与88.69亿元</h3>
+<p>A股年报2025年营业收入90.07亿元；H股招股章程分产品收入合计88.69亿元。差额约1.39亿元为其他业务收入。报告中凡使用37.3%、29.3%等分部占比，分母均为88.69亿元。</p>
+<h3>2. “MLCC收入33.08亿元”</h3>
+<p>33.08亿元是电子元件板块收入。该板块还包含MLCI和固定电阻器。公司只说明增长主要由MLCC推动，没有披露纯MLCC收入。因此：</p>
+<ul>
+<li>可以写“电子元件33.08亿元，主要由MLCC驱动”</li>
+<li>不应写“MLCC收入精确为33.08亿元”</li>
+</ul>
+<h3>3. 全球MLCC份额2%与2.5%</h3>
+<p>招股章程及不同第三方资料采用不同年份与市场口径。报告统一表述为：</p>
+<ul>
+<li>2024年约2%，全球约第九</li>
+<li>部分2025年资料约2.5%</li>
+<li>不将0.5个百分点差异解释为确定的份额提升，除非同一机构同口径连续数据确认</li>
+</ul>
+<h3>4. 机构汇总字段错位</h3>
+<p>TDX机构汇总预设转换曾发生字段错位。原始字段校正为：</p>
+<ul>
+<li>T002：报告期</li>
+<li>T003：机构家数</li>
+<li>T005：累计持股数量</li>
+<li>T007：累计持股市值</li>
+<li>T008：持股比例</li>
+<li>T010：比例变动</li>
+<li>T014：期末股价</li>
+</ul>
+<p>第二结果集更接近基金持仓比例，只用于横向参照，不与前十大股东直接相加。</p>
+<h3>5. 2026H1机构数据不完整</h3>
+<p>截至2026-07-22，基金二季报与上市公司半年报持仓尚未完全披露。2026-06-30机构家数和比例不能与完整年报直接比较。机构结论主要依据2025年末、2026Q1前十大股东和H股基石。</p>
+<h3>6. 宏达电子的分类</h3>
+<p>宏达电子核心产品是钽电容。2025年多层瓷介电容收入约2.08亿元，占营收11.04%。因此从“直接MLCC对手”调整为“相邻高可靠多品类元件平台”。鸿远电子补入直接高可靠瓷介电容参照。</p>
+<h3>7. 风华高科英伟达认证传闻</h3>
+<p>风华高科在2026年6月多份异常波动公告中明确：英伟达未对公司开展任何产品认证，“国内唯一通过英伟达全系列MLCC认证”不属实。该传闻不得进入正式产业结论。</p>
+<h3>8. 三环特定客户传闻</h3>
+<p>三环集团公开资料只确认MLCC进入服务器等领域并取得多个标杆客户认证，未公开具体客户。任何点名英伟达、特定服务器或云厂商的说法均标注为未证实。</p>
+<h2>五、持续跟踪数据表</h2>
+<h3>每季度</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>指标</th>
+<th>预警线或观察点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>增长</td>
+<td>营收、扣非净利润同比</td>
+<td>连续两季显著低于一致预期</td>
+</tr>
+<tr>
+<td>盈利</td>
+<td>综合毛利率、电子元件毛利率</td>
+<td>综合毛利率持续低于38%</td>
+</tr>
+<tr>
+<td>现金流</td>
+<td>经营现金流/净利润</td>
+<td>年度低于0.9需解释</td>
+</tr>
+<tr>
+<td>营运</td>
+<td>应收、存货、周转天数</td>
+<td>增速持续高于收入10个百分点以上</td>
+</tr>
+<tr>
+<td>研发</td>
+<td>研发金额、研发率</td>
+<td>绝对额下降或高端项目停滞</td>
+</tr>
+<tr>
+<td>产能</td>
+<td>在建工程、资本开支、高容MLCC进度</td>
+<td>2027项目继续延期</td>
+</tr>
+<tr>
+<td>机构</td>
+<td>香港中央结算、主动基金、主权资金</td>
+<td>高位连续两个报告期下降</td>
+</tr>
+<tr>
+<td>估值</td>
+<td>未来一年PE、盈利预测变化</td>
+<td>估值高于50倍且盈利预测下修</td>
+</tr>
+</tbody>
+</table></div>
+<h3>每月</h3>
+<ul>
+<li>MLCC价格与交期</li>
+<li>主要厂商稼动率、库存和扩产</li>
+<li>AI服务器、汽车电子和消费电子终端需求</li>
+<li>光模块、连接器和数据中心建设节奏</li>
+<li>A/H股价差、成交量和解禁安排</li>
+<li>回购实际金额、均价、用途和处置</li>
+</ul>
+<h3>事件触发</h3>
+<ul>
+<li>高端MLCC新客户或规格认证</li>
+<li>高容项目投产与良率披露</li>
+<li>MT插芯、陶瓷封装管壳收入单独披露</li>
+<li>SOFC大客户扩产、订单或政策变化</li>
+<li>重大原材料价格与供应链变化</li>
+<li>全球龙头提价、降价、扩产或技术迭代</li>
+</ul>
+<h2>六、复核公式</h2>
+<pre class="codehilite"><code class="language-text">主营业务分部占比 = 分部收入 / 88.6853亿元
+简单自由现金流 = 经营现金流净额 - 购建长期资产支付现金
+前瞻PE = 2026-07-21总市值2137.75亿元 / 预测归母净利润
+区间收益率 = 2026-07-21收盘价 / 起点收盘价 - 1
+H股基础发行摊薄 = 71,364,300 / (1,916,497,371 + 71,364,300)
+</code></pre>
+
+<h2>七、证据等级</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>等级</th>
+<th>来源</th>
+<th>使用方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>公司公告、年报、招股章程、交易所数据</td>
+<td>可作为关键事实</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Tushare、TDX结构化数据</td>
+<td>与官方资料交叉验证后使用</td>
+</tr>
+<tr>
+<td>C</td>
+<td>券商研报</td>
+<td>用于盈利预测、产业判断，注明机构与日期</td>
+</tr>
+<tr>
+<td>D</td>
+<td>新闻、专家纪要、产业传闻</td>
+<td>只作线索，不作为单一关键结论</td>
+</tr>
+</tbody>
+</table></div>
+<div class="warning">
+<p>⚠ 所有未来市场份额、客户认证、产能利用率和盈利预测均需在新报告披露后滚动更新。静态报告不能替代动态跟踪。</p>
+<p>本报告仅用于研究，不构成投资建议。</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年7月22日</p>
+</footer>
+
+</body>
+</html>
