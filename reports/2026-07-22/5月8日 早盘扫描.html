@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5月8日 早盘扫描</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>5月8日 早盘扫描</h1>
+  <div class="meta">
+    📅 2026年5月8日 09:20 | 本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议
+  </div>
+</header>
+
+<hr>
+<h2>📌 昨日复盘要点</h2>
+<ul>
+<li><strong>主线</strong>：CPO/光通信（15+涨停）、算电协同（首项目投运）、机器人（Optimus量产预期）</li>
+<li><strong>情绪</strong>：科创50低开高走-2.56%→+0.70%，95涨停/47跌停(46ST)，成交约2万亿</li>
+<li><strong>策略</strong>：关注CPO/光通信向光芯片/硅光扩散，算电协同持续性</li>
+<li><strong>今日观察</strong>：①CPO涨停潮后能否持续 ②算电协同是否扩散到电网设备 ③ST跌停潮持续度</li>
+</ul>
+<hr>
+<h2>🌍 外围市场夜盘</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数/商品</th>
+<th>收盘</th>
+<th style="text-align: center;">涨跌幅</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道琼斯</td>
+<td>49,597</td>
+<td style="text-align: center;"><strong>-0.6%</strong></td>
+<td>小盘股领跌，Russell 2000 -1.6%</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7,337</td>
+<td style="text-align: center;"><strong>-0.4%</strong></td>
+<td>历史新高附近回落</td>
+</tr>
+<tr>
+<td>纳斯达克</td>
+<td>25,806</td>
+<td style="text-align: center;"><strong>-0.1%</strong></td>
+<td>科技股相对抗跌</td>
+</tr>
+<tr>
+<td>WTI原油</td>
+<td>$91.50</td>
+<td style="text-align: center;"><strong>-3.8%</strong></td>
+<td>美伊和谈进展，油价连续大跌</td>
+</tr>
+<tr>
+<td>布伦特</td>
+<td>~$100</td>
+<td style="text-align: center;"><strong>-4.2%</strong></td>
+<td>霍尔木兹危机降温</td>
+</tr>
+<tr>
+<td>伦敦金</td>
+<td>~$4,713</td>
+<td style="text-align: center;"><strong>+3.8%</strong></td>
+<td>避险+美元走弱</td>
+</tr>
+<tr>
+<td>LME铜</td>
+<td>$5.64</td>
+<td style="text-align: center;"><strong>+2.7%</strong></td>
+<td>工业金属跟涨</td>
+</tr>
+<tr>
+<td>白银</td>
+<td>$75.5</td>
+<td style="text-align: center;"><strong>+7.5%</strong></td>
+<td>贵金属联动</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>核心信号</strong>：美股在连续3天创新高后小幅回调，属技术性整理。油价暴跌（美伊和谈）利好A股化工/航空/物流等用油行业，利空石油/煤炭板块。但夜盘油期货已反弹+2%（美伊互相开火），局势仍反复。</p>
+</div>
+<hr>
+<h2>✅ P0 核心AI链速览</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>美股标的</th>
+<th style="text-align: center;">方向</th>
+<th>A股映射信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVDA</td>
+<td style="text-align: center;">平</td>
+<td>IREN合作5GW AI基础设施→利好AI基建链</td>
+</tr>
+<tr>
+<td>AVGO/MRVL/ANET/CRDO</td>
+<td style="text-align: center;">平</td>
+<td>无异常波动</td>
+</tr>
+<tr>
+<td>SMCI</td>
+<td style="text-align: center;">平</td>
+<td>Rosenblatt上调目标价$32→$40</td>
+</tr>
+<tr>
+<td>VRT</td>
+<td style="text-align: center;">平</td>
+<td>无异常</td>
+</tr>
+<tr>
+<td>Mag 7</td>
+<td style="text-align: center;">整体偏弱</td>
+<td>DJI -0.6%主因非科技，AI链情绪稳定</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>✅ <strong>P0核心AI链无异常波动，A股开盘无额外映射压力。</strong> 纳斯达克仅-0.1%，AI硬件方向无个股触发±2.5%阈值。今日A股大概率走独立行情。</p>
+</div>
+<hr>
+<h2>🇨🇳 A股盘前指标</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证竞价</td>
+<td>4180（平开）</td>
+<td>中性偏稳</td>
+</tr>
+<tr>
+<td>创业板竞价</td>
+<td>3833（接近平开）</td>
+<td>中性</td>
+</tr>
+<tr>
+<td>竞价涨停</td>
+<td>0只封板</td>
+<td>集合竞价无方向性抢筹</td>
+</tr>
+<tr>
+<td>北向资金前日</td>
+<td>净流入（连续4日）</td>
+<td>外资持续回补</td>
+</tr>
+<tr>
+<td>美伊局势</td>
+<td>和谈中但互相开火</td>
+<td>⚠️ 油价夜盘已反弹+2%</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>📰 重要新闻</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>事件</th>
+<th style="text-align: center;">强度</th>
+<th style="text-align: center;">影响方向</th>
+<th>相关标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>美伊和谈进展</strong>→油价暴跌Brent-4.2%</td>
+<td style="text-align: center;">🔴强</td>
+<td style="text-align: center;">利好航空/化工/物流</td>
+<td>中国国航、万华化学、中远海控</td>
+</tr>
+<tr>
+<td><strong>NVDA与IREN签5GW AI基建协议</strong></td>
+<td style="text-align: center;">🔴强</td>
+<td style="text-align: center;">利好AI基建/光模块/服务器</td>
+<td>中际旭创、工业富联、英维克</td>
+</tr>
+<tr>
+<td><strong>SMCI获Rosenblatt上调目标价</strong></td>
+<td style="text-align: center;">🟡中</td>
+<td style="text-align: center;">利好AI服务器代工</td>
+<td>工业富联</td>
+</tr>
+<tr>
+<td><strong>美国非农今晚公布</strong></td>
+<td style="text-align: center;">🔴强</td>
+<td style="text-align: center;">影响全球利率预期</td>
+<td>整体市场情绪</td>
+</tr>
+<tr>
+<td><strong>美伊互相在霍尔木兹开火</strong>(夜盘)</td>
+<td style="text-align: center;">🔴强</td>
+<td style="text-align: center;">油价反弹+2%，局势仍有变数</td>
+<td>石油/航运</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>🔥 主线跟踪</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>主线</th>
+<th style="text-align: center;">竞价状态</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPO/光通信</strong></td>
+<td style="text-align: center;">-0.3%/-0.4%微跌</td>
+<td>昨日大涨后正常整理，不弱</td>
+</tr>
+<tr>
+<td><strong>算电协同</strong></td>
+<td style="text-align: center;">待开盘确认</td>
+<td>首项目投运+大唐2连板为情绪锚</td>
+</tr>
+<tr>
+<td><strong>机器人</strong></td>
+<td style="text-align: center;">待开盘确认</td>
+<td>Optimus催化持续，关注拓普/三花</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>今日预判</strong>：CPO/光通信昨日15+涨停→今日大概率分化，前排加速后排掉队。算电协同持续性优于CPO（政策属性+估值安全）。机器人回调后可低吸。</p>
+</div>
+<hr>
+<h2>📋 晚间公告精选</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>标的</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>业绩说明会</td>
+<td>泰豪科技、城地香江、电投产融</td>
+<td>5月中旬密集举行业绩会，无重大实质公告</td>
+</tr>
+<tr>
+<td>复牌</td>
+<td>乙德投资控股、紫元元</td>
+<td>港股标的，对A股无直接影响</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>昨夜公告面清淡，无业绩暴雷或重大合同公告。</p>
+</div>
+<hr>
+<h2>⚠️ 风险预警</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>风险</th>
+<th style="text-align: center;">级别</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>美国非农今晚20:30</td>
+<td style="text-align: center;">🟡</td>
+<td>若数据超强→推迟降息→利空成长股</td>
+</tr>
+<tr>
+<td>美伊局势反复</td>
+<td style="text-align: center;">🟡</td>
+<td>夜盘已互相开火，油价随时反弹</td>
+</tr>
+<tr>
+<td>CPO高潮后分化风险</td>
+<td style="text-align: center;">🟡</td>
+<td>板块连续大涨后获利盘压力大</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>🔭 今日操作策略</h2>
+<p><strong>整体判断：平开震荡，结构分化。A股走独立行情概率大（美股仅小跌+无方向性映射压力）。</strong></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>策略方向</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPO/光通信</td>
+<td>不追高，等分歧后再判断（昨日15涨停后分化是大概率）</td>
+</tr>
+<tr>
+<td>算电协同</td>
+<td>关注扩散方向→电网设备/特高压补涨（许继电气YTD仅+2.5%）</td>
+</tr>
+<tr>
+<td>机器人</td>
+<td>回调可低吸，Optimus量产催化是中长线逻辑</td>
+</tr>
+<tr>
+<td>ST板块</td>
+<td>继续回避，跌停潮未结束</td>
+</tr>
+<tr>
+<td>周期/涨价</td>
+<td>油价大跌短期利空石油煤炭，利好航空化工</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>观察要点</strong>：
+- 🔴 CPO涨停潮后前排能否2连板（板块持续性关键指标）
+- 🔴 算电协同是否从大唐→华电系扩散（板块纵深确认）
+- 🟡 ST跌停数是否收敛（市场风险偏好信号）
+- 🟡 今晚非农数据（影响下周全球利率预期）</p>
+<hr>
+<div class="warning">
+<p>⚠️ 风险提示：本报告由 AI 自动生成，不构成投资建议。市场有风险，投资需谨慎。</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱</h1>
+  <div class="meta">
+    📅 2026年6月10日
+  </div>
+</header>
+
+<h2>一、事件背景：三重叙事碰撞</h2>
+<p>2026 年 6 月 9 日，半导体研究机构 <strong>SemiAnalysis</strong> 发布面向机构客户的看空报告，指出 AI 数据中心两大关键技术路径——<strong>800V DC 电源架构与 CPO（共封装光学）</strong>——将双双延迟至 2028 年以后。报告引发美股光通信板块剧烈震荡，AAOI 单日暴跌 17%，Lumentum 跌约 8%。</p>
+<p>次日（6 月 10 日），<strong>摩根士丹利</strong>（Morgan Stanley）迅速发布更新研报，分析师 Sharon Shih 明确表示 SemiAnalysis 的判断与大摩在 Computex 期间的供应链调研<strong>完全相反</strong>。同日，A 股 AI 电源链标的集体重挫。</p>
+<p>这形成了当前最核心的市场矛盾：<strong>三重叙事——SemiAnalysis"延迟论"、大摩"反驳论"、英伟达"加速论"——激烈碰撞，投资者需要在噪音中判断趋势的确定性。</strong></p>
+<hr>
+<h2>二、大摩报告核心解读</h2>
+<blockquote>
+<p>报告标题：<strong>Thoughts on Rumored 800V DC Delay</strong>
+作者：Sharon Shih（电源解决方案首席分析师）
+日期：2026 年 6 月 10 日 04:13 GMT
+行业评级：<strong>In-Line</strong></p>
+</div>
+<h3>2.1 大摩的核心判断</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>大摩立场</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SemiAnalysis 报告</strong></td>
+<td>"与我们在 Computex 的供应链调研完全相反"</td>
+</tr>
+<tr>
+<td><strong>800V DC 开发进度</strong></td>
+<td>持续推进中，NVDA 在 GTC Taipei 表示 800V DC 电源机架 <strong>3Q26 即可量产</strong></td>
+</tr>
+<tr>
+<td><strong>400V DC</strong></td>
+<td>开发资源已<strong>重定向至 800V DC</strong>，各超大规模云厂商聚焦 800V</td>
+</tr>
+<tr>
+<td><strong>首个量产厂商</strong></td>
+<td><strong>台达电（Delta, 2308.TW）</strong> 预计 4Q26 率先向美国某大型超算客户交付 800V DC 独立电源机架</td>
+</tr>
+<tr>
+<td><strong>量产节奏</strong></td>
+<td>初始出货量不会巨大，保护器件开发和工业安全标准（UL 等）需要时间定义</td>
+</tr>
+<tr>
+<td><strong>核心结论</strong></td>
+<td>800V DC 开发<strong>完好无损（remains intact）</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.2 大摩覆盖的 A 股相关标的评级</h3>
+<p>从大摩研报披露的覆盖列表，涉及 A 股的电源/散热/连接器相关标的包括：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>股票</th>
+<th>代码</th>
+<th>大摩评级</th>
+<th>最新目标价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>立讯精密</td>
+<td>002475.SZ</td>
+<td><strong>Overweight</strong></td>
+<td>¥69.34</td>
+</tr>
+<tr>
+<td>工业富联</td>
+<td>601138.SS</td>
+<td><strong>Overweight</strong></td>
+<td>¥74.74</td>
+</tr>
+<tr>
+<td>光迅科技</td>
+<td>002281.SZ</td>
+<td><strong>Underweight</strong></td>
+<td>¥210.22</td>
+</tr>
+<tr>
+<td>新易盛</td>
+<td>300502.SZ</td>
+<td><strong>Overweight</strong></td>
+<td>¥785.73</td>
+</tr>
+<tr>
+<td>天孚通信</td>
+<td>300394.SZ</td>
+<td><strong>Equal-weight</strong></td>
+<td>¥443.92</td>
+</tr>
+<tr>
+<td>中际旭创</td>
+<td>300308.SZ</td>
+<td>—</td>
+<td>¥1,180.00</td>
+</tr>
+<tr>
+<td>深南电路</td>
+<td>002916.SZ</td>
+<td><strong>Equal-weight</strong></td>
+<td>¥395.96</td>
+</tr>
+<tr>
+<td>生益科技</td>
+<td>600183.SS</td>
+<td><strong>Equal-weight</strong></td>
+<td>¥147.47</td>
+</tr>
+<tr>
+<td>歌尔股份</td>
+<td>002241.SZ</td>
+<td><strong>Underweight</strong></td>
+<td>¥23.83</td>
+</tr>
+<tr>
+<td>领益智造</td>
+<td>002600.SZ</td>
+<td><strong>Underweight</strong></td>
+<td>¥14.86</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>三、SemiAnalysis vs 英伟达：对立叙事的本质</h2>
+<h3>3.1 SemiAnalysis"延迟论"</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>SemiAnalysis 判断</th>
+<th>逻辑要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>800V DC</strong></td>
+<td>大规模出货推迟至 <strong>2028 年以后</strong></td>
+<td>超大规模云厂商倾向于沿用成熟低压方案或渐进过渡至 400V DC；800V 在当前电网条件下的效率边际收益不足以支撑系统复杂性</td>
+</tr>
+<tr>
+<td><strong>±400V DC</strong></td>
+<td>2026 Q2 开始放量，2027 年明显增长</td>
+<td>渐进过渡方案，降低器件耐压和安规距离要求</td>
+</tr>
+<tr>
+<td><strong>CPO</strong></td>
+<td>规模化量产延至 2028~2029 年</td>
+<td>三大瓶颈：光引擎连接良率、ASIC 集成难度、维护成本（光引擎失效需整块主板返厂）</td>
+</tr>
+</tbody>
+</table></div>
+<h3>3.2 英伟达官方反驳</h3>
+<p>英伟达网络业务高级副总裁 <strong>Gilad Shainer</strong> 在 Computex 现场一对一专访中表态：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>英伟达立场</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPO 量产</strong></td>
+<td>Spectrum-X CPO 交换机 <strong>2026 下半年启动量产</strong>，合作伙伴 Lambda 已确认获得 CPO 交换机</td>
+</tr>
+<tr>
+<td><strong>800V DC 路线图</strong></td>
+<td>从未改变：机架侧柜部署 → 800V DC 原生计算 → 数据中心整合 → 全面统一配电架构</td>
+</tr>
+<tr>
+<td><strong>400V→800V 逻辑</strong></td>
+<td>不是"放弃"800V，而是务实渐进——先验证 400V，再过渡 800V</td>
+</tr>
+<tr>
+<td><strong>800V 必要性</strong></td>
+<td>随着 Rubin Ultra / Kyber 等下一代平台将单机架功耗推向 600kW+，800V DC 在物理层面将成为<strong>不可回避的选择</strong></td>
+</tr>
+<tr>
+<td><strong>对 SemiAnalysis 定性</strong></td>
+<td>"夸大了未来的落地挑战"</td>
+</tr>
+</tbody>
+</table></div>
+<h3>3.3 三方叙事对照</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>SemiAnalysis</th>
+<th>大摩</th>
+<th>英伟达</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>800V DC 时间</td>
+<td>2028+</td>
+<td>3Q26 量产</td>
+<td>2028 规模部署（正常节奏）</td>
+</tr>
+<tr>
+<td>400V DC</td>
+<td>2026 Q2 放量</td>
+<td>已转向聚焦 800V</td>
+<td>过渡方案</td>
+</tr>
+<tr>
+<td>CPO 时间</td>
+<td>2028-2029</td>
+<td>—</td>
+<td>2026 下半年启动</td>
+</tr>
+<tr>
+<td>核心定性</td>
+<td>技术路线受阻</td>
+<td>完好无损</td>
+<td>节奏正常，市场预期过激</td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight">
+<p>💡 <strong>关键解读</strong>：三方的核心分歧在于<strong>对"量产"的定义不同</strong>。SemiAnalysis 用"大规模替换"标准衡量，大摩用"首批发货"标准，英伟达用"按路线图正常推进"标准。三者在不同时间尺度上可能都对——短期（2026）确实是小批量，中期（2027-2028）才是规模化拐点。</p>
+</div>
+<hr>
+<h2>四、800V DC 技术架构与产业链全景</h2>
+<h3>4.1 为什么要 800V DC？</h3>
+<p>当前 AI 数据中心采用 54V DC 配电，存在以下瓶颈：
+- <strong>铜耗巨大</strong>：±48V 下分布损耗高达 3.2%，800V DC 可骤降至 0.25%
+- <strong>铜用量暴减</strong>：800V DC vs 48V 铜用量<strong>减少 80%</strong>
+- <strong>单机架功耗飙升</strong>：NVIDIA B300 单卡功耗突破 1400W，NVL144 机柜逼近 1000kW，54V 已到物理极限
+- <strong>能效跃升</strong>：HVDC 800V 供电架构可将端到端能效<strong>提升 5 个百分点</strong></p>
+<h3>4.2 产业链六大环节</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>环节</th>
+<th>壁垒</th>
+<th>价值弹性</th>
+<th>国产替代空间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① SiC/GaN 功率半导体</strong></td>
+<td>⭐⭐⭐⭐⭐ 最高</td>
+<td>极高</td>
+<td>最大——衬底→外延→器件→模块正在闭环</td>
+</tr>
+<tr>
+<td><strong>② 高压 DCDC 电源模块</strong></td>
+<td>⭐⭐⭐⭐⭐ 最高</td>
+<td>极高</td>
+<td>最大——800V→50V 高压砖块模块是"电力路由器"</td>
+</tr>
+<tr>
+<td><strong>③ SST/HVDC 整机系统</strong></td>
+<td>⭐⭐⭐⭐ 高</td>
+<td>高</td>
+<td>中等——央企国家队已有 2.4MW 级商用产品</td>
+</tr>
+<tr>
+<td><strong>④ 高压 PCB 及铜材</strong></td>
+<td>⭐⭐⭐ 中高</td>
+<td>中高</td>
+<td>中等——高多层、厚铜工艺是关键</td>
+</tr>
+<tr>
+<td><strong>⑤ 被动元器件（MLCC/电感）</strong></td>
+<td>⭐⭐⭐ 中高</td>
+<td>中</td>
+<td>较大——单台 AI 服务器用量是传统 5-10 倍</td>
+</tr>
+<tr>
+<td><strong>⑥ 液冷散热</strong></td>
+<td>⭐⭐⭐ 中高</td>
+<td>中</td>
+<td>大——全链路液冷是确定性趋势</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>五、核心 A 股标的深度分析：三梯队全景</h2>
+<h3>第一梯队：SST/HVDC 整机与系统级——"供电底座"的建造者</h3>
+<h4>① 中国西电（601179.SH）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新价</td>
+<td>¥13.64（当日 -4.55%）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>¥699 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>52.91</td>
+</tr>
+<tr>
+<td>PB</td>
+<td>2.99</td>
+</tr>
+<tr>
+<td>近 5 日涨跌幅</td>
+<td>-16.93%</td>
+</tr>
+<tr>
+<td>年内涨跌幅</td>
+<td>+49.89%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>核心逻辑</strong>：SST 国家队，已实现 2.4MW 级 SST 产品规模化商用（贵安项目首交付），是国内极少数具备从中压侧（10kV+）到直流侧完整产业链能力的央企</li>
+<li><strong>SemiAnalysis 冲击</strong>：如果 800V DC 推迟到 2028 年，SST 商业化节奏可能同步延后，但央企属性提供一定安全边际</li>
+<li><strong>关键催化剂</strong>：SST 从示范走向规模化的订单落地</li>
+</ul>
+<h4>② 四方股份（601126.SH）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新价</td>
+<td>¥68.34（当日 -3.69%）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>¥569 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>66.35</td>
+</tr>
+<tr>
+<td>PB</td>
+<td>12.46</td>
+</tr>
+<tr>
+<td>近 5 日涨跌幅</td>
+<td>-10.67%</td>
+</tr>
+<tr>
+<td>年内涨跌幅</td>
+<td>+132.77%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>核心逻辑</strong>：10kV 直转 800V 的 SST 产品已落地智算中心，2.4MW 级产品效率达 98%-99%，直流控保市占率超 70%</li>
+<li><strong>技术壁垒</strong>：兼具电力电子 + 继电保护 + 控制软件三重能力</li>
+<li><strong>年内涨幅较大</strong>（+133%），估值已充分反映 SST 预期</li>
+</ul>
+<h4>③ 中恒电气（002364.SZ）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新价</td>
+<td>¥51.14（当日 -7.25%）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>¥288 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>219.97</td>
+</tr>
+<tr>
+<td>PB</td>
+<td>11.52</td>
+</tr>
+<tr>
+<td>近 5 日涨跌幅</td>
+<td>-6.64%</td>
+</tr>
+<tr>
+<td>年内涨跌幅</td>
+<td>+93.42%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>核心逻辑</strong>：国内数据中心 HVDC 市占率第一（约 28%），阿里核心供应商，同时布局巴拿马电源与 800V HVDC 系统</li>
+<li><strong>最新利好</strong>：控股股东获宁德时代 41 亿增资，三大业务或借力提速</li>
+<li><strong>风险</strong>：PE 极高（220x），短期情绪波动大</li>
+</ul>
+<hr>
+<h3>第二梯队：电源模块与方案层——英伟达最直接的"采购入口"</h3>
+<h4>④ 麦格米特（002851.SZ）⭐ 核心标的</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新价</td>
+<td>¥145.61（当日 <strong>-10.00% 跌停</strong>）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>¥847 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>553.02</td>
+</tr>
+<tr>
+<td>PB</td>
+<td>9.44</td>
+</tr>
+<tr>
+<td>近 5 日涨跌幅</td>
+<td>-7.83%</td>
+</tr>
+<tr>
+<td>年内涨跌幅</td>
+<td>+61.66%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>核心逻辑</strong>：<strong>A 股唯一获英伟达官宣认证的电源供应商</strong>，已批量交付 GB300 专用 5.5kW 电源模块，推出适配单机柜 1MW 的 800V HVDC 系统</li>
+<li><strong>当日暴跌分析</strong>：跌停主因 SemiAnalysis 报告引发情绪性抛售 + 深股通净卖出 3.02 亿元</li>
+<li><strong>积极信号</strong>：筹划 H 股上市推进全球化布局；近半年 8 家券商买入评级</li>
+<li><strong>关键判断</strong>：800V DC 的 Beta 最纯正——如果趋势成立，麦格米特的"英伟达含量"最高</li>
+</ul>
+<div class="warning">
+<p>⚠ <strong>风险提示</strong>：PE 超过 550 倍，市值 850 亿，估值极度依赖 800V DC 高增长预期兑现。一旦 SemiAnalysis 的判断被验证（2028 年前不规模放量），估值面临大幅收缩风险。</p>
+</div>
+<h4>⑤ 科华数据（002335.SZ）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新价</td>
+<td>¥36.97（当日 -2.20%）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>¥276 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>64.70</td>
+</tr>
+<tr>
+<td>PB</td>
+<td>4.43</td>
+</tr>
+<tr>
+<td>近 5 日涨跌幅</td>
+<td>-8.60%</td>
+</tr>
+<tr>
+<td>年内涨跌幅</td>
+<td>-2.59%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>核心逻辑</strong>：国内高端 UPS 龙头，腾讯数据中心 HVDC 份额超 40%，提供液冷 + 800V HVDC 一体化供电方案</li>
+<li><strong>优势</strong>：客户卡位深、商业模式优（总包逻辑）</li>
+<li><strong>特点</strong>：年内涨幅不大（-2.59%），估值相对合理（PE 65x），在板块恐慌中相对抗跌</li>
+</ul>
+<h4>⑥ 欧陆通（300870.SZ）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新价</td>
+<td>¥265.06（当日 <strong>-10.18%</strong>）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>¥405 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>222.44</td>
+</tr>
+<tr>
+<td>PB</td>
+<td>15.71</td>
+</tr>
+<tr>
+<td>近 5 日涨跌幅</td>
+<td>-2.19%</td>
+</tr>
+<tr>
+<td>年内涨跌幅</td>
+<td>+68.15%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>核心逻辑</strong>：英伟达 MGX 架构适配服务器电源供应商，参与英伟达电源模块代工环节</li>
+<li><strong>特点</strong>：高 Beta 弹性品种，业绩跟随 AI 服务器出货量走</li>
+<li><strong>当日跌超 10%</strong>：与麦格米特联动下跌，反映市场对 AI 电源链的恐慌性抛售</li>
+</ul>
+<hr>
+<h3>第三梯队：底层器件与材料——"卖水人"环节</h3>
+<h4>⑦ 顺络电子（002138.SZ）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新价</td>
+<td>¥58.30（当日 -4.79%）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>¥470 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>48.68</td>
+</tr>
+<tr>
+<td>PB</td>
+<td>7.40</td>
+</tr>
+<tr>
+<td>近 5 日涨跌幅</td>
+<td>+21.97%</td>
+</tr>
+<tr>
+<td>年内涨跌幅</td>
+<td>+67.83%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>核心逻辑</strong>：国内磁性元件龙头，SST 和高频 DC/DC 转换器需要大量高频电感、高频变压器</li>
+<li><strong>壁垒</strong>：MHz 级高频转换场景下磁性元件认证周期长，一旦导入很难被替换</li>
+<li><strong>特点</strong>：高壁垒、长逻辑、估值相对合理（PE 49x）</li>
+</ul>
+<h4>⑧ 士兰微（600460.SH）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新价</td>
+<td>¥33.53（当日 -3.43%）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>¥558 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>121.61</td>
+</tr>
+<tr>
+<td>PB</td>
+<td>4.57</td>
+</tr>
+<tr>
+<td>近 5 日涨跌幅</td>
+<td>-3.37%</td>
+</tr>
+<tr>
+<td>年内涨跌幅</td>
+<td>+18.02%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>核心逻辑</strong>：国内少数具备 IGBT/SiC MOSFET 全流程能力的 IDM 龙头</li>
+<li><strong>SST 核心器件</strong>：SiC MOSFET 成本占 SST 的 35-40%，技术壁垒链最高</li>
+<li><strong>双重受益</strong>：SiC 国产替代 + SST/800V DC 普及带来的用量指数级增长</li>
+<li><strong>年内涨幅仅 18%</strong>，相对滞涨，安全边际较高</li>
+</ul>
+<h4>⑨ 江海股份（002484.SZ）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新价</td>
+<td>¥87.60（当日 -4.76%）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>¥745 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>108.83</td>
+</tr>
+<tr>
+<td>PB</td>
+<td>12.00</td>
+</tr>
+<tr>
+<td>近 5 日涨跌幅</td>
+<td>+0.01%</td>
+</tr>
+<tr>
+<td>年内涨跌幅</td>
+<td>+197.52%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>核心逻辑</strong>：国内超级电容龙头，GPU 毫秒级功率波动需要超级电容做瞬时储能/滤波</li>
+<li><strong>护城河</strong>：少了它系统不稳，所以只要 800V 生态起来，它就少不了</li>
+<li><strong>年内涨幅近 200%</strong>，弹性极大，估值已不便宜</li>
+</ul>
+<h4>⑩ 伊戈尔（002922.SZ）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新价</td>
+<td>¥33.81（当日 -7.87%）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>¥143 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>62.96</td>
+</tr>
+<tr>
+<td>PB</td>
+<td>3.86</td>
+</tr>
+<tr>
+<td>近 5 日涨跌幅</td>
+<td>-12.62%</td>
+</tr>
+<tr>
+<td>年内涨跌幅</td>
+<td>+11.50%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>核心逻辑</strong>：同时覆盖移相变压器（数据中心配电侧）与高频磁性元件，是"桥梁型"标的</li>
+<li><strong>特点</strong>：无论 SST 路线还是巴拿马/HVDC 过渡路线谁跑更快，变压器/磁性件都是刚需</li>
+<li><strong>双向对冲</strong>：稳健跟随型，年内涨幅仅 11.5%</li>
+</ul>
+<hr>
+<h3>补充标的：光模块/PCB 等关联环节</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>股票</th>
+<th>代码</th>
+<th>最新价</th>
+<th>当日涨跌</th>
+<th>年内涨跌</th>
+<th>核心关联</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>光迅科技</td>
+<td>002281</td>
+<td>¥202.60</td>
+<td>-3.62%</td>
+<td>+189.64%</td>
+<td>AI 光模块，大摩 Underweight</td>
+</tr>
+<tr>
+<td>新易盛</td>
+<td>300502</td>
+<td>¥772.50</td>
+<td>-1.68%</td>
+<td>+79.28%</td>
+<td>800G/1.6T 光模块龙头</td>
+</tr>
+<tr>
+<td>生益科技</td>
+<td>600183</td>
+<td>¥146.90</td>
+<td>-0.39%</td>
+<td>+108.04%</td>
+<td>高频高速 CCL/PCB</td>
+</tr>
+<tr>
+<td>深南电路</td>
+<td>002916</td>
+<td>¥383.06</td>
+<td>-3.26%</td>
+<td>+66.63%</td>
+<td>高端 PCB，AI 服务器用板</td>
+</tr>
+<tr>
+<td>工业富联</td>
+<td>601138</td>
+<td>¥71.13</td>
+<td>-4.83%</td>
+<td>+15.25%</td>
+<td>AI 服务器代工龙头</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>六、当日市场反应全景</h2>
+<h3>6.1 A 股 800V 链集体重挫（2026-06-10）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>梯队</th>
+<th>代表标的</th>
+<th>当日跌幅</th>
+<th>关键驱动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>直接冲击</strong></td>
+<td>麦格米特</td>
+<td><strong>-10.00%（跌停）</strong></td>
+<td>深股通净卖出 3.02 亿</td>
+</tr>
+<tr>
+<td></td>
+<td>欧陆通</td>
+<td><strong>-10.18%</strong></td>
+<td>联动 AI 电源链恐慌</td>
+</tr>
+<tr>
+<td></td>
+<td>中恒电气</td>
+<td><strong>-7.25%</strong></td>
+<td>短期避险离场</td>
+</tr>
+<tr>
+<td></td>
+<td>伊戈尔</td>
+<td><strong>-7.87%</strong></td>
+<td>情绪性杀跌</td>
+</tr>
+<tr>
+<td><strong>中度冲击</strong></td>
+<td>中国西电</td>
+<td>-4.55%</td>
+<td>SST 商业化节奏担忧</td>
+</tr>
+<tr>
+<td></td>
+<td>工业富联</td>
+<td>-4.83%</td>
+<td>服务器链整体承压</td>
+</tr>
+<tr>
+<td></td>
+<td>江海股份</td>
+<td>-4.76%</td>
+<td>高位获利回吐</td>
+</tr>
+<tr>
+<td></td>
+<td>顺络电子</td>
+<td>-4.79%</td>
+<td>跟随板块调整</td>
+</tr>
+<tr>
+<td><strong>相对抗跌</strong></td>
+<td>科华数据</td>
+<td>-2.20%</td>
+<td>估值合理 + 客户卡位深</td>
+</tr>
+<tr>
+<td></td>
+<td>士兰微</td>
+<td>-3.43%</td>
+<td>年内滞涨，安全边际</td>
+</tr>
+<tr>
+<td></td>
+<td>新易盛</td>
+<td>-1.68%</td>
+<td>CPO 延期利好可插拔光模块</td>
+</tr>
+<tr>
+<td></td>
+<td>生益科技</td>
+<td>-0.39%</td>
+<td>PCB 需求确定性高</td>
+</tr>
+<tr>
+<td><strong>逆势</strong></td>
+<td>易事特</td>
+<td><strong>+4.50%</strong></td>
+<td>被匿名"股神"Serenity 点名炒作</td>
+</tr>
+</tbody>
+</table></div>
+<h3>6.2 美股光通信同步重挫（6 月 9 日）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>跌幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AAOI（祥茂光电）</td>
+<td>-17%</td>
+</tr>
+<tr>
+<td>Lumentum</td>
+<td>-8%</td>
+</tr>
+<tr>
+<td>Coherent</td>
+<td>承压</td>
+</tr>
+<tr>
+<td>Wolfspeed</td>
+<td>承压</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>七、投资时钟与时间节奏</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>时间窗口</th>
+<th>核心事件</th>
+<th>优先关注环节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>验证期</strong></td>
+<td>2026 H2</td>
+<td>台达电 800V DC 首批发货；英伟达 GTC 更新路线图</td>
+<td>麦格米特（英伟达认证验证）、中恒电气（巴拿马/HVDC 双线）</td>
+</tr>
+<tr>
+<td><strong>过渡期</strong></td>
+<td>2027</td>
+<td>400V DC 规模放量；800V DC 小批量导入头部客户</td>
+<td>高压 DCDC 砖块电源、SiC 功率器件、HVDC 配电</td>
+</tr>
+<tr>
+<td><strong>爆发期</strong></td>
+<td>2028+</td>
+<td>800V DC 规模部署；Rubin Ultra 推向 600kW+</td>
+<td>SST 整机、SiC MOSFET、超级电容、液冷全链路</td>
+</tr>
+<tr>
+<td><strong>远期中</strong></td>
+<td>2030+</td>
+<td>VPD（垂直供电）、芯片级 IVR</td>
+<td>先进封装、硅基无源器件、微流体冷却</td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight">
+<p>💡 <strong>核心判断</strong>：SemiAnalysis 与大摩/英伟达的分歧，本质上是<strong>"大规模普及"和"首批导入"之间的时间差</strong>。2026-2027 是小批量验证期，2028+ 才是真正放量拐点。当前市场用对"规模化"的预期去交易"验证期"的标的，导致估值与基本面存在时间错配。</p>
+</div>
+<hr>
+<h2>八、风险提示</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>风险类型</th>
+<th>核心要点</th>
+<th>影响标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>技术节奏风险</strong></td>
+<td>若 SemiAnalysis 判断被验证（800V DC 2028 年前不放量），当前估值面临大幅收缩</td>
+<td>麦格米特、欧陆通、中恒电气</td>
+</tr>
+<tr>
+<td><strong>标准未统一</strong></td>
+<td>800V DC 安规规范、接口标准、保护器件仍在制定中，UL 等认证需要时间</td>
+<td>全产业链</td>
+</tr>
+<tr>
+<td><strong>英伟达生态依赖</strong></td>
+<td>AI 电源链高度依赖英伟达生态，认证变动或国际竞争加剧可能导致份额波动</td>
+<td>麦格米特、欧陆通</td>
+</tr>
+<tr>
+<td><strong>估值高位</strong></td>
+<td>多数标的年内涨幅 50-200%，PE 普遍在 50-550 倍，情绪退潮时跌幅剧烈</td>
+<td>全板块</td>
+</tr>
+<tr>
+<td><strong>路线切换风险</strong></td>
+<td>Google 等云厂商倾向 ±400V DC 过渡方案，路线选择存在不确定性</td>
+<td>SST 整机环节</td>
+</tr>
+<tr>
+<td><strong>地缘政治</strong></td>
+<td>SiC 衬底/器件涉及半导体出口管制，国产替代节奏可能慢于预期</td>
+<td>士兰微</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>九、结论与策略建议</h2>
+<h3>9.1 核心判断</h3>
+<ol>
+<li>
+<p><strong>800V DC 趋势确定性高</strong>：三大叙事方（SemiAnalysis、大摩、英伟达）在"800V DC 是终局方向"上并无分歧，分歧仅在于<strong>时间节奏</strong></p>
+</li>
+<li>
+<p><strong>大摩的判断更可信</strong>：作为卖方研究权威，大摩基于 Computex 实地供应链调研得出的结论（800V DC 开发完好、台达电 4Q26 首批发货）比 SemiAnalysis 的桌面推演更有信息优势</p>
+</li>
+<li>
+<p><strong>今日暴跌是情绪性错杀</strong>：A 股 AI 电源链的集体重挫，更多是跟随美股光通信的恐慌传导，而非基本面出现实质恶化</p>
+</li>
+<li>
+<p><strong>估值与时间存在错配</strong>：市场用 2028 年的放量预期去定价 2026 年的验证期标的，300-550 倍 PE 需要时间来消化</p>
+</li>
+</ol>
+<h3>9.2 策略思路</h3>
+<p><strong>短期（1-3 个月）</strong>：
+- 关注大摩/英伟达后续是否有更明确的 800V DC 量产时间表更新
+- 台达电 4Q26 首批发货是关键验证节点
+- 短期恐慌后，质地最优的标的（麦格米特、科华数据）存在超跌修复机会</p>
+<p><strong>中期（6-12 个月）</strong>：
+- 优先关注"卖水人"环节（顺络电子、士兰微、江海股份），壁垒高、估值相对合理
+- SST 整机环节（四方股份、中国西电）等待订单落地再介入</p>
+<p><strong>风险控制</strong>：
+- 切忌在高 PE 标的上追涨
+- 分散配置，避免单一押注 800V DC 主题
+- 关注 400V DC 过渡方案的受益标的（中恒电气两条路线都覆盖）</p>
+<hr>
+<div class="warning">
+<p>⚠️ <strong>免责声明</strong>：本报告基于公开信息和第三方研究整理，仅供研究参考，不构成任何投资建议。投资有风险，决策需谨慎。文中提及的所有股票均不构成买入或卖出建议，投资者应根据自身风险承受能力独立做出投资决策。</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年6月10日</p>
+</footer>
+
+</body>
+</html>

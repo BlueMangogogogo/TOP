@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>涨价猎手3.0 · 全板块深拆 · 龙头全覆盖</title>
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,'Segoe UI','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;background:#0a0e17;color:#e0e6f0;line-height:1.7;font-size:15px;-webkit-text-size-adjust:100%}
+  .hero{background:linear-gradient(135deg,#0a1020,#1a1028,#1a1528,#0a1020);padding:36px 20px 32px;text-align:center;border-bottom:2px solid #2a2050}
+  .hero h1{font-size:clamp(1.05em,3.8vw,1.65em);font-weight:900;background:linear-gradient(135deg,#ef5350,#ff9800,#ffd700,#26c961);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;line-height:1.3}
+  .hero .sub{font-size:clamp(0.78em,2.6vw,0.92em);color:#7b93b8;font-weight:300}
+  .hero .tag{display:inline-block;margin-top:12px;padding:4px 15px;border:1px solid #3a2a6f;border-radius:20px;font-size:0.78em;color:#8b7fc8}
+  .container{max-width:980px;margin:0 auto;padding:28px 16px}
+  .section{margin-bottom:34px}
+  .s-title{font-size:clamp(1em,3.8vw,1.25em);font-weight:700;margin-bottom:14px;padding-bottom:9px;border-bottom:2px solid #1e3050;display:flex;align-items:center;gap:8px;color:#c8d6f0;line-height:1.4}
+  .s-sub{font-size:1em;font-weight:700;margin:20px 0 8px;color:#b0c8e0;border-left:3px solid #ffd700;padding-left:10px}
+
+  .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid #1a2f50;background:#0d1525}
+  table{width:100%;border-collapse:collapse;font-size:clamp(0.68em,2.2vw,0.82em);min-width:820px}
+  thead th{background:#111d33;color:#7da3d4;font-weight:600;text-align:center;padding:9px 5px;border-bottom:2px solid #1e3a5f;font-size:0.76em}
+  tbody td{padding:8px 5px;text-align:center;border-bottom:1px solid #152238}
+  tbody tr:hover{background:rgba(96,192,255,0.04)}tbody tr:last-child td{border-bottom:none}
+
+  .ba{display:inline-block;padding:2px 7px;border-radius:3px;font-weight:600;font-size:0.75em;white-space:nowrap}
+  .br{background:rgba(239,83,80,0.13);color:#ef5350}.bg{background:rgba(38,201,97,0.13);color:#26c961}
+  .bb{background:rgba(96,192,255,0.11);color:#60c0ff}.by{background:rgba(255,215,0,0.11);color:#ffd700}
+  .bp{background:rgba(167,139,250,0.11);color:#a78bfa}.bo{background:rgba(255,152,0,0.13);color:#ff9800}
+
+  .ib{border-radius:10px;padding:13px 15px;margin-bottom:10px;line-height:1.6}
+  .ib .t{font-weight:700;margin-bottom:4px;font-size:0.92em}.ib .b{color:#a0b5d0;line-height:1.65;font-size:0.83em}.ib .b strong{color:#d0ddf0}
+  .ib.danger{border-left:3px solid #ef5350;background:rgba(239,83,80,0.05)}.ib.danger .t{color:#ef5350}
+  .ib.warn{border-left:3px solid #ffb41e;background:rgba(255,180,30,0.05)}.ib.warn .t{color:#ffb41e}
+  .ib.gold{border-left:3px solid #ffd700;background:rgba(255,215,0,0.05)}.ib.gold .t{color:#ffd700}
+  .ib.success{border-left:3px solid #26c961;background:rgba(38,201,97,0.05)}.ib.success .t{color:#26c961}
+  .ib.info{border-left:3px solid #60c0ff;background:rgba(96,192,255,0.05)}.ib.info .t{color:#60c0ff}
+  .ib.purple{border-left:3px solid #a78bfa;background:rgba(167,139,250,0.05)}.ib.purple .t{color:#a78bfa}
+
+  .sc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:10px 0}
+  .sc{background:#0d1525;border:1px solid #1a2f50;border-radius:8px;padding:10px 12px}
+  .sc .n{font-weight:700;font-size:0.85em;color:#d0ddf0;margin-bottom:4px}
+  .sc .m{display:flex;gap:4px;flex-wrap:wrap;font-size:0.72em}
+  .sc .d{font-size:0.74em;color:#8899bb;margin-top:5px;line-height:1.4}
+
+  .verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:14px 0}
+  .vc{background:#0d1525;border:1px solid #1a2f50;border-radius:10px;padding:16px}
+  .vc .vch{font-weight:800;font-size:1em;margin-bottom:6px}.vc .vct{font-size:0.83em;color:#a0b5d0;line-height:1.55}
+  .footer{text-align:center;padding:22px 16px;color:#446688;font-size:0.74em;border-top:1px solid #152238;margin-top:16px;line-height:1.8}
+
+  @media(max-width:600px){
+    body{font-size:13.5px}.hero{padding:24px 12px 20px}.container{padding:16px 9px}
+    table{font-size:0.65em;min-width:700px}thead th,tbody td{padding:6px 3px}
+    .ib{padding:11px 13px;font-size:0.8em}.verdict{grid-template-columns:1fr}
+    .sc-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(min-width:901px){
+    .hero{padding:44px 36px 38px}.container{padding:36px 28px}
+    .verdict{grid-template-columns:repeat(3,1fr)}.sc-grid{grid-template-columns:repeat(3,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>📊 涨价猎手3.0 · 全板块深拆 · 龙头全覆盖</h1>
+  <div class="sub">锂矿×铜铝×化工×石油×稀土×特气 六大板块·25+标的实时量价</div>
+  <div class="tag">📅 2026/4/30收盘 · 分步拆解 · 无遗漏 · 核心逻辑全覆盖</div>
+</div>
+
+<div class="container">
+
+<!-- ============ 第一章：总览排序 ============ -->
+<div class="section">
+  <div class="s-title"><span class="icon">🏆</span> 一、六大非AI板块 · 综合排名总览</div>
+  <div class="tw"><table>
+    <thead><tr><th>排</th><th>板块</th><th>YTD均值</th><th>4/30强弱</th><th>20日波动</th><th>PE中枢</th><th>资金流向</th><th>共识度</th><th>弹性</th><th>建议</th></tr></thead>
+    <tbody>
+      <tr style="background:rgba(239,83,80,0.06)"><td style="color:#ef5350;font-weight:900">🥇</td><td style="color:#ffd700;font-weight:700">锂矿/锂盐</td><td style="color:#ef5350;font-weight:900">+72.3%</td><td style="color:#ef5350;font-weight:900">🔥涨停潮</td><td style="color:#ef5350;font-weight:700">52.0%</td><td>47×</td><td style="color:#ef5350;font-weight:700">大额净买</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td style="color:#26c961;font-weight:700">✅ 核心配置</td></tr>
+      <tr style="background:rgba(167,139,250,0.04)"><td style="color:#a78bfa;font-weight:900">🥈</td><td style="color:#ffd700">电子特气</td><td style="color:#ef5350;font-weight:900">+98.9%</td><td style="color:#ef5350;font-weight:700">+5.6%</td><td style="color:#ef5350;font-weight:700">87.1%</td><td>118×</td><td>净买+5亿</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td style="color:#ffb41e">✅ 高弹性</td></tr>
+      <tr style="background:rgba(38,201,97,0.03)"><td>🥉</td><td style="color:#ffd700">稀土/战略金属</td><td>+27.9%</td><td style="color:#26c961">+4.1%(北方稀土)</td><td>9.4%</td><td>50×</td><td>净买+27亿</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td style="color:#26c961">✅ 稳健</td></tr>
+      <tr><td>4</td><td>MDI/化工</td><td>+11.9%</td><td>-0.9%(万华)</td><td>8.1%</td><td style="color:#26c961">21×</td><td>平衡</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐</td><td>✅ 长线</td></tr>
+      <tr><td>5</td><td>石油天然气</td><td>+32.5%</td><td>+0.1%(中海油)</td><td>3.5%</td><td style="color:#26c961">15×</td><td>小幅流出</td><td>⭐⭐⭐⭐⭐</td><td>⭐</td><td>防御</td></tr>
+      <tr style="background:rgba(239,83,80,0.02);opacity:0.85"><td>6</td><td>铜/铝有色金属</td><td style="color:#26c961">-3.2%</td><td style="color:#26c961">普跌-2~-4%</td><td>2.5%</td><td style="color:#26c961">14×</td><td style="color:#26c961">净流出</td><td>⭐⭐</td><td>⭐</td><td style="color:#ef5350">⚠️回避</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ============ 第二章：锂矿全标的全覆盖 ============ -->
+<div class="section">
+  <div class="s-title"><span class="icon">🔋</span> 二、锂矿/锂盐板块 · 7只核心标的全覆盖</div>
+  <div class="tw"><table>
+    <thead><tr><th>标的</th><th>代码</th><th>4/30</th><th>YTD</th><th>20日波</th><th>PE</th><th>市值(亿)</th><th>定位</th><th>弹性</th><th>共识度</th></tr></thead>
+    <tbody>
+      <tr style="background:rgba(239,83,80,0.07)"><td style="color:#ef5350;font-weight:900">融捷股份</td><td>002192</td><td style="color:#ef5350;font-weight:900">🔥+10%涨停</td><td style="color:#ef5350;font-weight:900">+111%</td><td style="color:#ef5350;font-weight:900">54.6%</td><td>53×</td><td>284</td><td style="font-size:0.7em">弹性龙头·甲基卡锂矿</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
+      <tr style="background:rgba(239,83,80,0.05)"><td style="color:#ff9800;font-weight:900">盛新锂能</td><td>002240</td><td style="color:#ef5350;font-weight:900">🔥+10%涨停</td><td style="color:#ef5350;font-weight:900">+74.5%</td><td style="color:#ef5350;font-weight:900">52.4%</td><td>-204×</td><td>550</td><td style="font-size:0.7em">弹性·锂盐加工</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+      <tr style="background:rgba(239,83,80,0.03)"><td style="color:#ffd700">天华新能</td><td>300390</td><td>+0.0%</td><td style="color:#ef5350;font-weight:900">+102%</td><td style="color:#ef5350;font-weight:900">89.9%</td><td>70×</td><td>918</td><td style="font-size:0.7em">氢氧化锂·弹性之王</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
+      <tr style="background:rgba(255,152,0,0.03)"><td>永兴材料</td><td>002756</td><td>+4.1%</td><td style="color:#ff9800">+60.8%</td><td>18.8%</td><td>49×</td><td>470</td><td style="font-size:0.7em">云母提锂·稳健弹性</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+      <tr style="background:rgba(255,215,0,0.03)"><td style="color:#ffd700;font-weight:700">天齐锂业</td><td>002466</td><td>+6.0%</td><td style="color:#ff9800">+44.5%</td><td>44.3%</td><td>61×</td><td>1366</td><td style="font-size:0.7em">共识龙头·全球权益矿</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+      <tr style="background:rgba(255,215,0,0.02)"><td style="color:#ffd700;font-weight:700">赣锋锂业</td><td>002460</td><td>+2.1%</td><td style="color:#ff9800">+41.0%</td><td>14.7%</td><td>49×</td><td>1859</td><td style="font-size:0.7em">稳健龙头·全产业链</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+      <tr><td>西藏珠峰</td><td>600338</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.7em">盐湖提锂·概念弹性</td><td>⭐⭐⭐</td><td>⭐⭐</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ib danger"><div class="t">🔋 锂矿板块核心逻辑</div><div class="b">
+    <strong>需求：</strong>Q1储能锂电池出货215GWh<strong>同比+139%</strong>·5月排产249GWh<strong>连续三月刷新历史峰值</strong>·头部企业订单已排至2026年底-2027Q2<br>
+    <strong>供给：</strong>① 格林布什(全球最大硬岩锂矿)下修产量 ② 津巴布韦禁止锂矿出口(至今仍无发运) ③ 江西4座云母矿停产-环评 ④ 澳洲发运扰动<br>
+    <strong>价格：</strong>碳酸锂15→18.9万/吨(YTD+26%)·近一月+12.8%·瑞银上调锂辉石长期价17%至$1400/吨<br>
+    <strong>资金：</strong>天齐A+H同步放量·融捷+盛新双涨停·天华新能YTD翻倍·全板块共振=最强共识信号<br>
+    <strong>弹性分层：</strong>融捷(小盘+111%YTD)>盛新(+75%涨停)>天华(+102%但高位横盘)>天齐(共识龙头+44%)>赣锋(稳健+41%)>永兴(+61%)
+  </div></div>
+</div>
+
+<!-- ============ 第三章：铜铝板块 ============ -->
+<div class="section">
+  <div class="s-title"><span class="icon">⛏️</span> 三、铜/铝有色金属板块 · 6只核心标的全覆盖</div>
+  <div class="tw"><table>
+    <thead><tr><th>标的</th><th>代码</th><th>4/30</th><th>YTD</th><th>20日波</th><th>PE</th><th>市值(亿)</th><th>定位</th><th>健康度</th></tr></thead>
+    <tbody>
+      <tr><td>铜陵有色</td><td>000630</td><td style="color:#26c961">-2.84%</td><td>+2.3%</td><td>2.8%</td><td>31×</td><td>825</td><td style="font-size:0.7em">铜冶炼+硫酸</td><td style="color:#ffb41e">🟡 平</td></tr>
+      <tr style="background:rgba(239,83,80,0.04)"><td style="color:#ffd700">紫金矿业</td><td>601899</td><td style="color:#26c961">-2.46%</td><td style="color:#ef5350">-3.4%</td><td>-2.5%</td><td style="color:#26c961">14×</td><td>8855</td><td style="font-size:0.7em">铜金龙头·A+H</td><td style="color:#ef5350">🔴 走弱</td></tr>
+      <tr style="background:rgba(239,83,80,0.04)"><td>洛阳钼业</td><td>603993</td><td style="color:#26c961">-2.97%</td><td style="color:#ef5350">-6.9%</td><td>2.1%</td><td style="color:#26c961">16×</td><td>3984</td><td style="font-size:0.7em">铜钴钼·A+H</td><td style="color:#ef5350">🔴 走弱</td></tr>
+      <tr style="background:rgba(239,83,80,0.03)"><td>中国铝业</td><td>601600</td><td style="color:#26c961">-2.18%</td><td style="color:#ef5350">-4.7%</td><td>0.8%</td><td style="color:#26c961">14×</td><td>1999</td><td style="font-size:0.7em">氧化铝+电解铝·A+H</td><td style="color:#ef5350">🔴 走弱</td></tr>
+      <tr style="background:rgba(239,83,80,0.04)"><td>云铝股份</td><td>000807</td><td style="color:#26c961">-3.99%</td><td style="color:#ef5350">-3.2%</td><td>-0.1%</td><td style="color:#26c961">13×</td><td>1103</td><td style="font-size:0.7em">水电铝·绿电铝</td><td style="color:#ef5350">🔴 走弱</td></tr>
+      <tr><td>江西铜业</td><td>600362</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.7em">铜冶炼龙头</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ib gold"><div class="t">⚠️ 铜铝板块当前核心矛盾：铜价历史高位($13000+)但股价普跌——经典背离信号</div><div class="b">
+    <strong>为什么铜价13000但紫金YTD-3.4%？</strong><br>
+    ① <strong>市场担心"滞胀"格局：</strong>铜价已price in供给紧缺，但需求端——IEA下调2026全球石油需求(首次负增长)，铜的工业需求预期也在走弱<br>
+    ② <strong>TC费-60~-70美元/干吨：</strong>冶炼厂"倒贴抢矿"=加工利润被严重压缩，股价未必跟随铜价<br>
+    ③ <strong>资金流向锂电和AI：</strong>场内资金从铜铝轮动到锂矿和半导体<br>
+    ④ <strong>美银虽看多铝(目标$4000提前至2026Q4)：</strong>但中东冶炼厂受损+能源成本上升也会压制需求<br>
+    <strong>策略：</strong>铜铝PE仅13-16×在历史低位，但趋势走弱——<strong>不是当前主线，不适合进攻配置。</strong>等待铜价$15000+或中美基建刺激催化。
+  </div></div>
+</div>
+
+<!-- ============ 第四章：化工板块 ============ -->
+<div class="section">
+  <div class="s-title"><span class="icon">🧪</span> 四、化工板块 · MDI×制冷剂×聚氨酯×煤化工全覆盖</div>
+
+  <div class="s-sub">① MDI/TDI — 万华全球定价权独占</div>
+  <div class="tw"><table>
+    <thead><tr><th>标的</th><th>代码</th><th>4/30</th><th>YTD</th><th>20日波</th><th>PE</th><th>市值(亿)</th><th>核心逻辑</th></tr></thead>
+    <tbody>
+      <tr style="background:rgba(255,215,0,0.03)"><td style="color:#ffd700;font-weight:700">万华化学</td><td>600309</td><td>-0.90%</td><td style="color:#26c961">+16.8%</td><td>8.1%</td><td style="color:#26c961">21×</td><td>2803</td><td style="font-size:0.75em">全球MDI市占28%·利润导向·蓝筹共识</td></tr>
+      <tr><td>沧州大化</td><td>600230</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">TDI弹性标的·体量小</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="s-sub">② 制冷剂/氟化工 — 配额壁垒下的"合法垄断"</div>
+  <div class="tw"><table>
+    <thead><tr><th>标的</th><th>代码</th><th>4/30</th><th>YTD</th><th>20日波</th><th>PE</th><th>市值(亿)</th><th>核心逻辑</th></tr></thead>
+    <tbody>
+      <tr style="background:rgba(239,83,80,0.03);opacity:0.8"><td>巨化股份</td><td>600160</td><td style="color:#26c961">-0.52%</td><td style="color:#ef5350">-4.21%</td><td>5.0%</td><td style="color:#26c961">24×</td><td>989</td><td style="font-size:0.75em;color:#ef5350">Q1+119%但YTD-4.2%·业绩股价背离</td></tr>
+      <tr><td>三美股份</td><td>603379</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">三代制冷剂·弹性</td></tr>
+      <tr><td>永和股份</td><td>605020</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">氟化工全链·弹性</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="s-sub">③ 聚氨酯/煤化工/其他化工</div>
+  <div class="tw"><table>
+    <thead><tr><th>标的</th><th>代码</th><th>4/30</th><th>YTD</th><th>20日波</th><th>PE</th><th>市值(亿)</th><th>核心逻辑</th></tr></thead>
+    <tbody>
+      <tr><td>华峰化学</td><td>002064</td><td>+1.29%</td><td>+6.9%</td><td>11.4%</td><td>29×</td><td>584</td><td style="font-size:0.75em">聚氨酯原液·鞋材+新能源</td></tr>
+      <tr><td>万凯新材</td><td>301216</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">聚酯瓶片·库存加速去化</td></tr>
+      <tr><td>中泰化学</td><td>002092</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">PVC·库存去化·煤矿</td></tr>
+      <tr><td>华鲁恒升</td><td>600426</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">尿素+DMF·煤化工龙头</td></tr>
+      <tr><td>云天化</td><td>600096</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">磷肥龙头·磷矿资源</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="ib warn"><div class="t">🧪 化工板块核心逻辑与分化</div><div class="b">
+    <strong>三重涨价驱动：</strong>① 中东断供=全球20%化工品供应中断 ② 国内"反内卷"=万华/巨化利润导向 ③ "双碳"考核=高能耗化工出清<br>
+    <strong>但板块严重分化：</strong><br>
+    ✅ <strong>万华化学（MDI）</strong>= 最确定品种，PE 21×合理，定价权独立于地缘<br>
+    ⚠️ <strong>巨化股份（制冷剂）</strong>= 业绩最好(Q1+119%)但股价最差(YTD-4.2%)——价值陷阱信号<br>
+    🟡 <strong>华峰化学（聚氨酯）</strong>= YTD+6.9%温和，等下游(鞋材/海绵)需求确认<br>
+    ⚪ <strong>化肥链（华鲁/云天化）</strong>= 尿素+60%但高度依赖地缘政治，持续性存疑
+  </div></div>
+</div>
+
+<!-- ============ 第五章：石油天然气 ============ -->
+<div class="section">
+  <div class="s-title"><span class="icon">🛢️</span> 五、石油天然气板块</div>
+  <div class="tw"><table>
+    <thead><tr><th>标的</th><th>代码</th><th>4/30</th><th>YTD</th><th>20日波</th><th>PE</th><th>市值(亿)</th><th>定位</th></tr></thead>
+    <tbody>
+      <tr><td style="color:#ffd700;font-weight:700">中国海油</td><td>600938</td><td>+0.1%</td><td style="color:#26c961">+32.5%</td><td>3.5%</td><td style="color:#26c961">15×</td><td>19007</td><td style="font-size:0.75em">纯上游·油价弹性最大</td></tr>
+      <tr><td>中国石油</td><td>601857</td><td>参考</td><td>—</td><td>—</td><td>10×</td><td>—</td><td style="font-size:0.75em">全产业链·低波动</td></tr>
+      <tr><td>中国石化</td><td>600028</td><td>参考</td><td>—</td><td>—</td><td>8×</td><td>—</td><td style="font-size:0.75em">炼化+销售·防御</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ib info"><div class="t">石油：低弹性+高确定性·布伦特$100-110高位·PE 15×+高分红=防御首选</div><div class="b">
+    <strong>油价：</strong>布伦特$109·大摩Q2 $110·世界银行极端$115<br>
+    <strong>最大风险：</strong>美伊停火谈判——一旦达成，油价可能断崖式下跌<br>
+    <strong>定位：</strong>防御性配置，不适合追求弹性的交易型资金
+  </div></div>
+</div>
+
+<!-- ============ 第六章：稀土+战略金属 ============ -->
+<div class="section">
+  <div class="s-title"><span class="icon">💎</span> 六、稀土/战略金属板块</div>
+  <div class="tw"><table>
+    <thead><tr><th>标的</th><th>代码</th><th>4/30</th><th>YTD</th><th>20日波</th><th>PE</th><th>市值(亿)</th><th>定位</th></tr></thead>
+    <tbody>
+      <tr style="background:rgba(38,201,97,0.04)"><td style="color:#26c961;font-weight:700">北方稀土</td><td>600111</td><td style="color:#26c961">+4.1%</td><td>+15.0%</td><td>9.4%</td><td>70×</td><td>1917</td><td style="font-size:0.75em">轻稀土绝对龙头·Q1+113%</td></tr>
+      <tr><td>中国稀土</td><td>000831</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">重稀土整合·Q1+91%</td></tr>
+      <tr><td>厦门钨业</td><td>600549</td><td style="color:#26c961">-2.84%</td><td style="color:#ff9800">+40.7%</td><td>3.2%</td><td>30×</td><td>917</td><td style="font-size:0.75em">钨+稀土双线·YTD高位回撤</td></tr>
+      <tr><td>云南锗业</td><td>002428</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">锗龙头·曾涨停</td></tr>
+      <tr><td>锡业股份</td><td>000960</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">锡+铟双龙头·半导体焊接</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ib success"><div class="t">稀土逻辑：出口管制+业绩拐点+机构持续吸筹，北方稀土Q1+113%是关键催化剂</div><div class="b">
+    <strong>核心驱动：</strong>① 中国14种矿产储量世界第一 ② 钨/锗/镓出口管制→战略价值重估 ③ 稀土ETF连续51日吸金62亿 ④ 铟(磷化铟)受AI光模块800G→1.6T驱动·CAGR 85%<br>
+    <strong>缺点：</strong>波动率仅9.4%，弹性不如锂矿。北方稀土YTD+15%仍有空间。
+  </div></div>
+</div>
+
+<!-- ============ 第七章：电子特气 ============ -->
+<div class="section">
+  <div class="s-title"><span class="icon">🔬</span> 七、电子特气板块 — 暗马中的暗马</div>
+  <div class="tw"><table>
+    <thead><tr><th>标的</th><th>代码</th><th>4/30</th><th>YTD</th><th>20日波</th><th>PE</th><th>市值(亿)</th><th>核心逻辑</th></tr></thead>
+    <tbody>
+      <tr style="background:rgba(167,139,250,0.06)"><td style="color:#a78bfa;font-weight:900">中船特气</td><td>688146</td><td style="color:#a78bfa;font-weight:900">+5.57%</td><td style="color:#ef5350;font-weight:900">+98.9%</td><td style="color:#ef5350;font-weight:900">87.1%</td><td>118×</td><td>425</td><td style="font-size:0.75em">WF6龙头·日本断供受益·AI+涨价双驱动</td></tr>
+      <tr><td>华特气体</td><td>688268</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">电子特气平台</td></tr>
+      <tr><td>南大光电</td><td>300346</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">电子特气+光刻胶</td></tr>
+      <tr><td>金宏气体</td><td>688106</td><td>参考</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-size:0.75em">电子大宗气体</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ib purple"><div class="t">中船特气=非AI涨价第二强标的·日本断供引爆全球WF6涨价·AI+涨价双驱动</div><div class="b">
+    <strong>核心逻辑：</strong>① 六氟化钨(WF6)——日本全球近30%产能可能因钨原料断供 ② 三氟化氮(NF3)——三井化学退出+关东电化爆炸=数千吨缺口 ③ 与AI强关联——3D NAND/HBM/先进逻辑必需 ④ 中船特气境外客户正在洽谈增量订单<br>
+    <strong>风险：</strong>PE 118×极高·87.1%波动率=极端波动。定位为"高弹性卫星仓位"而非重仓。
+  </div></div>
+</div>
+
+<!-- ============ 第八章：策略矩阵 ============ -->
+<div class="section">
+  <div class="s-title"><span class="icon">🎯</span> 八、5-6月最佳策略矩阵 · 按风格推荐</div>
+  <div class="verdict">
+    <div class="vc" style="border:1px solid #ef535044;background:rgba(239,83,80,0.04)">
+      <div class="vch" style="color:#ef5350">🔥 高弹性组合</div>
+      <div class="vct">
+        <strong>🥇 融捷股份(002192)</strong> — YTD+111%·涨停·波55%<br>
+        <strong>🥈 盛新锂能(002240)</strong> — YTD+75%·涨停·波52%<br>
+        <strong>🥉 天齐锂业(002466)</strong> — YTD+45%·共识龙头<br>
+        <strong>⚡ 中船特气(688146)</strong> — YTD+99%·黑马·波87%<br><br>
+        ⚠️ 最大回撤风险50%+·自带止损
+      </div>
+    </div>
+    <div class="vc" style="border:1px solid #ffd70044;background:rgba(255,215,0,0.04)">
+      <div class="vch" style="color:#ffd700">⚖️ 均衡组合</div>
+      <div class="vct">
+        <strong>🥇 天齐锂业(002466)</strong> — 共识龙头·确定性最高<br>
+        <strong>🥈 赣锋锂业(002460)</strong> — 稳健·波15%<br>
+        <strong>🥉 北方稀土(600111)</strong> — Q1+113%催化·低波<br>
+        <strong>⚡ 万华化学(600309)</strong> — PE21×·独立逻辑<br><br>
+        ⚠️ 分散配置·锂矿+稀土+化工
+      </div>
+    </div>
+    <div class="vc" style="border:1px solid #26c96144;background:rgba(38,201,97,0.04)">
+      <div class="vch" style="color:#26c961">🛡️ 防御组合</div>
+      <div class="vct">
+        <strong>🥇 中国海油(600938)</strong> — PE 15×·+32.5%YTD<br>
+        <strong>🥈 万华化学(600309)</strong> — PE 21×·全球定价权<br>
+        <strong>🥉 永兴材料(002756)</strong> — 锂矿中波动适中<br><br>
+        ⚠️ 低波动·高分红·适合底仓
+      </div>
+    </div>
+  </div>
+  <div class="ib danger" style="margin-top:14px;">
+    <div class="t">🔴 明确回避清单</div>
+    <div class="b">
+      ① <strong>巨化股份(600160)</strong> — Q1+119%但YTD-4.2%·业绩暴增+股价反跌=典型价值陷阱<br>
+      ② <strong>紫金矿业(601899)</strong> — 铜价$13000但YTD-3.4%·量价背离<br>
+      ③ <strong>洛阳钼业(603993)</strong> — YTD-6.9%·铜铝链最弱<br>
+      ④ <strong>中国铝业(601600)</strong> — YTD-4.7%·铝板块整体走弱<br>
+      ⑤ <strong>厦门钨业(600549)</strong> — YTD+41%但4/30-2.8%·高位获利回吐
+    </div>
+  </div>
+</div>
+
+<!-- ============ 核心结论 ============ -->
+<div class="section">
+  <div class="s-title"><span class="icon">⚡</span> 九、核心结论</div>
+  <div class="ib gold"><div class="t">🥇 非AI涨价最强板块 = 锂矿/锂盐（共识+弹性双冠）</div><div class="b">
+    锂矿是当前所有非AI涨价品种中，<strong>唯一同时满足"价格在涨+供给有瓶颈+需求爆发+资金高度共识"四项条件</strong>的板块。<br>
+    融捷+111%涨停+盛新+75%涨停+天华+102%+天齐+45%——<strong>从弹性标的到共识龙头全线上涨</strong>，资金达成高度共振。
+  </div></div>
+  <div class="ib danger"><div class="t">⚠️ 最重要的一条规律（再强调一次）</div><div class="b">
+    <strong>"业绩好≠股价涨"——巨化股份就是活生生的反面教材。</strong><br>
+    判断一个涨价品种是否值得参与，核心标准只有一条：<strong>"资金在买吗？"</strong>而不是"利润高吗？"<br><br>
+    ✅ <strong>正确示范（锂矿）：</strong>融捷涨停·盛新涨停·天齐放量+6%·全板块共振→资金在买<br>
+    ❌ <strong>错误示范（巨化）：</strong>Q1+119%·但量价双缩·YTD-4.2%→资金在走<br>
+    ❌ <strong>错误示范（铜铝）：</strong>铜价$13000·但紫金-3.4%·洛阳钼业-6.9%→市场不认
+  </div></div>
+  <div class="ib gold"><div class="t">📊 一句话总结</div><div class="b">
+    <strong>非AI涨价=锂矿独舞。</strong>铜铝下跌、化工分化(万华稳·巨化跌)、石油低波、稀土刚启动。<br>
+    <strong>锂矿是唯一同时拥有"高弹性+高共识+高确定性"的非AI涨价板块。</strong>如果只选一个非AI涨价方向，选锂矿。
+  </div></div>
+</div>
+
+<div class="footer">
+  <p>📊 数据来源：通达信4/30实时行情·财联社·智通财经·格隆汇·中国证券报·瑞银·东方/国信/中信建投证券</p>
+  <p>⚠️ 基于实时量价数据的全板块深度分析，不构成投资建议。高弹性品种=高风险。</p>
+  <p style="color:#335577;">Generated 2026-05-04 · OpenClaw</p>
+</div>
+
+</div>
+</body>
+</html>

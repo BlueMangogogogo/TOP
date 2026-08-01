@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5月7日午盘扫描</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>5月7日午盘扫描</h1>
+  <div class="meta">
+    📅 2026年05月07日 12:18 | 本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议
+  </div>
+</header>
+
+<hr>
+<h2>📰 一、午盘核心新闻速览</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>事件</th>
+<th style="text-align: center;">强度</th>
+<th>影响方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我国首个大规模"算电协同"绿电直供项目正式投运</strong></td>
+<td style="text-align: center;">⭐⭐⭐⭐⭐</td>
+<td>电力+电网+算力全链</td>
+</tr>
+<tr>
+<td><strong>英伟达联手康宁，CPO概念全面爆发</strong></td>
+<td style="text-align: center;">⭐⭐⭐⭐⭐</td>
+<td>光通信/CPO涨停潮</td>
+</tr>
+<tr>
+<td><strong>Lumentum：产品需求远大于供应，订单排至2028年</strong></td>
+<td style="text-align: center;">⭐⭐⭐⭐</td>
+<td>光模块持续催化</td>
+</tr>
+<tr>
+<td><strong>北美四大CSP Q1资本开支+70%，上调全年预期至7100亿</strong></td>
+<td style="text-align: center;">⭐⭐⭐⭐⭐</td>
+<td>算力链中线逻辑</td>
+</tr>
+<tr>
+<td><strong>彩虹股份：ITC初裁认定自研玻璃基板不侵犯康宁专利</strong></td>
+<td style="text-align: center;">⭐⭐⭐</td>
+<td>国产玻璃基板替代</td>
+</tr>
+<tr>
+<td><strong>三孚股份：电子级二氯二氢硅反倾销申请人·已批量供应</strong></td>
+<td style="text-align: center;">⭐⭐⭐</td>
+<td>电子特气国产化</td>
+</tr>
+<tr>
+<td><strong>央行逆回购270亿·利率1.40%持平</strong></td>
+<td style="text-align: center;">⭐⭐</td>
+<td>流动性平稳</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>📊 二、指数全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>午盘(11:30)</th>
+<th>涨跌</th>
+<th>今开/昨收</th>
+<th>振幅</th>
+<th>半日成交</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>4170.75</td>
+<td><strong>+0.25%</strong></td>
+<td>4168→4172</td>
+<td>0.22%</td>
+<td>8642亿</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>15569.46</td>
+<td><strong>+0.71%</strong></td>
+<td>15541→15574</td>
+<td>0.88%</td>
+<td>11182亿</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>3815.24</td>
+<td><strong>+0.98%</strong></td>
+<td>3808→3815</td>
+<td>1.44%</td>
+<td>5110亿</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>1663.93</td>
+<td><strong>+0.42%</strong></td>
+<td>1663→1666</td>
+<td>1.14%</td>
+<td>920亿</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>两市半日成交约 <strong>2万亿</strong>（昨同时段2.08万亿，略缩量）。<strong>科创50从早盘低开-2.56%一路回升至+0.42%，完成低开高走——是今日最重要的积极信号。</strong></p>
+</div>
+<p>昨日暴涨+8.25%后今日低开，但抄底资金强劲推动翻红。上证/深成/创业板均温和上涨，市场结构健康。</p>
+<hr>
+<h2>🔥 三、涨停板热力分布（95家涨停·非ST）</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>细分方向</th>
+<th style="text-align: center;">涨停数</th>
+<th>核心标的</th>
+<th>核心催化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPO/光通信</strong></td>
+<td style="text-align: center;">15+</td>
+<td>炬光科技+20%·瑞斯康达·通鼎互联·世嘉科技·泰晶科技2连板·金时科技·杭电股份2连板·石英股份·新能泰山·武汉凡谷</td>
+<td>🔥英伟达联手康宁CPO+Lumentum订单至2028</td>
+</tr>
+<tr>
+<td><strong>算力/算电协同</strong></td>
+<td style="text-align: center;">8</td>
+<td>东阳光一字2连板·中国长城3连板·特发信息·中电鑫龙·北京科锐·中嘉博创2连板·三人行3连板</td>
+<td>首个算电协同绿电直供项目投运</td>
+</tr>
+<tr>
+<td><strong>机器人</strong></td>
+<td style="text-align: center;">6</td>
+<td>东山精密·巨轮智能·聚杰微纤+20%·肇民科技+20%·模塑科技·泰瑞机器·宇环数控3连板</td>
+<td>Optimus即将投产+宇树双臂机器人</td>
+</tr>
+<tr>
+<td><strong>电力/能源</strong></td>
+<td style="text-align: center;">5</td>
+<td><strong>大唐发电2连板</strong>·中国能建·华电能源5连板·华电辽能2连板·新能泰山</td>
+<td>算电协同+国网投资+37%</td>
+</tr>
+<tr>
+<td><strong>PCB/CCL/材料</strong></td>
+<td style="text-align: center;">4</td>
+<td>东材科技·宝鼎科技·三孚股份·彩虹股份</td>
+<td>彩虹胜诉康宁+电子材料国产化</td>
+</tr>
+<tr>
+<td><strong>锂矿</strong></td>
+<td style="text-align: center;">2</td>
+<td>永杉锂业·中欣氟材（PEEK材料）</td>
+<td>锂矿涨价+Q1扭亏</td>
+</tr>
+<tr>
+<td><strong>其他</strong></td>
+<td style="text-align: center;">10+</td>
+<td>金螳螂5连板·合力泰3连板·三人行3连板·大族激光(Q1+117%)·怡亚通</td>
+<td>季报催化+题材联动</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>连板股(非ST)16只：</strong> 金螳螂5连板(洁净室)·华电能源5连板(电力)·中国长城3连板(飞腾CPU)·宇环数控3连板(机器人)·永杉锂业·大唐发电2连板·东阳光一字2连板·福达合金3连板·合力泰3连板·中嘉博创2连板·杭电股份2连板·泰晶科技2连板·三人行3连板·中体产业2连板·华电辽能2连板</p>
+</div>
+<hr>
+<h2>📉 四、跌停板分布（47家·仅1只非ST）</h2>
+<p><strong>47家跌停中46家为ST/*ST。</strong> 仅1只非ST跌停：<strong>水发燃气 -10.00%（21次开板·非一字跌停）</strong>。</p>
+<p>ST跌停核心标的：<em>ST闻泰2连跌·ST洲际4连跌·</em>ST威领2连跌·*ST益通-20%·ST信源-20%·ST瀚川-20%·ST豆神-20%</p>
+<blockquote>
+<p>创业板ST单日-20%的杀伤力极强。ST退市潮延续，<strong>远离所有ST/*ST。</strong> 唯一非ST跌停水发燃气（21次开板说明有资金反复撬板），关注午后是否打开。</p>
+</div>
+<hr>
+<h2>🧠 五、今日主线结构分析</h2>
+<h3>🔴 主线一：CPO/光通信全面爆发（今日最强）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align: center;">涨幅</th>
+<th>涨停类型</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>炬光科技</td>
+<td style="text-align: center;"><strong>+20%</strong></td>
+<td>换手板·2次开板</td>
+<td>光通信/硅光模块核心元器件</td>
+</tr>
+<tr>
+<td>瑞斯康达</td>
+<td style="text-align: center;">+10%</td>
+<td>首板</td>
+<td>CPO概念·光纤接入</td>
+</tr>
+<tr>
+<td>通鼎互联</td>
+<td style="text-align: center;">+10%</td>
+<td>T字板</td>
+<td>光纤预制棒→光缆全链</td>
+</tr>
+<tr>
+<td>世嘉科技</td>
+<td style="text-align: center;">+10%</td>
+<td>首板</td>
+<td>参股光彩芯辰·光通信+储能</td>
+</tr>
+<tr>
+<td>泰晶科技</td>
+<td style="text-align: center;">+10%</td>
+<td><strong>2连板</strong></td>
+<td>晶振龙头·光通信高频器件</td>
+</tr>
+<tr>
+<td>石英股份</td>
+<td style="text-align: center;">+10%</td>
+<td>换手板</td>
+<td>石英材料·光纤预制棒上游</td>
+</tr>
+<tr>
+<td>光迅科技</td>
+<td style="text-align: center;">+8.3%</td>
+<td>大涨</td>
+<td>光模块龙头</td>
+</tr>
+<tr>
+<td>新易盛</td>
+<td style="text-align: center;">+6.2%</td>
+<td>大涨</td>
+<td>800G光模块核心</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>催化链：</strong> 英伟达联手康宁CPO技术 → Lumentum订单到2028 → 光纤/光模块/晶振/石英全链联动。CPO取代传统可插拔光模块是确定方向，今天是市场首次大规模炒作。</p>
+</div>
+<h3>🔴 主线二：算电协同（政策落地最实）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align: center;">涨幅</th>
+<th>类型</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>东阳光</td>
+<td style="text-align: center;"><strong>+10%一字</strong></td>
+<td><strong>2连板</strong></td>
+<td>160亿算力大单·一字封死</td>
+</tr>
+<tr>
+<td>中国长城</td>
+<td style="text-align: center;">+10%</td>
+<td><strong>3连板</strong></td>
+<td>飞腾CPU·国产算力</td>
+</tr>
+<tr>
+<td>大唐发电</td>
+<td style="text-align: center;"><strong>+10%</strong></td>
+<td><strong>2连板</strong></td>
+<td>AI水电·西藏水电+数据中心</td>
+</tr>
+<tr>
+<td>中国能建</td>
+<td style="text-align: center;">+9.9%</td>
+<td>首板</td>
+<td>算电协同绿电直供项目主体</td>
+</tr>
+<tr>
+<td>特发信息</td>
+<td style="text-align: center;">+10%</td>
+<td>首板</td>
+<td>鹏城云脑中标+CPO技术</td>
+</tr>
+<tr>
+<td>中电鑫龙</td>
+<td style="text-align: center;">+10%</td>
+<td>首板</td>
+<td>AI电力安防一体化</td>
+</tr>
+<tr>
+<td>北京科锐</td>
+<td style="text-align: center;">+10%</td>
+<td>首板</td>
+<td>配电设备+算电协同受益</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>核心催化：我国首个大规模"算电协同"绿电直供项目正式投运。</strong> 中国能建（90%特高压勘察设计）涨停，验证算电协同从政策概念→落地项目。这是电力板块最强的增量逻辑。</p>
+</div>
+<h3>🟡 主线三：机器人（持续活跃）</h3>
+<p>Optimus预计7-8月弗里蒙特投产 + 宇树双臂人形机器人发布 → 东山精密涨停·巨轮智能·聚杰微纤+20%·肇民科技+20%。</p>
+<h3>🟡 主线四：电子材料/PCB上游</h3>
+<p>东材科技涨停（电子树脂·Q1净利+65.7%）·宝鼎科技涨停（铜箔+CCL）·彩虹股份涨停（玻璃基板胜诉康宁）·三孚股份涨停（电子级二氯二氢硅）。</p>
+<hr>
+<h2>💰 六、资金流向与结构判断</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th style="text-align: center;">信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>两市半日成交</td>
+<td>~2万亿</td>
+<td style="text-align: center;">🟢 维持高位</td>
+</tr>
+<tr>
+<td>北向整体</td>
+<td>净流出约267亿</td>
+<td style="text-align: center;">🟡 持续减仓</td>
+</tr>
+<tr>
+<td>主力资金</td>
+<td>结构分化·半导体偏流出·电力偏流入</td>
+<td style="text-align: center;">🟡</td>
+</tr>
+<tr>
+<td>涨跌比</td>
+<td>约3500:1500</td>
+<td style="text-align: center;">🟢 涨多跌少</td>
+</tr>
+<tr>
+<td>科创50低开高走</td>
+<td>-2.56%→+0.42%</td>
+<td style="text-align: center;">🟢🟢 强势修复</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>量价配合判断：成交维持高位+科创50低开高走=<strong>增量资金仍在入场，短期调整在盘中完成消化。</strong></p>
+</div>
+<hr>
+<h2>🎯 七、市场情绪判断</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>情绪周期</td>
+<td><strong>亢奋中段</strong>（连板16只·95涨停）</td>
+</tr>
+<tr>
+<td>赚钱效应</td>
+<td>🟢 强（涨多跌少·热点清晰）</td>
+</tr>
+<tr>
+<td>风险偏好</td>
+<td>🟢 极高（非ST仅1只跌停）</td>
+</tr>
+<tr>
+<td>ST情绪</td>
+<td>🔴 极度悲观（46只ST跌停）</td>
+</tr>
+<tr>
+<td>主线清晰度</td>
+<td>🟢🟢 CPO/算电协同/机器人三线并行</td>
+</tr>
+<tr>
+<td>炸板率</td>
+<td>低（东阳光一字·大唐2连板封死）</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>⚠️ 八、机会与风险</h2>
+<h3>机会</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th style="text-align: center;">级别</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPO/光通信</td>
+<td style="text-align: center;">🔴🔴🔴</td>
+<td>英伟达康宁联手+Lumentum·今日最强·持续性待验证</td>
+</tr>
+<tr>
+<td>算电协同</td>
+<td style="text-align: center;">🔴🔴🔴</td>
+<td>政策落地首项目·确定性最高·中国能建/大唐发电受益</td>
+</tr>
+<tr>
+<td>电子材料</td>
+<td style="text-align: center;">🔴🔴</td>
+<td>东材科技Q1+65%·彩虹胜诉·业绩+事件双驱动</td>
+</tr>
+<tr>
+<td>电力高股息</td>
+<td style="text-align: center;">🔴</td>
+<td>华能PE6.4×+股息5.6%·安全垫厚</td>
+</tr>
+</tbody>
+</table></div>
+<h3>风险</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th style="text-align: center;">级别</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ST退市潮</td>
+<td style="text-align: center;">🔴🔴🔴</td>
+<td>46只ST跌停·创业板ST单日-20%·绝不参与</td>
+</tr>
+<tr>
+<td>连板股追高</td>
+<td style="text-align: center;">🔴🔴</td>
+<td>金螳螂5连板10板·高连板随时炸板</td>
+</tr>
+<tr>
+<td>CPO追高风险</td>
+<td style="text-align: center;">🔴🔴</td>
+<td>首日爆发·概念验证需时间·明日可能分化</td>
+</tr>
+<tr>
+<td>北向持续流出</td>
+<td style="text-align: center;">🟡</td>
+<td>今日净流出约267亿·持续关注</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>🔭 九、午后及明日观察</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>要点</th>
+<th style="text-align: center;">优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴 科创50能否守住1660以上——低开高走趋势能否延续到收盘</td>
+<td style="text-align: center;">🔴🔴🔴</td>
+</tr>
+<tr>
+<td>🔴 CPO涨停潮午后是否扩散到光芯片/硅光/封装等更细分方向</td>
+<td style="text-align: center;">🔴🔴🔴</td>
+</tr>
+<tr>
+<td>🔴 东阳光一字板封单是否松动——算力租赁标杆</td>
+<td style="text-align: center;">🔴🔴</td>
+</tr>
+<tr>
+<td>🟡 金螳螂5连板能否封到收盘——连板空间风向标</td>
+<td style="text-align: center;">🔴🔴</td>
+</tr>
+<tr>
+<td>🟡 水发燃气（非ST唯一跌停）午后是否打开</td>
+<td style="text-align: center;">🔴</td>
+</tr>
+<tr>
+<td>🟢 算电协同方向（中国能建/大唐发电）是否引发更多电力股涨停</td>
+<td style="text-align: center;">🔴🔴</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p><em>数据来源：通达信实时行情·财联社·格隆汇·证券之星 | ZXcharTrading · 2026-05-07 12:18</em></p>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

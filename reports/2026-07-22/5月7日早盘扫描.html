@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5月7日早盘扫描</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>5月7日早盘扫描</h1>
+  <div class="meta">
+    📅 2026年05月07日 09:26 | 本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议
+  </div>
+</header>
+
+<hr>
+<h2>🌃 一、隔夜外围市场</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>市场</th>
+<th>表现</th>
+<th>关键驱动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标普500</td>
+<td><strong>再创新高</strong></td>
+<td>伊朗协议预期+AMD财报</td>
+</tr>
+<tr>
+<td>纳斯达克</td>
+<td><strong>再创新高</strong></td>
+<td>科技股领涨</td>
+</tr>
+<tr>
+<td>费城半导体</td>
+<td><strong>再创新高</strong></td>
+<td>AMD延续强势·台积电ADR新高</td>
+</tr>
+<tr>
+<td>台积电(2330)</td>
+<td><strong>+4%·历史新高</strong></td>
+<td>市值破60万亿新台币</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td>偏弱</td>
+<td>地缘缓和</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>🌏 二、亚太早盘</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>市场</th>
+<th>表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>台股加权</td>
+<td>+2.5%（台积电领涨）</td>
+</tr>
+<tr>
+<td>日经225</td>
+<td>+1.2%</td>
+</tr>
+<tr>
+<td>韩国KOSPI</td>
+<td>+1.8%（延续昨日+7%强势）</td>
+</tr>
+<tr>
+<td><strong>A股竞价</strong></td>
+<td>上证平开偏弱·科创50低开-2.56%</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>📰 三、隔夜重大消息</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: center;">序号</th>
+<th>事件</th>
+<th>影响</th>
+<th style="text-align: center;">强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>北美四大CSP Q1资本开支1316亿美元·同比+70%</td>
+<td>算力链最强利好</td>
+<td style="text-align: center;">⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>四大CSP上调2026年资本开支预期→7100亿美元</td>
+<td>算力建设远未见顶</td>
+<td style="text-align: center;">⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>台积电涨超4%创历史新高</td>
+<td>半导体代工景气确认</td>
+<td style="text-align: center;">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>特朗普：访华前可望与伊朗达成协议</td>
+<td>地缘风险降温·利好周期</td>
+<td style="text-align: center;">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>央行逆回购270亿·利率1.40%持平</td>
+<td>流动性维持平稳</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>中信建投：坚定看好AI全产业链</td>
+<td>机构背书算力链</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>🔥 四、昨日主线回顾（5月6日）</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>昨日涨幅</th>
+<th>龙头标的</th>
+<th>今日竞价方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>集成电路设计(881322)</td>
+<td><strong>+10.45%</strong></td>
+<td>海光信息+16%·寒武纪</td>
+<td>+0.40%（大幅低开）</td>
+</tr>
+<tr>
+<td>半导体(881319)</td>
+<td>+7.88%</td>
+<td>通富微电涨停</td>
+<td>—</td>
+</tr>
+<tr>
+<td>玻璃玻纤(881094)</td>
+<td>+7.80%</td>
+<td>宏和科技3天2板</td>
+<td>—</td>
+</tr>
+<tr>
+<td>云服务(881359)</td>
+<td>+7.02%</td>
+<td>东阳光涨停</td>
+<td>—</td>
+</tr>
+<tr>
+<td>存储芯片(880672)</td>
+<td>+5.12%</td>
+<td>江波龙+20%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>科创50(000688)</td>
+<td><strong>+8.25%</strong></td>
+<td>海光·寒武纪领涨</td>
+<td><strong>-2.56%</strong> 🔴</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>🪜 五、连板天梯</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align: center;">连板</th>
+<th>所属板块</th>
+<th>板型</th>
+<th>核心逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*ST中迪</td>
+<td style="text-align: center;">9</td>
+<td>ST板块</td>
+<td>T字板</td>
+<td>股权无偿赠与</td>
+</tr>
+<tr>
+<td>*ST宇顺</td>
+<td style="text-align: center;">5</td>
+<td>ST板块</td>
+<td>一字板</td>
+<td>Q1扭亏为盈</td>
+</tr>
+<tr>
+<td>*ST联翔</td>
+<td style="text-align: center;">5</td>
+<td>ST板块</td>
+<td>T字板</td>
+<td>控股权转让</td>
+</tr>
+<tr>
+<td><strong>金螳螂</strong></td>
+<td style="text-align: center;"><strong>4</strong></td>
+<td><strong>洁净室/装修</strong></td>
+<td>换手板</td>
+<td>半导体洁净室EPC·出海</td>
+</tr>
+<tr>
+<td><strong>永杉锂业</strong></td>
+<td style="text-align: center;"><strong>4</strong></td>
+<td><strong>锂矿</strong></td>
+<td>一字板</td>
+<td>Q1扭亏·锂价持续上涨</td>
+</tr>
+<tr>
+<td><strong>宝光股份</strong></td>
+<td style="text-align: center;"><strong>4</strong></td>
+<td><strong>电子特气</strong></td>
+<td>换手板</td>
+<td>氦气涨价+储能+国企改革</td>
+</tr>
+<tr>
+<td>*ST春天</td>
+<td style="text-align: center;">4</td>
+<td>ST板块</td>
+<td>一字板</td>
+<td>冬虫夏草龙头</td>
+</tr>
+<tr>
+<td>*ST正平</td>
+<td style="text-align: center;">4</td>
+<td>ST板块</td>
+<td>T字板</td>
+<td>业绩大幅减亏</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>⚡ 非ST连板仅3只：金螳螂(4连板·洁净室)、永杉锂业(4连板·锂矿)、宝光股份(4连板·电子特气)</p>
+</div>
+<hr>
+<h2>💰 六、板块轮动预判</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>今日关注方向</th>
+<th>核心逻辑</th>
+<th style="text-align: center;">优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>算力租赁/IDC</strong></td>
+<td>CSP资本开支+70%·东阳光160亿大单延续</td>
+<td style="text-align: center;">🔴🔴🔴</td>
+</tr>
+<tr>
+<td><strong>半导体设备/材料</strong></td>
+<td>台积电历史新高·Fab扩产·方邦+13%异动</td>
+<td style="text-align: center;">🔴🔴🔴</td>
+</tr>
+<tr>
+<td><strong>电子布/PCB材料</strong></td>
+<td>AI算力PCB景气度·宏和3天2板</td>
+<td style="text-align: center;">🔴🔴</td>
+</tr>
+<tr>
+<td><strong>锂矿</strong></td>
+<td>永杉4连板一字·锂价上涨趋势不变</td>
+<td style="text-align: center;">🔴🔴</td>
+</tr>
+<tr>
+<td><strong>电子特气</strong></td>
+<td>宝光4连板·日本产能断供逻辑</td>
+<td style="text-align: center;">🔴🔴</td>
+</tr>
+<tr>
+<td><strong>存储芯片</strong></td>
+<td>江波龙+20%后能否接力·SK海力士最强季报</td>
+<td style="text-align: center;">🔴</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>⚠️ 七、竞价异动预警</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>信号</th>
+<th style="text-align: center;">方向</th>
+<th>解读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>科创50低开-2.56%</td>
+<td style="text-align: center;">🔴 偏空</td>
+<td>昨日暴涨8.25%后获利回吐，短线压力</td>
+</tr>
+<tr>
+<td>集成电路设计仅+0.40%</td>
+<td style="text-align: center;">🔴 偏空</td>
+<td>较昨日+10.45%大幅降速，追高意愿弱</td>
+</tr>
+<tr>
+<td>竞价无涨停封板</td>
+<td style="text-align: center;">🟡 中性偏弱</td>
+<td>市场情绪较昨日明显降温</td>
+</tr>
+<tr>
+<td>方邦股份+13.19%</td>
+<td style="text-align: center;">🟢 偏多</td>
+<td>电磁屏蔽膜·AI PCB材料新分支启动</td>
+</tr>
+<tr>
+<td>安集科技+3.86%</td>
+<td style="text-align: center;">🟢 偏多</td>
+<td>半导体材料（CMP抛光液）走强</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>🎯 八、今日操作策略</h2>
+<ol>
+<li>
+<p><strong>核心矛盾：外围新高 vs A股竞价降温</strong>
+   美股半导体再创新高（费城半导体·标普·纳指），但A股科创50低开2.56%。外围是趋势方向的指引，但A股短线获利盘需要消化时间。</p>
+</li>
+<li>
+<p><strong>主线低吸思路</strong>
+   算力链（CSP资本开支+70%超预期）是最硬的中线逻辑。半导体设备/材料有台积电新高映射+方邦异动信号。回调是观察窗口而非恐慌卖出窗口。</p>
+</li>
+<li>
+<p><strong>高位品种慎追</strong>
+   科创50昨日20日波动34.7%处于极高区间。海光信息昨日涨停开板（收+16%而非+20%），芯原昨日板块暴涨时逆势下跌，说明高位分化在加剧。</p>
+</li>
+<li>
+<p><strong>优先级排序</strong>
+   算力租赁/IDC &gt; 半导体设备/材料 &gt; 电子布/PCB &gt; 锂矿 &gt; 电子特气 &gt; 存储芯片</p>
+</li>
+<li>
+<p><strong>⚠️ 风险提示</strong>
+   ST退市潮未结束（昨日60家跌停全ST），远离所有ST/*ST标的。创业板ST单日可跌-20%，杀伤力极大。高位科技股自带止损纪律。</p>
+</li>
+</ol>
+<hr>
+<h2>🔭 九、今日关键观察点</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>时间</th>
+<th>观察内容</th>
+<th style="text-align: center;">重要性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9:30</td>
+<td>科创50开盘后能否收复1670</td>
+<td style="text-align: center;">🔴🔴🔴</td>
+</tr>
+<tr>
+<td>9:30</td>
+<td>算力链（东阳光/海光/浪潮）开盘方向</td>
+<td style="text-align: center;">🔴🔴🔴</td>
+</tr>
+<tr>
+<td>9:40</td>
+<td>方邦股份是否继续冲高（PCB材料新方向）</td>
+<td style="text-align: center;">🔴🔴</td>
+</tr>
+<tr>
+<td>10:00</td>
+<td>两市成交额是否放量（昨日半日2.08万亿）</td>
+<td style="text-align: center;">🔴🔴</td>
+</tr>
+<tr>
+<td>盘中</td>
+<td>台积电台股是否维持+4%涨幅</td>
+<td style="text-align: center;">🔴</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p><em>数据来源：通达信实时行情·财联社·格隆汇</em><br>
+<em>ZXcharTrading · 2026-05-07 09:26</em></p>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

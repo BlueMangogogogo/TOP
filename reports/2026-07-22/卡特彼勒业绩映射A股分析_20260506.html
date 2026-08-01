@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>卡特彼勒Q1业绩大超预期 · A股映射标的深度分析</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2b;
+    --border: #2a2d3a;
+    --text: #e1e4ed;
+    --text-secondary: #8b8fa8;
+    --accent: #5b8def;
+    --green: #26a69a;
+    --red: #ef5350;
+    --orange: #ff9800;
+    --purple: #7c4dff;
+    --gold: #ffd54f;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 980px; margin: 0 auto; padding: 16px; }
+
+  /* Header */
+  .hero {
+    background: linear-gradient(135deg, #1a1d2b 0%, #1e2a3a 50%, #1a1d2b 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(91,141,239,0.08) 0%, transparent 50%);
+  }
+  .hero * { position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(91,141,239,0.15);
+    color: var(--accent);
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .hero h1 { font-size: 26px; font-weight: 800; margin-bottom: 8px; line-height: 1.3; }
+  .hero .subtitle { color: var(--text-secondary); font-size: 15px; margin-bottom: 4px; }
+  .hero .date { color: var(--text-secondary); font-size: 12px; }
+
+  /* Key metrics strip */
+  .metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .metric-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+  .metric-value { font-size: 24px; font-weight: 800; color: var(--accent); }
+  .metric-label { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+  .metric-value.up { color: var(--green); }
+  .metric-value.gold { color: var(--gold); }
+
+  /* Sections */
+  .section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .section h2 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 20px 0 10px;
+    color: var(--accent);
+  }
+  .section h4 { font-size: 14px; font-weight: 600; margin: 14px 0 6px; color: var(--text); }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 16px 0;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    min-width: 800px;
+  }
+  th {
+    background: rgba(91,141,239,0.1);
+    color: var(--accent);
+    padding: 10px 12px;
+    text-align: center;
+    font-weight: 600;
+    white-space: nowrap;
+    font-size: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+  td {
+    padding: 9px 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  td.left { text-align: left; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  .tr-highlight td { background: rgba(91,141,239,0.06) !important; }
+
+  .green { color: var(--green); font-weight: 600; }
+  .red { color: var(--red); font-weight: 600; }
+  .orange { color: var(--orange); font-weight: 600; }
+  .bold { font-weight: 700; }
+
+  /* Stock cards */
+  .stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+    margin: 16px 0;
+  }
+  .stock-card {
+    background: rgba(26,29,43,0.7);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    transition: border-color 0.2s;
+  }
+  .stock-card:hover { border-color: var(--accent); }
+  .stock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+  .stock-name { font-size: 16px; font-weight: 700; }
+  .stock-code { font-size: 12px; color: var(--text-secondary); }
+  .stock-price { font-size: 20px; font-weight: 800; margin: 4px 0; }
+  .stock-change { font-size: 13px; margin-bottom: 8px; }
+  .stock-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  .tag-bull { background: rgba(38,166,154,0.12); color: var(--green); }
+  .tag-bear { background: rgba(239,83,80,0.12); color: var(--red); }
+  .tag-info { background: rgba(91,141,239,0.12); color: var(--accent); }
+  .tag-warn { background: rgba(255,152,0,0.12); color: var(--orange); }
+  .tag-hot { background: rgba(255,213,79,0.12); color: var(--gold); }
+
+  /* Progress bar */
+  .progress-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.06);
+    margin: 6px 0;
+    overflow: hidden;
+  }
+  .progress-fill { height: 100%; border-radius: 3px; transition: width 0.5s; }
+  .fill-green { background: var(--green); }
+  .fill-red { background: var(--red); }
+  .fill-accent { background: var(--accent); }
+  .fill-orange { background: var(--orange); }
+  .fill-purple { background: var(--purple); }
+
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+
+  /* Conclusion box */
+  .conclusion {
+    background: linear-gradient(135deg, rgba(91,141,239,0.08), rgba(124,77,255,0.08));
+    border: 1px solid rgba(91,141,239,0.3);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .conclusion h4 { color: var(--accent); margin-bottom: 8px; }
+
+  .risk-box {
+    background: rgba(239,83,80,0.06);
+    border: 1px solid rgba(239,83,80,0.2);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .risk-box h4 { color: var(--red); margin-bottom: 8px; }
+
+  ul { list-style: none; padding: 0; margin: 0; }
+  li { padding: 4px 0; font-size: 14px; }
+  li::before { content: "▸ "; color: var(--accent); font-size: 10px; }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 20px 0;
+  }
+
+  .small-text { font-size: 12px; color: var(--text-secondary); }
+  .highlight-num { font-size: 28px; font-weight: 900; color: var(--accent); display: block; }
+
+  /* Pill ranking */
+  .rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    color: #fff;
+  }
+  .rank-1 { background: linear-gradient(135deg, var(--gold), #ffa000); }
+  .rank-2 { background: linear-gradient(135deg, #b0bec5, #78909c); }
+  .rank-3 { background: linear-gradient(135deg, #a1887f, #6d4c41); }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 21px; }
+    .hero { padding: 20px 16px; }
+    .section { padding: 16px; }
+    .metric-value { font-size: 20px; }
+    .metrics-strip { grid-template-columns: repeat(2, 1fr); }
+    .stock-grid { grid-template-columns: 1fr; }
+    table { font-size: 11px; }
+    th, td { padding: 7px 8px; }
+    .stock-name { font-size: 15px; }
+    .stock-price { font-size: 18px; }
+  }
+  @media (max-width: 900px) {
+    .stock-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ========== HERO ========== -->
+<div class="hero">
+  <span class="hero-tag">🔥 事件驱动分析</span>
+  <h1>卡特彼勒Q1业绩大超预期<br>——A股映射标的机会全景分析</h1>
+  <div class="subtitle">全球工程机械风向标创历史新高 · AI+补库双轮驱动 · 谁是最受益的A股核心龙头？</div>
+  <div class="date" style="margin-top:8px;">📅 分析日期：2026年5月6日 | 数据来源：通达信 · 问小达 · 财联社 · 格隆汇 · 券商研报</div>
+</div>
+
+<!-- ========== CAT KEY METRICS ========== -->
+<div class="metrics-strip">
+  <div class="metric-card">
+    <div class="metric-value up">+22%</div>
+    <div class="metric-label">Q1营收增速</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value up">$174.2亿</div>
+    <div class="metric-label">Q1总营收（超预期）</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value up">$5.54</div>
+    <div class="metric-label">调整后EPS（预期$4.63）</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value up">+10%</div>
+    <div class="metric-label">股价单日涨幅</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value gold">$4146亿</div>
+    <div class="metric-label">总市值（历史新高）</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value up">$1045</div>
+    <div class="metric-label">杰富瑞最新目标价</div>
+  </div>
+</div>
+
+<!-- ========== CAT EARNINGS BREAKDOWN ========== -->
+<div class="section">
+  <h2>📊 卡特彼勒业绩核心拆解</h2>
+
+  <h3>一、三大超预期信号</h3>
+  <div class="table-wrap">
+    <table>
+      <tr>
+        <th>维度</th><th>实际数据</th><th>市场预期</th><th>超预期幅度</th><th>核心驱动</th>
+      </tr>
+      <tr class="tr-highlight">
+        <td class="left bold">总营收</td>
+        <td class="bold">$174.2亿</td>
+        <td>$162.4亿</td>
+        <td class="green bold">+7.3%</td>
+        <td class="left">建筑+能源双轮驱动</td>
+      </tr>
+      <tr>
+        <td class="left bold">营收增速</td>
+        <td class="green bold">+22% YoY</td>
+        <td>—</td>
+        <td>—</td>
+        <td class="left">经销商补库+终端需求旺盛</td>
+      </tr>
+      <tr class="tr-highlight">
+        <td class="left bold">调整后EPS</td>
+        <td class="bold">$5.54</td>
+        <td>$4.63</td>
+        <td class="green bold">+19.7%</td>
+        <td class="left">运营杠杆效应释放</td>
+      </tr>
+      <tr>
+        <td class="left bold">全年营收指引</td>
+        <td class="green bold">低双位数增长↑</td>
+        <td>约7% CAGR</td>
+        <td>—</td>
+        <td class="left">订单积压创纪录</td>
+      </tr>
+      <tr>
+        <td class="left bold">关税成本预估</td>
+        <td>$22-24亿↓</td>
+        <td>$26亿</td>
+        <td class="green bold">下调</td>
+        <td class="left">关税冲击有所缓和</td>
+      </tr>
+    </table>
+  </div>
+
+  <h3>二、分业务亮点</h3>
+  <table style="margin:10px 0;">
+    <tr><th>业务板块</th><th>Q1增速</th><th>核心看涨逻辑</th></tr>
+    <tr class="tr-highlight">
+      <td class="left bold">🏗 建筑设备</td>
+      <td class="green bold">+38%</td>
+      <td class="left">经销商主动补库 + 北美客户需求旺盛，为增长主力</td>
+    </tr>
+    <tr>
+      <td class="left bold">⚡ 电力与能源</td>
+      <td class="green bold">+22%</td>
+      <td class="left">AI数据中心电力需求激增，发电机/燃气轮机被抢购一空</td>
+    </tr>
+    <tr>
+      <td class="left bold">🔧 机械+能源+交通</td>
+      <td class="green bold">+23%</td>
+      <td class="left">乐观指引体现管理层对全年需求的强烈信心</td>
+    </tr>
+  </table>
+
+  <div class="conclusion">
+    <h4>💡 核心催化逻辑：「AI基建 × 全球补库」双周期共振</h4>
+    <p style="font-size:14px;">卡特彼勒本质上是<strong>全球工业经济的"风向标"</strong>。本次财报最关键的信号不是数字本身，而是：</p>
+    <ul>
+      <li><strong>AI数据中心建设真实拉动重工业需求</strong>——卡特发电机组/燃气轮机被抢购一空，代表这不仅仅是"讲故事"</li>
+      <li><strong>全球工程机械上行周期确认</strong>——经销商补库+上调全年指引，说明下游需求不是短期脉冲</li>
+      <li><strong>关税冲击弱于预期</strong>——关税成本预估下调，减轻制造成本压力</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ========== A-SHARE MAPPING ========== -->
+<div class="section">
+  <h2>🎯 A股映射标的全景对比</h2>
+  <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">以下为卡特彼勒业绩映射A股的三大逻辑线 + 核心受益标的（数据截至2026年4月30日收盘）</p>
+
+  <div class="table-wrap">
+    <table>
+      <tr>
+        <th style="width:30px;">#</th>
+        <th style="width:80px;">股票</th>
+        <th style="width:60px;">代码</th>
+        <th style="width:70px;">现价</th>
+        <th style="width:65px;">涨跌幅</th>
+        <th style="width:75px;">PE(TTM)</th>
+        <th style="width:70px;">市值(亿)</th>
+        <th style="width:65px;">年内%</th>
+        <th style="width:65px;">20日%</th>
+        <th style="width:110px;">主力资金</th>
+        <th>映射逻辑</th>
+      </tr>
+      <tr class="tr-highlight">
+        <td><span class="rank-badge rank-1">1</span></td>
+        <td class="left bold">潍柴动力</td>
+        <td>000338</td>
+        <td class="bold">31.20</td>
+        <td class="green bold">+3.48%</td>
+        <td>24.04</td>
+        <td>2718</td>
+        <td class="green bold">+81.4%</td>
+        <td class="green bold">+23.32%</td>
+        <td class="green bold">净流入3.12亿</td>
+        <td class="left">🔥 AI数据中心柴油/燃气发电机组核心供应商</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-2">2</span></td>
+        <td class="left bold">恒立液压</td>
+        <td>601100</td>
+        <td class="bold">104.98</td>
+        <td class="red">-0.02%</td>
+        <td>50.84</td>
+        <td>1408</td>
+        <td class="red">-4.49%</td>
+        <td class="green">+2.92%</td>
+        <td class="red">净流出770万</td>
+        <td class="left">🔥 CAT核心供应商+丝杠机器人概念</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-3">3</span></td>
+        <td class="left bold">艾迪精密</td>
+        <td>603638</td>
+        <td class="bold">23.24</td>
+        <td class="green bold">+2.33%</td>
+        <td>43.59</td>
+        <td>193</td>
+        <td class="green bold">+22.77%</td>
+        <td class="green bold">+16.43%</td>
+        <td class="green bold">净流入3660万</td>
+        <td class="left">液压破碎锤龙头，工程机械零部件</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="left bold">山推股份</td>
+        <td>000680</td>
+        <td class="bold">11.91</td>
+        <td class="green">+0.76%</td>
+        <td>14.08</td>
+        <td>179</td>
+        <td class="red">-0.50%</td>
+        <td class="green">+1.97%</td>
+        <td class="red">净流出1952万</td>
+        <td class="left">推土机龙头+5家社保重仓</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="left bold">三一重工</td>
+        <td>600031</td>
+        <td class="bold">20.35</td>
+        <td class="red">-0.73%</td>
+        <td>22.22</td>
+        <td>1871</td>
+        <td class="red">-3.69%</td>
+        <td class="green">+0.25%</td>
+        <td class="green">净流入2349万</td>
+        <td class="left">全球工程机械龙头+海外收入占比超50%</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="left bold">浙江鼎力</td>
+        <td>603338</td>
+        <td class="bold">55.12</td>
+        <td class="red bold">-4.97%</td>
+        <td>14.51</td>
+        <td>279</td>
+        <td class="red">-2.68%</td>
+        <td class="green bold">+12.19%</td>
+        <td class="red">净流出2286万</td>
+        <td class="left">高空作业平台龙头+出海逻辑</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="left bold">徐工机械</td>
+        <td>000425</td>
+        <td class="bold">9.95</td>
+        <td class="red bold">-3.40%</td>
+        <td>17.74</td>
+        <td>1169</td>
+        <td class="red bold">-14.08%</td>
+        <td class="red">-5.42%</td>
+        <td class="red bold">净流出2.18亿</td>
+        <td class="left">矿山机械第二曲线+国资龙头</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td class="left bold">中联重科</td>
+        <td>000157</td>
+        <td class="bold">7.95</td>
+        <td class="red">-1.97%</td>
+        <td>15.87</td>
+        <td>688</td>
+        <td class="red">-5.69%</td>
+        <td class="red bold">-10.57%</td>
+        <td class="red">净流出1.38亿</td>
+        <td class="left">起重+混凝土机械龙头+农机布局</td>
+      </tr>
+    </table>
+  </div>
+  <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">注：工程机械板块（881310）当日收1259点，跌-0.87%，年内-4.05%，PE 24.17x。板块整体弱势但个股分化显著。</p>
+</div>
+
+<!-- ========== CORE STOCK DEEP DIVE ========== -->
+<div class="section">
+  <h2>🔍 核心标的深度分析</h2>
+
+  <!-- 潍柴动力 -->
+  <h3>🥇 潍柴动力（000338）—— AI数据中心备电发动机第一受益标的</h3>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
+    <div>
+      <h4>📈 市场情绪</h4>
+      <p style="font-size:14px;">当日涨幅<strong class="green">+3.48%</strong>，成交量170万手（年内高量），换手率3.39%。<strong>主力净流入3.12亿元</strong>，是当天工程机械板块资金流入最多的个股。连续8天上涨（ConZAFDateNum=8），技术动量强劲。港股潍柴动力5月4日一度涨超11%，A股情绪传导明显。</p>
+    </div>
+    <div>
+      <h4>📊 技术面</h4>
+      <p style="font-size:14px;">年内涨幅<strong class="green">+81.4%</strong>，居板块第一。20日涨幅<strong class="green">+23.32%</strong>，短期动量极强。盘中最高32.66元逼近历史高点，收盘略有回落但仍守住31元关口。20日价格动量(Implied)<strong class="green">+28.71</strong>，Gamma值5.19显示波动率溢价高。</p>
+    </div>
+    <div>
+      <h4>💰 基本面</h4>
+      <p style="font-size:14px;">PE(TTM) 24.04x，市值2718亿，为A股工程机械板块最大市值。每股收益0.36元,净资产10.95元/股。分红丰厚，每股股利2.33元。<strong>核心逻辑：柴油/燃气发电机组为AI数据中心提供备电，直接受益于全球AI基建浪潮</strong>。</p>
+    </div>
+    <div>
+      <h4>📝 映射逻辑</h4>
+      <p style="font-size:14px;"><strong>卡特彼勒电力能源业务+22%增长</strong>的核心逻辑正是AI数据中心备电需求，潍柴是国内柴油/燃气发电机组龙头，产品被AI数据中心广泛采用。同时重卡发动机受益于基建复苏。5月4日港股潍柴涨超11%，外资对"AI+电力设备"逻辑高度认可。</p>
+    </div>
+  </div>
+  <div class="conclusion">
+    <h4>🏅 定位：卡特彼勒行情A股最强映射标的</h4>
+    <p style="font-size:13px;">年内涨幅+81.4%已大幅跑赢板块，短期内情绪和技术面均处于强势区间，但需注意港股5月5日已出现-6.33%回调，A股5月6日开盘或有获利回吐压力。</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 恒立液压 -->
+  <h3>🥈 恒立液压（601100）—— 卡特彼勒核心供应商 + 丝杠机器人双概念</h3>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
+    <div>
+      <h4>📈 市场情绪</h4>
+      <p style="font-size:14px;">当日微跌<strong>-0.02%</strong>，但4月28日曾大涨超7%收于104.52元（受Q1业绩+板块联动刺激）。4月30日为节前最后交易日缩量整理。近15家机构给出买入/增持评级，<strong>机构一致目标均价130.76元</strong>，较现价有约25%上行空间。</p>
+    </div>
+    <div>
+      <h4>📊 技术面</h4>
+      <p style="font-size:14px;">从3月23日低点<strong>89.10元反弹至104.98元，涨幅约18%</strong>。20日均线已拐头向上(+2.92%)。近期有过一次跌停后放量（3月23日巨量3.5亿手），恐慌盘出清后逐步修复。关键阻力位在120元一线，支撑位在100元整数关口。</p>
+    </div>
+    <div>
+      <h4>💰 基本面 & 业绩</h4>
+      <p style="font-size:14px;">2026Q1：营收32.1亿，<strong class="green">同比+32.52%</strong>；净利润6.52亿，同比+5.59%。汇兑损失6千万拖累净利，剔除后实际经营利润增速更高。挖机油缸泵阀毛利率持平微增。墨西哥工厂投产后有望直接服务卡特北美市场。<strong>行星星滚柱丝杠已送样量产</strong>，机器人产业链打开估值天花板。</p>
+    </div>
+    <div>
+      <h4>📝 研报观点</h4>
+      <p style="font-size:14px;">
+        <strong>国金证券（买入）</strong>：2026-28年净利36.8/45.2/53.2亿<br>
+        <strong>东吴证券（买入）</strong>：2026-28年净利36/45.4/54.8亿<br>
+        <strong>中邮证券（增持）</strong>：线性驱动器项目投产打开新成长空间<br>
+        一致预期：<strong>2026年净利约36亿</strong>，对应PE约38x，但丝杠+机器人业务可能带来估值重塑
+      </p>
+    </div>
+  </div>
+  <div class="conclusion">
+    <h4>🏅 定位：卡特彼勒供应链最核心受益标的 + 机器人赛道长期期权</h4>
+    <p style="font-size:13px;">恒立液压是卡特彼勒液压件的全球核心供应商，墨西哥工厂投产后将直接服务卡特北美市场。同时行星滚柱丝杠切入人形机器人赛道，赋予传统工程机械零部件公司"科技股"估值潜力。短期波动来自汇兑，中期确定性来自全球工程机械上行周期，长期弹性来自丝杠+机器人。</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 三一重工 -->
+  <h3>🥉 三一重工（600031）—— 全球工程机械龙头 · 出海标杆</h3>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
+    <div>
+      <h4>📈 市场情绪</h4>
+      <p style="font-size:14px;">当日跌<strong>-0.73%</strong>，节前缩量整理。但4月28日单日放量大涨（成交26.5亿，涨幅约+3%），融资净买入超1亿。社保基金连续重仓持有2.10亿股。整体情绪中性偏积极，但弹性弱于潍柴和恒立。</p>
+    </div>
+    <div>
+      <h4>📊 技术面</h4>
+      <p style="font-size:14px;">从3月23日低点<strong>18.45元反弹至20.35元，反弹幅度约10.3%</strong>。20日均线基本走平(+0.25%)。近期K线显示18.5元附近有强支撑，24-25元为前期密集成交区阻力。整体处于底部抬升阶段，尚未确认趋势逆转。</p>
+    </div>
+    <div>
+      <h4>💰 基本面 & 业绩</h4>
+      <p style="font-size:14px;">2026Q1：营收240.42亿，<strong class="green">同比+14.22%</strong>；净利润24.81亿，同比+0.46%。<strong>Q1净利润环比Q4增长94%</strong>，拐点信号明确。海外收入占比已超50%，海外毛利率高达31.64%大幅高于国内。<strong>PE(TTM) 22.22x</strong>，估值在板块内更具性价比。</p>
+    </div>
+    <div>
+      <h4>📝 映射逻辑</h4>
+      <p style="font-size:14px;">三一重工是卡特彼勒在全球市场的<strong>直接竞争对手</strong>。卡特业绩大超预期→全球工程机械景气确认→三一作为全球龙头同样受益于行业上行。公司已进入全球工程机械前十，海外布局深入190+国家。但作为直接竞争者而非供应商，敏感度略低于恒立。</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 艾迪精密 -->
+  <h3>🔸 艾迪精密（603638）—— 小市值高弹性 · 液压件隐形冠军</h3>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
+    <div>
+      <h4>📈 市场情绪与技术面</h4>
+      <p style="font-size:14px;">当日涨幅<strong class="green">+2.33%</strong>，主力净流入3660万。年内涨幅<strong class="green">+22.77%</strong>，20日涨幅<strong class="green">+16.43%</strong>，连续5日上涨。市值仅193亿，弹性大。液压破碎锤市占率国内第一，受益于旧设备淘汰更新逻辑。</p>
+    </div>
+    <div>
+      <h4>💰 基本面</h4>
+      <p style="font-size:14px;">PE(TTM) 43.59x，市值193亿。2025年营收和利润均恢复增长。核心产品液压破碎锤属于工程机械易损件，<strong>与挖机保有量正相关</strong>，具有"后周期+耗材"双重属性。卡特彼勒全球挖机销售增长直接拉动破碎锤需求。</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 其余标的速览 -->
+  <h3>🔹 其余标的速览</h3>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
+    <div>
+      <h4>山推股份（000680）</h4>
+      <p style="font-size:14px;">当日逆势<strong class="green">+0.76%</strong>，连续3日上涨。<strong>5家社保基金重仓</strong>（持股7.40%），说明机构极度认可。PE仅14.08x为板块最低，市值179亿。推土机全球市占率领先，受益于全球基建+非洲矿山需求。估值洼地，但盘子偏小、流动性一般。</p>
+    </div>
+    <div>
+      <h4>徐工机械（000425）</h4>
+      <p style="font-size:14px;">当日<strong class="red">-3.40%</strong>领跌板块，年内-14.08%。但<strong>东吴证券给出买入评级</strong>：Q1还原汇兑损失后实际经营性利润同比增长近70%。矿山机械收入接近100亿成为第二曲线。公司拟回购3-6亿元用于注销。<strong>机构目标均价11.33元</strong>，较现价9.95元有约14%空间。</p>
+    </div>
+    <div>
+      <h4>中联重科（000157）</h4>
+      <p style="font-size:14px;">当日<strong class="red">-1.97%</strong>，20日跌-10.57%。Q1汇兑拖累净利润，但若还原同比+54.9%。海外收入占比57.1%，南美欧洲增速亮眼。<strong>25家机构覆盖</strong>，买入21家，目标均价10.72元（现价7.95元，有35%空间）。</p>
+    </div>
+    <div>
+      <h4>浙江鼎力（603338）</h4>
+      <p style="font-size:14px;">当日<strong class="red">-4.97%</strong>领跌，但20日涨幅+12.19%。PE仅14.51x估值合理。高空作业平台龙头，海外收入占比高+匈牙利工厂投产。短期跌幅或为节前获利了结，但中期出海逻辑不变。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SECTOR PERFORMANCE ========== -->
+<div class="section">
+  <h2>📊 工程机械板块整体表现</h2>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:10px;">
+    <div class="metric-card">
+      <div class="metric-value" style="font-size:22px;">1259</div>
+      <div class="metric-label">板块指数（881310）</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value red" style="font-size:22px;">-0.87%</div>
+      <div class="metric-label">当日涨跌</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value red" style="font-size:22px;">-4.05%</div>
+      <div class="metric-label">年内涨跌</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value" style="font-size:22px;">24.17x</div>
+      <div class="metric-label">板块PE</div>
+    </div>
+  </div>
+  <p style="margin-top:14px; font-size:14px;">板块整体年内<strong class="red">-4.05%</strong>跑输大盘，但板块内部分化极为显著：<strong class="green">潍柴动力+81.4%</strong> vs <strong class="red">徐工机械-14.08%</strong>。反映出资金集中火力于"AI+"和"能源+"逻辑，传统主机厂仍处于筑底阶段。</p>
+  <p style="font-size:14px;">从出口数据看，<strong>2026年Q1工程机械出口额160.66亿美元，同比+24.3%</strong>，3月出口53.8亿美元同比+9.54%。出口增速维持高位，全球复苏逻辑不断验证。</p>
+</div>
+
+<!-- ========== INVESTMENT FRAMEWORK ========== -->
+<div class="section">
+  <h2>💡 投资策略框架</h2>
+
+  <h3>三大映射逻辑线排序</h3>
+  <table style="margin:12px 0;">
+    <tr><th>逻辑线</th><th>核心标的</th><th>映射强度</th><th>持续度</th><th>风险</th></tr>
+    <tr class="tr-highlight">
+      <td class="left bold">⚡ AI数据中心电力设备</td>
+      <td class="left">潍柴动力</td>
+      <td class="green bold">⭐⭐⭐⭐⭐</td>
+      <td class="green">中长期</td>
+      <td>短期涨幅过大</td>
+    </tr>
+    <tr class="tr-highlight">
+      <td class="left bold">🔗 卡特彼勒核心供应链</td>
+      <td class="left">恒立液压、艾迪精密</td>
+      <td class="green bold">⭐⭐⭐⭐⭐</td>
+      <td class="green">中长期</td>
+      <td>汇率波动</td>
+    </tr>
+    <tr>
+      <td class="left bold">🌍 全球工程机械景气共振</td>
+      <td class="left">三一重工、山推、徐工、中联</td>
+      <td class="orange bold">⭐⭐⭐⭐</td>
+      <td class="orange">中期</td>
+      <td>国内复苏偏弱</td>
+    </tr>
+  </table>
+
+  <h3>核心龙头定位</h3>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
+    <div class="conclusion" style="margin:0;">
+      <h4>🥇 短期最强映射：潍柴动力</h4>
+      <ul>
+        <li>最直接受益于AI数据中心备电需求爆发</li>
+        <li>年内+81.4%领跑板块，动量最强</li>
+        <li>港股外资认可度高（5月4日涨超11%）</li>
+        <li>但短期涨幅已大，建议等待回调</li>
+      </ul>
+    </div>
+    <div class="conclusion" style="margin:0; background: rgba(124,77,255,0.08); border-color: rgba(124,77,255,0.3);">
+      <h4 style="color: var(--purple);">🥈 中期最佳赔率：恒立液压</h4>
+      <ul>
+        <li>卡特彼勒核心供应商，墨西哥工厂直接服务北美</li>
+        <li>机构一致目标价130.76元，距现价+25%空间</li>
+        <li>丝杠+机器人打开远期估值天花板</li>
+        <li>短期汇兑扰动提供更好的入场时机</li>
+      </ul>
+    </div>
+    <div class="conclusion" style="margin:0; background: rgba(38,166,154,0.08); border-color: rgba(38,166,154,0.3);">
+      <h4 style="color: var(--green);">🥉 最稳价值之锚：三一重工</h4>
+      <ul>
+        <li>PE 22x在板块内具性价比</li>
+        <li>社保重仓+Q1环比增94%拐点明确</li>
+        <li>全球前十工程机械企业</li>
+        <li>弹性偏弱但下行风险有限</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== RISK ========== -->
+<div class="section">
+  <h2>⚠️ 风险提示</h2>
+  <div class="risk-box">
+    <h4>❗ 主要风险因素</h4>
+    <ul>
+      <li><strong>关税及贸易政策风险</strong>：特朗普关税政策走向不确定，若中美贸易摩擦再度升级，将直接冲击工程机械出口及全球供应链</li>
+      <li><strong>汇率波动风险</strong>：Q1多家公司（恒立/徐工/中联）均受汇兑损失拖累，人民币升值将侵蚀海外利润</li>
+      <li><strong>短期涨幅过大风险</strong>：潍柴动力年内+81.4%、港股5月5日已回调-6.33%，追高风险显著</li>
+      <li><strong>国内基建复苏不及预期</strong>：若专项债落地节奏偏慢，国内主机厂内销弹性可能低于预期</li>
+      <li><strong>AI基建投资回落风险</strong>：若科技巨头资本开支增速放缓，数据中心备电需求可能减速</li>
+      <li><strong>行业竞争加剧</strong>：主机厂海外市场可能进入价格竞争阶段，毛利率存在下行风险</li>
+    </ul>
+  </div>
+  <p style="font-size:12px; color: var(--text-secondary); margin-top: 16px; text-align: center;">
+    ⚠️ 免责声明：本报告仅为数据分析与观点分享，不构成任何投资建议。市场有风险，投资需谨慎。数据来源包括通达信金融终端、问小达资讯系统、财联社、格隆汇、券商研报等，力求准确但不保证完整性和时效性。
+  </p>
+</div>
+
+</div>
+</body>
+</html>

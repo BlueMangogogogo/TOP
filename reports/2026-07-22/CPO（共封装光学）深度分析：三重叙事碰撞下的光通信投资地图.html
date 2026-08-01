@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图</h1>
+  <div class="meta">
+    📅 2026年06月10日 22:51
+  </div>
+</header>
+
+<p>日期：2026年6月10日</p>
+<hr>
+<h2>一、事件全景：不是一次暴跌，是三重压力的共振</h2>
+<p>6 月 10 日 A 股光通信板块的暴跌，单一归因于 SemiAnalysis 报告是不够的。真实情况是一周内<strong>三重压力叠加</strong>。</p>
+<h3>1.1 时间线还原</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>日期</th>
+<th>事件</th>
+<th>市场反应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6/2</td>
+<td>英伟达黄仁勋 Computex 宣布 Spectrum-X 硅光 CPO 交换机全面量产</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>6/3</strong></td>
+<td>消息传导至 A 股，CPO 板块爆发</td>
+<td>天孚通信 <strong>+8.84%</strong>、中际旭创 <strong>+6.98%</strong>、新易盛 <strong>+4.72%</strong></td>
+</tr>
+<tr>
+<td><strong>6/4</strong></td>
+<td>Broadcom 财报：Q2 营收 $22.19B 不及预期，AI 芯片 Q3 指引 $16B 不及预期 $16.36B</td>
+<td>AVGO 盘后暴跌 <strong>14%</strong>，全球芯片股开始抛售</td>
+</tr>
+<tr>
+<td>6/5-6</td>
+<td>美股芯片抛售持续扩大</td>
+<td>单周蒸发超 <strong>$1T</strong> 市值（NVDA/MU/AVGO/MRVL）</td>
+</tr>
+<tr>
+<td><strong>6/9</strong></td>
+<td>SemiAnalysis 发布机构看空报告：CPO 延迟至 2028-2029、800V DC 延迟至 2028</td>
+<td>美股光通信崩盘（盘后）：AAOI <strong>-17%</strong>、Lumentum <strong>-8%</strong></td>
+</tr>
+<tr>
+<td><strong>6/10 9:30</strong></td>
+<td>A 股开盘，隔夜 SemiAnalysis 利空情绪全面传导</td>
+<td>天孚通信 <strong>-7.40%</strong>、光库科技 <strong>-7.14%</strong>、太辰光 <strong>-6.44%</strong>；CPO 板块一度跌超 4%</td>
+</tr>
+<tr>
+<td><strong>6/10 11:53</strong></td>
+<td>大摩 CPO 研报发布（03:53 GMT → 北京时间 11:53）</td>
+<td>午间休市，无即时反应。报告内容：2027 OE 仅 6-7mn，天孚通信 EW</td>
+</tr>
+<tr>
+<td><strong>6/10 12:13</strong></td>
+<td>大摩 800V DC 研报发布（04:13 GMT → 北京时间 12:13）</td>
+<td>午间休市，无即时反应。报告内容：反驳 SemiAnalysis，800V DC 开发完好无损</td>
+</tr>
+<tr>
+<td><strong>6/10 13:00</strong></td>
+<td>A 股下午开盘</td>
+<td>大摩两份分化报告进入市场视野</td>
+</tr>
+</tbody>
+</table></div>
+<h3>1.2 三重压力的本质</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>压力层</th>
+<th>来源</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>第一层：全球 AI 芯片估值修正</strong></td>
+<td>Broadcom 财报不及预期，$1T 市值蒸发</td>
+<td><strong>系统性风险</strong>——全市场 AI 板块去泡沫</td>
+</tr>
+<tr>
+<td><strong>第二层：CPO 节奏预期重置</strong></td>
+<td>SemiAnalysis 6/9 报告引发隔夜美股光通信崩盘，6/10 A 股开盘直接传导</td>
+<td><strong>行业情绪冲击</strong>——CPO 概念估值重估</td>
+</tr>
+<tr>
+<td><strong>第三层：短期获利盘出逃</strong></td>
+<td>6/3 NVIDIA CPO 量产官宣后暴涨积累的浮盈 + 深股通净卖出</td>
+<td><strong>交易性抛售</strong>——短期资金避险离场</td>
+</tr>
+<tr>
+<td><strong>盘中验证</strong></td>
+<td>大摩午间 11:53/12:13 发布两份报告，对 CPO 和 800V DC 态度分化</td>
+<td><strong>追加信号</strong>——CPO 方向更谨慎（EW + 预期过高），800V DC 方向更乐观（OW + 完全反驳）</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>A 股开盘时的暴跌是隔夜 SemiAnalysis 利空 + 美股光通信崩盘的情绪传导，而大摩报告（午间 11:53/12:13 发布）是一份"分化的验证"——对 CPO 更谨慎（认同预期过高），对 800V DC 更乐观（完全反驳）。</p>
+</div>
+<hr>
+<h2>二、大摩 CPO 报告：长期看好，但承认市场预期过高</h2>
+<blockquote>
+<p>报告标题：<strong>Thoughts on Investor Concerns Regarding CPO</strong>
+作者：Tiffany Yeh / Charlie Chan / Andy Meng / Daniel Yen / Daisy Dai 等 8 人
+日期：2026 年 6 月 10 日 03:53 GMT
+行业评级：<strong>Attractive</strong></p>
+</div>
+<h3>2.1 五个核心判断</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>大摩判断</th>
+<th>关键数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>2027 年光引擎出货仅 <strong>6-7mn 单位</strong></td>
+<td>含 scale-up 和 scale-out，远低于市场预期的 20-30mn</td>
+</tr>
+<tr>
+<td>②</td>
+<td>SoIC 良率仅 <strong>50-60%</strong></td>
+<td>台积电虽 1Q27 将 PIC 产能扩至 10kwpm，良率天花板不变</td>
+</tr>
+<tr>
+<td>③</td>
+<td>下游组装良率仅 <strong>20-50%</strong></td>
+<td>最终 CPO 出货的<strong>更大瓶颈</strong>，比 SoIC 良率更不可控</td>
+</tr>
+<tr>
+<td>④</td>
+<td>2026-28 三技术共存</td>
+<td>可插拔光模块 + CPO/NPO + 铜缆并存，主流仍是 1.6T/3.2T 可插拔</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>CPO 从 <strong>2028 年起真正爆发</strong></td>
+<td>长期催化剂不变，近期预期需重置</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.2 大摩 OW 的台股 CPO 标的</h3>
+<p>台积电（2330.TW，PIC + SoIC）、日月光（3711.TW，CPO 封测）、上诠光纤（3363.TWO，FAU，3Q 末 CPO 收入起量）、AllRing（6187.TWO，测试设备）、MPI（6223.TWO，探针卡）、Hon Precision（7769.TW，精密组装）、Winway（6515.TW，测试插座）——全部 <strong>Overweight</strong>。</p>
+<h3>2.3 对天孚通信（300394.SZ）的特别评议</h3>
+<p>覆盖分析师 Andy Meng 给予 <strong>Equal-weight</strong>。核心逻辑：CPO 组件（FAU、光引擎组件）参与度领先，但可插拔光模块组件业务占比仍高，且<strong>相对于 A 股同行存在显著估值溢价</strong>。</p>
+<hr>
+<h2>三、SemiAnalysis vs 英伟达 vs 大摩：三方立场全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>SemiAnalysis</th>
+<th>英伟达</th>
+<th>大摩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPO 放量时间</td>
+<td><strong>2028-2029</strong></td>
+<td><strong>2026 H2 开始</strong></td>
+<td><strong>2028 起爆发</strong></td>
+</tr>
+<tr>
+<td>2027 出货量</td>
+<td>显著低于激进预测</td>
+<td>—</td>
+<td><strong>6-7mn</strong>（远低于市场 20-30mn）</td>
+</tr>
+<tr>
+<td>核心瓶颈</td>
+<td>良率+集成+成本</td>
+<td>未提及障碍</td>
+<td><strong>SoIC 50-60% + 组装 20-50%</strong></td>
+</tr>
+<tr>
+<td>可插拔光模块地位</td>
+<td>—</td>
+<td>—</td>
+<td><strong>2026-28 仍是主流</strong></td>
+</tr>
+<tr>
+<td>对 A 股核心标的</td>
+<td>—</td>
+<td>—</td>
+<td>天孚通信 EW（估值溢价过高）</td>
+</tr>
+</tbody>
+</table></div>
+<p>三方在"2027 年 CPO 不会大规模放量"上实际有共识。分歧仅在于放量起点是 2026（英伟达）、2028（大摩）还是 2029（SemiAnalysis）。</p>
+<hr>
+<h2>四、技术演进全景：可插拔 → LPO → NPO → CPO</h2>
+<h3>4.1 光互联技术梯度推进图</h3>
+<div class="codehilite"><pre><span></span><code>可插拔光模块(Pluggable)        LPO(线性驱动)           NPO(近封装)           CPO(共封装)
+─────────────────►   ──────────►   ──────────►   ──────────►
+   当前主流                2025-26 商业化         2026 Q4 商用           2028+ 爆发
+
+• 800G/1.6T 量产        • 去掉 DSP 芯片         • 光引擎靠近 ASIC      • 光引擎与 ASIC 同封装
+• 维护简便，成本可控      • 功耗降低 30%          • 功耗再降 30%          • 极致低功耗
+• 中际旭创全球第一        • 新易盛率先兑现         • 适配高密度 AI 集群     • 良率低、维护成本高
+• 黄金窗口 2026-2028      • 亚马逊/微软选用        • 光迅科技全球首发3.2T NPO     • 2028 年才真正起量
+</code></pre></div>
+
+<h3>4.2 产业共识：共存而非替代</h3>
+<p>可插拔光模块与 CPO 不存在简单的替代关系。Dell'Oro 数据显示 DCI（数据中心互联）光设备支出 2025 年增长 40%，2026 年预计再增 40%。DCI 现占全球光传输支出的 1/3、北美市场占 60%。超大规模云厂商是光通信增长的主要驱动力。在这个需求基数上，可插拔光模块在 2026-2028 年仍是数据中心互联的主流方案。</p>
+<hr>
+<h2>五、A 股光通信标的：分层定位</h2>
+<h3>5.1 第一梯队：光模块双龙头——可插拔 + 下一代技术全面布局</h3>
+<h4>中际旭创（300308.SZ）——全球光模块龙头</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据来源</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>现价</td>
+<td>TDX 实时行情 6/10</td>
+<td>¥1,147.00（当日 -2.80%）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>TDX</td>
+<td>¥12,792 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>TDX</td>
+<td>55.77</td>
+</tr>
+<tr>
+<td>EPS（2026Q1）</td>
+<td>TDX 利润表</td>
+<td>¥5.18</td>
+</tr>
+<tr>
+<td>2026Q1 营收</td>
+<td>TDX 利润表</td>
+<td>¥194.96 亿（<strong>同比 +192%</strong>）</td>
+</tr>
+<tr>
+<td>2026Q1 净利润</td>
+<td>TDX 利润表</td>
+<td>¥57.35 亿（<strong>同比 +262%</strong>）</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>可插拔</strong>：全球高速光模块市场份额第一，1.6T 良率 ≥95%，获北美云厂商大额订单。2025 年底已提前锁定未来两年关键物料产能。</p>
+<p><strong>CPO 布局</strong>：旗下品牌 TeraHop 展示 6.4T CPO 光引擎，向英伟达送样可拆卸 CPO 方案。同时覆盖传统可插拔光模块与下一代互联技术。</p>
+<p><strong>卖方评级</strong>：近一个月 5 篇研报清一色"买入"。</p>
+<p><strong>最近公告</strong>：5/31 发澄清公告，辟谣网络上流传的"董事长演讲全文"为虚假内容。</p>
+<h4>新易盛（300502.SZ）——全栈式技术平台</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据来源</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>现价</td>
+<td>TDX 实时行情 6/10</td>
+<td>¥772.50（当日 -1.68%）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>TDX</td>
+<td>¥7,693 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>TDX</td>
+<td>69.18</td>
+</tr>
+<tr>
+<td>大摩评级</td>
+<td>大摩研报</td>
+<td><strong>Overweight</strong>（目标价 ¥785.73）</td>
+</tr>
+<tr>
+<td>2025 年营收</td>
+<td>年报</td>
+<td>¥248.42 亿（<strong>+187%</strong>）</td>
+</tr>
+<tr>
+<td>2025 年净利</td>
+<td>年报</td>
+<td>¥95.32 亿（<strong>+236%</strong>）</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>技术体系（年报原文）</strong>：公司已构建起覆盖<strong>传统可插拔光模块、LPO/LRO、XPO、NPO 及 CPO</strong>等多种互连形态的技术体系。800G LPO 率先量产兑现，已被亚马逊、微软选用，功耗比传统方案低 30%。</p>
+<p><strong>前沿研发</strong>：1.6T DR4、6.4T NPO、12.8T XPO 在研。泰国工厂二期 2025 年初运行。</p>
+<p><strong>最新公告</strong>（6/10 当晚）：聘请 H 股上市审计机构，推进港股 IPO。</p>
+<p><strong>卖方评级</strong>：近一个月 5 篇研报"买入/增持"。</p>
+<h3>5.2 第二梯队：光器件/CPO 组件核心</h3>
+<h4>天孚通信（300394.SZ）——CPO 时代的价值重构者</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据来源</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>现价</td>
+<td>TDX 实时行情 6/10</td>
+<td>¥411.08（当日 <strong>-7.40%</strong>）</td>
+</tr>
+<tr>
+<td>总市值</td>
+<td>TDX</td>
+<td>¥3,203 亿</td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td>TDX</td>
+<td>147.48</td>
+</tr>
+<tr>
+<td>2026Q1 营收</td>
+<td>TDX 公司概要</td>
+<td>¥13.30 亿（<strong>同比 +40.82%</strong>）</td>
+</tr>
+<tr>
+<td>2026Q1 净利润</td>
+<td>TDX 公司概要</td>
+<td>¥4.93 亿（<strong>同比 +48.44%</strong>）</td>
+</tr>
+<tr>
+<td>毛利率</td>
+<td>TDX 公司概要</td>
+<td><strong>56.60%</strong></td>
+</tr>
+<tr>
+<td>大摩评级</td>
+<td>大摩研报</td>
+<td><strong>Equal-weight</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>产业链位置</strong>：国内光纤连接市场龙头，主营业务"高速光器件的研发、规模量产和销售"。</p>
+<p><strong>CPO 核心价值</strong>：外置激光源（ELS 模组）+ 光纤阵列单元（FAU）合计占 CPO 整机成本约 52%。深度切入英伟达硅光 CPO 供应链，为 Spectrum-X CPO 交换机提供 FAU，参与光引擎封装。全球首家实现 800G 和 1.6T 高速光引擎规模化量产交付。</p>
+<p><strong>卖方评级</strong>：近一个月 5 篇研报清一色"买入"。关键词：CPO 产业化重塑增长空间、卡位 CPO 新技术。</p>
+<h3>5.3 第三梯队：细分弹性品种</h3>
+<h4>光器件/连接器</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>代码</th>
+<th>市值（亿）</th>
+<th>PE(TTM)</th>
+<th>当日</th>
+<th>核心定位（来源验证）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>光库科技</td>
+<td>300620</td>
+<td>714</td>
+<td>399.09</td>
+<td>-7.14%</td>
+<td>铌酸锂调制器龙头；子公司加华微捷在 CPO 用保偏 FAU 领域全球份额领先；Q1 通过 SpaceX 二级供应商认证获 800Gbps 调制器订单</td>
+</tr>
+<tr>
+<td>太辰光</td>
+<td>300570</td>
+<td>386</td>
+<td>146.75</td>
+<td>-6.44%</td>
+<td>康宁第一大 MPO 供应商（供应 60%+ 采购），康宁贡献 70.1% 营收；英伟达-康宁战略合作直接受益方</td>
+</tr>
+<tr>
+<td>腾景科技</td>
+<td>688195</td>
+<td>342</td>
+<td>592.34</td>
+<td>-11.06%</td>
+<td>上游精密光学元件/光纤器件/光引擎封装，为高速光模块和 CPO 提供上游元件</td>
+</tr>
+<tr>
+<td>罗博特科</td>
+<td>300757</td>
+<td>1,032</td>
+<td>亏损</td>
+<td>-1.75%</td>
+<td>旗下 ficonTEC 是全球硅光/CPO 封测设备龙头，在手订单约 ¥11.05 亿，2026 年 1-5 月新增订单 ¥14.2 亿</td>
+</tr>
+</tbody>
+</table></div>
+<h4>硅光/NPO 模块</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>代码</th>
+<th>市值（亿）</th>
+<th>PE(TTM)</th>
+<th>核心定位（来源验证）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>光迅科技</td>
+<td>002281</td>
+<td>1,634</td>
+<td>157.74</td>
+<td>OFC 2026 全球首发 3.2T 硅光单模 NPO 模块（公司官网），已完成头部 CSP 全系统验证，含光引擎 OE+ELSFP+FMU-Shuffle 完整方案，典型功耗仅 21W</td>
+</tr>
+<tr>
+<td>华工科技</td>
+<td>000988</td>
+<td>1,498</td>
+<td>88.16</td>
+<td>董秘确认：3.2T NPO 产品 2026 年有在手订单并正进行交付；1.6T 自研硅光方案已批量交付</td>
+</tr>
+<tr>
+<td>剑桥科技</td>
+<td>603083</td>
+<td>—</td>
+<td>—</td>
+<td>OFC 2026 展示 1.6T 全系列光模块、液冷 CPO/NPO 光引擎、3.2T 光引擎；1.6T OSFP DR8 通过英伟达 GB300 测试；800G 硅光市占率约 3%；核心芯片外购</td>
+</tr>
+<tr>
+<td>德科立</td>
+<td>688205</td>
+<td>352</td>
+<td>448.59</td>
+<td>长距离光模块 + 相干传输 + DCI，从芯片封测到光传输子系统垂直制造，算力"通道者"</td>
+</tr>
+</tbody>
+</table></div>
+<h4>光芯片（国产替代逻辑）</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>代码</th>
+<th>核心定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>源杰科技</td>
+<td>688498</td>
+<td>EML/DFB 激光器芯片，光电芯片业务占营收近 100%，CPO 光引擎需高速激光器芯片</td>
+</tr>
+<tr>
+<td>仕佳光子</td>
+<td>688313</td>
+<td>PLC 光分路器 + AWG 芯片，1.6T AWG 芯片国产化突破</td>
+</tr>
+</tbody>
+</table></div>
+<h3>5.4 标的在可插拔/NPO/CPO 的实质布局对照</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align: center;">可插拔光模块</th>
+<th style="text-align: center;">NPO</th>
+<th style="text-align: center;">CPO</th>
+<th>关键验证来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align: center;">✅ 全球第一</td>
+<td style="text-align: center;">✅ 布局中</td>
+<td style="text-align: center;">✅ TeraHop 6.4T 光引擎</td>
+<td>OFC 展示、大摩研报</td>
+</tr>
+<tr>
+<td><strong>新易盛</strong></td>
+<td style="text-align: center;">✅ LPO 量产</td>
+<td style="text-align: center;">✅ 6.4T NPO 在研</td>
+<td style="text-align: center;">✅ 技术体系覆盖</td>
+<td>2025 年报原文</td>
+</tr>
+<tr>
+<td><strong>天孚通信</strong></td>
+<td style="text-align: center;">✅ 器件配套</td>
+<td style="text-align: center;">🔄 间接</td>
+<td style="text-align: center;">✅ FAU/ELS（成本约52%）</td>
+<td>公开报道、大摩研报</td>
+</tr>
+<tr>
+<td><strong>光迅科技</strong></td>
+<td style="text-align: center;">✅ 全系列</td>
+<td style="text-align: center;">✅ 全球首发3.2T NPO</td>
+<td style="text-align: center;">🔄 硅光方案</td>
+<td>公司官网 OFC 2026</td>
+</tr>
+<tr>
+<td><strong>华工科技</strong></td>
+<td style="text-align: center;">✅ 1.6T 批量</td>
+<td style="text-align: center;">✅ 3.2T NPO 供货</td>
+<td style="text-align: center;">🔄 布局中</td>
+<td>董秘互动易回复</td>
+</tr>
+<tr>
+<td><strong>剑桥科技</strong></td>
+<td style="text-align: center;">✅ 1.6T</td>
+<td style="text-align: center;">✅ CPO/NPO 前瞻</td>
+<td style="text-align: center;">✅ 液冷CPO引擎</td>
+<td>OFC 2026 展示</td>
+</tr>
+<tr>
+<td><strong>光库科技</strong></td>
+<td style="text-align: center;">❌ 器件为主</td>
+<td style="text-align: center;">🔄 间接</td>
+<td style="text-align: center;">✅ 保偏FAU+铌酸锂</td>
+<td>投资者互动、公告</td>
+</tr>
+<tr>
+<td><strong>太辰光</strong></td>
+<td style="text-align: center;">❌ 连接器</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ MPO/FA（康宁链）</td>
+<td>年报、公开报道</td>
+</tr>
+<tr>
+<td><strong>罗博特科</strong></td>
+<td style="text-align: center;">❌ 设备商</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ ficonTEC封装设备</td>
+<td>投资者关系记录、公告</td>
+</tr>
+<tr>
+<td><strong>德科立</strong></td>
+<td style="text-align: center;">✅ DCI/相干</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td>公司业务描述</td>
+</tr>
+<tr>
+<td><strong>源杰科技</strong></td>
+<td style="text-align: center;">❌ 光芯片</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ 激光器芯片</td>
+<td>年报营收结构</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>✅ = 有实质产品/业务/订单；🔄 = 研发/布局中；❌ = 暂无直接关联</p>
+</div>
+<hr>
+<h2>六、大摩 CPO vs 800V DC：一个被低估的不对称</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>800V DC 电源</th>
+<th>CPO 共封装光学</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>行业评级</strong></td>
+<td>In-Line</td>
+<td><strong>Attractive</strong></td>
+</tr>
+<tr>
+<td><strong>vs SemiAnalysis</strong></td>
+<td><strong>完全反驳</strong>（"与供应链调研相反"）</td>
+<td><strong>部分认同</strong>（2027 出货远低于市场预期）</td>
+</tr>
+<tr>
+<td><strong>与英伟达官方</strong></td>
+<td>接近（3Q26 vs H2 2026）</td>
+<td>部分分歧（2028 爆发 vs H2 2026 开始）</td>
+</tr>
+<tr>
+<td><strong>对 A 股龙头</strong></td>
+<td>立讯精密 OW、工业富联 OW</td>
+<td>天孚通信 <strong>EW</strong>（估值溢价过高）</td>
+</tr>
+<tr>
+<td><strong>核心风险</strong></td>
+<td>安规标准制定</td>
+<td>良率瓶颈（SoIC 50-60%，组装 20-50%）</td>
+</tr>
+<tr>
+<td><strong>短期催化剂</strong></td>
+<td>台达电 4Q26 首批发货</td>
+<td>FOCI 3Q 末 CPO 收入起量</td>
+</tr>
+</tbody>
+</table></div>
+<p>大摩对 800V DC 更乐观（完全反驳 SemiAnalysis），但对 CPO 更谨慎（承认市场预期过高）。</p>
+<hr>
+<h2>七、核心投资逻辑</h2>
+<h3>7.1 三层受益逻辑</h3>
+<div class="codehilite"><pre><span></span><code>第一层（确定性最高）：可插拔光模块持续受益 → 中际旭创、新易盛
+   └─ CPO 节奏越慢，1.6T/3.2T 可插拔黄金窗口期越长
+   └─ 两者均有下一代技术（CPO/NPO/XPO）布局对冲技术拐点风险
+
+第二层（确定性中等）：CPO 上游组件已获认证 → 天孚通信、光库科技、罗博特科
+   └─ 2026-2027 为导入验证期，2028+ 起量
+   └─ 天孚通信 PE 148x 需时间消化
+
+第三层（弹性最大/确定性最低）：光芯片国产替代 → 源杰科技、仕佳光子
+   └─ CPO 放量拉动高速光芯片需求，但时间线最长
+</code></pre></div>
+
+<h3>7.2 正确的认知 vs 错误的认知</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>错误逻辑</th>
+<th>正确逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"CPO 延迟 = 光通信全面利空"</td>
+<td>CPO 延迟 = <strong>可插拔光模块黄金窗口期延长</strong></td>
+</tr>
+<tr>
+<td>"光模块 = CPO"</td>
+<td>可插拔/LPO/NPO/CPO 是<strong>四个不同阶段</strong>，当前 90%+ 收入来自可插拔</td>
+</tr>
+<tr>
+<td>"所有 CPO 概念股都受益"</td>
+<td>CPO 概念 180 只成分股，真正具备核心技术的不超过 15 只</td>
+</tr>
+<tr>
+<td>"6/10 暴跌全因 SemiAnalysis"</td>
+<td>三重压力叠加：Broadcom $1T 芯片抛售 + SemiAnalysis 隔夜传导 + 6/3 后获利盘出逃</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>八、风险提示</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>风险</th>
+<th>核心要点</th>
+<th>影响标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPO 节奏进一步延迟</strong></td>
+<td>若 SemiAnalysis 被验证（2029 年才规模放量），CPO 组件/设备商长期估值消化</td>
+<td>天孚通信、光库科技、罗博特科</td>
+</tr>
+<tr>
+<td><strong>可插拔被加速替代</strong></td>
+<td>若英伟达 H2 2026 大规模推进 CPO，可插拔窗口缩短</td>
+<td>中际旭创、新易盛（但两者均有下一代技术对冲）</td>
+</tr>
+<tr>
+<td><strong>估值下行风险</strong></td>
+<td>天孚通信 PE 148x、光库科技 PE 399x、腾景科技 PE 592x</td>
+<td>高 PE 标的</td>
+</tr>
+<tr>
+<td><strong>AI Capex 预期下修</strong></td>
+<td>若北美云厂商 2027 年 Capex 不及预期</td>
+<td>中际旭创、新易盛</td>
+</tr>
+<tr>
+<td><strong>大摩 EW 警示</strong></td>
+<td>天孚通信是 A 股光通信中唯一被大摩点名"估值溢价过高"</td>
+<td>天孚通信</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>九、结论</h2>
+<h3>三个核心判断</h3>
+<p><strong>一、可插拔光模块龙头是当前确定性最高的配置。</strong> DCI 光设备支出连续两年 40%+ 增长，1.6T/3.2T 可插拔仍为主流。中际旭创 PE 56x、新易盛 PE 69x 在板块中估值最合理，两者均有下一代技术布局对冲长期拐点风险。</p>
+<p><strong>二、天孚通信是 CPO 弹性最大的标的，但估值消化需要时间。</strong> FAU + ELS 模组占 CPO 整机成本约 52%，深度绑定英伟达 Spectrum-X。但 2028 年起量的预期 + PE 148x + 大摩 EW = 短期配置需承受估值波动。</p>
+<p><strong>三、大摩对 CPO 和 800V DC 的不对称态度是重要的方向指引。</strong> 800V DC "完全反驳 SemiAnalysis"，CPO "承认预期过高"。800V DC 电源链的确定性高于 CPO 链。</p>
+<h3>各环节确定性排序</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>代表标的</th>
+<th style="text-align: center;">确定性</th>
+<th style="text-align: center;">估值</th>
+<th style="text-align: center;">弹性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>可插拔龙头 + 下一代技术布局</strong></td>
+<td>中际旭创、新易盛</td>
+<td style="text-align: center;">⭐⭐⭐⭐⭐</td>
+<td style="text-align: center;">合理</td>
+<td style="text-align: center;">中</td>
+</tr>
+<tr>
+<td><strong>CPO 上游组件核心</strong></td>
+<td>天孚通信</td>
+<td style="text-align: center;">⭐⭐⭐⭐</td>
+<td style="text-align: center;">偏高</td>
+<td style="text-align: center;">极高</td>
+</tr>
+<tr>
+<td><strong>光器件弹性</strong></td>
+<td>光库科技、太辰光</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+<td style="text-align: center;">偏高</td>
+<td style="text-align: center;">高</td>
+</tr>
+<tr>
+<td><strong>硅光/NPO 模块</strong></td>
+<td>光迅科技、华工科技</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+<td style="text-align: center;">中高</td>
+<td style="text-align: center;">中高</td>
+</tr>
+<tr>
+<td><strong>CPO 封装设备</strong></td>
+<td>罗博特科</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">中</td>
+</tr>
+<tr>
+<td><strong>光芯片国产替代</strong></td>
+<td>源杰科技、仕佳光子</td>
+<td style="text-align: center;">⭐⭐</td>
+<td style="text-align: center;">偏高</td>
+<td style="text-align: center;">极高</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<div class="warning">
+<p>⚠️ <strong>免责声明</strong>：本报告基于公开信息和第三方研究整理，仅供研究参考，不构成任何投资建议。</p>
+<p><strong>数据来源</strong>：
+- 大摩 800V DC 研报（Sharon Shih，6/10）、大摩 CPO 研报（Tiffany Yeh 等，6/10）
+- TDX 通达信：tdx_quotes（实时行情/PE/市值）、tdx_api_data（中际旭创利润表、天孚通信公司概要）
+- westock-data：report（15 篇研报）、notice（公告）、sector（CPO 概念成分股）
+- Tushare：daily（6/1-6/10 日线数据）
+- Tavily：Broadcom $1T 芯片抛售、DCI 光设备 +40% 增长、Dell'Oro 数据
+- 新易盛 2025 年报（4/23 披露）、光迅科技官网 OFC 2026（3/17）、华工科技董秘互动易回复（4/30）、罗博特科投资者关系记录（4/10）</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年06月10日 22:51</p>
+</footer>
+
+</body>
+</html>

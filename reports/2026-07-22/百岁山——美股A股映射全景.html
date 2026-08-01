@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>百岁山——美股→A股映射全景</title>
+<style>
+:root {
+  --bg: #1a1a2e;
+  --card: #16213e;
+  --accent: #ebb543;
+  --red: #e74c3c;
+  --green: #27ae60;
+  --text: #e0e0e0;
+  --text2: #b0b0b0;
+  --border: #2a2a4a;
+  --p0: #e74c3c;
+  --p1: #f39c12;
+  --p2: #27ae60;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Noto Sans SC', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+h1 {
+  text-align: center;
+  font-size: 2em;
+  color: var(--accent);
+  padding: 30px 0 10px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 8px;
+}
+.subtitle {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.9em;
+  margin-bottom: 30px;
+}
+h2 {
+  color: var(--accent);
+  font-size: 1.4em;
+  margin: 40px 0 16px;
+  padding-left: 10px;
+  border-left: 4px solid var(--accent);
+}
+h3 {
+  color: #f0c050;
+  font-size: 1.15em;
+  margin: 24px 0 10px;
+}
+.toc {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 30px;
+  columns: 2;
+}
+.toc a {
+  color: var(--text);
+  text-decoration: none;
+  display: block;
+  padding: 3px 0;
+  font-size: 0.9em;
+}
+.toc a:hover { color: var(--accent); }
+.toc .toc-section {
+  color: var(--accent);
+  font-weight: bold;
+  margin-top: 8px;
+  break-before: avoid;
+}
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 20px 22px;
+  margin-bottom: 16px;
+  border-left: 4px solid transparent;
+}
+.card.p0 { border-left-color: var(--p0); }
+.card.p1 { border-left-color: var(--p1); }
+.card.p2_special { border-left-color: var(--p2); border: 1px solid var(--p2); }
+.card-title {
+  font-size: 1.15em;
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.badge {
+  font-size: 0.7em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: #fff;
+  white-space: nowrap;
+}
+.badge.p0 { background: var(--p0); }
+.badge.p1 { background: var(--p1); }
+.badge.p2 { background: var(--p2); }
+.card-sub { color: var(--text2); font-size: 0.85em; margin-bottom: 14px; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88em;
+  margin: 10px 0;
+}
+th {
+  background: rgba(235,181,67,0.15);
+  color: var(--accent);
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+.stars { color: var(--accent); white-space: nowrap; }
+.note {
+  font-size: 0.82em;
+  color: var(--text2);
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  border-left: 3px solid var(--text2);
+}
+.note.warn { border-left-color: var(--p1); color: #f0c050; }
+.note.audit { border-left-color: var(--p2); }
+.tag {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.75em;
+  margin-right: 4px;
+}
+.tag.L1 { background: rgba(39,174,96,0.2); color: var(--green); }
+.tag.L2 { background: rgba(243,156,18,0.2); color: #f39c12; }
+.tag.L3 { background: rgba(231,76,60,0.2); color: var(--red); }
+.highlight { color: var(--accent); font-weight: bold; }
+.section-tip {
+  background: rgba(235,181,67,0.08);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-size: 0.9em;
+}
+.section-tip strong { color: var(--accent); }
+footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.8em;
+  margin-top: 50px;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 768px) {
+  .toc { columns: 1; }
+  table { font-size: 0.78em; }
+  th, td { padding: 6px 6px; }
+  .card { padding: 14px 12px; }
+  h1 { font-size: 1.5em; }
+}
+@media (max-width: 480px) {
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+</style>
+</head>
+<body>
+
+<h1>🧊 百岁山</h1>
+<div class="subtitle">美股 → A股 映射全景 | 51个映射 · 三级分层 · 产业链穿透 | v2.2 全量审计版<br>更新时间：2026年5月8日</div>
+
+<!-- TOC -->
+<div class="toc">
+<div class="toc-section">🔴 P0 每日必看</div>
+<a href="#p0-1">NVDA 英伟达</a>
+<a href="#p0-2">AVGO 博通</a>
+<a href="#p0-3">MRVL 迈威尔</a>
+<a href="#p0-4">SMCI 超微电脑</a>
+<a href="#p0-5">ANET Arista</a>
+<a href="#p0-6">CRDO Credo</a>
+<a href="#p0-7">Mag7 情绪锚</a>
+<a href="#p0-8">VRT Vertiv</a>
+<div class="toc-section">🟡 P1 异动触发</div>
+<a href="#p1-1">TSLA 特斯拉</a>
+<a href="#p1-2">Optimus 人形机器人</a>
+<a href="#p1-3">MU 美光</a>
+<a href="#p1-4">COHR Coherent</a>
+<a href="#p1-5">LITE Lumentum</a>
+<a href="#p1-6">FN Fabrinet</a>
+<a href="#p1-7">GEV GE Vernova</a>
+<a href="#p1-8">DELL 戴尔</a>
+<a href="#p1-9">ARM</a>
+<a href="#p1-10">AMD 超威</a>
+<div class="toc-section">🟢 P2 大异动触发</div>
+<a href="#p2-1">商业航天</a>
+<a href="#p2-2">核能/SMR</a>
+<a href="#p2-3">量子计算</a>
+<a href="#p2-4">网络安全</a>
+<a href="#p2-5">AI应用软件</a>
+<a href="#p2-6">稳定币/加密</a>
+<a href="#p2-7">自动驾驶</a>
+<a href="#p2-8">AI医疗</a>
+<a href="#p2-9">半导体设备</a>
+<a href="#p2-10">光伏/储能</a>
+<a href="#p2-11">存储扩展</a>
+</div>
+
+<div class="section-tip">
+<strong>📖 使用指南</strong><br>
+<strong>相关度</strong>：⭐⭐⭐⭐⭐ L1直接供应链 | ⭐⭐⭐⭐ L1+同产业链核心 | ⭐⭐⭐ L2强主题对标 | ⭐⭐ L2弱情绪映射 | ⭐ L3概念跟风<br>
+<strong>触发阈值</strong>：P0 ±2.5%（每日）| P1 ±3%（异动）| P2 ±5%或重大催化<br>
+<strong>评级含义</strong>：<span class="tag L1">L1</span> 订单/供应链传导（确定性高） <span class="tag L2">L2</span> 行业对标/景气确认（中等） <span class="tag L3">L3</span> 纯情绪/概念跟风（低确定性）
+</div>
+
+<!-- ==================== P0 ==================== -->
+<h2>🔴 P0 层 — 每日必看（AI硬件链核心 + Mag 7 情绪锚）</h2>
+
+<!-- P0-1 NVDA -->
+<div class="card p0" id="p0-1">
+<div class="card-title">P0-1：英伟达 (NVDA) — AI 总龙头 <span class="badge p0">P0</span></div>
+<div class="card-sub">AI芯片全球垄断者，A股映射最密集、确定性最高的美股标的</div>
+<table>
+<tr><th>映射链路</th><th>逻辑</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr>
+  <td>GPU → AI芯片国产替代</td>
+  <td>NVDA涨=AI景气确认，国产GPU估值水涨船高</td>
+  <td><strong>寒武纪</strong>（AI训练/推理芯片，2026目标50万片）、海光信息（DCU深算系列）</td>
+  <td><span class="stars">⭐⭐⭐⭐ / ⭐⭐⭐</span></td>
+</tr>
+<tr>
+  <td>GPU → 光模块需求</td>
+  <td>NVDA GPU出货↑ → 光模块需求↑，中际是NVDA核心供应商</td>
+  <td><strong>中际旭创</strong>（800G/1.6T，NVDA/Meta/Google直接供应商）</td>
+  <td><span class="stars">⭐⭐⭐⭐⭐</span> <span class="tag L1">L1</span></td>
+</tr>
+<tr>
+  <td>GPU → AI服务器代工</td>
+  <td>NVDA GB200/GB300/Vera Rubin → 工业富联核心代工</td>
+  <td><strong>工业富联</strong>（GB200/300/VR平台核心代工商，Q1净利+102%）</td>
+  <td><span class="stars">⭐⭐⭐⭐⭐</span> <span class="tag L1">L1</span></td>
+</tr>
+<tr>
+  <td>GPU → 配套标的</td>
+  <td>NVDA链整体景气</td>
+  <td>天孚通信（光器件）、新易盛（光模块二线）、沪电股份（AI服务器PCB）</td>
+  <td><span class="stars">⭐⭐⭐⭐</span></td>
+</tr>
+</table>
+<div class="note">寒武纪/海光不是NVDA的供应商，是"国产替代"逻辑。NVDA越强=AI芯片需求越大=国产替代空间和估值水涨船高。这是L1产业逻辑，非情绪。</div>
+</div>
+
+<!-- P0-2 AVGO -->
+<div class="card p0" id="p0-2">
+<div class="card-title">P0-2：博通 (AVGO) — ASIC/数据通信 <span class="badge p0">P0</span></div>
+<div class="card-sub">定制AI芯片（TPU）+数据中心交换芯片双龙头</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>定制ASIC（TPU等）→ A股交换芯片</td><td><strong>盛科通信</strong>（国产交换芯片龙头，与博通是<strong>竞争对手</strong>）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>数据通信芯片 → 光模块上游</td><td><strong>中际旭创</strong>（光模块，博通是DSP供应商之一，但传导方向是AVGO提价=旭创成本↑）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>CPO共封装 → 光器件</td><td>天孚通信（CPO光引擎，与AVGO关联弱，间接传导）</td><td><span class="stars">⭐⭐</span></td></tr>
+</table>
+<div class="note audit">v2.2审计：盛科通信从⭐⭐⭐⭐下调至⭐⭐⭐。AVGO与盛科是<b>直接竞争对手</b>（同做交换芯片），非合作伙伴。AVGO涨=交换机行业景气确认（L2），但盛科面临的是同一个市场的竞争而非受益。</div>
+</div>
+
+<!-- P0-3 MRVL -->
+<div class="card p0" id="p0-3">
+<div class="card-title">P0-3：迈威尔 (MRVL) — 数据中心DSP芯片 <span class="badge p0">P0</span></div>
+<div class="card-sub">800G/1.6T光模块DSP核心供应商，AI数据中心互联芯片龙头</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>800G/1.6T DSP → 光模块核心元件</td><td><strong>中际旭创</strong>（MRVL DSP大客户，L1直接供应关系）</td><td><span class="stars">⭐⭐⭐⭐⭐</span> <span class="tag L1">L1</span></td></tr>
+<tr><td>数据中心互联芯片 → 光通信</td><td><strong>光迅科技</strong>（与MRVL合作开发1.6T相干模块，直接合作）⬆️ v2.2上调</td><td><span class="stars">⭐⭐⭐⭐</span> <span class="tag L1">L1</span></td></tr>
+<tr><td>DSP芯片 → 交换芯片</td><td>盛科通信（MRVL既是其代工商又是竞争对手，关系复杂）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+</table>
+<div class="note audit">v2.2审计：光迅科技从⭐⭐⭐上调至⭐⭐⭐⭐。光迅与MRVL直接合作开发1.6T Coherent-Lite OSFP-XD模块，有实际业务关系。天孚从⭐⭐⭐下调至⭐⭐（传导链过长为MRVL→旭创→天孚）。</div>
+</div>
+
+<!-- P0-4 SMCI -->
+<div class="card p0" id="p0-4">
+<div class="card-title">P0-4：超微电脑 (SMCI) — AI服务器风向标 <span class="badge p0">P0</span></div>
+<div class="card-sub">全球最大的AI服务器白牌厂商之一，与工业富联直接竞争</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>AI服务器出货量 → A股服务器代工</td><td><strong>工业富联</strong>（全球最大AI服务器代工商，与SMCI直接竞争）</td><td><span class="stars">⭐⭐⭐⭐⭐</span> <span class="tag L1">L1</span></td></tr>
+<tr><td>液冷方案 → A股温控</td><td>英维克（NVDA MGX生态参与）、高澜股份</td><td><span class="stars">⭐⭐</span></td></tr>
+<tr><td>服务器需求 → 上游PCB/连接器</td><td>沪电股份（AI服务器PCB）、胜宏科技</td><td><span class="stars">⭐⭐⭐⭐</span></td></tr>
+</table>
+<div class="note">SMCI的业绩指引和NVDA的GPU出货量一起看，可以交叉验证AI服务器景气度。SMCI跌≠NVDA跌时要细看原因（可能是SMCI自身治理问题）。英维克从⭐⭐⭐下调至⭐⭐，因NVDA液冷一级合作伙伴是Vertiv，英维克是MGX生态中众多供应商之一。</div>
+</div>
+
+<!-- P0-5 ANET -->
+<div class="card p0" id="p0-5">
+<div class="card-title">P0-5：Arista (ANET) — 数据中心交换机 <span class="badge p0">P0</span></div>
+<div class="card-sub">高速数据中心交换机全球龙头，与新华三竞争</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>高速交换机 → A股网络设备</td><td><strong>紫光股份</strong>（新华三，与Arista竞争关系）、锐捷网络</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>交换机代工 → ODM</td><td>菲菱科思（交换机ODM，新华三/锐捷供应商，二次传导）</td><td><span class="stars">⭐⭐</span></td></tr>
+</table>
+<div class="note audit">v2.2审计：紫光股份从⭐⭐⭐⭐下调至⭐⭐⭐。ANET与H3C是<b>竞争对手</b>（同做数据中心交换机），ANET涨=交换机行业景气≠H3C直接受益。</div>
+</div>
+
+<!-- P0-6 CRDO -->
+<div class="card p0" id="p0-6">
+<div class="card-title">P0-6：Credo (CRDO) — 高速互联芯片 ⚠️ 最窄P0 <span class="badge p0">P0</span></div>
+<div class="card-sub">数据中心112G/224G SerDes互联芯片龙头，A股对标品类不完全一致</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>高速SerDes/互联芯片 → A股替代</td><td>盛科通信（交换芯片，品类不一致）、裕太微（车载SerDes，<strong>不同市场</strong>）</td><td><span class="stars">⭐⭐⭐ / ⭐⭐</span></td></tr>
+</table>
+<div class="note warn">⚠️ CRDO是P0中最窄的标的（市值~100-150亿$）。CRDO做112G/224G数据中心SerDes ≠ 盛科做交换芯片 ≠ 裕太微做2-6.4Gbps车载SerDes。保留P0是因为它是AI网络互联的纯正风向标。裕太微关联度极低（不同市场、不同客户、不同技术路线），已下调至⭐⭐。</div>
+</div>
+
+<!-- P0-7 Mag 7 -->
+<div class="card p0" id="p0-7">
+<div class="card-title">P0-7：Mag 7 情绪锚 — 纳斯达克指数即代表 <span class="badge p0">P0</span></div>
+<div class="card-sub">不需要每日逐只查涨跌，通过纳斯达克指数整体走势感知市场情绪</div>
+<table>
+<tr><th>美股</th><th>核心映射方向</th><th>A股风向标</th></tr>
+<tr><td>MSFT/AMZN/GOOGL</td><td>云计算CAPEX→AI基建需求总量</td><td>整体AI链（光模块+服务器+IDC）</td></tr>
+<tr><td>AAPL</td><td>消费电子/AI手机</td><td>立讯精密、歌尔股份、蓝思科技</td></tr>
+<tr><td>META</td><td>AI应用/开源模型</td><td>蓝色光标（广告代理）、AI应用板块</td></tr>
+</table>
+<div class="note">这5家是"市场情绪温度计"。TSLA/NVDA有独立条目因为有直接产业链映射。Mag7大跌（单日-3%+）时A股次日大概率低开。</div>
+</div>
+
+<!-- P0-8 VRT -->
+<div class="card p0" id="p0-8">
+<div class="card-title">P0-8：Vertiv (VRT) — AI数据中心温控/电力 ⚡ 2026新晋P0 <span class="badge p0">P0</span></div>
+<div class="card-sub">AI数据中心电力管理全球龙头，年内涨近90%</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>数据中心温控/液冷</td><td><strong>英维克</strong>（NVDA MGX生态参与，间接传导）、佳力图（精密空调）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>数据中心电力管理</td><td>高澜股份（液冷/电力电子冷却）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+</table>
+<div class="note audit">2026年升级理由：AI数据中心瓶颈从"芯片"转向"电力/散热"。但英维克从⭐⭐⭐⭐下调至⭐⭐⭐——VRT是NVDA的一级液冷合作伙伴(NPN计划)，英维克只是MGX生态中众多UQD供应商之一。传导为L2行业景气传导。</div>
+</div>
+
+<!-- ==================== P1 ==================== -->
+<h2>🟡 P1 层 — 每2-3日关注 + 异动触发</h2>
+
+<!-- P1-1 TSLA -->
+<div class="card p1" id="p1-1">
+<div class="card-title">P1-1：特斯拉 (TSLA) — 新能源车 <span class="badge p1">P1</span></div>
+<div class="card-sub">全球电动车龙头，A股新能源车产业链核心情绪锚</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>电动车销量/股价 → A股新能源车产业链</td><td><strong>宁德时代</strong>（电池，特斯拉供应商）、比亚迪（直接竞品，TSLA涨≠比亚迪涨）、<strong>拓普集团</strong>（底盘/热管理，特斯拉供应商）</td><td><span class="stars">⭐⭐⭐⭐</span> <span class="tag L1">L1</span></td></tr>
+</table>
+<div class="note audit">v2.2审计：比亚迪从⭐⭐⭐⭐下调至⭐⭐⭐。TSLA与比亚迪是<b>直接竞品</b>（全球电动车销量前二），TSLA涨可能是因为份额提升，对比亚迪甚至可能是利空。拓普集团是L1供应商（已确认向特斯拉供货），确定性更高。</div>
+</div>
+
+<!-- P1-2 Optimus -->
+<div class="card p1" id="p1-2">
+<div class="card-title">P1-2：Optimus — 人形机器人（特斯拉子线） <span class="badge p1">P1</span></div>
+<div class="card-sub">2026年最强催化：Optimus转产Fremont、1X NEO预订、Linkerbot $60亿估值</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>Optimus量产预期 → 机器人零部件</td><td><strong>拓普集团</strong>（执行器总成，特斯拉供应商）、<strong>三花智控</strong>（热管理/机电）</td><td><span class="stars">⭐⭐⭐⭐⭐</span> <span class="tag L1">L1</span></td></tr>
+<tr><td>谐波减速器/丝杠</td><td>绿的谐波（谐波减速器龙头，TSLA供应未证实）、双环传动（RV减速器）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>机器人整机/系统</td><td>步科股份（低压伺服/无框电机）、鸣志电器（空心杯电机，潜在供应商）</td><td><span class="stars">⭐⭐⭐ / ⭐⭐</span></td></tr>
+</table>
+<div class="note warn">特别注意：TSLA涨如果是FSD/机器人催化→映射机器人链（拓普/三花）；如果是汽车销量催化→映射新能源车链（宁德/拓普）。要区分催化剂。5月8日A股机器人20+涨停，已到分化边缘。</div>
+</div>
+
+<!-- P1-3 MU -->
+<div class="card p1" id="p1-3">
+<div class="card-title">P1-3：美光科技 (MU) — 存储芯片 <span class="badge p1">P1</span></div>
+<div class="card-sub">全球DRAM/NAND核心供应商，存储行业涨价周期晴雨表</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>DRAM/NAND涨价 → A股存储</td><td><strong>兆易创新</strong>（NOR Flash/DRAM）、<strong>北京君正</strong>（车载DRAM）、江波龙（存储模组/品牌）</td><td><span class="stars">⭐⭐⭐⭐</span></td></tr>
+<tr><td>HBM（高带宽存储）→ 先进封装</td><td>深科技（存储封测）、佰维存储（存储模组）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+</table>
+<div class="note">兆易/君正受益于全球存储涨价周期（用户确认维持⭐⭐⭐⭐）。江波龙是模组厂，涨价时库存重估有利但新采购成本上升，信号两面性。三星$1万亿市值（HBM驱动）验证存储从周期品变为结构性紧缺品。</div>
+</div>
+
+<!-- P1-4 COHR -->
+<div class="card p1" id="p1-4">
+<div class="card-title">P1-4：Coherent (COHR) — 光模块行业晴雨表 <span class="badge p1">P1</span></div>
+<div class="card-sub">1.6T光模块全球领先者，中际旭创的头号竞争对手</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>光模块/光器件业绩指引</td><td><strong>中际旭创</strong>（直接竞品+行业对标，COHR与旭创在1.6T正面竞争）、光迅科技（竞品）</td><td><span class="stars">⭐⭐⭐⭐</span></td></tr>
+<tr><td>VCSEL/激光器 → 光芯片</td><td>源杰科技（光芯片）、长光华芯</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+</table>
+<div class="note audit">v2.2审计：中际旭创从⭐⭐⭐⭐⭐下调至⭐⭐⭐⭐。COHR是旭创在1.6T光模块的<b>头号竞争对手</b>（非供应商），中际旭创的供应商是博通/Marvell而非Coherent。COHR涨=光模块景气确认（L2行业对标），但COHR抢旭创订单时反而是利空。</div>
+</div>
+
+<!-- P1-5 LITE -->
+<div class="card p1" id="p1-5">
+<div class="card-title">P1-5：Lumentum (LITE) — 光器件/激光器 <span class="badge p1">P1</span></div>
+<div class="card-sub">收购Cloud Light后成为光模块重要玩家，订单已排到2028年</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>光器件/光模块</td><td>光迅科技（光器件/光模块，LITE的竞争对手）、华工科技（激光+光模块，竞争对手）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+</table>
+<div class="note audit">v2.2审计：光迅/华工从⭐⭐⭐⭐下调至⭐⭐⭐。LITE与光迅/华工是<b>竞争对手</b>关系，非供应链关系。LITE涨=光器件景气确认（L2行业对标），但LITE抢中国市场时光迅/华工反而受损。LITE订单排到2028年=光器件全行业供不应求，这一逻辑对A股利好。</div>
+</div>
+
+<!-- P1-6 FN -->
+<div class="card p1" id="p1-6">
+<div class="card-title">P1-6：Fabrinet (FN) — 光模块代工 <span class="badge p1">P1</span></div>
+<div class="card-sub">光模块代工龙头，业务模式最接近天孚通信</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>光模块代工业绩指引</td><td><strong>天孚通信</strong>（光器件代工/光引擎，业务模式最接近FN）</td><td><span class="stars">⭐⭐⭐⭐</span> <span class="tag L1">L1</span></td></tr>
+</table>
+<div class="note">FN是CPO/光通信链条中最直接的A股对标——同样从事光模块/光器件代工。FN业绩超预期=天孚通信大概率同步受益。这是L1级别的订单传导逻辑。</div>
+</div>
+
+<!-- P1-7 GEV -->
+<div class="card p1" id="p1-7">
+<div class="card-title">P1-7：GE Vernova (GEV) — 燃气轮机/AI数据中心电力 <span class="badge p1">P1</span></div>
+<div class="card-sub">AI数据中心备用电源和区域供电核心设备供应商</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>重型燃气轮机 → A股发电设备</td><td><strong>东方电气</strong>（重型燃机国产化龙头）、上海电气</td><td><span class="stars">⭐⭐⭐⭐</span></td></tr>
+<tr><td>燃气轮机零部件</td><td>杭汽轮B（工业汽轮机）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+</table>
+<div class="note">AI数据中心20GW+级项目诞生 → 传统电网不堪重负 → 燃气轮机作为过渡电源需求爆发。东方电气是国内唯一实现F级（50MW）重型燃机国产化的企业，确定性最高。</div>
+</div>
+
+<!-- P1-8 DELL -->
+<div class="card p1" id="p1-8">
+<div class="card-title">P1-8：戴尔 (DELL) — AI服务器/AI Factory <span class="badge p1">P1</span></div>
+<div class="card-sub">企业级AI服务器品牌商，与NVDA合作AI Factory概念</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>AI服务器出货 → 代工/品牌</td><td><strong>工业富联</strong>（DELL将入门级服务器外包给FII）、浪潮信息（AI服务器品牌商，国内市场）</td><td><span class="stars">⭐⭐⭐⭐ / ⭐⭐⭐</span></td></tr>
+<tr><td>AI Factory → IDC/算力基建</td><td>中科曙光、紫光股份</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+</table>
+<div class="note audit">v2.2审计：浪潮信息从⭐⭐⭐⭐下调至⭐⭐⭐。DELL确实将部分服务器外包给工业富联（真实业务关系），但DELL与浪潮是竞争对手（全球市场vs国内政企市场），无直接OEM/ODM关系。</div>
+</div>
+
+<!-- P1-9 ARM -->
+<div class="card p1" id="p1-9">
+<div class="card-title">P1-9：ARM — 芯片IP/架构 <span class="badge p1">P1</span></div>
+<div class="card-sub">全球芯片架构IP霸主，正从IP授权商向自研芯片商转型</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>芯片IP授权/同赛道概念</td><td>芯原股份（芯片设计IP/一站式服务）</td><td><span class="stars">⭐⭐</span></td></tr>
+</table>
+<div class="note audit">v2.2审计：从⭐⭐⭐下调至⭐⭐。ARM正从IP授权商转型<b>自研芯片商(AGI CPU)</b>→本质上是芯原的<b>潜在竞争对手</b>。且ARM股价波动原因（自有芯片供应限制/手机市场）与芯原业务关联度低。映射为L2概念级。</div>
+</div>
+
+<!-- P1-10 AMD -->
+<div class="card p1" id="p1-10">
+<div class="card-title">P1-10：AMD — A股有直接供应链！⭐ 封测最强映射 <span class="badge p1">P1</span></div>
+<div class="card-sub">Q1 2026数据中心收入$58亿(+57%)，首次超越Intel</div>
+<table>
+<tr><th>映射链路</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>封测外包 → 直接供应商</td><td><strong>通富微电</strong>（AMD CPU/GPU核心封测供应商，吃下AMD超80%订单）</td><td><span class="stars">⭐⭐⭐⭐⭐</span> <span class="tag L1">L1</span></td></tr>
+<tr><td>国产CPU替代（概念联想）</td><td>海光信息（2016年获AMD Zen1永久授权，2019年后无业务往来）</td><td><span class="stars">⭐⭐</span></td></tr>
+<tr><td>国产GPU替代（概念联想）</td><td>景嘉微（独立GPU路线，与AMD零关联）</td><td><span class="stars">⭐</span></td></tr>
+</table>
+<div class="note">AMD→通富微电是A股最直接的"美股→A股订单传导"链条之一，与NVDA→旭创同级。<b>2026-05-08审计修正</b>：海光信息从⭐⭐⭐⭐下调至⭐⭐（实体清单后AMD已停止一切技术支持，海光完全自主研发，产品性能仅为AMD Zen3的~50%）。景嘉微下调至⭐（独立GPU路线，零关联，纯概念炒作）。</div>
+</div>
+
+<!-- ==================== P2 ==================== -->
+<h2>🟢 P2 层 — 仅大异动触发（±5%或重大催化事件）</h2>
+
+<div class="card p2_special" id="p2-1">
+<div class="card-title">P2-1：商业航天 🚀 SpaceX IPO 逼近！ <span class="badge p2">P2</span></div>
+<div class="card-sub">SpaceX估值$1.25万亿，IPO日期逼近→2026年最大事件驱动</div>
+<table>
+<tr><th>美股</th><th>方向</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>SpaceX（即将IPO）</td><td>商业航天总龙头</td><td>板块整体情绪</td><td>—</td></tr>
+<tr><td>— 直接供应商</td><td>卫星直连/热防护</td><td><strong>通宇通讯</strong>（MacroWiFi通过SpaceX认证，已获小批量订单）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>— 潜在供应商</td><td>结构件/材料</td><td>西部材料、派克新材、铂力特、斯瑞新材、超捷股份</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>Rocket Lab (RKLB)</td><td>小型发射#2</td><td>航天宏图（遥感/卫星应用）、中科星图（数字地球）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>AST SpaceMobile (ASTS)</td><td>太空直连手机</td><td>中国卫通（卫星通信运营商）、中国卫星（卫星制造）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+</table>
+<div class="note warn">⚠️ 部分标的已公告"在手订单为零"（如再升科技），炒作需注意。SpaceX IPO落地时可能触发阶段性反弹。天银机电已于2025.12.16官方声明与星链无业务合作，已从映射表移除。</div>
+</div>
+
+<div class="card p2_special" id="p2-2">
+<div class="card-title">P2-2：核能/SMR — AI数据中心能源方案 <span class="badge p2">P2</span></div>
+<div class="card-sub">Oklo（Sam Altman任董事长）、NuScale、X-Energy（亚马逊背书）</div>
+<table>
+<tr><th>美股</th><th>方向</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>Oklo (OKLO)</td><td>小型模块化反应堆(SMR)</td><td>中核科技（核电阀门，中核集团旗下）、江苏神通（核电阀门）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>NuScale (SMR)</td><td>SMR技术</td><td>佳电股份（核电泵阀电机）、中国核电（运营商）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>X-Energy (XE)</td><td>亚马逊背书SMR</td><td>上海电气（核电设备制造）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>Cameco (CCJ)</td><td>铀矿/核燃料</td><td>中广核矿业（HK，港股）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+</table>
+<div class="note">传导不是"SMR技术映射"（A股没有纯SMR标的），而是"AI数据中心电力需求→全球核能复兴→中国核电建设加速"的宏观逻辑链。在所有P2方向中映射链条最长、传导最慢。</div>
+</div>
+
+<div class="card p2_special" id="p2-3">
+<div class="card-title">P2-3：量子计算 — 纯情绪映射 <span class="badge p2">P2</span></div>
+<table>
+<tr><th>美股</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>IonQ (IONQ) / Rigetti (RGTI) / D-Wave (QBTS)</td><td><strong>国盾量子</strong>（量子通信/量子计算，A股最纯正量子标的）、科大国创（量子+AI）</td><td><span class="stars">⭐⭐⭐ / ⭐⭐</span></td></tr>
+</table>
+<div class="note">纯情绪映射。A股量子公司做的是量子通信+量子密钥分发，不是通用量子计算。波动极大、持续性差（一般1-2天）。建议只在IONQ单日涨超10%且A股量子板块低位时关注。</div>
+</div>
+
+<div class="card p2_special" id="p2-4">
+<div class="card-title">P2-4：网络安全 — AI安全新叙事 <span class="badge p2">P2</span></div>
+<table>
+<tr><th>美股</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>CrowdStrike (CRWD)</td><td>奇安信（政企安全龙头，SaaS vs 项目制差异大）、深信服（安全+云）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>Palo Alto Networks (PANW)</td><td>启明星辰（安全网关）、安恒信息（AI安全）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>Zscaler (ZS) / Cloudflare (NET)</td><td>迪普科技（应用安全）、网宿科技（CDN/边缘安全）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+</table>
+<div class="note audit">v2.2审计：CRWD的核心竞争力是Falcon平台（云原生SaaS），奇安信以政企项目制为主（定制化>70%）——商业模式差异导致股价驱动力完全不同。2024年7月CRWD全球蓝屏事件反而是奇安信的利好。Anthropic的Claude Mythos模型展现了超强AI攻防能力→美股网安剧烈波动→A股可能跟随。</div>
+</div>
+
+<div class="card p2_special" id="p2-5">
+<div class="card-title">P2-5：AI应用/软件 — 商业模式差异大 <span class="badge p2">P2</span></div>
+<table>
+<tr><th>美股</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>Palantir (PLTR) — AI大数据分析</td><td>科大讯飞（AI平台）、拓尔思（大数据/AI）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>Salesforce (CRM) — 企业SaaS</td><td>用友网络（企业软件）、金蝶国际(HK)</td><td><span class="stars">⭐⭐</span></td></tr>
+<tr><td>Adobe (ADBE) — AI创意工具</td><td>万兴科技（视频创意/AI）、福昕软件（PDF/AI）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>ServiceNow (NOW) — IT工作流</td><td>泛微网络（OA/流程自动化）</td><td><span class="stars">⭐⭐</span></td></tr>
+</table>
+<div class="note">A股软件公司商业模式（项目制/定制化）与美股SaaS公司（订阅制/平台化）差异巨大，且A股缺少真正的AI原生应用公司。PLTR→拓尔思是其中最好的映射。</div>
+</div>
+
+<div class="card p2_special" id="p2-6">
+<div class="card-title">P2-6：稳定币/加密 — 最弱映射 ⚠️ <span class="badge p2">P2</span></div>
+<table>
+<tr><th>美股</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>Coinbase (COIN)</td><td>数字认证（区块链/电子认证）、四方精创（区块链金融）</td><td><span class="stars">⭐⭐</span></td></tr>
+<tr><td>Circle (CRCL)</td><td>A股无直接对标</td><td><span class="stars">⭐</span></td></tr>
+<tr><td>MicroStrategy (MSTR)</td><td>新火科技(HK)、比特币挖矿概念</td><td><span class="stars">⭐⭐</span></td></tr>
+</table>
+<div class="note warn">这是所有映射中最弱的方向。A股没有美股意义上的纯加密/稳定币标的，情绪传导极不稳定。COIN单日涨10%也不一定传导到A股。建议放在最低优先级。</div>
+</div>
+
+<div class="card p2_special" id="p2-7">
+<div class="card-title">P2-7：自动驾驶 <span class="badge p2">P2</span></div>
+<table>
+<tr><th>美股</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>Mobileye (MBLY) / Aurora (AUR)</td><td>德赛西威（智驾域控）、中科创达（智能OS）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>Waymo（未上市，$1000亿+）</td><td>百度(HK，萝卜快跑)、小马智行(美股)</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+</table>
+</div>
+
+<div class="card p2_special" id="p2-8">
+<div class="card-title">P2-8：AI医疗/数字健康 <span class="badge p2">P2</span></div>
+<table>
+<tr><th>美股</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>Hims & Hers (HIMS)</td><td>京东健康(HK)、阿里健康(HK)</td><td><span class="stars">⭐⭐</span></td></tr>
+<tr><td>Tempus AI (TEM) — AI精准医疗</td><td>华大基因（基因测序+AI）、贝瑞基因</td><td><span class="stars">⭐⭐</span></td></tr>
+</table>
+</div>
+
+<div class="card p2_special" id="p2-9">
+<div class="card-title">P2-9：半导体设备/制造 ⭐ 财报季自动升级P1 <span class="badge p2">P2</span></div>
+<table>
+<tr><th>美股</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>应用材料 (AMAT) / 泛林 (LRCX)</td><td><strong>北方华创</strong>（刻蚀/薄膜/清洗）、中微公司（刻蚀）</td><td><span class="stars">⭐⭐⭐⭐</span> <span class="tag L1">L1</span></td></tr>
+<tr><td>ASML (ASML) — 光刻机</td><td>茂莱光学（光学器件，ASML间接供应商）</td><td><span class="stars">⭐⭐</span></td></tr>
+<tr><td>台积电 (TSM) — 先进制程</td><td>中芯国际（成熟制程为主，制裁下制程代差过大）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>英特尔 (INTC) — 先进封装</td><td>通富微电（AMD/Intel封测）、长电科技</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+</table>
+<div class="note audit">v2.2审计：中芯国际从⭐⭐⭐⭐下调至⭐⭐⭐。TSM与中芯<b>制程代差过大</b>（3nm vs 14nm），且中芯受制裁无法获取先进设备。TSM景气更多是"AI需求确认→半导体情绪"的L2映射。财报季可参考但日常联动弱。ASML"5年供不应求"=北方华创/中微长期利好。</div>
+</div>
+
+<div class="card p2_special" id="p2-10">
+<div class="card-title">P2-10：光伏/储能 <span class="badge p2">P2</span></div>
+<table>
+<tr><th>美股</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>First Solar (FSLR)</td><td>隆基绿能、通威股份、晶澳科技</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>Enphase (ENPH) — 微型逆变器</td><td><strong>禾迈股份</strong>（微逆龙头）、昱能科技、德业股份</td><td><span class="stars">⭐⭐⭐⭐</span> <span class="tag L1">L1</span></td></tr>
+<tr><td>Tesla 储能 — Megapack</td><td><strong>宁德时代</strong>（Tesla储能电池供应商）、阳光电源（储能逆变器）</td><td><span class="stars">⭐⭐⭐⭐⭐</span> <span class="tag L1">L1</span></td></tr>
+</table>
+</div>
+
+<div class="card p2_special" id="p2-11">
+<div class="card-title">P2-11：存储扩展 — WDC/SNDK/STX（配合MU使用） <span class="badge p2">P2</span></div>
+<table>
+<tr><th>美股</th><th>A股核心标的</th><th>相关度</th></tr>
+<tr><td>西部数据 (WDC)</td><td>江波龙（NAND模组）、德明利（存储控制芯片）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>闪迪 (SNDK，2026年从WDC分拆)</td><td>江波龙、佰维存储</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+<tr><td>希捷 (STX) — 纯HDD</td><td>A股无直接对标</td><td><span class="stars">⭐</span></td></tr>
+</table>
+<div class="note">日常只看MU（P1-3）。当MU财报日或存储行业重大事件时，WDC/SNDK作为交叉验证信号一起看。STX优先级最低。</div>
+</div>
+
+<footer>
+⚠️ 风险提示：本报告仅供研究参考，不构成投资建议。市场有风险，投资需谨慎。<br>
+美股→A股映射存在传导不确定性，部分映射可能失效或延迟。建议结合盘面实际验证。<br>
+v2.2 · 2026年5月8日 · 51个映射 · 16处审计修正
+</footer>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电子行业26Q2——数据、验证与判断</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>电子行业26Q2——数据、验证与判断</h1>
+  <div class="meta">
+    📅 2026年6月25日 | 数据截止: 6月24日收盘
+  </div>
+</header>
+
+<h2>一、中信研报的两个核心发现</h2>
+<h3>1.1 增速的哑铃结构</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: left;">增速区间</th>
+<th style="text-align: left;">数量</th>
+<th style="text-align: left;">代表标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">+500%以上</td>
+<td style="text-align: left;">8只</td>
+<td style="text-align: left;">兆易创新(净利+1070~1370%)、富瀚微(净利+1331~1808%)、南亚新材(净利+354~505%)</td>
+</tr>
+<tr>
+<td style="text-align: left;">+50%~+200%</td>
+<td style="text-align: left;">18只</td>
+<td style="text-align: left;">寒武纪(营收+126~183%)、海光信息(营收+63~96%)、沪电股份(净利+52~74%)、北方华创(营收+30~50%)</td>
+</tr>
+<tr>
+<td style="text-align: left;">0%~+50%</td>
+<td style="text-align: left;">22只</td>
+<td style="text-align: left;">中芯国际(营收+29~32%)、长电科技(营收+10~15%)、歌尔股份(营收0~10%)</td>
+</tr>
+<tr>
+<td style="text-align: left;">负增长</td>
+<td style="text-align: left;">6只</td>
+<td style="text-align: left;">蓝思科技(净利-30~-20%)、世运电路(净利-51~-2%)、奥士康(净利-64~-16%)</td>
+</tr>
+</tbody>
+</table></div>
+<h3>1.2 同一板块内增速差可达百倍</h3>
+<p>消费电子板块里，富瀚微+1331~1808%、水晶光电+109~209%，同时蓝思科技-30~-20%。但富瀚微和星宸科技的增长来源根本不是消费电子需求——中信自己在研报中写了："有合封存储的SoC公司业绩突出"。它们吃的是存储涨价的超额顺价利润。"消费电子"这个标签已经失去分析意义。</p>
+<h3>1.3 中信三段被市场忽视的原文</h3>
+<p><strong>第一段</strong>："消费电子板块：预计受存储涨价影响表现分化。"这是消费电子分析的第一句话。中信承认了：涨价在利好上游的同时，正在压制下游需求。</p>
+<p><strong>第二段</strong>："苹果手机需求保持强劲，出货量有望同比+20%至约5700万部，预计安卓手机出货量同比下滑双位数百分比至2.0~2.2亿部。"苹果+20% vs 安卓双位数下滑。不是"分化"，是结构性撕裂。</p>
+<p><strong>第三段</strong>："上游IC设计公司中有合封存储的SoC公司业绩突出，预计国科微、富瀚微、星宸科技、瑞芯微表现优异。"这四只标的的投资逻辑不是消费电子复苏，是存储涨价。</p>
+<h3>1.4 中信没谈的三个问题</h3>
+<p><strong>Q2是不是增速高点？</strong> 整份报告只预测Q2，不讨论Q3方向。但对投资来说，增速的方向比绝对值更重要。</p>
+<p><strong>涨价反噬需求的临界点在哪？</strong> 中信承认了涨价压制消费电子，但没量化到什么程度会传导回上游。</p>
+<p><strong>哪些利润可持续、哪些是周期性的？</strong> 兆易+1070%中有多少来自产品壁垒、多少来自涨价？佰维的"囤货利润"在存储见顶后还剩多少？这两个问题的答案决定当前估值是否合理。</p>
+<hr>
+<h2>二、Yixin产业数据的五个关键验证</h2>
+<h3>验证一：MLCC涨价叙事被夸大了</h3>
+<p>TrendForce原话：Q2 MLCC价格"整体稳定"，仅高容特殊规格小幅调整。行业BB Ratio 0.92（&lt;1），大陆消费级MLCC稼动率仅60-70%。</p>
+<p>MLCC是结构性紧缺（AI/车规强、消费弱），不是全面涨价。三环集团从3月下旬约56元涨至145.26元，涨幅约+159%，而分析师平均目标价仅98.75元。市场定价远超产业现实。</p>
+<h3>验证二：存储涨价正在压制手机出货</h3>
+<p>IDC预测2026全球智能手机出货-13.9%（原话："受存储危机及地缘风险影响"）。中国1-5月智能手机产量累计+3.3%，增速较1-4月下降3.2个百分点。</p>
+<p>"AI拉动存储涨价→涨价推高手机BOM→手机需求被压制"这条负反馈链正在实时发生。这不是远期风险，是当前数据。</p>
+<h3>验证三：苹果是唯一的逆周期力量</h3>
+<p>苹果2026年iPhone出货预计+4%至2.23亿部，全球份额升至21%。苹果用户对价格不敏感，存储涨价推高的几十美元BOM对Pro机型购买者几乎没有影响。</p>
+<p>中低端手机萎缩不是因为"经济不好"，而是因为"涨价了买不起"。如果存储价格回落，需求可能反弹。但在此之前，苹果链是唯一安全的方向。<strong>相关标的</strong>：水晶光电(002273) Q2净利+109~209%；立讯精密(002475) 高盛目标价106元。</p>
+<h3>验证四：面板周期可能已悄然转向</h3>
+<p>TV面板从Q1上涨→4月涨幅收窄→5-6月持平→32/43英寸6月已率先下跌。DIGITIMES称"行业进入周期性转折阶段"。2月专家预判"可涨到4月，5-6月偏持平，H2有下行风险"，与实际走势完全吻合。</p>
+<p>中信说面板"平稳向上"，但产业数据指向"可能已见顶"。TCL科技Q2净利+61~84%包含低基数效应。</p>
+<h3>验证五：CCL涨价已从高端全面扩散</h3>
+<p>建滔积层板4月3日提价10%，4月28日再提10%，6月16日FR-4+PP统一涨15%。松下提价15-30%，Resonac和MGC均提价30%。7628电子布从3月约5.2元/米涨至6月约7.1-7.3元/米。</p>
+<p>CCL涨价已从"AI高端材料紧缺"扩散到"全品类普涨"。CCL厂商全线受益。但PCB厂高度分化：AI PCB厂能向下游传导成本（沪电+52~74%、深南+15~50%），二线PCB厂被夹在中间两头受压（世运-51~-2%、奥士康-64~-16%）。</p>
+<hr>
+<h2>三、市场定价的五种逻辑——以及可能的错位</h2>
+<p>同一行业、同一份研报覆盖的标的，市场用了五种估值逻辑：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: left;">定价模式</th>
+<th style="text-align: left;">代表标的</th>
+<th style="text-align: left;">PE(TTM)</th>
+<th style="text-align: left;">中信Q2增速</th>
+<th style="text-align: left;">市场在交易什么</th>
+<th style="text-align: left;">可能的错位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>终局定价</strong></td>
+<td style="text-align: left;">寒武纪</td>
+<td style="text-align: left;">336x</td>
+<td style="text-align: left;">营收+126~183%</td>
+<td style="text-align: left;">国产算力2030年份额</td>
+<td style="text-align: left;">假设链太长，任一环松动则估值崩塌</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">海光信息</td>
+<td style="text-align: left;">287x</td>
+<td style="text-align: left;">营收+63~96%</td>
+<td style="text-align: left;">国产CPU/DCU长期份额（TTM PE因历史利润极低而偏高，forward PE约224-313x）</td>
+<td style="text-align: left;">存货73亿能否顺利交付</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>趋势定价</strong></td>
+<td style="text-align: left;">兆易创新</td>
+<td style="text-align: left;">172x</td>
+<td style="text-align: left;">利润+1070~1370%</td>
+<td style="text-align: left;">涨价斜率能维持</td>
+<td style="text-align: left;">近30交易日+93%已price in大量预期</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">生益科技</td>
+<td style="text-align: left;">110x</td>
+<td style="text-align: left;">利润+62~85%</td>
+<td style="text-align: left;">CCL涨价持续扩散</td>
+<td style="text-align: left;">从52周低点起+535%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>成长定价</strong></td>
+<td style="text-align: left;">长电科技</td>
+<td style="text-align: left;">103x</td>
+<td style="text-align: left;">营收+10~15%</td>
+<td style="text-align: left;">78亿扩产+先进封装CAGR 150%+</td>
+<td style="text-align: left;">项目周期长，利润释放滞后</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">北方华创</td>
+<td style="text-align: left;">100x</td>
+<td style="text-align: left;">营收+30~50%</td>
+<td style="text-align: left;">设备订单增长</td>
+<td style="text-align: left;">研发费拖累利润（Q1净利仅+3.42%）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>合理增长</strong></td>
+<td style="text-align: left;">沪电股份</td>
+<td style="text-align: left;">64x</td>
+<td style="text-align: left;">利润+52~74%</td>
+<td style="text-align: left;">AI PCB结构性需求</td>
+<td style="text-align: left;">估值在板块里最安全</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>周期折价/困境</strong></td>
+<td style="text-align: left;">佰维存储</td>
+<td style="text-align: left;">50x</td>
+<td style="text-align: left;">Q1利润+1568%</td>
+<td style="text-align: left;">"囤货利润不可持续"</td>
+<td style="text-align: left;">33.6亿美元锁价长单+AI端侧被低估</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">歌尔股份</td>
+<td style="text-align: left;">21x</td>
+<td style="text-align: left;">营收+0~10%</td>
+<td style="text-align: left;">"平庸代工厂"</td>
+<td style="text-align: left;">AI眼镜H2放量是未被定价的期权</td>
+</tr>
+</tbody>
+</table></div>
+<h3>两个值得关注的错位</h3>
+<p><strong>佰维存储 PE 50 vs 兆易创新 PE 172</strong>：同在存储链，兆易PE是佰维的3.4倍。市场认为佰维的利润是"囤货涨价"的库存游戏（不可持续），兆易有自研产品壁垒（可持续）。这个判断方向对，但可能过度——佰维已锁定33.6亿美元长期采购合同，且AI端侧存储（AI眼镜ePOP）是差异化壁垒。如果存储涨价持续到2027H1，佰维两年累计利润可能远超PE 50隐含的预期。</p>
+<p><strong>歌尔股份 PE 21——全板块最低</strong>：市场认为它是利润不增长的代工厂。但歌尔是Meta AI眼镜核心代工商，也在给苹果做AI摄像头耳机。PE 21意味着市场认为"AI眼镜成功"的概率接近零。只要这个概率被重新评估，估值就可能上修。</p>
+<hr>
+<h2>四、三个跨板块的判断</h2>
+<h3>判断一：CCL涨价链条确定性最高</h3>
+<p>中信预测建滔+330%、南亚新材+354~505%、生益+62~85%。Yixin确认建滔月内两次提价+FR-4涨15%、7628电子布从5.2涨至7.3元/米、上游三材同步紧缺。市场端生益从52周低点起+535%。</p>
+<p>CCL涨价不是"预期"，是正在发生的事实。产能扩张要到2028年才落地，2026-2027年供给刚性。在AI PCB需求CAGR 50%+的背景下，CCL利润弹性可能继续超预期。但生益累计涨幅已高。</p>
+<h3>判断二：消费电子需要被拆成三个独立赛道</h3>
+<p>"消费电子"内部已无可比性：
+- <strong>苹果AI链</strong>：立讯精密（高盛目标106元）、水晶光电（+109~209%）、歌尔AI眼镜部分
+- <strong>安卓/IoT链</strong>：蓝思科技（-30~-20%）、豪威集团（-5~+1%）、二线PCB——需求萎缩+成本上升
+- <strong>伪消费电子</strong>：富瀚微（+1331~1808%）、星宸科技（+336~627%）——本质是存储涨价逻辑</p>
+<p>更底层的问题是：存储涨价正在通过推高BOM压制消费电子需求。这意味着消费电子和存储的走势可能开始分道扬镳。</p>
+<h3>判断三（风险场景）：Q2可能是增速高点</h3>
+<p>TV面板5-6月持平、32/43英寸6月下跌；Bernstein提示H2存储消费需求破坏；智能手机产量增速逐月放缓——多个领先指标在拐头。而中信只预测了Q2，市场在按线性外推定价。</p>
+<p>如果这个场景兑现，PE超过100的趋势定价标的（兆易172x、生益110x）压力最大。沪电PE 64最安全。</p>
+<hr>
+<h2>五、分标的</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: left;">标的</th>
+<th style="text-align: left;">代码</th>
+<th style="text-align: left;">收盘价</th>
+<th style="text-align: left;">中信Q2增速</th>
+<th style="text-align: left;">PE</th>
+<th style="text-align: left;">判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">沪电股份</td>
+<td style="text-align: left;">002463</td>
+<td style="text-align: left;">143.35</td>
+<td style="text-align: left;">净利+52~74%</td>
+<td style="text-align: left;">64</td>
+<td style="text-align: left;">AI PCB最纯+PE最合理</td>
+</tr>
+<tr>
+<td style="text-align: left;">兆易创新</td>
+<td style="text-align: left;">603986</td>
+<td style="text-align: left;">705.09(涨停)</td>
+<td style="text-align: left;">净利+1070~1370%</td>
+<td style="text-align: left;">172</td>
+<td style="text-align: left;">Q2确定性最高。近30交易日+93%已price in</td>
+</tr>
+<tr>
+<td style="text-align: left;">佰维存储</td>
+<td style="text-align: left;">688525</td>
+<td style="text-align: left;">417.00</td>
+<td style="text-align: left;">Q1净利+1568%</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">全存储链最低PE。33.6亿$长单。波动极大(285-420)</td>
+</tr>
+<tr>
+<td style="text-align: left;">生益科技</td>
+<td style="text-align: left;">600183</td>
+<td style="text-align: left;">177.30</td>
+<td style="text-align: left;">净利+62~85%</td>
+<td style="text-align: left;">110</td>
+<td style="text-align: left;">CCL涨价全线受益。从52周低点+535%</td>
+</tr>
+<tr>
+<td style="text-align: left;">长电科技</td>
+<td style="text-align: left;">600584</td>
+<td style="text-align: left;">94.70(涨停)</td>
+<td style="text-align: left;">78亿扩产</td>
+<td style="text-align: left;">103</td>
+<td style="text-align: left;">先进封装CAGR 150%+。涨停短线过热</td>
+</tr>
+<tr>
+<td style="text-align: left;">北方华创</td>
+<td style="text-align: left;">002371</td>
+<td style="text-align: left;">770.07</td>
+<td style="text-align: left;">营收+30~50%</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">收入确定性高。研发拖累利润，适合底仓</td>
+</tr>
+<tr>
+<td style="text-align: left;">寒武纪</td>
+<td style="text-align: left;">688256</td>
+<td style="text-align: left;">1453.00</td>
+<td style="text-align: left;">营收+126~183%</td>
+<td style="text-align: left;">336</td>
+<td style="text-align: left;">国产算力卡位最好。需Q2超50亿营收压缩PE</td>
+</tr>
+<tr>
+<td style="text-align: left;">歌尔股份</td>
+<td style="text-align: left;">002241</td>
+<td style="text-align: left;">23.83</td>
+<td style="text-align: left;">营收+0~10%</td>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">PE全板块最低。AI眼镜期权</td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠️三环集团</td>
+<td style="text-align: left;">300408</td>
+<td style="text-align: left;">145.26</td>
+<td style="text-align: left;">净利+28~42%</td>
+<td style="text-align: left;">97</td>
+<td style="text-align: left;">近3月+159%。分析师目标价98.75</td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠️蓝思科技</td>
+<td style="text-align: left;">300433</td>
+<td style="text-align: left;">52.92</td>
+<td style="text-align: left;">净利-30~-20%</td>
+<td style="text-align: left;">46</td>
+<td style="text-align: left;">安卓萎缩+ASP下降，结构性逆风</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>六、跟踪指标</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: left;">指标</th>
+<th style="text-align: left;">当前</th>
+<th style="text-align: left;">变好→</th>
+<th style="text-align: left;">变差→</th>
+<th style="text-align: left;">频率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">DRAM/NAND合约价</td>
+<td style="text-align: left;">Q2 +58~90% QoQ</td>
+<td style="text-align: left;">利好存储链</td>
+<td style="text-align: left;">利空存储链</td>
+<td style="text-align: left;">TrendForce月度</td>
+</tr>
+<tr>
+<td style="text-align: left;">7628电子布价格</td>
+<td style="text-align: left;">6月7.1-7.3元/米</td>
+<td style="text-align: left;">利好CCL</td>
+<td style="text-align: left;">涨价逻辑松动</td>
+<td style="text-align: left;">卓创资讯周度</td>
+</tr>
+<tr>
+<td style="text-align: left;">智能手机产量</td>
+<td style="text-align: left;">1-5月+3.3%，逐月放缓</td>
+<td style="text-align: left;">消费电子修复</td>
+<td style="text-align: left;">安卓链承压</td>
+<td style="text-align: left;">工信部月度</td>
+</tr>
+<tr>
+<td style="text-align: left;">TV面板32/43"</td>
+<td style="text-align: left;">6月已下跌</td>
+<td style="text-align: left;">面板修复</td>
+<td style="text-align: left;">H2下行</td>
+<td style="text-align: left;">WitsView半月</td>
+</tr>
+<tr>
+<td style="text-align: left;">CSP资本开支</td>
+<td style="text-align: left;">Q1上修，Q2待观察</td>
+<td style="text-align: left;">全AI链利好</td>
+<td style="text-align: left;">AI链预期下调</td>
+<td style="text-align: left;">季报</td>
+</tr>
+<tr>
+<td style="text-align: left;">科创板融资余额</td>
+<td style="text-align: left;">连续9日增加</td>
+<td style="text-align: left;">资金流入</td>
+<td style="text-align: left;">拥挤踩踏</td>
+<td style="text-align: left;">每日</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<p><em>数据源：中信证券研报 / Yixin Fin Chat / TDX实时行情与通达信资讯。所有判断基于公开信息，不构成投资建议。</em></p>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年6月25日 | 数据截止: 6月24日收盘</p>
+</footer>
+
+</body>
+</html>

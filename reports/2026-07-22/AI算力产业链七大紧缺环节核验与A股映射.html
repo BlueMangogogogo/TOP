@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI算力产业链七大紧缺环节核验与A股映射</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>AI算力产业链七大紧缺环节核验与A股映射</h1>
+  <div class="meta">
+    📅 2026年5月11日 | 基于产业纪要交叉验证 | 本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议
+  </div>
+</header>
+
+<hr>
+<h2>核验说明</h2>
+<p>本报告针对5月11日产业纪要提出的7个紧缺环节，通过 Omdia、Nikkei Asia、Reuters、Digitimes、华泰证券、中金公司 等多方来源进行交叉核验，并映射到A股核心受益标的。</p>
+<p><strong>核验结论速览</strong>：7项紧缺全部被多渠道交叉证实，本轮AI驱动的半导体供应链紧张格局预计持续至2027-2028年。</p>
+<hr>
+<h2>一、CPU：英特尔/AMD涨价</h2>
+<h3>核验结果：✅ 属实</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>来源</th>
+<th>核心证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Digitimes (4月)</td>
+<td>"CPU shortage more acute than memory; industry awaits Intel 18A yield improvement"</td>
+</tr>
+<tr>
+<td>英特尔Q1财报</td>
+<td>DCAI业务营收51亿美元（同比+22%），AI收入占比60%，至强CPU供需缺口持续至2027年</td>
+</tr>
+<tr>
+<td>新浪财经 (4/24)</td>
+<td>英特尔财报后单日暴涨23.6%，年内涨超80%</td>
+</tr>
+<tr>
+<td>Omdia (4/23)</td>
+<td>2026年半导体收入增速上调至62.7%，计算与数据存储增长90%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>判断</strong>：AI推理场景爆发，CPU从"配角"变"核心"，Intel至强和AMD EPYC均进入量价齐升周期。Intel 18A良率爬坡慢、AMD产能也受限，5-6月涨价传闻与行业供需格局吻合。</p>
+<h3>A股核心受益标的</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>代码</th>
+<th>核心逻辑</th>
+<th style="text-align: center;">紧缺关联度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>海光信息</strong></td>
+<td>688041</td>
+<td>国产x86 CPU龙头，对标Intel至强，Q1净利6.87亿（+35.82%），国产替代最大受益者</td>
+<td style="text-align: center;">⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>澜起科技</strong></td>
+<td>688008</td>
+<td>DDR5内存接口芯片全球龙头（市占40%+），深度适配Intel/AMD平台，CPU出货量激增直接拉动</td>
+<td style="text-align: center;">⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>中科曙光</strong></td>
+<td>603019</td>
+<td>高端HPC龙头，Intel至强核心合作伙伴+自研海光服务器，AI超算订单饱满</td>
+<td style="text-align: center;">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>龙芯中科</strong></td>
+<td>688047</td>
+<td>全自主LoongArch架构，3C6000系列服务器CPU量产，信创+军工+智算中心多场景</td>
+<td style="text-align: center;">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>浪潮信息</strong></td>
+<td>000977</td>
+<td>AI服务器全球龙头，Intel/AMD涨价的成本转嫁能力强，量价齐升</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>二、磷化铟（InP）衬底：供给紧张</h2>
+<h3>核验结果：✅ 属实</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>来源</th>
+<th>核心证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AXT Q3电话会</td>
+<td>InP积压订单近5000万美元，环比增超一倍；供应缺口持续至2028年</td>
+</tr>
+<tr>
+<td>华泰证券 (4/28)</td>
+<td>InP需求2026年增长148%，稀土出口管制使全球约24%供应无法提供给国际买家</td>
+</tr>
+<tr>
+<td>Lumentum</td>
+<td>InP晶圆厂产能已全部分配完毕，2026年Q1 EML激光器出货量创纪录</td>
+</tr>
+<tr>
+<td>Veeco (5/5)</td>
+<td>$2.5亿+激光设备订单，InP激光制造被确认为"关键瓶颈"</td>
+</tr>
+<tr>
+<td>源杰科技Q1</td>
+<td>营收3.55亿（+320.94%），净利1.79亿（+1153.07%），CW光源放量</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>判断</strong>：InP衬底是本轮AI光通信产业链最核心的瓶颈环节。3.4英寸InP衬底用于北美客户的说法合理——大尺寸衬底产能全球极度稀缺。国产替代逻辑叠加出口管制，国内InP衬底企业迎来黄金窗口。</p>
+<h3>A股核心受益标的</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>代码</th>
+<th>核心逻辑</th>
+<th style="text-align: center;">紧缺环节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>云南锗业</strong></td>
+<td>002428</td>
+<td>InP衬底国内龙头，产能15万片/年→扩至45万片，投资1.89亿扩产</td>
+<td style="text-align: center;">衬底</td>
+</tr>
+<tr>
+<td><strong>博杰股份</strong></td>
+<td>002975</td>
+<td>参股鼎泰芯源（24.68%），国内第一条自主InP衬底产线，十倍产能扩充</td>
+<td style="text-align: center;">衬底</td>
+</tr>
+<tr>
+<td><strong>源杰科技</strong></td>
+<td>688498</td>
+<td>CW硅光光源+50G光芯片放量，投入近20亿扩产，直接受益InP需求暴增</td>
+<td style="text-align: center;">光芯片</td>
+</tr>
+<tr>
+<td><strong>长光华芯</strong></td>
+<td>688048</td>
+<td>增资孵化星沅光电，布局高端InP激光器芯片</td>
+<td style="text-align: center;">光芯片</td>
+</tr>
+<tr>
+<td><strong>有研新材</strong></td>
+<td>600206</td>
+<td>InP衬底第二大供应商，突破6英寸衬底制备技术</td>
+<td style="text-align: center;">衬底</td>
+</tr>
+<tr>
+<td><strong>三安光电</strong></td>
+<td>600703</td>
+<td>化合物半导体龙头，6英寸InP光芯片规模化量产</td>
+<td style="text-align: center;">外延/芯片</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>三、光纤/光棒：供给紧张</h2>
+<h3>核验结果：✅ 属实</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>来源</th>
+<th>核心证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRU数据</td>
+<td>G.652.D裸纤价格83.40元/芯公里，同比飙升418%，累计涨幅超400%</td>
+</tr>
+<tr>
+<td>证券日报 (4/28)</td>
+<td>亨通光电Q1营收177.91亿（+34.09%），净利11.05亿（+98.53%）</td>
+</tr>
+<tr>
+<td>中国基金报</td>
+<td>2026年全球光纤缺口1.8亿芯公里（缺口率16.4%），康宁扩产延迟数年</td>
+</tr>
+<tr>
+<td>央视财经</td>
+<td>G.657.A2光纤从32元涨至240元/芯公里（+650%），排产已到明年一季度</td>
+</tr>
+<tr>
+<td>华泰证券</td>
+<td>光棒扩产周期18-24月，行业新增有效供给有限，景气周期有望拉长至2028年</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>判断</strong>：光纤/光棒是本轮AI算力建设中供需矛盾最尖锐的基础材料之一。英伟达与康宁签署长期合作协议、光纤制导无人机新增需求（年8000万芯公里），多重需求叠加，景气度确定性极高。</p>
+<h3>A股核心受益标的</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>代码</th>
+<th>核心逻辑</th>
+<th style="text-align: center;">全球排名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>长飞光纤</strong></td>
+<td>601869</td>
+<td>掌握PCVD+VAD+OVD三大光棒工艺，全产业链垂直整合，利润弹性最大</td>
+<td style="text-align: center;">全球第2</td>
+</tr>
+<tr>
+<td><strong>亨通光电</strong></td>
+<td>600487</td>
+<td>Q1光通信+35%，海外+55%，在手订单超290亿，PEACE海缆运营</td>
+<td style="text-align: center;">全球第3</td>
+</tr>
+<tr>
+<td><strong>中天科技</strong></td>
+<td>600522</td>
+<td>Q1营收131亿（+34.71%），净利9.19亿（+46.42%），海缆+AI光纤双轮驱动</td>
+<td style="text-align: center;">全球第4</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>四、DCI用DSP/光纤/高端陶瓷/PCB：供给紧张</h2>
+<h3>核验结果：✅ 属实</h3>
+<h4>DSP芯片</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>来源</th>
+<th>核心证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Omdia/LightCounting</td>
+<td>800G/1.6T光互联需求爆发，DSP芯片产能集中在Broadcom/Marvell等少数厂商</td>
+</tr>
+<tr>
+<td>Digitimes (4/20)</td>
+<td>FII（工业富联）CPO全光交换机2026Q3量产，DSP芯片是核心瓶颈</td>
+</tr>
+</tbody>
+</table></div>
+<h4>高端陶瓷件</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>来源</th>
+<th>核心证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中瓷电子互动平台</td>
+<td>订单饱满、产能利用率维持高位，800G/1.6T陶瓷管壳&amp;基板满产满销，全球市占&gt;90%（与京瓷双寡头）</td>
+</tr>
+<tr>
+<td>智研咨询</td>
+<td>国内陶瓷封装基座2023年市场规模42.74亿元（+6.45%），国产替代加速</td>
+</tr>
+</tbody>
+</table></div>
+<h4>高端PCB</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>来源</th>
+<th>核心证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reuters (4/27)</td>
+<td>PCB价格4月单月暴涨40%（高盛），铜箔涨30%，中东冲突冲击供应链</td>
+</tr>
+<tr>
+<td>Prismark</td>
+<td>2026年全球PCB行业规模预计增长12.5%达958亿美元</td>
+</tr>
+<tr>
+<td>胜宏科技</td>
+<td>英伟达AI服务器PCB核心供应商，全球AI/HPC PCB市占第一</td>
+</tr>
+</tbody>
+</table></div>
+<h3>A股核心受益标的</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>代码</th>
+<th>核心逻辑</th>
+<th style="text-align: center;">关联环节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中瓷电子</strong></td>
+<td>003031</td>
+<td>800G/1.6T陶瓷基板国内近乎独家（&gt;90%），英伟达GB200/CPO基座唯一国产供应商</td>
+<td style="text-align: center;">高端陶瓷</td>
+</tr>
+<tr>
+<td><strong>三环集团</strong></td>
+<td>300408</td>
+<td>陶瓷封装基座全球前列，SOFC+MLCC+陶瓷插芯多元布局</td>
+<td style="text-align: center;">高端陶瓷</td>
+</tr>
+<tr>
+<td><strong>深南电路</strong></td>
+<td>002916</td>
+<td>FC-BGA基板16层量产+高速PCB，AI服务器PCB核心供应商</td>
+<td style="text-align: center;">高端PCB</td>
+</tr>
+<tr>
+<td><strong>沪电股份</strong></td>
+<td>002463</td>
+<td>AI服务器高端高速PCB核心，英伟达/AMD认证</td>
+<td style="text-align: center;">高端PCB</td>
+</tr>
+<tr>
+<td><strong>胜宏科技</strong></td>
+<td>300476</td>
+<td>英伟达AI/HPC PCB全球市占第一，Q1业绩暴增</td>
+<td style="text-align: center;">高端PCB</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>关于DSP芯片</strong>：目前DSP芯片全球由Broadcom（博通）和Marvell（美满）双寡头垄断，A股暂无纯正DSP标的。间接关联可关注<strong>澜起科技</strong>（PCIe Retimer芯片，用于DCI高速互联）、<strong>盛科通信</strong>（交换芯片）。</p>
+</div>
+<hr>
+<h2>五、OCS中液晶/透镜等多种物料：紧张</h2>
+<h3>核验结果：✅ 属实</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>来源</th>
+<th>核心证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coherent/Lumentum OFC 2026</td>
+<td>OCS积压订单激增至4亿美元以上，2027年目标年化收入超10亿美元</td>
+</tr>
+<tr>
+<td>科创板日报 (4/3)</td>
+<td>工信部推"全光交换"，腾讯科技YVO4晶体独占Coherent首笔订单</td>
+</tr>
+<tr>
+<td>新浪财经</td>
+<td>Lumentum/Coherent大幅上调2027-2028年OCS需求指引</td>
+</tr>
+<tr>
+<td>Cignal AI</td>
+<td>2025年全球OCS市场约4亿美元，2029年预计突破25亿美元（CAGR 58%）</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>判断</strong>：OCS光交换机是2026年光通信最确定的增量方向。谷歌TPU V7大规模部署MEMS-OCS、英伟达下一代"蜻蜓"架构押注液晶DLC方案。晶体（YVO4）、透镜阵列、MEMS微镜芯片等多种物料均面临产能瓶颈。</p>
+<h3>A股核心受益标的</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>代码</th>
+<th>核心逻辑</th>
+<th style="text-align: center;">关联技术路线</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>腾景科技</strong></td>
+<td>688195</td>
+<td>全球YVO4晶体龙头，绑定Coherent液晶DLC方案，WSS滤光片市占60%，1.77亿订单</td>
+<td style="text-align: center;">液晶DLC</td>
+</tr>
+<tr>
+<td><strong>光库科技</strong></td>
+<td>300620</td>
+<td>谷歌OCS核心代工（&gt;70%份额），MEMS+薄膜铌酸锂双路线</td>
+<td style="text-align: center;">MEMS</td>
+</tr>
+<tr>
+<td><strong>炬光科技</strong></td>
+<td>688167</td>
+<td>透镜阵列全球领先，用于OCS设备小型化与高密度集成</td>
+<td style="text-align: center;">器件</td>
+</tr>
+<tr>
+<td><strong>赛微电子</strong></td>
+<td>300456</td>
+<td>Silex（全球最大MEMS代工厂）为谷歌供应MEMS-OCS芯片</td>
+<td style="text-align: center;">MEMS芯片</td>
+</tr>
+<tr>
+<td><strong>光迅科技</strong></td>
+<td>002281</td>
+<td>国产MEMS-OCS龙头，192×192/320×320端口自研整机</td>
+<td style="text-align: center;">MEMS整机</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>六、SSD/HBM：供给紧张</h2>
+<h3>核验结果：✅ 属实</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>来源</th>
+<th>核心证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Omdia (4/23)</td>
+<td>2026年半导体收入增速62.7%，DRAM市场近翻倍，NAND四倍增长</td>
+</tr>
+<tr>
+<td>Nikkei Asia (4/18)</td>
+<td>"Supply and demand won't normalize until 2028"，SK海力士HBM产能全年售罄</td>
+</tr>
+<tr>
+<td>新华网/上海证券报 (4/24)</td>
+<td>三星Q1营业利润57.2万亿韩元（+755%），SK海力士库存仅4周</td>
+</tr>
+<tr>
+<td>全球电子协会</td>
+<td>62%制造商面临供应受限，82%受访者反映存储价格上涨</td>
+</tr>
+<tr>
+<td>TrendForce</td>
+<td>Q2 DRAM合约价环比涨58-63%，NAND涨70-75%</td>
+</tr>
+<tr>
+<td>Manufacturing.net (5/1)</td>
+<td>AI数据中心抢走消费电子芯片产能，"挤占效应"显著</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>判断</strong>：HBM和SSD紧缺是AI算力最底层的存储瓶颈。HBM九成市场被SK海力士/三星/美光垄断，产能2028年前难以大幅释放。普通DRAM/NAND也因产能向HBM倾斜而出现全面涨价。</p>
+<h3>A股核心受益标的</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>代码</th>
+<th>核心逻辑</th>
+<th style="text-align: center;">受益环节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>深科技</strong></td>
+<td>000021</td>
+<td>长鑫存储最大委外封测商（&gt;50%份额），封测价格上调30%</td>
+<td style="text-align: center;">封测</td>
+</tr>
+<tr>
+<td><strong>德明利</strong></td>
+<td>001309</td>
+<td>Q1营收75.38亿（+502%），净利33.46亿（扭亏），自研主控毛利率57%</td>
+<td style="text-align: center;">SSD模组</td>
+</tr>
+<tr>
+<td><strong>佰维存储</strong></td>
+<td>688525</td>
+<td>Q1营收68亿（+341%），净利29亿，AI端侧存储+封测一体化</td>
+<td style="text-align: center;">模组/封测</td>
+</tr>
+<tr>
+<td><strong>江波龙</strong></td>
+<td>301308</td>
+<td>企业级存储龙头，130亿在手指令锁定全年业绩</td>
+<td style="text-align: center;">SSD/企业级</td>
+</tr>
+<tr>
+<td><strong>香农芯创</strong></td>
+<td>300475</td>
+<td>SK海力士HBM核心分销商，Q1净利13.27亿（+7835%）</td>
+<td style="text-align: center;">分销</td>
+</tr>
+<tr>
+<td><strong>长电科技</strong></td>
+<td>600584</td>
+<td>全球第三封测，HBM 8层堆叠良率98.5%，绑定长江存储/英伟达</td>
+<td style="text-align: center;">先进封装</td>
+</tr>
+<tr>
+<td><strong>通富微电</strong></td>
+<td>002156</td>
+<td>布局HBM CoWoS封装，2026年产能提升至1万片/月</td>
+<td style="text-align: center;">先进封装</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>七、ABF载板及上游材料：严重紧张</h2>
+<h3>核验结果：✅ 属实</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>来源</th>
+<th>核心证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>雪球/券商研报</td>
+<td>ABF材料由日本味之素垄断95%+份额，ABF载板全球前三大（欣兴/揖斐电/南亚）市占超49%</td>
+</tr>
+<tr>
+<td>华泰证券</td>
+<td>CPU+GPU双重压力叠加，AI智能体场景下CPU需求增长斜率高于GPU</td>
+</tr>
+<tr>
+<td>小V学投资 (4/27)</td>
+<td>"ABF载板全球供需缺口将持续到2028年"</td>
+</tr>
+<tr>
+<td>兴森科技业绩会 (5/8)</td>
+<td>FCBGA封装基板小批量生产，不同客户进展不同</td>
+</tr>
+<tr>
+<td>LPKF (4/20)</td>
+<td>玻璃基板（T-Glass）预计2027年才开始量产，当前供应严重不足</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>判断</strong>：纪要中"T-Glass供应缺口40%-50%"——T-Glass指玻璃基板（Through-Glass Via基板），是下一代先进封装的核心材料。当前玻璃基板全球产能极其有限，LPKF预计2027年才开始量产，Google/Intel/Nvidia等巨头正在积极验证。ABF载板同样是CPU/GPU/交换机芯片封装的刚需。</p>
+<h3>A股核心受益标的</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>代码</th>
+<th>核心逻辑</th>
+<th style="text-align: center;">受益环节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>兴森科技</strong></td>
+<td>002436</td>
+<td>国内唯一ABF载板量产企业，14层以下良率&gt;90%，批量供应华为昇腾</td>
+<td style="text-align: center;">ABF载板</td>
+</tr>
+<tr>
+<td><strong>深南电路</strong></td>
+<td>002916</td>
+<td>FC-BGA基板16层量产，无锡二期2026Q2投产，新增5万㎡/月</td>
+<td style="text-align: center;">ABF载板</td>
+</tr>
+<tr>
+<td><strong>华正新材</strong></td>
+<td>603186</td>
+<td>CBF树脂（积层绝缘膜）通过核心客户测试并批量供货</td>
+<td style="text-align: center;">ABF材料</td>
+</tr>
+<tr>
+<td><strong>沃格光电</strong></td>
+<td>603773</td>
+<td>TGV全制程龙头，最小孔径3μm，送样Intel/Nvidia，成都8.6代线2026量产</td>
+<td style="text-align: center;">玻璃基板</td>
+</tr>
+<tr>
+<td><strong>生益科技</strong></td>
+<td>600183</td>
+<td>ABF载板专用铜箔通过兴森验证，ABF膜材料研发中</td>
+<td style="text-align: center;">ABF材料</td>
+</tr>
+<tr>
+<td><strong>宏昌电子</strong></td>
+<td>603002</td>
+<td>与晶化科技合作开发类ABF增层膜新材料</td>
+<td style="text-align: center;">ABF材料</td>
+</tr>
+<tr>
+<td><strong>帝尔激光</strong></td>
+<td>300776</td>
+<td>TGV激光微孔设备国内市占约60%，服务长电/甬矽</td>
+<td style="text-align: center;">玻璃基板设备</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>综合结论与投资视角</h2>
+<h3>紧缺程度排序（由紧到松）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: center;">排名</th>
+<th>环节</th>
+<th style="text-align: center;">紧缺程度</th>
+<th style="text-align: center;">持续时间</th>
+<th style="text-align: center;">国产替代弹性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>InP衬底</td>
+<td style="text-align: center;">🔴 极度紧缺</td>
+<td style="text-align: center;">至2028年</td>
+<td style="text-align: center;">⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>SSD/HBM</td>
+<td style="text-align: center;">🔴 极度紧缺</td>
+<td style="text-align: center;">至2028年</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>ABF/T-Glass</td>
+<td style="text-align: center;">🔴 极度紧缺</td>
+<td style="text-align: center;">至2028年</td>
+<td style="text-align: center;">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>光纤/光棒</td>
+<td style="text-align: center;">🟠 严重紧缺</td>
+<td style="text-align: center;">至2027年</td>
+<td style="text-align: center;">⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>OCS物料</td>
+<td style="text-align: center;">🟠 严重紧缺</td>
+<td style="text-align: center;">至2027年</td>
+<td style="text-align: center;">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>CPU</td>
+<td style="text-align: center;">🟡 偏紧</td>
+<td style="text-align: center;">至2027年</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>DCI陶瓷/PCB</td>
+<td style="text-align: center;">🟡 偏紧</td>
+<td style="text-align: center;">至2027年</td>
+<td style="text-align: center;">⭐⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>核心判断</h3>
+<ol>
+<li>
+<p><strong>本轮短缺是结构性的，不是周期性的</strong>：AI算力需求是指数级增长，而半导体/材料产能建设周期长达2-3年，供需缺口本质上是刚性约束，短期不会消失。</p>
+</li>
+<li>
+<p><strong>国产替代是最核心的α来源</strong>：中国出口管制（稀土/铟/锗等）叠加海外产能受限，国内企业迎来前所未有的国产替代窗口。InP衬底、ABF载板、玻璃基板等环节国产化率极低（&lt;5%），弹性最大。</p>
+</li>
+<li>
+<p><strong>涨价传导路径清晰</strong>：上游材料涨价 → 中游器件涨价 → 下游AI服务器/光模块成本上升 → 云厂商资本开支继续扩大（形成正反馈）。</p>
+</li>
+<li>
+<p><strong>风险提示</strong>：
+   - 海外巨头大规模扩产可能缓解部分环节紧缺
+   - 技术路线切换风险（如CPO对可插拔光模块的替代）
+   - 地缘政治导致出口管制升级或放松
+   - AI资本开支增速放缓</p>
+</li>
+</ol>
+<hr>
+<p><em>本报告数据来源：Omdia、Nikkei Asia、Reuters、Digitimes、华泰证券、中金公司、CRU、TrendForce、Prismark、Cignal AI、各公司公告/互动平台。</em>
+<em>免责声明：本文仅为产业研究，不构成投资建议。市场有风险，投资需谨慎。</em></p>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
