@@ -159,6 +159,7 @@ a{color:var(--blue);text-decoration:none}button{font-family:inherit}
 <div class="days-backdrop" id="daysBackdrop" onclick="closeDays()">
 <div class="days-modal" id="daysModal" onclick="event.stopPropagation()">
   <div class="days-hdr"><div><h3 id="daysTitle" style="display:inline">-</h3><span class="days-code" id="daysCode"></span></div><button class="days-close" onclick="closeDays()">✕</button></div>
+  <div class="chart-wrap" style="height:170px;margin:10px 20px 0"><canvas id="daysCanvas"></canvas></div>
   <div class="days-body" id="daysBody"></div>
 </div>
 </div>
@@ -495,14 +496,28 @@ function openDays(code,panel){
   });
   let inCount=h.filter(p=>p&&(isAtk?p.rank<=topN:p.rank>total-topN)).length;
   html+='<div class="days-grid">'+cells+'</div>';
-  html+='<div class="days-sum">近30个交易日，该板块'+(isAtk?'进入进攻榜前'+topN+'名':'落入重灾区后'+topN+'名')+'共 <b style="color:var(--text)">'+inCount+'</b> 天。红色=进攻榜在榜，绿色=重灾区在榜，数字为该日加权评分排名。</div>';
+  html+='<div class="days-sum">近30个交易日，该板块'+(isAtk?'进入进攻榜前'+topN+'名':'落入重灾区后'+topN+'名')+'共 <b style="color:var(--text)">'+inCount+'</b> 天。上方曲线为在榜天数变化，红色=进攻榜在榜，绿色=重灾区在榜，数字为该日加权评分排名。</div>';
   document.getElementById('daysBody').innerHTML=html;
+  renderDaysChart(h,isAtk);
   document.getElementById('daysModal').classList.add('open');
   document.getElementById('daysBackdrop').classList.add('show');
+}
+let daysChart=null;
+function renderDaysChart(h,isAtk){
+  let ctx=document.getElementById('daysCanvas');if(!ctx)return;
+  let existing=Chart.getChart(ctx);
+  if(existing){existing.destroy();}
+  if(daysChart){try{daysChart.destroy()}catch(e){}daysChart=null}
+  let labels=h.map(p=>p.d.slice(5).replace('-','/'));
+  let vals=h.map(p=>isAtk?(p.aDays||0):(p.oDays||0));
+  let col=isAtk?'#dc2626':'#16a34a';
+  let gridCol=th==='light'?'#e2e8f0':'#21262d',tickCol=th==='light'?'#64748b':'#8b949e';
+  daysChart=new Chart(ctx,{type:'line',data:{labels,datasets:[{label:isAtk?'进攻榜在榜天数':'重灾区在榜天数',data:vals,borderColor:col,backgroundColor:col+'22',tension:.3,pointRadius:2.5,borderWidth:2,fill:true}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:tickCol,font:{size:11}}}},scales:{x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxTicksLimit:10}},y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10}},suggestedMin:0,suggestedMax:30}}}});
 }
 function closeDays(){
   document.getElementById('daysModal').classList.remove('open');
   document.getElementById('daysBackdrop').classList.remove('show');
+  if(daysChart){daysChart.destroy();daysChart=null}
   daysCode=null;daysPanel=null;
 }
 
