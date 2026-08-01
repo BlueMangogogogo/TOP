@@ -383,6 +383,7 @@ function openDrawer(code){
     '<button data-m="rank" onclick="drChartSwitch(\'rank\',this)">排名</button>'+
     '<button data-m="chg" onclick="drChartSwitch(\'chg\',this)">涨跌幅</button>'+
     '<button data-m="inflow" onclick="drChartSwitch(\'inflow\',this)">单日流入率</button>'+
+    '<button data-m="band" onclick="drChartSwitch(\'band\',this)">波段净额</button>'+
     '<button data-m="main" onclick="drChartSwitch(\'main\',this)">单日净额</button>'+
     '<button data-m="ondays" onclick="drChartSwitch(\'ondays\',this)">在榜天数</button>'+
     '<div class="chart-mode"><label><input type="radio" name="drmode" checked onchange="drSetMulti(false)">单指标</label>'+
@@ -430,14 +431,15 @@ function drRenderChart(){
   if(drChart){drChart.destroy();drChart=null}
   let ctx=document.getElementById('drCanvas');if(!ctx)return;
   let TN=ALL.length,labels=h.map(p=>p.d.slice(5));
-  let cList=['#2563eb','#dc2626','#16a34a','#d97706','#0891b2','#7c3aed'];
+  let cList=['#2563eb','#dc2626','#16a34a','#d97706','#0891b2','#7c3aed','#db2777'];
   let metaMap={
     ws:{label:'加权评分',key:'ws',c:0,style:'line'},
     rank:{label:'排名',key:'r_ws',c:1,style:'line',revAx:true},
     chg:{label:'涨跌幅',key:'chg',c:2,style:'kl',unit:'%'},
     inflow:{label:'单日流入率',key:'inflow',c:3,style:'kl',unit:'%'},
-    main:{label:'单日净额',key:'main',c:4,style:'kl',unit:'亿'},
-    ondays:{label:'在榜天数',key:'aDays',c:5,style:'line'}
+    band:{label:'波段净额',key:'bandNet',c:5,style:'kl',unit:'亿'},
+    main:{label:'单日净额',key:'mainNet',c:4,style:'kl',unit:'亿'},
+    ondays:{label:'在榜天数',key:'aDays',c:6,style:'line'}
   };
   let datasets=[],hasDual=false,chartType='line',revAx=false;
 
