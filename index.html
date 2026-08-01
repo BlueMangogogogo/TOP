@@ -437,7 +437,7 @@ function drRenderChart(){
     rank:{label:'排名',key:'r_ws',c:1,style:'line',revAx:true},
     chg:{label:'涨跌幅',key:'chg',c:2,style:'kl',unit:'%'},
     inflow:{label:'单日流入率',key:'inflow',c:3,style:'kl',unit:'%'},
-    band:{label:'波段净额',key:'bandNet',c:5,style:'kl',unit:'亿'},
+    band:{label:'波段净额',key:'bandNet',c:5,style:'kl',unit:'亿',noCum:true},
     main:{label:'单日净额',key:'mainNet',c:4,style:'kl',unit:'亿'},
     ondays:{label:'在榜天数',key:'aDays',c:6,style:'line'}
   };
@@ -451,11 +451,13 @@ function drRenderChart(){
 
     if(mm.style==='kl'){
       chartType='bar';
-      let cum=0,cumul=vals.map(v=>{cum+=(v||0);return +cum.toFixed(2);});
       let bg=vals.map(v=>v>=0?'rgba(22,163,74,0.5)':'rgba(220,38,38,0.5)');
       let bc=vals.map(v=>v>=0?'rgb(22,163,74)':'rgb(220,38,38)');
-      datasets.push({label:mm.label+' (日)',data:vals,backgroundColor:bg,borderColor:bc,borderWidth:1,yAxisID:yAx,type:'bar',order:2});
-      datasets.push({label:mm.label+' (累)',data:cumul,borderColor:cList[mm.c],backgroundColor:'transparent',borderWidth:2.5,tension:.3,pointRadius:2,fill:false,yAxisID:yAx,type:'line',order:1});
+      datasets.push({label:mm.label,data:vals,backgroundColor:bg,borderColor:bc,borderWidth:1,yAxisID:yAx,type:'bar',order:2});
+      if(!mm.noCum){
+        let cum=0,cumul=vals.map(v=>{cum+=(v||0);return +cum.toFixed(2);});
+        datasets.push({label:mm.label+' (累)',data:cumul,borderColor:cList[mm.c],backgroundColor:'transparent',borderWidth:2.5,tension:.3,pointRadius:2,fill:false,yAxisID:yAx,type:'line',order:1});
+      }
       if(i===1&&drMulti)hasDual=true;
     }else{
       datasets.push({label:mm.label,data:vals,borderColor:cList[mm.c],backgroundColor:cList[mm.c]+'20',tension:.3,pointRadius:2,borderWidth:2,yAxisID:yAx,type:'line'});
