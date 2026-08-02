@@ -1,9 +1,19 @@
 ﻿{
-    "last_updated":  "2026-08-01 16:43:19",
-    "total":  115,
-    "daily_count":  63,
+    "last_updated":  "2026-08-02 14:54:01",
+    "total":  116,
+    "daily_count":  64,
     "industry_count":  52,
     "reports":  [
+                    {
+                        "id":  "2026-08-02-宏观择时日报_MTIv3_20260802",
+                        "date":  "2026-08-02",
+                        "display_date":  "8月2日",
+                        "type":  "daily",
+                        "category":  "宏观择时",
+                        "title":  "宏观择时日报_MTIv3_20260802",
+                        "relative_path":  "reports/2026-08-02/宏观择时日报_MTIv3_20260802.html",
+                        "size_kb":  9.5
+                    },
                     {
                         "relative_path":  "reports/2026-07-22/002158 汉钟精机 · 个股深度研究.html",
                         "id":  "2026-07-22-002158 汉钟精机 · 个股深度研究",
