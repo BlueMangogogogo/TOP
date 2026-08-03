@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月3日 深度复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>8月3日 深度复盘</h1>
+  <div class="meta">
+    📅 2026年8月3日 | 投资小龙虾 AI 自动生成 | 仅供参考
+  </div>
+</header>
+
+<h2>📊 指数全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3809.66</td>
+<td>-0.59%（开3812.61·高3827.64·低3797.64）</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>13448.29</td>
+<td>-0.96%</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>—</td>
+<td>一度跌超4%，芯片股拖累</td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>19974亿</td>
+<td>较上周五略缩量（上周日均约2.2万亿）</td>
+</tr>
+<tr>
+<td>上涨家数</td>
+<td>约1300家</td>
+<td>二八分化，赚钱效应弱</td>
+</tr>
+<tr>
+<td>下跌家数</td>
+<td>约3700家</td>
+<td>—</td>
+</tr>
+<tr>
+<td>涨停</td>
+<td>83家</td>
+<td>连板高度：传智教育6连板</td>
+</tr>
+<tr>
+<td>跌停</td>
+<td>9家</td>
+<td>含兆易创新（存储龙头）·中国巨石·宏和科技</td>
+</tr>
+<tr>
+<td>炸板</td>
+<td>约30家（炸板率~27%）</td>
+<td>存储人气股德明利炸板收跌</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>上证支撑位：3780（前低·MA60）| 压力位：3832（前高·MA20）</p>
+<p>市场情绪：<strong>偏冷</strong>。涨跌停比83:9看似健康，但科技股深度回调拖累科创板，上涨家数仅约1300家，赚钱效应集中在核电/基建方向。</p>
+</div>
+<h2>🌍 外盘与宏观环境</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>收盘</th>
+<th>涨跌</th>
+<th>对A股影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纳指</td>
+<td>25,373</td>
+<td>+1.00%（上周五）</td>
+<td>科技/AI映射，但今日亚太科技重挫对冲</td>
+</tr>
+<tr>
+<td>道指</td>
+<td>52,485</td>
+<td>+0.53%</td>
+<td>七周连涨</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7,489</td>
+<td>+0.70%</td>
+<td>距7500一步之遥</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td>16.56</td>
+<td>-3.50%</td>
+<td>恐慌退潮</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td>100.03</td>
+<td>+0.31%</td>
+<td>重返100关口</td>
+</tr>
+<tr>
+<td>黄金</td>
+<td>$4,082</td>
+<td>-0.44%</td>
+<td>避险降温</td>
+</tr>
+<tr>
+<td>WTI原油</td>
+<td>$80.03</td>
+<td>-5.3%（周末累计）</td>
+<td>美伊谈判油价暴跌</td>
+</tr>
+<tr>
+<td>韩国KOSPI</td>
+<td>—</td>
+<td>-5%（今日盘中）</td>
+<td>三星/SK海力士跌超7%，科技重挫</td>
+</tr>
+<tr>
+<td>日经225</td>
+<td>—</td>
+<td>-2%（今日盘中）</td>
+<td>亚太开盘承压</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>一句话：美股上周五七周连涨收官，但周末地缘缓和（油价暴跌）+ 亚太科技股暴跌（韩国KOSPI -5%）形成对冲，今日A股在科技回调压力下缩量阴跌。</p>
+</div>
+<h2>📰 今日核心新闻简报</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>新闻</th>
+<th>影响板块</th>
+<th>情绪</th>
+<th style="text-align: center;">强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>特朗普宣布美伊8月3日谈判，取消对伊大规模打击，霍尔木兹海峡协议有望达成</td>
+<td>原油/军工偏空、航空/化工利好</td>
+<td>利好（地缘缓和）</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>韩国KOSPI暴跌5%，三星/SK海力士跌超7%，存储芯片龙头遭重挫</td>
+<td>A股存储/半导体/AI硬件</td>
+<td><strong>重大利空</strong></td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>央行2026下半年工作会议：继续适度宽松，增加隔夜逆回购品种，收窄利率区间</td>
+<td>宏观流动性/金融地产</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>国常会部署扩大内需，四部门22条措施健全金融机构治理</td>
+<td>大消费/内需</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>兆易创新拟10-20亿元回购（周末公告），美股86%成分股超预期</td>
+<td>存储芯片个股/市场基本面</td>
+<td>偏利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🔍 重点新闻情绪催化验证</h3>
+<ul>
+<li><strong>美伊谈判 + 油价暴跌</strong>：油气资源板块领跌（中国石油走弱），航空/化工尾盘有资金尝试，地缘缓和的直接映射。</li>
+<li><strong>韩国存储暴跌</strong>：A股存储芯片遭重挫，兆易创新 -10% 跌停、德明利炸板收跌、普冉股份/拓荆科技大跌。尽管兆易创新回购公告对冲，情绪面仍被压制。</li>
+<li><strong>核能/电力霸榜</strong>：核电核能 +29.27亿主力净流入、超临界发电 +16.9亿、可控核聚变 +14.02亿、中国核建/江苏神通涨停——今日资金最集中的方向，与科技回调形成跷跷板。</li>
+</ul>
+<h2>🔥 今日最强主线</h2>
+<h3>板块涨幅 TOP5（含主力资金）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: center;">排名</th>
+<th>板块</th>
+<th style="text-align: center;">涨幅</th>
+<th style="text-align: center;">主力净流入</th>
+<th>龙头股</th>
+<th>驱动逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>光热发电</td>
+<td style="text-align: center;">+3.31%</td>
+<td style="text-align: center;">+3.47亿</td>
+<td>—</td>
+<td>碳中和/电力设备延续</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>可控核聚变</td>
+<td style="text-align: center;">+3.02%</td>
+<td style="text-align: center;">+14.02亿</td>
+<td>中国核建(+10%)</td>
+<td>核能主线扩散</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>风沙治理</td>
+<td style="text-align: center;">+2.96%</td>
+<td style="text-align: center;">+0.16亿</td>
+<td>—</td>
+<td>内需/基建政策</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>地下管网</td>
+<td style="text-align: center;">+2.91%</td>
+<td style="text-align: center;">+1.60亿</td>
+<td>—</td>
+<td>国常会扩内需</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>核电核能</td>
+<td style="text-align: center;">+2.82%</td>
+<td style="text-align: center;">+29.27亿</td>
+<td>中国核建·江苏神通(+10%)</td>
+<td>资金最集中方向</td>
+</tr>
+</tbody>
+</table></div>
+<h3>板块跌幅 TOP5</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: center;">排名</th>
+<th>板块</th>
+<th style="text-align: center;">跌幅</th>
+<th style="text-align: center;">主力净流出</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>存储芯片</td>
+<td style="text-align: center;">-3.11%</td>
+<td style="text-align: center;">-355亿（5日）</td>
+<td>韩国存储暴跌映射</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>先进封装</td>
+<td style="text-align: center;">-2.28%</td>
+<td style="text-align: center;">-286亿（5日）</td>
+<td>半导体产业链拖累</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>玻璃基板</td>
+<td style="text-align: center;">-1.69%</td>
+<td style="text-align: center;">-84亿（5日）</td>
+<td>半导体材料回调</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>油气资源</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td>美伊谈判油价大跌</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>证券</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td>市场缩量拖累</td>
+</tr>
+</tbody>
+</table></div>
+<h3>主线持续性分析</h3>
+<ul>
+<li><strong>核能/电力</strong>：今日强度【极强】。核电核能/可控核聚变/超临界发电/虚拟电厂四箭齐发，主力净流入居前。持续性判断：<strong>可能有</strong>——政策面（碳中和+内需）+ 资金面（+29亿）双支撑，但需观察明日是否扩散到特高压/智能电网。</li>
+<li><strong>AI应用（昨日主线）</strong>：今日强度【转弱】。传智教育 6 连板封住但板块整体分化，昆仑万维/蓝色光标 20cm 涨停后无溢价，存储芯片大跌拖累 AI 硬件。持续性判断：<strong>分化中</strong>——软件应用仍强（传智教育/利欧股份），但硬件端受韩国暴跌压制。</li>
+<li><strong>主线切换信号</strong>：科技（存储/半导体）→ 核能/电力 的高低切换正在发生。今日资金明显从存储流向核电，是否形成新主线待明日确认。</li>
+</ul>
+<h2>💰 板块资金雷达趋势</h2>
+<blockquote>
+<p>数据来源：本地板块资金雷达系统（三因子加权：动量40%+量比30%+资金30%）</p>
+</div>
+<h3>资金进攻榜 TOP10（三因子加权排序）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">涨幅</th>
+<th style="text-align: center;">量比</th>
+<th style="text-align: center;">5日资金</th>
+<th style="text-align: center;">30天在榜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepSeek概念</td>
+<td style="text-align: center;">+1.11%</td>
+<td style="text-align: center;">1.01</td>
+<td style="text-align: center;">+68.8亿</td>
+<td style="text-align: center;">1天</td>
+</tr>
+<tr>
+<td>核电核能</td>
+<td style="text-align: center;">+2.82%</td>
+<td style="text-align: center;">1.06</td>
+<td style="text-align: center;">+12.8亿</td>
+<td style="text-align: center;">1天</td>
+</tr>
+<tr>
+<td>AI智能体</td>
+<td style="text-align: center;">+1.08%</td>
+<td style="text-align: center;">1.09</td>
+<td style="text-align: center;">+59.0亿</td>
+<td style="text-align: center;">1天</td>
+</tr>
+<tr>
+<td>AIGC概念</td>
+<td style="text-align: center;">+0.74%</td>
+<td style="text-align: center;">1.11</td>
+<td style="text-align: center;">+101.4亿</td>
+<td style="text-align: center;">1天</td>
+</tr>
+<tr>
+<td>数据要素</td>
+<td style="text-align: center;">+1.42%</td>
+<td style="text-align: center;">1.04</td>
+<td style="text-align: center;">+31.2亿</td>
+<td style="text-align: center;">1天</td>
+</tr>
+<tr>
+<td>ChatGPT概念</td>
+<td style="text-align: center;">+1.16%</td>
+<td style="text-align: center;">1.28</td>
+<td style="text-align: center;">+103.3亿</td>
+<td style="text-align: center;">1天</td>
+</tr>
+<tr>
+<td>节能环保</td>
+<td style="text-align: center;">+2.40%</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: center;">+30.5亿</td>
+<td style="text-align: center;">1天</td>
+</tr>
+<tr>
+<td>元宇宙概念</td>
+<td style="text-align: center;">+1.50%</td>
+<td style="text-align: center;">1.09</td>
+<td style="text-align: center;">+19.6亿</td>
+<td style="text-align: center;">1天</td>
+</tr>
+<tr>
+<td>华为鸿蒙</td>
+<td style="text-align: center;">+1.26%</td>
+<td style="text-align: center;">1.04</td>
+<td style="text-align: center;">+59.7亿</td>
+<td style="text-align: center;">1天</td>
+</tr>
+<tr>
+<td>跨境电商</td>
+<td style="text-align: center;">+1.39%</td>
+<td style="text-align: center;">1.06</td>
+<td style="text-align: center;">+59.5亿</td>
+<td style="text-align: center;">1天</td>
+</tr>
+</tbody>
+</table></div>
+<h3>资金重灾榜 TOP5</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">涨幅</th>
+<th style="text-align: center;">5日资金</th>
+<th style="text-align: center;">30天在榜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储芯片</td>
+<td style="text-align: center;">-3.11%</td>
+<td style="text-align: center;">-355.0亿</td>
+<td style="text-align: center;">0天</td>
+</tr>
+<tr>
+<td>工业气体</td>
+<td style="text-align: center;">-1.12%</td>
+<td style="text-align: center;">-22.3亿</td>
+<td style="text-align: center;">0天</td>
+</tr>
+<tr>
+<td>玻璃基板</td>
+<td style="text-align: center;">-1.69%</td>
+<td style="text-align: center;">-83.7亿</td>
+<td style="text-align: center;">0天</td>
+</tr>
+<tr>
+<td>先进封装</td>
+<td style="text-align: center;">-2.28%</td>
+<td style="text-align: center;">-285.6亿</td>
+<td style="text-align: center;">0天</td>
+</tr>
+<tr>
+<td>培育钻石</td>
+<td style="text-align: center;">-0.44%</td>
+<td style="text-align: center;">-11.4亿</td>
+<td style="text-align: center;">0天</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>雷达解读：进攻榜几乎全是 AI 应用/软件方向（AIGC +101亿、ChatGPT +103亿），资金在科技内部分化——<strong>软件应用吸金、半导体硬件失血</strong>。重灾榜半导体产业链（存储/封装/基板）5日净流出超700亿，是本轮回调主灾区。</p>
+</div>
+<h2>🎯 核心个股拆解</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>个股</th>
+<th style="text-align: center;">现价</th>
+<th style="text-align: center;">涨跌</th>
+<th>关键信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传智教育</td>
+<td style="text-align: center;">9.69</td>
+<td style="text-align: center;">+9.99%</td>
+<td>6连板，AI应用总龙头，封单1.99亿</td>
+</tr>
+<tr>
+<td>中国核建</td>
+<td style="text-align: center;">11.61</td>
+<td style="text-align: center;">+10.05%</td>
+<td>涨停，核能方向龙头，封单2.75亿</td>
+</tr>
+<tr>
+<td>中大力德</td>
+<td style="text-align: center;">71.76</td>
+<td style="text-align: center;">+9.99%</td>
+<td>涨停，机器人/减速器方向</td>
+</tr>
+<tr>
+<td>富瀚微</td>
+<td style="text-align: center;">67.48</td>
+<td style="text-align: center;">+20.01%</td>
+<td>20cm涨停，AI芯片/视觉方向</td>
+</tr>
+<tr>
+<td>欣天科技</td>
+<td style="text-align: center;">10.43</td>
+<td style="text-align: center;">+20.02%</td>
+<td>20cm涨停，通信设备</td>
+</tr>
+<tr>
+<td>兆易创新</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">-10.00%跌停</td>
+<td>存储龙头跌停，虽有回购公告仍被情绪压制</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>拆解要点：传智教育 6 连板是 AI 应用主线最后的多头堡垒；中国核建承接核能新主线；富瀚微/欣天科技 20cm 说明小票活跃度仍在，但集中在 AI 应用与通信细分，赚钱效应结构性。</p>
+</div>
+<h2>⚠️ 风险预警</h2>
+<ol>
+<li><strong>存储/半导体失血加速</strong>：5日净流出超700亿，韩国科技股暴跌映射未完，明日警惕半导体产业链继续补跌。</li>
+<li><strong>缩量阴跌</strong>：两市19974亿跌破2万亿，量能萎缩说明增量资金观望，反弹高度受限。</li>
+<li><strong>高低切风险</strong>：科技→核能切换若失败，两头挨打（科技补跌+核能不持续），追高需极度谨慎。</li>
+</ol>
+<h2>🔭 明日推演</h2>
+<h3>明日关注方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th>关注标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>核能/电力延续</td>
+<td>今日+29亿资金最集中，若中国核建/江苏神通续板则主线确认</td>
+<td>中国核建、江苏神通、东方电气</td>
+</tr>
+<tr>
+<td>AI应用分化</td>
+<td>传智教育6连板检验，软件应用与硬件脱钩</td>
+<td>传智教育、利欧股份、天娱数科</td>
+</tr>
+<tr>
+<td>存储止跌</td>
+<td>兆易创新回购+跌停后超跌，若缩量止跌可低吸</td>
+<td>兆易创新、德明利</td>
+</tr>
+<tr>
+<td>风险规避</td>
+<td>缩量+科技回调，追高谨慎</td>
+<td>防御方向暂避</td>
+</tr>
+</tbody>
+</table></div>
+<h3>策略建议</h3>
+<ul>
+<li><strong>持仓者</strong>：核能方向持有核心仓位，明日中国核建断板则减仓；AI应用若传智教育断板，后排果断兑现；存储被套者不急于割肉，看缩量止跌信号。</li>
+<li><strong>观望者</strong>：等待核能主线扩散确认（特高压/智能电网接力）再介入；AI应用等分化后选强势者；存储等企稳小阳线。</li>
+<li><strong>风险应对</strong>：若韩国市场继续暴跌或半导体再度补跌，开盘减仓科技；若量能跌破1.8万亿，市场进入缩量磨底阶段，仓位压至防守。</li>
+</ul>
+<h3>明日观察要点</h3>
+<ol>
+<li>传智教育能否7连板（AI应用主线最终考验）</li>
+<li>中国核建/江苏神通能否续板（核能新主线确认）</li>
+<li>兆易创新能否止跌（存储方向修复信号）</li>
+<li>两市成交能否守住2万亿（量能决定反弹空间）</li>
+<li>韩国KOSPI/日经今日暴跌后的隔夜修复情况</li>
+</ol>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant（涨停/连板/行情）· 板块资金雷达（三因子加权）· 亿信API（新闻）· web_search（外盘/商品）| 生成时间：2026年8月3日 23:20</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

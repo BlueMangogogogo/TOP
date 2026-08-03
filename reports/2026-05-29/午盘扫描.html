@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔍 浩泉午盘扫描 — 2026年5月29日</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🔍 浩泉午盘扫描 — 2026年5月29日</h1>
+  <div class="meta">
+    📅 2026年05月29日 19:25
+  </div>
+</header>
+
+<hr>
+<h2>一、市场全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>涨跌幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>4068.57</td>
+<td><strong>-0.73%</strong></td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>15575.13</td>
+<td><strong>-1.81%</strong></td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>33191亿</td>
+<td>—</td>
+</tr>
+<tr>
+<td>涨停/跌停</td>
+<td>67 / 59</td>
+<td>涨跌比约 1:1</td>
+</tr>
+<tr>
+<td>上涨/下跌家数</td>
+<td>—</td>
+<td>偏空</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>成交判断</strong>：两市全天成交3.3万亿，量能维持高位但指数双双收跌，属于放量下跌格局。深成指跌幅显著大于沪指，小盘成长股承压更重。</p>
+</div>
+<hr>
+<h2>二、上证压力/支撑位</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>点位</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>压力位</strong></td>
+<td>4112</td>
+<td>今日日内高点</td>
+</tr>
+<tr>
+<td><strong>支撑位</strong></td>
+<td>4055</td>
+<td>今日日内低点</td>
+</tr>
+<tr>
+<td>第二支撑</td>
+<td>4021</td>
+<td>今日均价线附近</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>上证今日先冲高至4112后持续回落，收于4068，空方主导午后。明日需观察4055支撑有效性，若跌破则看4020一线。</p>
+</div>
+<hr>
+<h2>三、概念板块涨幅 TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块名称</th>
+<th>涨跌幅</th>
+<th>主力资金流向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>🛍️ 免税概念</td>
+<td><strong>+2.10%</strong></td>
+<td>净流入 +12.7亿</td>
+</tr>
+<tr>
+<td>2</td>
+<td>🍶 白酒概念</td>
+<td><strong>+1.51%</strong></td>
+<td>净流入 +27.8亿</td>
+</tr>
+<tr>
+<td>3</td>
+<td>🏢 含H股</td>
+<td><strong>+0.86%</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>4</td>
+<td>🍲 预制菜</td>
+<td><strong>+0.86%</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>5</td>
+<td>🏛️ 中特估</td>
+<td><strong>+0.79%</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>涨幅分析</strong>：今日市场风格明显切换至防御消费。免税、白酒、预制菜等消费类板块逆势走强，主力资金流入白酒板块最为显著（+27.8亿）。科技成长类全面回调，消费防御成为资金避风港。</p>
+</div>
+<hr>
+<h2>四、概念板块跌幅 TOP5</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块名称</th>
+<th>涨跌幅</th>
+<th>主力资金流向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>🔲 玻璃基板</td>
+<td><strong>-6.29%</strong></td>
+<td>净流出 -53.5亿</td>
+</tr>
+<tr>
+<td>2</td>
+<td>📺 MicroLED</td>
+<td><strong>-6.21%</strong></td>
+<td>净流出 -155.2亿</td>
+</tr>
+<tr>
+<td>3</td>
+<td>💻 工业软件</td>
+<td><strong>-5.82%</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>4</td>
+<td>🔌 MCU芯片</td>
+<td><strong>-5.79%</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>5</td>
+<td>📄 电子纸</td>
+<td><strong>-5.77%</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>跌幅分析</strong>：半导体/消费电子相关板块遭遇集体重挫，MicroLED单板块主力净流出超155亿，玻璃基板流出53.5亿。前期累积涨幅较大的科技方向出现集中获利回吐，汽车芯片（-5.64%）、光刻机（-5.63%）、折叠屏（-5.45%）、第三代半导体（-5.38%）紧随其后。</p>
+</div>
+<hr>
+<h2>五、涨停板主线拆解</h2>
+<h3>🏆 主线一：电力板块（最强主线）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>个股</th>
+<th>代码</th>
+<th>板数</th>
+<th>板型</th>
+<th>核心逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>华电能源</strong></td>
+<td>600726</td>
+<td>5板</td>
+<td>换手板</td>
+<td>电力龙头，数据中心电力缺口催化</td>
+</tr>
+<tr>
+<td>粤电力A</td>
+<td>000539</td>
+<td>3板</td>
+<td>换手板</td>
+<td>广东最大电力公司+光伏投资</td>
+</tr>
+<tr>
+<td>华能国际</td>
+<td>600011</td>
+<td>首板</td>
+<td>换手板</td>
+<td>中国最大发电公司之一</td>
+</tr>
+<tr>
+<td>晋控电力</td>
+<td>000767</td>
+<td>首板</td>
+<td>换手板</td>
+<td>山西最大发电公司</td>
+</tr>
+<tr>
+<td>深南电A</td>
+<td>000037</td>
+<td>首板</td>
+<td>换手板</td>
+<td>深圳供电供热</td>
+</tr>
+<tr>
+<td>江苏国信</td>
+<td>002608</td>
+<td>首板</td>
+<td>换手板</td>
+<td>苏晋能源+信托</td>
+</tr>
+<tr>
+<td>广安爱众</td>
+<td>600979</td>
+<td>首板</td>
+<td>换手板</td>
+<td>液冷算力+电力</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>催化：南方电网电力负荷提前一个月创新高 + 研究称数据中心将面临55GW电力缺口</p>
+</div>
+<h3>🥈 主线二：消费/新零售（政策+防御）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>个股</th>
+<th>代码</th>
+<th>板数</th>
+<th>板型</th>
+<th>核心逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>步步高</td>
+<td>002251</td>
+<td>3板(4天)</td>
+<td>换手板</td>
+<td>胖东来帮扶改造</td>
+</tr>
+<tr>
+<td>茂业商业</td>
+<td>600828</td>
+<td>首板</td>
+<td>换手板</td>
+<td>呼和浩特零售龙头+离境退税</td>
+</tr>
+<tr>
+<td>中央商场</td>
+<td>600280</td>
+<td>首板</td>
+<td>换手板</td>
+<td>南京百货龙头</td>
+</tr>
+<tr>
+<td>三江购物</td>
+<td>601116</td>
+<td>首板</td>
+<td>换手板</td>
+<td>浙江最大连锁超市+阿里二股东</td>
+</tr>
+<tr>
+<td>国芳集团</td>
+<td>601086</td>
+<td>首板</td>
+<td>换手板</td>
+<td>甘肃最大连锁零售，Q1净利+174%</td>
+</tr>
+<tr>
+<td><strong>酒鬼酒</strong></td>
+<td>000799</td>
+<td>首板</td>
+<td>换手板</td>
+<td>白酒+胖东来联名"酒鬼·自由爱"</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>催化：消费行业估值处于历史低位 + 胖东来概念扩散 + 免税政策预期</p>
+</div>
+<h3>🥉 主线三：铜缆高速连接（戴尔财报催化）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>个股</th>
+<th>代码</th>
+<th>板数</th>
+<th>板型</th>
+<th>核心逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>泓淋电力</td>
+<td>301439</td>
+<td>首板</td>
+<td>一字板</td>
+<td>戴尔供应商+1.6T高速铜缆</td>
+</tr>
+<tr>
+<td>新亚电子</td>
+<td>605277</td>
+<td>首板</td>
+<td>一字板</td>
+<td>高频铜缆进戴尔供应链，Q1订单饱满</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>催化：美股戴尔盘后飙升近40%，AI服务器营收预期上调至约600亿美元</p>
+</div>
+<h3>📋 其他活跃方向</h3>
+<ul>
+<li><strong>城市更新</strong>：天健集团(2板)、香江控股(5板)、光大嘉宝、福星股份（《城市更新"十五五"规划》印发）</li>
+<li><strong>机器人/宇树概念</strong>：东杰智能(20cm首板，宇树6月1日IPO上会)</li>
+<li><strong>半导体设备</strong>：盛剑科技(2板，华为海思洁净室供应商)</li>
+<li><strong>医药创新</strong>：赛诺医疗(20cm涨停)、东亚药业</li>
+</ul>
+<hr>
+<h2>六、跌停板重灾区</h2>
+<h3>🔴 半导体/芯片大面积杀跌</h3>
+<p>京东方A、华天科技、晶方科技、斯达半导、士兰微、康强电子、铖昌科技、快克智能、智光电气等批量跌停。前期科技方向累计涨幅过大，今日集中兑现。</p>
+<h3>🟠 其他跌停方向</h3>
+<ul>
+<li><strong>新材料/军工</strong>：博云新材、安泰科技、双星新材</li>
+<li><strong>机器人/AI</strong>：露笑科技、达实智能、科远智慧</li>
+<li><strong>光学光电</strong>：彩虹股份、水晶光电、华塑控股</li>
+</ul>
+<blockquote>
+<p>跌停潮特点：以"个股调整"原因为主，多为前期强势股获利回吐，未见明确基本面恶化信号。</p>
+</div>
+<hr>
+<h2>七、异动个股深度分析</h2>
+<h3>⚡ 华电能源（600726）— 电力总龙头</h3>
+<ul>
+<li><strong>5连板</strong>，今日涨停打开10次，封单1.7亿</li>
+<li>全天成交7.4亿，换手率极高，筹码大幅交换</li>
+<li><strong>判断</strong>：5板之后分歧显著加剧。打开10次说明抛压极重，但仍有资金封板。短线已进入高风险博弈阶段，追高性价比极低。关注明日是否有资金回流确认。</li>
+</ul>
+<h3>🔗 泓淋电力（301439）— 铜缆新贵</h3>
+<ul>
+<li>一字板首板，封单2.6亿，封成比109</li>
+<li>核心逻辑：戴尔供应商+1.6T高速铜缆+泰国布局</li>
+<li><strong>判断</strong>：一字板封单极强，短期仍有连板预期。戴尔财报是重大催化，铜缆高速连接赛道获机构加持。关注明日是否开板换手。</li>
+</ul>
+<h3>🍶 酒鬼酒（000799）— 胖东来概念扩散</h3>
+<ul>
+<li>首板换手板，白酒板块集体走强</li>
+<li>与胖东来联合开发"酒鬼·自由爱"联名产品</li>
+<li>中粮集团控股央企背景，Q1净利润+4.63%</li>
+<li><strong>判断</strong>：白酒板块今日获得27.8亿主力净流入，酒鬼酒作为弹性最大的白酒标的之一，叠加胖东来IP溢价，短期有一定博弈价值。但需注意白酒板块整体估值不低。</li>
+</ul>
+<hr>
+<h2>八、明日观察重点</h2>
+<ol>
+<li><strong>电力板块持续性</strong>：华电能源5板后分歧加剧，明日能否弱转强是电力板块延续的关键</li>
+<li><strong>半导体是否企稳</strong>：今日半导体大面积跌停，明日早盘若有资金抄底信号，可能是个短期博弈点</li>
+<li><strong>消费防御能否扩散</strong>：免税+白酒今日逆势，关注明日是否向食品饮料、医美等方向扩散</li>
+<li><strong>铜缆高速连接</strong>：泓淋电力、新亚电子一字板后，明日溢价情况和换手承接</li>
+<li><strong>市场量能</strong>：3.3万亿放量下跌，若明日缩量则有企稳可能</li>
+</ol>
+<hr>
+<h2>九、仓位与策略建议</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>判断</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>市场环境</td>
+<td>放量下跌，深强沪弱反转</td>
+<td>偏谨慎</td>
+</tr>
+<tr>
+<td>主线强度</td>
+<td>电力仍是最强主线但分歧加剧</td>
+<td>等分歧转一致</td>
+</tr>
+<tr>
+<td>风险偏好</td>
+<td>跌停59只，亏钱效应明显</td>
+<td>控制仓位</td>
+</tr>
+<tr>
+<td>操作策略</td>
+<td>—</td>
+<td>防御为主，关注消费+电力回踩</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>核心观点</strong>：今日市场放量普跌，科技方向遭遇集中兑现，消费防御板块逆势走强。电力板块作为近期最强主线出现高位分歧，华电能源5板后筹码松动。短期建议控制仓位、回避高位科技股，关注低位消费和电力板块分歧后的低吸机会。</p>
+</div>
+<hr>
+<h2>⚠️ 免责声明</h2>
+<p><strong>本报告由AI自动生成，仅供参考，不构成任何投资建议。市场有风险，投资需谨慎。报告中的数据和观点可能存在误差，投资者应独立判断并自行承担投资风险。</strong></p>
+<hr>
+<blockquote>
+<p>📅 生成时间：2026年5月29日 15:30 | 📊 数据来源：通达信TQLEX</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年05月29日 19:25</p>
+</footer>
+
+</body>
+</html>

@@ -1,608 +1,528 @@
 {
-  "last_updated": "2026-08-03 20:01:27",
-  "total": 117,
-  "daily_count": 65,
-  "industry_count": 52,
+  "last_updated": "2026-08-03 23:11:32",
+  "total": 71,
+  "daily_count": 37,
+  "industry_count": 34,
   "reports": [
+    {
+      "id": "2026-08-03-竞价快报",
+      "date": "2026-08-03",
+      "display_date": "8月3日",
+      "type": "daily",
+      "category": "竞价快报",
+      "title": "竞价快报",
+      "relative_path": "reports/2026-08-03/竞价快报.html",
+      "size_kb": 7.3
+    },
+    {
+      "id": "2026-08-03-盘中异动",
+      "date": "2026-08-03",
+      "display_date": "8月3日",
+      "type": "daily",
+      "category": "盘中异动",
+      "title": "盘中异动",
+      "relative_path": "reports/2026-08-03/盘中异动.html",
+      "size_kb": 17.8
+    },
+    {
+      "id": "2026-08-03-深度复盘",
+      "date": "2026-08-03",
+      "display_date": "8月3日",
+      "type": "daily",
+      "category": "深度复盘",
+      "title": "深度复盘",
+      "relative_path": "reports/2026-08-03/深度复盘.html",
+      "size_kb": 21.4
+    },
+    {
+      "id": "2026-08-03-早盘扫描",
+      "date": "2026-08-03",
+      "display_date": "8月3日",
+      "type": "daily",
+      "category": "早盘扫描",
+      "title": "早盘扫描",
+      "relative_path": "reports/2026-08-03/早盘扫描.html",
+      "size_kb": 9.1
+    },
+    {
+      "id": "2026-08-03-收盘总结",
+      "date": "2026-08-03",
+      "display_date": "8月3日",
+      "type": "daily",
+      "category": "收盘总结",
+      "title": "收盘总结",
+      "relative_path": "reports/2026-08-03/收盘总结.html",
+      "size_kb": 16.6
+    },
+    {
+      "id": "2026-08-03-开盘速览",
+      "date": "2026-08-03",
+      "display_date": "8月3日",
+      "type": "daily",
+      "category": "开盘速览",
+      "title": "开盘速览",
+      "relative_path": "reports/2026-08-03/开盘速览.html",
+      "size_kb": 7.6
+    },
     {
       "id": "2026-08-03-宏观择时日报_MTIv3_20260803",
       "date": "2026-08-03",
       "display_date": "8月3日",
-      "type": "daily",
-      "category": "宏观择时",
+      "type": "industry",
+      "category": "行业报告",
       "title": "宏观择时日报_MTIv3_20260803",
       "relative_path": "reports/2026-08-03/宏观择时日报_MTIv3_20260803.html",
-      "size_kb": 150
+      "size_kb": 151.5
+    },
+    {
+      "id": "2026-08-03-午盘扫描",
+      "date": "2026-08-03",
+      "display_date": "8月3日",
+      "type": "daily",
+      "category": "午盘扫描",
+      "title": "午盘扫描",
+      "relative_path": "reports/2026-08-03/午盘扫描.html",
+      "size_kb": 10.3
+    },
+    {
+      "id": "2026-08-03-8月3日 深度复盘",
+      "date": "2026-08-03",
+      "display_date": "8月3日",
+      "type": "daily",
+      "category": "深度复盘",
+      "title": "8月3日 深度复盘",
+      "relative_path": "reports/2026-08-03/8月3日 深度复盘.html",
+      "size_kb": 21.4
+    },
+    {
+      "id": "2026-08-02-深度复盘",
+      "date": "2026-08-02",
+      "display_date": "8月2日",
+      "type": "daily",
+      "category": "深度复盘",
+      "title": "深度复盘",
+      "relative_path": "reports/2026-08-02/深度复盘.html",
+      "size_kb": 23.9
     },
     {
       "id": "2026-08-02-宏观择时日报_MTIv3_20260802",
       "date": "2026-08-02",
       "display_date": "8月2日",
-      "type": "daily",
-      "category": "宏观择时",
+      "type": "industry",
+      "category": "行业报告",
       "title": "宏观择时日报_MTIv3_20260802",
       "relative_path": "reports/2026-08-02/宏观择时日报_MTIv3_20260802.html",
-      "size_kb": 9.5
+      "size_kb": 151.4
     },
     {
-      "relative_path": "reports/2026-07-22/002158 汉钟精机 · 个股深度研究.html",
-      "id": "2026-07-22-002158 汉钟精机 · 个股深度研究",
-      "display_date": "7月22日",
-      "title": "002158 汉钟精机 · 个股深度研究",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 25.1,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/2026Q2基金半导体持仓迁移研究.html",
-      "id": "2026-07-22-2026Q2基金半导体持仓迁移研究",
-      "display_date": "7月22日",
-      "title": "2026Q2基金半导体持仓迁移研究",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 23.7,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/2026年7月23日A股早盘报告.html",
-      "id": "2026-07-22-2026年7月23日A股早盘报告",
-      "display_date": "7月22日",
-      "title": "2026年7月23日A股早盘报告",
-      "category": "早盘扫描",
+      "id": "2026-08-02-周度盘前",
+      "date": "2026-08-02",
+      "display_date": "8月2日",
       "type": "daily",
-      "size_kb": 25.1,
-      "date": "2026-07-22"
+      "category": "周度盘前",
+      "title": "周度盘前",
+      "relative_path": "reports/2026-08-02/周度盘前.html",
+      "size_kb": 14.6
     },
     {
-      "relative_path": "reports/2026-07-22/260722_A股市场复盘与策略报告.html",
-      "id": "2026-07-22-260722_A股市场复盘与策略报告",
-      "display_date": "7月22日",
-      "title": "260722_A股市场复盘与策略报告",
-      "category": "深度研究",
+      "id": "2026-08-02-8月2日 周度盘前策略",
+      "date": "2026-08-02",
+      "display_date": "8月2日",
       "type": "daily",
-      "size_kb": 38,
-      "date": "2026-07-22"
+      "category": "周度盘前",
+      "title": "8月2日 周度盘前策略",
+      "relative_path": "reports/2026-08-02/8月2日 周度盘前策略.html",
+      "size_kb": 14.6
     },
     {
-      "relative_path": "reports/2026-07-22/5月11日午盘扫描.html",
-      "id": "2026-07-22-5月11日午盘扫描",
-      "display_date": "7月22日",
-      "title": "5月11日午盘扫描",
-      "category": "午盘扫描",
+      "id": "2026-08-02-7月31日 深度复盘",
+      "date": "2026-08-02",
+      "display_date": "8月2日",
       "type": "daily",
-      "size_kb": 14.7,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/5月7日深度复盘.html",
-      "id": "2026-07-22-5月7日深度复盘",
-      "display_date": "7月22日",
-      "title": "5月7日深度复盘",
       "category": "深度复盘",
-      "type": "daily",
-      "size_kb": 26,
-      "date": "2026-07-22"
+      "title": "7月31日 深度复盘",
+      "relative_path": "reports/2026-08-02/7月31日 深度复盘.html",
+      "size_kb": 23.9
     },
     {
-      "relative_path": "reports/2026-07-22/5月7日午盘扫描.html",
-      "id": "2026-07-22-5月7日午盘扫描",
-      "display_date": "7月22日",
-      "title": "5月7日午盘扫描",
-      "category": "午盘扫描",
+      "id": "2026-08-01-周度盘前",
+      "date": "2026-08-01",
+      "display_date": "8月1日",
       "type": "daily",
-      "size_kb": 18.5,
-      "date": "2026-07-22"
+      "category": "周度盘前",
+      "title": "周度盘前",
+      "relative_path": "reports/2026-08-01/周度盘前.html",
+      "size_kb": 20.2
     },
     {
-      "relative_path": "reports/2026-07-22/5月7日早盘扫描.html",
-      "id": "2026-07-22-5月7日早盘扫描",
-      "display_date": "7月22日",
-      "title": "5月7日早盘扫描",
-      "category": "早盘扫描",
+      "id": "2026-07-26-7月24日 深度复盘",
+      "date": "2026-07-26",
+      "display_date": "7月26日",
       "type": "daily",
-      "size_kb": 14.3,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/5月8日 午盘扫描.html",
-      "id": "2026-07-22-5月8日 午盘扫描",
-      "display_date": "7月22日",
-      "title": "5月8日 午盘扫描",
-      "category": "午盘扫描",
-      "type": "daily",
-      "size_kb": 15.7,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/5月8日 早盘扫描.html",
-      "id": "2026-07-22-5月8日 早盘扫描",
-      "display_date": "7月22日",
-      "title": "5月8日 早盘扫描",
-      "category": "早盘扫描",
-      "type": "daily",
-      "size_kb": 13.4,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/5月8日深度复盘.html",
-      "id": "2026-07-22-5月8日深度复盘",
-      "display_date": "7月22日",
-      "title": "5月8日深度复盘",
       "category": "深度复盘",
-      "type": "daily",
-      "size_kb": 19.3,
-      "date": "2026-07-22"
+      "title": "7月24日 深度复盘",
+      "relative_path": "reports/2026-07-26/7月24日 深度复盘.html",
+      "size_kb": 20.6
     },
     {
-      "relative_path": "reports/2026-07-22/800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱.html",
-      "id": "2026-07-22-800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱",
-      "display_date": "7月22日",
-      "title": "800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 29.7,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/AI PCB 报告 · Rubin 时代深度总结.html",
-      "id": "2026-07-22-AI PCB 报告 · Rubin 时代深度总结",
-      "display_date": "7月22日",
-      "title": "AI PCB 报告 · Rubin 时代深度总结",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 35.3,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/AI算力产业链七大紧缺环节核验与A股映射.html",
-      "id": "2026-07-22-AI算力产业链七大紧缺环节核验与A股映射",
-      "display_date": "7月22日",
-      "title": "AI算力产业链七大紧缺环节核验与A股映射",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 26.2,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/AI硬件服务器软件方向——近一周核心消息梳理与产业链分析 (1).html",
-      "id": "2026-07-22-AI硬件服务器软件方向——近一周核心消息梳理与产业链分析 (1)",
-      "display_date": "7月22日",
-      "title": "AI硬件服务器软件方向——近一周核心消息梳理与产业链分析 (1)",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 21.5,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图.html",
-      "id": "2026-07-22-CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图",
-      "display_date": "7月22日",
-      "title": "CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 29.7,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/百岁山——美股A股映射全景.html",
-      "id": "2026-07-22-百岁山——美股A股映射全景",
-      "display_date": "7月22日",
-      "title": "百岁山——美股A股映射全景",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 35.8,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/半导体细分赛道对决_20260504.html",
-      "id": "2026-07-22-半导体细分赛道对决_20260504",
-      "display_date": "7月22日",
-      "title": "半导体细分赛道对决_20260504",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 19.4,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/非AI涨价品种_全面深度版_20260504.html",
       "id": "2026-07-22-非AI涨价品种_全面深度版_20260504",
+      "date": "2026-07-22",
       "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
       "title": "非AI涨价品种_全面深度版_20260504",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 27.8,
-      "date": "2026-07-22"
+      "relative_path": "reports/2026-07-22/非AI涨价品种_全面深度版_20260504.html",
+      "size_kb": 27.8
     },
     {
-      "relative_path": "reports/2026-07-22/功率半导体行业深度调研：从周期修复到AI能源基础设施的价值重估.html",
-      "id": "2026-07-22-功率半导体行业深度调研：从周期修复到AI能源基础设施的价值重估",
+      "id": "2026-07-22-百岁山——美股A股映射全景",
+      "date": "2026-07-22",
       "display_date": "7月22日",
-      "title": "功率半导体行业深度调研：从周期修复到AI能源基础设施的价值重估",
-      "category": "深度研究",
       "type": "industry",
-      "size_kb": 35.3,
-      "date": "2026-07-22"
+      "category": "行业报告",
+      "title": "百岁山——美股A股映射全景",
+      "relative_path": "reports/2026-07-22/百岁山——美股A股映射全景.html",
+      "size_kb": 35.8
     },
     {
-      "relative_path": "reports/2026-07-22/华为「韬定律」× 先进封装：国产替代深度映射与标的验证.html",
-      "id": "2026-07-22-华为「韬定律」× 先进封装：国产替代深度映射与标的验证",
-      "display_date": "7月22日",
-      "title": "华为「韬定律」× 先进封装：国产替代深度映射与标的验证",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 23.2,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/华为韬（τ）定律深度解析：半导体新范式的受益图谱.html",
-      "id": "2026-07-22-华为韬（τ）定律深度解析：半导体新范式的受益图谱",
-      "display_date": "7月22日",
-      "title": "华为韬（τ）定律深度解析：半导体新范式的受益图谱",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 21.2,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/卡特彼勒业绩映射A股分析_20260506.html",
-      "id": "2026-07-22-卡特彼勒业绩映射A股分析_20260506",
-      "display_date": "7月22日",
-      "title": "卡特彼勒业绩映射A股分析_20260506",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 31.5,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/康宁 CPO 新技术深度研究：产业链重画与 A 股映射全景.html",
-      "id": "2026-07-22-康宁 CPO 新技术深度研究：产业链重画与 A 股映射全景",
-      "display_date": "7月22日",
-      "title": "康宁 CPO 新技术深度研究：产业链重画与 A 股映射全景",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 17.6,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/梁文锋投资者交流会_深度研究报告.html",
       "id": "2026-07-22-梁文锋投资者交流会_深度研究报告",
+      "date": "2026-07-22",
       "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
       "title": "梁文锋投资者交流会_深度研究报告",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 49.7,
-      "date": "2026-07-22"
+      "relative_path": "reports/2026-07-22/梁文锋投资者交流会_深度研究报告.html",
+      "size_kb": 49.7
     },
     {
-      "relative_path": "reports/2026-07-22/五一假期重大消息汇总分析_20260505.html",
-      "id": "2026-07-22-五一假期重大消息汇总分析_20260505",
-      "display_date": "7月22日",
-      "title": "五一假期重大消息汇总分析_20260505",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 43,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/中信-电子行业26Q2——数据、验证与判断.html",
-      "id": "2026-07-22-中信-电子行业26Q2——数据、验证与判断",
-      "display_date": "7月22日",
-      "title": "中信-电子行业26Q2——数据、验证与判断",
-      "category": "深度研究",
-      "type": "industry",
-      "size_kb": 21.3,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/20260521-国投证券-灰色决度：科技的卖点.pdf",
-      "id": "2026-07-22-20260521-国投证券-灰色决度：科技的卖点",
-      "display_date": "7月22日",
-      "title": "20260521-国投证券-灰色决度：科技的卖点",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 5144.5,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/20260604-国投证券-科技的卖点：第一个顶.pdf",
-      "id": "2026-07-22-20260604-国投证券-科技的卖点：第一个顶",
-      "display_date": "7月22日",
-      "title": "20260604-国投证券-科技的卖点：第一个顶",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 4907.3,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/20260611-国投证券-科技的M顶：第二个顶.pdf",
-      "id": "2026-07-22-20260611-国投证券-科技的M顶：第二个顶",
-      "display_date": "7月22日",
-      "title": "20260611-国投证券-科技的M顶：第二个顶",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 5727.5,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/20260617-国投证券-黄金和AI：谁在见顶？——兼论M顶卖点方法论.pdf",
-      "id": "2026-07-22-20260617-国投证券-黄金和AI：谁在见顶？——兼论M顶卖点方法论",
-      "display_date": "7月22日",
-      "title": "20260617-国投证券-黄金和AI：谁在见顶？——兼论M顶卖点方法论",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 4667,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/20260713-国投证券-策略主题报告：黄金的M顶.pdf",
-      "id": "2026-07-22-20260713-国投证券-策略主题报告：黄金的M顶",
-      "display_date": "7月22日",
-      "title": "20260713-国投证券-策略主题报告：黄金的M顶",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 7197.8,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/20260723-国投证券-科技M顶之外：两条金律.pdf",
-      "id": "2026-07-22-20260723-国投证券-科技M顶之外：两条金律",
-      "display_date": "7月22日",
-      "title": "20260723-国投证券-科技M顶之外：两条金律",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 4375.3,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/5月6日深度复盘.pdf",
-      "id": "2026-07-22-5月6日深度复盘",
-      "display_date": "7月22日",
-      "title": "5月6日深度复盘",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 1355.2,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/a_share_fund_top30_holdings_2026-07-21.pdf",
-      "id": "2026-07-22-a_share_fund_top30_holdings_2026-07-21",
-      "display_date": "7月22日",
-      "title": "a_share_fund_top30_holdings_2026-07-21",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 299.8,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/A股盘面资金复盘报告_20260427.pdf",
-      "id": "2026-07-22-A股盘面资金复盘报告_20260427",
-      "display_date": "7月22日",
-      "title": "A股盘面资金复盘报告_20260427",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 313.1,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/PCB产业链全景与投资分析报告（修正V2）.pdf",
-      "id": "2026-07-22-PCB产业链全景与投资分析报告（修正V2）",
-      "display_date": "7月22日",
-      "title": "PCB产业链全景与投资分析报告（修正V2）",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 4209.9,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/电子行业2026Q2深度扫描.pdf",
-      "id": "2026-07-22-电子行业2026Q2深度扫描",
-      "display_date": "7月22日",
-      "title": "电子行业2026Q2深度扫描",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 6643,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/东阳光600673深度分析报告.pdf",
-      "id": "2026-07-22-东阳光600673深度分析报告",
-      "display_date": "7月22日",
-      "title": "东阳光600673深度分析报告",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 472,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/动能策略补丁.pdf",
-      "id": "2026-07-22-动能策略补丁",
-      "display_date": "7月22日",
-      "title": "动能策略补丁",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 97,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/华为韬（τ）定律深度分析报告 v3.0 _ TDX+Tushare联合数据 _ 2026-05-26.pdf",
-      "id": "2026-07-22-华为韬（τ）定律深度分析报告 v3.0 _ TDX+Tushare联合数据 _ 2026-05-26",
-      "display_date": "7月22日",
-      "title": "华为韬（τ）定律深度分析报告 v3.0 _ TDX+Tushare联合数据 _ 2026-05-26",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 2204.6,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/锂电产业链全线下跌分析.pdf",
-      "id": "2026-07-22-锂电产业链全线下跌分析",
-      "display_date": "7月22日",
-      "title": "锂电产业链全线下跌分析",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 398.6,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/锂矿板块深度分析 — 钠电冲击 vs 锂价复苏.pdf",
-      "id": "2026-07-22-锂矿板块深度分析 — 钠电冲击 vs 锂价复苏",
-      "display_date": "7月22日",
-      "title": "锂矿板块深度分析 — 钠电冲击 vs 锂价复苏",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 1597.9,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/磷化铟（InP）深度研究报告：AI时代的_光芯片之芯_.pdf",
-      "id": "2026-07-22-磷化铟（InP）深度研究报告：AI时代的_光芯片之芯_",
-      "display_date": "7月22日",
-      "title": "磷化铟（InP）深度研究报告：AI时代的_光芯片之芯_",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 1426.1,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/如何做减法（临时版）.pdf",
-      "id": "2026-07-22-如何做减法（临时版）",
-      "display_date": "7月22日",
-      "title": "如何做减法（临时版）",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 149.6,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/五一假期全球重大消息汇总 · 五月开盘策略研判 _ 2026.05.05.pdf",
-      "id": "2026-07-22-五一假期全球重大消息汇总 · 五月开盘策略研判 _ 2026.05.05",
-      "display_date": "7月22日",
-      "title": "五一假期全球重大消息汇总 · 五月开盘策略研判 _ 2026.05.05",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 2282.4,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/午盘总结_20260506.pdf",
-      "id": "2026-07-22-午盘总结_20260506",
-      "display_date": "7月22日",
-      "title": "午盘总结_20260506",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 278.6,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/一季报业绩全景分析_20260427.pdf",
-      "id": "2026-07-22-一季报业绩全景分析_20260427",
-      "display_date": "7月22日",
-      "title": "一季报业绩全景分析_20260427",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 329,
-      "date": "2026-07-22"
-    },
-    {
-      "relative_path": "reports/2026-07-22/长鑫科技A股长期订单合作链条研究-2026-07-22.pdf",
-      "id": "2026-07-22-长鑫科技A股长期订单合作链条研究-2026-07-22",
-      "display_date": "7月22日",
-      "title": "长鑫科技A股长期订单合作链条研究-2026-07-22",
-      "category": "行业报告",
-      "type": "industry",
-      "size_kb": 245.9,
-      "date": "2026-07-22"
-    },
-    {
-      "id": "2026-07-22-三环集团MLCC执行摘要",
+      "id": "2026-07-22-康宁 CPO 新技术深度研究：产业链重画与 A 股映射全景",
       "date": "2026-07-22",
       "display_date": "7月22日",
       "type": "industry",
-      "category": "深度研究",
-      "title": "00 三环集团MLCC系统研究：执行摘要与最终判断",
-      "relative_path": "reports/2026-07-22/00 三环集团MLCC系统研究：执行摘要与最终判断.html",
-      "size_kb": 14.7
+      "category": "行业报告",
+      "title": "康宁 CPO 新技术深度研究：产业链重画与 A 股映射全景",
+      "relative_path": "reports/2026-07-22/康宁 CPO 新技术深度研究：产业链重画与 A 股映射全景.html",
+      "size_kb": 17.6
     },
     {
-      "id": "2026-07-22-三环集团业务与竞争力",
+      "id": "2026-07-22-卡特彼勒业绩映射A股分析_20260506",
       "date": "2026-07-22",
       "display_date": "7月22日",
       "type": "industry",
-      "category": "深度研究",
-      "title": "01 三环集团业务与竞争力：电子陶瓷平台的真实边界",
-      "relative_path": "reports/2026-07-22/01 三环集团业务与竞争力：电子陶瓷平台的真实边界.html",
-      "size_kb": 13.8
+      "category": "行业报告",
+      "title": "卡特彼勒业绩映射A股分析_20260506",
+      "relative_path": "reports/2026-07-22/卡特彼勒业绩映射A股分析_20260506.html",
+      "size_kb": 31.5
     },
     {
-      "id": "2026-07-22-三环集团财务质量与估值",
+      "id": "2026-07-22-华为韬（τ）定律深度解析：半导体新范式的受益图谱",
       "date": "2026-07-22",
       "display_date": "7月22日",
       "type": "industry",
-      "category": "深度研究",
-      "title": "02 三环集团财务质量与估值：好公司与好价格的分界",
-      "relative_path": "reports/2026-07-22/02 三环集团财务质量与估值：好公司与好价格的分界.html",
-      "size_kb": 18.2
+      "category": "行业报告",
+      "title": "华为韬（τ）定律深度解析：半导体新范式的受益图谱",
+      "relative_path": "reports/2026-07-22/华为韬（τ）定律深度解析：半导体新范式的受益图谱.html",
+      "size_kb": 21.2
     },
     {
-      "id": "2026-07-22-MLCC产业格局与A股比较",
+      "id": "2026-07-22-华为「韬定律」× 先进封装：国产替代深度映射与标的验证",
       "date": "2026-07-22",
       "display_date": "7月22日",
       "type": "industry",
-      "category": "深度研究",
-      "title": "03 MLCC产业格局与A股标的统一比较",
-      "relative_path": "reports/2026-07-22/03 MLCC产业格局与A股标的统一比较.html",
+      "category": "行业报告",
+      "title": "华为「韬定律」× 先进封装：国产替代深度映射与标的验证",
+      "relative_path": "reports/2026-07-22/华为「韬定律」× 先进封装：国产替代深度映射与标的验证.html",
+      "size_kb": 23.2
+    },
+    {
+      "id": "2026-07-22-半导体细分赛道对决_20260504",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "半导体细分赛道对决_20260504",
+      "relative_path": "reports/2026-07-22/半导体细分赛道对决_20260504.html",
       "size_kb": 19.4
     },
     {
-      "id": "2026-07-22-三环集团机构持仓",
+      "id": "2026-07-22-功率半导体行业深度调研：从周期修复到AI能源基础设施的价值重估",
       "date": "2026-07-22",
       "display_date": "7月22日",
       "type": "industry",
-      "category": "深度研究",
-      "title": "04 三环集团机构持仓与真实认可度",
-      "relative_path": "reports/2026-07-22/04 三环集团机构持仓与真实认可度.html",
-      "size_kb": 11.5
+      "category": "行业报告",
+      "title": "功率半导体行业深度调研：从周期修复到AI能源基础设施的价值重估",
+      "relative_path": "reports/2026-07-22/功率半导体行业深度调研：从周期修复到AI能源基础设施的价值重估.html",
+      "size_kb": 35.3
     },
     {
-      "id": "2026-07-22-三环集团催化与市场地位",
+      "id": "2026-07-22-五一假期重大消息汇总分析_20260505",
       "date": "2026-07-22",
       "display_date": "7月22日",
       "type": "industry",
-      "category": "深度研究",
-      "title": "05 三环集团近期催化、市场地位与长期持有条件",
-      "relative_path": "reports/2026-07-22/05 三环集团近期催化、市场地位与长期持有条件.html",
-      "size_kb": 12.7
+      "category": "行业报告",
+      "title": "五一假期重大消息汇总分析_20260505",
+      "relative_path": "reports/2026-07-22/五一假期重大消息汇总分析_20260505.html",
+      "size_kb": 43.0
     },
     {
-      "id": "2026-07-22-三环集团数据口径与跟踪",
+      "id": "2026-07-22-中信-电子行业26Q2——数据、验证与判断",
       "date": "2026-07-22",
       "display_date": "7月22日",
       "type": "industry",
-      "category": "深度研究",
+      "category": "行业报告",
+      "title": "中信-电子行业26Q2——数据、验证与判断",
+      "relative_path": "reports/2026-07-22/中信-电子行业26Q2——数据、验证与判断.html",
+      "size_kb": 21.3
+    },
+    {
+      "id": "2026-07-22-CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图",
+      "relative_path": "reports/2026-07-22/CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图.html",
+      "size_kb": 29.7
+    },
+    {
+      "id": "2026-07-22-AI算力产业链七大紧缺环节核验与A股映射",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "AI算力产业链七大紧缺环节核验与A股映射",
+      "relative_path": "reports/2026-07-22/AI算力产业链七大紧缺环节核验与A股映射.html",
+      "size_kb": 26.2
+    },
+    {
+      "id": "2026-07-22-AI硬件服务器软件方向——近一周核心消息梳理与产业链分析 (1)",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "AI硬件服务器软件方向——近一周核心消息梳理与产业链分析 (1)",
+      "relative_path": "reports/2026-07-22/AI硬件服务器软件方向——近一周核心消息梳理与产业链分析 (1).html",
+      "size_kb": 21.5
+    },
+    {
+      "id": "2026-07-22-AI PCB 报告 · Rubin 时代深度总结",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "AI PCB 报告 · Rubin 时代深度总结",
+      "relative_path": "reports/2026-07-22/AI PCB 报告 · Rubin 时代深度总结.html",
+      "size_kb": 35.3
+    },
+    {
+      "id": "2026-07-22-800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱",
+      "relative_path": "reports/2026-07-22/800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱.html",
+      "size_kb": 29.7
+    },
+    {
+      "id": "2026-07-22-5月8日深度复盘",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "daily",
+      "category": "深度复盘",
+      "title": "5月8日深度复盘",
+      "relative_path": "reports/2026-07-22/5月8日深度复盘.html",
+      "size_kb": 19.3
+    },
+    {
+      "id": "2026-07-22-5月8日 早盘扫描",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "daily",
+      "category": "早盘扫描",
+      "title": "5月8日 早盘扫描",
+      "relative_path": "reports/2026-07-22/5月8日 早盘扫描.html",
+      "size_kb": 13.4
+    },
+    {
+      "id": "2026-07-22-5月8日 午盘扫描",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "daily",
+      "category": "午盘扫描",
+      "title": "5月8日 午盘扫描",
+      "relative_path": "reports/2026-07-22/5月8日 午盘扫描.html",
+      "size_kb": 15.7
+    },
+    {
+      "id": "2026-07-22-5月7日深度复盘",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "daily",
+      "category": "深度复盘",
+      "title": "5月7日深度复盘",
+      "relative_path": "reports/2026-07-22/5月7日深度复盘.html",
+      "size_kb": 26.0
+    },
+    {
+      "id": "2026-07-22-5月7日早盘扫描",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "daily",
+      "category": "早盘扫描",
+      "title": "5月7日早盘扫描",
+      "relative_path": "reports/2026-07-22/5月7日早盘扫描.html",
+      "size_kb": 14.3
+    },
+    {
+      "id": "2026-07-22-5月7日午盘扫描",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "daily",
+      "category": "午盘扫描",
+      "title": "5月7日午盘扫描",
+      "relative_path": "reports/2026-07-22/5月7日午盘扫描.html",
+      "size_kb": 18.5
+    },
+    {
+      "id": "2026-07-22-5月11日午盘扫描",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "daily",
+      "category": "午盘扫描",
+      "title": "5月11日午盘扫描",
+      "relative_path": "reports/2026-07-22/5月11日午盘扫描.html",
+      "size_kb": 14.7
+    },
+    {
+      "id": "2026-07-22-260722_A股市场复盘与策略报告",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "260722_A股市场复盘与策略报告",
+      "relative_path": "reports/2026-07-22/260722_A股市场复盘与策略报告.html",
+      "size_kb": 38.0
+    },
+    {
+      "id": "2026-07-22-2026年7月23日A股早盘报告",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "2026年7月23日A股早盘报告",
+      "relative_path": "reports/2026-07-22/2026年7月23日A股早盘报告.html",
+      "size_kb": 25.1
+    },
+    {
+      "id": "2026-07-22-2026Q2基金半导体持仓迁移研究",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "2026Q2基金半导体持仓迁移研究",
+      "relative_path": "reports/2026-07-22/2026Q2基金半导体持仓迁移研究.html",
+      "size_kb": 23.7
+    },
+    {
+      "id": "2026-07-22-06 三环集团MLCC研究：数据口径、来源与持续跟踪清单",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
       "title": "06 三环集团MLCC研究：数据口径、来源与持续跟踪清单",
       "relative_path": "reports/2026-07-22/06 三环集团MLCC研究：数据口径、来源与持续跟踪清单.html",
       "size_kb": 13.3
     },
     {
-      "id": "2026-05-28-5月28日 午盘扫描",
-      "date": "2026-05-28",
-      "display_date": "5月28日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "5月28日 午盘扫描",
-      "relative_path": "reports/2026-05-28/5月28日 午盘扫描.html",
-      "size_kb": 11.1
+      "id": "2026-07-22-05 三环集团近期催化、市场地位与长期持有条件",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "05 三环集团近期催化、市场地位与长期持有条件",
+      "relative_path": "reports/2026-07-22/05 三环集团近期催化、市场地位与长期持有条件.html",
+      "size_kb": 12.8
     },
     {
-      "id": "2026-05-28-早盘扫描",
-      "date": "2026-05-28",
-      "display_date": "5月28日",
+      "id": "2026-07-22-04 三环集团机构持仓与真实认可度",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "04 三环集团机构持仓与真实认可度",
+      "relative_path": "reports/2026-07-22/04 三环集团机构持仓与真实认可度.html",
+      "size_kb": 11.5
+    },
+    {
+      "id": "2026-07-22-03 MLCC产业格局与A股标的统一比较",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "03 MLCC产业格局与A股标的统一比较",
+      "relative_path": "reports/2026-07-22/03 MLCC产业格局与A股标的统一比较.html",
+      "size_kb": 19.4
+    },
+    {
+      "id": "2026-07-22-02 三环集团财务质量与估值：好公司与好价格的分界",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "02 三环集团财务质量与估值：好公司与好价格的分界",
+      "relative_path": "reports/2026-07-22/02 三环集团财务质量与估值：好公司与好价格的分界.html",
+      "size_kb": 18.2
+    },
+    {
+      "id": "2026-07-22-01 三环集团业务与竞争力：电子陶瓷平台的真实边界",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "01 三环集团业务与竞争力：电子陶瓷平台的真实边界",
+      "relative_path": "reports/2026-07-22/01 三环集团业务与竞争力：电子陶瓷平台的真实边界.html",
+      "size_kb": 13.8
+    },
+    {
+      "id": "2026-07-22-002158 汉钟精机 · 个股深度研究",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "002158 汉钟精机 · 个股深度研究",
+      "relative_path": "reports/2026-07-22/002158 汉钟精机 · 个股深度研究.html",
+      "size_kb": 25.1
+    },
+    {
+      "id": "2026-07-22-00 三环集团MLCC系统研究：执行摘要与最终判断",
+      "date": "2026-07-22",
+      "display_date": "7月22日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "00 三环集团MLCC系统研究：执行摘要与最终判断",
+      "relative_path": "reports/2026-07-22/00 三环集团MLCC系统研究：执行摘要与最终判断.html",
+      "size_kb": 14.7
+    },
+    {
+      "id": "2026-05-29-早盘扫描",
+      "date": "2026-05-29",
+      "display_date": "5月29日",
       "type": "daily",
       "category": "早盘扫描",
       "title": "早盘扫描",
-      "relative_path": "reports/2026-05-28/早盘扫描.html",
-      "size_kb": 11.8
+      "relative_path": "reports/2026-05-29/早盘扫描.html",
+      "size_kb": 9.0
+    },
+    {
+      "id": "2026-05-29-午盘扫描",
+      "date": "2026-05-29",
+      "display_date": "5月29日",
+      "type": "daily",
+      "category": "午盘扫描",
+      "title": "午盘扫描",
+      "relative_path": "reports/2026-05-29/午盘扫描.html",
+      "size_kb": 16.0
     },
     {
       "id": "2026-05-28-浩泉每日深度复盘",
@@ -615,24 +535,24 @@
       "size_kb": 19.3
     },
     {
-      "id": "2026-05-27-5月27日 早盘扫描",
-      "date": "2026-05-27",
-      "display_date": "5月27日",
+      "id": "2026-05-28-早盘扫描",
+      "date": "2026-05-28",
+      "display_date": "5月28日",
       "type": "daily",
       "category": "早盘扫描",
-      "title": "5月27日 早盘扫描",
-      "relative_path": "reports/2026-05-27/5月27日 早盘扫描.html",
-      "size_kb": 8.3
+      "title": "早盘扫描",
+      "relative_path": "reports/2026-05-28/早盘扫描.html",
+      "size_kb": 11.8
     },
     {
-      "id": "2026-05-27-午盘扫描",
-      "date": "2026-05-27",
-      "display_date": "5月27日",
+      "id": "2026-05-28-5月28日 午盘扫描",
+      "date": "2026-05-28",
+      "display_date": "5月28日",
       "type": "daily",
       "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-05-27/午盘扫描.html",
-      "size_kb": 10.8
+      "title": "5月28日 午盘扫描",
+      "relative_path": "reports/2026-05-28/5月28日 午盘扫描.html",
+      "size_kb": 11.1
     },
     {
       "id": "2026-05-27-深度复盘",
@@ -645,24 +565,24 @@
       "size_kb": 17.6
     },
     {
-      "id": "2026-05-26-5月27日 早盘扫描",
-      "date": "2026-05-26",
-      "display_date": "5月26日",
+      "id": "2026-05-27-午盘扫描",
+      "date": "2026-05-27",
+      "display_date": "5月27日",
+      "type": "daily",
+      "category": "午盘扫描",
+      "title": "午盘扫描",
+      "relative_path": "reports/2026-05-27/午盘扫描.html",
+      "size_kb": 10.8
+    },
+    {
+      "id": "2026-05-27-5月27日 早盘扫描",
+      "date": "2026-05-27",
+      "display_date": "5月27日",
       "type": "daily",
       "category": "早盘扫描",
       "title": "5月27日 早盘扫描",
-      "relative_path": "reports/2026-05-26/5月27日 早盘扫描.html",
-      "size_kb": 9.6
-    },
-    {
-      "id": "2026-05-26-午盘扫描 — 2026年5月26日",
-      "date": "2026-05-26",
-      "display_date": "5月26日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描 — 2026年5月26日",
-      "relative_path": "reports/2026-05-26/午盘扫描 — 2026年5月26日.html",
-      "size_kb": 13.9
+      "relative_path": "reports/2026-05-27/5月27日 早盘扫描.html",
+      "size_kb": 8.3
     },
     {
       "id": "2026-05-26-📊 浩泉深度复盘 — 2026年5月26日（周二）",
@@ -675,64 +595,34 @@
       "size_kb": 18.4
     },
     {
-      "id": "2026-05-25-5月25日 午盘扫描",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
+      "id": "2026-05-26-午盘扫描 — 2026年5月26日",
+      "date": "2026-05-26",
+      "display_date": "5月26日",
       "type": "daily",
       "category": "午盘扫描",
-      "title": "5月25日 午盘扫描",
-      "relative_path": "reports/2026-05-25/5月25日 午盘扫描.html",
-      "size_kb": 8.9
+      "title": "午盘扫描 — 2026年5月26日",
+      "relative_path": "reports/2026-05-26/午盘扫描 — 2026年5月26日.html",
+      "size_kb": 13.9
     },
     {
-      "id": "2026-05-25-5月25日 早盘扫描",
+      "id": "2026-05-26-5月27日 早盘扫描",
+      "date": "2026-05-26",
+      "display_date": "5月26日",
+      "type": "daily",
+      "category": "早盘扫描",
+      "title": "5月27日 早盘扫描",
+      "relative_path": "reports/2026-05-26/5月27日 早盘扫描.html",
+      "size_kb": 9.6
+    },
+    {
+      "id": "2026-05-25-🦞 浩泉-每日深度复盘",
       "date": "2026-05-25",
       "display_date": "5月25日",
       "type": "daily",
-      "category": "早盘扫描",
-      "title": "5月25日 早盘扫描",
-      "relative_path": "reports/2026-05-25/5月25日 早盘扫描.html",
-      "size_kb": 8.7
-    },
-    {
-      "id": "2026-05-25-AI-PCB报告-Rubin时代深度总结",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
-      "type": "industry",
-      "category": "行业报告",
-      "title": "AI-PCB报告-Rubin时代深度总结",
-      "relative_path": "reports/2026-05-25/AI-PCB报告-Rubin时代深度总结.html",
-      "size_kb": 35.3
-    },
-    {
-      "id": "2026-05-25-华为韬定律-先进封装国产替代映射",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
-      "type": "industry",
-      "category": "行业报告",
-      "title": "华为韬定律-先进封装国产替代映射",
-      "relative_path": "reports/2026-05-25/华为韬定律-先进封装国产替代映射.html",
-      "size_kb": 23.2
-    },
-    {
-      "id": "2026-05-25-华为韬定律-半导体新范式受益图谱",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
-      "type": "industry",
-      "category": "行业报告",
-      "title": "华为韬定律-半导体新范式受益图谱",
-      "relative_path": "reports/2026-05-25/华为韬定律-半导体新范式受益图谱.html",
-      "size_kb": 21.2
-    },
-    {
-      "id": "2026-05-25-涨价猎手3.0-全板块深拆-龙头全覆盖",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
-      "type": "industry",
-      "category": "行业报告",
-      "title": "涨价猎手3.0-全板块深拆-龙头全覆盖",
-      "relative_path": "reports/2026-05-25/涨价猎手3.0-全板块深拆-龙头全覆盖.html",
-      "size_kb": 28.1
+      "category": "深度复盘",
+      "title": "🦞 浩泉-每日深度复盘",
+      "relative_path": "reports/2026-05-25/🦞 浩泉-每日深度复盘.html",
+      "size_kb": 18.1
     },
     {
       "id": "2026-05-25-百岁山-美股到A股映射全景",
@@ -745,14 +635,64 @@
       "size_kb": 28.1
     },
     {
-      "id": "2026-05-25-🦞 浩泉-每日深度复盘",
+      "id": "2026-05-25-涨价猎手3.0-全板块深拆-龙头全覆盖",
+      "date": "2026-05-25",
+      "display_date": "5月25日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "涨价猎手3.0-全板块深拆-龙头全覆盖",
+      "relative_path": "reports/2026-05-25/涨价猎手3.0-全板块深拆-龙头全覆盖.html",
+      "size_kb": 28.1
+    },
+    {
+      "id": "2026-05-25-华为韬定律-半导体新范式受益图谱",
+      "date": "2026-05-25",
+      "display_date": "5月25日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "华为韬定律-半导体新范式受益图谱",
+      "relative_path": "reports/2026-05-25/华为韬定律-半导体新范式受益图谱.html",
+      "size_kb": 21.2
+    },
+    {
+      "id": "2026-05-25-华为韬定律-先进封装国产替代映射",
+      "date": "2026-05-25",
+      "display_date": "5月25日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "华为韬定律-先进封装国产替代映射",
+      "relative_path": "reports/2026-05-25/华为韬定律-先进封装国产替代映射.html",
+      "size_kb": 23.2
+    },
+    {
+      "id": "2026-05-25-AI-PCB报告-Rubin时代深度总结",
+      "date": "2026-05-25",
+      "display_date": "5月25日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "AI-PCB报告-Rubin时代深度总结",
+      "relative_path": "reports/2026-05-25/AI-PCB报告-Rubin时代深度总结.html",
+      "size_kb": 35.3
+    },
+    {
+      "id": "2026-05-25-5月25日 早盘扫描",
       "date": "2026-05-25",
       "display_date": "5月25日",
       "type": "daily",
-      "category": "深度复盘",
-      "title": "🦞 浩泉-每日深度复盘",
-      "relative_path": "reports/2026-05-25/🦞 浩泉-每日深度复盘.html",
-      "size_kb": 18.1
+      "category": "早盘扫描",
+      "title": "5月25日 早盘扫描",
+      "relative_path": "reports/2026-05-25/5月25日 早盘扫描.html",
+      "size_kb": 8.7
+    },
+    {
+      "id": "2026-05-25-5月25日 午盘扫描",
+      "date": "2026-05-25",
+      "display_date": "5月25日",
+      "type": "daily",
+      "category": "午盘扫描",
+      "title": "5月25日 午盘扫描",
+      "relative_path": "reports/2026-05-25/5月25日 午盘扫描.html",
+      "size_kb": 8.9
     },
     {
       "id": "2026-05-24-5月25日 周度盘前策略",
@@ -773,406 +713,6 @@
       "title": "5月15日深度复盘",
       "relative_path": "reports/2026-05-16/5月15日深度复盘.html",
       "size_kb": 18.1
-    },
-    {
-      "id": "2026-05-29-5月29日 周五 早盘复盘",
-      "date": "2026-05-29",
-      "display_date": "5月29日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "5月29日 周五 早盘复盘",
-      "relative_path": "reports/2026-05-29/5月29日 周五 早盘复盘.html",
-      "size_kb": 7.8
-    },
-    {
-      "id": "2026-05-29-5月29日 周五 午盘复盘",
-      "date": "2026-05-29",
-      "display_date": "5月29日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "5月29日 周五 午盘复盘",
-      "relative_path": "reports/2026-05-29/5月29日 周五 午盘复盘.html",
-      "size_kb": 9.1
-    },
-    {
-      "id": "2026-05-29-5月29日 周五 晚盘复盘",
-      "date": "2026-05-29",
-      "display_date": "5月29日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "5月29日 周五 晚盘复盘",
-      "relative_path": "reports/2026-05-29/5月29日 周五 晚盘复盘.html",
-      "size_kb": 26.5
-    },
-    {
-      "id": "2026-06-01-6月1日 周一 午盘复盘",
-      "date": "2026-06-01",
-      "display_date": "6月1日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "6月1日 周一 午盘复盘",
-      "relative_path": "reports/2026-06-01/6月1日 周一 午盘复盘.html",
-      "size_kb": 10.9
-    },
-    {
-      "id": "2026-06-01-6月1日 周一 早盘复盘",
-      "date": "2026-06-01",
-      "display_date": "6月1日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "6月1日 周一 早盘复盘",
-      "relative_path": "reports/2026-06-01/6月1日 周一 早盘复盘.html",
-      "size_kb": 8.6
-    },
-    {
-      "id": "2026-06-01-6月1日 周一 晚盘复盘",
-      "date": "2026-06-01",
-      "display_date": "6月1日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "6月1日 周一 晚盘复盘",
-      "relative_path": "reports/2026-06-01/6月1日 周一 晚盘复盘.html",
-      "size_kb": 29.0
-    },
-    {
-      "id": "2026-06-02-6月2日 周二 午盘复盘",
-      "date": "2026-06-02",
-      "display_date": "6月2日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "6月2日 周二 午盘复盘",
-      "relative_path": "reports/2026-06-02/6月2日 周二 午盘复盘.html",
-      "size_kb": 8.9
-    },
-    {
-      "id": "2026-06-02-6月2日 周二 早盘复盘",
-      "date": "2026-06-02",
-      "display_date": "6月2日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "6月2日 周二 早盘复盘",
-      "relative_path": "reports/2026-06-02/6月2日 周二 早盘复盘.html",
-      "size_kb": 7.7
-    },
-    {
-      "id": "2026-06-02-6月2日 周二 晚盘复盘",
-      "date": "2026-06-02",
-      "display_date": "6月2日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "6月2日 周二 晚盘复盘",
-      "relative_path": "reports/2026-06-02/6月2日 周二 晚盘复盘.html",
-      "size_kb": 30.8
-    },
-    {
-      "id": "2026-06-03-6月3日 周三 午盘复盘",
-      "date": "2026-06-03",
-      "display_date": "6月3日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "6月3日 周三 午盘复盘",
-      "relative_path": "reports/2026-06-03/6月3日 周三 午盘复盘.html",
-      "size_kb": 9.9
-    },
-    {
-      "id": "2026-06-03-6月3日 周三 早盘复盘",
-      "date": "2026-06-03",
-      "display_date": "6月3日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "6月3日 周三 早盘复盘",
-      "relative_path": "reports/2026-06-03/6月3日 周三 早盘复盘.html",
-      "size_kb": 8.8
-    },
-    {
-      "id": "2026-06-04-6月4日 周四 午盘复盘",
-      "date": "2026-06-04",
-      "display_date": "6月4日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "6月4日 周四 午盘复盘",
-      "relative_path": "reports/2026-06-04/6月4日 周四 午盘复盘.html",
-      "size_kb": 9.0
-    },
-    {
-      "id": "2026-06-04-6月4日 周四 晚盘复盘",
-      "date": "2026-06-04",
-      "display_date": "6月4日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "6月4日 周四 晚盘复盘",
-      "relative_path": "reports/2026-06-04/6月4日 周四 晚盘复盘.html",
-      "size_kb": 20.0
-    },
-    {
-      "id": "2026-06-05-6月5日 周五 午盘复盘",
-      "date": "2026-06-05",
-      "display_date": "6月5日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "6月5日 周五 午盘复盘",
-      "relative_path": "reports/2026-06-05/6月5日 周五 午盘复盘.html",
-      "size_kb": 8.7
-    },
-    {
-      "id": "2026-06-05-6月5日 周五 晚盘复盘",
-      "date": "2026-06-05",
-      "display_date": "6月5日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "6月5日 周五 晚盘复盘",
-      "relative_path": "reports/2026-06-05/6月5日 周五 晚盘复盘.html",
-      "size_kb": 27.0
-    },
-    {
-      "id": "2026-06-08-6月8日 周一 午盘复盘",
-      "date": "2026-06-08",
-      "display_date": "6月8日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "6月8日 周一 午盘复盘",
-      "relative_path": "reports/2026-06-08/6月8日 周一 午盘复盘.html",
-      "size_kb": 9.0
-    },
-    {
-      "id": "2026-06-08-6月8日 周一 早盘复盘",
-      "date": "2026-06-08",
-      "display_date": "6月8日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "6月8日 周一 早盘复盘",
-      "relative_path": "reports/2026-06-08/6月8日 周一 早盘复盘.html",
-      "size_kb": 7.8
-    },
-    {
-      "id": "2026-06-08-6月8日 周一 晚盘复盘",
-      "date": "2026-06-08",
-      "display_date": "6月8日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "6月8日 周一 晚盘复盘",
-      "relative_path": "reports/2026-06-08/6月8日 周一 晚盘复盘.html",
-      "size_kb": 29.4
-    },
-    {
-      "id": "2026-06-09-6月9日 周二 早盘复盘",
-      "date": "2026-06-09",
-      "display_date": "6月9日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "6月9日 周二 早盘复盘",
-      "relative_path": "reports/2026-06-09/6月9日 周二 早盘复盘.html",
-      "size_kb": 8.1
-    },
-    {
-      "id": "2026-06-09-6月9日 周二 午盘复盘",
-      "date": "2026-06-09",
-      "display_date": "6月9日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "6月9日 周二 午盘复盘",
-      "relative_path": "reports/2026-06-09/6月9日 周二 午盘复盘.html",
-      "size_kb": 10.3
-    },
-    {
-      "id": "2026-06-09-6月9日 周二 晚盘复盘",
-      "date": "2026-06-09",
-      "display_date": "6月9日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "6月9日 周二 晚盘复盘",
-      "relative_path": "reports/2026-06-09/6月9日 周二 晚盘复盘.html",
-      "size_kb": 30.4
-    },
-    {
-      "id": "2026-06-10-6月10日 周三 早盘复盘",
-      "date": "2026-06-10",
-      "display_date": "6月10日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "6月10日 周三 早盘复盘",
-      "relative_path": "reports/2026-06-10/6月10日 周三 早盘复盘.html",
-      "size_kb": 8.1
-    },
-    {
-      "id": "2026-06-10-6月10日 周三 午盘复盘",
-      "date": "2026-06-10",
-      "display_date": "6月10日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "6月10日 周三 午盘复盘",
-      "relative_path": "reports/2026-06-10/6月10日 周三 午盘复盘.html",
-      "size_kb": 9.0
-    },
-    {
-      "id": "2026-06-10-6月10日 周三 晚盘复盘",
-      "date": "2026-06-10",
-      "display_date": "6月10日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "6月10日 周三 晚盘复盘",
-      "relative_path": "reports/2026-06-10/6月10日 周三 晚盘复盘.html",
-      "size_kb": 22.8
-    },
-    {
-      "id": "2026-06-22-6月22日 周一 午盘复盘",
-      "date": "2026-06-22",
-      "display_date": "6月22日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "6月22日 周一 午盘复盘",
-      "relative_path": "reports/2026-06-22/6月22日 周一 午盘复盘.html",
-      "size_kb": 11.0
-    },
-    {
-      "id": "2026-06-22-6月22日 周一 早盘复盘",
-      "date": "2026-06-22",
-      "display_date": "6月22日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "6月22日 周一 早盘复盘",
-      "relative_path": "reports/2026-06-22/6月22日 周一 早盘复盘.html",
-      "size_kb": 8.7
-    },
-    {
-      "id": "2026-06-22-6月22日 周一 晚盘复盘",
-      "date": "2026-06-22",
-      "display_date": "6月22日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "6月22日 周一 晚盘复盘",
-      "relative_path": "reports/2026-06-22/6月22日 周一 晚盘复盘.html",
-      "size_kb": 27.6
-    },
-    {
-      "id": "2026-06-23-6月23日 周二 午盘复盘",
-      "date": "2026-06-23",
-      "display_date": "6月23日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "6月23日 周二 午盘复盘",
-      "relative_path": "reports/2026-06-23/6月23日 周二 午盘复盘.html",
-      "size_kb": 10.9
-    },
-    {
-      "id": "2026-06-23-6月23日 周二 晚盘复盘",
-      "date": "2026-06-23",
-      "display_date": "6月23日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "6月23日 周二 晚盘复盘",
-      "relative_path": "reports/2026-06-23/6月23日 周二 晚盘复盘.html",
-      "size_kb": 32.9
-    },
-    {
-      "id": "2026-06-24-6月24日 周三 早盘复盘",
-      "date": "2026-06-24",
-      "display_date": "6月24日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "6月24日 周三 早盘复盘",
-      "relative_path": "reports/2026-06-24/6月24日 周三 早盘复盘.html",
-      "size_kb": 9.4
-    },
-    {
-      "id": "2026-06-29-6月29日 周一 午盘复盘",
-      "date": "2026-06-29",
-      "display_date": "6月29日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "6月29日 周一 午盘复盘",
-      "relative_path": "reports/2026-06-29/6月29日 周一 午盘复盘.html",
-      "size_kb": 11.1
-    },
-    {
-      "id": "2026-06-29-6月29日 周一 早盘复盘",
-      "date": "2026-06-29",
-      "display_date": "6月29日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "6月29日 周一 早盘复盘",
-      "relative_path": "reports/2026-06-29/6月29日 周一 早盘复盘.html",
-      "size_kb": 9.9
-    },
-    {
-      "id": "2026-07-03-7月3日 周五 午盘复盘",
-      "date": "2026-07-03",
-      "display_date": "7月3日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "7月3日 周五 午盘复盘",
-      "relative_path": "reports/2026-07-03/7月3日 周五 午盘复盘.html",
-      "size_kb": 10.6
-    },
-    {
-      "id": "2026-07-03-7月3日 周五 早盘复盘",
-      "date": "2026-07-03",
-      "display_date": "7月3日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "7月3日 周五 早盘复盘",
-      "relative_path": "reports/2026-07-03/7月3日 周五 早盘复盘.html",
-      "size_kb": 8.7
-    },
-    {
-      "id": "2026-07-03-7月3日 周五 晚盘复盘",
-      "date": "2026-07-03",
-      "display_date": "7月3日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "7月3日 周五 晚盘复盘",
-      "relative_path": "reports/2026-07-03/7月3日 周五 晚盘复盘.html",
-      "size_kb": 32.3
-    },
-    {
-      "id": "2026-07-06-7月6日 周一 午盘复盘",
-      "date": "2026-07-06",
-      "display_date": "7月6日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "7月6日 周一 午盘复盘",
-      "relative_path": "reports/2026-07-06/7月6日 周一 午盘复盘.html",
-      "size_kb": 11.5
-    },
-    {
-      "id": "2026-07-06-7月6日 周一 早盘复盘",
-      "date": "2026-07-06",
-      "display_date": "7月6日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "7月6日 周一 早盘复盘",
-      "relative_path": "reports/2026-07-06/7月6日 周一 早盘复盘.html",
-      "size_kb": 8.0
-    },
-    {
-      "id": "2026-07-06-7月6日 周一 晚盘复盘",
-      "date": "2026-07-06",
-      "display_date": "7月6日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "7月6日 周一 晚盘复盘",
-      "relative_path": "reports/2026-07-06/7月6日 周一 晚盘复盘.html",
-      "size_kb": 26.7
-    },
-    {
-      "id": "2026-07-07-7月7日 周二 午盘复盘",
-      "date": "2026-07-07",
-      "display_date": "7月7日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "7月7日 周二 午盘复盘",
-      "relative_path": "reports/2026-07-07/7月7日 周二 午盘复盘.html",
-      "size_kb": 10.5
-    },
-    {
-      "id": "2026-07-07-7月7日 周二 早盘复盘",
-      "date": "2026-07-07",
-      "display_date": "7月7日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "7月7日 周二 早盘复盘",
-      "relative_path": "reports/2026-07-07/7月7日 周二 早盘复盘.html",
-      "size_kb": 8.5
     }
   ]
 }
