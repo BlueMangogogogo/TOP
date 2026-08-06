@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月6日 研报巡逻</title>
+<style>
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --green:   #27ae60;
+  --green-light: #eafaf1;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 { font-size: 24px; font-weight: 700; color: var(--black); margin-bottom: 6px; letter-spacing: 0.5px; }
+header .meta { font-size: 13px; color: var(--gray-500); }
+header .meta span { margin-right: 16px; }
+h2 {
+  font-size: 18px; font-weight: 700; color: var(--black);
+  margin: 32px 0 10px; padding-left: 12px; border-left: 4px solid var(--yellow);
+}
+h3 { font-size: 16px; font-weight: 700; color: var(--gray-900); margin: 22px 0 8px; }
+h4 { font-size: 15px; font-weight: 700; color: var(--gray-700); margin: 16px 0 6px; }
+p { margin: 8px 0; }
+.table-wrapper {
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px; border: 1px solid var(--gray-300); border-radius: 6px;
+}
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 500px; }
+thead th {
+  background: var(--yellow); color: var(--black); font-weight: 700;
+  padding: 8px 10px; text-align: left; white-space: nowrap; border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child { border-radius: 0 5px 0 0; }
+tbody td { padding: 7px 10px; border-bottom: 1px solid var(--gray-100); vertical-align: top; }
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.center, th.center { text-align: center; }
+.highlight {
+  background: var(--yellow-light); border-left: 4px solid var(--yellow);
+  padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; font-size: 14px;
+}
+.warning {
+  background: var(--red-light); border-left: 4px solid var(--red);
+  padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; font-size: 14px; color: #8b1a1a;
+}
+.info-box {
+  background: #eaf2fb; border-left: 4px solid #2980b9;
+  padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; font-size: 14px;
+}
+.signal-card {
+  border: 1px solid var(--gray-300); border-radius: 8px; padding: 16px 20px; margin: 16px 0;
+  background: var(--white);
+}
+.signal-card.red { border-left: 5px solid var(--red); background: #fffafa; }
+.signal-card.yellow { border-left: 5px solid var(--yellow); background: #fffef8; }
+.signal-card.green { border-left: 5px solid var(--green); background: #f9fdf9; }
+.signal-card h3 { margin-top: 0; }
+.signal-card .stars { color: var(--yellow); font-size: 16px; }
+.badge {
+  display: inline-block; padding: 2px 10px; border-radius: 3px; font-size: 12px; font-weight: 600; margin-right: 6px;
+}
+.badge-red { background: var(--red-light); color: var(--red); }
+.badge-yellow { background: var(--yellow-light); color: #8b6914; }
+.badge-green { background: var(--green-light); color: var(--green); }
+.badge-new { background: #e8f4fd; color: #2471a3; }
+ul, ol { margin: 8px 0 8px 20px; }
+li { margin: 4px 0; }
+hr { border: none; border-top: 1px solid var(--gray-100); margin: 24px 0; }
+.tag {
+  display: inline-block; background: var(--yellow-light); color: #8b6914;
+  font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 3px; margin: 0 4px 4px 0;
+}
+.tag-red { background: var(--red-light); color: var(--red); }
+.tag-new { background: #e8f4fd; color: #2471a3; }
+footer {
+  margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--gray-100);
+  font-size: 12px; color: var(--gray-500); line-height: 1.6;
+}
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+.small { font-size: 12px; color: var(--gray-500); }
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📡 8月6日 研报巡逻</h1>
+  <div class="meta">
+    <span>每日研报 × 资金雷达交叉比对</span>
+    <span>深度复盘前置侦察环</span>
+    <span>生成：2026-08-06 22:30</span>
+  </div>
+</header>
+
+<div class="highlight">
+  <strong>一句话综述：</strong>今日资金从前期机器人/新能源车/物联网大规模转向 AI 算力硬件链 + 半导体国产化。先进封装、CPO、PCB 三大方向实现研报+资金强共振，20个板块新进 Top30，为 7 月下旬科技调整以来首次集中回补。
+</div>
+
+<h2>一、数据摘要</h2>
+
+<p><strong>资金雷达</strong>：今日 Top30 概念板块出现剧烈轮动，20 个板块新进榜。电子/通信/半导体集中爆发，前一日机器人/新能源车/物联网等退潮。</p>
+
+<p><strong>研报侧</strong>：亿信 API 近 2 日研报高度聚焦 AI 算力硬件链（CPO/NPO、光通信、PCB、先进封装、存储），与资金进攻方向高度同频。</p>
+
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th class="center">排名</th><th>板块</th><th>代码</th><th class="num">评分(亿)</th><th class="center">前日</th><th class="center">变化</th></tr>
+</thead>
+<tbody>
+<tr><td class="center">1</td><td>先进封装</td><td>880635</td><td class="num">71.99</td><td class="center">14</td><td class="center"><span class="badge badge-red">↑13</span></td></tr>
+<tr><td class="center">2</td><td>CPO概念</td><td>880656</td><td class="num">67.53</td><td class="center">11</td><td class="center">↑9</td></tr>
+<tr><td class="center">3</td><td>PCB概念</td><td>880550</td><td class="num">65.02</td><td class="center">19</td><td class="center"><span class="badge badge-red">↑16</span></td></tr>
+<tr><td class="center">4</td><td>第三代半导体</td><td>880608</td><td class="num">63.57</td><td class="center">—</td><td class="center"><span class="badge badge-new">🆕</span></td></tr>
+<tr><td class="center">5</td><td>毫米波雷达</td><td>880659</td><td class="num">56.86</td><td class="center">—</td><td class="center"><span class="badge badge-new">🆕</span></td></tr>
+<tr><td class="center">6</td><td>芯片</td><td>880952</td><td class="num">54.54</td><td class="center">1</td><td class="center">↓5</td></tr>
+<tr><td class="center">7</td><td>5G概念</td><td>880506</td><td class="num">45.02</td><td class="center">6</td><td class="center">↓1</td></tr>
+<tr><td class="center">8</td><td>OLED概念</td><td>880945</td><td class="num">37.92</td><td class="center">18</td><td class="center"><span class="badge badge-red">↑10</span></td></tr>
+<tr><td class="center">9</td><td>新材料</td><td>880731</td><td class="num">29.24</td><td class="center">29</td><td class="center"><span class="badge badge-red">↑20</span></td></tr>
+<tr><td class="center">10</td><td>存储芯片</td><td>880672</td><td class="num">27.90</td><td class="center">5</td><td class="center">↓5</td></tr>
+<tr><td class="center">11</td><td>苹果概念</td><td>880574</td><td class="num">26.59</td><td class="center">30</td><td class="center"><span class="badge badge-red">↑19</span></td></tr>
+<tr><td class="center">12</td><td>华为海思</td><td>880682</td><td class="num">23.98</td><td class="center">—</td><td class="center"><span class="badge badge-new">🆕</span></td></tr>
+<tr><td class="center">13</td><td>光刻机</td><td>880716</td><td class="num">22.26</td><td class="center">—</td><td class="center"><span class="badge badge-new">🆕</span></td></tr>
+<tr><td class="center">14</td><td>汽车芯片</td><td>880758</td><td class="num">20.54</td><td class="center">—</td><td class="center"><span class="badge badge-new">🆕</span></td></tr>
+<tr><td class="center">15</td><td>6G概念</td><td>880661</td><td class="num">20.29</td><td class="center">—</td><td class="center"><span class="badge badge-new">🆕</span></td></tr>
+</tbody>
+</table>
+</div>
+<p class="small">完整 Top30 见文末附录。🔥 红色标签 = 排名上升≥10 或新进榜。</p>
+
+<h2>二、🔴 研报+资金共振</h2>
+
+<p>以下板块既有资金大幅流入，又获近 2 日研报密集覆盖，共振信号最强。</p>
+
+<!-- 先进封装 -->
+<div class="signal-card red">
+<h3>1. 先进封装 <span class="stars">★★★★★</span></h3>
+<table>
+<tr><td style="width:90px"><strong>资金</strong></td><td>Top30 第 1 位，前日 14 → 今日 1（↑13），净额 <strong>71.99 亿</strong></td></tr>
+<tr><td><strong>研报覆盖</strong></td><td>东北证券、中信建投、万联证券、开源证券、Bernstein（5 家）</td></tr>
+<tr><td><strong>核心逻辑</strong></td><td>CPO/NPO 推动先进封装需求爆发；TCB/Hybrid Bonding 设备紧缺；国产算力从单芯片走向集群互联，封装环节价值量重估</td></tr>
+</table>
+<p style="margin:10px 0 0;font-size:13px;"><strong>匹配研报：</strong></p>
+<ul style="font-size:13px;">
+<li>东北证券「NPO 深度报告：国产算力的新战场，AI 光互联的新主线」(8/3)</li>
+<li>开源证券「仕佳光子：Q2 业绩超预期，CPO 先进封装器件深度赋能」(8/3)</li>
+<li>万联证券晨会「PCB、存储、MLCC、先进封装等产业链投资机遇」(8/4)</li>
+<li>中信建投晨会「先进逻辑、HBM 和先进封装对核心零部件需求同步提升」(8/4)</li>
+<li>Bernstein「Besi: advanced packaging, TCB, hybrid bonding, CPO」(8/3)</li>
+</ul>
+</div>
+
+<!-- CPO -->
+<div class="signal-card red">
+<h3>2. CPO概念 <span class="stars">★★★★★</span></h3>
+<table>
+<tr><td style="width:90px"><strong>资金</strong></td><td>Top30 第 2 位，前日 11 → 今日 2（↑9），净额 <strong>67.53 亿</strong></td></tr>
+<tr><td><strong>研报覆盖</strong></td><td>开源证券、东北证券、头豹研究院、Bernstein、中金公司、光大期货（6 家）</td></tr>
+<tr><td><strong>核心逻辑</strong></td><td>英伟达 CPO 正式进入量产，Rubin Ultra 转向 NVL576 集群互联；NPO/CPO 加速产业化渗透</td></tr>
+</table>
+<p style="margin:10px 0 0;font-size:13px;"><strong>匹配研报：</strong></p>
+<ul style="font-size:13px;">
+<li>开源证券「光通信配置时刻已至 — 英伟达 CPO 量产 + Rubin Ultra 转向集群互联」(8/4) ⭐ 核心</li>
+<li>头豹研究院「2026 年中国光通信行业概览：从覆盖建设到算力互联」(8/3)</li>
+<li>东北证券「NPO 深度报告 — AI 光互联新主线」(8/3)</li>
+<li>中金公司晨会「AI 基础设施（光通信、PCB）高景气确定性强」(8/3)</li>
+</ul>
+</div>
+
+<!-- PCB -->
+<div class="signal-card red">
+<h3>3. PCB概念 <span class="stars">★★★★</span></h3>
+<table>
+<tr><td style="width:90px"><strong>资金</strong></td><td>Top30 第 3 位，前日 19 → 今日 3（↑16），净额 <strong>65.02 亿</strong></td></tr>
+<tr><td><strong>研报覆盖</strong></td><td>万联证券、招商证券、光大期货、中金公司（4 家）</td></tr>
+<tr><td><strong>核心逻辑</strong></td><td>AI 服务器/智能电动车/高速通信设备三大支撑；生益科技 CCL 涨价 + AI 放量双轮驱动</td></tr>
+</table>
+<p style="margin:10px 0 0;font-size:13px;"><strong>匹配研报：</strong></p>
+<ul style="font-size:13px;">
+<li>万联证券「PCB 领域关注高层载板等关键增量方向」(8/4)</li>
+<li>招商证券「8 月金股 — 生益科技：CCL 涨价 + AI 放量双轮驱动」(8/3)</li>
+</ul>
+</div>
+
+<!-- 存储芯片 -->
+<div class="signal-card red">
+<h3>4. 存储芯片 <span class="stars">★★★</span></h3>
+<table>
+<tr><td style="width:90px"><strong>资金</strong></td><td>Top30 第 10 位，净额 27.90 亿</td></tr>
+<tr><td><strong>研报覆盖</strong></td><td>万联证券晨会</td></tr>
+<tr><td><strong>核心逻辑</strong></td><td>三星电子及 SK 海力士业绩向好，需求及订单指引积极，存储市场景气扩张</td></tr>
+</table>
+</div>
+
+<!-- 毫米波雷达 -->
+<div class="signal-card red">
+<h3>5. 毫米波雷达 <span class="stars">★★★</span></h3>
+<table>
+<tr><td style="width:90px"><strong>资金</strong></td><td>Top30 第 5 位，🆕 新进榜，净额 <strong>56.86 亿</strong></td></tr>
+<tr><td><strong>研报覆盖</strong></td><td>Bernstein</td></tr>
+<tr><td><strong>核心逻辑</strong></td><td>中国 4D 雷达国产 100% 份额；比亚迪/华为技术推动毫米波雷达渗透</td></tr>
+</table>
+<p style="margin:10px 0 0;font-size:13px;"><strong>匹配研报：</strong></p>
+<ul style="font-size:13px;">
+<li>Bernstein「Electric Revolution: 毫米波雷达市场分析，4D 雷达国产全份额」(8/4)</li>
+</ul>
+</div>
+
+<!-- 光通信 -->
+<div class="signal-card red">
+<h3>6. 光通信 <span class="stars">★★★</span></h3>
+<table>
+<tr><td style="width:90px"><strong>资金</strong></td><td>Top30 第 17 位，🆕 新进榜，净额 14.20 亿</td></tr>
+<tr><td><strong>研报覆盖</strong></td><td>开源证券、头豹研究院、中金公司</td></tr>
+<tr><td><strong>核心逻辑</strong></td><td>从覆盖建设到算力互联，800G/1.6T 光模块放量，产业链价值重估</td></tr>
+</table>
+</div>
+
+<!-- 苹果概念 -->
+<div class="signal-card red">
+<h3>7. 苹果概念 <span class="stars">★★</span></h3>
+<table>
+<tr><td style="width:90px"><strong>资金</strong></td><td>Top30 第 11 位，前日 30 → 今日 11（↑19），净额 <strong>26.59 亿</strong></td></tr>
+<tr><td><strong>研报覆盖</strong></td><td>招商证券立讯精密深度</td></tr>
+<tr><td><strong>核心逻辑</strong></td><td>消费电子苹果产业链全球产能布局，立讯精密跨界面赋能</td></tr>
+</table>
+</div>
+
+<!-- 无人驾驶 -->
+<div class="signal-card red">
+<h3>8. 无人驾驶 <span class="stars">★★</span></h3>
+<table>
+<tr><td style="width:90px"><strong>资金</strong></td><td>Top30 第 20 位，🆕 新进榜，净额 10.80 亿</td></tr>
+<tr><td><strong>研报覆盖</strong></td><td>光大期货</td></tr>
+<tr><td><strong>核心逻辑</strong></td><td>智能驾驶概念活跃，索菱股份、浙江世宝等涨停</td></tr>
+</table>
+</div>
+
+<h2>三、🟡 资金先行·研报未覆盖</h2>
+
+<p>以下 Top30 板块近 2 日无直接研报命中，资金已先行布局，研报覆盖存在滞后，构成<strong>预期差候选</strong>。</p>
+
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>板块</th><th class="center">排名</th><th class="num">评分(亿)</th><th>信号特征</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>第三代半导体</strong></td><td class="center">4</td><td class="num">63.57</td><td>🆕 最大预期差，资金额极高但无专题研报</td></tr>
+<tr><td>华为海思</td><td class="center">12</td><td class="num">23.98</td><td>🆕 华为链回归资金视野</td></tr>
+<tr><td>汽车芯片</td><td class="center">14</td><td class="num">20.54</td><td>🆕 智驾 + 新能源双催化</td></tr>
+<tr><td>6G概念</td><td class="center">15</td><td class="num">20.29</td><td>🆕 通信板块扩散效应</td></tr>
+<tr><td>氟概念</td><td class="center">16</td><td class="num">16.82</td><td>🆕 化工/材料细分</td></tr>
+<tr><td>卫星导航</td><td class="center">18</td><td class="num">11.63</td><td>🆕 军工 + 通信交叉</td></tr>
+<tr><td>工业母机</td><td class="center">19</td><td class="num">11.25</td><td>🆕 设备更新主题</td></tr>
+<tr><td>铜缆高速连接</td><td class="center">21</td><td class="num">10.67</td><td>🆕 AI 集群互联受益但无研报</td></tr>
+<tr><td>工业气体</td><td class="center">22</td><td class="num">9.17</td><td>🆕 半导体上游</td></tr>
+<tr><td>国防军工</td><td class="center">23</td><td class="num">8.92</td><td>🆕 板块轮动</td></tr>
+<tr><td>折叠屏</td><td class="center">24</td><td class="num">8.50</td><td>🆕 消费电子细分</td></tr>
+<tr><td>玻璃基板</td><td class="center">25</td><td class="num">8.42</td><td>🆕 先进封装材料</td></tr>
+<tr><td>复合铜箔</td><td class="center">26</td><td class="num">6.29</td><td>🆕 新能源材料</td></tr>
+<tr><td>粮食概念</td><td class="center">28</td><td class="num">4.55</td><td>🆕 防御性轮动</td></tr>
+<tr><td>3D打印</td><td class="center">30</td><td class="num">3.84</td><td>🆕 制造升级</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>四、🟢 研报先行·资金未进榜</h2>
+
+<p>以下主题在研报中高频出现但未进 Top30，构成<strong>潜在新方向</strong>，明日观察资金是否跟进。</p>
+
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>方向</th><th>研报来源</th><th>核心逻辑</th><th class="center">级别</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>算力租赁</strong></td>
+  <td>光大期货(8/4)</td>
+  <td>行云科技、宏景科技、青云科技 20cm 涨停，AI 算力需求外溢</td>
+  <td class="center"><span class="badge badge-red">⭐⭐⭐</span></td>
+</tr>
+<tr>
+  <td><strong>MLCC 涨价周期</strong></td>
+  <td>万联证券(8/4)</td>
+  <td>村田/三星/太阳诱电出货创新高，三星 8/1 起统一涨价 30%</td>
+  <td class="center"><span class="badge badge-red">⭐⭐⭐</span></td>
+</tr>
+<tr>
+  <td><strong>液冷散热</strong></td>
+  <td>招商立讯精密(8/3)</td>
+  <td>风冷/液冷散热产品线持续深耕，AI 服务器标配</td>
+  <td class="center">⭐⭐</td>
+</tr>
+<tr>
+  <td><strong>创新药/CRO</strong></td>
+  <td>光大期货(8/4)、中金(8/3)</td>
+  <td>药明康德、哈三联涨停；临床数据验证期</td>
+  <td class="center">⭐⭐</td>
+</tr>
+<tr>
+  <td><strong>贵金属/黄金</strong></td>
+  <td>光大期货(8/5)</td>
+  <td>四川黄金、金一文化涨停，避险 + 通胀逻辑</td>
+  <td class="center">⭐</td>
+</tr>
+<tr>
+  <td><strong>AI 服务器电源</strong></td>
+  <td>华创世界先进(8/4)</td>
+  <td>HVDC 布局，800V 机柜应用</td>
+  <td class="center">⭐</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2>五、📈 资金新进攻方向</h2>
+
+<h3>排名飙升（↑≥10 位）</h3>
+
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>板块</th><th class="center">今日排名</th><th class="center">变化</th><th>研报配合</th></tr>
+</thead>
+<tbody>
+<tr><td>新材料</td><td class="center">9</td><td class="center"><span class="badge badge-red">↑20</span></td><td>部分（半导体材料相关）</td></tr>
+<tr><td>苹果概念</td><td class="center">11</td><td class="center"><span class="badge badge-red">↑19</span></td><td>有（招商立讯精密）</td></tr>
+<tr><td>PCB概念</td><td class="center">3</td><td class="center"><span class="badge badge-red">↑16</span></td><td><strong>强</strong>（万联、招商、中金）</td></tr>
+<tr><td>先进封装</td><td class="center">1</td><td class="center"><span class="badge badge-red">↑13</span></td><td><strong>极强</strong>（5 家机构）</td></tr>
+<tr><td>OLED概念</td><td class="center">8</td><td class="center"><span class="badge badge-red">↑10</span></td><td>弱（无直接研报）</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>新进 Top30（20 个板块）</h3>
+
+<p>电子/通信/半导体方向集体爆发：第三代半导体、毫米波雷达、华为海思、光刻机、汽车芯片、6G概念、光通信、卫星导航、无人驾驶、铜缆高速连接、玻璃基板、折叠屏等。</p>
+
+<div class="warning">
+  <strong>核心特征：</strong>今日资金从前期机器人/新能源车/物联网等主题大规模转向 AI 算力硬件链 + 半导体国产化。这是自 7 月下旬科技股调整以来的首次集中回补。
+</div>
+
+<h2>六、🔭 明日观察要点</h2>
+
+<ol>
+<li><strong>先进封装/CPO 持续性</strong>：共振最强方向，5+ 机构覆盖。关注明日是否分化——高开低走说明短线兑现压力大；缩量横盘后再度放量则确认主升。</li>
+
+<li><strong>第三代半导体的研报缺口</strong>：资金净额 63.57 亿高居第 4，但近 2 日无专题研报，是最大预期差候选。关注明日是否有机构跟进覆盖。</li>
+
+<li><strong>MLCC 涨价传导</strong>：三星 8/1 起涨价 30%，万联重点推荐，但 MLCC 无直接概念板块对位。关注被动元件/电子元件板块明日表现。</li>
+
+<li><strong>资金轮动节奏</strong>：今日 20 个新进榜板块，轮动范围过大。若明日缩量回到少数几个方向（先进封装/CPO/PCB），说明机构择优集中；若继续扩散则可能是游资主导的一日游。</li>
+
+<li><strong>算力租赁的进榜潜力</strong>：研报已覆盖但资金未进 Top30，光模块涨停潮后资金有向算力租赁蔓延的逻辑。</li>
+</ol>
+
+<hr>
+
+<h2>附录：今日资金雷达完整 Top30</h2>
+
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th class="center">#</th><th>板块</th><th>代码</th><th class="num">评分(亿)</th><th class="center">前日</th><th class="center">变化</th></tr>
+</thead>
+<tbody>
+<tr><td class="center">1</td><td>先进封装</td><td>880635</td><td class="num">71.99</td><td class="center">14</td><td class="center">↑13</td></tr>
+<tr><td class="center">2</td><td>CPO概念</td><td>880656</td><td class="num">67.53</td><td class="center">11</td><td class="center">↑9</td></tr>
+<tr><td class="center">3</td><td>PCB概念</td><td>880550</td><td class="num">65.02</td><td class="center">19</td><td class="center">↑16</td></tr>
+<tr><td class="center">4</td><td>第三代半导体</td><td>880608</td><td class="num">63.57</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">5</td><td>毫米波雷达</td><td>880659</td><td class="num">56.86</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">6</td><td>芯片</td><td>880952</td><td class="num">54.54</td><td class="center">1</td><td class="center">↓5</td></tr>
+<tr><td class="center">7</td><td>5G概念</td><td>880506</td><td class="num">45.02</td><td class="center">6</td><td class="center">↓1</td></tr>
+<tr><td class="center">8</td><td>OLED概念</td><td>880945</td><td class="num">37.92</td><td class="center">18</td><td class="center">↑10</td></tr>
+<tr><td class="center">9</td><td>新材料</td><td>880731</td><td class="num">29.24</td><td class="center">29</td><td class="center">↑20</td></tr>
+<tr><td class="center">10</td><td>存储芯片</td><td>880672</td><td class="num">27.90</td><td class="center">5</td><td class="center">↓5</td></tr>
+<tr><td class="center">11</td><td>苹果概念</td><td>880574</td><td class="num">26.59</td><td class="center">30</td><td class="center">↑19</td></tr>
+<tr><td class="center">12</td><td>华为海思</td><td>880682</td><td class="num">23.98</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">13</td><td>光刻机</td><td>880716</td><td class="num">22.26</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">14</td><td>汽车芯片</td><td>880758</td><td class="num">20.54</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">15</td><td>6G概念</td><td>880661</td><td class="num">20.29</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">16</td><td>氟概念</td><td>880714</td><td class="num">16.82</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">17</td><td>光通信</td><td>880670</td><td class="num">14.20</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">18</td><td>卫星导航</td><td>880546</td><td class="num">11.63</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">19</td><td>工业母机</td><td>880736</td><td class="num">11.25</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">20</td><td>无人驾驶</td><td>880944</td><td class="num">10.80</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">21</td><td>铜缆高速连接</td><td>880523</td><td class="num">10.67</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">22</td><td>工业气体</td><td>880734</td><td class="num">9.17</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">23</td><td>国防军工</td><td>880507</td><td class="num">8.92</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">24</td><td>折叠屏</td><td>880561</td><td class="num">8.50</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">25</td><td>玻璃基板</td><td>880547</td><td class="num">8.42</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">26</td><td>复合铜箔</td><td>880646</td><td class="num">6.29</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">27</td><td>英伟达概念</td><td>880674</td><td class="num">5.92</td><td class="center">24</td><td class="center">↓3</td></tr>
+<tr><td class="center">28</td><td>粮食概念</td><td>880626</td><td class="num">4.55</td><td class="center">—</td><td class="center">🆕</td></tr>
+<tr><td class="center">29</td><td>汽车电子</td><td>880930</td><td class="num">4.25</td><td class="center">10</td><td class="center">↓19</td></tr>
+<tr><td class="center">30</td><td>3D打印</td><td>880569</td><td class="num">3.84</td><td class="center">—</td><td class="center">🆕</td></tr>
+</tbody>
+</table>
+</div>
+
+<footer>
+<p><strong>免责声明</strong>：本报告由自动化系统生成，基于公开数据与第三方研报信息，不构成任何投资建议。市场有风险，投资需谨慎。</p>
+<p style="margin-top:8px;"><strong>数据来源</strong>：板块资金雷达 Top30 / 排名变化 — 本地 boards_flow.json（通达信 MCP tdx-finance）；研报检索 — 亿信 API report 检索（search_mode=advanced, time_range=past 2 days）；板块名称映射 — 本地 boards_list.json</p>
+</footer>
+
+</body>
+</html>
