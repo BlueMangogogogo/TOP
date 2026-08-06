@@ -1,9 +1,59 @@
 {
-  "last_updated": "2026-08-03 23:26:24",
-  "total": 68,
-  "daily_count": 34,
-  "industry_count": 34,
+  "last_updated": "2026-08-06 19:34:03",
+  "total": 73,
+  "daily_count": 38,
+  "industry_count": 35,
   "reports": [
+    {
+      "id": "2026-08-06-午盘扫描",
+      "date": "2026-08-06",
+      "display_date": "8月6日",
+      "type": "daily",
+      "category": "午盘扫描",
+      "title": "午盘扫描",
+      "relative_path": "reports/2026-08-06/午盘扫描.html",
+      "size_kb": 10.2
+    },
+    {
+      "id": "2026-08-06-开盘速览",
+      "date": "2026-08-06",
+      "display_date": "8月6日",
+      "type": "daily",
+      "category": "开盘速览",
+      "title": "开盘速览",
+      "relative_path": "reports/2026-08-06/开盘速览.html",
+      "size_kb": 7.3
+    },
+    {
+      "id": "2026-08-06-盘中异动",
+      "date": "2026-08-06",
+      "display_date": "8月6日",
+      "type": "daily",
+      "category": "盘中异动",
+      "title": "盘中异动",
+      "relative_path": "reports/2026-08-06/盘中异动.html",
+      "size_kb": 17.7
+    },
+    {
+      "id": "2026-08-06-盘前简报",
+      "date": "2026-08-06",
+      "display_date": "8月6日",
+      "type": "industry",
+      "category": "行业报告",
+      "title": "盘前简报",
+      "relative_path": "reports/2026-08-06/盘前简报.html",
+      "size_kb": 7.7
+    },
+    {
+      "id": "2026-08-06-竞价快报",
+      "date": "2026-08-06",
+      "display_date": "8月6日",
+      "type": "daily",
+      "category": "竞价快报",
+      "title": "竞价快报",
+      "relative_path": "reports/2026-08-06/竞价快报.html",
+      "size_kb": 5.7
+    },
     {
       "id": "2026-08-03-午盘扫描",
       "date": "2026-08-03",
