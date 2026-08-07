@@ -1,9 +1,19 @@
 {
-  "last_updated": "2026-08-07 19:32:28",
-  "total": 85,
-  "daily_count": 50,
+  "last_updated": "2026-08-07 19:38:35",
+  "total": 86,
+  "daily_count": 51,
   "industry_count": 35,
   "reports": [
+    {
+      "id": "2026-08-07-MTI宏观择时周度综述（8/3 — 8/7）",
+      "date": "2026-08-07",
+      "display_date": "8月7日",
+      "type": "daily",
+      "category": "宏观择时",
+      "title": "MTI宏观择时周度综述（8/3 — 8/7）",
+      "relative_path": "reports/2026-08-07/MTI宏观择时周度综述_20260807.html",
+      "size_kb": 8.0
+    },
     {
       "id": "2026-08-06-mti",
       "date": "2026-08-06",
