@@ -1,9 +1,39 @@
-﻿{
-    "last_updated":  "2026-08-08 19:49:19",
-    "total":  87,
-    "daily_count":  51,
-    "industry_count":  36,
+{
+    "last_updated":  "2026-08-08 21:02:36",
+    "total":  90,
+    "daily_count":  53,
+    "industry_count":  37,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-08-07/深度复盘.html",
+                        "id":  "2026-08-07-深度复盘",
+                        "display_date":  "8月7日",
+                        "title":  "深度复盘",
+                        "category":  "深度复盘",
+                        "type":  "daily",
+                        "size_kb":  25,
+                        "date":  "2026-08-07"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-07/研报巡逻.html",
+                        "id":  "2026-08-07-研报巡逻",
+                        "display_date":  "8月7日",
+                        "title":  "研报巡逻",
+                        "category":  "研报巡逻",
+                        "type":  "daily",
+                        "size_kb":  15.7,
+                        "date":  "2026-08-07"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-08/光模块禁令深度分析-行业趋势与投资逻辑.html",
+                        "id":  "2026-08-08-光模块禁令深度分析-行业趋势与投资逻辑",
+                        "display_date":  "8月8日",
+                        "title":  "光模块禁令深度分析-行业趋势与投资逻辑",
+                        "category":  "深度研究",
+                        "type":  "industry",
+                        "size_kb":  23.6,
+                        "date":  "2026-08-08"
+                    },
                     {
                         "relative_path":  "reports/2026-08-08/光模块禁令深度分析-机构调研与资金雷达实证-v3.html",
                         "id":  "2026-08-08-光模块禁令深度分析-机构调研与资金雷达实证-v3",
