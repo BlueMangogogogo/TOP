@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>光模块FCC禁令深度分析 v3 — 机构调研 × 资金雷达实证</title>
+<style>
+:root {
+  --yellow:  #ebb543; --yellow-light: #f7e8c5;
+  --red:     #c0392b; --red-light: #fdf0ef;
+  --green:   #27ae60; --green-light: #eafaf1;
+  --blue:    #2471a3; --blue-light: #e8f4fd;
+  --black:   #1a1a1a; --gray-900:#2c2c2c; --gray-700:#555; --gray-500:#888; --gray-300:#bbb; --gray-100:#f0f0f0; --white:   #fff;
+  --font:    "Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);font-size:15px;line-height:1.8;color:var(--gray-900);background:var(--white);max-width:920px;margin:0 auto;padding:40px 28px 60px;-webkit-font-smoothing:antialiased}
+header{border-bottom:3px solid var(--yellow);padding-bottom:20px;margin-bottom:28px}
+header h1{font-size:24px;font-weight:700;color:var(--black);margin-bottom:6px;letter-spacing:.5px}
+header .meta{font-size:13px;color:var(--gray-500)}
+h2{font-size:19px;font-weight:700;color:var(--black);margin:40px 0 14px;padding-left:12px;border-left:4px solid var(--yellow)}
+h3{font-size:16px;font-weight:700;color:var(--gray-900);margin:26px 0 8px}
+p{margin:10px 0}
+.highlight{background:var(--yellow-light);border-left:4px solid var(--yellow);padding:14px 18px;margin:16px 0;border-radius:0 6px 6px 0;font-size:14px}
+.warning{background:var(--red-light);border-left:4px solid var(--red);padding:14px 18px;margin:16px 0;border-radius:0 6px 6px 0;font-size:14px;color:#8b1a1a}
+.info-box{background:var(--blue-light);border-left:4px solid var(--blue);padding:14px 18px;margin:16px 0;border-radius:0 6px 6px 0;font-size:14px}
+.signal-card{border:1px solid var(--gray-300);border-radius:8px;padding:18px 22px;margin:16px 0;background:var(--white)}
+.signal-card.red{border-left:5px solid var(--red);background:#fffafa}
+.signal-card.yellow{border-left:5px solid var(--yellow);background:#fffef8}
+.signal-card.green{border-left:5px solid var(--green);background:#f9fdf9}
+.signal-card.blue{border-left:5px solid var(--blue);background:#fafdff}
+.signal-card h3{margin-top:0}
+.table-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0 20px;border:1px solid var(--gray-300);border-radius:6px}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:560px}
+thead th{background:var(--yellow);color:var(--black);font-weight:700;padding:8px 10px;text-align:left;white-space:nowrap;border-bottom:2px solid #d4a734}
+tbody td{padding:8px 10px;border-bottom:1px solid var(--gray-100);vertical-align:top}
+tbody tr:nth-child(even){background:#fafafa}
+tbody tr:hover{background:var(--yellow-light)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.center,th.center{text-align:center}
+.badge{display:inline-block;padding:2px 10px;border-radius:3px;font-size:12px;font-weight:600;margin-right:6px}
+.badge-red{background:var(--red-light);color:var(--red)}
+.badge-yellow{background:var(--yellow-light);color:#8b6914}
+.badge-green{background:var(--green-light);color:var(--green)}
+.badge-blue{background:var(--blue-light);color:var(--blue)}
+.up{color:var(--red);font-weight:700}
+.dn{color:var(--green);font-weight:700}
+ul,ol{margin:8px 0 8px 20px}
+li{margin:4px 0}
+hr{border:none;border-top:1px solid var(--gray-100);margin:32px 0}
+strong{color:var(--black)}
+em{color:var(--gray-700)}
+.small{font-size:12px;color:var(--gray-500)}
+footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--gray-100);font-size:12px;color:var(--gray-500);line-height:1.6}
+@media(max-width:600px){body{padding:20px 14px 40px;font-size:14px}header h1{font-size:20px}h2{font-size:16px}table{font-size:12px}thead th,tbody td{padding:7px 8px}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>光模块FCC禁令深度分析（v3）</h1>
+  <div class="meta">
+    <span>📅 2026年8月8日（周六）</span>
+    <span>🦞 投资小龙虾 深度分析</span>
+    <span>机构调研（福总）× 行业调研（公开研报/新闻）× 资金雷达（东财数据源）三源实证</span>
+  </div>
+</header>
+
+<div class="warning">
+  <strong>⚠ 版本说明：</strong>v2 报告中"8/7 资金雷达显示 AI 硬件全线溃退、职业教育登顶"的核心叙事，与网站资金雷达（东财数据源，radar-em.html 同源）实际数据不符。8/7 真实数据是存储芯片、半导体、PCB 继续霸榜，AI 硬件并未撤退，而是<strong>板块内部剧烈分化</strong>：光模块整机龙头逆势走弱，配套环节大涨。本版（v3）以实际数据为准重新构建分析，请以本版为准。
+</div>
+
+<hr>
+
+<h2>一、一页结论：先看四句话</h2>
+
+<div class="highlight">
+<strong>1. 禁令本质：</strong>FCC 瞄准的是<strong>「新型号」（new models）增量准入</strong>，不是存量一刀切。已获认证的 800G/1.6T 存量供应短期不受影响，今明两年业绩高增的基本面没有被破坏。<br><br>
+<strong>2. 市场真实反应：</strong>8/7 资金雷达显示 AI 硬件并未溃退（存储/半导体/PCB/CPO/先进封装全在榜），真正掉队的是<strong>光模块整机龙头</strong>（中际旭创 -3.68%、新易盛 -0.22% 逆势走弱），而配套环节（PCB/先进封装/液冷/存储）与反制材料（锗/磷化铟）大涨。<br><br>
+<strong>3. 资金行为解读：</strong>这不是"逃离 AI"，而是<strong>「AI 硬件内部高切低、切确定性」</strong>——从受制裁预期压制的整机，切向不受禁令影响的配套与扩产环节。与机构调研"整机受损、配套受益"的产业链分层判断完全吻合。<br><br>
+<strong>4. 投资含义：</strong>短期（1-2 年）业绩确定性仍在，中期看 FCC 落地口径，长期看 1.6T/3.2T 能否进入美国市场。市场正在从"线性乐观"切换到"计提远期风险"，估值修复需等政策落地。
+</div>
+
+<hr>
+
+<h2>二、事件本质：FCC 到底要禁什么</h2>
+
+<h3>2.1 草案核心内容（截至 8/7 的公开信息）</h3>
+
+<p>8月4日路透社报道，FCC 正在起草提案，拟禁止进口<strong>中国新型号数据中心光收发模块</strong>（new models），最快年内落地，但仍可能修改或搁置。中国驻美使馆已回应并警告反制。8月6日，国内商务部等相关部门作出官方回应并启动反制调查。</p>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>关键变量</th><th>含义</th><th>对产业影响</th></tr></thead>
+<tbody>
+<tr><td><strong>认定标准</strong></td><td>按公司注册地？控制权？最终组装地？还是追溯 BOM/固件/关键器件原产地？</td><td>决定泰国产能能否规避。若按企业控制权认定，换到哪个国家都绕不开</td></tr>
+<tr><td><strong>存量 vs 增量</strong></td><td>已获认证的 800G 能否继续销售？1.6T/3.2T 是否需重新审批？</td><td>决定短期供应冲击幅度。存量放行 → 短期无断供风险</td></tr>
+<tr><td><strong>是否延伸上游</strong></td><td>是否从整机扩散到激光器、InP 器件、光芯片、上游材料</td><td>决定影响范围是否从光模块扩至整个光器件产业链</td></tr>
+<tr><td><strong>豁免与过渡期</strong></td><td>是否有条件性批准、过渡期安排</td><td>决定缓冲空间与市场定价幅度</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>2.2 为什么不会"一刀切"（短期利好因素）</h3>
+
+<ul>
+<li><strong>全球产能现实约束</strong>：2025 年中国占全球光模块份额约 78%，800G 以上高速光模块份额更高。海外厂商整机量产能力有限，最快 2027 年底至 2028 年才进入放量期。美国不会为几百亿美元的光模块订单停滞数万亿美元的 AI 数据中心建设。</li>
+<li><strong>现有订单绑定</strong>：中际旭创、新易盛的北美订单 95% 以上已从泰国、马来西亚出货，短期供应链切换不现实。</li>
+<li><strong>FCC 出招逻辑</strong>：管制清单只卡增量设备未来进入美国的可能性，避免立即切断现有供应，同时阻止中国企业下一轮产品换代中进一步扩大美国市场份额。</li>
+</ul>
+
+<h3>2.3 为什么不能轻视（中长期风险因素）</h3>
+
+<div class="warning">
+<strong>这不是孤立事件，是系统性对华市场关闭工程的一环。</strong>观察者网 8/7 文章梳理：过去 8 个月，FCC 已连续出手 5 次——去年 12 月消费级无人机、今年 3 月路由器（TP-Link）、6 月五角大楼将中际旭创列入 1260H 涉军名单、7 月光伏逆变器（华为/阳光电源/锦浪/固德威）、上周人形机器人（宇树/优必选），本月轮到光模块。<strong>FCC 正在取代 BIS，成为对华科技管制的主角</strong>（BIS 被中美谈判绑住手脚，FCC 相对自由）。光模块已被纳入美国 AI 基础设施安全与战略供应链审查框架，管制的大方向已确立，只是节奏和范围还在博弈。
+</div>
+
+<p>同时参考历史先例：7 月初 FCC 拟封杀中国光伏逆变器（阳光电源等大跌），更早的药明生物安全法案——消息传出时 CXO 板块一度腰斩，尽管法案最终未通过、股价修复接近新高。市场短期是情绪的投票器，中长期才是基本面的称重机。</p>
+
+<hr>
+
+<h2>三、资金雷达实证：8/6 → 8/7 两天到底发生了什么</h2>
+
+<p>以下数据来自网站资金雷达同源数据（东财数据源，radar-em.html 使用），并交叉引用本地通达信版雷达。</p>
+
+<h3>3.1 8月7日（周五）东财雷达 Top15：AI 硬件霸榜，不是溃退</h3>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>#</th><th>板块</th><th>涨跌幅</th><th>评分</th><th>主力净流入</th><th>解读</th></tr></thead>
+<tbody>
+<tr><td class="center">1</td><td><strong>存储芯片</strong></td><td class="num up">+3.59%</td><td class="num">948.1</td><td class="num up">+129.2亿</td><td>内存涨价+国产替代双逻辑</td></tr>
+<tr><td class="center">2</td><td><strong>半导体概念</strong></td><td class="num up">+2.78%</td><td class="num">929.8</td><td class="num up">+198.4亿</td><td>全市场最大净流入</td></tr>
+<tr><td class="center">3</td><td><strong>国产芯片</strong></td><td class="num up">+1.92%</td><td class="num">929.3</td><td class="num up">+141.2亿</td><td>自主可控叙事强化</td></tr>
+<tr><td class="center">4</td><td>一带一路</td><td class="num up">+0.14%</td><td class="num">920.7</td><td class="num up">+67.1亿</td><td>资金分散配置</td></tr>
+<tr><td class="center">5</td><td><strong>PCB</strong></td><td class="num up">+5.63%</td><td class="num">918.9</td><td class="num up">+247.0亿</td><td>全场最大净流入之一，不受禁令影响</td></tr>
+<tr><td class="center">6</td><td>电池技术</td><td class="num up">+1.29%</td><td class="num">913.2</td><td class="num up">+75.5亿</td><td>新能源链轮动</td></tr>
+<tr><td class="center">7</td><td>锂电池概念</td><td class="num up">+1.42%</td><td class="num">911.9</td><td class="num up">+57.2亿</td><td>新能源链轮动</td></tr>
+<tr><td class="center">8</td><td><strong>创新药</strong></td><td class="num up">+5.43%</td><td class="num">904.6</td><td class="num up">+66.9亿</td><td>CXO 大爆发（百花医药4连板）</td></tr>
+<tr><td class="center">9</td><td>2026中报预增</td><td class="num up">+1.99%</td><td class="num">903.5</td><td class="num up">+230.4亿</td><td>业绩确定性溢价</td></tr>
+<tr><td class="center">10</td><td><strong>华为概念</strong></td><td class="num up">+0.91%</td><td class="num">899.8</td><td class="num up">+142.8亿</td><td>国产算力链</td></tr>
+<tr><td class="center">23</td><td><strong>通信技术</strong></td><td class="num up">+2.10%</td><td class="num">857.7</td><td class="num up">+135.4亿</td><td>大通信方向整体走强</td></tr>
+<tr><td class="center">34</td><td>光纤概念</td><td class="num up">+2.49%</td><td class="num">835.8</td><td class="num up">+53.1亿</td><td>上游材料受益</td></tr>
+<tr><td class="center">40</td><td><strong>液冷概念</strong></td><td class="num up">+1.83%</td><td class="num">827.9</td><td class="num up">+41.7亿</td><td>1.6T 液冷标配，北美代工不受制裁</td></tr>
+<tr><td class="center">44</td><td><strong>先进封装</strong></td><td class="num up">+3.90%</td><td class="num">820.7</td><td class="num up">+36.1亿</td><td>无论谁造模块都要封装</td></tr>
+<tr><td class="center">47</td><td><strong>光通信模块</strong></td><td class="num up">+3.76%</td><td class="num">817.9</td><td class="num up">+43.0亿</td><td>板块指数仍在涨！但个股分化严重</td></tr>
+<tr><td class="center">99</td><td><strong>CPO概念</strong></td><td class="num up">+4.10%</td><td class="num">731.6</td><td class="num up">+9.6亿</td><td>排名靠后但当日涨幅不小</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="info-box">
+<strong>8/7 关键信号：</strong>光通信模块板块指数 +3.76%、CPO +4.10% 仍在上涨，但中际旭创 -3.68% 逆势下跌。板块涨、龙头跌，说明<strong>资金在板块内部做切换</strong>：从整机（受 FCC 预期压制）切向器件、配套、材料。这正是机构调研"产业链分层"在盘面上的精确映射。
+</div>
+
+<h3>3.2 通达信版雷达交叉验证（8/7）</h3>
+
+<p>本地通达信版雷达 8/7 Top20 同样显示：PCB（#1，+4.74%）、复合铜箔（#2，+5.69%）、CPO（#3，+3.85%，净流入 115 亿）、5G（#4）、先进封装（#5，+3.76%，净流入 123 亿）、CXO（#8，+8.22%）、光通信（#14，+2.48%）、存储芯片（#19，+3.61%）。<strong>两套独立数据源结论一致：AI 硬件链没有撤退。</strong></p>
+
+<h3>3.3 与 v2 报告的差异说明（纠错）</h3>
+
+<div class="warning">
+v2 报告称 8/7 "资金雷达 29/30 板块为新面孔、AI 硬件全线退出、职业教育登顶、智谱AI/人脑工程/阿里概念进榜"。经核对两套雷达原始数据（东财版 em_metrics/hist_metrics + 通达信版 hist_metrics），<strong>该叙事不成立</strong>：8/7 两套数据中 AI 硬件（存储/半导体/芯片/PCB/CPO/先进封装）均占据 Top20 大半席位，职业教育、智谱AI、人脑工程等未进入前排。v2 的"机构利用反弹出货、全线溃退"结论基于错误数据，特此更正。
+</div>
+
+<hr>
+
+<h2>四、个股分化实证：整机 vs 配套（8/7 收盘）</h2>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>环节</th><th>股票</th><th>代码</th><th>8/7收盘</th><th>涨跌</th><th>成交额(亿)</th><th>PE(TTM)</th><th>核心逻辑</th></tr></thead>
+<tbody>
+<tr><td rowspan="2"><span class="badge badge-red">整机·直接受损</span></td><td><strong>中际旭创</strong></td><td>300308</td><td class="num">919.87</td><td class="num dn">-3.68%</td><td class="num">546.7</td><td class="num">46.9</td><td>全球龙头，美国收入占比 61.7%（2026Q1），禁令预期直接压制远期估值</td></tr>
+<tr><td><strong>新易盛</strong></td><td>300502</td><td class="num">420.95</td><td class="num dn">-0.22%</td><td class="num">257.9</td><td class="num">52.8</td><td>海外收入占比 94%+，LPO 1.6T 是 Meta 主力型号，3.2T 被拦则增长曲线承压</td></tr>
+<tr><td><span class="badge badge-yellow">光器件·间接</span></td><td><strong>天孚通信</strong></td><td>300394</td><td class="num">230.68</td><td class="num up">+2.40%</td><td class="num">140.7</td><td class="num">127.8</td><td>光器件（非整机），市场开始区分"器件≠整机"</td></tr>
+<tr><td rowspan="2"><span class="badge badge-green">配套·受益</span></td><td><strong>光迅科技</strong></td><td>002281</td><td class="num">193.04</td><td class="num up">+10.00% 涨停</td><td class="num">132.9</td><td class="num">166.5</td><td>国内收入占比 75%，液冷+光器件+自主可控三重逻辑</td></tr>
+<tr><td><strong>生益科技</strong></td><td>600183</td><td class="num">139.98</td><td class="num up">+10.00% 涨停</td><td class="num">107.3</td><td class="num">73.4</td><td>CCL/覆铜板，PCB 上游，不受 FCC 禁令影响</td></tr>
+<tr><td rowspan="3"><span class="badge badge-green">先进封装/PCB</span></td><td><strong>沪电股份</strong></td><td>002463</td><td class="num">125.87</td><td class="num up">+7.40%</td><td class="num">98.9</td><td class="num">48.8</td><td>PCB 龙头，AI 服务器刚需</td></tr>
+<tr><td><strong>通富微电</strong></td><td>002156</td><td class="num">64.72</td><td class="num up">+6.17%</td><td class="num">102.2</td><td class="num">74.6</td><td>先进封装，AMD 链</td></tr>
+<tr><td><strong>长电科技</strong></td><td>600584</td><td class="num">77.75</td><td class="num up">+2.48%</td><td class="num">174.8</td><td class="num">119.8</td><td>先进封装龙头，扩产刚需</td></tr>
+<tr><td><span class="badge badge-green">存储</span></td><td><strong>兆易创新</strong></td><td>603986</td><td class="num">417.05</td><td class="num up">+8.32%</td><td class="num">305.2</td><td class="num">50.1</td><td>存储涨价+国产替代，与光模块禁令无关</td></tr>
+<tr><td><span class="badge badge-red">反制材料</span></td><td><strong>云南锗业</strong></td><td>002428</td><td class="num">100.08</td><td class="num up">+10.00% 4连板</td><td class="num">117.4</td><td class="num">1794</td><td>磷化铟/锗反制预期，中国占全球铟产量约 70%</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="info-box">
+<strong>分化即定价：</strong>8/7 一天之内，市场用真金白银完成了产业链分层投票——整机（旭创 -3.68%、新易盛 -0.22%）走弱，器件（天孚 +2.4%）、配套（光迅/生益涨停、沪电 +7.4%、通富 +6.17%）、反制材料（云南锗业 4 连板）走强。这与机构调研"整机远期受损、扩产配套受益"的判断完全一致。
+</div>
+
+<hr>
+
+<h2>五、产业链五层拆解：谁受损、谁受益、怎么看</h2>
+
+<h3>🔴 第一层：光模块整机 —— 直接承压，短期业绩无忧，远期天花板可见</h3>
+
+<div class="signal-card red">
+<ul>
+<li><strong>逻辑</strong>：今明年 800G/1.6T 出货高增是明牌（上游产能已锁定），但 FCC 明确瞄准下一代新技术（1.6T/3.2T/CPO），中国企业在美国市场"持续用新技术迭代高份额"的估值假设被打破。市场开始杀 2028 年后的远端估值。</li>
+<li><strong>核心标的</strong>：中际旭创（300308）、新易盛（300502）</li>
+<li><strong>关键变量</strong>：泰国产能能否化解风险，取决于最终规则「按生产地认」还是「按企业身份认」。若穿透企业主体，换到哪个国家都绕不开。</li>
+<li><strong>历史参照</strong>：药明生物安全法案路径（腰斩 → 法案未通过 → 修复接近新高），但过程痛苦。当前环境优于 2024 年（短期确定性更好），但公募抱团程度已超 2021 年宁组合峰值（据国际投行研究报告），筹码结构脆弱。</li>
+</ul>
+</div>
+
+<h3>🟡 第二层：光器件 / 光芯片 —— 间接影响，二线角色有缓冲</h3>
+
+<div class="signal-card yellow">
+<ul>
+<li><strong>逻辑</strong>：中国光芯片全球仍是二线角色，短期不构成对美国巨头的直接威胁，受直接制裁的担忧较轻。泰国产能扩张仍需要国内光器件供应。但远期估值同样承压（全球一线在美/日）。</li>
+<li><strong>核心标的</strong>：天孚通信（300394，光器件龙头）、腾景科技、仕佳光子（CPO 器件）</li>
+<li><strong>观察点</strong>：若 FCC 法案只针对整机不延伸上游器件，此层逻辑改善最显著。</li>
+</ul>
+</div>
+
+<h3>🟢 第三层：配套与扩产环节 —— 最大公约数，确定性最高</h3>
+
+<div class="signal-card green">
+<ul>
+<li><strong>逻辑</strong>：无论美国政策如何演变，全球 AI 数据中心建设都要继续，扩产都要用设备。硅光/CPO 耦合精度升至亚微米/纳米级，人工组装失效，自动化扩产设备、精密测试设备、1.6T 液冷成为刚需。且液冷主要给北美大厂代工，"亲儿子"属性不受制裁影响，海外链格局好、毛利稳定。</li>
+<li><strong>核心标的</strong>：先进封装（长电科技 600584、通富微电 002156）、PCB（生益科技 600183、沪电股份 002463）、液冷（光迅科技 002281 兼具）、扩产/测试设备（华工科技 000988 等）</li>
+<li><strong>机构口径</strong>：福总调研原话——"上半场是涨价，下半场是扩产中的最大公约束"。</li>
+</ul>
+</div>
+
+<h3>🔵 第四层：国产算力 / 存储 —— 禁令的反向受益者</h3>
+
+<div class="signal-card blue">
+<ul>
+<li><strong>逻辑</strong>：美国对中国光模块设限，强化的是"算力供应链安全"叙事，国产算力、国产芯片、存储自主可控获得情绪溢价。存储芯片 8/7 净流入 129 亿居雷达第一，叠加 HBM/DDR5 涨价周期（机柜内存成本占比已顶到 29%），逻辑独立于光模块禁令。</li>
+<li><strong>核心标的</strong>：兆易创新（603986，存储）、寒武纪（688256，AI 芯片）、华为链</li>
+<li><strong>注意</strong>：这部分与光模块禁令无直接因果，更多是"自主可控"叙事的资金扩散。</li>
+</ul>
+</div>
+
+<h3>🟣 第五层：反制材料（磷化铟 / 锗）—— 有代价的武器，博弈弹性最大</h3>
+
+<div class="signal-card red">
+<ul>
+<li><strong>逻辑</strong>：中国约占全球铟产量 70%，磷化铟是 EML 激光器、探测器、光芯片的关键衬底材料，全球衬底集中于 AXT、中国体系、日本。2026 年以来中国已收紧磷化铟出口许可，日本已宣布未来四年大幅扩产。这是中国可打的产业反制牌。</li>
+<li><strong>核心标的</strong>：云南锗业（002428，4 连板，PE 1794 倍纯题材）、有研新材</li>
+<li><strong>风险</strong>：这是双刃剑。①中国也要向海外采购 DSP/EML/核心器件，管制上游的上游可能引发美国进一步限制光器件出口；②日本扩产会削弱管制效力；③稀土式悖论——禁止时炒自主可控，客户没了卖给谁？放松了是利好还是利空？云南锗业 PE 1794 倍，已充分透支反制预期，追高风险极大。</li>
+</ul>
+</div>
+
+<hr>
+
+<h2>六、机构观点拼图：共识、分歧与"没人敢说的那部分"</h2>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>来源</th><th>核心观点</th><th>立场</th></tr></thead>
+<tbody>
+<tr><td><strong>福总机构调研</strong>（一手专家纪要）</td><td>不是一刀切，存量型号大概率保留；瞄准下一代新技术压制预期；泰国产能能否规避取决于认定规则；机构关注点已从"今明年业绩"转向"2028 年后美国市场"；"新故事最危险的时候，往往发生在他最正确的时候"（即 6 月高点时的乐观预期）</td><td>中性偏谨慎，强调预期差</td></tr>
+<tr><td><strong>卖方主流</strong>（中金/中信/国盛）</td><td>"雷声大雨点小"：政策落地难度高，海外产能短期无法承接，光模块只是"螺丝钉"无信息安全风险，泰国产能已曲线出海</td><td>偏安抚（机构大客户持仓需要）</td></tr>
+<tr><td><strong>华尔街见闻</strong>（8/5）</td><td>受冲击主要是旭创、新易盛（美国收入占比 61.7% / 94%+）；本质是"从芯片上游封堵延伸至算力硬件中下游零部件的供应链争夺战"</td><td>中性，量化敞口</td></tr>
+<tr><td><strong>36氪</strong>（8/7）</td><td>"new models"定义是关键；影响真正落在下一代产品的 Design Win 上；中美存在"材料换市场准入"的谈判结构；上游高纯晶体/衬底/材料能力难以短期复制</td><td>中性，深度拆解规则</td></tr>
+<tr><td><strong>观察者网·芯科状元</strong>（8/7）</td><td>FCC 八个月五次出手，是系统性对华市场关闭工程；FCC 正取代 BIS 成为管制主角；中际旭创 6 月已入 1260H 名单，光模块禁令早有铺垫</td><td>警惕，中长期视角</td></tr>
+<tr><td><strong>国际投行研究报告</strong>（8/5）</td><td>公募在光通信抱团程度已超 2021 年宁组合峰值；筹码结构脆弱</td><td>谨慎</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="warning">
+<strong>最值得警惕的预期差：</strong>卖方不敢说的部分是——如果法案按最差口径落地（1.6T/3.2T/CPO 均不免税、按企业身份穿透、东南亚产能不可豁免），那么光模块龙头未来两三年的增长曲线会被真正改写，远期估值逻辑（市值 = 盈利 × 估值，估值基数被调低）将系统性下修。机构这几天的共识变化尚未被市场完全定价。
+</div>
+
+<hr>
+
+<h2>七、投资建议：分场景、分环节、明确锚点</h2>
+
+<h3>7.1 场景一：持有光模块整机（旭创/新易盛）</h3>
+<div class="signal-card yellow">
+<ul>
+<li><strong>短期</strong>（1-2 年）：业绩高增确定，不必恐慌割肉；但应清醒认识到"基本面好 ≠ 股价不跌"——市场短期是情绪投票器。</li>
+<li><strong>中期</strong>：建议利用反弹逐步降低仓位/设置移动止盈，不要在 6 月高点式的乐观定价下加仓。参照药明路径：预期差会反复，反弹幅度受远期估值压制，回到前高需要政策面显著改善。</li>
+<li><strong>触发减仓/离场信号</strong>：FCC 草案全文公布且①按企业身份穿透认定 ②新型号不免税 ③向 1.6T/3.2T 扩展 —— 任一成立，远期逻辑实质性受损。</li>
+<li><strong>触发回补信号</strong>：法案偏正面（只限增量、按产地认定、有过渡期）+ 板块企稳放量。</li>
+</ul>
+</div>
+
+<h3>7.2 场景二：寻找"不确定中的确定性"（推荐关注）</h3>
+<div class="signal-card green">
+<p><strong>主线：扩产配套 + 国产算力 + 存储涨价。</strong>这些环节不受 FCC 禁令直接影响，且受益于"全球扩产 + 自主可控"双重叙事，是机构调研强调的"最大公约束"。</p>
+<ul>
+<li><strong>先进封装</strong>：长电科技（600584）、通富微电（002156）——无论谁造模块都要封装，8/7 已获资金确认（净流入 36-123 亿）</li>
+<li><strong>PCB/上游材料</strong>：生益科技（600183）、沪电股份（002463）——AI 服务器刚需，本周净流入近千亿，机构主导</li>
+<li><strong>液冷</strong>：光迅科技（002281）——1.6T 液冷标配，北美代工不受制裁，国内收入占比 75% 抗风险</li>
+<li><strong>存储</strong>：兆易创新（603986）——内存涨价周期独立逻辑，8/7 净流入 129 亿雷达第一</li>
+<li><strong>操作建议</strong>：跟随资金雷达 Top30 轮动节奏，优先选"评分高 + 净流入持续 + 不受禁令影响"的方向；切忌追高已连板标的，等回踩 5 日线。</li>
+</ul>
+</div>
+
+<h3>7.3 场景三：博弈反制材料（高风险）</h3>
+<div class="signal-card red">
+<ul>
+<li>云南锗业已 4 连板、PE 1794 倍，纯情绪+预期博弈，<strong>不建议追高</strong>。</li>
+<li>若想参与反制主线，等板块分歧回调后低吸，或关注尚未启动的二三线磷化铟/衬底标的。</li>
+<li>牢记"稀土式悖论"：管制是把双刃剑，反制预期兑现时往往就是情绪高点。</li>
+</ul>
+</div>
+
+<h3>7.4 操作节奏总纲</h3>
+<div class="highlight">
+<strong>"多做观测，少做预测。如有不测，要有对策。"</strong>——机构调研原话。<br><br>
+FCC 草案未落地前，任何"没影响"或"完蛋了"的极端结论都不可信。建议以<strong>持仓结构应对不确定性</strong>：整机仓位降档、配套仓位持有、留足现金等政策落地后的二次定价机会。A 股习惯"先计提最差情形，再分批坐下"，急跌后的修复需要政策面配合。
+</div>
+
+<hr>
+
+<h2>八、观察清单与时间表</h2>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>时间</th><th>事件</th><th>观察重点</th></tr></thead>
+<tbody>
+<tr><td><strong>8/10-14（下周）</strong></td><td>禁令后首个完整交易周</td><td>AI 硬件链（存储/半导体/PCB）能否延续霸榜？光模块整机是否止跌？CXO 是否接力成新主线？</td></tr>
+<tr><td><strong>8 月内</strong></td><td>FCC 草案全文可能公布</td><td>四大口径：①认定标准（产地/控制权/BOM）②存量 vs 增量 ③是否延伸上游器件 ④豁免与过渡期</td></tr>
+<tr><td><strong>9-10 月</strong></td><td>Q3 财报季</td><td>光模块出货与订单验证"短期确定性"；云厂商资本开支指引</td></tr>
+<tr><td><strong>2026 下半年</strong></td><td>1.6T 放量高峰</td><td>北美订单是否受政策扰动；泰国/马来西亚产能爬坡进度</td></tr>
+<tr><td><strong>2027 下半年</strong></td><td>3.2T 量产节点</td><td>是否获 FCC 认证 = 中期逻辑分水岭</td></tr>
+<tr><td><strong>2028 年前后</strong></td><td>海外厂商扩产放量 + CPO 时代</td><td>中国厂商在 6.4T/CPO 时代的竞争位置；晶圆制程能力成为新瓶颈</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>每日雷达信号（自动化监测建议）</h3>
+<ul>
+<li>光通信模块 / CPO 概念在资金雷达的排名变化：持续下降 = 资金撤离确认；回升 = 修复启动</li>
+<li>存储芯片 / PCB / 先进封装 / 液冷是否持续霸榜：验证"配套受益"主线的持续性</li>
+<li>云南锗业等反制标的的连板高度与换手：情绪退潮信号</li>
+<li>FCC 相关新闻出现频率：政策博弈进入新阶段的前兆</li>
+</ul>
+
+<hr>
+
+<footer>
+<p><strong>免责声明</strong>：本报告由投资小龙虾 AI 自动生成，仅供个人研究参考，不构成任何投资建议。报告中提及的个股仅为产业链逻辑分析，不代表买入或卖出建议。机构调研内容版权归原作者所有。市场有风险，投资须谨慎。</p>
+<p style="margin-top:8px;">
+<strong>数据来源（分条标注）</strong><br>
+① 机构调研 — 用户提供《光模块的真相与迷雾-机构一手调研-福总》文字稿（8/7）<br>
+② 行业调研/公开信息 — web_search（华尔街见闻 8/5、36氪 8/7、观察者网·芯科状元 8/7、虎嗅、老虎社区 8/5、新浪财经 8/5，经多源交叉核对）<br>
+③ 板块资金雷达 — 东财数据源 em_metrics / hist_metrics（2026-08-07，网站 radar-em.html 同源）+ 本地通达信版 hist_metrics（8/5-8/7）交叉验证<br>
+④ 个股行情 — 通达信MCP tdx-finance 实时行情（2026-08-07 收盘）<br>
+⑤ 亿信 API（billions-intelligence）研报检索 8/8 尝试连接失败（网络错误），按降级规则回退至 web_search，待恢复后补充<br>
+| 生成时间：2026-08-08 22:10
+</p>
+</footer>
+
+</body>
+</html>
