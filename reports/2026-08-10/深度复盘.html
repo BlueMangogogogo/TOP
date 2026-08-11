@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月10日 深度复盘</title>
+<style>
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+p { margin: 8px 0; }
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+ul, ol { margin: 8px 0 8px 20px; }
+li { margin: 4px 0; }
+hr { border: none; border-top: 1px solid var(--gray-100); margin: 24px 0; }
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>8月10日 深度复盘</h1>
+  <div class="meta">📅 2026年8月10日（周一）| 投资小龙虾 AI 自动生成 | 仅供参考</div>
+</header>
+
+<h2>📊 指数全景</h2>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>指标</th><th>数值</th><th>判断</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td>3966.59</td><td>+0.67%（高开震荡，收于日内高位附近）</td></tr>
+<tr><td>深证成指</td><td>14316.96</td><td>+0.04%（冲高回落，尾盘勉强收红）</td></tr>
+<tr><td>创业板指</td><td>3537.21</td><td>-0.73%（盘中一度跌超2.6%，深V后仍收跌）</td></tr>
+<tr><td>科创50</td><td>—</td><td>-0.36%（科技分化压制）</td></tr>
+<tr><td>两市成交</td><td>2.52万亿</td><td>较上周五缩量1,413亿（-5.3%），连涨后缩量需警惕</td></tr>
+<tr><td>上涨家数</td><td>4,068家</td><td>占比约75%，赚钱效应良好</td></tr>
+<tr><td>下跌家数</td><td>1,391家</td><td>占比约25%</td></tr>
+<tr><td>涨停</td><td>99家</td><td>昨日74家，涨停家数扩张</td></tr>
+<tr><td>跌停</td><td>5家</td><td>昨日4家，极端悲观标的极少</td></tr>
+<tr><td>炸板</td><td>14家（炸板率12.4%）</td><td>较上周五27.5%大幅改善，封板意愿强</td></tr>
+<tr><td>昨日涨停今表现</td><td>+2.2%</td><td>接力情绪健康</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="highlight"><p>上证压力位：3970（今日高点·前高区域）→ 4000（整数心理关口）| 支撑位：3940（5日/10日均线·前收盘价）→ 3900（上周四收盘·MA20附近）→ 3878（上周二低点·MA60）</p></div>
+
+<div class="highlight"><p>市场情绪：<strong>偏暖，但降温期内有分化</strong>。核心依据：涨跌停比99:5极度乐观 + 上涨家数超4000 + 炸板率仅12.4%。但两市缩量1,413亿、创业板收跌、科创50走弱——"指数温和、个股热络"的分化格局。连板网情绪温度升至91°但仍处「降温期」，说明日内走强尚未扭转降温周期。融资余额2.62万亿（+70亿），杠杆资金温和进场。</p></div>
+
+<h2>🌍 外盘与宏观环境</h2>
+
+<h3>美股（上周五 8/7 收盘）</h3>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>指标</th><th>收盘</th><th>涨跌</th><th>对A股影响</th></tr></thead>
+<tbody>
+<tr><td>道指</td><td>54,036.93</td><td>+0.28%</td><td>蓝筹温和</td></tr>
+<tr><td>纳指</td><td>26,690.62</td><td>+1.30%</td><td>科技领涨，利好AI映射</td></tr>
+<tr><td>标普</td><td>7,757.64</td><td>+0.62%</td><td>风险偏好维持</td></tr>
+<tr><td>费城半导体</td><td>12,356.79</td><td>+2.56%</td><td>半导体大涨，直接利好A股半导体映射</td></tr>
+<tr><td>VIX</td><td>14.90</td><td>-1.65%</td><td>恐慌极低，利好风险资产</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>今日全球市场（8/10）</h3>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>指标</th><th>数值</th><th>涨跌</th><th>对A股影响</th></tr></thead>
+<tbody>
+<tr><td>美元指数</td><td>99.70</td><td>+0.09%（较周五）</td><td>美元小幅回升</td></tr>
+<tr><td>现货黄金</td><td>$4,338</td><td>-0.06%（日内）</td><td>周五收$4,342，历史高位附近整理</td></tr>
+<tr><td>WTI原油</td><td>$78.45</td><td>+1.1%（日内）</td><td>油价反弹至$78上方</td></tr>
+<tr><td>日经225</td><td>66,970.22</td><td>+2.08%</td><td>日本强势反弹，亚太情绪偏暖</td></tr>
+<tr><td>韩国KOSPI</td><td>6,299.66</td><td>+0.65%</td><td>科技出口温和反弹</td></tr>
+<tr><td>欧洲斯托克50</td><td>全面走强</td><td>—</td><td>欧股风险偏好回升</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="highlight"><p>外盘整体偏暖。上周五美国非农意外减少2.3万人，9月加息预期骤降，推动美股科技领涨（纳指+1.30%、费半+2.56%）。今日亚太市场跟进反弹，日经大涨2.08%。VIX维持在15以下低位，全球risk-on情绪延续。对A股：外部环境利好科技成长方向，但今日A股科技内部分化明显（创业板跌/科创跌 vs 医药涨），说明A股在演绎独立逻辑而非简单跟涨外盘。</p></div>
+
+<h2>📰 今日核心新闻简报</h2>
+
+<p><strong>最重要的6条，按影响强度排序：</strong></p>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>#</th><th>新闻</th><th>影响板块</th><th>情绪</th><th>强度</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>中国创新药上半年出海总金额约997亿美元</td><td>医药/CRO/创新药</td><td>重大利好</td><td>⭐⭐⭐</td></tr>
+<tr><td>2</td><td>宇树科技今日开启IPO申购，具身智能赛道标志性事件</td><td>机器人/具身智能</td><td>利好</td><td>⭐⭐⭐</td></tr>
+<tr><td>3</td><td>全国用电负荷入夏以来第四次创历史新高</td><td>智能电网/电力</td><td>利好</td><td>⭐⭐</td></tr>
+<tr><td>4</td><td>7月CPI同比上涨0.5%，核心CPI环比+0.3%</td><td>大消费</td><td>中性偏好</td><td>⭐⭐</td></tr>
+<tr><td>5</td><td>通宇通讯（上周6G龙头）跌停，收盘-9.91%（澄清公告后资金撤离）</td><td>通信/6G</td><td>利空</td><td>⭐⭐</td></tr>
+<tr><td>6</td><td>风华高科振幅16.5%，成交125.73亿，北向净买入2.19亿</td><td>MLCC/被动元件</td><td>中性（高位博弈）</td><td>⭐</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>🔍 重点新闻情绪催化验证</h3>
+
+<p><strong>创新药出海997亿美元</strong>：这是今年最重磅的产业数据验证之一。联动标的：百花医药5连板（CRO龙头）、百普赛斯+20%涨停、毕得医药+20%涨停、凯莱英+4.5%竞价。医药板块涨停14家稳居题材首位，与上周五CRO涨停潮形成连续共振。持续性判断：<strong>强</strong>，产业数据+政策（基药目录）+业绩拐点三重确认。</p>
+
+<p><strong>宇树科技IPO</strong>：今日开启申购，具身智能/人形机器人赛道迎来标杆事件。联动标的：机器人概念涨停8家，秦安股份2连板。但需注意：机器人方向暂未形成医药级别的板块效应，涨停8家较分散。持续性判断：<strong>中等</strong>，事件催化型，关注宇树上市首日表现。</p>
+
+<p><strong>用电负荷第四次创新高</strong>：今年迎峰度夏压力持续。联动标的：智能电网9家涨停，风范股份6天5板（特高压），立新能源、中电鑫龙等涨停。持续性判断：<strong>中等偏强</strong>，季节性催化+电网投资逻辑。</p>
+
+<p><strong>通宇通讯跌停</strong>：上周4连板6G龙头，周五发澄清公告否认与英伟达合作，今日-9.91%。这是上周"6G基站生态"主线逻辑被证伪的标志性事件。联动效应：通信设备板块-0.93%，武汉凡谷同步跌停。持续性判断：6G概念逻辑已破，短期回避。</p>
+
+<h4>概念区分说明</h4>
+<ul>
+<li><strong>医药/CRO/创新药</strong>：独立产业逻辑（出海+基药目录+估值修复），与科技赛道完全解耦，是本轮最确定的独立主线</li>
+<li><strong>AI算力/光通信/CPO</strong>：上周全线退出资金雷达Top30，今日通信设备板块-0.93%，通宇通讯跌停，确认退潮</li>
+<li><strong>半导体（设备/材料/设计/存储/MLCC）</strong>：方向内部分化——风华高科（MLCC）125亿天量博弈，存储（江波龙竞价抢筹）、半导体材料（云南锗业4连板）仍有资金聚集，但整体强度远不及上周</li>
+<li><strong>电池链（固态/锂电/钠电/回收/锂矿）</strong>：资金雷达6个板块集体进入Top30，资金全面轮动至此方向，但今日尚未主导涨停榜</li>
+<li><strong>军工（军贸/军民融合/军工信息化）</strong>：资金雷达3个板块集体冲入Top30，今日多股涨停（洪都航空、长城军工等），但缺乏公开研报/新闻催化支撑</li>
+</ul>
+
+<h2>🔥 今日最强主线</h2>
+
+<h3>题材强度排名（今日实时）</h3>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>排名</th><th>方向</th><th>强度</th><th>涨停数</th><th>龙头</th><th>驱动逻辑</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>医药/CRO</td><td>+1.6%</td><td>14家</td><td>百花医药5连板</td><td>创新药出海997亿美元+基药目录政策+估值修复</td></tr>
+<tr><td>2</td><td>基础建设</td><td>+1.6%</td><td>5家</td><td>—</td><td>电网投资+政策驱动</td></tr>
+<tr><td>3</td><td>并购重组</td><td>+1.4%</td><td>—</td><td>爱丽家居12天11板</td><td>国企改革+资产注入</td></tr>
+<tr><td>4</td><td>智能电网</td><td>+1.2%</td><td>9家</td><td>风范股份6天5板</td><td>用电负荷第四次创新高</td></tr>
+<tr><td>5</td><td>AI应用</td><td>+1.0%</td><td>—</td><td>石基信息</td><td>AI商业化扩散</td></tr>
+<tr><td>6</td><td>机器人概念</td><td>+0.8%</td><td>8家</td><td>秦安股份2连板</td><td>宇树科技IPO</td></tr>
+<tr><td>7</td><td>算力</td><td>+0.4%</td><td>—</td><td>—</td><td>退潮中，强度衰减</td></tr>
+<tr><td>8</td><td>芯片</td><td>+0.4%</td><td>8家</td><td>云南锗业4连板</td><td>内部分化，仅材料端强势</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>板块资金雷达验证（今日 vs 上周五）</h3>
+<p>上周五资金雷达Top30全面轮换：电池链6板块+军工3板块+消费/基建等新方向全线占据Top30，旧主线（芯片/PCB/CPO/先进封装/光刻机）全部退榜。今日题材强度数据进一步确认：芯片（+0.4%）和算力（+0.4%）强度垫底，医药（+1.6%）、基建（+1.6%）领跑。</p>
+
+<h3>主线持续性分析</h3>
+
+<p><strong>医药/CRO</strong>：今日强度<strong>极强</strong>。百花医药5连板为全市场最高连板，梯队完整（5板→3板→2板×7），涨停14家居题材首位。从上周五的CRO涨停潮（10+只）到本周一的医药涨停扩散（CRO→创新药→医药零售→AI医疗），板块联动全面升级。持续性强，但需注意：百花医药已5连板，明日分歧概率增大。若百花断板但板块内部轮动（开开实业/百普赛斯接力），仍视为健康调整。</p>
+
+<p><strong>智能电网/电力</strong>：强度<strong>强</strong>。用电负荷第四次创新高催化，风范股份6天5板为方向核心锚。板块涨停9家，联动较好。持续性偏强，季节催化确定性高。</p>
+
+<p><strong>机器人/具身智能</strong>：强度<strong>中等</strong>。宇树IPO是明确催化，涨停8家但较分散（秦安股份2连板为首）。持续性取决于宇树IPO首日表现及后续板块联动强度。</p>
+
+<p><strong>旧主线退潮确认（通信/光模块/CPO/6G）</strong>：通宇通讯跌停、武汉凡谷跌停、通信设备板块-0.93%，6G龙头澄清公告击穿板块逻辑。资金雷达连续第二个交易日无相关板块上榜。<strong>退潮确认，短期回避。</strong></p>
+
+<h3>🔄 主线切换信号（六维框架）</h3>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>维度</th><th>通信/6G/光模块（旧主线）</th><th>医药/CRO（新主线确立）</th><th>电池链/军工（新方向酝酿）</th></tr></thead>
+<tbody>
+<tr><td><strong>价格</strong></td><td>龙头通宇通讯跌停，武汉凡谷跌停</td><td>百花医药5连板，板块14家涨停</td><td>资金雷达全面轮动，涨停尚未主导</td></tr>
+<tr><td><strong>资金</strong></td><td>连续两日无Top30上榜</td><td>医药14家涨停+竞价抢筹</td><td>电池链6板块进雷达Top30</td></tr>
+<tr><td><strong>联动</strong></td><td>后排先崩→龙头补跌</td><td>龙头先涨→后排全面扩散（CRO→创新药→医药零售→AI医疗）</td><td>资金轮动但板块涨停效应弱</td></tr>
+<tr><td><strong>量能</strong></td><td>通宇通讯放量跌停</td><td>放量涨停潮</td><td>资金流入但价格未同步爆发</td></tr>
+<tr><td><strong>逻辑</strong></td><td>澄清公告证伪核心叙事</td><td>出海数据+基药目录+估值修复，独立产业逻辑</td><td>锂价触底+金价上行+地缘事件</td></tr>
+<tr><td><strong>情绪</strong></td><td>"利好出尽"已兑现为跌停</td><td>共识快速形成中</td><td>分歧较大，缺乏明确新闻催化</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="highlight"><p><strong>研判：医药/CRO已确立为新主线，通信/6G退潮确认。电池链/军工为第二梯队新方向，资金已先行但价格信号尚未完全确认。旧主线到新主线的切换已基本完成。</strong></p></div>
+
+<h2>💰 板块资金雷达趋势</h2>
+
+<div class="highlight"><p>数据来源：本地板块资金雷达系统（基于通达信概念板块资金流模型，每日22:00更新）+ 研报巡逻交叉验证（亿信API研报×资金雷达Top30）</p></div>
+
+<h3>⚠ 重大信号：连续第二日全面轮动</h3>
+<p>今日资金雷达Top30延续上周五的全面轮动格局。两周前连续霸榜的芯片/PCB/CPO/先进封装/光刻机等科技硬件方向连续第二日零上榜。电池链（6个板块）、有色金属（黄金/镍/钴）、军工（3个板块）、消费（IP经济/白酒/预制菜）等新方向全面占据Top30。</p>
+
+<h3>资金进攻榜 TOP10（加权评分排序·今日）</h3>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>板块</th><th>加权评分(万)</th><th>前日排名</th><th>排名变化</th><th>核心驱动</th></tr></thead>
+<tbody>
+<tr><td>固态电池</td><td>206.49</td><td>37</td><td>+36</td><td>锂价触底反弹+电池装机放量</td></tr>
+<tr><td>锂电池概念</td><td>201.25</td><td>13</td><td>+11</td><td>产业链景气回升</td></tr>
+<tr><td>海峡西岸</td><td>195.38</td><td>220</td><td>+217</td><td>⚠ 最大预期差，无研报覆盖</td></tr>
+<tr><td>黄金概念</td><td>146.23</td><td>45</td><td>+41</td><td>金价历史新高+央行21月增持</td></tr>
+<tr><td>IP经济</td><td>117.41</td><td>228</td><td>+223</td><td>暑期消费+文创催化</td></tr>
+<tr><td>军贸概念</td><td>110.61</td><td>182</td><td>+176</td><td>地缘事件催化（无公开研报）</td></tr>
+<tr><td>磷概念</td><td>107.20</td><td>115</td><td>+108</td><td>农化景气+新能源材料共鸣</td></tr>
+<tr><td>军民融合</td><td>106.70</td><td>157</td><td>+149</td><td>军工链集体异动</td></tr>
+<tr><td>钠电池</td><td>94.15</td><td>229</td><td>+220</td><td>电池链扩散</td></tr>
+<tr><td>镍金属</td><td>89.53</td><td>73</td><td>+63</td><td>供给扰动+新能源需求</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="warning"><p>⚠ 全30个板块排名均上升10位以上（或新进），全部符合「资金新进攻方向」标准。这是<strong>连续第二个交易日出现全面风格轮动</strong>，本轮轮动的持续性和广度在近三个月数据中极为罕见。</p></div>
+
+<h3>🔴 研报+资金共振信号（研报巡逻集成）</h3>
+
+<p><strong>电池全链条（固态电池/锂电池概念/钠电池/动力电池回收/锂矿/盐湖提锂）</strong>：6个相关板块+4份研报共振，为今日共振最强方向。逻辑链条：锂价触底→电池材料景气回升→动力电池装机放量→回收闭环价值。华福/光大/西部/国信等多家券商覆盖。</p>
+
+<p><strong>黄金概念</strong>：3份研报覆盖（国盛/海通/天风），金价上行催化珠宝终端+央行增持。</p>
+
+<p><strong>磷概念</strong>：中信建投覆盖，农化景气+新能源材料双逻辑。</p>
+
+<p><strong>绿色电力</strong>：西部证券覆盖，新型电力系统顶层规划落地。</p>
+
+<p><strong>镍金属/钴金属</strong>：国盛/中金/西南期货覆盖，矿紧预期强化。</p>
+
+<div class="highlight"><p>💡 电池全链条是本日共振最强的方向：6板块+4研报。但需注意：资金雷达已全面轮动至电池链，但今日涨停榜上电池链尚未形成主导（仅佛塑科技等少数涨停）。这说明<strong>资金在暗线建仓，价格爆发尚未到来</strong>——这是典型的「资金先行」信号。</p></div>
+
+<h3>🟡 资金先行·研报未覆盖（预期差候选）</h3>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>排名</th><th>板块</th><th>评分(万)</th><th>前日排名</th><th>变化</th><th>预期差判断</th></tr></thead>
+<tbody>
+<tr><td>3</td><td>海峡西岸</td><td>195.38</td><td>220</td><td>+217</td><td><strong>最大预期差空白</strong></td></tr>
+<tr><td>5</td><td>IP经济</td><td>117.41</td><td>228</td><td>+223</td><td>暑期消费催化</td></tr>
+<tr><td>6</td><td>军贸概念</td><td>110.61</td><td>182</td><td>+176</td><td>地缘事件驱动</td></tr>
+<tr><td>8</td><td>军民融合</td><td>106.70</td><td>157</td><td>+149</td><td>军工链集体爆发</td></tr>
+<tr><td>16</td><td>军工信息化</td><td>68.78</td><td>221</td><td>+205</td><td>军工第三个雷达板块</td></tr>
+<tr><td>15</td><td>白酒概念</td><td>73.20</td><td>168</td><td>+153</td><td>消费复苏逻辑</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>🟢 研报先行·资金未进榜（潜在新方向·明日观察）</h3>
+<ul>
+<li><strong>半导体/芯片/存储</strong>（多家策略周报强call）：上周Top1方向，今日连续第二日零上榜。机构看多但资金已连续撤离。若明日资金回流则视为买点确认。</li>
+<li><strong>光伏/硅料</strong>（八大龙头签署反内卷倡议）：行业自救信号出现但资金尚未进场。</li>
+<li><strong>AI算力/DeepSeek</strong>（广发证券覆盖DeepSeekV4Flash）：上周核心主线，资金已完全切换。</li>
+</ul>
+
+<h3>📈 资金轮动方向</h3>
+<p><strong>资金进攻方向</strong>：从科技硬件（芯片/CPO/PCB）全面切换至①电池全链条（6板块·资金雷达共振最强）、②有色金属/黄金（金价历史高位·央行增持）、③军工链（军贸/军民融合/军工信息化三箭齐发）、④消费复苏（IP经济/白酒/预制菜/云游戏）。</p>
+
+<p><strong>资金撤退方向</strong>：通信/6G（通宇通讯澄清后跌停确认退潮）、光模块/CPO/PCB（连续两日零上榜）。注意：半导体材料端（云南锗业/有研新材）仍有涨停但整体板块资金流出。</p>
+
+<p><strong>排位飙升板块</strong>：海峡西岸（+217）、IP经济（+223）、钠电池（+220）、军工信息化（+205）、动力电池回收（+223）——全部为单日跃迁超200位的极端飙升，显示资金正在快速抢占新方向。</p>
+
+<h2>🎯 核心个股拆解</h2>
+
+<h3>百花医药（600721·CRO）</h3>
+<ul>
+<li><strong>今日表现</strong>：5连板，开盘一字涨停，全天未打开。CRO概念绝对龙头。</li>
+<li><strong>异动原因</strong>：CRO行业需求回暖+中国创新药出海997亿美元+基药目录首次纳入创新药，三重产业逻辑共振。</li>
+<li><strong>概念定位</strong>：CRO/CDMO服务商，医药研发外包产业链核心环节，金华国资入主赋予重组预期。</li>
+<li><strong>技术面</strong>：连续一字板加速，缩量封板，筹码锁定极强。</li>
+<li><strong>资金信号</strong>：桑田路买入3,083万，作手新一卖出6,848万（游资内部换手）。不同席位间出现明显买卖分歧。</li>
+<li><strong>关注价值</strong>：<strong>极高</strong>——全市场最高连板+医药主线核心锚。但5连板后明日分歧概率大增，需观察：①是否开板换手后回封（分歧转一致），②若断板，开开实业/百普赛斯能否接力。</li>
+</ul>
+
+<h3>百普赛斯（301080·创新药/CRO）</h3>
+<ul>
+<li><strong>今日表现</strong>：+20.00%涨停（2连板），成交放量，换手12.95%。</li>
+<li><strong>异动原因</strong>：创新药出海数据催化+医药板块全线爆发。益田路买入4,883万。</li>
+<li><strong>概念定位</strong>：重组蛋白/抗体试剂龙头，CRO上游"卖铲子"环节，受益于整个CXO产业链回暖。</li>
+<li><strong>技术面</strong>：20cm放量涨停突破平台，MACD金叉，量价配合健康。</li>
+<li><strong>资金信号</strong>：益田路净买入4,883万，游资认可度高。</li>
+<li><strong>关注价值</strong>：<strong>高</strong>——CRO上游弹性标的，若百花医药分歧时百普赛斯能独立走强，则有望成为板块接力龙头。</li>
+</ul>
+
+<h3>风范股份（601700·特高压/智能电网）</h3>
+<ul>
+<li><strong>今日表现</strong>：6天5板（今日+9.94%涨停），智能电网方向核心锚。</li>
+<li><strong>异动原因</strong>：全国用电负荷第四次创历史新高+电网投资逻辑。紫阳东路买入1.20亿。</li>
+<li><strong>概念定位</strong>：特高压铁塔龙头，智能电网建设核心供应商。</li>
+<li><strong>技术面</strong>：6天5板的高强度走势，量能持续放大，但累计涨幅已大。</li>
+<li><strong>资金信号</strong>：紫阳东路1.20亿大手笔买入，顶级游资认可。</li>
+<li><strong>关注价值</strong>：<strong>高</strong>——智能电网方向最强辨识度标的，但累计涨幅已大，追高风险上升。</li>
+</ul>
+
+<h3>宝鼎科技（002552·PCB/覆铜板）</h3>
+<ul>
+<li><strong>今日表现</strong>：7天6板（今日一字涨停），跨题材龙头。</li>
+<li><strong>异动原因</strong>：PCB+黄金双概念加持（覆铜板+业绩增长+国企改革）。</li>
+<li><strong>概念定位</strong>：PCB上游覆铜板+黄金采选，兼具科技硬件和资源双重属性。</li>
+<li><strong>技术面</strong>：连续加速涨停，缩量一字封板。</li>
+<li><strong>关注价值</strong>：<strong>高</strong>——跨题材龙头在主线切换期具有独特优势：PCB退潮时靠黄金概念续命，黄金走弱时靠PCB概念支撑。但7天6板后位置已高。</li>
+</ul>
+
+<h3>云南锗业（002428·半导体材料/磷化铟）</h3>
+<ul>
+<li><strong>今日表现</strong>：4连板，半导体材料方向独苗型龙头。</li>
+<li><strong>异动原因</strong>：磷化铟（InP）衬底需求爆发+重大合同+锗业龙头地位。</li>
+<li><strong>概念定位</strong>：化合物半导体材料龙头（磷化铟/锗），光通信/5G/卫星通信上游核心材料。</li>
+<li><strong>技术面</strong>：4连板放量，MACD强势。</li>
+<li><strong>资金信号</strong>：竞价+4.5%高开，获竞价抢筹。</li>
+<li><strong>关注价值</strong>：<strong>高</strong>——在芯片/半导体板块整体退潮的背景下，云南锗业独立走强说明资金在半导体方向内部进行精细化选择：从板块beta切换至细分alpha。磷化铟/锗材料逻辑独立于存储/算力芯片。</li>
+</ul>
+
+<h2>📋 概念催化追踪</h2>
+
+<div class="highlight"><p>数据来源：概念跟踪总表。当前总表暂无活跃概念登记（需维护）。以下为本日基于盘面数据的新识别。</p></div>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>概念</th><th>当前阶段</th><th>逻辑类型</th><th>持续性</th><th>核心标的</th><th>明日关键验证</th></tr></thead>
+<tbody>
+<tr><td>CRO/CDMO复苏</td><td>🔥 主升</td><td>产业拐点+政策催化</td><td>极强</td><td>百花医药/百普赛斯/凯莱英</td><td>百花是否分歧转一致</td></tr>
+<tr><td>创新药出海</td><td>🔥 主升</td><td>产业数据验证</td><td>强</td><td>百普赛斯/毕得医药/誉衡药业</td><td>涨停数能否维持10+</td></tr>
+<tr><td>智能电网/电力</td><td>🍃 发酵→扩散</td><td>季节性催化</td><td>中强</td><td>风范股份/立新能源</td><td>风范能否续板</td></tr>
+<tr><td>具身智能/机器人</td><td>🍃 发酵</td><td>事件驱动（宇树IPO）</td><td>中</td><td>秦安股份</td><td>宇树首日表现</td></tr>
+<tr><td>电池全链条</td><td>🌿 扩散</td><td>产业周期+资金轮动</td><td>强</td><td>—（尚未形成涨停龙头）</td><td>是否从资金轮动升级为涨停主导</td></tr>
+<tr><td>黄金/贵金属</td><td>🔥 主升</td><td>金价历史高位+央行增持</td><td>强</td><td>招金黄金/潮宏基</td><td>金价能否站稳$4400</td></tr>
+<tr><td>军工链</td><td>🍃 发酵</td><td>地缘事件驱动</td><td>待验证</td><td>洪都航空/长城军工</td><td>是否有明确事件催化披露</td></tr>
+<tr><td>通信/6G</td><td>💤 退潮</td><td>逻辑证伪</td><td>已结束</td><td>通宇通讯/武汉凡谷</td><td>回避</td></tr>
+<tr><td>AI硬件（CPO/光通信）</td><td>💤 退潮</td><td>短期过热后冷却</td><td>待回流验证</td><td>中际旭创</td><td>资金雷达何时重新上榜</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>⚠️ 风险预警</h2>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>风险类型</th><th>内容</th><th>影响</th></tr></thead>
+<tbody>
+<tr><td>创业板二次破位</td><td>连板网信号：创业板"高位首阴→反抽无力→再收大阴"二次破位形态成立</td><td>历史同形态下20日内约2/3出现更低收盘价，中位再探约-5%</td></tr>
+<tr><td>科创50超跌</td><td>科创50连续大跌形态，历史上多为超跌反弹区但仍有1/3继续下跌</td><td>科技方向整体承压</td></tr>
+<tr><td>缩量隐患</td><td>两市成交2.52万亿，较上周五缩量1,413亿（-5.3%）</td><td>连涨后缩量说明追高意愿减弱，若明日继续缩量需警惕回调</td></tr>
+<tr><td>高位股追高风险</td><td>百花医药5连板、宝鼎科技7天6板、风范股份6天5板——高辨识度标的累计涨幅已大</td><td>连板高位分歧概率增大</td></tr>
+<tr><td>通信/6G踩踏</td><td>通宇通讯澄清后跌停，板块逻辑证伪</td><td>相关持仓需及时止损</td></tr>
+<tr><td>风格切换惯性</td><td>科技硬件连续两日资金雷达零上榜</td><td>旧持仓若不及时调整可能持续跑输</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="highlight"><p>两融余额2.62万亿（+70亿），温和增长，距1.8万亿警戒线仍有空间，暂不构成过热警示。</p></div>
+
+<h2>🔭 明日推演</h2>
+
+<h3>明日开盘判断</h3>
+<div class="highlight"><p>大概率平开或小幅高开。核心依据：①今日尾盘上证收于日内高位附近（3966），多头控盘；②日经+2.08%、欧洲全面走强，亚太夜盘偏暖；③但缩量隐患+创业板二次破位信号限制上攻空间。<strong>明日关键：能否补量突破3970？若缩量上攻则警惕冲高回落。</strong></p></div>
+
+<h3>明日关注方向</h3>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>方向</th><th>逻辑</th><th>关注标的</th><th>预期</th></tr></thead>
+<tbody>
+<tr><td>医药/CRO延续</td><td>主线强度确认，梯队完整，产业逻辑独立</td><td>百花医药（锚）、百普赛斯（接力候选）、开开实业</td><td>百花若断板则观察接力</td></tr>
+<tr><td>智能电网/电力</td><td>季节催化+电网投资，逻辑确定性强</td><td>风范股份（锚）、立新能源、中电鑫龙</td><td>延续强势概率中等</td></tr>
+<tr><td>电池链（资金先行→价格爆发？）</td><td>资金雷达6板块共振+4份研报覆盖，但涨停尚未主导</td><td>固态电池/锂电板块整体</td><td>核心观察：资金能否转化为涨停</td></tr>
+<tr><td>军工链</td><td>3板块冲入雷达+今日多股涨停</td><td>洪都航空、长城军工、军贸概念整体</td><td>关注是否有公开催化披露</td></tr>
+<tr><td>机器人/宇树IPO联动</td><td>宇树首日表现决定情绪高度</td><td>秦安股份、外骨骼机器人板块</td><td>事件驱动，灵活应对</td></tr>
+<tr><td>芯片/半导体回流验证</td><td>研报强call但资金连续两日退榜</td><td>云南锗业（独苗）、兆易创新</td><td>回流则买点确认，不回流则继续等待</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>策略建议</h3>
+
+<p><strong>持仓者：</strong></p>
+<ul>
+<li>医药/CRO持仓：核心仓位持有。百花医药若明日开盘一字继续封板→不动；若开板换手→观察是否回封（回封则加仓，不回封则减仓1/3锁定利润）。关注百普赛斯/开开实业是否接力。</li>
+<li>智能电网持仓：风范股份6天5板位置已高，建议至少减仓一半锁定利润。若看好方向可持续，可切换至立新能源等低位标的。</li>
+<li>通信/6G持仓：清仓。通宇通讯澄清公告+跌停已将板块逻辑证伪。不要抱有"超跌反弹"幻想。</li>
+<li>AI硬件持仓（CPO/光通信等）：连续两日资金雷达零上榜，浮亏持仓建议减仓止损。等待资金回流信号再考虑回补。</li>
+</ul>
+
+<p><strong>观望者：</strong></p>
+<ul>
+<li>最佳入场方向：医药/CRO的分歧转一致时刻。关注明日百花医药是否开板换手后回封（这是中线建仓信号），或关注医药板块内部低位补涨标的（百普赛斯/哈三联/誉衡药业等2板晋级机会）。</li>
+<li>第二入场方向：电池链尚未价格爆发，可小仓位提前布局固态电池/锂电概念，等待资金雷达→涨停主导的转化。</li>
+<li>观察但不急于入场：军工链（需等待明确催化确认）、芯片/半导体回流（需等待资金雷达重新上榜）。</li>
+<li>不建议入场：通信/6G方向（逻辑证伪，回避）。</li>
+</ul>
+
+<p><strong>风险应对：</strong></p>
+<ul>
+<li>若明日上证缩量上攻至3970-4000区域但无法放量突破→减仓防守，警惕冲高回落。</li>
+<li>若明日上证跌破3940（5日线/前收盘）→减仓至5成以下。</li>
+<li>创业板二次破位信号（07-22起）若继续恶化（再跌超1%）→对科技成长类持仓全面减仓。</li>
+</ul>
+
+<h3>明日观察要点</h3>
+<ol>
+<li><strong>百花医药能否6连板</strong>：全市场连板高度核心，牵动医药主线情绪。若断板，观察开开实业（3板→4板）能否接力。</li>
+<li><strong>两市成交能否回升至2.6万亿以上</strong>：缩量是今日最大隐患。若明日继续缩量，调整风险加大。</li>
+<li><strong>电池链是否从资金轮动升级为涨停主导</strong>：资金已先行建仓（雷达6板块共振），明日关注是否有电池链标的冲击涨停并形成板块效应。</li>
+<li><strong>芯片/半导体方向是否出现回流信号</strong>：若资金雷达明日有半导体相关板块重新上榜，则视为回流确认。</li>
+<li><strong>北向资金态度</strong>：今日北向个股层面分化（风华高科净买入2.19亿 vs 部分标的净卖出），关注明日整体净流向。</li>
+<li><strong>宇树科技IPO首日表现</strong>：将决定本周机器人/具身智能板块的情绪高度。</li>
+<li><strong>创业板二次破位形态是否继续恶化</strong>：若创业板再跌超1%，将触发技术面更大级别的止损盘。</li>
+</ol>
+
+<hr>
+
+<footer>
+<p><strong>免责声明</strong>：本报告由投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+<p><strong>数据来源：</strong></p>
+<p>· A股行情/K线/涨跌停/板块筛选 → 通达信MCP (tdx_quotes / tdx_kline / tdx_screener)</p>
+<p>· 涨停连板梯队/题材强度/情绪温度/封板率/游资动向 → 连板网 (lianban.net)</p>
+<p>· 新闻与情绪催化 → web_search (财联社/每日经济新闻/东方财富/央广网/金十数据)</p>
+<p>· 外盘指数/商品/全球宏观 → web_search (MarketWatch / Yahoo Finance / Investing.com / fx678)</p>
+<p>· 板块资金雷达Top30与趋势分析 → 本地 boards_flow.json (基于通达信概念板块资金流模型·每日22:00更新)</p>
+<p>· 研报巡逻共振信号 → 研报巡逻自动化系统（亿信API研报检索 × 资金雷达Top30交叉验证·8/10报告）</p>
+<p>· 概念催化追踪 → 概念跟踪总表（当前待维护）</p>
+<p>· 北向资金 → web_search (东方财富/证券之星·个股层面龙虎榜数据)</p>
+<p>· 美股行情 → web_search (MarketWatch / Yahoo Finance·周五8/7收盘数据)</p>
+<p>生成时间：2026年8月10日 23:30</p>
+</footer>
+
+</body>
+</html>

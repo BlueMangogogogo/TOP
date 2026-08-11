@@ -55,6 +55,7 @@ body {
   font-size: 14px;
   overflow: hidden;
   height: 100vh;
+  height: 100dvh;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -122,6 +123,7 @@ body {
 .layout {
   display: flex;
   height: calc(100vh - 48px);
+  height: calc(100dvh - 48px);
 }
 .sidebar {
   width: 260px;
@@ -136,6 +138,8 @@ body {
 .main {
   flex: 1;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   padding: 20px 24px;
   transition: background 0.3s;
 }
@@ -381,6 +385,7 @@ body {
 .modal-overlay.open { opacity: 1; pointer-events: auto; }
 .modal-container {
   width: 96vw; height: 94vh;
+  height: 94dvh;
   background: var(--bg); border: 1px solid var(--border);
   border-radius: 10px; display: flex; flex-direction: column;
   overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
@@ -438,10 +443,17 @@ body {
   .topbar .brand span { display: none; }
   .report-card { padding: 10px 12px; gap: 8px; }
   .report-info .title { font-size: 13px; }
-  .modal-container { width: 100vw; height: 100vh; border-radius: 0; }
+  .modal-container { width: 100vw; height: 100vh; height: 100dvh; border-radius: 0; }
 }
 @media (max-width: 480px) {
   .sidebar { display: none; }
+  .layout { height: calc(100dvh - 48px); }
+  .main { -webkit-overflow-scrolling: touch; }
+  .report-card { min-height: 60px; }
+  .report-card .report-info .title { font-size: 14px; line-height: 1.4; }
+  .modal-container { height: 100dvh; }
+  .modal-topbar { height: 48px; }
+  .modal-topbar .modal-close { width: 44px; height: 44px; font-size: 22px; }
 }
 </style>
 </head>

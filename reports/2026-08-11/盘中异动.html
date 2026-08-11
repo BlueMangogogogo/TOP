@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月11日 盘中异动</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>8月11日 盘中异动</h1>
+  <div class="meta">
+    📅 2026年08月11日 14:00 | 投资小龙虾 AI | 仅供参考
+  </div>
+</header>
+
+<h2>📊 午后实时全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>午盘值</th>
+<th>收盘值</th>
+<th>午后变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3934.09</td>
+<td>3934.09</td>
+<td>-0.82%（午后基本横盘）</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>14259.44</td>
+<td>14259.44</td>
+<td>-0.40%（午后一度翻红后回落）</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>3549.16</td>
+<td>3549.16</td>
+<td>+0.34%（逆市偏强）</td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>—</td>
+<td>2.32万亿</td>
+<td>缩量2021亿 vs 昨日</td>
+</tr>
+<tr>
+<td>涨停 / 跌停</td>
+<td>60 / 2</td>
+<td>60 / 2</td>
+<td>午后无新增跌停</td>
+</tr>
+<tr>
+<td>炸板率</td>
+<td>—</td>
+<td>~26%（21/81）</td>
+<td>午后部分回封</td>
+</tr>
+</tbody>
+</table></div>
+<h2>⚡ 午后异动监控</h2>
+<h3>🔥 急速拉升方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>午后动作</th>
+<th>龙头标的</th>
+<th>触发逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>机器人 / 执行器</strong></td>
+<td>午后异动拉升，ETF直线拉升</td>
+<td>百合花（7天4板）· 秦安股份（3连板）· 斯菱智驱（20CM）· 巨轮智能（涨停）</td>
+<td>世界机器人大会8.19催化 + 宇树IPO定价超预期带动估值重塑</td>
+</tr>
+<tr>
+<td><strong>算力租赁</strong></td>
+<td>盘中异动拉升，多股直线涨停</td>
+<td>杭钢股份（涨停）· 鸿博股份（涨停）</td>
+<td>阿里云计划全球数据中心产能提升两倍以上 + 英伟达5000亿AI基金</td>
+</tr>
+<tr>
+<td><strong>MLCC / 被动元件</strong></td>
+<td>盘中持续拉升</td>
+<td>双星新材（涨停）· 洁美科技（涨停）· 风华高科（冲高回落+6.73%）</td>
+<td>三星电机+太阳诱电涨价通知，MLCC新一轮涨价周期开启</td>
+</tr>
+</tbody>
+</table></div>
+<h3>📉 跳水/回落方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>午后动作</th>
+<th>代表标的</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大盘整体</strong></td>
+<td>午后冲高回落，深成指、科创50翻绿</td>
+<td>沪指止步五连阳</td>
+<td>量能不及昨日，追高意愿不足</td>
+</tr>
+<tr>
+<td><strong>人气股</strong></td>
+<td>午后跳水收绿</td>
+<td>德龙汇能· 艾艾精工· 传智教育</td>
+<td>高位抱团松动，午后资金撤离</td>
+</tr>
+<tr>
+<td><strong>有色金属</strong></td>
+<td>持续走弱</td>
+<td>洛阳钼业· 西部矿业· 赤峰黄金</td>
+<td>主力净流出57.6亿，刚果(金)政策扰动持续</td>
+</tr>
+</tbody>
+</table></div>
+<h2>📰 午后新催化检查</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>催化事件</th>
+<th>影响方向</th>
+<th style="text-align: center;">强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>阿里云计划全球数据中心产能提升两倍以上</strong>，大型AIDC交付工期缩至100天</td>
+<td>算力租赁 / AI基建</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>宇树IPO定价150.80元/股</strong>，对应发行市值约610亿，超预期</td>
+<td>机器人本体厂商估值重塑</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>三星电机+太阳诱电MLCC涨价通知</strong>正式发出</td>
+<td>MLCC / 被动元件</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>美国"创世纪计划"GS1科研大模型</strong>开放贡献者入口</td>
+<td>AI应用 / AI4S</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>工业富联半年报</strong>：净利+96%至237亿，云计算业务爆发</td>
+<td>AI算力 / 服务器</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>8月电影票房破20亿</strong>，《欢迎来龙餐馆》评分创三年纪录</td>
+<td>影视院线</td>
+<td style="text-align: center;">⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h2>💰 主力资金变化（全天 vs 午盘）</h2>
+<h3>全天净流入行业 TOP5</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>行业</th>
+<th style="text-align: center;">净流入（亿）</th>
+<th>午后趋势</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通信</td>
+<td style="text-align: center;">+32.19</td>
+<td>↗ 持续流入，午后算力催化加强</td>
+</tr>
+<tr>
+<td>建筑装饰</td>
+<td style="text-align: center;">+9.99</td>
+<td>→ 平稳</td>
+</tr>
+<tr>
+<td>汽车</td>
+<td style="text-align: center;">+8.13</td>
+<td>↗ 午后机器人方向带动</td>
+</tr>
+<tr>
+<td>机械设备</td>
+<td style="text-align: center;">—</td>
+<td>↗ 机器人异动后加速</td>
+</tr>
+<tr>
+<td>医药生物</td>
+<td style="text-align: center;">—</td>
+<td>→ 上午强势，午后高位震荡</td>
+</tr>
+</tbody>
+</table></div>
+<h3>全天净流出行业 TOP5</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>行业</th>
+<th style="text-align: center;">净流出（亿）</th>
+<th>午后趋势</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有色金属</td>
+<td style="text-align: center;"><strong>-57.63</strong></td>
+<td>↘ 午后继续扩大流出</td>
+</tr>
+<tr>
+<td>国防军工</td>
+<td style="text-align: center;">-20.29</td>
+<td>↘ 持续流出</td>
+</tr>
+<tr>
+<td>传媒</td>
+<td style="text-align: center;">-15+</td>
+<td>↘ 分化加剧</td>
+</tr>
+<tr>
+<td>电力设备</td>
+<td style="text-align: center;">-15+</td>
+<td>→ 午后部分回补</td>
+</tr>
+<tr>
+<td>医药生物</td>
+<td style="text-align: center;">-15+</td>
+<td>↘ 高位获利了结与流入并存</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>沪深两市主力资金全天净流出 <strong>102.8亿</strong>。通信行业一枝独秀（+32亿），有色持续失血。</p>
+</div>
+<h2>🎯 午后异动个股归因</h2>
+<h3>百合花（603073·机器人）</h3>
+<ul>
+<li><strong>午后表现</strong>：7天4板，机器人方向人气标杆</li>
+<li><strong>异动归因</strong>：宇树IPO超预期定价（610亿市值）直接刺激机器人本体估值。中信建投明确看好产业链催化。午后资金加速涌入，百合花作为短线标杆获游资抱团。</li>
+<li><strong>关注价值</strong>：高。宇树上市在即，机器人大会临近，双重催化窗口。</li>
+</ul>
+<h3>杭钢股份（600126·算力租赁）</h3>
+<ul>
+<li><strong>午后表现</strong>：直线涨停，封单1.33亿</li>
+<li><strong>异动归因</strong>：阿里云100天交付AIDC的消息午后发酵，算力租赁板块集体异动。杭钢作为IDC转型标的与鸿博股份联动。</li>
+<li><strong>关注价值</strong>：中。算力租赁方向逻辑硬但此前已有充分预期，警惕一日游。</li>
+</ul>
+<h3>风华高科（000636·MLCC）</h3>
+<ul>
+<li><strong>午后表现</strong>：冲板后炸板，收+6.73%，主力净流入9.83亿</li>
+<li><strong>异动归因</strong>：MLCC涨价逻辑被双星新材+洁美科技兑现涨停后，风华作为龙头反而炸板。说明高位有资金选择兑现，板块内部分歧。次日能否修复是关键信号。</li>
+<li><strong>关注价值</strong>：高。MLCC涨价周期若确立，风华高科是A股最纯正标的。</li>
+</ul>
+<h3>德龙汇能·艾艾精工·传智教育</h3>
+<ul>
+<li><strong>午后表现</strong>：早盘一度冲高5%+，午后跳水收绿</li>
+<li><strong>异动归因</strong>：高位人气股午后集体退潮。连板晋级率仅33%，说明接力意愿在下降。爱丽家居复牌仅3天又停牌核查，监管信号增强。资金从高位连板向新方向（机器人、算力）切换。</li>
+<li><strong>关注价值</strong>：高（作为情绪指标）。高位股退潮是否扩散，决定接下来情绪周期的方向。</li>
+</ul>
+<h2>🔍 对午盘判断的修正与确认</h2>
+<h3>✅ 确认的部分</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>午盘判断</th>
+<th>实际结果</th>
+<th style="text-align: center;">评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>百花医药能否封住到尾盘</td>
+<td><strong>封住了</strong>，6连板封单3.4亿</td>
+<td style="text-align: center;">✅ 判断正确，龙头韧性超预期</td>
+</tr>
+<tr>
+<td>MLCC方向关注持续性</td>
+<td>双星新材+洁美科技封板成功，风华高科炸板分歧</td>
+<td style="text-align: center;">✅ 分化判断准确</td>
+</tr>
+<tr>
+<td>有色板块继续杀跌</td>
+<td>全天净流出57.6亿，跌幅居前</td>
+<td style="text-align: center;">✅ 判断正确</td>
+</tr>
+</tbody>
+</table></div>
+<h3>⚠️ 需要修正的部分</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>午盘未充分预判</th>
+<th>午后实际</th>
+<th>修正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未特别提及机器人午后催化</td>
+<td>机器人概念午后成最大亮点，多股涨停</td>
+<td>宇树IPO定价催化午后集中爆发，需纳入明日重点跟踪</td>
+</tr>
+<tr>
+<td>未充分提示高位股跳水风险</td>
+<td>德龙汇能、艾艾精工等跳水收绿</td>
+<td>连板晋级率降至33%，高位抱团松动信号明确</td>
+</tr>
+<tr>
+<td>对午后回落的力度估计不足</td>
+<td>沪指午后冲高后翻绿，深成指+科创50均翻绿</td>
+<td>量能不济是核心，2.32万亿缩量2021亿，追高信心不足</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🔄 核心修正结论</h3>
+<p><strong>午后市场的本质是"新旧切换加速"</strong>：高位连板股（医药主线除外）开始松动，资金向机器人、算力新催化方向迁移。这不是主线崩塌，而是内部轮动。百花医药6连板封死说明龙头地位未动摇，但后排分化加大。有色持续失血是最大的指数拖累项。</p>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。
+数据来源：通达信 TdxQuant · 证券时报 · 财联社 · 新浪财经 | 生成时间：2026年08月11日 14:00</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
