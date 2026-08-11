@@ -1,1488 +1,1518 @@
 {
-  "last_updated": "2026-08-11 22:10:39",
-  "total": 148,
-  "daily_count": 111,
-  "industry_count": 37,
-  "reports": [
-    {
-      "id": "2026-08-11-午盘扫描",
-      "date": "2026-08-11",
-      "display_date": "8月11日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-08-11/午盘扫描.html",
-      "size_kb": 8.1
-    },
-    {
-      "id": "2026-08-11-宏观择时日报_MTIv3_20260811",
-      "date": "2026-08-11",
-      "display_date": "8月11日",
-      "type": "daily",
-      "category": "宏观择时",
-      "title": "宏观择时日报_MTIv3_20260811",
-      "relative_path": "reports/2026-08-11/宏观择时日报_MTIv3_20260811.html",
-      "size_kb": 151.6
-    },
-    {
-      "id": "2026-08-11-开盘速览",
-      "date": "2026-08-11",
-      "display_date": "8月11日",
-      "type": "daily",
-      "category": "开盘速览",
-      "title": "开盘速览",
-      "relative_path": "reports/2026-08-11/开盘速览.html",
-      "size_kb": 6.6
-    },
-    {
-      "id": "2026-08-11-收盘总结",
-      "date": "2026-08-11",
-      "display_date": "8月11日",
-      "type": "daily",
-      "category": "收盘总结",
-      "title": "收盘总结",
-      "relative_path": "reports/2026-08-11/收盘总结.html",
-      "size_kb": 13.2
-    },
-    {
-      "id": "2026-08-11-盘中异动",
-      "date": "2026-08-11",
-      "display_date": "8月11日",
-      "type": "daily",
-      "category": "盘中异动",
-      "title": "盘中异动",
-      "relative_path": "reports/2026-08-11/盘中异动.html",
-      "size_kb": 14.8
-    },
-    {
-      "id": "2026-08-11-盘前简报",
-      "date": "2026-08-11",
-      "display_date": "8月11日",
-      "type": "daily",
-      "category": "盘前简报",
-      "title": "盘前简报",
-      "relative_path": "reports/2026-08-11/盘前简报.html",
-      "size_kb": 8.2
-    },
-    {
-      "id": "2026-08-11-竞价快报",
-      "date": "2026-08-11",
-      "display_date": "8月11日",
-      "type": "daily",
-      "category": "竞价快报",
-      "title": "竞价快报",
-      "relative_path": "reports/2026-08-11/竞价快报.html",
-      "size_kb": 5.4
-    },
-    {
-      "id": "2026-08-10-刚果金铜钴出口禁令：有色金属与工业金属深度分析",
-      "date": "2026-08-10",
-      "display_date": "8月10日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "刚果金铜钴出口禁令：有色金属与工业金属深度分析",
-      "relative_path": "reports/2026-08-10/刚果金铜钴出口禁令：有色金属与工业金属深度分析.html",
-      "size_kb": 14.9
-    },
-    {
-      "id": "2026-08-10-午盘扫描",
-      "date": "2026-08-10",
-      "display_date": "8月10日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-08-10/午盘扫描.html",
-      "size_kb": 12.4
-    },
-    {
-      "id": "2026-08-10-宏观择时日报_MTIv3_20260810",
-      "date": "2026-08-10",
-      "display_date": "8月10日",
-      "type": "daily",
-      "category": "宏观择时",
-      "title": "宏观择时日报_MTIv3_20260810",
-      "relative_path": "reports/2026-08-10/宏观择时日报_MTIv3_20260810.html",
-      "size_kb": 151.6
-    },
-    {
-      "id": "2026-08-10-开盘速览",
-      "date": "2026-08-10",
-      "display_date": "8月10日",
-      "type": "daily",
-      "category": "开盘速览",
-      "title": "开盘速览",
-      "relative_path": "reports/2026-08-10/开盘速览.html",
-      "size_kb": 5.8
-    },
-    {
-      "id": "2026-08-10-收盘总结",
-      "date": "2026-08-10",
-      "display_date": "8月10日",
-      "type": "daily",
-      "category": "收盘总结",
-      "title": "收盘总结",
-      "relative_path": "reports/2026-08-10/收盘总结.html",
-      "size_kb": 15.5
-    },
-    {
-      "id": "2026-08-10-深度复盘",
-      "date": "2026-08-10",
-      "display_date": "8月10日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-08-10/深度复盘.html",
-      "size_kb": 34.3
-    },
-    {
-      "id": "2026-08-10-盘中异动",
-      "date": "2026-08-10",
-      "display_date": "8月10日",
-      "type": "daily",
-      "category": "盘中异动",
-      "title": "盘中异动",
-      "relative_path": "reports/2026-08-10/盘中异动.html",
-      "size_kb": 16.4
-    },
-    {
-      "id": "2026-08-10-盘前简报",
-      "date": "2026-08-10",
-      "display_date": "8月10日",
-      "type": "daily",
-      "category": "盘前简报",
-      "title": "盘前简报",
-      "relative_path": "reports/2026-08-10/盘前简报.html",
-      "size_kb": 11.2
-    },
-    {
-      "id": "2026-08-10-竞价快报",
-      "date": "2026-08-10",
-      "display_date": "8月10日",
-      "type": "daily",
-      "category": "竞价快报",
-      "title": "竞价快报",
-      "relative_path": "reports/2026-08-10/竞价快报.html",
-      "size_kb": 7.4
-    },
-    {
-      "id": "2026-08-09-周度盘前",
-      "date": "2026-08-09",
-      "display_date": "8月9日",
-      "type": "daily",
-      "category": "周度盘前",
-      "title": "周度盘前",
-      "relative_path": "reports/2026-08-09/周度盘前.html",
-      "size_kb": 14.2
-    },
-    {
-      "id": "2026-08-09-深度复盘",
-      "date": "2026-08-09",
-      "display_date": "8月9日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-08-09/深度复盘.html",
-      "size_kb": 30.0
-    },
-    {
-      "id": "2026-08-08-光模块禁令深度分析-机构调研与资金雷达实证-v3",
-      "date": "2026-08-08",
-      "display_date": "8月8日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "光模块禁令深度分析-机构调研与资金雷达实证-v3",
-      "relative_path": "reports/2026-08-08/光模块禁令深度分析-机构调研与资金雷达实证-v3.html",
-      "size_kb": 30.2
-    },
-    {
-      "id": "2026-08-08-光模块禁令深度分析-行业趋势与投资逻辑",
-      "date": "2026-08-08",
-      "display_date": "8月8日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "光模块禁令深度分析-行业趋势与投资逻辑",
-      "relative_path": "reports/2026-08-08/光模块禁令深度分析-行业趋势与投资逻辑.html",
-      "size_kb": 23.6
-    },
-    {
-      "id": "2026-08-07-MTI宏观择时周度综述_20260807",
-      "date": "2026-08-07",
-      "display_date": "8月7日",
-      "type": "daily",
-      "category": "宏观择时",
-      "title": "MTI宏观择时周度综述_20260807",
-      "relative_path": "reports/2026-08-07/MTI宏观择时周度综述_20260807.html",
-      "size_kb": 11.5
-    },
-    {
-      "id": "2026-08-07-午盘扫描",
-      "date": "2026-08-07",
-      "display_date": "8月7日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-08-07/午盘扫描.html",
-      "size_kb": 13.1
-    },
-    {
-      "id": "2026-08-07-宏观择时日报_MTIv3_20260807",
-      "date": "2026-08-07",
-      "display_date": "8月7日",
-      "type": "daily",
-      "category": "宏观择时",
-      "title": "宏观择时日报_MTIv3_20260807",
-      "relative_path": "reports/2026-08-07/宏观择时日报_MTIv3_20260807.html",
-      "size_kb": 151.6
-    },
-    {
-      "id": "2026-08-07-开盘速览",
-      "date": "2026-08-07",
-      "display_date": "8月7日",
-      "type": "daily",
-      "category": "开盘速览",
-      "title": "开盘速览",
-      "relative_path": "reports/2026-08-07/开盘速览.html",
-      "size_kb": 6.8
-    },
-    {
-      "id": "2026-08-07-收盘总结",
-      "date": "2026-08-07",
-      "display_date": "8月7日",
-      "type": "daily",
-      "category": "收盘总结",
-      "title": "收盘总结",
-      "relative_path": "reports/2026-08-07/收盘总结.html",
-      "size_kb": 15.1
-    },
-    {
-      "id": "2026-08-07-深度复盘",
-      "date": "2026-08-07",
-      "display_date": "8月7日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-08-07/深度复盘.html",
-      "size_kb": 25.0
-    },
-    {
-      "id": "2026-08-07-盘中异动",
-      "date": "2026-08-07",
-      "display_date": "8月7日",
-      "type": "daily",
-      "category": "盘中异动",
-      "title": "盘中异动",
-      "relative_path": "reports/2026-08-07/盘中异动.html",
-      "size_kb": 16.6
-    },
-    {
-      "id": "2026-08-07-盘前简报",
-      "date": "2026-08-07",
-      "display_date": "8月7日",
-      "type": "daily",
-      "category": "盘前简报",
-      "title": "盘前简报",
-      "relative_path": "reports/2026-08-07/盘前简报.html",
-      "size_kb": 9.7
-    },
-    {
-      "id": "2026-08-07-研报巡逻",
-      "date": "2026-08-07",
-      "display_date": "8月7日",
-      "type": "daily",
-      "category": "研报巡逻",
-      "title": "研报巡逻",
-      "relative_path": "reports/2026-08-07/研报巡逻.html",
-      "size_kb": 15.7
-    },
-    {
-      "id": "2026-08-07-竞价快报",
-      "date": "2026-08-07",
-      "display_date": "8月7日",
-      "type": "daily",
-      "category": "竞价快报",
-      "title": "竞价快报",
-      "relative_path": "reports/2026-08-07/竞价快报.html",
-      "size_kb": 7.1
-    },
-    {
-      "id": "2026-08-06-mti",
-      "date": "2026-08-06",
-      "display_date": "8月6日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "mti",
-      "relative_path": "reports/2026-08-06/mti.html",
-      "size_kb": 351.4
-    },
-    {
-      "id": "2026-08-06-午盘扫描",
-      "date": "2026-08-06",
-      "display_date": "8月6日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-08-06/午盘扫描.html",
-      "size_kb": 10.2
-    },
-    {
-      "id": "2026-08-06-宏观择时日报_MTIv3_20260806",
-      "date": "2026-08-06",
-      "display_date": "8月6日",
-      "type": "daily",
-      "category": "宏观择时",
-      "title": "宏观择时日报_MTIv3_20260806",
-      "relative_path": "reports/2026-08-06/宏观择时日报_MTIv3_20260806.html",
-      "size_kb": 151.6
-    },
-    {
-      "id": "2026-08-06-开盘速览",
-      "date": "2026-08-06",
-      "display_date": "8月6日",
-      "type": "daily",
-      "category": "开盘速览",
-      "title": "开盘速览",
-      "relative_path": "reports/2026-08-06/开盘速览.html",
-      "size_kb": 7.3
-    },
-    {
-      "id": "2026-08-06-收盘总结",
-      "date": "2026-08-06",
-      "display_date": "8月6日",
-      "type": "daily",
-      "category": "收盘总结",
-      "title": "收盘总结",
-      "relative_path": "reports/2026-08-06/收盘总结.html",
-      "size_kb": 19.1
-    },
-    {
-      "id": "2026-08-06-深度复盘",
-      "date": "2026-08-06",
-      "display_date": "8月6日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-08-06/深度复盘.html",
-      "size_kb": 27.8
-    },
-    {
-      "id": "2026-08-06-盘中异动",
-      "date": "2026-08-06",
-      "display_date": "8月6日",
-      "type": "daily",
-      "category": "盘中异动",
-      "title": "盘中异动",
-      "relative_path": "reports/2026-08-06/盘中异动.html",
-      "size_kb": 17.7
-    },
-    {
-      "id": "2026-08-06-盘前简报",
-      "date": "2026-08-06",
-      "display_date": "8月6日",
-      "type": "daily",
-      "category": "盘前简报",
-      "title": "盘前简报",
-      "relative_path": "reports/2026-08-06/盘前简报.html",
-      "size_kb": 7.7
-    },
-    {
-      "id": "2026-08-06-研报巡逻",
-      "date": "2026-08-06",
-      "display_date": "8月6日",
-      "type": "daily",
-      "category": "研报巡逻",
-      "title": "研报巡逻",
-      "relative_path": "reports/2026-08-06/研报巡逻.html",
-      "size_kb": 25.9
-    },
-    {
-      "id": "2026-08-06-竞价快报",
-      "date": "2026-08-06",
-      "display_date": "8月6日",
-      "type": "daily",
-      "category": "竞价快报",
-      "title": "竞价快报",
-      "relative_path": "reports/2026-08-06/竞价快报.html",
-      "size_kb": 5.7
-    },
-    {
-      "id": "2026-08-03-午盘扫描",
-      "date": "2026-08-03",
-      "display_date": "8月3日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-08-03/午盘扫描.html",
-      "size_kb": 10.3
-    },
-    {
-      "id": "2026-08-03-宏观择时日报_MTIv3_20260803",
-      "date": "2026-08-03",
-      "display_date": "8月3日",
-      "type": "daily",
-      "category": "宏观择时",
-      "title": "宏观择时日报_MTIv3_20260803",
-      "relative_path": "reports/2026-08-03/宏观择时日报_MTIv3_20260803.html",
-      "size_kb": 151.5
-    },
-    {
-      "id": "2026-08-03-开盘速览",
-      "date": "2026-08-03",
-      "display_date": "8月3日",
-      "type": "daily",
-      "category": "开盘速览",
-      "title": "开盘速览",
-      "relative_path": "reports/2026-08-03/开盘速览.html",
-      "size_kb": 7.6
-    },
-    {
-      "id": "2026-08-03-收盘总结",
-      "date": "2026-08-03",
-      "display_date": "8月3日",
-      "type": "daily",
-      "category": "收盘总结",
-      "title": "收盘总结",
-      "relative_path": "reports/2026-08-03/收盘总结.html",
-      "size_kb": 16.6
-    },
-    {
-      "id": "2026-08-03-早盘扫描",
-      "date": "2026-08-03",
-      "display_date": "8月3日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-08-03/早盘扫描.html",
-      "size_kb": 9.1
-    },
-    {
-      "id": "2026-08-03-深度复盘",
-      "date": "2026-08-03",
-      "display_date": "8月3日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-08-03/深度复盘.html",
-      "size_kb": 30.6
-    },
-    {
-      "id": "2026-08-03-盘中异动",
-      "date": "2026-08-03",
-      "display_date": "8月3日",
-      "type": "daily",
-      "category": "盘中异动",
-      "title": "盘中异动",
-      "relative_path": "reports/2026-08-03/盘中异动.html",
-      "size_kb": 17.8
-    },
-    {
-      "id": "2026-08-03-竞价快报",
-      "date": "2026-08-03",
-      "display_date": "8月3日",
-      "type": "daily",
-      "category": "竞价快报",
-      "title": "竞价快报",
-      "relative_path": "reports/2026-08-03/竞价快报.html",
-      "size_kb": 7.3
-    },
-    {
-      "id": "2026-08-02-周度盘前",
-      "date": "2026-08-02",
-      "display_date": "8月2日",
-      "type": "daily",
-      "category": "周度盘前",
-      "title": "周度盘前",
-      "relative_path": "reports/2026-08-02/周度盘前.html",
-      "size_kb": 14.6
-    },
-    {
-      "id": "2026-08-02-宏观择时日报_MTIv3_20260802",
-      "date": "2026-08-02",
-      "display_date": "8月2日",
-      "type": "daily",
-      "category": "宏观择时",
-      "title": "宏观择时日报_MTIv3_20260802",
-      "relative_path": "reports/2026-08-02/宏观择时日报_MTIv3_20260802.html",
-      "size_kb": 151.4
-    },
-    {
-      "id": "2026-08-02-深度复盘",
-      "date": "2026-08-02",
-      "display_date": "8月2日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-08-02/深度复盘.html",
-      "size_kb": 23.9
-    },
-    {
-      "id": "2026-08-01-周度盘前",
-      "date": "2026-08-01",
-      "display_date": "8月1日",
-      "type": "daily",
-      "category": "周度盘前",
-      "title": "周度盘前",
-      "relative_path": "reports/2026-08-01/周度盘前.html",
-      "size_kb": 20.2
-    },
-    {
-      "id": "2026-07-22-00 三环集团MLCC系统研究：执行摘要与最终判断",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "00 三环集团MLCC系统研究：执行摘要与最终判断",
-      "relative_path": "reports/2026-07-22/00 三环集团MLCC系统研究：执行摘要与最终判断.html",
-      "size_kb": 14.7
-    },
-    {
-      "id": "2026-07-22-002158 汉钟精机 · 个股深度研究",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "002158 汉钟精机 · 个股深度研究",
-      "relative_path": "reports/2026-07-22/002158 汉钟精机 · 个股深度研究.html",
-      "size_kb": 25.1
-    },
-    {
-      "id": "2026-07-22-01 三环集团业务与竞争力：电子陶瓷平台的真实边界",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "01 三环集团业务与竞争力：电子陶瓷平台的真实边界",
-      "relative_path": "reports/2026-07-22/01 三环集团业务与竞争力：电子陶瓷平台的真实边界.html",
-      "size_kb": 13.8
-    },
-    {
-      "id": "2026-07-22-02 三环集团财务质量与估值：好公司与好价格的分界",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "02 三环集团财务质量与估值：好公司与好价格的分界",
-      "relative_path": "reports/2026-07-22/02 三环集团财务质量与估值：好公司与好价格的分界.html",
-      "size_kb": 18.2
-    },
-    {
-      "id": "2026-07-22-03 MLCC产业格局与A股标的统一比较",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "03 MLCC产业格局与A股标的统一比较",
-      "relative_path": "reports/2026-07-22/03 MLCC产业格局与A股标的统一比较.html",
-      "size_kb": 19.4
-    },
-    {
-      "id": "2026-07-22-04 三环集团机构持仓与真实认可度",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "04 三环集团机构持仓与真实认可度",
-      "relative_path": "reports/2026-07-22/04 三环集团机构持仓与真实认可度.html",
-      "size_kb": 11.5
-    },
-    {
-      "id": "2026-07-22-05 三环集团近期催化、市场地位与长期持有条件",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "05 三环集团近期催化、市场地位与长期持有条件",
-      "relative_path": "reports/2026-07-22/05 三环集团近期催化、市场地位与长期持有条件.html",
-      "size_kb": 12.8
-    },
-    {
-      "id": "2026-07-22-06 三环集团MLCC研究：数据口径、来源与持续跟踪清单",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "06 三环集团MLCC研究：数据口径、来源与持续跟踪清单",
-      "relative_path": "reports/2026-07-22/06 三环集团MLCC研究：数据口径、来源与持续跟踪清单.html",
-      "size_kb": 13.3
-    },
-    {
-      "id": "2026-07-22-2026Q2基金半导体持仓迁移研究",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "2026Q2基金半导体持仓迁移研究",
-      "relative_path": "reports/2026-07-22/2026Q2基金半导体持仓迁移研究.html",
-      "size_kb": 23.7
-    },
-    {
-      "id": "2026-07-22-2026年7月23日A股早盘报告",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "2026年7月23日A股早盘报告",
-      "relative_path": "reports/2026-07-22/2026年7月23日A股早盘报告.html",
-      "size_kb": 25.1
-    },
-    {
-      "id": "2026-07-22-260722_A股市场复盘与策略报告",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "260722_A股市场复盘与策略报告",
-      "relative_path": "reports/2026-07-22/260722_A股市场复盘与策略报告.html",
-      "size_kb": 38.0
-    },
-    {
-      "id": "2026-07-22-5月11日午盘扫描",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "5月11日午盘扫描",
-      "relative_path": "reports/2026-07-22/5月11日午盘扫描.html",
-      "size_kb": 14.7
-    },
-    {
-      "id": "2026-07-22-5月7日午盘扫描",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "5月7日午盘扫描",
-      "relative_path": "reports/2026-07-22/5月7日午盘扫描.html",
-      "size_kb": 18.5
-    },
-    {
-      "id": "2026-07-22-5月7日早盘扫描",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "5月7日早盘扫描",
-      "relative_path": "reports/2026-07-22/5月7日早盘扫描.html",
-      "size_kb": 14.3
-    },
-    {
-      "id": "2026-07-22-5月7日深度复盘",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "5月7日深度复盘",
-      "relative_path": "reports/2026-07-22/5月7日深度复盘.html",
-      "size_kb": 26.0
-    },
-    {
-      "id": "2026-07-22-午盘扫描",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-07-22/午盘扫描.html",
-      "size_kb": 15.7
-    },
-    {
-      "id": "2026-07-22-早盘扫描",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-07-22/早盘扫描.html",
-      "size_kb": 13.4
-    },
-    {
-      "id": "2026-07-22-5月8日深度复盘",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "5月8日深度复盘",
-      "relative_path": "reports/2026-07-22/5月8日深度复盘.html",
-      "size_kb": 19.3
-    },
-    {
-      "id": "2026-07-22-800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱",
-      "relative_path": "reports/2026-07-22/800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱.html",
-      "size_kb": 29.7
-    },
-    {
-      "id": "2026-07-22-AI PCB 报告 · Rubin 时代深度总结",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "AI PCB 报告 · Rubin 时代深度总结",
-      "relative_path": "reports/2026-07-22/AI PCB 报告 · Rubin 时代深度总结.html",
-      "size_kb": 35.3
-    },
-    {
-      "id": "2026-07-22-AI硬件服务器软件方向——近一周核心消息梳理与产业链分析 (1)",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "AI硬件服务器软件方向——近一周核心消息梳理与产业链分析 (1)",
-      "relative_path": "reports/2026-07-22/AI硬件服务器软件方向——近一周核心消息梳理与产业链分析 (1).html",
-      "size_kb": 21.5
-    },
-    {
-      "id": "2026-07-22-AI算力产业链七大紧缺环节核验与A股映射",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "AI算力产业链七大紧缺环节核验与A股映射",
-      "relative_path": "reports/2026-07-22/AI算力产业链七大紧缺环节核验与A股映射.html",
-      "size_kb": 26.2
-    },
-    {
-      "id": "2026-07-22-CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图",
-      "relative_path": "reports/2026-07-22/CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图.html",
-      "size_kb": 29.7
-    },
-    {
-      "id": "2026-07-22-中信-电子行业26Q2——数据、验证与判断",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "中信-电子行业26Q2——数据、验证与判断",
-      "relative_path": "reports/2026-07-22/中信-电子行业26Q2——数据、验证与判断.html",
-      "size_kb": 21.3
-    },
-    {
-      "id": "2026-07-22-五一假期重大消息汇总分析_20260505",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "五一假期重大消息汇总分析_20260505",
-      "relative_path": "reports/2026-07-22/五一假期重大消息汇总分析_20260505.html",
-      "size_kb": 43.0
-    },
-    {
-      "id": "2026-07-22-功率半导体行业深度调研：从周期修复到AI能源基础设施的价值重估",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "功率半导体行业深度调研：从周期修复到AI能源基础设施的价值重估",
-      "relative_path": "reports/2026-07-22/功率半导体行业深度调研：从周期修复到AI能源基础设施的价值重估.html",
-      "size_kb": 35.3
-    },
-    {
-      "id": "2026-07-22-半导体细分赛道对决_20260504",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "半导体细分赛道对决_20260504",
-      "relative_path": "reports/2026-07-22/半导体细分赛道对决_20260504.html",
-      "size_kb": 19.4
-    },
-    {
-      "id": "2026-07-22-华为「韬定律」× 先进封装：国产替代深度映射与标的验证",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "华为「韬定律」× 先进封装：国产替代深度映射与标的验证",
-      "relative_path": "reports/2026-07-22/华为「韬定律」× 先进封装：国产替代深度映射与标的验证.html",
-      "size_kb": 23.2
-    },
-    {
-      "id": "2026-07-22-华为韬（τ）定律深度解析：半导体新范式的受益图谱",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "华为韬（τ）定律深度解析：半导体新范式的受益图谱",
-      "relative_path": "reports/2026-07-22/华为韬（τ）定律深度解析：半导体新范式的受益图谱.html",
-      "size_kb": 21.2
-    },
-    {
-      "id": "2026-07-22-卡特彼勒业绩映射A股分析_20260506",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "卡特彼勒业绩映射A股分析_20260506",
-      "relative_path": "reports/2026-07-22/卡特彼勒业绩映射A股分析_20260506.html",
-      "size_kb": 31.5
-    },
-    {
-      "id": "2026-07-22-康宁 CPO 新技术深度研究：产业链重画与 A 股映射全景",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "康宁 CPO 新技术深度研究：产业链重画与 A 股映射全景",
-      "relative_path": "reports/2026-07-22/康宁 CPO 新技术深度研究：产业链重画与 A 股映射全景.html",
-      "size_kb": 17.6
-    },
-    {
-      "id": "2026-07-22-梁文锋投资者交流会_深度研究报告",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "梁文锋投资者交流会_深度研究报告",
-      "relative_path": "reports/2026-07-22/梁文锋投资者交流会_深度研究报告.html",
-      "size_kb": 49.7
-    },
-    {
-      "id": "2026-07-22-百岁山——美股A股映射全景",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "百岁山——美股A股映射全景",
-      "relative_path": "reports/2026-07-22/百岁山——美股A股映射全景.html",
-      "size_kb": 35.8
-    },
-    {
-      "id": "2026-07-22-非AI涨价品种_全面深度版_20260504",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "非AI涨价品种_全面深度版_20260504",
-      "relative_path": "reports/2026-07-22/非AI涨价品种_全面深度版_20260504.html",
-      "size_kb": 27.8
-    },
-    {
-      "id": "2026-08-10-早盘扫描",
-      "date": "2026-08-10",
-      "display_date": "8月10日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-08-10/早盘扫描.html",
-      "size_kb": 11.2
-    },
-    {
-      "id": "2026-07-26-深度复盘",
-      "date": "2026-07-26",
-      "display_date": "7月26日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-07-26/深度复盘.html",
-      "size_kb": 20.6
-    },
-    {
-      "id": "2026-05-29-午盘扫描",
-      "date": "2026-05-29",
-      "display_date": "5月29日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-05-29/午盘扫描.html",
-      "size_kb": 16.0
-    },
-    {
-      "id": "2026-05-29-早盘扫描",
-      "date": "2026-05-29",
-      "display_date": "5月29日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-05-29/早盘扫描.html",
-      "size_kb": 9.0
-    },
-    {
-      "id": "2026-05-28-午盘扫描",
-      "date": "2026-05-28",
-      "display_date": "5月28日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-05-28/午盘扫描.html",
-      "size_kb": 11.1
-    },
-    {
-      "id": "2026-05-28-早盘扫描",
-      "date": "2026-05-28",
-      "display_date": "5月28日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-05-28/早盘扫描.html",
-      "size_kb": 11.8
-    },
-    {
-      "id": "2026-05-28-浩泉每日深度复盘",
-      "date": "2026-05-28",
-      "display_date": "5月28日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "浩泉每日深度复盘",
-      "relative_path": "reports/2026-05-28/浩泉每日深度复盘.html",
-      "size_kb": 19.3
-    },
-    {
-      "id": "2026-05-27-早盘扫描",
-      "date": "2026-05-27",
-      "display_date": "5月27日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-05-27/早盘扫描.html",
-      "size_kb": 8.3
-    },
-    {
-      "id": "2026-05-27-午盘扫描",
-      "date": "2026-05-27",
-      "display_date": "5月27日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-05-27/午盘扫描.html",
-      "size_kb": 10.8
-    },
-    {
-      "id": "2026-05-27-深度复盘",
-      "date": "2026-05-27",
-      "display_date": "5月27日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-05-27/深度复盘.html",
-      "size_kb": 17.6
-    },
-    {
-      "id": "2026-05-26-早盘扫描",
-      "date": "2026-05-26",
-      "display_date": "5月26日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-05-26/早盘扫描.html",
-      "size_kb": 9.6
-    },
-    {
-      "id": "2026-05-26-午盘扫描 — 2026年5月26日",
-      "date": "2026-05-26",
-      "display_date": "5月26日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描 — 2026年5月26日",
-      "relative_path": "reports/2026-05-26/午盘扫描 — 2026年5月26日.html",
-      "size_kb": 13.9
-    },
-    {
-      "id": "2026-05-26-📊 浩泉深度复盘 — 2026年5月26日（周二）",
-      "date": "2026-05-26",
-      "display_date": "5月26日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "📊 浩泉深度复盘 — 2026年5月26日（周二）",
-      "relative_path": "reports/2026-05-26/📊 浩泉深度复盘 — 2026年5月26日（周二）.html",
-      "size_kb": 18.4
-    },
-    {
-      "id": "2026-05-25-午盘扫描",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-05-25/午盘扫描.html",
-      "size_kb": 8.9
-    },
-    {
-      "id": "2026-05-25-早盘扫描",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-05-25/早盘扫描.html",
-      "size_kb": 8.7
-    },
-    {
-      "id": "2026-05-25-AI-PCB报告-Rubin时代深度总结",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "AI-PCB报告-Rubin时代深度总结",
-      "relative_path": "reports/2026-05-25/AI-PCB报告-Rubin时代深度总结.html",
-      "size_kb": 35.3
-    },
-    {
-      "id": "2026-05-25-华为韬定律-先进封装国产替代映射",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "华为韬定律-先进封装国产替代映射",
-      "relative_path": "reports/2026-05-25/华为韬定律-先进封装国产替代映射.html",
-      "size_kb": 23.2
-    },
-    {
-      "id": "2026-05-25-华为韬定律-半导体新范式受益图谱",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "华为韬定律-半导体新范式受益图谱",
-      "relative_path": "reports/2026-05-25/华为韬定律-半导体新范式受益图谱.html",
-      "size_kb": 21.2
-    },
-    {
-      "id": "2026-05-25-涨价猎手3.0-全板块深拆-龙头全覆盖",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "涨价猎手3.0-全板块深拆-龙头全覆盖",
-      "relative_path": "reports/2026-05-25/涨价猎手3.0-全板块深拆-龙头全覆盖.html",
-      "size_kb": 28.1
-    },
-    {
-      "id": "2026-05-25-百岁山-美股到A股映射全景",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "百岁山-美股到A股映射全景",
-      "relative_path": "reports/2026-05-25/百岁山-美股到A股映射全景.html",
-      "size_kb": 28.1
-    },
-    {
-      "id": "2026-05-25-🦞 浩泉-每日深度复盘",
-      "date": "2026-05-25",
-      "display_date": "5月25日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "🦞 浩泉-每日深度复盘",
-      "relative_path": "reports/2026-05-25/🦞 浩泉-每日深度复盘.html",
-      "size_kb": 18.1
-    },
-    {
-      "id": "2026-05-24-周度盘前策略",
-      "date": "2026-05-24",
-      "display_date": "5月24日",
-      "type": "daily",
-      "category": "周度盘前",
-      "title": "周度盘前策略",
-      "relative_path": "reports/2026-05-24/周度盘前策略.html",
-      "size_kb": 19.1
-    },
-    {
-      "id": "2026-05-16-5月15日深度复盘",
-      "date": "2026-05-16",
-      "display_date": "5月16日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "5月15日深度复盘",
-      "relative_path": "reports/2026-05-16/5月15日深度复盘.html",
-      "size_kb": 18.1
-    },
-    {
-      "id": "2026-05-29-深度复盘",
-      "date": "2026-05-29",
-      "display_date": "5月29日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-05-29/深度复盘.html",
-      "size_kb": 26.5
-    },
-    {
-      "id": "2026-06-01-午盘扫描",
-      "date": "2026-06-01",
-      "display_date": "6月1日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-06-01/午盘扫描.html",
-      "size_kb": 10.9
-    },
-    {
-      "id": "2026-06-01-早盘扫描",
-      "date": "2026-06-01",
-      "display_date": "6月1日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-06-01/早盘扫描.html",
-      "size_kb": 8.6
-    },
-    {
-      "id": "2026-06-01-深度复盘",
-      "date": "2026-06-01",
-      "display_date": "6月1日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-06-01/深度复盘.html",
-      "size_kb": 29.0
-    },
-    {
-      "id": "2026-06-02-午盘扫描",
-      "date": "2026-06-02",
-      "display_date": "6月2日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-06-02/午盘扫描.html",
-      "size_kb": 8.9
-    },
-    {
-      "id": "2026-06-02-早盘扫描",
-      "date": "2026-06-02",
-      "display_date": "6月2日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-06-02/早盘扫描.html",
-      "size_kb": 7.7
-    },
-    {
-      "id": "2026-06-02-深度复盘",
-      "date": "2026-06-02",
-      "display_date": "6月2日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-06-02/深度复盘.html",
-      "size_kb": 30.8
-    },
-    {
-      "id": "2026-06-03-午盘扫描",
-      "date": "2026-06-03",
-      "display_date": "6月3日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-06-03/午盘扫描.html",
-      "size_kb": 9.9
-    },
-    {
-      "id": "2026-06-03-早盘扫描",
-      "date": "2026-06-03",
-      "display_date": "6月3日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-06-03/早盘扫描.html",
-      "size_kb": 8.8
-    },
-    {
-      "id": "2026-06-04-午盘扫描",
-      "date": "2026-06-04",
-      "display_date": "6月4日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-06-04/午盘扫描.html",
-      "size_kb": 9.0
-    },
-    {
-      "id": "2026-06-04-深度复盘",
-      "date": "2026-06-04",
-      "display_date": "6月4日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-06-04/深度复盘.html",
-      "size_kb": 20.0
-    },
-    {
-      "id": "2026-06-05-午盘扫描",
-      "date": "2026-06-05",
-      "display_date": "6月5日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-06-05/午盘扫描.html",
-      "size_kb": 8.7
-    },
-    {
-      "id": "2026-06-05-深度复盘",
-      "date": "2026-06-05",
-      "display_date": "6月5日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-06-05/深度复盘.html",
-      "size_kb": 27.0
-    },
-    {
-      "id": "2026-06-08-午盘扫描",
-      "date": "2026-06-08",
-      "display_date": "6月8日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-06-08/午盘扫描.html",
-      "size_kb": 9.0
-    },
-    {
-      "id": "2026-06-08-早盘扫描",
-      "date": "2026-06-08",
-      "display_date": "6月8日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-06-08/早盘扫描.html",
-      "size_kb": 7.8
-    },
-    {
-      "id": "2026-06-08-深度复盘",
-      "date": "2026-06-08",
-      "display_date": "6月8日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-06-08/深度复盘.html",
-      "size_kb": 29.4
-    },
-    {
-      "id": "2026-06-09-午盘扫描",
-      "date": "2026-06-09",
-      "display_date": "6月9日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-06-09/午盘扫描.html",
-      "size_kb": 10.3
-    },
-    {
-      "id": "2026-06-09-早盘扫描",
-      "date": "2026-06-09",
-      "display_date": "6月9日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-06-09/早盘扫描.html",
-      "size_kb": 8.1
-    },
-    {
-      "id": "2026-06-09-深度复盘",
-      "date": "2026-06-09",
-      "display_date": "6月9日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-06-09/深度复盘.html",
-      "size_kb": 30.4
-    },
-    {
-      "id": "2026-06-10-午盘扫描",
-      "date": "2026-06-10",
-      "display_date": "6月10日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-06-10/午盘扫描.html",
-      "size_kb": 9.0
-    },
-    {
-      "id": "2026-06-10-早盘扫描",
-      "date": "2026-06-10",
-      "display_date": "6月10日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-06-10/早盘扫描.html",
-      "size_kb": 8.1
-    },
-    {
-      "id": "2026-06-10-深度复盘",
-      "date": "2026-06-10",
-      "display_date": "6月10日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-06-10/深度复盘.html",
-      "size_kb": 22.8
-    },
-    {
-      "id": "2026-06-22-午盘扫描",
-      "date": "2026-06-22",
-      "display_date": "6月22日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-06-22/午盘扫描.html",
-      "size_kb": 11.0
-    },
-    {
-      "id": "2026-06-22-早盘扫描",
-      "date": "2026-06-22",
-      "display_date": "6月22日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-06-22/早盘扫描.html",
-      "size_kb": 8.7
-    },
-    {
-      "id": "2026-06-22-深度复盘",
-      "date": "2026-06-22",
-      "display_date": "6月22日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-06-22/深度复盘.html",
-      "size_kb": 27.6
-    },
-    {
-      "id": "2026-06-23-午盘扫描",
-      "date": "2026-06-23",
-      "display_date": "6月23日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-06-23/午盘扫描.html",
-      "size_kb": 10.9
-    },
-    {
-      "id": "2026-06-23-深度复盘",
-      "date": "2026-06-23",
-      "display_date": "6月23日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-06-23/深度复盘.html",
-      "size_kb": 32.9
-    },
-    {
-      "id": "2026-06-24-早盘扫描",
-      "date": "2026-06-24",
-      "display_date": "6月24日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-06-24/早盘扫描.html",
-      "size_kb": 9.4
-    },
-    {
-      "id": "2026-06-29-午盘扫描",
-      "date": "2026-06-29",
-      "display_date": "6月29日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-06-29/午盘扫描.html",
-      "size_kb": 11.1
-    },
-    {
-      "id": "2026-06-29-早盘扫描",
-      "date": "2026-06-29",
-      "display_date": "6月29日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-06-29/早盘扫描.html",
-      "size_kb": 9.9
-    },
-    {
-      "id": "2026-07-03-午盘扫描",
-      "date": "2026-07-03",
-      "display_date": "7月3日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-07-03/午盘扫描.html",
-      "size_kb": 10.6
-    },
-    {
-      "id": "2026-07-03-早盘扫描",
-      "date": "2026-07-03",
-      "display_date": "7月3日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-07-03/早盘扫描.html",
-      "size_kb": 8.7
-    },
-    {
-      "id": "2026-07-03-深度复盘",
-      "date": "2026-07-03",
-      "display_date": "7月3日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-07-03/深度复盘.html",
-      "size_kb": 32.3
-    },
-    {
-      "id": "2026-07-06-午盘扫描",
-      "date": "2026-07-06",
-      "display_date": "7月6日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-07-06/午盘扫描.html",
-      "size_kb": 11.5
-    },
-    {
-      "id": "2026-07-06-早盘扫描",
-      "date": "2026-07-06",
-      "display_date": "7月6日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-07-06/早盘扫描.html",
-      "size_kb": 8.0
-    },
-    {
-      "id": "2026-07-06-深度复盘",
-      "date": "2026-07-06",
-      "display_date": "7月6日",
-      "type": "daily",
-      "category": "深度复盘",
-      "title": "深度复盘",
-      "relative_path": "reports/2026-07-06/深度复盘.html",
-      "size_kb": 26.7
-    },
-    {
-      "id": "2026-07-07-午盘扫描",
-      "date": "2026-07-07",
-      "display_date": "7月7日",
-      "type": "daily",
-      "category": "午盘扫描",
-      "title": "午盘扫描",
-      "relative_path": "reports/2026-07-07/午盘扫描.html",
-      "size_kb": 10.5
-    },
-    {
-      "id": "2026-07-07-早盘扫描",
-      "date": "2026-07-07",
-      "display_date": "7月7日",
-      "type": "daily",
-      "category": "早盘扫描",
-      "title": "早盘扫描",
-      "relative_path": "reports/2026-07-07/早盘扫描.html",
-      "size_kb": 8.5
-    },
-    {
-      "id": "2026-07-22-A股早盘报告",
-      "date": "2026-07-22",
-      "display_date": "7月22日",
-      "type": "industry",
-      "category": "深度研究",
-      "title": "A股早盘报告",
-      "relative_path": "reports/2026-07-22/A股早盘报告.html",
-      "size_kb": 25.1
-    }
-  ]
+    "last_updated":  "2026-08-11 22:34:41",
+    "total":  151,
+    "daily_count":  114,
+    "industry_count":  37,
+    "reports":  [
+                    {
+                        "relative_path":  "reports/2026-07-22/5月8日 午盘扫描.html",
+                        "id":  "2026-07-22-5月8日 午盘扫描",
+                        "display_date":  "7月22日",
+                        "title":  "5月8日 午盘扫描",
+                        "category":  "午盘扫描",
+                        "type":  "daily",
+                        "size_kb":  15.7,
+                        "date":  "2026-07-22"
+                    },
+                    {
+                        "relative_path":  "reports/2026-07-22/5月8日 早盘扫描.html",
+                        "id":  "2026-07-22-5月8日 早盘扫描",
+                        "display_date":  "7月22日",
+                        "title":  "5月8日 早盘扫描",
+                        "category":  "早盘扫描",
+                        "type":  "daily",
+                        "size_kb":  13.4,
+                        "date":  "2026-07-22"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-11/研报巡逻.html",
+                        "id":  "2026-08-11-研报巡逻",
+                        "display_date":  "8月11日",
+                        "title":  "研报巡逻",
+                        "category":  "研报巡逻",
+                        "type":  "daily",
+                        "size_kb":  15.4,
+                        "date":  "2026-08-11"
+                    },
+                    {
+                        "id":  "2026-08-11-午盘扫描",
+                        "date":  "2026-08-11",
+                        "display_date":  "8月11日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-08-11/午盘扫描.html",
+                        "size_kb":  8.1
+                    },
+                    {
+                        "id":  "2026-08-11-宏观择时日报_MTIv3_20260811",
+                        "date":  "2026-08-11",
+                        "display_date":  "8月11日",
+                        "type":  "daily",
+                        "category":  "宏观择时",
+                        "title":  "宏观择时日报_MTIv3_20260811",
+                        "relative_path":  "reports/2026-08-11/宏观择时日报_MTIv3_20260811.html",
+                        "size_kb":  151.6
+                    },
+                    {
+                        "id":  "2026-08-11-开盘速览",
+                        "date":  "2026-08-11",
+                        "display_date":  "8月11日",
+                        "type":  "daily",
+                        "category":  "开盘速览",
+                        "title":  "开盘速览",
+                        "relative_path":  "reports/2026-08-11/开盘速览.html",
+                        "size_kb":  6.6
+                    },
+                    {
+                        "id":  "2026-08-11-收盘总结",
+                        "date":  "2026-08-11",
+                        "display_date":  "8月11日",
+                        "type":  "daily",
+                        "category":  "收盘总结",
+                        "title":  "收盘总结",
+                        "relative_path":  "reports/2026-08-11/收盘总结.html",
+                        "size_kb":  13.2
+                    },
+                    {
+                        "id":  "2026-08-11-盘中异动",
+                        "date":  "2026-08-11",
+                        "display_date":  "8月11日",
+                        "type":  "daily",
+                        "category":  "盘中异动",
+                        "title":  "盘中异动",
+                        "relative_path":  "reports/2026-08-11/盘中异动.html",
+                        "size_kb":  14.8
+                    },
+                    {
+                        "id":  "2026-08-11-盘前简报",
+                        "date":  "2026-08-11",
+                        "display_date":  "8月11日",
+                        "type":  "daily",
+                        "category":  "盘前简报",
+                        "title":  "盘前简报",
+                        "relative_path":  "reports/2026-08-11/盘前简报.html",
+                        "size_kb":  8.2
+                    },
+                    {
+                        "id":  "2026-08-11-竞价快报",
+                        "date":  "2026-08-11",
+                        "display_date":  "8月11日",
+                        "type":  "daily",
+                        "category":  "竞价快报",
+                        "title":  "竞价快报",
+                        "relative_path":  "reports/2026-08-11/竞价快报.html",
+                        "size_kb":  5.4
+                    },
+                    {
+                        "id":  "2026-08-10-刚果金铜钴出口禁令：有色金属与工业金属深度分析",
+                        "date":  "2026-08-10",
+                        "display_date":  "8月10日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "刚果金铜钴出口禁令：有色金属与工业金属深度分析",
+                        "relative_path":  "reports/2026-08-10/刚果金铜钴出口禁令：有色金属与工业金属深度分析.html",
+                        "size_kb":  14.9
+                    },
+                    {
+                        "id":  "2026-08-10-午盘扫描",
+                        "date":  "2026-08-10",
+                        "display_date":  "8月10日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-08-10/午盘扫描.html",
+                        "size_kb":  12.4
+                    },
+                    {
+                        "id":  "2026-08-10-宏观择时日报_MTIv3_20260810",
+                        "date":  "2026-08-10",
+                        "display_date":  "8月10日",
+                        "type":  "daily",
+                        "category":  "宏观择时",
+                        "title":  "宏观择时日报_MTIv3_20260810",
+                        "relative_path":  "reports/2026-08-10/宏观择时日报_MTIv3_20260810.html",
+                        "size_kb":  151.6
+                    },
+                    {
+                        "id":  "2026-08-10-开盘速览",
+                        "date":  "2026-08-10",
+                        "display_date":  "8月10日",
+                        "type":  "daily",
+                        "category":  "开盘速览",
+                        "title":  "开盘速览",
+                        "relative_path":  "reports/2026-08-10/开盘速览.html",
+                        "size_kb":  5.8
+                    },
+                    {
+                        "id":  "2026-08-10-收盘总结",
+                        "date":  "2026-08-10",
+                        "display_date":  "8月10日",
+                        "type":  "daily",
+                        "category":  "收盘总结",
+                        "title":  "收盘总结",
+                        "relative_path":  "reports/2026-08-10/收盘总结.html",
+                        "size_kb":  15.5
+                    },
+                    {
+                        "id":  "2026-08-10-深度复盘",
+                        "date":  "2026-08-10",
+                        "display_date":  "8月10日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-08-10/深度复盘.html",
+                        "size_kb":  34.3
+                    },
+                    {
+                        "id":  "2026-08-10-盘中异动",
+                        "date":  "2026-08-10",
+                        "display_date":  "8月10日",
+                        "type":  "daily",
+                        "category":  "盘中异动",
+                        "title":  "盘中异动",
+                        "relative_path":  "reports/2026-08-10/盘中异动.html",
+                        "size_kb":  16.4
+                    },
+                    {
+                        "id":  "2026-08-10-盘前简报",
+                        "date":  "2026-08-10",
+                        "display_date":  "8月10日",
+                        "type":  "daily",
+                        "category":  "盘前简报",
+                        "title":  "盘前简报",
+                        "relative_path":  "reports/2026-08-10/盘前简报.html",
+                        "size_kb":  11.2
+                    },
+                    {
+                        "id":  "2026-08-10-竞价快报",
+                        "date":  "2026-08-10",
+                        "display_date":  "8月10日",
+                        "type":  "daily",
+                        "category":  "竞价快报",
+                        "title":  "竞价快报",
+                        "relative_path":  "reports/2026-08-10/竞价快报.html",
+                        "size_kb":  7.4
+                    },
+                    {
+                        "id":  "2026-08-09-周度盘前",
+                        "date":  "2026-08-09",
+                        "display_date":  "8月9日",
+                        "type":  "daily",
+                        "category":  "周度盘前",
+                        "title":  "周度盘前",
+                        "relative_path":  "reports/2026-08-09/周度盘前.html",
+                        "size_kb":  14.2
+                    },
+                    {
+                        "id":  "2026-08-09-深度复盘",
+                        "date":  "2026-08-09",
+                        "display_date":  "8月9日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-08-09/深度复盘.html",
+                        "size_kb":  30.0
+                    },
+                    {
+                        "id":  "2026-08-08-光模块禁令深度分析-机构调研与资金雷达实证-v3",
+                        "date":  "2026-08-08",
+                        "display_date":  "8月8日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "光模块禁令深度分析-机构调研与资金雷达实证-v3",
+                        "relative_path":  "reports/2026-08-08/光模块禁令深度分析-机构调研与资金雷达实证-v3.html",
+                        "size_kb":  30.2
+                    },
+                    {
+                        "id":  "2026-08-08-光模块禁令深度分析-行业趋势与投资逻辑",
+                        "date":  "2026-08-08",
+                        "display_date":  "8月8日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "光模块禁令深度分析-行业趋势与投资逻辑",
+                        "relative_path":  "reports/2026-08-08/光模块禁令深度分析-行业趋势与投资逻辑.html",
+                        "size_kb":  23.6
+                    },
+                    {
+                        "id":  "2026-08-07-MTI宏观择时周度综述_20260807",
+                        "date":  "2026-08-07",
+                        "display_date":  "8月7日",
+                        "type":  "daily",
+                        "category":  "宏观择时",
+                        "title":  "MTI宏观择时周度综述_20260807",
+                        "relative_path":  "reports/2026-08-07/MTI宏观择时周度综述_20260807.html",
+                        "size_kb":  11.5
+                    },
+                    {
+                        "id":  "2026-08-07-午盘扫描",
+                        "date":  "2026-08-07",
+                        "display_date":  "8月7日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-08-07/午盘扫描.html",
+                        "size_kb":  13.1
+                    },
+                    {
+                        "id":  "2026-08-07-宏观择时日报_MTIv3_20260807",
+                        "date":  "2026-08-07",
+                        "display_date":  "8月7日",
+                        "type":  "daily",
+                        "category":  "宏观择时",
+                        "title":  "宏观择时日报_MTIv3_20260807",
+                        "relative_path":  "reports/2026-08-07/宏观择时日报_MTIv3_20260807.html",
+                        "size_kb":  151.6
+                    },
+                    {
+                        "id":  "2026-08-07-开盘速览",
+                        "date":  "2026-08-07",
+                        "display_date":  "8月7日",
+                        "type":  "daily",
+                        "category":  "开盘速览",
+                        "title":  "开盘速览",
+                        "relative_path":  "reports/2026-08-07/开盘速览.html",
+                        "size_kb":  6.8
+                    },
+                    {
+                        "id":  "2026-08-07-收盘总结",
+                        "date":  "2026-08-07",
+                        "display_date":  "8月7日",
+                        "type":  "daily",
+                        "category":  "收盘总结",
+                        "title":  "收盘总结",
+                        "relative_path":  "reports/2026-08-07/收盘总结.html",
+                        "size_kb":  15.1
+                    },
+                    {
+                        "id":  "2026-08-07-深度复盘",
+                        "date":  "2026-08-07",
+                        "display_date":  "8月7日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-08-07/深度复盘.html",
+                        "size_kb":  25.0
+                    },
+                    {
+                        "id":  "2026-08-07-盘中异动",
+                        "date":  "2026-08-07",
+                        "display_date":  "8月7日",
+                        "type":  "daily",
+                        "category":  "盘中异动",
+                        "title":  "盘中异动",
+                        "relative_path":  "reports/2026-08-07/盘中异动.html",
+                        "size_kb":  16.6
+                    },
+                    {
+                        "id":  "2026-08-07-盘前简报",
+                        "date":  "2026-08-07",
+                        "display_date":  "8月7日",
+                        "type":  "daily",
+                        "category":  "盘前简报",
+                        "title":  "盘前简报",
+                        "relative_path":  "reports/2026-08-07/盘前简报.html",
+                        "size_kb":  9.7
+                    },
+                    {
+                        "id":  "2026-08-07-研报巡逻",
+                        "date":  "2026-08-07",
+                        "display_date":  "8月7日",
+                        "type":  "daily",
+                        "category":  "研报巡逻",
+                        "title":  "研报巡逻",
+                        "relative_path":  "reports/2026-08-07/研报巡逻.html",
+                        "size_kb":  15.7
+                    },
+                    {
+                        "id":  "2026-08-07-竞价快报",
+                        "date":  "2026-08-07",
+                        "display_date":  "8月7日",
+                        "type":  "daily",
+                        "category":  "竞价快报",
+                        "title":  "竞价快报",
+                        "relative_path":  "reports/2026-08-07/竞价快报.html",
+                        "size_kb":  7.1
+                    },
+                    {
+                        "id":  "2026-08-06-mti",
+                        "date":  "2026-08-06",
+                        "display_date":  "8月6日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "mti",
+                        "relative_path":  "reports/2026-08-06/mti.html",
+                        "size_kb":  351.4
+                    },
+                    {
+                        "id":  "2026-08-06-午盘扫描",
+                        "date":  "2026-08-06",
+                        "display_date":  "8月6日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-08-06/午盘扫描.html",
+                        "size_kb":  10.2
+                    },
+                    {
+                        "id":  "2026-08-06-宏观择时日报_MTIv3_20260806",
+                        "date":  "2026-08-06",
+                        "display_date":  "8月6日",
+                        "type":  "daily",
+                        "category":  "宏观择时",
+                        "title":  "宏观择时日报_MTIv3_20260806",
+                        "relative_path":  "reports/2026-08-06/宏观择时日报_MTIv3_20260806.html",
+                        "size_kb":  151.6
+                    },
+                    {
+                        "id":  "2026-08-06-开盘速览",
+                        "date":  "2026-08-06",
+                        "display_date":  "8月6日",
+                        "type":  "daily",
+                        "category":  "开盘速览",
+                        "title":  "开盘速览",
+                        "relative_path":  "reports/2026-08-06/开盘速览.html",
+                        "size_kb":  7.3
+                    },
+                    {
+                        "id":  "2026-08-06-收盘总结",
+                        "date":  "2026-08-06",
+                        "display_date":  "8月6日",
+                        "type":  "daily",
+                        "category":  "收盘总结",
+                        "title":  "收盘总结",
+                        "relative_path":  "reports/2026-08-06/收盘总结.html",
+                        "size_kb":  19.1
+                    },
+                    {
+                        "id":  "2026-08-06-深度复盘",
+                        "date":  "2026-08-06",
+                        "display_date":  "8月6日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-08-06/深度复盘.html",
+                        "size_kb":  27.8
+                    },
+                    {
+                        "id":  "2026-08-06-盘中异动",
+                        "date":  "2026-08-06",
+                        "display_date":  "8月6日",
+                        "type":  "daily",
+                        "category":  "盘中异动",
+                        "title":  "盘中异动",
+                        "relative_path":  "reports/2026-08-06/盘中异动.html",
+                        "size_kb":  17.7
+                    },
+                    {
+                        "id":  "2026-08-06-盘前简报",
+                        "date":  "2026-08-06",
+                        "display_date":  "8月6日",
+                        "type":  "daily",
+                        "category":  "盘前简报",
+                        "title":  "盘前简报",
+                        "relative_path":  "reports/2026-08-06/盘前简报.html",
+                        "size_kb":  7.7
+                    },
+                    {
+                        "id":  "2026-08-06-研报巡逻",
+                        "date":  "2026-08-06",
+                        "display_date":  "8月6日",
+                        "type":  "daily",
+                        "category":  "研报巡逻",
+                        "title":  "研报巡逻",
+                        "relative_path":  "reports/2026-08-06/研报巡逻.html",
+                        "size_kb":  25.9
+                    },
+                    {
+                        "id":  "2026-08-06-竞价快报",
+                        "date":  "2026-08-06",
+                        "display_date":  "8月6日",
+                        "type":  "daily",
+                        "category":  "竞价快报",
+                        "title":  "竞价快报",
+                        "relative_path":  "reports/2026-08-06/竞价快报.html",
+                        "size_kb":  5.7
+                    },
+                    {
+                        "id":  "2026-08-03-午盘扫描",
+                        "date":  "2026-08-03",
+                        "display_date":  "8月3日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-08-03/午盘扫描.html",
+                        "size_kb":  10.3
+                    },
+                    {
+                        "id":  "2026-08-03-宏观择时日报_MTIv3_20260803",
+                        "date":  "2026-08-03",
+                        "display_date":  "8月3日",
+                        "type":  "daily",
+                        "category":  "宏观择时",
+                        "title":  "宏观择时日报_MTIv3_20260803",
+                        "relative_path":  "reports/2026-08-03/宏观择时日报_MTIv3_20260803.html",
+                        "size_kb":  151.5
+                    },
+                    {
+                        "id":  "2026-08-03-开盘速览",
+                        "date":  "2026-08-03",
+                        "display_date":  "8月3日",
+                        "type":  "daily",
+                        "category":  "开盘速览",
+                        "title":  "开盘速览",
+                        "relative_path":  "reports/2026-08-03/开盘速览.html",
+                        "size_kb":  7.6
+                    },
+                    {
+                        "id":  "2026-08-03-收盘总结",
+                        "date":  "2026-08-03",
+                        "display_date":  "8月3日",
+                        "type":  "daily",
+                        "category":  "收盘总结",
+                        "title":  "收盘总结",
+                        "relative_path":  "reports/2026-08-03/收盘总结.html",
+                        "size_kb":  16.6
+                    },
+                    {
+                        "id":  "2026-08-03-早盘扫描",
+                        "date":  "2026-08-03",
+                        "display_date":  "8月3日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-08-03/早盘扫描.html",
+                        "size_kb":  9.1
+                    },
+                    {
+                        "id":  "2026-08-03-深度复盘",
+                        "date":  "2026-08-03",
+                        "display_date":  "8月3日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-08-03/深度复盘.html",
+                        "size_kb":  30.6
+                    },
+                    {
+                        "id":  "2026-08-03-盘中异动",
+                        "date":  "2026-08-03",
+                        "display_date":  "8月3日",
+                        "type":  "daily",
+                        "category":  "盘中异动",
+                        "title":  "盘中异动",
+                        "relative_path":  "reports/2026-08-03/盘中异动.html",
+                        "size_kb":  17.8
+                    },
+                    {
+                        "id":  "2026-08-03-竞价快报",
+                        "date":  "2026-08-03",
+                        "display_date":  "8月3日",
+                        "type":  "daily",
+                        "category":  "竞价快报",
+                        "title":  "竞价快报",
+                        "relative_path":  "reports/2026-08-03/竞价快报.html",
+                        "size_kb":  7.3
+                    },
+                    {
+                        "id":  "2026-08-02-周度盘前",
+                        "date":  "2026-08-02",
+                        "display_date":  "8月2日",
+                        "type":  "daily",
+                        "category":  "周度盘前",
+                        "title":  "周度盘前",
+                        "relative_path":  "reports/2026-08-02/周度盘前.html",
+                        "size_kb":  14.6
+                    },
+                    {
+                        "id":  "2026-08-02-宏观择时日报_MTIv3_20260802",
+                        "date":  "2026-08-02",
+                        "display_date":  "8月2日",
+                        "type":  "daily",
+                        "category":  "宏观择时",
+                        "title":  "宏观择时日报_MTIv3_20260802",
+                        "relative_path":  "reports/2026-08-02/宏观择时日报_MTIv3_20260802.html",
+                        "size_kb":  151.4
+                    },
+                    {
+                        "id":  "2026-08-02-深度复盘",
+                        "date":  "2026-08-02",
+                        "display_date":  "8月2日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-08-02/深度复盘.html",
+                        "size_kb":  23.9
+                    },
+                    {
+                        "id":  "2026-08-01-周度盘前",
+                        "date":  "2026-08-01",
+                        "display_date":  "8月1日",
+                        "type":  "daily",
+                        "category":  "周度盘前",
+                        "title":  "周度盘前",
+                        "relative_path":  "reports/2026-08-01/周度盘前.html",
+                        "size_kb":  20.2
+                    },
+                    {
+                        "id":  "2026-07-22-00 三环集团MLCC系统研究：执行摘要与最终判断",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "00 三环集团MLCC系统研究：执行摘要与最终判断",
+                        "relative_path":  "reports/2026-07-22/00 三环集团MLCC系统研究：执行摘要与最终判断.html",
+                        "size_kb":  14.7
+                    },
+                    {
+                        "id":  "2026-07-22-002158 汉钟精机 · 个股深度研究",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "002158 汉钟精机 · 个股深度研究",
+                        "relative_path":  "reports/2026-07-22/002158 汉钟精机 · 个股深度研究.html",
+                        "size_kb":  25.1
+                    },
+                    {
+                        "id":  "2026-07-22-01 三环集团业务与竞争力：电子陶瓷平台的真实边界",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "01 三环集团业务与竞争力：电子陶瓷平台的真实边界",
+                        "relative_path":  "reports/2026-07-22/01 三环集团业务与竞争力：电子陶瓷平台的真实边界.html",
+                        "size_kb":  13.8
+                    },
+                    {
+                        "id":  "2026-07-22-02 三环集团财务质量与估值：好公司与好价格的分界",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "02 三环集团财务质量与估值：好公司与好价格的分界",
+                        "relative_path":  "reports/2026-07-22/02 三环集团财务质量与估值：好公司与好价格的分界.html",
+                        "size_kb":  18.2
+                    },
+                    {
+                        "id":  "2026-07-22-03 MLCC产业格局与A股标的统一比较",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "03 MLCC产业格局与A股标的统一比较",
+                        "relative_path":  "reports/2026-07-22/03 MLCC产业格局与A股标的统一比较.html",
+                        "size_kb":  19.4
+                    },
+                    {
+                        "id":  "2026-07-22-04 三环集团机构持仓与真实认可度",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "04 三环集团机构持仓与真实认可度",
+                        "relative_path":  "reports/2026-07-22/04 三环集团机构持仓与真实认可度.html",
+                        "size_kb":  11.5
+                    },
+                    {
+                        "id":  "2026-07-22-05 三环集团近期催化、市场地位与长期持有条件",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "05 三环集团近期催化、市场地位与长期持有条件",
+                        "relative_path":  "reports/2026-07-22/05 三环集团近期催化、市场地位与长期持有条件.html",
+                        "size_kb":  12.8
+                    },
+                    {
+                        "id":  "2026-07-22-06 三环集团MLCC研究：数据口径、来源与持续跟踪清单",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "06 三环集团MLCC研究：数据口径、来源与持续跟踪清单",
+                        "relative_path":  "reports/2026-07-22/06 三环集团MLCC研究：数据口径、来源与持续跟踪清单.html",
+                        "size_kb":  13.3
+                    },
+                    {
+                        "id":  "2026-07-22-2026Q2基金半导体持仓迁移研究",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "2026Q2基金半导体持仓迁移研究",
+                        "relative_path":  "reports/2026-07-22/2026Q2基金半导体持仓迁移研究.html",
+                        "size_kb":  23.7
+                    },
+                    {
+                        "id":  "2026-07-22-2026年7月23日A股早盘报告",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "2026年7月23日A股早盘报告",
+                        "relative_path":  "reports/2026-07-22/2026年7月23日A股早盘报告.html",
+                        "size_kb":  25.1
+                    },
+                    {
+                        "id":  "2026-07-22-260722_A股市场复盘与策略报告",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "260722_A股市场复盘与策略报告",
+                        "relative_path":  "reports/2026-07-22/260722_A股市场复盘与策略报告.html",
+                        "size_kb":  38.0
+                    },
+                    {
+                        "id":  "2026-07-22-5月11日午盘扫描",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "5月11日午盘扫描",
+                        "relative_path":  "reports/2026-07-22/5月11日午盘扫描.html",
+                        "size_kb":  14.7
+                    },
+                    {
+                        "id":  "2026-07-22-5月7日午盘扫描",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "5月7日午盘扫描",
+                        "relative_path":  "reports/2026-07-22/5月7日午盘扫描.html",
+                        "size_kb":  18.5
+                    },
+                    {
+                        "id":  "2026-07-22-5月7日早盘扫描",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "5月7日早盘扫描",
+                        "relative_path":  "reports/2026-07-22/5月7日早盘扫描.html",
+                        "size_kb":  14.3
+                    },
+                    {
+                        "id":  "2026-07-22-5月7日深度复盘",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "5月7日深度复盘",
+                        "relative_path":  "reports/2026-07-22/5月7日深度复盘.html",
+                        "size_kb":  26.0
+                    },
+                    {
+                        "id":  "2026-07-22-午盘扫描",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-07-22/午盘扫描.html",
+                        "size_kb":  15.7
+                    },
+                    {
+                        "id":  "2026-07-22-早盘扫描",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-07-22/早盘扫描.html",
+                        "size_kb":  13.4
+                    },
+                    {
+                        "id":  "2026-07-22-5月8日深度复盘",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "5月8日深度复盘",
+                        "relative_path":  "reports/2026-07-22/5月8日深度复盘.html",
+                        "size_kb":  19.3
+                    },
+                    {
+                        "id":  "2026-07-22-800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱",
+                        "relative_path":  "reports/2026-07-22/800V DC 电源架构深度分析：SemiAnalysis vs 大摩 vs 英伟达，三重叙事下的 A 股投资图谱.html",
+                        "size_kb":  29.7
+                    },
+                    {
+                        "id":  "2026-07-22-AI PCB 报告 · Rubin 时代深度总结",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "AI PCB 报告 · Rubin 时代深度总结",
+                        "relative_path":  "reports/2026-07-22/AI PCB 报告 · Rubin 时代深度总结.html",
+                        "size_kb":  35.3
+                    },
+                    {
+                        "id":  "2026-07-22-AI硬件服务器软件方向——近一周核心消息梳理与产业链分析 (1)",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "AI硬件服务器软件方向——近一周核心消息梳理与产业链分析 (1)",
+                        "relative_path":  "reports/2026-07-22/AI硬件服务器软件方向——近一周核心消息梳理与产业链分析 (1).html",
+                        "size_kb":  21.5
+                    },
+                    {
+                        "id":  "2026-07-22-AI算力产业链七大紧缺环节核验与A股映射",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "AI算力产业链七大紧缺环节核验与A股映射",
+                        "relative_path":  "reports/2026-07-22/AI算力产业链七大紧缺环节核验与A股映射.html",
+                        "size_kb":  26.2
+                    },
+                    {
+                        "id":  "2026-07-22-CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图",
+                        "relative_path":  "reports/2026-07-22/CPO（共封装光学）深度分析：三重叙事碰撞下的光通信投资地图.html",
+                        "size_kb":  29.7
+                    },
+                    {
+                        "id":  "2026-07-22-中信-电子行业26Q2——数据、验证与判断",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "中信-电子行业26Q2——数据、验证与判断",
+                        "relative_path":  "reports/2026-07-22/中信-电子行业26Q2——数据、验证与判断.html",
+                        "size_kb":  21.3
+                    },
+                    {
+                        "id":  "2026-07-22-五一假期重大消息汇总分析_20260505",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "五一假期重大消息汇总分析_20260505",
+                        "relative_path":  "reports/2026-07-22/五一假期重大消息汇总分析_20260505.html",
+                        "size_kb":  43.0
+                    },
+                    {
+                        "id":  "2026-07-22-功率半导体行业深度调研：从周期修复到AI能源基础设施的价值重估",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "功率半导体行业深度调研：从周期修复到AI能源基础设施的价值重估",
+                        "relative_path":  "reports/2026-07-22/功率半导体行业深度调研：从周期修复到AI能源基础设施的价值重估.html",
+                        "size_kb":  35.3
+                    },
+                    {
+                        "id":  "2026-07-22-半导体细分赛道对决_20260504",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "半导体细分赛道对决_20260504",
+                        "relative_path":  "reports/2026-07-22/半导体细分赛道对决_20260504.html",
+                        "size_kb":  19.4
+                    },
+                    {
+                        "id":  "2026-07-22-华为「韬定律」× 先进封装：国产替代深度映射与标的验证",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "华为「韬定律」× 先进封装：国产替代深度映射与标的验证",
+                        "relative_path":  "reports/2026-07-22/华为「韬定律」× 先进封装：国产替代深度映射与标的验证.html",
+                        "size_kb":  23.2
+                    },
+                    {
+                        "id":  "2026-07-22-华为韬（τ）定律深度解析：半导体新范式的受益图谱",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "华为韬（τ）定律深度解析：半导体新范式的受益图谱",
+                        "relative_path":  "reports/2026-07-22/华为韬（τ）定律深度解析：半导体新范式的受益图谱.html",
+                        "size_kb":  21.2
+                    },
+                    {
+                        "id":  "2026-07-22-卡特彼勒业绩映射A股分析_20260506",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "卡特彼勒业绩映射A股分析_20260506",
+                        "relative_path":  "reports/2026-07-22/卡特彼勒业绩映射A股分析_20260506.html",
+                        "size_kb":  31.5
+                    },
+                    {
+                        "id":  "2026-07-22-康宁 CPO 新技术深度研究：产业链重画与 A 股映射全景",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "康宁 CPO 新技术深度研究：产业链重画与 A 股映射全景",
+                        "relative_path":  "reports/2026-07-22/康宁 CPO 新技术深度研究：产业链重画与 A 股映射全景.html",
+                        "size_kb":  17.6
+                    },
+                    {
+                        "id":  "2026-07-22-梁文锋投资者交流会_深度研究报告",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "梁文锋投资者交流会_深度研究报告",
+                        "relative_path":  "reports/2026-07-22/梁文锋投资者交流会_深度研究报告.html",
+                        "size_kb":  49.7
+                    },
+                    {
+                        "id":  "2026-07-22-百岁山——美股A股映射全景",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "百岁山——美股A股映射全景",
+                        "relative_path":  "reports/2026-07-22/百岁山——美股A股映射全景.html",
+                        "size_kb":  35.8
+                    },
+                    {
+                        "id":  "2026-07-22-非AI涨价品种_全面深度版_20260504",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "非AI涨价品种_全面深度版_20260504",
+                        "relative_path":  "reports/2026-07-22/非AI涨价品种_全面深度版_20260504.html",
+                        "size_kb":  27.8
+                    },
+                    {
+                        "id":  "2026-08-10-早盘扫描",
+                        "date":  "2026-08-10",
+                        "display_date":  "8月10日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-08-10/早盘扫描.html",
+                        "size_kb":  11.2
+                    },
+                    {
+                        "id":  "2026-07-26-深度复盘",
+                        "date":  "2026-07-26",
+                        "display_date":  "7月26日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-07-26/深度复盘.html",
+                        "size_kb":  20.6
+                    },
+                    {
+                        "id":  "2026-05-29-午盘扫描",
+                        "date":  "2026-05-29",
+                        "display_date":  "5月29日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-05-29/午盘扫描.html",
+                        "size_kb":  16.0
+                    },
+                    {
+                        "id":  "2026-05-29-早盘扫描",
+                        "date":  "2026-05-29",
+                        "display_date":  "5月29日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-05-29/早盘扫描.html",
+                        "size_kb":  9.0
+                    },
+                    {
+                        "id":  "2026-05-28-午盘扫描",
+                        "date":  "2026-05-28",
+                        "display_date":  "5月28日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-05-28/午盘扫描.html",
+                        "size_kb":  11.1
+                    },
+                    {
+                        "id":  "2026-05-28-早盘扫描",
+                        "date":  "2026-05-28",
+                        "display_date":  "5月28日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-05-28/早盘扫描.html",
+                        "size_kb":  11.8
+                    },
+                    {
+                        "id":  "2026-05-28-浩泉每日深度复盘",
+                        "date":  "2026-05-28",
+                        "display_date":  "5月28日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "浩泉每日深度复盘",
+                        "relative_path":  "reports/2026-05-28/浩泉每日深度复盘.html",
+                        "size_kb":  19.3
+                    },
+                    {
+                        "id":  "2026-05-27-早盘扫描",
+                        "date":  "2026-05-27",
+                        "display_date":  "5月27日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-05-27/早盘扫描.html",
+                        "size_kb":  8.3
+                    },
+                    {
+                        "id":  "2026-05-27-午盘扫描",
+                        "date":  "2026-05-27",
+                        "display_date":  "5月27日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-05-27/午盘扫描.html",
+                        "size_kb":  10.8
+                    },
+                    {
+                        "id":  "2026-05-27-深度复盘",
+                        "date":  "2026-05-27",
+                        "display_date":  "5月27日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-05-27/深度复盘.html",
+                        "size_kb":  17.6
+                    },
+                    {
+                        "id":  "2026-05-26-早盘扫描",
+                        "date":  "2026-05-26",
+                        "display_date":  "5月26日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-05-26/早盘扫描.html",
+                        "size_kb":  9.6
+                    },
+                    {
+                        "id":  "2026-05-26-午盘扫描 — 2026年5月26日",
+                        "date":  "2026-05-26",
+                        "display_date":  "5月26日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描 — 2026年5月26日",
+                        "relative_path":  "reports/2026-05-26/午盘扫描 — 2026年5月26日.html",
+                        "size_kb":  13.9
+                    },
+                    {
+                        "id":  "2026-05-26-📊 浩泉深度复盘 — 2026年5月26日（周二）",
+                        "date":  "2026-05-26",
+                        "display_date":  "5月26日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "📊 浩泉深度复盘 — 2026年5月26日（周二）",
+                        "relative_path":  "reports/2026-05-26/📊 浩泉深度复盘 — 2026年5月26日（周二）.html",
+                        "size_kb":  18.4
+                    },
+                    {
+                        "id":  "2026-05-25-午盘扫描",
+                        "date":  "2026-05-25",
+                        "display_date":  "5月25日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-05-25/午盘扫描.html",
+                        "size_kb":  8.9
+                    },
+                    {
+                        "id":  "2026-05-25-早盘扫描",
+                        "date":  "2026-05-25",
+                        "display_date":  "5月25日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-05-25/早盘扫描.html",
+                        "size_kb":  8.7
+                    },
+                    {
+                        "id":  "2026-05-25-AI-PCB报告-Rubin时代深度总结",
+                        "date":  "2026-05-25",
+                        "display_date":  "5月25日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "AI-PCB报告-Rubin时代深度总结",
+                        "relative_path":  "reports/2026-05-25/AI-PCB报告-Rubin时代深度总结.html",
+                        "size_kb":  35.3
+                    },
+                    {
+                        "id":  "2026-05-25-华为韬定律-先进封装国产替代映射",
+                        "date":  "2026-05-25",
+                        "display_date":  "5月25日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "华为韬定律-先进封装国产替代映射",
+                        "relative_path":  "reports/2026-05-25/华为韬定律-先进封装国产替代映射.html",
+                        "size_kb":  23.2
+                    },
+                    {
+                        "id":  "2026-05-25-华为韬定律-半导体新范式受益图谱",
+                        "date":  "2026-05-25",
+                        "display_date":  "5月25日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "华为韬定律-半导体新范式受益图谱",
+                        "relative_path":  "reports/2026-05-25/华为韬定律-半导体新范式受益图谱.html",
+                        "size_kb":  21.2
+                    },
+                    {
+                        "id":  "2026-05-25-涨价猎手3.0-全板块深拆-龙头全覆盖",
+                        "date":  "2026-05-25",
+                        "display_date":  "5月25日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "涨价猎手3.0-全板块深拆-龙头全覆盖",
+                        "relative_path":  "reports/2026-05-25/涨价猎手3.0-全板块深拆-龙头全覆盖.html",
+                        "size_kb":  28.1
+                    },
+                    {
+                        "id":  "2026-05-25-百岁山-美股到A股映射全景",
+                        "date":  "2026-05-25",
+                        "display_date":  "5月25日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "百岁山-美股到A股映射全景",
+                        "relative_path":  "reports/2026-05-25/百岁山-美股到A股映射全景.html",
+                        "size_kb":  28.1
+                    },
+                    {
+                        "id":  "2026-05-25-🦞 浩泉-每日深度复盘",
+                        "date":  "2026-05-25",
+                        "display_date":  "5月25日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "🦞 浩泉-每日深度复盘",
+                        "relative_path":  "reports/2026-05-25/🦞 浩泉-每日深度复盘.html",
+                        "size_kb":  18.1
+                    },
+                    {
+                        "id":  "2026-05-24-周度盘前策略",
+                        "date":  "2026-05-24",
+                        "display_date":  "5月24日",
+                        "type":  "daily",
+                        "category":  "周度盘前",
+                        "title":  "周度盘前策略",
+                        "relative_path":  "reports/2026-05-24/周度盘前策略.html",
+                        "size_kb":  19.1
+                    },
+                    {
+                        "id":  "2026-05-16-5月15日深度复盘",
+                        "date":  "2026-05-16",
+                        "display_date":  "5月16日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "5月15日深度复盘",
+                        "relative_path":  "reports/2026-05-16/5月15日深度复盘.html",
+                        "size_kb":  18.1
+                    },
+                    {
+                        "id":  "2026-05-29-深度复盘",
+                        "date":  "2026-05-29",
+                        "display_date":  "5月29日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-05-29/深度复盘.html",
+                        "size_kb":  26.5
+                    },
+                    {
+                        "id":  "2026-06-01-午盘扫描",
+                        "date":  "2026-06-01",
+                        "display_date":  "6月1日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-06-01/午盘扫描.html",
+                        "size_kb":  10.9
+                    },
+                    {
+                        "id":  "2026-06-01-早盘扫描",
+                        "date":  "2026-06-01",
+                        "display_date":  "6月1日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-06-01/早盘扫描.html",
+                        "size_kb":  8.6
+                    },
+                    {
+                        "id":  "2026-06-01-深度复盘",
+                        "date":  "2026-06-01",
+                        "display_date":  "6月1日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-06-01/深度复盘.html",
+                        "size_kb":  29.0
+                    },
+                    {
+                        "id":  "2026-06-02-午盘扫描",
+                        "date":  "2026-06-02",
+                        "display_date":  "6月2日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-06-02/午盘扫描.html",
+                        "size_kb":  8.9
+                    },
+                    {
+                        "id":  "2026-06-02-早盘扫描",
+                        "date":  "2026-06-02",
+                        "display_date":  "6月2日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-06-02/早盘扫描.html",
+                        "size_kb":  7.7
+                    },
+                    {
+                        "id":  "2026-06-02-深度复盘",
+                        "date":  "2026-06-02",
+                        "display_date":  "6月2日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-06-02/深度复盘.html",
+                        "size_kb":  30.8
+                    },
+                    {
+                        "id":  "2026-06-03-午盘扫描",
+                        "date":  "2026-06-03",
+                        "display_date":  "6月3日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-06-03/午盘扫描.html",
+                        "size_kb":  9.9
+                    },
+                    {
+                        "id":  "2026-06-03-早盘扫描",
+                        "date":  "2026-06-03",
+                        "display_date":  "6月3日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-06-03/早盘扫描.html",
+                        "size_kb":  8.8
+                    },
+                    {
+                        "id":  "2026-06-04-午盘扫描",
+                        "date":  "2026-06-04",
+                        "display_date":  "6月4日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-06-04/午盘扫描.html",
+                        "size_kb":  9.0
+                    },
+                    {
+                        "id":  "2026-06-04-深度复盘",
+                        "date":  "2026-06-04",
+                        "display_date":  "6月4日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-06-04/深度复盘.html",
+                        "size_kb":  20.0
+                    },
+                    {
+                        "id":  "2026-06-05-午盘扫描",
+                        "date":  "2026-06-05",
+                        "display_date":  "6月5日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-06-05/午盘扫描.html",
+                        "size_kb":  8.7
+                    },
+                    {
+                        "id":  "2026-06-05-深度复盘",
+                        "date":  "2026-06-05",
+                        "display_date":  "6月5日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-06-05/深度复盘.html",
+                        "size_kb":  27.0
+                    },
+                    {
+                        "id":  "2026-06-08-午盘扫描",
+                        "date":  "2026-06-08",
+                        "display_date":  "6月8日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-06-08/午盘扫描.html",
+                        "size_kb":  9.0
+                    },
+                    {
+                        "id":  "2026-06-08-早盘扫描",
+                        "date":  "2026-06-08",
+                        "display_date":  "6月8日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-06-08/早盘扫描.html",
+                        "size_kb":  7.8
+                    },
+                    {
+                        "id":  "2026-06-08-深度复盘",
+                        "date":  "2026-06-08",
+                        "display_date":  "6月8日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-06-08/深度复盘.html",
+                        "size_kb":  29.4
+                    },
+                    {
+                        "id":  "2026-06-09-午盘扫描",
+                        "date":  "2026-06-09",
+                        "display_date":  "6月9日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-06-09/午盘扫描.html",
+                        "size_kb":  10.3
+                    },
+                    {
+                        "id":  "2026-06-09-早盘扫描",
+                        "date":  "2026-06-09",
+                        "display_date":  "6月9日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-06-09/早盘扫描.html",
+                        "size_kb":  8.1
+                    },
+                    {
+                        "id":  "2026-06-09-深度复盘",
+                        "date":  "2026-06-09",
+                        "display_date":  "6月9日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-06-09/深度复盘.html",
+                        "size_kb":  30.4
+                    },
+                    {
+                        "id":  "2026-06-10-午盘扫描",
+                        "date":  "2026-06-10",
+                        "display_date":  "6月10日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-06-10/午盘扫描.html",
+                        "size_kb":  9.0
+                    },
+                    {
+                        "id":  "2026-06-10-早盘扫描",
+                        "date":  "2026-06-10",
+                        "display_date":  "6月10日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-06-10/早盘扫描.html",
+                        "size_kb":  8.1
+                    },
+                    {
+                        "id":  "2026-06-10-深度复盘",
+                        "date":  "2026-06-10",
+                        "display_date":  "6月10日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-06-10/深度复盘.html",
+                        "size_kb":  22.8
+                    },
+                    {
+                        "id":  "2026-06-22-午盘扫描",
+                        "date":  "2026-06-22",
+                        "display_date":  "6月22日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-06-22/午盘扫描.html",
+                        "size_kb":  11.0
+                    },
+                    {
+                        "id":  "2026-06-22-早盘扫描",
+                        "date":  "2026-06-22",
+                        "display_date":  "6月22日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-06-22/早盘扫描.html",
+                        "size_kb":  8.7
+                    },
+                    {
+                        "id":  "2026-06-22-深度复盘",
+                        "date":  "2026-06-22",
+                        "display_date":  "6月22日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-06-22/深度复盘.html",
+                        "size_kb":  27.6
+                    },
+                    {
+                        "id":  "2026-06-23-午盘扫描",
+                        "date":  "2026-06-23",
+                        "display_date":  "6月23日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-06-23/午盘扫描.html",
+                        "size_kb":  10.9
+                    },
+                    {
+                        "id":  "2026-06-23-深度复盘",
+                        "date":  "2026-06-23",
+                        "display_date":  "6月23日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-06-23/深度复盘.html",
+                        "size_kb":  32.9
+                    },
+                    {
+                        "id":  "2026-06-24-早盘扫描",
+                        "date":  "2026-06-24",
+                        "display_date":  "6月24日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-06-24/早盘扫描.html",
+                        "size_kb":  9.4
+                    },
+                    {
+                        "id":  "2026-06-29-午盘扫描",
+                        "date":  "2026-06-29",
+                        "display_date":  "6月29日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-06-29/午盘扫描.html",
+                        "size_kb":  11.1
+                    },
+                    {
+                        "id":  "2026-06-29-早盘扫描",
+                        "date":  "2026-06-29",
+                        "display_date":  "6月29日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-06-29/早盘扫描.html",
+                        "size_kb":  9.9
+                    },
+                    {
+                        "id":  "2026-07-03-午盘扫描",
+                        "date":  "2026-07-03",
+                        "display_date":  "7月3日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-07-03/午盘扫描.html",
+                        "size_kb":  10.6
+                    },
+                    {
+                        "id":  "2026-07-03-早盘扫描",
+                        "date":  "2026-07-03",
+                        "display_date":  "7月3日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-07-03/早盘扫描.html",
+                        "size_kb":  8.7
+                    },
+                    {
+                        "id":  "2026-07-03-深度复盘",
+                        "date":  "2026-07-03",
+                        "display_date":  "7月3日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-07-03/深度复盘.html",
+                        "size_kb":  32.3
+                    },
+                    {
+                        "id":  "2026-07-06-午盘扫描",
+                        "date":  "2026-07-06",
+                        "display_date":  "7月6日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-07-06/午盘扫描.html",
+                        "size_kb":  11.5
+                    },
+                    {
+                        "id":  "2026-07-06-早盘扫描",
+                        "date":  "2026-07-06",
+                        "display_date":  "7月6日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-07-06/早盘扫描.html",
+                        "size_kb":  8.0
+                    },
+                    {
+                        "id":  "2026-07-06-深度复盘",
+                        "date":  "2026-07-06",
+                        "display_date":  "7月6日",
+                        "type":  "daily",
+                        "category":  "深度复盘",
+                        "title":  "深度复盘",
+                        "relative_path":  "reports/2026-07-06/深度复盘.html",
+                        "size_kb":  26.7
+                    },
+                    {
+                        "id":  "2026-07-07-午盘扫描",
+                        "date":  "2026-07-07",
+                        "display_date":  "7月7日",
+                        "type":  "daily",
+                        "category":  "午盘扫描",
+                        "title":  "午盘扫描",
+                        "relative_path":  "reports/2026-07-07/午盘扫描.html",
+                        "size_kb":  10.5
+                    },
+                    {
+                        "id":  "2026-07-07-早盘扫描",
+                        "date":  "2026-07-07",
+                        "display_date":  "7月7日",
+                        "type":  "daily",
+                        "category":  "早盘扫描",
+                        "title":  "早盘扫描",
+                        "relative_path":  "reports/2026-07-07/早盘扫描.html",
+                        "size_kb":  8.5
+                    },
+                    {
+                        "id":  "2026-07-22-A股早盘报告",
+                        "date":  "2026-07-22",
+                        "display_date":  "7月22日",
+                        "type":  "industry",
+                        "category":  "深度研究",
+                        "title":  "A股早盘报告",
+                        "relative_path":  "reports/2026-07-22/A股早盘报告.html",
+                        "size_kb":  25.1
+                    }
+                ]
 }
