@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月12日 深度复盘</title>
+<style>
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:var(--font); font-size:15px; line-height:1.75; color:var(--gray-900); background:var(--white); max-width:820px; margin:0 auto; padding:40px 28px 60px; -webkit-font-smoothing:antialiased; }
+header { border-bottom:3px solid var(--yellow); padding-bottom:20px; margin-bottom:28px; }
+header h1 { font-size:24px; font-weight:700; color:var(--black); margin-bottom:6px; letter-spacing:0.5px; }
+header .meta { font-size:13px; color:var(--gray-500); }
+h2 { font-size:18px; font-weight:700; color:var(--black); margin:32px 0 10px; padding-left:12px; border-left:4px solid var(--yellow); }
+h3 { font-size:16px; font-weight:700; color:var(--gray-900); margin:22px 0 8px; }
+h4 { font-size:15px; font-weight:700; color:var(--gray-700); margin:16px 0 6px; }
+p { margin:8px 0; }
+.table-wrapper { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:14px 0 20px; border:1px solid var(--gray-300); border-radius:6px; }
+table { width:100%; border-collapse:collapse; font-size:14px; min-width:500px; }
+thead th { background:var(--yellow); color:var(--black); font-weight:700; padding:10px 12px; text-align:left; white-space:nowrap; border-bottom:2px solid #d4a734; }
+tbody td { padding:9px 12px; border-bottom:1px solid var(--gray-100); vertical-align:top; }
+tbody tr:nth-child(even) { background:#fafafa; }
+.highlight { background:var(--yellow-light); border-left:4px solid var(--yellow); padding:12px 16px; margin:14px 0; border-radius:0 6px 6px 0; font-size:14px; }
+.warning { background:var(--red-light); border-left:4px solid var(--red); padding:12px 16px; margin:14px 0; border-radius:0 6px 6px 0; font-size:14px; color:#8b1a1a; }
+ul, ol { margin:8px 0 8px 20px; }
+li { margin:4px 0; }
+hr { border:none; border-top:1px solid var(--gray-100); margin:24px 0; }
+footer { margin-top:40px; padding-top:16px; border-top:1px solid var(--gray-100); font-size:12px; color:var(--gray-500); line-height:1.6; }
+strong { color:var(--black); }
+.c-up { color:var(--red); }
+.c-dn { color:#16a34a; }
+.tag-res { display:inline-block; background:var(--red); color:#fff; padding:2px 8px; border-radius:3px; font-size:0.8em; font-weight:700; margin-right:4px; }
+.tag-fund { display:inline-block; background:#e67e22; color:#fff; padding:2px 8px; border-radius:3px; font-size:0.8em; font-weight:700; margin-right:4px; }
+.tag-green { display:inline-block; background:#27ae60; color:#fff; padding:2px 8px; border-radius:3px; font-size:0.8em; font-weight:700; margin-right:4px; }
+.tag-new { display:inline-block; background:#8e44ad; color:#fff; padding:2px 8px; border-radius:3px; font-size:0.8em; font-weight:700; margin-right:4px; }
+@media (max-width:600px) { body { padding:20px 14px 40px; font-size:14px; } header h1 { font-size:20px; } h2 { font-size:16px; } table { font-size:12px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>8月12日 深度复盘</h1>
+  <div class="meta">📅 2026年08月12日 | 投资小龙虾 AI 自动生成 | 仅供参考</div>
+</header>
+
+<!-- ========== 指数全景 ========== -->
+<h2>📊 指数全景</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>指标</th><th>数值</th><th>判断</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td class="c-up">3946.68</td><td>+0.32%（日内高3950.62 / 低3927.55）</td></tr>
+<tr><td>深证成指</td><td class="c-up">14414.43</td><td>+1.09%</td></tr>
+<tr><td>创业板指</td><td class="c-up">3602.08</td><td>+1.49%</td></tr>
+<tr><td>科创50</td><td class="c-up">1737.01</td><td>+1.61%</td></tr>
+<tr><td>两市成交</td><td>21524亿</td><td>较昨日23357亿<span class="c-dn">缩量1833亿（-7.8%）</span>，连续三日缩量</td></tr>
+<tr><td>上涨家数</td><td class="c-up">4128家</td><td>本月新高</td></tr>
+<tr><td>下跌家数</td><td>1280家</td><td>昨日约3777家下跌，情绪逆转</td></tr>
+<tr><td>涨停</td><td class="c-up">97家</td><td>昨日60家，环比+62%</td></tr>
+<tr><td>跌停</td><td class="c-up">0家</td><td>昨日2家，极端风险解除</td></tr>
+<tr><td>炸板</td><td>14家（炸板率约11.5%）</td><td>封板质量优秀</td></tr>
+<tr><td>北向资金</td><td class="c-up">净买入38.78亿</td><td>沪股通30.23亿 / 深股通8.55亿，本周累计76.5亿</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="highlight">
+<p>上证压力位：<strong>3967</strong>（8/10前高·五连阳高点）| 支撑位：<strong>3930</strong>（MA20附近·昨日收盘）·<strong>3910</strong>（MA20）·<strong>3878</strong>（近期低点）</p>
+</div>
+
+<div class="highlight">
+<p><strong>市场情绪：偏暖。</strong>核心依据：涨停家数从60骤升至97（+62%）+ 跌停清零 + 上涨家数4128创本月新高 + 炸板率仅11.5%封板质量极好 + 北向连续净买入。但连续三日缩量（25394→23357→21524亿）显示增量资金追高意愿减弱，行情属于存量博弈下的情绪修复而非放量上攻。</p>
+</div>
+
+<!-- ========== 外盘与宏观 ========== -->
+<h2>🌍 外盘与宏观环境</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>指标</th><th>收盘/数值</th><th>涨跌</th><th>对A股影响</th></tr></thead>
+<tbody>
+<tr><td>纳指</td><td>26445.45</td><td class="c-dn">-0.60%</td><td>AI硬件回调，但Lumentum财报超预期对冲</td></tr>
+<tr><td>道指</td><td>53791.85</td><td class="c-dn">-0.34%</td><td>中性偏弱</td></tr>
+<tr><td>标普</td><td>7728.20</td><td class="c-dn">-0.32%</td><td>七连阳后首阴</td></tr>
+<tr><td>VIX</td><td>15.40</td><td>+0.79%</td><td>恐慌低位，小幅回升</td></tr>
+<tr><td>美元指数</td><td>99.77</td><td>+0.06%</td><td>弱势格局未变</td></tr>
+<tr><td>黄金现货</td><td>$4377</td><td>+0.20%</td><td>高位强势震荡，等待今晚CPI</td></tr>
+<tr><td>WTI原油</td><td>$83.50</td><td>+0.36%</td><td>中东地缘支撑</td></tr>
+<tr><td>欧洲斯托克50</td><td>6523.86</td><td class="c-up">+0.33%</td><td>欧洲平稳</td></tr>
+<tr><td>日经225</td><td>66970</td><td class="c-up">+2.08%</td><td>亚太强势反弹</td></tr>
+<tr><td>韩国KOSPI</td><td>6346</td><td class="c-up">+0.73%</td><td>科技出口映射修复</td></tr>
+<tr><td>A50期货</td><td>14986</td><td class="c-up">+0.42%</td><td>盘后指引偏积极</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="highlight">
+<p>外盘整体中性偏暖。美股七连阳后首阴属于正常技术回调，Lumentum财报大超预期直接对冲了昨日Coherent暴跌的恐慌。今日A股光通信/CPO强势反弹，验证了"美股光通信暴跌→A股光模块分歧中找买点"的判断路径。黄金在CPI前高位震荡，市场对美联储9月加息预期降温，外部流动性环境对A股偏友好。</p>
+</div>
+
+<!-- ========== 今日核心新闻 ========== -->
+<h2>📰 今日核心新闻简报</h2>
+<p><strong>最重要的8条，按影响强度排序：</strong></p>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>#</th><th>新闻</th><th>影响板块</th><th>情绪</th><th>强度</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>CoreWeave上调Capex至390亿+Lumentum财报大超预期</td><td>光通信/CPO</td><td>利好</td><td>⭐⭐⭐</td></tr>
+<tr><td>2</td><td>上海印发软件业"十五五"规划，明确攻关CPO/HBM/GPU</td><td>算力硬件/半导体</td><td>利好</td><td>⭐⭐⭐</td></tr>
+<tr><td>3</td><td>宇树科技中签号公布，人形机器人第一股催化持续</td><td>人形机器人</td><td>利好</td><td>⭐⭐⭐</td></tr>
+<tr><td>4</td><td>SK海力士重启大连NAND工厂建设，产能扩大50%</td><td>存储芯片</td><td>利好</td><td>⭐⭐</td></tr>
+<tr><td>5</td><td>百花医药7连板，医药板块延续强势</td><td>创新药/CXO</td><td>利好</td><td>⭐⭐</td></tr>
+<tr><td>6</td><td>房地产板块午后拉升，荣盛发展/新城控股等多股涨停</td><td>房地产链</td><td>利好</td><td>⭐⭐</td></tr>
+<tr><td>7</td><td>工业富联半年报：净利237.4亿，同比+96%</td><td>AI算力/服务器</td><td>利好</td><td>⭐⭐</td></tr>
+<tr><td>8</td><td>2026中国算力大会将于9月11-13日举行</td><td>算力/数据中心</td><td>利好</td><td>⭐</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>🔍 重点新闻情绪催化验证</h3>
+
+<p><strong>CoreWeave + Lumentum财报超预期</strong>：联动标的 → A股光通信/CPO全线爆发。炬光科技20cm涨停、永鼎股份涨停、通鼎互联涨停、可川科技涨停。长进光子20cm涨停。光模块三巨头：中际旭创+3.84%、新易盛+3.11%、天孚通信+7.89%，合计主力净流入超60亿。隔夜美股Coherent -14%的利空被Lumentum财报完全对冲，A股资金选择"趁分歧加仓"而非恐慌出逃。持续性判断：<strong>有持续性</strong>，光通信/CPO是当前全市场最强的资金进攻方向，但需关注美股今晚CPI数据对科技股情绪的影响。</p>
+
+<p><strong>上海软件业"十五五"规划</strong>：联动标的 → CPO概念、GPU/芯片、HBM存储。规划明确提及高性能计算芯片（GPU/NPU）、高速光互连（CPO）、高带宽内存（HBM）等核心环节，为算力硬件方向提供顶层政策背书。云赛智联（上海本地算力龙头）涨停，城地香江（算力租赁）涨停。</p>
+
+<p><strong>宇树科技人形机器人催化</strong>：联动标的 → 秦安股份4连板（机器人关节），巨轮智能涨停（RV减速器），达实智能涨停（AI Agent）。宇树科技中签率仅0.018%，市场热度极高，"人形机器人第一股"上市前板块情绪持续升温。西部证券给予机器人"超配"评级。持续性判断：<strong>有持续性</strong>，属于IPO上市前的预热行情，上市当日可能出现"利好出尽"但在此之前保持活跃。</p>
+
+<p><strong>概念区分说明</strong>：今日科技主线涵盖了光通信/CPO（算力互联）、PCB/电子元件（算力硬件配套）、半导体/芯片（中游设计制造）、存储芯片（HBM/DRAM/NAND）、人形机器人（终端应用），五个细分方向驱动逻辑不同：光通信受海外云厂商Capex驱动，PCB受涨价+AI算力需求驱动，芯片受国产替代+政策驱动，存储芯片受SK海力士扩产+供需缺口驱动，机器人受宇树科技IPO催化驱动。不可混为一谈。</p>
+
+<!-- ========== 今日最强主线 ========== -->
+<h2>🔥 今日最强主线</h2>
+
+<h3>板块涨幅 TOP5（含主力资金）</h3>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>排名</th><th>板块</th><th>涨幅</th><th>主力资金</th><th>龙头股</th><th>驱动逻辑</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>光通信/CPO</td><td class="c-up">+3.36%</td><td class="c-up">大幅净流入</td><td>炬光科技(+20%)·永鼎股份(+10%)·长进光子(+20%)</td><td>Lumentum财报+CoreWeave Capex上调+上海规划</td></tr>
+<tr><td>2</td><td>PCB/电子元件</td><td class="c-up">+约3%</td><td class="c-up">净流入</td><td>景旺电子(+10%)·生益科技(+5.86%)·宝鼎科技(9天7板)</td><td>AI算力PCB涨价+CCL提价</td></tr>
+<tr><td>3</td><td>房地产开发</td><td class="c-up">+约3%</td><td class="c-up">净流入</td><td>荣盛发展涨停·新城控股涨停·京投发展涨停</td><td>"金九银十"预期+超跌反弹</td></tr>
+<tr><td>4</td><td>人形机器人</td><td class="c-up">+约2.5%</td><td class="c-up">净流入</td><td>秦安股份4连板·巨轮智能涨停·达实智能涨停</td><td>宇树科技IPO催化+西部证券超配</td></tr>
+<tr><td>5</td><td>创新药/CXO</td><td class="c-up">+约2%</td><td class="c-up">净流入</td><td>百花医药7连板·美诺华涨停</td><td>政策催化+减肥药出海+业绩验证</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>板块跌幅 TOP5</h3>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>排名</th><th>板块</th><th>跌幅</th><th>主力资金</th><th>逻辑</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>油气开采</td><td class="c-dn">-约1%</td><td class="c-dn">净流出</td><td>中东局势缓和预期+国际油价回调</td></tr>
+<tr><td>2</td><td>白色家电</td><td class="c-dn">-约1%</td><td class="c-dn">净流出</td><td>夏季旺季尾声+资金轮出至成长</td></tr>
+<tr><td>3</td><td>专业连锁</td><td class="c-dn">-约1%</td><td class="c-dn">净流出</td><td>防御板块资金流出</td></tr>
+<tr><td>4</td><td>航海装备</td><td class="c-dn">-约1%</td><td class="c-dn">净流出</td><td>前期涨幅过大回调</td></tr>
+<tr><td>5</td><td>稀土永磁</td><td class="c-dn">-约1%</td><td class="c-dn">净流出</td><td>获利了结+新能源车链内部轮动</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>主线持续性分析</h3>
+
+<p><strong>主线一：光通信/CPO/算力硬件</strong>（极强，已确认主线地位）。今日强度：极强。持续性判断：有持续性。核心逻辑三重复合——（1）海外催化：CoreWeave Capex上调至390亿+Lumentum财报超预期，直接对冲昨日Coherent暴跌利空；（2）政策背书：上海软件业"十五五"规划明确攻关CPO/HBM/GPU；（3）资金共振：研报巡逻数据显示光通信、CPO、芯片、PCB、存储芯片、液冷服务器全部进入<span class="tag-res">共振</span>研报+资金共振区，为全市场最强的资金共识方向。明日关注：光模块三巨头（中际旭创/新易盛/天孚通信）能否延续放量，龙头永鼎股份/通鼎互联是否连板。风险点：美股今晚CPI数据若超预期可能导致纳指回调，联动A股科技。</p>
+
+<p><strong>主线二：人形机器人</strong>（强，宇树科技IPO预热）。今日强度：强。持续性判断：有，属于事件驱动型。宇树科技中签率0.018%体现极高市场热度，上市前板块持续有催化。但需注意上市当日可能"利好出尽"。明日关注：秦安股份能否5连板，巨轮智能封板质量。</p>
+
+<p><strong>主线三：医药/创新药</strong>（正常→转弱迹象）。今日强度：正常。持续性判断：可能有但空间收窄。百花医药7连板高度已极高，后排跟风减弱。属于7月以来持续性最好的非科技主线，但缺乏新催化接力。明日关注：百花医药是否断板，若断板则板块退潮加速。</p>
+
+<div class="warning">
+<p><strong>主线切换信号</strong>：今日最重要的信号是<strong>AI算力硬件的全面回归</strong>。7月下旬至8月初科技股经历一轮深度调整，高盛最新报告判断"AI硬科技投机性多头估值溢价已随回调压缩，维持超配"。本次回归的触发因素明确——海外Capex超预期+国内政策加码，资金共识度比7月更高。旧主线医药的防守属性逐步让位给科技进攻属性，但切换尚未完全确认，需看明日能否放量突破前高3967。</p>
+</div>
+
+<!-- ========== 板块资金雷达 ========== -->
+<h2>💰 板块资金雷达趋势</h2>
+<p style="color:var(--gray-500);font-size:13px;">数据来源：本地板块资金雷达系统 + 研报巡逻（亿信API研报×资金雷达Top30交叉验证）</p>
+
+<h3>资金进攻榜 TOP10（研报×资金共振信号）</h3>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>板块</th><th>加权评分(亿)</th><th>排名变化</th><th>研报覆盖</th><th>信号类型</th></tr></thead>
+<tbody>
+<tr><td>芯片</td><td>238.32</td><td class="c-up">↑267位</td><td>5篇(JPM/UBS/天风)</td><td><span class="tag-res">共振</span></td></tr>
+<tr><td>光通信</td><td>184.29</td><td>持平</td><td>7篇</td><td><span class="tag-res">共振</span></td></tr>
+<tr><td>CPO概念</td><td>184.11</td><td class="c-up">↑6位</td><td>9篇</td><td><span class="tag-res">共振</span></td></tr>
+<tr><td>5G概念</td><td>182.64</td><td class="c-up">↑1位</td><td>2篇</td><td><span class="tag-res">共振</span></td></tr>
+<tr><td>数据中心</td><td>169.47</td><td class="c-up">↑1位</td><td>3篇</td><td><span class="tag-res">共振</span></td></tr>
+<tr><td>新能源车</td><td>141.60</td><td class="c-up">↑241位</td><td>1篇(Citi)</td><td><span class="tag-res">共振</span></td></tr>
+<tr><td>汽车电子</td><td>108.16</td><td class="c-up">↑94位</td><td>—</td><td><span class="tag-fund">资金先行</span></td></tr>
+<tr><td>商业航天</td><td>92.91</td><td class="c-up">↑248位</td><td>3篇</td><td><span class="tag-res">共振</span></td></tr>
+<tr><td>无人驾驶</td><td>84.49</td><td class="c-up">↑228位</td><td>—</td><td><span class="tag-fund">资金先行</span></td></tr>
+<tr><td>PCB概念</td><td>73.11</td><td class="c-up">↑217位</td><td>8篇</td><td><span class="tag-res">共振</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>🔔 机构建仓信号</h3>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>板块</th><th>特征</th><th>趋势描述</th><th>建议</th></tr></thead>
+<tbody>
+<tr><td>新能源车</td><td>新进Top10</td><td>排名飙升241位，Citi覆盖NEV数据</td><td><span class="tag-green">关注建仓</span>，产业链扩散信号</td></tr>
+<tr><td>汽车电子</td><td>新进Top10</td><td>排名飙升94位，与新能源车联动</td><td><span class="tag-green">关注建仓</span>，跟随新能源车主线</td></tr>
+<tr><td>商业航天</td><td>新进Top10</td><td>排名飙升248位，SpaceX锁定GPU供应</td><td><span class="tag-green">关注建仓</span>，但需确认持续性</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>⚠️ 短线退潮信号</h3>
+<p>今日无明显退潮信号。前期在榜板块（光通信、CPO、5G、数据中心）均维持或加强排名，未见单日流入转负。</p>
+
+<h3>📈 资金轮动方向</h3>
+<p><strong>资金进攻方向</strong>：全面涌入AI算力硬件方向（芯片→光通信→CPO→PCB→液冷→存储→先进封装→消费电子），同时扩散至新能源车、商业航天、低空经济、机器人等新兴方向。今日Top30中有25个板块标注<span class="tag-new">新进攻</span>（排名跃升超过30位），资金攻击面极广。</p>
+<p><strong>资金撤退方向</strong>：传统防御板块（白色家电、专业连锁）、前期涨幅过大的资源板块（稀土永磁、油气开采）出现资金流出，属于正常轮动。</p>
+<p><strong>排名飙升板块</strong>：芯片（↑267位）、商业航天（↑248位）、一带一路（↑245位）、新能源车（↑241位）、国防军工（↑240位）、先进封装（↑238位）、存储芯片（↑238位）、光伏（↑230位）、无人驾驶（↑228位）、机器人概念（↑223位）——资金正在从少数几个方向向多个科技方向全面扩散，这是一个积极的信号。</p>
+
+<!-- ========== 核心个股拆解 ========== -->
+<h2>🎯 核心个股拆解</h2>
+
+<h3>景旺电子（603228·PCB/电子元件）</h3>
+<ul>
+<li><strong>今日表现</strong>：涨停（+10%），收98.21元，成交61.45亿，换手6.77%</li>
+<li><strong>异动原因</strong>：PCB板块集体爆发，生益科技+5.86%、宝鼎科技9天7板。核心驱动是AI算力PCB需求扩张+CCL涨价传导。景旺电子作为国内少数具备IC载板量产能力的企业，直接受益于AI芯片封装需求升级</li>
+<li><strong>概念定位</strong>：AI算力产业链的上游PCB环节，对标美股PCB龙头。PCB是AI服务器中价值量增速最快的环节之一</li>
+<li><strong>技术面</strong>：封板坚决（封单超4.45亿），全天无开板。换手率仅6.77%，持仓者惜售。均线多头排列，MACD零轴上方金叉</li>
+<li><strong>资金信号</strong>：主力净流入明显，买一封单45306手。收盘仍挂在涨停价上</li>
+<li><strong>关注价值</strong>：<strong>高</strong>。PCB是研报+资金共振的14个方向之一（8篇研报覆盖），且芯片→PCB→电子元件的产业链扩散逻辑清晰</li>
+</ul>
+
+<h3>永鼎股份（600105·光通信/CPO）</h3>
+<ul>
+<li><strong>今日表现</strong>：涨停（+10.01%），收41.21元，成交81.65亿，换手13.94%。封单8.6万手（约3.56亿）</li>
+<li><strong>异动原因</strong>：光通信/CPO全线爆发。永鼎作为光缆+光器件龙头，直接受益于CoreWeave Capex上调和国内算力基建加速。公司同时具备CPO光电共封装技术储备</li>
+<li><strong>概念定位</strong>：光通信/CPO双属性，属于AI算力互联的核心环节</li>
+<li><strong>技术面</strong>：放量涨停，成交超81亿位居全市场前列。换手13.94%偏高但封板坚决，说明分歧中有主力主导买入。均线多头排列</li>
+<li><strong>资金信号</strong>：主力资金大幅流入（当日主力净流入约19.12亿，位列全市场第四）。北向资金在该板块有净买入迹象</li>
+<li><strong>关注价值</strong>：<strong>高</strong>。作为光通信新晋龙头，封板质量好、成交活跃，是判断光通信主线持续性的核心锚点之一</li>
+</ul>
+
+<h3>巨轮智能（002031·人形机器人）</h3>
+<ul>
+<li><strong>今日表现</strong>：涨停（+9.93%），收6.42元，成交13.52亿，换手11.08%</li>
+<li><strong>异动原因</strong>：宇树科技IPO持续催化+西部证券给予机器人"超配"评级。巨轮智能是国内少数具备RV减速器量产能力的企业，人形机器人核心零部件供应商</li>
+<li><strong>概念定位</strong>：人形机器人产业链的上游核心零部件（减速器），对标日本纳博特斯克</li>
+<li><strong>技术面</strong>：跳空高开封板，全天无开板。封单47.8万手（约3.07亿），封板质量极好。股价从5.84跳空至6.29开盘，强势确认</li>
+<li><strong>资金信号</strong>：主力资金净流入明显，量价配合良好。但需注意公司处于亏损状态（每股收益-0.02元），属于典型的事件驱动型投机标的</li>
+<li><strong>关注价值</strong>：<strong>中高</strong>。机器人方向有持续性催化（宇树科技正式上市前），但个股基本面偏弱，建议以短线思维参与</li>
+</ul>
+
+<h3>鸿博股份（002229·算力租赁/AI应用）</h3>
+<ul>
+<li><strong>今日表现</strong>：涨停（+9.97%），收12.91元，成交3.34亿，换手5.25%</li>
+<li><strong>异动原因</strong>：算力方向全面回暖。鸿博作为A股"英伟达映射"代表，此前深度回调后首次涨停反弹。今日算力租赁概念（城地香江、中鼎股份）集体活跃</li>
+<li><strong>概念定位</strong>：算力租赁/AI算力服务，直接受益于AI算力需求扩张</li>
+<li><strong>技术面</strong>：跳空秒板，全天无开板。换手仅5.25%说明浮筹较少，前期回调已清洗大量短线资金</li>
+<li><strong>资金信号</strong>：成交额偏小（仅3.34亿），但封单21.6万手很坚决。属于小票快速拉板形态</li>
+<li><strong>关注价值</strong>：<strong>中</strong>。作为算力方向情绪指标，鸿博涨停说明AI应用端资金情绪回暖。但成交偏小，持续性待观察</li>
+</ul>
+
+<!-- ========== 风险预警 ========== -->
+<h2>⚠️ 风险预警</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>风险类型</th><th>内容</th><th>影响</th></tr></thead>
+<tbody>
+<tr><td>外盘宏观</td><td>今晚美国7月CPI数据公布，若通胀超预期→美联储加息预期升温→纳指回调→A股科技承压</td><td>光通信/CPO/芯片方向</td></tr>
+<tr><td>量能萎缩</td><td>两市成交连续三日缩量（25394→23357→21524亿），若明日继续缩至2万亿以下，板块轮动将加速、主线持续性打折</td><td>全市场</td></tr>
+<tr><td>高位连板</td><td>百花医药7连板、传智教育13天9板、一鸣食品12天8板，连板高度已达极端值，断板可能导致投机情绪快速降温</td><td>连板股/题材股</td></tr>
+<tr><td>前高压力</td><td>上证逼近3967前高，连续三日缩量上攻显示多头力竭，若明日冲高回落→阶段性顶部确认</td><td>全市场</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ========== 明日推演 ========== -->
+<h2>🔭 明日推演</h2>
+
+<h3>上期复盘判断验证</h3>
+<div class="highlight">
+<p>昨日深度复盘核心判断回顾：</p>
+<p>1. <strong>"美股光通信暴跌对A股形成直接压制"</strong> → 部分准确。今日A股光通信虽受短暂影响但随即被Lumentum财报+CoreWeave Capex对冲，资金选择"分歧中加仓"而非出逃。</p>
+<p>2. <strong>"医药防守属性延续，需观察百花医药是否断板"</strong> → 准确。百花医药7连板延续强势，但后排跟风已减弱。</p>
+<p>3. <strong>"市场情绪偏冷但非恐慌，属于正常获利回吐"</strong> → 准确。今日情绪从偏冷直接跳至偏暖，涨停97家+跌停清零验证了"非恐慌"判断。</p>
+</div>
+
+<h3>明日关注方向</h3>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>方向</th><th>逻辑</th><th>关注标的</th></tr></thead>
+<tbody>
+<tr><td>光通信/CPO延续</td><td>CoreWeave+Lumentum催化+上海规划+资金共振14板块</td><td>永鼎股份、通鼎互联、中际旭创、天孚通信</td></tr>
+<tr><td>PCB/电子元件扩散</td><td>芯片→PCB→消费电子的产业链扩散逻辑+CCL涨价</td><td>景旺电子、生益科技、宝鼎科技</td></tr>
+<tr><td>人形机器人</td><td>宇树科技IPO上市前预热行情，西部证券"超配"</td><td>秦安股份、巨轮智能</td></tr>
+<tr><td>存储芯片</td><td>SK海力士大连扩产+AI存储需求+研报共振</td><td>兆易创新、长鑫科技</td></tr>
+<tr><td>潜在风险：医药退潮</td><td>百花医药7连板高位、后排走弱、缺乏新催化</td><td>若百花断板→减仓医药</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>策略建议</h3>
+<p><strong>持仓者</strong>：当前主线（光通信/CPO/PCB）可继续持有但不宜追高加仓。持有医药方向的注意百花医药能否连板，一旦断板应考虑减仓。成交连续缩量背景下，仓位控制在6-7成。</p>
+<p><strong>观望者</strong>：明日关注两个入场信号——（1）上证放量突破3967前高，确认新一轮上攻；（2）今晚美国CPI数据落地后（若偏鸽），A股科技方向的二次确认机会。若两个信号都不出现，继续观望。</p>
+<p><strong>风险应对</strong>：如果今晚CPI超预期→美股纳指大跌→明日A股低开，可关注光通信/CPO方向是否再次"分歧中走强"，如果低开高走则是加仓信号；如果低开低走（光模块三巨头破位）则说明本轮科技反弹宣告结束。</p>
+
+<h3>明日观察要点</h3>
+<ol>
+<li><strong>量能</strong>：两市成交能否止住连续缩量趋势，至少维持在2万亿以上</li>
+<li><strong>前高突破</strong>：上证能否放量突破3967前高，这决定了行情从反弹→反转的确认</li>
+<li><strong>美股CPI</strong>：今晚美国7月CPI数据（预计北京时间20:30公布），直接影响全球科技股风险偏好</li>
+<li><strong>连板股晋级</strong>：百花医药（7进8）、秦安股份（4进5）、永鼎股份（1进2），连板梯队是否健康</li>
+<li><strong>光通信持续性</strong>：光模块三巨头能否延续放量上攻，判断机构资金态度</li>
+</ol>
+
+<hr>
+
+<footer>
+<p><strong>⚠️ 免责声明</strong>：本报告由投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+<p style="margin-top:8px;"><strong>数据来源：</strong></p>
+<p>A股行情/涨停/板块/个股数据 → 通达信MCP</p>
+<p>研报覆盖/资金共振交叉验证 → 亿信API（研报检索）× 本地板块资金雷达Top30</p>
+<p>外盘美股/VIX → Finnhub API</p>
+<p>外盘指数/大宗商品 → 英为财情（web_search）</p>
+<p>新闻资讯 → 亿信API（search端点）· 财联社 · 证券时报</p>
+<p style="margin-top:8px;">生成时间：2026年08月12日 23:00</p>
+</footer>
+
+</body>
+</html>

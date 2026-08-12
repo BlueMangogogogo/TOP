@@ -1,9 +1,19 @@
 {
-    "last_updated":  "2026-08-12 22:35:36",
-    "total":  160,
-    "daily_count":  123,
+    "last_updated":  "2026-08-13 00:18:52",
+    "total":  161,
+    "daily_count":  124,
     "industry_count":  37,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-08-12/深度复盘.html",
+                        "id":  "2026-08-12-深度复盘",
+                        "display_date":  "8月12日",
+                        "title":  "深度复盘",
+                        "category":  "深度复盘",
+                        "type":  "daily",
+                        "size_kb":  27.6,
+                        "date":  "2026-08-12"
+                    },
                     {
                         "relative_path":  "reports/2026-08-11/深度复盘.html",
                         "id":  "2026-08-11-深度复盘",
