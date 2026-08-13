@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月13日 深度复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+.c-up { color:var(--red); }
+.c-dn { color:#16a34a; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>8月13日 深度复盘</h1>
+  <div class="meta">📅 2026年08月13日 | 投资小龙虾 AI 自动生成 | 仅供参考</div>
+</header>
+
+<h2>📊 指数全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3926.96</td>
+<td>-0.50%</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>14289.44</td>
+<td>-0.87%</td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>2.55万亿</td>
+<td>较昨日2.1万亿放量约21%，冲高回落放量下跌</td>
+</tr>
+<tr>
+<td>上涨家数</td>
+<td>1143家</td>
+<td>普跌</td>
+</tr>
+<tr>
+<td>下跌家数</td>
+<td>约3500家</td>
+<td>广度极差</td>
+</tr>
+<tr>
+<td>涨停</td>
+<td>62家</td>
+<td>结构尚存，医药与算力集中</td>
+</tr>
+<tr>
+<td>跌停</td>
+<td>4家</td>
+<td>跌停少，无恐慌式杀跌</td>
+</tr>
+<tr>
+<td>炸板</td>
+<td>40家（炸板率约39%）</td>
+<td>封板意愿弱，冲高回落明显</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>上证压力位：3968（今日盘中高·8月10日高点3967）｜ 支撑位：3925（今日低点）→ 3900（整数关·MA20附近约3940）</p>
+<p>市场情绪：<strong>偏冷</strong>。核心依据：上涨/下跌家数比约1:3 + 炸板率高达39% + 午后跳水。但跌停仅4家、涨停仍有62家，属「指数弱、结构活」的分化市，而非系统性恐慌。</p>
+</div>
+<p><strong>盘面定性</strong>：全天高开冲高回落。早盘受隔夜美股科技大涨（英伟达+3%、SK海力士+9%、美光+4.9%）与央行定向降息、医药利好三重催化，上证高开冲高至3968；午后受日本方面突发利空拖累直线跳水，尾盘收于日内低位附近。典型的「利好兑现 + 外围扰动」双重打压。</p>
+<h2>🌍 外盘与宏观环境</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>收盘</th>
+<th>涨跌</th>
+<th>对A股影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纳指</td>
+<td>26588</td>
+<td>+0.54%</td>
+<td>科技/AI映射（英伟达+3%、美光+4.9%）</td>
+</tr>
+<tr>
+<td>道指</td>
+<td>52485</td>
+<td>-0.04%</td>
+<td>基本持平</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7748</td>
+<td>+0.26%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td>17.2</td>
+<td>回落</td>
+<td>恐慌消退，风险偏好修复</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td>99.97</td>
+<td>+0.15%</td>
+<td>仍在100下方，偏弱</td>
+</tr>
+<tr>
+<td>现货黄金</td>
+<td>4408</td>
+<td>+0.93%</td>
+<td>逼近4450后回落，避险仍强</td>
+</tr>
+<tr>
+<td>WTI原油</td>
+<td>81.69</td>
+<td>-0.65%</td>
+<td>霍尔木兹不确定性主导</td>
+</tr>
+<tr>
+<td>欧洲斯托克50</td>
+<td>6534</td>
+<td>-0.26%</td>
+<td>欧洲情绪平淡</td>
+</tr>
+<tr>
+<td>日经225</td>
+<td>67524</td>
+<td>+0.83%</td>
+<td>亚太偏强</td>
+</tr>
+<tr>
+<td>韩国KOSPI</td>
+<td>6579</td>
+<td>+3.68%</td>
+<td>半导体出口链大涨，技术性牛市</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>一句话：外盘整体偏暖，美国7月CPI符合预期（同比3.4%）压低9月加息押注，科技硬件链（英伟达、SK海力士、美光）大涨，为今日A股算力硬件链高开提供映射；但港股、欧股走弱，海外对中国资产的风险偏好仍谨慎。</p>
+</div>
+<h2>📰 今日核心新闻简报</h2>
+<p><strong>按影响强度排序：</strong></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>新闻</th>
+<th>影响板块</th>
+<th>情绪</th>
+<th style="text-align: center;">强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>央行开展隔夜逆回购定向操作（8月14日、17-19日，单日上限6000亿）</td>
+<td>全市场流动性</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>美国7月CPI同比3.4%符合预期，9月加息压力缓解</td>
+<td>全球风险偏好/科技成长</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>日本突发利空，A股午后直线跳水</td>
+<td>全市场情绪</td>
+<td>利空</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>浙江省印发脑机接口产学研联动措施，医药CXO集中爆发</td>
+<td>医药/创新药/脑机接口</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>北京楼市政策松动（社保2年改1年，公积金贷款提至340万）</td>
+<td>地产</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>AI算力产业链爆发，光模块/服务器/PCB主力资金集中流入</td>
+<td>算力硬件</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>7</td>
+<td>中鼎股份与腾讯云签署战略合作（云+AI制造新基建）</td>
+<td>算力/AI应用</td>
+<td>利好</td>
+<td style="text-align: center;">⭐</td>
+</tr>
+<tr>
+<td>8</td>
+<td>兆日科技控股股东变更，复牌一字涨停</td>
+<td>个股/金融科技</td>
+<td>利好</td>
+<td style="text-align: center;">⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🔍 重点新闻情绪催化验证</h3>
+<ul>
+<li><strong>央行定向降息（隔夜逆回购）</strong>：流动性托底信号明确，单日6000亿上限对冲阶段性资金扰动。联动标的：银行、券商盘中脉冲，但未形成持续做多合力。判断：属于「托而不举」，稳住下跌空间，不构成趋势性上攻催化。</li>
+<li><strong>美国7月CPI温和</strong>：隔夜映射直接落地在算力硬件链，中际旭创、天孚通信、紫光股份、浪潮信息等开盘冲高。持续性取决于美股科技后续走势，属「外部映射型催化」，需警惕利好出尽后的回吐。</li>
+<li><strong>日本突发利空</strong>：午后直接触发跳水，是今日由红翻绿的主因。具体内容尚未充分证实，属「情绪冲击型」利空，若明日无实质恶化，影响或较快消化。</li>
+<li><strong>脑机接口 + 医药CXO</strong>：浙江政策文件驱动，博济医药、陇神戎发、南模生物等20cm涨停。判断：政策首次提及，属题材「萌芽→发酵」早期，多为游资情绪炒作，持续性弱于算力硬件，需观察龙头连板高度能否打开。</li>
+<li><strong>概念区分说明</strong>：今日「算力硬件」内部需拆分——光模块/CPO（英伟达链）、存储芯片（美光/海力士映射）、服务器/算力租赁（CSP资本开支）、PCB/CCL（上游材料）四者驱动逻辑不同，其中光模块与存储有明确外盘映射与研报共振，算力租赁偏国内资金博弈。</li>
+</ul>
+<h2>🔥 今日最强主线</h2>
+<h3>主力资金净流入前列（含板块归属）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: center;">排名</th>
+<th>个股/板块</th>
+<th style="text-align: center;">主力净流入</th>
+<th style="text-align: center;">当日表现</th>
+<th>驱动逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>大唐发电（电力）</td>
+<td style="text-align: center;">+18.7亿</td>
+<td style="text-align: center;">涨停</td>
+<td>电价/煤价预期改善</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>紫光股份（算力服务器）</td>
+<td style="text-align: center;">+16.4亿</td>
+<td style="text-align: center;">+7.03%</td>
+<td>AI服务器放量</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>利通电子（算力租赁）</td>
+<td style="text-align: center;">+13.3亿</td>
+<td style="text-align: center;">+4.73%</td>
+<td>算力租赁景气</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>浪潮信息（算力服务器）</td>
+<td style="text-align: center;">+11.1亿</td>
+<td style="text-align: center;">+5.92%</td>
+<td>AI服务器</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>天孚通信（光模块）</td>
+<td style="text-align: center;">+11.0亿</td>
+<td style="text-align: center;">+7.13%</td>
+<td>光模块升级</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>剑桥科技（光模块/CPO）</td>
+<td style="text-align: center;">+11.0亿</td>
+<td style="text-align: center;">+5.82%</td>
+<td>CPO替代</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>新易盛（光模块）</td>
+<td style="text-align: center;">+9.8亿</td>
+<td style="text-align: center;">+0.40%</td>
+<td>光模块</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td>华勤技术（算力ODM）</td>
+<td style="text-align: center;">+7.8亿</td>
+<td style="text-align: center;">+8.80%</td>
+<td>AI终端ODM</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td>东山精密（PCB）</td>
+<td style="text-align: center;">+7.5亿</td>
+<td style="text-align: center;">+0.96%</td>
+<td>AI高频PCB</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td>麦格米特（算力电源）</td>
+<td style="text-align: center;">+7.4亿</td>
+<td style="text-align: center;">+4.93%</td>
+<td>算力配套</td>
+</tr>
+</tbody>
+</table></div>
+<h3>主线持续性分析</h3>
+<ul>
+<li><strong>【AI算力硬件链·光模块/CPO/服务器/PCB/存储】</strong>：今日强度<strong>极强</strong>（主力净流入前十占据九席）。持续性判断：<strong>有</strong>。这是「研报 + 资金 + 外盘」三重共振的主线：隔夜英伟达/海力士/美光大涨映射，研报端密集覆盖存储涨价与光模块升级，主力资金真金白银流入。明日关注：光模块龙头（中际旭创、新易盛）能否在冲高回落后企稳，存储（兆易创新）能否从「涨价预期」转向「资金持续流入」。</li>
+<li><strong>【医药CXO/创新药】</strong>：今日强度<strong>强但分化</strong>（20cm涨停潮集中在创业板小盘，誉衡药业5天4板、亚泰集团3连板）。持续性判断：<strong>难</strong>。属游资情绪炒作，多数标的炸板率高，且脑机接口政策为「首次提及」的早期题材，缺乏机构共识。明日关注：誉衡药业、亚泰集团等连板高度能否打开，若炸板潮扩散则退潮确认。</li>
+<li><strong>【电力·大唐发电】</strong>：涨停 + 主力净流入居首，属今日「黑马」，逻辑偏防御与电价预期，独立性较强。</li>
+<li><strong>主线切换信号（六维）</strong>：旧主线（机器人/消费电子/MLCC/被动元件）今日集体退出资金榜，龙头退潮确认；新主线 AI 算力硬件链六维全部共振——价格（逆市飘红）、资金（主力集中流入）、联动（光模块→PCB→存储整线进攻）、量能（放量）、逻辑（独立于旧主线，外盘+研报双驱动）、情绪（分歧中上涨）。<strong>切换已确立，方向指向 AI 算力硬件链</strong>。</li>
+</ul>
+<h2>💰 板块资金雷达趋势</h2>
+<blockquote>
+<p>数据来源：本地板块资金雷达系统（东财数据源）+ 研报巡逻（亿信API研报 × 资金雷达Top30，今日22:30生成）</p>
+</div>
+<h3>资金进攻榜 TOP10（加权评分·东财概念板块）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">加权评分</th>
+<th style="text-align: center;">当日涨幅</th>
+<th style="text-align: center;">排名变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5G概念</td>
+<td style="text-align: center;">983.2</td>
+<td style="text-align: center;">-1.14%</td>
+<td style="text-align: center;">新进</td>
+</tr>
+<tr>
+<td>通信技术</td>
+<td style="text-align: center;">980.5</td>
+<td style="text-align: center;">-1.09%</td>
+<td style="text-align: center;">新进</td>
+</tr>
+<tr>
+<td>光通信模块</td>
+<td style="text-align: center;">973.5</td>
+<td style="text-align: center;">-1.45%</td>
+<td style="text-align: center;">29→3 ↑26</td>
+</tr>
+<tr>
+<td>光纤概念</td>
+<td style="text-align: center;">965.4</td>
+<td style="text-align: center;">-1.35%</td>
+<td style="text-align: center;">新进</td>
+</tr>
+<tr>
+<td>存储芯片</td>
+<td style="text-align: center;">953.5</td>
+<td style="text-align: center;">-1.94%</td>
+<td style="text-align: center;">新进</td>
+</tr>
+<tr>
+<td>量子科技</td>
+<td style="text-align: center;">938.8</td>
+<td style="text-align: center;">-1.56%</td>
+<td style="text-align: center;">新进</td>
+</tr>
+<tr>
+<td>半导体概念</td>
+<td style="text-align: center;">937.7</td>
+<td style="text-align: center;">-1.88%</td>
+<td style="text-align: center;">新进</td>
+</tr>
+<tr>
+<td>6G概念</td>
+<td style="text-align: center;">934.9</td>
+<td style="text-align: center;">-0.86%</td>
+<td style="text-align: center;">新进</td>
+</tr>
+<tr>
+<td>光伏概念</td>
+<td style="text-align: center;">931.6</td>
+<td style="text-align: center;">-1.30%</td>
+<td style="text-align: center;">新进</td>
+</tr>
+<tr>
+<td>超导概念</td>
+<td style="text-align: center;">930.9</td>
+<td style="text-align: center;">-1.94%</td>
+<td style="text-align: center;">新进</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>注：榜单为资金加权评分，非涨幅榜。当日普跌、板块涨幅普遍为负，但资金评分集中在「通信/光模块/存储/半导体」整条 AI 算力硬件链，光通信模块排名飙升26位，为本轮最强进攻方向。</p>
+</div>
+<h3>🔔 机构建仓信号</h3>
+<ul>
+<li>🟢 <strong>光通信模块</strong>：单日排名 29→3（+26位），研报（光大/爱建/Nomura）密集配合，波段资金在普跌中逆势进攻，股价尚未大涨（当日-1.45%），具备「机构建仓」特征，建议关注建仓。</li>
+<li>🟢 <strong>存储芯片</strong>：新进榜单，DRAM合约价上行（交银国际）+ 长鑫国产替代（华创/UBS），资金刚启动流入，属研报+资金共振初期。</li>
+</ul>
+<h3>⚠️ 短线退潮信号</h3>
+<ul>
+<li>🔴 <strong>机器人/消费电子/MLCC/被动元件</strong>：昨日资金榜主线，今日集体跌出Top30，龙头退潮确认，属旧主线退潮，建议回避高位接力。</li>
+<li>🔴 <strong>数据中心/算力中心</strong>：昨日榜第6，今日掉出Top30，研报先行但资金未跟进，短期退潮。</li>
+</ul>
+<h3>📈 资金轮动方向</h3>
+<ul>
+<li><strong>资金进攻方向</strong>：AI 算力硬件链整线进攻，光模块（+26位）为核心，向存储、半导体、PCB扩散；电力（大唐发电）异军突起。</li>
+<li><strong>资金撤退方向</strong>：机器人、消费电子、MLCC、被动元件等旧主线；数据中心、液冷短暂退潮。</li>
+<li><strong>排位飙升板块</strong>：光通信模块（+26位）、汽车芯片（30→20，+10位，纯资金驱动无研报覆盖）。</li>
+</ul>
+<h2>🎯 核心个股拆解</h2>
+<h3>大唐发电（601991·电力）</h3>
+<ul>
+<li><strong>今日表现</strong>：涨停6.92，+10.02%，成交59.7亿，换手7.24%，封板牢固</li>
+<li><strong>异动原因</strong>：电力板块异动，主力净流入18.7亿居全市场之首，属资金抢筹型涨停</li>
+<li><strong>概念定位</strong>：火电龙头，电价/煤价预期改善逻辑，防御属性</li>
+<li><strong>技术面</strong>：放量突破，量价配合，MACD零轴上方金叉</li>
+<li><strong>资金信号</strong>：主力净流入18.7亿，大单主导，封单5448万手</li>
+<li><strong>关注价值</strong>：<strong>中</strong> — 今日全市场主力净流入第一，若电力方向形成板块效应可关注，但火电弹性有限</li>
+</ul>
+<h3>中际旭创（300308·光模块龙头）</h3>
+<ul>
+<li><strong>今日表现</strong>：收平（921.04），高开960冲高966后回落，成交277亿，换手2.64%</li>
+<li><strong>异动原因</strong>：隔夜英伟达+3%映射，早盘高开4.2%，午后随日本利空跳水抹平涨幅</li>
+<li><strong>概念定位</strong>：全球光模块龙头，800G→1.6T→CPO升级核心受益，对标英伟达产业链</li>
+<li><strong>技术面</strong>：冲高回落，量能放大（277亿），短期上方966压力明显，均线仍多头</li>
+<li><strong>资金信号</strong>：陆股通成交额38.9亿居全市场第一，主力分歧，内外盘均衡</li>
+<li><strong>关注价值</strong>：<strong>高</strong> — 光模块主线风向标，今日冲高回落反映「利好兑现」压力，明日能否企稳决定主线节奏</li>
+</ul>
+<h3>天孚通信（300394·光模块/光器件）</h3>
+<ul>
+<li><strong>今日表现</strong>：+7.13%，主力净流入11.0亿</li>
+<li><strong>异动原因</strong>：光模块产业链联动，光器件环节受益</li>
+<li><strong>概念定位</strong>：光模块上游光器件/连接器，CPO逻辑核心</li>
+<li><strong>技术面</strong>：逆势放量走强，量价配合良好</li>
+<li><strong>资金信号</strong>：主力净流入11亿，陆股通成交23.3亿居前</li>
+<li><strong>关注价值</strong>：<strong>高</strong> — 逆市收涨且资金坚决，是光模块链中弹性与确定性兼具的标的</li>
+</ul>
+<h3>紫光股份（000938·算力服务器）</h3>
+<ul>
+<li><strong>今日表现</strong>：+7.03%，主力净流入16.4亿</li>
+<li><strong>异动原因</strong>：AI服务器放量，新华三算力龙头</li>
+<li><strong>概念定位</strong>：算力基础设施，对标CSP资本开支扩张</li>
+<li><strong>技术面</strong>：放量突破，均线多头排列</li>
+<li><strong>资金信号</strong>：主力净流入16.4亿居第二，大单主导</li>
+<li><strong>关注价值</strong>：<strong>高</strong> — 算力服务器核心，主力资金第二，与光模块共同构成AI算力硬件链双核</li>
+</ul>
+<h2>🌱 概念催化追踪</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>概念</th>
+<th>当前阶段</th>
+<th>逻辑类型</th>
+<th>持续性</th>
+<th>核心标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI算力硬件链（光模块/存储/PCB）</td>
+<td>主升</td>
+<td>外盘映射+研报共振</td>
+<td>有</td>
+<td>中际旭创、天孚通信、紫光股份</td>
+</tr>
+<tr>
+<td>医药CXO/创新药</td>
+<td>发酵</td>
+<td>政策催化+游资情绪</td>
+<td>难</td>
+<td>博济医药、誉衡药业、亚泰集团</td>
+</tr>
+<tr>
+<td>算力租赁/AIDC</td>
+<td>扩散</td>
+<td>算力需求</td>
+<td>有</td>
+<td>利通电子、城地香江</td>
+</tr>
+<tr>
+<td>脑机接口</td>
+<td>萌芽</td>
+<td>政策首次提及</td>
+<td>待验证</td>
+<td>陇神戎发等</td>
+</tr>
+</tbody>
+</table></div>
+<h2>⚠️ 风险预警</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>风险类型</th>
+<th>内容</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外围风险</td>
+<td>日本突发利空内容未证实，若持续发酵或拖累风险偏好</td>
+<td>全市场情绪</td>
+</tr>
+<tr>
+<td>冲高回落</td>
+<td>炸板率39%，光模块龙头中际旭创高开低走，「利好出尽」迹象</td>
+<td>AI算力硬件链</td>
+</tr>
+<tr>
+<td>题材过热</td>
+<td>医药CXO多为游资20cm炒作，连板高度一旦断板或集体踩踏</td>
+<td>医药/创新药</td>
+</tr>
+<tr>
+<td>高位拥挤</td>
+<td>算力硬件链此前涨幅较大，机构提示「高位算力进入分化阶段」</td>
+<td>光模块/存储</td>
+</tr>
+</tbody>
+</table></div>
+<h2>🔭 明日推演</h2>
+<h3>明日关注方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th>关注标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI算力硬件链（延续主线）</td>
+<td>研报+资金+外盘三重共振，但需警惕利好兑现</td>
+<td>中际旭创、天孚通信、紫光股份、兆易创新</td>
+</tr>
+<tr>
+<td>存储涨价链（新方向）</td>
+<td>DRAM合约价上行，研报密集覆盖，资金刚启动</td>
+<td>兆易创新、长鑫科技（688825）</td>
+</tr>
+<tr>
+<td>液冷/算力租赁（研报先行回流）</td>
+<td>今日资金退潮，观察明日是否回流</td>
+<td>利通电子、液冷龙头</td>
+</tr>
+<tr>
+<td>电力/防御（补涨）</td>
+<td>大唐发电涨停示范，防御属性</td>
+<td>大唐发电、华电能源</td>
+</tr>
+</tbody>
+</table></div>
+<h3>策略建议</h3>
+<ul>
+<li><strong>持仓者</strong>：AI算力硬件链可持有但需紧盯龙头中际旭创能否企稳，若明日再度冲高回落且跌破今日低点，建议减仓兑现部分利润；医药CXO持仓者若龙头断板应果断止盈。</li>
+<li><strong>观望者</strong>：待光模块/存储回调企稳（缩量不破位）再介入；医药连板股不建议追高，风险收益比差。</li>
+<li><strong>风险应对</strong>：若日本利空发酵导致大盘放量跌破3900，则全线收缩仓位至防御（电力/红利）。</li>
+</ul>
+<h3>明日观察要点</h3>
+<ol>
+<li>中际旭创、天孚通信能否在冲高回落后企稳，决定AI算力硬件链主线节奏</li>
+<li>两市成交能否维持2.4万亿以上（今日放量下跌，缩量企稳为佳）</li>
+<li>医药连板龙头（誉衡药业、亚泰集团）是否断板，判断题材退潮</li>
+<li>日本利空是否被证实或发酵</li>
+<li>隔夜美股科技股（英伟达、海力士、美光）走势，映射明日算力硬件开盘</li>
+</ol>
+
+<footer>
+<p><strong>⚠️ 免责声明</strong>：本报告由投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+<p style="margin-top:8px;"><strong>数据来源：</strong></p>
+<p>A股行情/涨停跌停/主力资金/K线 → 通达信MCP（tdx_quotes / tdx_screener / tdx_kline）</p>
+<p>今日新闻与产业消息 → 亿信API（search端点）</p>
+<p>研报+资金共振交叉验证 → 研报巡逻（亿信API研报 × 资金雷达Top30，22:30）</p>
+<p>外盘美股 → Finnhub API（SPY/QQQ/DIA）</p>
+<p>外盘指数/美元/黄金/原油 → web_search（金十数据、东方财富等）</p>
+<p style="margin-top:8px;">生成时间：2026年08月13日 23:00</p>
+</footer>
+
+</body>
+</html>
