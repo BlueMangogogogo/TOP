@@ -1,9 +1,19 @@
 {
-    "last_updated":  "2026-08-14 19:58:28",
-    "total":  178,
-    "daily_count":  141,
+    "last_updated":  "2026-08-14 22:36:51",
+    "total":  179,
+    "daily_count":  142,
     "industry_count":  37,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-08-14/研报巡逻.html",
+                        "id":  "2026-08-14-研报巡逻",
+                        "display_date":  "8月14日",
+                        "title":  "研报巡逻",
+                        "category":  "研报巡逻",
+                        "type":  "daily",
+                        "size_kb":  15.1,
+                        "date":  "2026-08-14"
+                    },
                     {
                         "relative_path":  "reports/2026-08-14/宏观择时周度综述_MTIv3_20260814.html",
                         "id":  "2026-08-14-宏观择时周度综述_MTIv3_20260814",
