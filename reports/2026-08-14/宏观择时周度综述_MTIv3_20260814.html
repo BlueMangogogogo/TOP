@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宏观择时周度综述 · MTI v3（2026-08-10 ~ 08-14）</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<style>
+:root{--brand:#ebb543;--brand-bg:#f7e8c5;--warn:#c0392b;--warn-bg:#fdf0ef;--ink:#1a1a1a;--gray:#2c2c2c;--aux:#888;--line:#f0f0f0;--good:#1e7e34;--good-bg:#eef7f0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",system-ui,sans-serif;color:var(--gray);background:#fff;max-width:960px;margin:0 auto;padding:28px 22px 60px;font-size:15px;line-height:1.75}
+header{border-bottom:3px solid var(--brand);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:24px;color:var(--ink);line-height:1.4;margin-bottom:6px}
+.meta{color:var(--aux);font-size:13px}
+h2{font-size:19px;color:var(--ink);border-left:5px solid var(--brand);padding-left:10px;margin:28px 0 14px}
+h3{font-size:16px;color:var(--ink);margin:18px 0 10px}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th{background:var(--brand);color:#fff;padding:8px 10px;text-align:left;font-weight:600}
+td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#faf8f2}
+.warning{border-left:5px solid var(--warn);background:var(--warn-bg);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0}
+.highlight{border-left:5px solid var(--brand);background:var(--brand-bg);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0}
+.good{border-left:5px solid var(--good);background:var(--good-bg);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0}
+.score-card{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0}
+.score{flex:1;min-width:200px;border:2px solid var(--brand);border-radius:10px;padding:16px 18px;text-align:center}
+.score .label{font-size:12px;color:var(--aux)}
+.score .value{font-size:32px;font-weight:800;color:var(--ink);margin:4px 0}
+.score .state{font-size:13px;font-weight:600;color:var(--warn)}
+.chart-box{border:1px solid var(--line);border-radius:8px;padding:14px;margin:12px 0}
+.chart-box .cap{font-size:13px;color:var(--aux);margin-bottom:8px}
+.chart-box canvas{height:260px!important}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--aux)}
+.small{font-size:12px;color:var(--aux)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;margin-right:4px}
+.tag.up{background:var(--warn-bg);color:var(--warn)}
+.tag.down{background:var(--good-bg);color:var(--good)}
+.tag.flat{background:#f0f0f0;color:var(--aux)}
+ul{margin:8px 0 8px 22px}
+li{margin:4px 0}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>宏观择时周度综述 · MTI v3</h1>
+  <div class="meta">📅 综述区间：2026年08月10日（周一）~ 08月14日（周五） ｜ 数据截至 2026-08-13（行业离散度/两融/活跃市值）、08-14（涨跌停/炸板/国债） ｜ 投资小龙虾宏观择时系统</div>
+</header>
+
+<div class="score-card">
+  <div class="score">
+    <div class="label">MTI 综合信号（-1 ~ +1）</div>
+    <div class="value">-0.035</div>
+    <div class="state">中性：正常仓位，跟随主线</div>
+  </div>
+  <div class="score">
+    <div class="label">活跃市值攻防（K哥体系 0AMV）</div>
+    <div class="value" style="font-size:26px">20.86 万亿</div>
+    <div class="state">观望（3日 -2.6% · 历史98%分位）</div>
+  </div>
+  <div class="score">
+    <div class="label">ERP 仓位天花板</div>
+    <div class="value" style="font-size:26px">90%</div>
+    <div class="state">ERP 84%分位，股票性价比高</div>
+  </div>
+</div>
+
+<h2>一、本周 MTI 走势与阶段判断</h2>
+
+<h3>MTI 综合信号周内轨迹</h3>
+<table>
+<tr><th>日期</th><th>08-10 周一</th><th>08-11 周二</th><th>08-12 周三</th><th>08-13 周四</th><th>周内区间</th></tr>
+<tr><td>MTI</td><td style="color:#c0392b;font-weight:700">-0.119</td><td style="color:#c0392b;font-weight:600">-0.029</td><td style="color:#1e7e34;font-weight:600">+0.039</td><td style="color:#c0392b;font-weight:600">-0.035</td><td>-0.12 ~ +0.04</td></tr>
+<tr><td>上周参照</td><td colspan="4">08-03 -0.174 → 08-05 -0.107 → 08-07 +0.010</td><td>-0.17 ~ +0.01</td></tr>
+</table>
+
+<div class="highlight">
+  <strong>阶段判断：退潮末期的中性震荡。</strong>MTI 本周在 -0.12 ~ +0.04 窄幅震荡，中枢较上周（-0.17 ~ +0.01）小幅抬升，但仍在 0 轴附近反复，未能形成趋势性突破。市场处于"无主线、无合力"的磨底阶段：行业分化收敛、量能萎缩、权重与中小创反复切换。
+</div>
+
+<h3>本周市场结构特征（指数）</h3>
+<table>
+<tr><th>指数</th><th>周涨跌</th><th>节奏</th><th>风格信号</th></tr>
+<tr><td>上证指数</td><td style="color:#c0392b">-0.99%</td><td>3966.6 → 3927.2</td><td rowspan="2">权重走弱</td></tr>
+<tr><td>沪深300</td><td style="color:#c0392b">-0.77%</td><td>4702.0 → 4665.9</td></tr>
+<tr><td>国证2000</td><td style="color:#1e7e34">+0.46%</td><td>7733.9 → 7769.8</td><td rowspan="2">中小创偏强</td></tr>
+<tr><td>创业板指</td><td style="color:#1e7e34">+2.52%</td><td>3537.2 → 3626.3</td></tr>
+</table>
+
+<div class="highlight">
+  本周呈现<strong>「权重弱、中小创强」的跷跷板</strong>：上证、沪深300 收跌，国证2000、创业板收涨。大小盘偏离（沪深300 vs 国证2000 的 20 日涨幅差）扩大到 6.08%（近3年 78.8% 分位），小盘成长风格占优但持续性存疑。
+</div>
+
+<h2>二、各因子周内变化表（核心）</h2>
+
+<table>
+<tr><th>层级</th><th>因子</th><th>权重</th><th>上周（08-07收）</th><th>本周（08-13/14收）</th><th>周变化</th><th>信号分</th></tr>
+<tr><td>结构层</td><td>① 行业离散度（超额）</td><td>20%</td><td>截面std 1.85<br>分位 93.7%（绝对口径）</td><td>截面std 1.14<br>分位 65.9%（v3超额）/ 47%（绝对）</td><td><span class="tag down">回落</span></td><td>—</td></tr>
+<tr><td>结构层</td><td>② 大小盘偏离</td><td>10%</td><td>—</td><td>6.08%（20日）· 78.8%分位</td><td><span class="tag up">扩大</span></td><td>—</td></tr>
+<tr><td>结构层</td><td>③ 轮动速度</td><td>5%</td><td>—</td><td>0.84（前10行业重合率）</td><td><span class="tag flat">稳定</span></td><td>—</td></tr>
+<tr><td>资金层</td><td>④ 两融因子 v2</td><td>15%</td><td>26225亿 · 84%分位</td><td>26497亿 · 87.7%分位</td><td><span class="tag up">+272亿（+1.04%）</span></td><td style="color:#c0392b;font-weight:600">-0.30</td></tr>
+<tr><td>资金层</td><td>⑤ 增量资金代理</td><td>15%</td><td>日均 18915亿</td><td>日均 17829亿</td><td><span class="tag down">-5.7%</span></td><td style="color:#c0392b;font-weight:600">-0.70</td></tr>
+<tr><td>资金层</td><td>⑧ 活跃市值</td><td>10%</td><td>21.385万亿</td><td>20.857万亿</td><td><span class="tag down">-2.5%</span></td><td style="color:#1e7e34;font-weight:600">+0.58</td></tr>
+<tr><td>情绪层</td><td>⑥ 涨跌停比</td><td>10%</td><td>涨停均值 93.8</td><td>涨停均值 74.2 · 5日比 0.934</td><td><span class="tag down">涨停回落</span></td><td>—</td></tr>
+<tr><td>情绪层</td><td>⑦ 炸板率</td><td>10%</td><td>—</td><td>22.9%（炸板 19家）</td><td><span class="tag flat">温和</span></td><td style="color:#1e7e34;font-weight:600">+0.57</td></tr>
+<tr><td>情绪层</td><td>⑨ 换手率位置</td><td>5%</td><td>—</td><td>51%分位（上证换手 1.02%）</td><td><span class="tag flat">中性</span></td><td style="color:#888;font-weight:600">0.00</td></tr>
+<tr><td>底仓</td><td>⑩ ERP 股权风险溢价</td><td>独立</td><td>—</td><td>84%分位</td><td><span class="tag flat">高位</span></td><td>仓位上限 90%</td></tr>
+</table>
+
+<div class="warning">
+  <strong>关键背离提示：</strong>本周因子呈「<strong>结构层转暖、资金层转冷</strong>」的背离格局。
+  <ul>
+    <li><strong>转暖</strong>：离散度从上周极致化（93.7%分位）回落到趋同区间（47%），高切低压力释放；炸板率温和、涨跌停比健康。</li>
+    <li><strong>转冷</strong>：成交额 20日变化率 -24.2%（增量资金 -0.70，最空头因子）；两融 87.7% 分位高位滞涨（-0.30）；活跃市值绝对高位但连续 3 日回落。</li>
+  </ul>
+  结构层的修复尚不能对冲资金层的降温，MTI 因此卡在 0 轴附近的负值区。
+</div>
+
+<h2>三、活跃市值攻防周内演变（K哥体系）</h2>
+
+<div class="chart-box">
+  <div class="cap">0AMV 活跃市值（万亿）近两周走势 —— 进攻线 14.8 / 防守线 8.2，当前远在进攻线上方</div>
+  <canvas id="amvChart"></canvas>
+</div>
+
+<table>
+<tr><th>日期</th><th>上周</th><th>本周</th></tr>
+<tr><td>周一</td><td>19.32</td><td>21.413</td></tr>
+<tr><td>周二</td><td>19.929</td><td>21.084</td></tr>
+<tr><td>周三</td><td>20.70</td><td>21.096</td></tr>
+<tr><td>周四</td><td>20.872</td><td>20.857</td></tr>
+<tr><td>周五</td><td>21.385</td><td>—（数据滞后）</td></tr>
+</table>
+
+<div class="highlight">
+  <strong>攻防演变：</strong>上周活跃市值连续回升、收复 20 万亿关口（19.32 → 21.385），资金入场意愿强；本周冲高至 21.413 后逐日小幅回落（→ 20.857），<strong>资金绝对体量仍处历史 98% 分位，但边际动能在降温</strong>。当前 20.857 万亿远高于进攻线 14.8 万亿，绝对位置属进攻区，但 3 日累计 -2.6%、单日 -1.1%，未触发 K 哥 +4% 进攻信号，攻防状态由「进攻」退居「观望」。
+</div>
+
+<h2>四、下周展望与验证清单</h2>
+
+<h3>展望基调：中性偏谨慎</h3>
+<div class="warning">
+  核心矛盾是<strong>「绝对位置高 + 边际动量弱」</strong>：活跃市值、两融均处历史高位，但成交额 20 日 -24%、活跃市值 3 日连跌，增量资金接续不上。若高位资金拐头，存在从「观望」滑向「防守」甚至「多杀多」的风险。ERP 84% 分位提供 90% 仓位天花板，意味着<strong>中期估值底有支撑，但短期节奏需以资金层信号为准</strong>。
+</div>
+
+<h3>下周验证清单</h3>
+<table>
+<tr><th>#</th><th>观察点</th><th>触发信号 / 动作</th></tr>
+<tr><td>1</td><td>活跃市值能否守住 20 万亿</td><td>单日跌破 -2.3% → K 哥清仓信号；守住并放量 → 观望转进攻</td></tr>
+<tr><td>2</td><td>两融余额是否拐头向下</td><td>87.7% 分位高位若拐头 → 多杀多预警（因子 -1.0）</td></tr>
+<tr><td>3</td><td>成交额能否回升至 1.8 万亿上方</td><td>20日变化率（当前 -24%）能否收窄转正，是增量资金修复的唯一信号</td></tr>
+<tr><td>4</td><td>离散度方向选择</td><td>重新抬升=结构抱团重启；继续回落=普涨普跌（需警惕系统性方向）</td></tr>
+<tr><td>5</td><td>涨跌停情绪</td><td>跌停家数是否放大（本周已现 10 家）、炸板率是否突破 30%</td></tr>
+<tr><td>6</td><td>大小盘偏离持续性</td><td>国证2000 相对沪深300 偏离（78.8%分位）是否继续扩大，小盘风格能否延续</td></tr>
+</table>
+
+<h2>五、数据来源（分条标注）</h2>
+<table>
+<tr><th>数据项</th><th>接口 / 来源</th></tr>
+<tr><td>行业离散度（申万二级 131 行业）</td><td>AKShare index_hist_sw（新浪申万指数，滞后 1 日）</td></tr>
+<tr><td>沪深300 / 国证2000 / 上证 / 深成 / 创业板 / 科创50 / 上证50</td><td>Tushare index_daily</td></tr>
+<tr><td>换手率 / 指数 PE</td><td>Tushare index_dailybasic</td></tr>
+<tr><td>两融余额</td><td>Tushare margin（当日残缺自动回填前值）</td></tr>
+<tr><td>涨跌停家数</td><td>AKShare stock_zt_pool_em / stock_zt_pool_dtgc_em</td></tr>
+<tr><td>炸板家数</td><td>AKShare stock_zt_pool_zbgc_em（仅最近 15 交易日）</td></tr>
+<tr><td>活跃市值 0AMV（攻防）</td><td>指南针 0AMV 活筹指数（K哥体系，import_amv.py 入库，30 年历史）</td></tr>
+<tr><td>10 年期国债收益率</td><td>AKShare bond_zh_us_rate</td></tr>
+<tr><td>MTI 综合与十因子</td><td>投资小龙虾 macro_timing.py（v3 框架）</td></tr>
+</table>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由投资小龙虾宏观择时系统自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>生成时间：2026年08月14日 ｜ 综述区间：2026-08-10 ~ 08-14 ｜ MTI v3</p>
+</footer>
+
+<script>
+(function(){
+  var dates = ["08-07","08-10","08-11","08-12","08-13"];
+  var amv   = [21.385, 21.413, 21.084, 21.096, 20.857];
+  var ctx = document.getElementById('amvChart');
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: dates,
+        datasets: [
+          { label: '0AMV 活跃市值（万亿）', data: amv, borderColor: '#ebb543', backgroundColor: 'rgba(235,181,67,0.12)', tension: 0.3, pointRadius: 4, fill: true },
+          { label: '进攻线 14.8', data: amv.map(function(){return 14.8;}), borderColor: '#c0392b', borderDash: [6,4], pointRadius: 0, fill: false },
+          { label: '防守线 8.2', data: amv.map(function(){return 8.2;}), borderColor: '#1e7e34', borderDash: [6,4], pointRadius: 0, fill: false }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { labels: { font: { size: 11 } } } },
+        scales: { y: { min: 0, max: 24 } }
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
