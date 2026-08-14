@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月14日 周度盘前策略</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+.c-up { color:var(--red); }
+.c-dn { color:#16a34a; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>8月14日 周度盘前策略</h1>
+  <div class="meta">📅 2026年8月14日 23:00 | 投资小龙虾 AI 自动生成 | 仅供参考</div>
+</header>
+
+<h2>🌍 本周全球市场汇总</h2>
+<p>本周（8月10日—14日）A股呈现「权重弱、中小创强」的跷跷板格局，上证累计 -0.99%，但创业板 +2.52%、国证2000 +0.46%，题材活跃度显著高于权重。外盘方面美股延续强势，标普500续创历史新高、VIX跌至年内新低，全球风险偏好处于高位。</p>
+<h3>本周A股与全球主要市场走势</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th style="text-align: center;">本周涨跌</th>
+<th>期末值</th>
+<th>关键信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td style="text-align: center;">-0.99%</td>
+<td>3927.18</td>
+<td>权重走弱，处于3870—3986震荡箱体上沿</td>
+</tr>
+<tr>
+<td>沪深300</td>
+<td style="text-align: center;">-0.77%</td>
+<td>4665.9</td>
+<td>权重领跌</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td style="text-align: center;">+2.52%</td>
+<td>3626.3</td>
+<td>双创领涨、题材活跃</td>
+</tr>
+<tr>
+<td>国证2000</td>
+<td style="text-align: center;">+0.46%</td>
+<td>7769.8</td>
+<td>中小盘偏强</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td style="text-align: center;">+0.65%</td>
+<td>7798.99</td>
+<td>历史新高</td>
+</tr>
+<tr>
+<td>纳斯达克</td>
+<td style="text-align: center;">+0.81%</td>
+<td>26803.03</td>
+<td>科技/AI情绪偏暖</td>
+</tr>
+<tr>
+<td>道琼斯</td>
+<td style="text-align: center;">+0.13%</td>
+<td>53839.99</td>
+<td>权重平稳</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td style="text-align: center;">—</td>
+<td>14.39</td>
+<td>年内新低，恐慌情绪极低</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td style="text-align: center;">—</td>
+<td>~100.01</td>
+<td>近两周高位，压制外资</td>
+</tr>
+<tr>
+<td>黄金</td>
+<td style="text-align: center;">-0.7%</td>
+<td>~4373美元</td>
+<td>通胀缓和、避险降温</td>
+</tr>
+<tr>
+<td>WTI原油</td>
+<td style="text-align: center;">-2.4%</td>
+<td>81.25美元</td>
+<td>霍尔木兹僵局下的获利回吐</td>
+</tr>
+<tr>
+<td>韩国KOSPI</td>
+<td style="text-align: center;">+3.68%</td>
+<td>6579.04</td>
+<td>存储芯片暴涨带动</td>
+</tr>
+<tr>
+<td>日经225</td>
+<td style="text-align: center;">+0.83%</td>
+<td>67524.06</td>
+<td>亚太科技偏暖</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>本周外盘情绪判断：美股风险偏好显著回升（标普历史新高+VIX年内新低），存储芯片史诗级大涨是下周A股存储方向的直接映射；但需警惕光通信美股回调（Coherent -7.99%、Lumentum -5.58%）对A股光模块的映射警示。</p>
+</div>
+<h3>宏观择时（MTI v3）周度判断</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>本周值</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MTI 综合信号</td>
+<td>-0.035</td>
+<td>中性：正常仓位，跟随主线</td>
+</tr>
+<tr>
+<td>活跃市值（K哥体系 0AMV）</td>
+<td>20.857万亿</td>
+<td>观望（3日 -2.6% · 历史98%分位）</td>
+</tr>
+<tr>
+<td>ERP 仓位天花板</td>
+<td>90%</td>
+<td>ERP 84%分位，股票性价比高</td>
+</tr>
+<tr>
+<td>两融余额</td>
+<td>26497亿</td>
+<td>87.7%分位，高位滞涨</td>
+</tr>
+<tr>
+<td>增量资金</td>
+<td>日均17829亿</td>
+<td>环比 -5.7%</td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight">
+<p>💡 宏观阶段判断：本周处于「退潮末期的中性震荡」，MTI 在 -0.12 ~ +0.04 窄幅震荡。核心矛盾是「绝对位置高 + 边际动量弱」——活跃市值、两融均处历史高位，但成交额 20 日 -24%、活跃市值 3 日连跌，增量资金接续不上。因子呈「结构层转暖、资金层转冷」的背离格局。</p>
+</div>
+<h2>📰 本周重大消息与催化</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>事件</th>
+<th>影响板块</th>
+<th>情绪</th>
+<th style="text-align: center;">强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>中际旭创拟17.47亿受让中石科技10.47%股份</td>
+<td>光模块散热</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>美股存储芯片暴涨：闪迪+13.67%、SK海力士+7.29%、美光+4.23%</td>
+<td>存储/DRAM</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>蓝盾光电并购重组20CM 5连板，打开市场空间高度</td>
+<td>并购重组</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>长飞光纤中标国内最大单体空芯光缆项目+对印度光纤续征反倾销税</td>
+<td>光纤光缆</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>算力租赁快速回暖：网宿科技、数据港、利通电子涨停</td>
+<td>算力租赁/AIDC</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>美国7月PPI同比4.7%低于预期，美联储9月维持利率概率65.7%</td>
+<td>全球风险偏好</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>7</td>
+<td>央行8月14日开展10000亿元买断式逆回购操作</td>
+<td>流动性</td>
+<td>中性</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>8</td>
+<td>光通信美股次日回调：Coherent -7.99%、Lumentum -5.58%</td>
+<td>光模块</td>
+<td>利空</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🔍 重点催化验证与下周映射</h3>
+<ul>
+<li><strong>中际旭创入股中石科技</strong>：产业级背书（光模块龙头向上游材料延伸），非纯情绪炒作，中石科技一字涨停20%。这是散热链最强催化，下周关注中石科技能否继续连板、散热链（金戈新材、阿莱德、富信科技）是否扩散。</li>
+<li><strong>美股存储芯片暴涨</strong>：闪迪投资者日释放"AI推理驱动存储需求爆发"长期指引，属产业逻辑升级。但A股存储资金本周尚未显著进场（研报先行、资金未跟进），是下周重点观察的预期差方向。</li>
+<li><strong>光通信美股回调</strong>：对A股光模块连续大涨后的外部警示，需警惕下周CPO/光模块高位分歧。</li>
+<li><strong>概念区分</strong>：下周主线仍是AI算力硬件链，需严格区分光模块/CPO（英伟达映射+订单）、光芯片散热/材料（中际旭创入股驱动）、存储芯片（美股涨价+国产DRAM）、算力租赁/AIDC（租金趋势）、液冷/电源（算力散热配套）五条不同驱动逻辑。</li>
+</ul>
+<h2>💰 本周板块资金趋势回顾</h2>
+<h3>本周五（8月14日）资金进攻方向（东财概念口径）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">单日净流入</th>
+<th style="text-align: center;">5日趋势</th>
+<th style="text-align: center;">30日趋势</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算力概念</td>
+<td style="text-align: center;">+46.0亿</td>
+<td style="text-align: center;">-160.6亿</td>
+<td style="text-align: center;">+83.8亿</td>
+<td>单日回流，波段仍在流出</td>
+</tr>
+<tr>
+<td>东数西算</td>
+<td style="text-align: center;">+35.9亿</td>
+<td style="text-align: center;">-11.2亿</td>
+<td style="text-align: center;">+27.0亿</td>
+<td>资金承接</td>
+</tr>
+<tr>
+<td>WiFi</td>
+<td style="text-align: center;">+35.6亿</td>
+<td style="text-align: center;">+16.0亿</td>
+<td style="text-align: center;">+47.3亿</td>
+<td>持续在榜</td>
+</tr>
+<tr>
+<td>英伟达概念</td>
+<td style="text-align: center;">+30.4亿</td>
+<td style="text-align: center;">-32.1亿</td>
+<td style="text-align: center;">+6.4亿</td>
+<td>单日回流</td>
+</tr>
+<tr>
+<td>创新药</td>
+<td style="text-align: center;">+29.7亿</td>
+<td style="text-align: center;">+34.9亿</td>
+<td style="text-align: center;">+9.5亿</td>
+<td>资金承接</td>
+</tr>
+<tr>
+<td>液冷概念</td>
+<td style="text-align: center;">+27.4亿</td>
+<td style="text-align: center;">-52.0亿</td>
+<td style="text-align: center;">+29.1亿</td>
+<td>单日回流</td>
+</tr>
+<tr>
+<td>CPO概念</td>
+<td style="text-align: center;">+26.3亿</td>
+<td style="text-align: center;">-88.5亿</td>
+<td style="text-align: center;">+114.3亿</td>
+<td>波段最强、单日反弹</td>
+</tr>
+</tbody>
+</table></div>
+<h3>本周五（8月14日）资金撤退方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">单日净流出</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>半导体概念</td>
+<td style="text-align: center;">-182.4亿</td>
+<td>高位获利了结</td>
+</tr>
+<tr>
+<td>央国企改革</td>
+<td style="text-align: center;">-157.9亿</td>
+<td>权重撤退</td>
+</tr>
+<tr>
+<td>小金属概念</td>
+<td style="text-align: center;">-149.9亿</td>
+<td>有色退潮</td>
+</tr>
+</tbody>
+</table></div>
+<h3>资金雷达加权评分 TOP（东财口径，8月14日）</h3>
+<blockquote>
+<p>本周切换为东财概念板块口径，加权评分 score 排序（口径切换首周，排名变化暂不可比）</p>
+</div>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: center;">排名</th>
+<th>板块</th>
+<th style="text-align: center;">加权评分</th>
+<th>当日表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>WiFi</td>
+<td style="text-align: center;">971.9</td>
+<td>+0.91%</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>英伟达概念</td>
+<td style="text-align: center;">961.2</td>
+<td>+1.51% 资金+价格共振</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>CRO</td>
+<td style="text-align: center;">951.1</td>
+<td>+0.63% 资金承接</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>创新药</td>
+<td style="text-align: center;">950.5</td>
+<td>-0.54% 资金与价格背离</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>东数西算</td>
+<td style="text-align: center;">946.0</td>
+<td>+0.79% 资金承接</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>数据中心</td>
+<td style="text-align: center;">945.6</td>
+<td>+0.51% 资金承接</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>CPO概念</td>
+<td style="text-align: center;">944.9</td>
+<td>+3.18% 资金+价格共振</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td>腾讯云</td>
+<td style="text-align: center;">942.3</td>
+<td>+0.48% 资金承接</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td>绿色电力</td>
+<td style="text-align: center;">937.9</td>
+<td>-1.80% 资金与价格背离</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td>CAR-T细胞疗法</td>
+<td style="text-align: center;">937.4</td>
+<td>+1.02% 资金承接</td>
+</tr>
+</tbody>
+</table></div>
+<h3>机构建仓 / 退潮信号</h3>
+<ul>
+<li><strong>🟢 关注建仓</strong>：光通信/CPO（主力净流入126.7/123.0亿，资金+价格共振）；液冷服务器（净流入117.2亿，AI算力散热分支补涨）。</li>
+<li><strong>🟡 观察转强</strong>：数据中心（长期在榜，净流入45.7亿，算力租赁回暖）。</li>
+<li><strong>🔴 减仓观望</strong>：医药（CXO/创新药/医美），昨日主线今日分化退潮，医美-2.37%领跌。</li>
+<li><strong>🔴 撤退</strong>：高位题材股（秦安股份、宝鹰股份、德龙汇能、京投发展批量跌停）。</li>
+</ul>
+<h2>🎯 下周主线预判</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th>关注标的</th>
+<th>预期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>光通信/CPO延续</td>
+<td>中际旭创入股+光模块景气双轮，主线确定性最高</td>
+<td>中石科技、剑桥科技、亨通光电</td>
+<td>强</td>
+</tr>
+<tr>
+<td>光芯片散热/材料</td>
+<td>光模块放量带动散热需求，产业链向上游延伸</td>
+<td>金戈新材、阿莱德、富信科技</td>
+<td>强</td>
+</tr>
+<tr>
+<td>存储芯片/DRAM</td>
+<td>美股存储史诗级暴涨映射+研报先行，预期差方向</td>
+<td>兆易创新、长鑫科技映射、佰维存储</td>
+<td>中</td>
+</tr>
+<tr>
+<td>算力租赁/液冷</td>
+<td>资金承接+补涨，AI算力基础设施扩散</td>
+<td>数据港、网宿科技、利通电子</td>
+<td>中</td>
+</tr>
+<tr>
+<td>潜在风险方向</td>
+<td>高位股跌停潮扩散+光通信美股回调传导</td>
+<td>观察CPO高位分歧、缩量信号</td>
+<td>关注</td>
+</tr>
+</tbody>
+</table></div>
+<h2>⚠️ 下周风险日历</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>日期</th>
+<th>风险事件</th>
+<th>影响方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>周一 8/17</td>
+<td>中国7月工业增加值、零售、固投、房地产数据</td>
+<td>检验内需与政策传导，影响港股/顺周期</td>
+</tr>
+<tr>
+<td>周一 8/17</td>
+<td>DeepSeek 调价方案生效</td>
+<td>AI应用/算力租赁成本预期</td>
+</tr>
+<tr>
+<td>周三 8/19</td>
+<td>美联储7月FOMC会议纪要</td>
+<td>全球风险偏好、9月利率路径</td>
+</tr>
+<tr>
+<td>周四 8/20</td>
+<td>中国1年/5年期LPR报价</td>
+<td>房地产、银行、风险情绪</td>
+</tr>
+<tr>
+<td>周五 8/21</td>
+<td>全球8月PMI初值（亚欧美）</td>
+<td>全球增长预期、外盘情绪</td>
+</tr>
+<tr>
+<td>本周</td>
+<td>美国拟限制中国IDC设备、特朗普对多晶硅加征关税</td>
+<td>IDC/算力链、光伏多晶硅</td>
+</tr>
+<tr>
+<td>本周</td>
+<td>高位股跌停潮是否扩散</td>
+<td>题材投机情绪</td>
+</tr>
+</tbody>
+</table></div>
+<h2>📌 策略建议</h2>
+<div class="highlight">
+<p>💡 <strong>上周五判断回顾</strong>：今日深度复盘主线判断为「AI算力硬件链单主线确立」，本周市场从"医药+AI算力"双主线切换为算力单主线，光通信/CPO/散热/液冷全链扩散，判断基本兑现；存储芯片"研报先行、资金未跟进"的预期差也如约出现。</p>
+</div>
+<ul>
+<li><strong>仓位建议</strong>：MTI 中性信号对应正常仓位，但活跃市值、两融均处历史高位、增量资金转冷，建议中性偏谨慎，仓位上限参考 ERP 的 90% 天花板但实际控制在 6—7 成，留足应对高位回撤的余地。</li>
+<li><strong>进攻方向</strong>：AI算力硬件链（光通信/CPO/散热/液冷）仍是主线，核心龙头（中石科技、剑桥科技）继续连板则持有；存储芯片若出现板块性涨停潮可轻仓接力。</li>
+<li><strong>防守方向</strong>：高位题材股坚决撤退；医药（CXO/创新药/医美）趁反抽减仓；权重（电力/保险）暂时回避。</li>
+<li><strong>风险应对</strong>：核心观察三个信号——①活跃市值单日跌破 -2.3% 触发K哥清仓信号；②两融87.7%分位若拐头向下则多杀多预警；③两市成交跌破2万亿或CPO龙头集体炸板则题材情绪转弱。任一出现应及时降仓防守。</li>
+</ul>
+<h3>下周验证清单</h3>
+<ol>
+<li>活跃市值能否守住 20 万亿（跌破 -2.3% → 清仓信号）</li>
+<li>两融余额是否拐头向下（87.7% 高位若拐头 → 多杀多）</li>
+<li>两市成交能否回升至 1.8 万亿上方（增量资金修复信号）</li>
+<li>中石科技、剑桥科技能否继续连板（算力主线风向标）</li>
+<li>存储芯片能否出现板块性行情（美股映射预期差兑现）</li>
+<li>高位股跌停潮是否继续扩散、光通信美股回调是否传导</li>
+</ol>
+
+<footer>
+<p><strong>⚠️ 免责声明</strong>：本报告由投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+<p style="margin-top:8px;"><strong>数据来源：</strong></p>
+<p>A股行情 / 涨跌停 / 板块涨跌幅 / 主力资金 → 通达信 MCP（tdx_quotes / tdx_screener / tdx_api_data）</p>
+<p>板块资金雷达加权评分 / 资金流向 → 本地板块资金雷达（东财概念口径 em_metrics.json / em_bkzj）</p>
+<p>宏观择时 MTI v3 / 活跃市值 / 两融 / ERP → 本地宏观择时系统（macro_timing.py / 0AMV 活筹指数）</p>
+<p>美股行情 / 全球指数 / 宏观商品 → web_search（东方财富、同花顺、财联社等）</p>
+<p>下周财经日历 / 风险事件 → web_search（财联社、华尔街见闻、MacroMicro）</p>
+<p style="margin-top:8px;">生成时间：2026年8月14日 23:00</p>
+</footer>
+
+</body>
+</html>

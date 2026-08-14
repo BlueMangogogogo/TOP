@@ -1,9 +1,29 @@
 {
-    "last_updated":  "2026-08-14 22:36:51",
-    "total":  179,
-    "daily_count":  142,
+    "last_updated":  "2026-08-14 23:13:41",
+    "total":  181,
+    "daily_count":  144,
     "industry_count":  37,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-08-14/深度复盘.html",
+                        "id":  "2026-08-14-深度复盘",
+                        "display_date":  "8月14日",
+                        "title":  "深度复盘",
+                        "category":  "深度复盘",
+                        "type":  "daily",
+                        "size_kb":  29.1,
+                        "date":  "2026-08-14"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-14/周度盘前.html",
+                        "id":  "2026-08-14-周度盘前",
+                        "display_date":  "8月14日",
+                        "title":  "周度盘前",
+                        "category":  "周度盘前",
+                        "type":  "daily",
+                        "size_kb":  20.8,
+                        "date":  "2026-08-14"
+                    },
                     {
                         "relative_path":  "reports/2026-08-14/研报巡逻.html",
                         "id":  "2026-08-14-研报巡逻",
