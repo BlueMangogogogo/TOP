@@ -1,9 +1,19 @@
 {
-    "last_updated":  "2026-08-17 19:06:07",
-    "total":  190,
-    "daily_count":  152,
+    "last_updated":  "2026-08-17 22:37:15",
+    "total":  191,
+    "daily_count":  153,
     "industry_count":  38,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-08-17/研报巡逻.html",
+                        "id":  "2026-08-17-研报巡逻",
+                        "display_date":  "8月17日",
+                        "title":  "研报巡逻",
+                        "category":  "研报巡逻",
+                        "type":  "daily",
+                        "size_kb":  18.9,
+                        "date":  "2026-08-17"
+                    },
                     {
                         "relative_path":  "reports/2026-08-17/行业调研_半导体存储算力硬件.html",
                         "id":  "2026-08-17-行业调研_半导体存储算力硬件",
