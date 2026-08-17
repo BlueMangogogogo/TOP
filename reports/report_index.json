@@ -1,9 +1,89 @@
 {
-    "last_updated":  "2026-08-14 23:13:41",
-    "total":  181,
-    "daily_count":  144,
+    "last_updated":  "2026-08-17 17:22:57",
+    "total":  189,
+    "daily_count":  152,
     "industry_count":  37,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-08-17/宏观择时日报_MTIv3_20260817.html",
+                        "id":  "2026-08-17-宏观择时日报_MTIv3_20260817",
+                        "display_date":  "8月17日",
+                        "title":  "宏观择时日报_MTIv3_20260817",
+                        "category":  "宏观择时",
+                        "type":  "daily",
+                        "size_kb":  151.8,
+                        "date":  "2026-08-17"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-17/竞价快报.html",
+                        "id":  "2026-08-17-竞价快报",
+                        "display_date":  "8月17日",
+                        "title":  "竞价快报",
+                        "category":  "竞价快报",
+                        "type":  "daily",
+                        "size_kb":  5.3,
+                        "date":  "2026-08-17"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-17/开盘速览.html",
+                        "id":  "2026-08-17-开盘速览",
+                        "display_date":  "8月17日",
+                        "title":  "开盘速览",
+                        "category":  "开盘速览",
+                        "type":  "daily",
+                        "size_kb":  7.6,
+                        "date":  "2026-08-17"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-17/盘前简报.html",
+                        "id":  "2026-08-17-盘前简报",
+                        "display_date":  "8月17日",
+                        "title":  "盘前简报",
+                        "category":  "盘前简报",
+                        "type":  "daily",
+                        "size_kb":  9.1,
+                        "date":  "2026-08-17"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-17/盘中异动.html",
+                        "id":  "2026-08-17-盘中异动",
+                        "display_date":  "8月17日",
+                        "title":  "盘中异动",
+                        "category":  "盘中异动",
+                        "type":  "daily",
+                        "size_kb":  12,
+                        "date":  "2026-08-17"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-17/深度复盘.html",
+                        "id":  "2026-08-17-深度复盘",
+                        "display_date":  "8月17日",
+                        "title":  "深度复盘",
+                        "category":  "深度复盘",
+                        "type":  "daily",
+                        "size_kb":  32.6,
+                        "date":  "2026-08-17"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-17/收盘总结.html",
+                        "id":  "2026-08-17-收盘总结",
+                        "display_date":  "8月17日",
+                        "title":  "收盘总结",
+                        "category":  "收盘总结",
+                        "type":  "daily",
+                        "size_kb":  17.1,
+                        "date":  "2026-08-17"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-17/午盘扫描.html",
+                        "id":  "2026-08-17-午盘扫描",
+                        "display_date":  "8月17日",
+                        "title":  "午盘扫描",
+                        "category":  "午盘扫描",
+                        "type":  "daily",
+                        "size_kb":  9.1,
+                        "date":  "2026-08-17"
+                    },
                     {
                         "relative_path":  "reports/2026-08-14/深度复盘.html",
                         "id":  "2026-08-14-深度复盘",
