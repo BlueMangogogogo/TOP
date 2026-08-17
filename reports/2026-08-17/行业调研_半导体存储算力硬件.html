@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-08-17 行业调研：半导体/存储/算力硬件</title>
+<style>
+:root { --yellow: #ebb543; --yellow-light: #f7e8c5; --red: #c0392b; --red-light: #fdf0ef; --green: #27ae60; --green-light: #eafaf1; --black: #1a1a1a; --gray-900:#2c2c2c; --gray-700:#555; --gray-500:#888; --gray-300:#bbb; --gray-100:#f0f0f0; --white: #fff; --font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: var(--font); font-size: 15px; line-height: 1.75; color: var(--gray-900); background: var(--white); max-width: 880px; margin: 0 auto; padding: 40px 28px 60px; -webkit-font-smoothing: antialiased; }
+header { border-bottom: 3px solid var(--yellow); padding-bottom: 20px; margin-bottom: 28px; }
+header h1 { font-size: 24px; font-weight: 700; color: var(--black); margin-bottom: 6px; letter-spacing: 0.5px; }
+header .meta { font-size: 13px; color: var(--gray-500); }
+header .meta span { margin-right: 16px; }
+h2 { font-size: 18px; font-weight: 700; color: var(--black); margin: 32px 0 10px; padding-left: 12px; border-left: 4px solid var(--yellow); }
+h3 { font-size: 16px; font-weight: 700; color: var(--gray-900); margin: 22px 0 8px; }
+p { margin: 8px 0; }
+.table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 14px 0 20px; border: 1px solid var(--gray-300); border-radius: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 520px; }
+thead th { background: var(--yellow); color: var(--black); font-weight: 700; padding: 9px 11px; text-align: left; white-space: nowrap; border-bottom: 2px solid #d4a734; }
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child { border-radius: 0 5px 0 0; }
+tbody td { padding: 8px 11px; border-bottom: 1px solid var(--gray-100); vertical-align: top; }
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pos { color: var(--red); font-weight: 600; }
+.neg { color: #27ae60; font-weight: 600; }
+.highlight { background: var(--yellow-light); border-left: 4px solid var(--yellow); padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+.warning { background: var(--red-light); border-left: 4px solid var(--red); padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; font-size: 14px; color: #8b1a1a; }
+.resonance { background: var(--green-light); border-left: 4px solid var(--green); padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; font-size: 14px; color: #1e6b3a; }
+ul, ol { margin: 8px 0 8px 20px; }
+li { margin: 4px 0; }
+hr { border: none; border-top: 1px solid var(--gray-100); margin: 24px 0; }
+.tag { display: inline-block; background: var(--yellow-light); color: #8b6914; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 3px; margin: 0 4px 4px 0; }
+.tag-red { background: var(--red-light); color: var(--red); }
+.tag-green { background: var(--green-light); color: #1e6b3a; }
+strong { color: var(--black); }
+footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--gray-100); font-size: 12px; color: var(--gray-500); line-height: 1.7; }
+@media (max-width: 600px) { body { padding: 20px 14px 40px; font-size: 14px; } }
+</style>
+</head>
+<body>
+
+<header>
+<h1>2026-08-17 行业调研：半导体 / 存储 / 算力硬件</h1>
+<div class="meta"><span>📚 每周一行业调研（外部校准）</span><span>📅 2026-08-17</span><span>🤖 投资小龙虾 AI 自动生成</span></div>
+</header>
+
+<p>本期为轮换制<strong>第一周主题：半导体 / 存储 / 算力硬件</strong>。恰逢「存储荒」预期发酵、SK 海力士预警明年存储荒、Omdia 上调全球半导体增速至 94.1%，本地资金雷达已同步捕捉到「半导体全链（存储为核心）」主线切换。本报告将外部研报/纪要/新闻与本地资金数据进行交叉验证，输出共振信号、背离信号与校准建议。</p>
+
+<h2>一、外部研报核心观点汇总</h2>
+
+<h3>1. 券商研报（report 源）</h3>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>机构</th><th>日期</th><th>核心观点</th></tr></thead>
+<tbody>
+<tr><td>招商证券</td><td>08-13</td><td>半导体深度跟踪：海外资本开支持续上行，自主可控产业链加速放量；存储价格延续上涨但涨幅趋缓，DRAM 受 HBM 挤占产能及 AI 服务器需求增长影响，<strong>2027 年供需仍有望保持紧张</strong>，持续看好存储产业链。</td></tr>
+<tr><td>中原证券</td><td>08-10</td><td>半导体仍处上行周期，AI 为核心增长动力；韩国宣布 AI 超级投资规划（三星 2655 万亿、SK 集团 2100 万亿韩元），SEMI 预测 2026 年全球 300mm 晶圆厂存储领域设备投资达 520 亿美元（同比 +29%），看好国产设备及零部件。</td></tr>
+<tr><td>中信建投</td><td>08-03</td><td>半导体设备系列报告：全球半导体设备进入<strong>量价齐升</strong>通道，国产设备出海进程加速；DRAM 仍是存储领域主要增长动力，HBM 需求持续增长。</td></tr>
+<tr><td>光大证券</td><td>08-02</td><td>光研之声 8 月月报：北美五大云厂商 26 年资本开支预计同比 <strong>+88%</strong>，光模块从 800G 向 1.6T/3.2T/CPO 升级，液冷渗透率快速提升，看好 PCB/液冷/光模块设备高景气。</td></tr>
+<tr><td>长城证券</td><td>08-03</td><td>北美巨头业绩出炉，云业务与资本开支持续高增；长鑫存储登陆科创板（DRAM 全球份额 7.67% 位列第四、中国第一），英伟达与 SK 海力士深化 HBM 合作。</td></tr>
+<tr><td>申万宏源</td><td>07-24</td><td>计算机行业周报：26Q2 计算机持仓占比探底，机构加仓大模型与算力硬件标的；2026 年为算力投资高景气与商业化共振元年。</td></tr>
+<tr><td>东海证券</td><td>07-29</td><td>AI 驱动需求旺盛、供给端产能布局缓慢，高景气或持续；<strong>但估值已处历史高分位，短期警惕利好兑现调整风险</strong>，建议逢低关注 AI 与国产化结构性机会。</td></tr>
+<tr><td>高盛 / 汇丰 / Kepler</td><td>07-22</td><td>STMicro 2Q26 业绩：上调 2026/27 年 AI 收入预期，但整体需求复苏节奏偏慢。</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>2. 专家纪要（expert 源）</h3>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>来源</th><th>日期</th><th>关键判断</th></tr></thead>
+<tbody>
+<tr><td>国泰海通·计算机专家会</td><td>07-19</td><td>存储专家：26-27 年 HBM/DDR 是投资重点，单点突破在这两年均可实现；27 年后进入 1-2 年优化整合期，长鑫将把工艺要求细分到供应链每个节点。</td></tr>
+<tr><td>东吴机械·金股推荐</td><td>08-09</td><td>HBM 占晶圆面积约 30% 但仅贡献存储大厂 10-15% 利润（海力士约 14%）；<strong>HBM 对晶圆消耗趋势不可逆</strong>，层数增多、良率下降，单 GPU 配 HBM 数量增加，英伟达/HBM 用量比例已达 60-70%。</td></tr>
+<tr><td>国联民生·半导体超级周期电话会(六)</td><td>07-19</td><td>HBM 涨价持续：当前产能 32.6 万片/月（三星 14 万 + 海力士 15 万 + 美光 3.6 万），市场需求显著超供给，对应 GPU+ASIC+TPU 板卡远超 1600 万张/年。</td></tr>
+<tr><td>国泰海通·海外半导体设备十八讲</td><td>08-11</td><td>先进制程从平面缩微转向结构创新（GAA、背面供电），单位产能所需设备价值量提高，利好应用材料等设备龙头。</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>3. 行业新闻关键数据（web 源）</h3>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>数据点</th><th>数值</th><th>来源</th></tr></thead>
+<tbody>
+<tr><td>全球半导体销售额（6月）</td><td>同比 <span class="pos">+123.6%</span> 至 1344.5 亿美元</td><td>网易新闻 08-17</td></tr>
+<tr><td>DDR3 现货价（8-14）</td><td>较年初 <span class="pos">+247.5%</span>，2026 均价较 2025 年 <span class="pos">+393.9%</span></td><td>网易新闻 08-17</td></tr>
+<tr><td>NAND Flash 现货价（8-14）</td><td>较年初 <span class="pos">+288.3%</span></td><td>网易新闻 08-17</td></tr>
+<tr><td>华强北 1TB SSD</td><td>去年 9 月 410 元 → 现价 950 元（<span class="pos">+132%</span>）</td><td>腾讯新闻 07-31</td></tr>
+<tr><td>RTX5080 显卡</td><td>7-22 的 8000 元 → 约 12000 元（<span class="pos">+50%</span>）</td><td>腾讯新闻 07-31</td></tr>
+<tr><td>全球存储销售额（7月）</td><td>746 亿美元创历史单月新高（环比 <span class="pos">+31.7%</span>，DRAM 占 60%+）</td><td>报告大厅 07-31</td></tr>
+<tr><td>HBM 市场规模</td><td>2024 年 170 亿 → 2030 年 980 亿美元（CAGR <span class="pos">33%</span>）</td><td>报告大厅 07-31</td></tr>
+<tr><td>2026Q3 存储合约价</td><td>Server DRAM 环比 <span class="pos">+13~18%</span>，NAND <span class="pos">+10~15%</span></td><td>报告大厅 07-31</td></tr>
+<tr><td>中芯国际 Q2</td><td>收入环比 <span class="pos">+20%</span>、毛利率升至 25.3%</td><td>网易新闻 08-17</td></tr>
+<tr><td>先进封装设备市场</td><td>增速突破 <span class="pos">30%</span></td><td>中华网 08-03</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="highlight">💡 <strong>外部共识一句话</strong>：存储涨价已从「周期反弹」演变为「<strong>AI 驱动的结构性供需失衡</strong>」——AI 数据中心对存储容量的消耗远超产能自然增长，叠加 HBM 挤占 DRAM/NAND 产能、全球晶圆厂扩产进入设备采购高峰期，半导体设备国产替代正从「导入验证」迈入「规模放量」，形成「存储涨价 + 设备放量 + 算力硬件」三条并行景气线。</div>
+
+<h2>二、本地资金数据验证</h2>
+
+<p>本地数据源：东方财富板块资金雷达 <code>em_bkzj_20260817.json</code>（今日主力净流入口径，单位：亿元），并与今日《深度复盘》（通达信 MCP 口径）交叉核对。</p>
+
+<h3>1. 半导体/存储/算力相关板块资金流（东方财富口径）</h3>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>板块</th><th class="num">今日净流入</th><th class="num">5日</th><th class="num">10日</th><th class="num">30日</th><th>信号</th></tr></thead>
+<tbody>
+<tr><td>半导体概念</td><td class="num pos">+300.7</td><td class="num pos">+92.5</td><td class="num pos">+618.6</td><td class="num pos">+163.7</td><td><span class="tag-green">全周期共振</span></td></tr>
+<tr><td>国产芯片</td><td class="num pos">+283.0</td><td class="num pos">+107.6</td><td class="num pos">+409.1</td><td class="num pos">+162.2</td><td><span class="tag-green">全周期共振</span></td></tr>
+<tr><td>存储芯片</td><td class="num pos">+201.8</td><td class="num pos">+82.2</td><td class="num pos">+344.5</td><td class="num pos">+95.3</td><td><span class="tag-green">全周期共振</span></td></tr>
+<tr><td>CPO 概念</td><td class="num pos">+130.2</td><td class="num pos">+385.9</td><td class="num pos">+543.6</td><td class="num pos">+222.4</td><td><span class="tag-green">全周期共振</span></td></tr>
+<tr><td>先进封装</td><td class="num pos">+97.7</td><td class="num pos">+7.1</td><td class="num pos">+148.8</td><td class="num pos">+42.1</td><td><span class="tag-green">今日转强</span></td></tr>
+<tr><td>第三代半导体</td><td class="num pos">+75.2</td><td class="num pos">+27.2</td><td class="num pos">+174.1</td><td class="num pos">+56.7</td><td><span class="tag-green">共振</span></td></tr>
+<tr><td>汽车芯片</td><td class="num pos">+63.4</td><td class="num pos">+41.1</td><td class="num pos">+128.2</td><td class="num pos">+16.5</td><td><span class="tag-green">共振</span></td></tr>
+<tr><td>液冷服务器</td><td class="num pos">+50.0</td><td class="num pos">+141.6</td><td class="num pos">+242.1</td><td class="num pos">+130.0</td><td><span class="tag-green">共振</span></td></tr>
+<tr><td>算力概念</td><td class="num pos">+40.3</td><td class="num pos">+241.0</td><td class="num pos">+163.3</td><td class="num pos">+172.1</td><td><span class="tag-green">共振</span></td></tr>
+<tr><td>光刻胶</td><td class="num pos">+23.7</td><td class="num neg">-7.8</td><td class="num pos">+43.5</td><td class="num neg">-0.3</td><td>弱流入</td></tr>
+<tr><td>AI 芯片</td><td class="num pos">+15.2</td><td class="num neg">-3.1</td><td class="num pos">+4.7</td><td class="num pos">+3.7</td><td>弱流入</td></tr>
+<tr><td>光刻机</td><td class="num pos">+10.0</td><td class="num pos">+2.5</td><td class="num pos">+89.5</td><td class="num pos">+3.7</td><td>弱流入</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>2. AI 应用 / 软件方向资金流（对照）</h3>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>板块</th><th class="num">今日净流入</th><th class="num">5日</th><th class="num">10日</th><th>信号</th></tr></thead>
+<tbody>
+<tr><td>AIGC 概念</td><td class="num neg">-25.4</td><td class="num neg">-85.2</td><td class="num neg">-153.6</td><td><span class="tag-red">流出</span></td></tr>
+<tr><td>AI 智能体</td><td class="num neg">-19.9</td><td class="num neg">-62.5</td><td class="num neg">-107.5</td><td><span class="tag-red">流出</span></td></tr>
+<tr><td>大数据</td><td class="num neg">-19.1</td><td class="num neg">-56.5</td><td class="num neg">-57.1</td><td><span class="tag-red">流出</span></td></tr>
+<tr><td>国产软件</td><td class="num neg">-16.3</td><td class="num neg">-94.0</td><td class="num neg">-188.6</td><td><span class="tag-red">持续流出</span></td></tr>
+<tr><td>AI 制药（医疗）</td><td class="num neg">-4.1</td><td class="num neg">-30.4</td><td class="num neg">-17.2</td><td><span class="tag-red">流出</span></td></tr>
+<tr><td>多模态 AI</td><td class="num neg">-2.5</td><td class="num neg">-43.5</td><td class="num neg">-77.9</td><td><span class="tag-red">流出</span></td></tr>
+<tr><td>AI 应用（5日口径）</td><td class="num">—</td><td class="num neg">-160.2</td><td class="num">—</td><td><span class="tag-red">持续流出</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="highlight">💡 <strong>本地验证一句话</strong>：今日《深度复盘》（通达信口径）显示存储芯片主力净流入 <strong>+251 亿</strong>居首、半导体包揽资金进攻榜前四（存储 +251 亿 / 芯片 +228 亿 / 先进封装 +207 亿 / 第三代半导体 +135 亿），长鑫科技 +12% 市值重回 4.13 万亿登顶 A 股「市值一哥」。东方财富口径下半导体/存储/国产芯片/CPO 均为「今日 + 5日 + 10日 + 30日」全周期净流入，与外部研报结论高度一致。</div>
+
+<h2>三、共振信号与背离信号</h2>
+
+<h3>1. 共振信号（研报看多 + 本地资金双确认）</h3>
+<div class="resonance">✅ <strong>共振一：存储涨价主线，最强共振。</strong>外部研报/专家/新闻一致确认「存储结构性供需失衡」（DDR3 较年初 +247.5%、HBM 缺口、2027 供需仍紧张），本地存储芯片今日 +201.8 亿（通达信口径 +251 亿）居首，长鑫科技 +12%。基本面景气 + 资金流入 + 龙头创新高三重确认，是当前置信度最高的主线。</div>
+<div class="resonance">✅ <strong>共振二：半导体设备国产替代放量。</strong>招商/中原/中信建投一致看多「设备量价齐升 + 国产替代从导入迈入放量」，本地先进封装 +97.7 亿、国产芯片 +283 亿、第三代半导体 +75.2 亿同步流入，中芯国际 Q2 超预期（毛利率 25.3%）提供业绩支撑。</div>
+<div class="resonance">✅ <strong>共振三：算力硬件（CPO/液冷/光模块）。</strong>光大证券看多北美云厂资本开支 +88%、光模块向 CPO 升级，本地 CPO 今日 +130.2 亿且 5日/10日/30日全周期流入，液冷服务器 +50 亿（5日 +141.6 亿），资金持续加码。</div>
+
+<h3>2. 背离信号（需警惕）</h3>
+<div class="warning">⚠️ <strong>背离一：「AI 应用软件」与「算力硬件」资金分化。</strong>外部研报中长期仍看多 AI（偏算力），但本地资金今日明确抛弃 AI 应用方向——AIGC -25.4 亿、AI 智能体 -19.9 亿、国产软件 -16.3 亿、大数据 -19.1 亿，AI 应用 5日累计 -160.2 亿。资金正从「应用端」向「硬件端」切换，若持仓仍偏重 AI 软件/传媒方向，需警惕风格错配。</div>
+<div class="warning">⚠️ <strong>背离二：估值高位的「一致性警示」。</strong>东海证券、国泰海通专家均提示「估值处历史高分位、警惕短期利好兑现调整」，本地《深度复盘》亦判断「情绪偏热、警惕次日分歧」。这不是资金背离，而是「共识过热」信号——主线方向正确，但短期拥挤度已高，需防范高位分歧与兑现。</div>
+
+<h2>四、对本地复盘体系的校准建议</h2>
+
+<ol>
+<li><strong>将存储主线的定性从「涨价题材」升级为「AI 超级周期的结构性主线」。</strong>本地复盘已准确捕捉存储主线上涨，但外部研报提供了更本质的底层逻辑：本轮涨价是 AI 数据中心对存储容量消耗「远超产能自然增长」的结构性缺口，而非传统周期反弹，持续性应显著上修。建议在复盘框架中为存储单列「结构性供需」维度，而非归入普通涨价题材。</li>
+<li><strong>补充「半导体设备国产替代」为独立跟踪线。</strong>外部研报反复强调国产设备正从「导入验证」迈入「规模放量」（SEMI 预测 2026 存储设备投资 520 亿美元 +29%），本地复盘已提及但权重可提升，建议后续跟踪设备/材料/零部件的订单与中标数据，而非仅看板块涨跌。</li>
+<li><strong>明确记录「应用退潮、硬件主升」的风格切换信号。</strong>AI 应用（AIGC/AI 智能体/国产软件）资金持续流出与算力硬件（存储/CPO/液冷）流入形成鲜明剪刀差，建议在复盘的主线判断中显式区分「AI 硬件」与「AI 应用」两条线，避免对 AI 应用方向过度留恋。</li>
+<li><strong>本地视角未跑偏，外部校准确认方向一致。</strong>本地「半导体全链（存储为核心）」的主线判断与外部 8 家券商研报、4 组专家纪要、多家行业新闻的共识完全吻合，说明本地资金雷达 + 复盘体系具备较好的前瞻性，无需调整框架，仅需在「持续性判断」上引入外部产业数据（涨价幅度、产能缺口、设备订单）作为交叉锚。</li>
+</ol>
+
+<footer>
+<p><strong>数据来源（分条标注）：</strong></p>
+<p>① 外部研报/纪要/新闻：亿信 API（Billions Intelligence）search 端点，source 分别为 report（券商研报：招商证券、中原证券、中信建投、光大证券、长城证券、申万宏源、东海证券、高盛、汇丰、Kepler Cheuvreux）、expert（专家纪要：国泰海通、东吴机械、国联民生、国泰海通海外科技）、web（行业新闻：网易、腾讯、新浪、报告大厅、中华网、中研网等），检索时间范围近 1 个月；</p>
+<p>② 本地资金数据：东方财富板块资金雷达 em_bkzj_20260817.json（今日主力净流入口径）；</p>
+<p>③ 本地复盘：分析报告汇总/2026-08-17/深度复盘.html（通达信 MCP 主力净流入口径）。</p>
+<p style="margin-top:12px;">⚠️ 免责声明：本报告由 AI 自动生成，仅用于内部投资研究参考，不构成任何投资建议。市场有风险，决策需独立判断。</p>
+</footer>
+
+</body>
+</html>
