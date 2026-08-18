@@ -1,9 +1,89 @@
 {
-    "last_updated":  "2026-08-17 22:37:15",
-    "total":  191,
-    "daily_count":  153,
+    "last_updated":  "2026-08-18 23:40:39",
+    "total":  198,
+    "daily_count":  160,
     "industry_count":  38,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-08-17/深度复盘.html",
+                        "id":  "2026-08-17-深度复盘",
+                        "display_date":  "8月17日",
+                        "title":  "深度复盘",
+                        "category":  "深度复盘",
+                        "type":  "daily",
+                        "size_kb":  36.6,
+                        "date":  "2026-08-17"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-18/竞价快报.html",
+                        "id":  "2026-08-18-竞价快报",
+                        "display_date":  "8月18日",
+                        "title":  "竞价快报",
+                        "category":  "竞价快报",
+                        "type":  "daily",
+                        "size_kb":  7.1,
+                        "date":  "2026-08-18"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-18/盘前简报.html",
+                        "id":  "2026-08-18-盘前简报",
+                        "display_date":  "8月18日",
+                        "title":  "盘前简报",
+                        "category":  "盘前简报",
+                        "type":  "daily",
+                        "size_kb":  9.1,
+                        "date":  "2026-08-18"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-18/盘中异动.html",
+                        "id":  "2026-08-18-盘中异动",
+                        "display_date":  "8月18日",
+                        "title":  "盘中异动",
+                        "category":  "盘中异动",
+                        "type":  "daily",
+                        "size_kb":  13.3,
+                        "date":  "2026-08-18"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-18/深度复盘.html",
+                        "id":  "2026-08-18-深度复盘",
+                        "display_date":  "8月18日",
+                        "title":  "深度复盘",
+                        "category":  "深度复盘",
+                        "type":  "daily",
+                        "size_kb":  26.3,
+                        "date":  "2026-08-18"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-18/收盘总结.html",
+                        "id":  "2026-08-18-收盘总结",
+                        "display_date":  "8月18日",
+                        "title":  "收盘总结",
+                        "category":  "收盘总结",
+                        "type":  "daily",
+                        "size_kb":  17.5,
+                        "date":  "2026-08-18"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-18/午盘扫描.html",
+                        "id":  "2026-08-18-午盘扫描",
+                        "display_date":  "8月18日",
+                        "title":  "午盘扫描",
+                        "category":  "午盘扫描",
+                        "type":  "daily",
+                        "size_kb":  11.4,
+                        "date":  "2026-08-18"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-18/研报巡逻.html",
+                        "id":  "2026-08-18-研报巡逻",
+                        "display_date":  "8月18日",
+                        "title":  "研报巡逻",
+                        "category":  "研报巡逻",
+                        "type":  "daily",
+                        "size_kb":  12.8,
+                        "date":  "2026-08-18"
+                    },
                     {
                         "relative_path":  "reports/2026-08-17/研报巡逻.html",
                         "id":  "2026-08-17-研报巡逻",
@@ -72,16 +152,6 @@
                         "category":  "盘中异动",
                         "type":  "daily",
                         "size_kb":  12,
-                        "date":  "2026-08-17"
-                    },
-                    {
-                        "relative_path":  "reports/2026-08-17/深度复盘.html",
-                        "id":  "2026-08-17-深度复盘",
-                        "display_date":  "8月17日",
-                        "title":  "深度复盘",
-                        "category":  "深度复盘",
-                        "type":  "daily",
-                        "size_kb":  32.6,
                         "date":  "2026-08-17"
                     },
                     {

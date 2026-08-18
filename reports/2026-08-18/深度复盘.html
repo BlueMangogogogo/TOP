@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月18日 深度复盘</title>
+<style>
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span { margin-right: 16px; }
+
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+
+p { margin: 8px 0; }
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+ul, ol { margin: 8px 0 8px 20px; }
+li { margin: 4px 0; }
+
+hr { border: none; border-top: 1px solid var(--gray-100); margin: 24px 0; }
+
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>8月18日 深度复盘</h1>
+  <div class="meta">
+    📅 2026年8月18日 23:00 | 投资小龙虾 AI 自动生成 | 仅供参考
+  </div>
+</header>
+
+<h2>📊 指数全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3990.30</td>
+<td><strong>+0.19%</strong>（探底回升，盘中最低 3955.60、最高 3994.18，回踩 5 日线后收复 60 日线）</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>14622.50</td>
+<td><strong>-0.56%</strong>，沪强深弱、结构分化</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>-0.93%</td>
+<td>成长风格领跌，双创走弱</td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>2.40 万亿</td>
+<td>较昨日 2.39 万亿<strong>微放量约 130 亿（基本持平）</strong>，量能未能延续放大</td>
+</tr>
+<tr>
+<td>上涨 / 下跌家数</td>
+<td>2121 家 / 3292 家</td>
+<td>普跌格局，超 3200 只个股下跌，市场广度较昨日 4335:900 急剧恶化</td>
+</tr>
+<tr>
+<td>涨停 / 跌停</td>
+<td>80 家 / 5 家</td>
+<td>涨停较昨日 110 家回落，跌停由 1 家增至 5 家，情绪退潮</td>
+</tr>
+<tr>
+<td>炸板 / 封板率</td>
+<td>约 23 家 / 封板率 77%</td>
+<td>连板晋级率降至三成，3 只 4 连板个股全部晋级失败</td>
+</tr>
+</tbody>
+</table></div>
+
+<div class="highlight">
+<p><strong>上证压力位</strong>：3994（今日前高·8 月反弹新高）→ 4000（整数关）。<strong>支撑位</strong>：3955（5 日线·今日低点）→ 3900（MA20 附近）→ 3780（MA120 附近）。收盘站上 60 日线（约 3970-3980），下方 5 日线 3955 是第一道支撑。</p>
+</div>
+
+<div class="highlight">
+<p><strong>市场情绪：中性偏冷</strong>。核心依据：涨跌停比 16:1 表面尚可，但上涨/下跌家数比 2121:3292 明显恶化（普跌），涨停从 110 家降至 80 家、跌停增至 5 家、炸板率升至 23%、连板晋级率降至三成、3 只 4 连板全部晋级失败——赚钱效应在快速收缩，情绪由昨日偏暖明显降温。</p>
+</div>
+
+<h2>🌍 外盘与宏观环境</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>收盘</th>
+<th>涨跌</th>
+<th>对 A 股影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标普 500</td>
+<td>7745.06</td>
+<td><strong>-0.52%</strong></td>
+<td>隔夜回调，风险偏好降温</td>
+</tr>
+<tr>
+<td>道琼斯</td>
+<td>53459.78</td>
+<td><strong>-0.51%</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>纳斯达克</td>
+<td>26644.91</td>
+<td><strong>-0.32%</strong></td>
+<td>科技 / AI 方向走弱（盘后 QQQ 续跌 -1.65%）</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td>约 14.25（8/14）</td>
+<td>今年低位</td>
+<td>恐慌程度低，但需防回升</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td>99.55</td>
+<td>—</td>
+<td>弱美元格局</td>
+</tr>
+<tr>
+<td>COMEX 黄金</td>
+<td>$4417.8</td>
+<td>+0.85%</td>
+<td>避险 + 弱美元支撑</td>
+</tr>
+<tr>
+<td>WTI 原油</td>
+<td>$84.50</td>
+<td><strong>+2.55%</strong></td>
+<td>地缘局势推升油价，能源成本抬升</td>
+</tr>
+<tr>
+<td>布伦特原油</td>
+<td>$90.87</td>
+<td>+2.65%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>欧洲 Stoxx 600</td>
+<td>656.41</td>
+<td>-0.22%</td>
+<td>欧洲情绪偏弱</td>
+</tr>
+<tr>
+<td>日经 225</td>
+<td>68801.16</td>
+<td>-0.61%</td>
+<td>亚太偏弱（日本 Q2 GDP 不及预期）</td>
+</tr>
+<tr>
+<td>恒生指数</td>
+<td>25453.2</td>
+<td>+1.34%</td>
+<td>港股逆势走强</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>一句话：<strong>外盘整体偏弱</strong>——隔夜美股三大指数齐跌、纳指盘后科技股续挫（QQQ -1.65%）、30 年期美债收益率创 2007 年以来新高，外围风险偏好承压；但黄金、原油双双走强，反映避险与地缘溢价抬升。对明日 A 股情绪偏压制，尤其科技 / 半导体方向需防外围映射补跌。</p>
+
+<h2>📰 今日核心新闻简报</h2>
+<p>按影响强度排序（今日最重要的 5-8 条）：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>新闻</th>
+<th>影响板块</th>
+<th>情绪</th>
+<th>强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>超强厄尔尼诺概率升至 81%，极强事件概率超 90%，全球糖价年内新高</td>
+<td>农业 / 种业 / 粮食</td>
+<td>利好</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>李强：及时谋划出台务实管用的增量政策，坚持扩大内需战略基点</td>
+<td>大消费 / 宏观</td>
+<td>利好</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>宇树科技明日（8/19）科创板上市，人形机器人第一股</td>
+<td>机器人 / 具身智能</td>
+<td>利好</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>三星、SK 海力士上半年半导体资本开支大增 35%，产能利用率 100%</td>
+<td>存储芯片 / 半导体</td>
+<td>利好</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>30 年期美债收益率创 2007 年以来最高，美债抛售潮加剧</td>
+<td>全球风险资产</td>
+<td>利空</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>杰富瑞看好茅台转向"爱马仕模式"，目标价 2100 元</td>
+<td>白酒 / 消费</td>
+<td>利好</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td>7</td>
+<td>9 部门发文活跃县域消费</td>
+<td>县域消费 / 零售</td>
+<td>利好</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td>8</td>
+<td>日本 Q2 GDP 年化 +1.1%，远低于预期的 2%</td>
+<td>亚太宏观</td>
+<td>利空</td>
+<td>⭐</td>
+</tr>
+</tbody>
+</table></div>
+
+<h3>🔍 重点新闻情绪催化验证</h3>
+<ul>
+<li><strong>超强厄尔尼诺（农产品涨价预期）</strong>：联动标的 → 种业板块 +13.54%（秋乐种业 +29.98%、康农种业 +24.47%、神农种业 +20.04%、天山生物 +20.04% 集体涨停），粮食概念 +6.52%（金健米业涨停）。<strong>具备持续性</strong>——这是产业逻辑（全球减产 + 涨价）而非纯情绪炒作，后续关注涨停梯队是否向农药、化肥、饲料扩散，以及糖业（印度禁糖出口至 9 月底）是否接力。</li>
+<li><strong>李强谈增量政策 / 扩大内需</strong>：联动标的 → 大消费方向资金承接（乡村振兴 +20.24 亿、预制菜 +14.84 亿、新零售 +11.93 亿）。<strong>偏宏观托底</strong>，不构成单日主线，但为低位消费股提供政策底逻辑。</li>
+<li><strong>宇树科技上市</strong>：联动标的 → 正裕工业 3 连板、南方路机、南方精工、埃斯顿涨停。<strong>事件驱动</strong>，需观察上市首日表现对板块的流动性虹吸效应（可能虹吸，也可能带动）。</li>
+<li><strong>三星 / 海力士资本开支大增</strong>：联动标的 → 存储链（长鑫科技、兆易创新、佰维存储）。<strong>产业利好但今日被农业主线掩盖</strong>，存储芯片今日反而退潮，属"利好被短期情绪压制"，关注后续是否重新定价。</li>
+</ul>
+
+<h2>🔥 今日最强主线</h2>
+
+<h3>板块涨幅 TOP5（含主力资金）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>涨幅</th>
+<th>主力净流入</th>
+<th>龙头股</th>
+<th>驱动逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>种业</td>
+<td><strong>+13.54%</strong></td>
+<td>+9.92 亿</td>
+<td>秋乐种业、神农种业</td>
+<td>厄尔尼诺减产涨价预期，涨停潮</td>
+</tr>
+<tr>
+<td>2</td>
+<td>粮食概念</td>
+<td><strong>+6.52%</strong></td>
+<td>+16.70 亿</td>
+<td>金健米业</td>
+<td>粮食安全逻辑发酵</td>
+</tr>
+<tr>
+<td>3</td>
+<td>土地流转</td>
+<td><strong>+3.49%</strong></td>
+<td>+9.28 亿</td>
+<td>—</td>
+<td>农业政策与土地价值重估联动</td>
+</tr>
+<tr>
+<td>4</td>
+<td>水产品</td>
+<td><strong>+3.45%</strong></td>
+<td>净流入</td>
+<td>—</td>
+<td>农产品涨价传导</td>
+</tr>
+<tr>
+<td>5</td>
+<td>人造肉</td>
+<td><strong>+3.19%</strong></td>
+<td>净流入</td>
+<td>—</td>
+<td>食品替代与通胀预期</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>行业板块角度：种植业 <strong>+9.95%</strong>、农产品加工 +4.58%、饲料 +2.69%、林业 +2.62%、养殖业 +2.25% 全线走强；油服工程 +3.31%、油气开采 +2.28% 受地缘局势提振。</p>
+
+<h3>板块跌幅 TOP5</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块 / 方向</th>
+<th>跌幅特征</th>
+<th>代表个股</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>创新药概念</td>
+<td>高位熄火，集体下挫</td>
+<td>贝达药业 -20% 跌停</td>
+</tr>
+<tr>
+<td>2</td>
+<td>生物科技 / CRO 试剂</td>
+<td>高位兑现</td>
+<td>义翘神州 -13.03%、近岸蛋白 -12.33%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>医药外包（部分）</td>
+<td>分化下挫</td>
+<td>万邦医药 -13.17%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>AI 应用 / 航天军工</td>
+<td>资金撤离、补跌</td>
+<td>—</td>
+</tr>
+<tr>
+<td>5</td>
+<td>半导体（存储 / 封装）</td>
+<td>昨日主线退潮、分化</td>
+<td>仅硅片 / 玻璃基板局部活跃</td>
+</tr>
+</tbody>
+</table></div>
+
+<h3>主线持续性分析（六维框架）</h3>
+<ul>
+<li><strong>【大农业：种业 / 粮食】</strong>：今日强度 <strong>极强</strong>（种业 +13.54% 涨停潮、资金进攻榜霸榜）。持续性：<strong>有</strong>——核心驱动是超强厄尔尼诺引发的农产品涨价预期，属事件 + 基本面双驱动，逻辑独立且硬。<strong>六维</strong>：价格（涨停潮）✅、资金（粮食 16.7 亿 / 种业 9.9 亿加速流入）✅、联动（种业→粮食→土地流转→水产品全链扩散）✅、量能（放量上涨）✅、逻辑（全球减产涨价，独立于科技旧主线）✅、情绪（分歧中强势，尚未见顶）。<strong>明日关注</strong>：秋乐、神农、隆平能否连板，涨停梯队是否向农药 / 化肥 / 饲料扩散。</li>
+<li><strong>【半导体：存储 / 先进封装】</strong>：昨日主线今日明显退潮，从「全链主升」退为「硅片 / 玻璃基板局部活跃」。持续性：<strong>转弱</strong>。<strong>六维</strong>：价格（龙头分化、无涨停梯队）❌、资金（明显退潮）❌、联动（后排先崩）❌、量能（缩量）❌、逻辑（三星海力士资本开支利好被情绪压制，未失效但短期让位）⚠️、情绪（"主线让位"共识形成）❌。长鑫科技能否止跌是判断半导体是否见顶的关键。</li>
+<li><strong>【机器人概念】</strong>：新催化方向，宇树科技明日科创板上市。持续性：<strong>关注（事件驱动）</strong>，需观察上市首日表现。</li>
+<li><strong>【石油 / 油服】</strong>：地缘局势催化油价（WTI +2.55%）。持续性：<strong>事件驱动</strong>，跟随地缘与油价波动。</li>
+<li><strong>【创新药（Biotech）】</strong>：高位熄火，贝达药业 20% 跌停。持续性：<strong>退潮</strong>。注意与 CXO（药明系强者恒强）严格区分，不可混为一谈。</li>
+</ul>
+
+<div class="warning">
+<p><strong>主线切换信号确认</strong>：主线由昨日「半导体全链」切换为今日「大农业涨停潮」，资金完成一次显著的高低切换（科技高位 → 农业消费低位）。这是典型的<strong>防御性调仓 + 进攻性减弱</strong>结构。是否意味着半导体见顶、市场转入防御，还是单纯短线轮动，需明日验证：若种业龙头继续连板且半导体龙头继续下跌，则切换坐实；若种业炸板且半导体反抽，则仍是轮动。</p>
+</div>
+
+<h2>💰 板块资金雷达趋势</h2>
+<p>数据来源：本地板块资金雷达系统（今日通达信概念板块资金流；本地 board-radar.html 数据为 08-17 快照）。</p>
+
+<h3>资金进攻榜 TOP10（今日主力净流入）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>主力净流入</th>
+<th>涨跌幅</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>乡村振兴</td>
+<td><strong>+20.24 亿</strong></td>
+<td>+1.12%</td>
+<td>资金承接</td>
+</tr>
+<tr>
+<td>2</td>
+<td>粮食概念</td>
+<td><strong>+16.70 亿</strong></td>
+<td>+6.52%</td>
+<td>资金 + 价格共振</td>
+</tr>
+<tr>
+<td>3</td>
+<td>预制菜</td>
+<td><strong>+14.84 亿</strong></td>
+<td>+1.79%</td>
+<td>资金承接</td>
+</tr>
+<tr>
+<td>4</td>
+<td>新零售</td>
+<td><strong>+11.93 亿</strong></td>
+<td>+0.56%</td>
+<td>消费低位承接</td>
+</tr>
+<tr>
+<td>5</td>
+<td>种业</td>
+<td><strong>+9.92 亿</strong></td>
+<td>+13.54%</td>
+<td>资金 + 价格共振</td>
+</tr>
+<tr>
+<td>6</td>
+<td>土地流转</td>
+<td>+9.28 亿</td>
+<td>+3.49%</td>
+<td>资金承接</td>
+</tr>
+<tr>
+<td>7</td>
+<td>新型烟草</td>
+<td>+9.00 亿</td>
+<td>+0.26%</td>
+<td>资金承接</td>
+</tr>
+<tr>
+<td>8</td>
+<td>猪肉</td>
+<td>+8.76 亿</td>
+<td>+2.75%</td>
+<td>资金承接</td>
+</tr>
+<tr>
+<td>9</td>
+<td>MicroLED</td>
+<td>+8.58 亿</td>
+<td>+1.09%</td>
+<td>局部活跃</td>
+</tr>
+<tr>
+<td>10</td>
+<td>高端装备</td>
+<td>+8.46 亿</td>
+<td>+0.11%</td>
+<td>权重搭台</td>
+</tr>
+</tbody>
+</table></div>
+
+<div class="highlight">
+<p>💡 资金进攻榜被「大农业 + 大消费」全面霸榜（乡村振兴、粮食、预制菜、新零售、种业、土地流转、猪肉），与昨日「半导体 / AI 算力」霸榜形成鲜明切换。资金从高位科技向低位农业、消费轮动，是典型「高低切换 + 防御性调仓」结构。</p>
+</div>
+
+<h3>🔔 机构建仓信号</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>信号特征</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>种业 / 粮食</td>
+<td>连续 2 日资金 + 价格共振，从「事件驱动」升级为「涨停潮主升」</td>
+<td>🟢 主线核心，回调关注</td>
+</tr>
+<tr>
+<td>种植业（行业）</td>
+<td>单日 +9.95%，农产品加工 +4.58%，产业链联动扩散</td>
+<td>🟢 关注扩散</td>
+</tr>
+</tbody>
+</table></div>
+
+<h3>⚠️ 短线退潮 / 分化信号</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>当前信号</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>半导体（存储 / 先进封装）</td>
+<td>昨日资金霸榜、今日明显退潮，主线地位让位</td>
+<td>🔴 高位减仓、观察修复</td>
+</tr>
+<tr>
+<td>创新药 / 生物科技</td>
+<td>贝达药业 20% 跌停，高位人气股集中兑现</td>
+<td>🔴 回避，警惕补跌</td>
+</tr>
+<tr>
+<td>AI 应用 / 航天军工</td>
+<td>资金撤离，随指数走弱补跌</td>
+<td>🔴 回避</td>
+</tr>
+</tbody>
+</table></div>
+
+<h3>📈 资金轮动方向</h3>
+<ul>
+<li><strong>资金进攻方向</strong>：大农业（种业 / 粮食 / 种植业）+ 大消费（乡村振兴 / 预制菜 / 新零售），防御性 + 通胀预期双逻辑。</li>
+<li><strong>资金撤退方向</strong>：半导体（存储 / 封装）、创新药、AI 应用，高位科技集中兑现。</li>
+<li><strong>排位飙升板块</strong>：种业、粮食概念（从昨日边缘到今日霸榜），驱动是厄尔尼诺事件催化。</li>
+</ul>
+
+<h2>🎯 核心个股拆解</h2>
+
+<h3>秋乐种业（920087 · 北交所 · 种业）</h3>
+<ul>
+<li><strong>今日表现</strong>：+29.98%，成交 4.69 亿，换手 19.9%，北交所种业涨停潮领涨龙头</li>
+<li><strong>异动原因</strong>：超强厄尔尼诺推升粮食减产与涨价预期，种业成为今日最强主线核心，弹性标的资金抢筹</li>
+<li><strong>概念定位</strong>：玉米种子细分龙头，属大农业产业链上游，无直接美股映射</li>
+<li><strong>技术面</strong>：放量涨停突破，量价配合，短线强势</li>
+<li><strong>资金信号</strong>：放量涨停，买盘封单为主，北交所高弹性溢价</li>
+<li><strong>关注价值</strong>：<strong>高</strong>——种业涨停潮弹性标杆，但北交所流动性相对有限，波动极大</li>
+</ul>
+
+<h3>神农种业（300189 · 创业板 · 种业）</h3>
+<ul>
+<li><strong>今日表现</strong>：+20.04% 涨停（20cm），成交 22.9 亿，换手 44.1%，创业板种业龙头</li>
+<li><strong>异动原因</strong>：与秋乐、康农、隆平形成种业涨停梯队，厄尔尼诺催化 + 农业板块涨停潮共振</li>
+<li><strong>概念定位</strong>：种业 + 乡村振兴概念，大农业主线核心标的</li>
+<li><strong>技术面</strong>：20cm 涨停突破，均线多头排列，短线加速</li>
+<li><strong>资金信号</strong>：成交 22.9 亿放量涨停，换手 44% 显示筹码快速换手，多空分歧较大</li>
+<li><strong>关注价值</strong>：<strong>高</strong>——20cm 弹性 + 主升延续关键风向标，但高换手意味着次日分歧压力大</li>
+</ul>
+
+<h3>金健米业（600127 · 沪市 · 粮食概念）</h3>
+<ul>
+<li><strong>今日表现</strong>：+10.06% 涨停，封单 2.25 亿，粮食概念龙头</li>
+<li><strong>异动原因</strong>：厄尔尼诺粮食减产 + 涨价预期，粮食安全逻辑发酵</li>
+<li><strong>概念定位</strong>：粮油加工，大农业主线中粮食分支龙头</li>
+<li><strong>资金信号</strong>：涨停封单 2.25 亿，粮食概念主力净流入 16.7 亿</li>
+<li><strong>关注价值</strong>：<strong>高</strong>——粮食概念资金 + 价格共振的核心标的，封单质量决定明日强弱</li>
+</ul>
+
+<h3>贝达药业（300558 · 创业板 · 创新药）</h3>
+<ul>
+<li><strong>今日表现</strong>：-20.00% 跌停，成交 17.8 亿，换手 7.5%，创新药方向最大空头</li>
+<li><strong>异动原因</strong>：尽管中报预告净利同比 +120%~180%，市场仍视为利好出尽，创新药概念高位集中兑现</li>
+<li><strong>概念定位</strong>：国产创新药（肺癌靶向），属 Biotech 方向，与 CXO（药明系）完全不同的驱动逻辑</li>
+<li><strong>资金信号</strong>：跌停封单 2.2 亿，卖盘主导，高位获利盘集中出逃</li>
+<li><strong>关注价值</strong>：<strong>中</strong>——作为「创新药高位熄火」的空头风向标，观察其是否带动整个 Biotech 方向补跌</li>
+</ul>
+
+<h2>🔄 概念催化追踪</h2>
+<p>对照总表（D:\库\Desktop\投资小龙虾\概念跟踪\总表.md），当日涉及概念阶段判断更新：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>概念</th>
+<th>原阶段</th>
+<th>今日阶段判断</th>
+<th>变化依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>农业 / 种业 / 粮食</td>
+<td>发酵</td>
+<td><strong>主升 ⬆</strong></td>
+<td>种业 +13.54% 涨停潮，资金霸榜，从「发酵」跳升「主升」</td>
+</tr>
+<tr>
+<td>存储芯片 / DRAM</td>
+<td>主升</td>
+<td><strong>分歧 ⬇</strong></td>
+<td>今日资金退潮，半导体主线让位，龙头分化</td>
+</tr>
+<tr>
+<td>AI 算力硬件链</td>
+<td>主升</td>
+<td><strong>分歧 ⬇</strong></td>
+<td>今日仅局部活跃，资金向农业切换</td>
+</tr>
+<tr>
+<td>先进封装 / 半导体设备</td>
+<td>扩散</td>
+<td><strong>分歧 ⬇</strong></td>
+<td>随半导体整体退潮，扩散节奏中断</td>
+</tr>
+<tr>
+<td>算力租赁 / AIDC</td>
+<td>扩散</td>
+<td>扩散（维持）</td>
+<td>未明显异动，资金关注度被农业分流</td>
+</tr>
+<tr>
+<td>脑机接口</td>
+<td>萌芽</td>
+<td>萌芽（承压）</td>
+<td>澳洋健康今日 -10% 跌停，板块效应未形成</td>
+</tr>
+<tr>
+<td>医药 CXO / 创新药</td>
+<td>退潮观察</td>
+<td><strong>退潮 ⬇</strong></td>
+<td>贝达药业 20% 跌停，Biotech 高位集中兑现</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>⚠️ 风险预警</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>风险类型</th>
+<th>内容</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外围</td>
+<td>30 年期美债收益率创 2007 年以来新高，美债抛售潮加剧</td>
+<td>全球风险偏好承压，压制成长股估值</td>
+</tr>
+<tr>
+<td>外围</td>
+<td>纳指盘后科技股续挫（QQQ -1.65%）</td>
+<td>A 股科技 / 半导体方向明日防补跌</td>
+</tr>
+<tr>
+<td>兑现</td>
+<td>创新药高位熄火（贝达药业 20% 跌停）</td>
+<td>防 Biotech 方向补跌扩散</td>
+</tr>
+<tr>
+<td>退潮</td>
+<td>半导体主线让位，龙头分化</td>
+<td>若长鑫科技继续下跌，半导体确认见顶</td>
+</tr>
+<tr>
+<td>情绪</td>
+<td>种业龙头高换手（神农 44%、秋乐 20%）</td>
+<td>次日分歧压力大，若炸板则主线降温</td>
+</tr>
+<tr>
+<td>量能</td>
+<td>两市成交 2.40 万亿未能持续放大</td>
+<td>若缩量至 2.2 万亿以下，情绪进一步转弱</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>🔭 明日推演</h2>
+
+<h3>明日关注方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th>关注标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大农业延续（种业 / 粮食）</td>
+<td>厄尔尼诺涨价预期 + 今日涨停潮，主线地位明确</td>
+<td>秋乐种业、神农种业、隆平高科、金健米业</td>
+</tr>
+<tr>
+<td>机器人概念（宇树上市）</td>
+<td>宇树科技明日科创板上市，人形机器人第一股</td>
+<td>正裕工业、埃斯顿、南方精工</td>
+</tr>
+<tr>
+<td>半导体修复观察</td>
+<td>昨日主线退潮后能否反抽，长鑫科技是风向标</td>
+<td>长鑫科技、硅片 / 玻璃基板方向</td>
+</tr>
+<tr>
+<td>石油 / 油服</td>
+<td>地缘局势延续，油价支撑</td>
+<td>石化机械、海油工程</td>
+</tr>
+<tr>
+<td>潜在风险方向</td>
+<td>创新药补跌扩散、半导体继续退潮、高换手种业分歧</td>
+<td>观察贝达药业、长鑫科技</td>
+</tr>
+</tbody>
+</table></div>
+
+<h3>策略建议</h3>
+<ul>
+<li><strong>持仓者</strong>：农业主线持仓可持有，但种业高换手（神农 44%、秋乐 20%）次日分歧压力大，若龙头炸板则减仓兑现；半导体持仓建议趁反抽减仓，警惕高位退潮；创新药持仓建议回避，防补跌扩散。</li>
+<li><strong>观望者</strong>：种业龙头分歧转一致、农业涨停梯队扩散是短线跟进信号；宇树科技上市首日表现决定机器人方向能否承接，需观察流动性虹吸效应。</li>
+<li><strong>风险应对</strong>：若明日两市成交缩量至 2.2 万亿以下，或种业龙头炸板、半导体龙头（长鑫科技）继续下跌，则确认市场转入防御，应及时降低仓位。</li>
+</ul>
+
+<h3>明日观察要点</h3>
+<ol>
+<li>秋乐种业、神农种业能否连板（农业主线风向标）</li>
+<li>种业涨停梯队是否扩散到农药 / 化肥 / 饲料（产业链扩散）</li>
+<li>宇树科技上市首日表现（机器人方向 + 新股流动性虹吸）</li>
+<li>长鑫科技能否止跌（半导体是否见顶的关键信号）</li>
+<li>两市成交能否维持 2.3 万亿以上（今日微放量至 2.40 万亿，若缩量则情绪转弱）</li>
+<li>纳指盘后科技股回调对 A 股半导体 / 科技的映射压力</li>
+</ol>
+
+<hr>
+
+<footer>
+<p><strong>⚠️ 免责声明</strong>：本报告由投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+<p style="margin-top:8px;"><strong>数据来源：</strong></p>
+<p>A 股行情 / 涨跌停 / 炸板 / 板块涨跌幅 / 板块资金流 → 通达信 MCP（tdx_quotes / tdx_kline / tdx_screener）</p>
+<p>美股三大指数 / ETF → Finnhub API（SPY / QQQ / DIA 实时）+ web_search（8/17 隔夜收盘）</p>
+<p>美元 / 黄金 / 原油 / 日经 / 恒生 → web_search（宏观外盘）</p>
+<p>今日新闻 → 亿信 API（search，检索质量有限，部分宏观信息经 web_search 交叉）；研报巡逻 → 今日未生成（22:30 任务未输出），无共振 / 先行信号可融入</p>
+<p>板块资金雷达趋势 → 通达信 MCP 概念板块资金流（本地 board-radar.html 为 08-17 快照）</p>
+<p style="margin-top:8px;">生成时间：2026年8月18日 23:30</p>
+</footer>
+
+</body>
+</html>
