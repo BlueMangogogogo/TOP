@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月28日 深度复盘</title>
+<style>
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta { font-size: 13px; color: var(--gray-500); }
+header .meta span { margin-right: 16px; }
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 { font-size: 15px; font-weight: 700; color: var(--gray-700); margin: 16px 0 6px; }
+p { margin: 8px 0; }
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 500px; }
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+ul, ol { margin: 8px 0 8px 20px; }
+li { margin: 4px 0; }
+hr { border: none; border-top: 1px solid var(--gray-100); margin: 24px 0; }
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>8月28日 深度复盘</h1>
+  <div class="meta"><span>📅 2026年08月28日 周五</span><span>投资小龙虾 AI 自动生成</span><span>仅供参考</span></div>
+</header>
+
+<h2>📊 指数全景</h2>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>指标</th><th>数值</th><th>判断</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td>3952.18</td><td>-0.11%（-4.39点）</td></tr>
+<tr><td>深证成指</td><td>13953.07</td><td>-0.68%</td></tr>
+<tr><td>创业板指</td><td>3424.40</td><td>-1.41%（科技权重回调）</td></tr>
+<tr><td>两市成交</td><td>2.10万亿</td><td>较昨日2.13万亿微缩量约240亿，基本持平</td></tr>
+<tr><td>上涨家数</td><td>3013家</td><td>个股活跃，广度尚可</td></tr>
+<tr><td>下跌家数</td><td>2390家</td><td>——</td></tr>
+<tr><td>涨停</td><td>82家</td><td>结构偏强，题材集中</td></tr>
+<tr><td>跌停</td><td>2家</td><td>无恐慌式杀跌</td></tr>
+<tr><td>炸板</td><td>24家（炸板率约22.6%）</td><td>封板意愿中等</td></tr>
+</tbody>
+</table></div>
+
+<div class="highlight">
+<p>上证压力位：3970（今日盘中高点/近期前高）→ 3994（关键阻力·8月上旬平台）｜ 支撑位：3948（今日低点）→ 3900（整数关·MA20附近）→ 3882（8月24日低点）。指数站在全部均线上方，属上升结构上沿的窄幅震荡。</p>
+</div>
+
+<div class="highlight">
+<p>市场情绪：<strong>偏暖</strong>。核心依据：涨停82家 vs 跌停2家（涨跌停比41:1）+ 两市维持2.1万亿高位量能 + 上涨3013家多于下跌2390家。但指数微跌、创业板指-1.41%，属典型的「指数弱、个股活」的结构性行情——权重（科技/新能源）拖累指数，题材（农业/AI/化工）制造赚钱效应。</p>
+</div>
+
+<p><strong>盘面定性</strong>：全天窄幅震荡、缩量整理。隔夜美股科技大涨（纳指+1.57%、英伟达财报超预期）为AI硬件链提供高开映射，农业受涨价消息刺激延续主升领涨，AI应用受Salesforce+Anthropic催化午后走强；但创业板权重（半导体/新能源）走弱压制指数，尾盘上证微跌收于3952。属「旧高位权重换挡、题材多点开花」的轮动市。</p>
+
+<h2>🌍 外盘与宏观环境</h2>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>指标</th><th>收盘</th><th>涨跌</th><th>对A股影响</th></tr></thead>
+<tbody>
+<tr><td>纳指（08-27收盘）</td><td>26541.35</td><td>+1.57%</td><td>科技/AI映射，英伟达财报超预期</td></tr>
+<tr><td>道指（08-27收盘）</td><td>53569.44</td><td>+0.20%</td><td>基本平稳</td></tr>
+<tr><td>标普500（08-27收盘）</td><td>7730.99</td><td>+0.72%</td><td>——</td></tr>
+<tr><td>美股最新（08-28收盘）</td><td>SPY -0.23% / QQQ -0.65%</td><td>微跌</td><td>下周一盘前指引偏中性</td></tr>
+<tr><td>VIX</td><td>14.43</td><td>-0.55%</td><td>低位，恐慌情绪平静</td></tr>
+<tr><td>美元指数</td><td>偏强</td><td>上行</td><td>美联储9月加息概率59.7%，鹰派压制</td></tr>
+<tr><td>现货黄金</td><td>约4453-4500美元</td><td>近3日跌近3%</td><td>加息预期升温，贵金属承压</td></tr>
+<tr><td>WTI原油</td><td>约83美元</td><td>——</td><td>布伦特约88美元，能源成本偏高</td></tr>
+<tr><td>日经225</td><td>66405.56</td><td>+0.41%</td><td>亚太偏强</td></tr>
+<tr><td>韩国KOSPI</td><td>6788.88</td><td>-1.79%</td><td>半导体出口链走弱</td></tr>
+<tr><td>恒生指数</td><td>25584.79</td><td>+0.07%</td><td>港股平稳</td></tr>
+<tr><td>A50期货</td><td>14714</td><td>+0.55%</td><td>A股下周一开盘指引偏暖</td></tr>
+</tbody>
+</table></div>
+
+<p>一句话：外盘「科技强、宏观鹰」——英伟达财报超预期托举AI链情绪，但美联储主席沃什鹰派表态、9月加息概率升至59.7%，美元走强、黄金连跌三日，压制全球风险资产估值。A50期货+0.55%对下周一开盘偏暖，但需警惕科技高位映射后的兑现压力。</p>
+
+<h2>📰 今日核心新闻简报</h2>
+
+<p><strong>按影响强度排序：</strong></p>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>#</th><th>新闻</th><th>影响板块</th><th>情绪</th><th>强度</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>英伟达FY2027Q2财报超预期：营收962.21亿美元（+106%），数据中心890亿（+117%），黄仁勋称"AI达拐点、算力转化为收入"</td><td>AI硬件链/PCB/光通信/存储</td><td>利好</td><td>⭐⭐⭐</td></tr>
+<tr><td>2</td><td>Salesforce财报+与Anthropic扩大合作推Claudeforce，赛富时股价涨超21%，Agentforce+Data360年经常性收入39亿美元（+210%）</td><td>AI应用/软件/信创</td><td>利好</td><td>⭐⭐⭐</td></tr>
+<tr><td>3</td><td>粮食涨价主升延续：厄尔尼诺减产，金健米业10日6涨停（8月+112%）、万向德农9天6板，梯队向化肥/农药/水产扩散</td><td>农业/种业/粮食</td><td>利好</td><td>⭐⭐⭐</td></tr>
+<tr><td>4</td><td>中金公司吸收合并东兴证券、信达证券获上交所审批通过，券商并购重组持续推进</td><td>券商/并购重组</td><td>利好</td><td>⭐⭐</td></tr>
+<tr><td>5</td><td>化工涨价轮动：红宝丽、金牛化工、中欣氟材等多股涨停，基础化工全周主力净流入逾233亿</td><td>化工/涨价链</td><td>利好</td><td>⭐⭐</td></tr>
+<tr><td>6</td><td>相关方面正考虑额外加征7.5%关税，贸易摩擦有升级风险</td><td>全市场/出口链</td><td>利空</td><td>⭐⭐</td></tr>
+<tr><td>7</td><td>美联储9月加息25bp概率升至59.7%，美元走强、黄金连跌</td><td>全球风险资产/贵金属</td><td>利空</td><td>⭐⭐</td></tr>
+</tbody>
+</table></div>
+
+<h3>🔍 重点新闻情绪催化验证</h3>
+
+<ul>
+<li><strong>英伟达财报（AI硬件链核心催化）</strong>：联动标的 → PCB（沃特股份6天3板）、光通信（星网锐捷6天3板）、存储（香农芯创+4.09%主力净流入5.33亿）、算力芯片（寒武纪主力净流入6.28亿）。判断：属「外部映射型催化」，财报验证算力需求正循环，<strong>具备持续性</strong>。后续关注：A股硬件链半年报兑现期临近，能否从「映射上涨」转向「业绩驱动」。</li>
+<li><strong>Salesforce+Anthropic（AI应用/软件催化）</strong>：联动标的 → AIGC概念主力净流入41.1亿居全市场第一，天娱数科、鼎捷数智（20cm涨停）、久其软件、天融信、麒麟信安涨停，三六零炸板但仍获主力净流入6.67亿居个股首位。判断：美股软件巨头财报直接缓解"AI毁灭软件公司"担忧，<strong>催化新颖、具备持续性</strong>，属今日最值得跟踪的新方向。</li>
+<li><strong>农业/粮食涨价</strong>：联动标的 → 万向德农9天6板、金健米业10日6涨停、新农股份3连板，涨停梯队向化肥（泸天化）、水产（中水渔业）、供销社扩散。判断：主升阶段已延续多周（板块指数连续第5周上涨），<strong>持续性仍在但进入高位</strong>，需警惕「主升→分歧」切换。</li>
+<li><strong>概念区分说明</strong>：今日「AI」方向内部必须拆分——<strong>AI硬件链</strong>（英伟达映射：PCB/光通信/存储/算力芯片，驱动是算力需求）、<strong>AI应用/软件</strong>（Salesforce映射：软件/信创/AIGC，驱动是商业化落地）、<strong>存储芯片</strong>（香农芯创/德科立，驱动是涨价预期）三者逻辑不同，今日均获资金回流但节奏有别，不可混为一谈。</li>
+</ul>
+
+<h2>🔥 今日最强主线</h2>
+
+<h3>概念板块涨幅 TOP5</h3>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>排名</th><th>板块</th><th>涨幅</th><th>龙头股</th><th>驱动逻辑</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>种业</td><td>+4.02%</td><td>万向德农（9天6板）</td><td>粮食涨价+厄尔尼诺减产</td></tr>
+<tr><td>2</td><td>分散染料</td><td>+3.32%</td><td>——</td><td>化工涨价轮动</td></tr>
+<tr><td>3</td><td>化肥概念</td><td>+3.16%</td><td>泸天化（涨停）</td><td>农业上游扩散</td></tr>
+<tr><td>4</td><td>风沙治理</td><td>+3.06%</td><td>——</td><td>农业/环保联动</td></tr>
+<tr><td>5</td><td>粮食概念</td><td>+2.92%</td><td>金健米业（10日6涨停）</td><td>粮食涨价主升</td></tr>
+</tbody>
+</table></div>
+
+<h3>概念板块主力净流入 TOP5</h3>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>排名</th><th>板块</th><th>主力净流入</th><th>当日表现</th><th>驱动逻辑</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>AIGC概念</td><td>+41.1亿</td><td>+0.57%</td><td>Salesforce+Anthropic催化</td></tr>
+<tr><td>2</td><td>ChatGPT概念</td><td>+28.3亿</td><td>+0.80%</td><td>AI应用商业化</td></tr>
+<tr><td>3</td><td>信创</td><td>+27.2亿</td><td>+0.28%</td><td>国产软件+政策</td></tr>
+<tr><td>4</td><td>跨境电商</td><td>+26.1亿</td><td>+0.68%</td><td>AI营销/出海</td></tr>
+<tr><td>5</td><td>华为鸿蒙</td><td>+23.5亿</td><td>+0.42%</td><td>国产软件生态</td></tr>
+</tbody>
+</table></div>
+
+<h3>个股主力净流入 TOP5</h3>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>排名</th><th>个股</th><th>主力净流入</th><th>当日表现</th><th>板块归属</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>三六零（601360）</td><td>+6.67亿</td><td>+6.65%（炸板）</td><td>网络安全/AI</td></tr>
+<tr><td>2</td><td>寒武纪（688256）</td><td>+6.28亿</td><td>-0.13%</td><td>AI算力芯片</td></tr>
+<tr><td>3</td><td>香农芯创（300475）</td><td>+5.33亿</td><td>+4.09%</td><td>存储芯片</td></tr>
+<tr><td>4</td><td>光库科技（300620）</td><td>+4.92亿</td><td>+3.00%</td><td>光通信/光器件</td></tr>
+<tr><td>5</td><td>深圳华强（000062）</td><td>+4.08亿</td><td>+10.00%（涨停）</td><td>电子分销</td></tr>
+</tbody>
+</table></div>
+
+<h3>主线持续性分析</h3>
+
+<ul>
+<li><strong>【农业/种业/粮食】</strong>：今日强度<strong>极强</strong>（概念涨幅榜前十占据五席，涨停梯队完整）。持续性判断：<strong>有，但进入高位</strong>。主升已延续5周，金健米业8月+112%、万向德农9天6板，龙头累计涨幅巨大，今日涨停梯队向化肥/农药/水产/供销社全面扩散，是「主升末段」的典型特征。明日关注：龙头万向德农、金健米业能否继续连板，若高位放量滞涨或断板，需警惕主升转分歧。</li>
+<li><strong>【AI应用/软件】</strong>：今日强度<strong>强</strong>（主力净流入包揽概念榜前五，AIGC+41.1亿居首）。持续性判断：<strong>有</strong>。Salesforce财报+Anthropic合作是新催化，直接打破"AI毁灭软件"担忧，资金认可度高。明日关注：华阳国际（4天3板）、天娱数科能否连板，三六零炸板后能否反包，板块量能能否延续。</li>
+<li><strong>【AI硬件链】</strong>：今日强度<strong>正常偏强</strong>（个股主力净流入榜寒武纪、香农芯创、光库科技三席）。持续性判断：<strong>可能有</strong>。英伟达财报超预期是明确催化，但硬件链此前涨幅较大，且创业板指-1.41%显示科技权重在回调，硬件链内部呈现「资金回流 vs 高位兑现」的博弈。明日关注：光通信、PCB能否在创业板走弱背景下独立走强。</li>
+<li><strong>主线切换信号（六维）</strong>：今日无明显的「旧主线崩盘、新主线确立」式切换，而是<strong>多线并存的轮动格局</strong>。旧主线（贵金属/机器人）未崩但转入高位钝化（深中华A 7连板独立高标）；新方向（AI应用/软件）在<strong>资金维度</strong>（净流入第一）和<strong>逻辑维度</strong>（Salesforce新催化）上初现确立迹象，但<strong>价格维度</strong>（涨幅仅+0.57%）尚未形成连续主升，属「发酵→扩散」早期，需明日连板高度与量能确认。</li>
+</ul>
+
+<h2>💰 板块资金雷达趋势</h2>
+
+<p class="highlight">数据来源：本地板块资金雷达系统（最新数据更新至2026-08-18，今日暂未刷新）+ 通达信概念板块主力资金流向（2026-08-28实时）。加权评分与在榜天数以雷达口径为准，单日资金以通达信实时口径为准。</p>
+
+<h3>资金进攻方向（通达信实时·概念板块）</h3>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>板块</th><th>主力净流入</th><th>当日涨幅</th><th>方向</th></tr></thead>
+<tbody>
+<tr><td>AIGC概念</td><td>+41.1亿</td><td>+0.57%</td><td>AI应用</td></tr>
+<tr><td>ChatGPT概念</td><td>+28.3亿</td><td>+0.80%</td><td>AI应用</td></tr>
+<tr><td>信创</td><td>+27.2亿</td><td>+0.28%</td><td>国产软件</td></tr>
+<tr><td>跨境电商</td><td>+26.1亿</td><td>+0.68%</td><td>AI营销/出海</td></tr>
+<tr><td>华为鸿蒙</td><td>+23.5亿</td><td>+0.42%</td><td>国产软件</td></tr>
+<tr><td>国产软件</td><td>+19.7亿</td><td>+0.43%</td><td>信创</td></tr>
+<tr><td>软件服务（行业）</td><td>+21.2亿</td><td>+0.47%</td><td>AI应用</td></tr>
+<tr><td>化学制品（行业）</td><td>+18.4亿</td><td>+2.18%</td><td>涨价</td></tr>
+</tbody>
+</table></div>
+
+<h3>🔔 机构建仓信号</h3>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>板块</th><th>信号</th><th>判断</th></tr></thead>
+<tbody>
+<tr><td>AI应用/软件（AIGC/信创）</td><td>主力净流入首日放量居首，股价未大涨（+0.57%）</td><td>🟢 关注建仓，属「资金先行、价格未动」的启动特征</td></tr>
+<tr><td>存储芯片</td><td>香农芯创+4.09%获主力净流入5.33亿，资金回流</td><td>🟢 关注，分歧转修复初期</td></tr>
+</tbody>
+</table></div>
+
+<h3>⚠️ 短线退潮信号</h3>
+
+<p>今日无满足「在榜>7天+单日流入转负+排名大跌」的明确退潮板块。但需留意：<strong>贵金属/机器人/消费电子</strong>等前期高位方向，主力资金榜上已无明显净流入，属「高位钝化」，若下周一继续缩量则退潮确认。</p>
+
+<h3>📈 资金轮动方向</h3>
+
+<ul>
+<li><strong>资金进攻方向</strong>：AI应用/软件（AIGC+41.1亿、ChatGPT+28.3亿、信创+27.2亿）为核心进攻方向，叠加化工涨价（化学制品+18.4亿）、农业上游（化肥/农用化工）的补涨流入。</li>
+<li><strong>资金撤退方向</strong>：创业板权重（半导体/新能源）拖累指数，科技硬件链整体「高位兑现」，KOSPI-1.79%映射半导体出口链走弱。</li>
+<li><strong>排位飙升板块</strong>：AIGC概念（首日登顶净流入榜）、跨境电商、华为鸿蒙等软件方向集体走强，是今日最显著的资金转向信号。</li>
+</ul>
+
+<h2>🎯 核心个股拆解</h2>
+
+<h3>深中华A（000017 · 贵金属/空间板龙头）</h3>
+<ul>
+<li><strong>今日表现</strong>：7连板，全市场空间板最高标</li>
+<li><strong>异动原因</strong>：贵金属/黄金概念独立高标，情绪周期空间龙头，与黄金价格走势背离（黄金连跌但仍连板），属纯情绪博弈</li>
+<li><strong>概念定位</strong>：贵金属/重组题材，独立于主流主线</li>
+<li><strong>资金信号</strong>：连板缩量加速，情绪抱团</li>
+<li><strong>关注价值</strong>：<strong>中</strong> — 作为全市场情绪温度计观察，7连板后随时可能断板，断板即情绪降温信号，不宜追高</li>
+</ul>
+
+<h3>万向德农（600371 · 农业/种业）</h3>
+<ul>
+<li><strong>今日表现</strong>：涨停，9天6板，农业主升核心龙头</li>
+<li><strong>异动原因</strong>：粮食涨价+厄尔尼诺减产预期，农业板块主升龙头</li>
+<li><strong>概念定位</strong>：种业，农业涨价链核心，对标板块指数连续5周上涨</li>
+<li><strong>资金信号</strong>：连板梯队完整，板块联动扩散至化肥/水产</li>
+<li><strong>关注价值</strong>：<strong>高</strong> — 农业主升风向标，能否继续连板决定整个农业链持续性，但累计涨幅巨大，高位风险同步累积</li>
+</ul>
+
+<h3>寒武纪（688256 · AI算力芯片）</h3>
+<ul>
+<li><strong>今日表现</strong>：-0.13%，但主力净流入6.28亿居个股第二</li>
+<li><strong>异动原因</strong>：英伟达财报超预期映射，资金逆势抢筹，股价滞涨反映高位分歧</li>
+<li><strong>概念定位</strong>：AI算力芯片，对标英伟达，国产算力核心</li>
+<li><strong>资金信号</strong>：主力净流入6.28亿，大单主导，「资金流入 vs 股价滞涨」的背离值得关注</li>
+<li><strong>关注价值</strong>：<strong>高</strong> — 英伟达财报验证算力需求正循环，寒武纪作为国产算力核心，若下周一能放量突破则打开空间，滞涨则需防兑现</li>
+</ul>
+
+<h3>三六零（601360 · 网络安全/AI）</h3>
+<ul>
+<li><strong>今日表现</strong>：+6.65%（盘中涨停后炸板），主力净流入6.67亿居个股第一</li>
+<li><strong>异动原因</strong>：AI应用/网络安全方向，Salesforce催化映射，资金抢筹后炸板回落</li>
+<li><strong>概念定位</strong>：AI应用/网络安全，AI商业化落地逻辑</li>
+<li><strong>资金信号</strong>：主力净流入6.67亿全市场第一，但炸板显示封板意愿不足</li>
+<li><strong>关注价值</strong>：<strong>中高</strong> — 全市场主力净流入第一+炸板，反映AI应用方向资金态度积极但分歧犹存，下周一能否反包是关键</li>
+</ul>
+
+<h3>香农芯创（300475 · 存储芯片）</h3>
+<ul>
+<li><strong>今日表现</strong>：+4.09%，主力净流入5.33亿</li>
+<li><strong>异动原因</strong>：存储涨价预期，DRAM合约价上行，英伟达财报带动存储链映射</li>
+<li><strong>概念定位</strong>：存储芯片分销/产业，对标美光、SK海力士涨价周期</li>
+<li><strong>资金信号</strong>：主力净流入5.33亿，存储链资金回流迹象明显</li>
+<li><strong>关注价值</strong>：<strong>中高</strong> — 存储是前期「分歧」概念，今日资金回流验证涨价逻辑仍存，若持续流入则从分歧转修复</li>
+</ul>
+
+<h2>🌱 概念催化追踪</h2>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>概念</th><th>当前阶段</th><th>持续性</th><th>核心标的</th><th>阶段判断</th></tr></thead>
+<tbody>
+<tr><td>农业/种业/粮食</td><td>主升</td><td>有（高位）</td><td>万向德农、金健米业、新农股份</td><td>主升延续并强化，梯队向化肥/水产扩散，警惕进入分歧</td></tr>
+<tr><td>存储芯片/DRAM</td><td>分歧</td><td>转修复</td><td>香农芯创、德科立、兆易创新</td><td>资金回流，英伟达财报催化，分歧转修复初期</td></tr>
+<tr><td>AI算力硬件链</td><td>分歧</td><td>有</td><td>寒武纪、光库科技、沃特股份、星网锐捷</td><td>PCB/光通信资金回流，但高位兑现压力并存</td></tr>
+<tr><td>AI应用/软件</td><td>发酵→扩散</td><td>有</td><td>天娱数科、鼎捷数智、三六零、华阳国际</td><td>Salesforce新催化，资金净流入第一，属今日新增观察方向</td></tr>
+<tr><td>贵金属/黄金</td><td>高位钝化</td><td>转弱</td><td>深中华A、莱绅通灵</td><td>黄金价格连跌，情绪高标与基本面背离</td></tr>
+</tbody>
+</table></div>
+
+<h2>⚠️ 风险预警</h2>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>风险类型</th><th>内容</th><th>影响</th></tr></thead>
+<tbody>
+<tr><td>外围宏观</td><td>美联储9月加息概率升至59.7%，美元走强，压制全球风险资产估值</td><td>全市场/科技成长</td></tr>
+<tr><td>贸易摩擦</td><td>相关方面考虑额外加征7.5%关税，摩擦有升级风险</td><td>出口链/全市场情绪</td></tr>
+<tr><td>结构分化</td><td>创业板指-1.41%，科技权重回调，指数与个股背离加大</td><td>半导体/新能源权重</td></tr>
+<tr><td>题材高位</td><td>农业主升已延续5周，龙头累计涨幅巨大（金健米业8月+112%），情绪高标深中华A 7连板，随时可能高位分歧</td><td>农业/贵金属</td></tr>
+<tr><td>兑现压力</td><td>英伟达财报利好落地，硬件链冲高后需防「利好出尽」回吐</td><td>AI硬件链</td></tr>
+</tbody>
+</table></div>
+
+<h2>🔭 明日推演</h2>
+
+<h3>明日关注方向（下周一 8月31日）</h3>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>方向</th><th>逻辑</th><th>关注标的</th></tr></thead>
+<tbody>
+<tr><td>农业/种业（延续主线）</td><td>主升延续，但需警惕高位分歧，关注龙头连板持续性</td><td>万向德农、金健米业、新农股份</td></tr>
+<tr><td>AI应用/软件（新方向）</td><td>Salesforce催化+资金净流入第一，发酵→扩散阶段，关注连板高度</td><td>天娱数科、鼎捷数智、三六零、华阳国际</td></tr>
+<tr><td>AI硬件链（映射回流）</td><td>英伟达财报验证算力需求，关注PCB/光通信/存储能否独立走强</td><td>寒武纪、光库科技、沃特股份、香农芯创</td></tr>
+<tr><td>券商（政策催化）</td><td>中金合并获批，并购重组主题或发酵</td><td>锦龙股份、中金公司</td></tr>
+</tbody>
+</table></div>
+
+<h3>策略建议</h3>
+
+<ul>
+<li><strong>持仓者</strong>：农业链持仓者紧盯万向德农、金健米业连板高度，若龙头断板或高位放量滞涨，减仓兑现；AI硬件链持仓者关注寒武纪能否突破，冲高回落且跌破今日低点则减仓；AI应用/软件刚启动，可持有观察。</li>
+<li><strong>观望者</strong>：AI应用/软件属「资金先行、价格未动」的发酵期，可待龙头连板确认后轻仓试探；农业已高位，不建议追高；存储芯片分歧转修复初期，回调企稳（缩量不破位）可关注。</li>
+<li><strong>风险应对</strong>：若美联储鹰派情绪发酵导致美股科技走弱、A股放量跌破3900点，则全线收缩仓位至防御（红利/电力）；若贸易摩擦消息升级，回避出口链。</li>
+</ul>
+
+<h3>明日观察要点</h3>
+
+<ol>
+<li>万向德农、金健米业能否继续连板，判断农业主升是延续还是转分歧</li>
+<li>AI应用/软件龙头（华阳国际、天娱数科）连板高度能否打开，三六零能否反包</li>
+<li>两市成交能否维持2万亿以上（今日2.10万亿微缩量，缩量企稳为佳）</li>
+<li>寒武纪能否放量突破，决定AI硬件链是「回流」还是「兑现」</li>
+<li>隔夜美股科技股（英伟达财报后）及美联储表态，映射下周一AI链开盘</li>
+</ol>
+
+<hr>
+
+<footer>
+<p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+<p><strong>数据来源</strong>：</p>
+<p>A股行情/涨停跌停/板块涨跌与主力资金：通达信 TdxQuant（tdx_quotes / tdx_screener / tdx_kline）</p>
+<p>今日新闻与产业消息：亿信 API（Billions Intelligence）search 端点</p>
+<p>美股行情：Finnhub（SPY/QQQ/DIA 实时报价）；隔夜美股收盘与 VIX/美元/黄金/原油/外盘指数：web_search（金投网、东方财富、investing等）</p>
+<p>板块资金雷达：本地板块资金雷达系统（最新数据截至2026-08-18，今日未刷新，单日资金以通达信实时口径替代）</p>
+<p>研报巡逻：本日（08-28）无研报巡逻输出（22:30研报巡逻任务未生成），故未集成研报×资金共振信号</p>
+<p>生成时间：2026年08月28日 23:00（延迟至08-29执行）</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月28日 收盘总结</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>8月28日 收盘总结</h1>
+  <div class="meta">
+    
+  </div>
+</header>
+
+<p>📅 2026年08月28日（周五）收盘 | 投资小龙虾 AI | 仅供参考</p>
+<div class="highlight">
+<p>💡 注：本报告为周五收盘数据的收盘总结（周六补出，数据源通达信实时行情定格于 2026-08-28 15:00）。</p>
+</div>
+<h2>一、收盘全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3952.18</td>
+<td>-0.11%（盘中最高 3970，冲 4000 未果回落）</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>13953.07</td>
+<td>-0.68%</td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>约 2.10 万亿</td>
+<td>高位维持，量能充沛</td>
+</tr>
+<tr>
+<td>上涨 / 下跌</td>
+<td>3013 家 / 2390 家</td>
+<td>赚钱效应偏多</td>
+</tr>
+<tr>
+<td>涨停 / 跌停</td>
+<td>82 家 / 2 家</td>
+<td>情绪偏暖</td>
+</tr>
+<tr>
+<td>炸板</td>
+<td>24 家（炸板率 22.6%）</td>
+<td>高位股分歧明显</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>上证逼近 4000 整数关口遇阻，指数小幅收跌，但涨停 82 家、上涨 3013 家，呈现典型的「指数弱、题材强」分化格局。权重（金融、部分高位股）休整，中小盘题材高度活跃，资金不惧指数回调，仍在题材上积极做多。</p>
+</div>
+<h2>二、板块涨幅 / 跌幅</h2>
+<h3>板块涨幅 TOP5（概念板块）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: center;">排名</th>
+<th>板块</th>
+<th style="text-align: center;">涨幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>种业</td>
+<td style="text-align: center;">+4.02%</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>分散染料</td>
+<td style="text-align: center;">+3.32%</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>化肥概念</td>
+<td style="text-align: center;">+3.16%</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>风沙治理</td>
+<td style="text-align: center;">+3.06%</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>粮食概念</td>
+<td style="text-align: center;">+2.92%</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>农业 / 粮食安全主题全线走强：供销社 +2.86%、水产品 +2.83%、虫害防治 +2.46%、草甘膦 +1.96% 跟随，形成板块性共振。化工（分散染料、化肥）同步活跃，与农业链条呼应。</p>
+</div>
+<h3>板块跌幅</h3>
+<p>医药（创新药 / 医疗器械）领跌：万邦医药 -17.55%、键凯科技 -14.53%、微电生理 -13.09%、陇神戎发 -13.01%；风电调整：运达股份 -11.90%。</p>
+<h2>三、板块资金雷达</h2>
+<h3>资金进攻榜 TOP10（主力净流入）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: center;">排名</th>
+<th>板块</th>
+<th style="text-align: center;">主力净流入</th>
+<th style="text-align: center;">涨跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>AIGC概念</td>
+<td style="text-align: center;">+41.1 亿</td>
+<td style="text-align: center;">+0.57%</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>ChatGPT概念</td>
+<td style="text-align: center;">+28.3 亿</td>
+<td style="text-align: center;">+0.80%</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>信创</td>
+<td style="text-align: center;">+27.2 亿</td>
+<td style="text-align: center;">+0.28%</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>跨境电商</td>
+<td style="text-align: center;">+26.1 亿</td>
+<td style="text-align: center;">+0.68%</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>华为鸿蒙</td>
+<td style="text-align: center;">+23.5 亿</td>
+<td style="text-align: center;">+0.42%</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>国产软件</td>
+<td style="text-align: center;">+19.7 亿</td>
+<td style="text-align: center;">+0.43%</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>远程办公</td>
+<td style="text-align: center;">+18.4 亿</td>
+<td style="text-align: center;">+1.05%</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td>智谱AI</td>
+<td style="text-align: center;">+15.6 亿</td>
+<td style="text-align: center;">+0.34%</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td>AI智能体</td>
+<td style="text-align: center;">+14.4 亿</td>
+<td style="text-align: center;">+0.31%</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td>AI营销</td>
+<td style="text-align: center;">+14.2 亿</td>
+<td style="text-align: center;">+1.02%</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>资金进攻方向高度集中：AI 应用 / 软件 / 信创一条线。AIGC、ChatGPT、国产软件、鸿蒙、信创包揽前六，是真金白银的主攻方向，与价格端「农业领涨」形成双主线。</p>
+</div>
+<h3>🟢 机构建仓信号</h3>
+<ul>
+<li><strong>AI 应用 / 软件</strong>（AIGC、国产软件、信创）：主力持续净流入，软件方向涨停梯队完整（天娱数科一字、久其软件、天融信、中安科），具备扩散基础，关注建仓。</li>
+</ul>
+<h3>🔴 退潮信号</h3>
+<ul>
+<li><strong>医药（创新药 / 医疗器械）</strong>：多股大跌（万邦医药 -17.55%、键凯科技 -14.53%），资金撤退明显，短线回避。</li>
+<li><strong>风电</strong>：运达股份 -11.90% 领跌，板块退潮确认。</li>
+</ul>
+<h2>四、核心个股拆解</h2>
+<h3>天娱数科（002354 · AIGC / 传媒）</h3>
+<ul>
+<li><strong>今日表现</strong>：一字涨停 7.85（+9.94%），成交 7.19 亿，换手 5.63%</li>
+<li><strong>异动原因</strong>：AI 应用 / AIGC 主线人气龙头，开盘即封板、全天无开板</li>
+<li><strong>概念定位</strong>：AIGC 内容生成 / 数字营销，总市值 129.9 亿</li>
+<li><strong>资金信号</strong>：封单 5.3 亿，买盘占优</li>
+<li><strong>关注价值</strong>：高 — AI 应用主线的人气风向标，观察连板高度</li>
+</ul>
+<h3>昊华科技（600378 · 化工 / 氟化工）</h3>
+<ul>
+<li><strong>今日表现</strong>：涨停 53.31（+10.01%），成交 29.76 亿，换手 5.21%</li>
+<li><strong>异动原因</strong>：氟化工 / 中字头央企，涨停前一度回落至 52.60 再回封</li>
+<li><strong>概念定位</strong>：氟化工龙头（中国中化旗下），总市值 687.7 亿</li>
+<li><strong>资金信号</strong>：成交 29.76 亿，主力承接</li>
+<li><strong>关注价值</strong>：中 — 化工 + 央企改革属性，与农业化肥主题形成呼应</li>
+</ul>
+<h3>星网锐捷（002396 · 通信 / 算力）</h3>
+<ul>
+<li><strong>今日表现</strong>：涨停 36.69（+10.01%），成交 41.41 亿，换手 15.16%</li>
+<li><strong>异动原因</strong>：算力 / 网络设备独立走强（通信行业整体 -1.45%，个股逆势涨停）</li>
+<li><strong>概念定位</strong>：网络设备 / 数据中心，总市值 279 亿</li>
+<li><strong>资金信号</strong>：成交 41.41 亿、换手 15%，资金博弈激烈</li>
+<li><strong>关注价值</strong>：高 — 逆行业涨停，算力硬件方向人气标的</li>
+</ul>
+<h2>五、主线持续性判断</h2>
+<ul>
+<li><strong>农业 / 种业 / 粮食安全</strong>（价格主线）：今日涨幅 TOP，涨停多家（新赛股份、万向德农等）。农业兼具防御 + 政策属性，在指数高位震荡时易成资金避风港。持续性：<strong>可能有，但存疑</strong> — 历史看农业多为脉冲行情，明日看万向德农、新赛股份能否连板确认。</li>
+<li><strong>AI 应用 / 软件 / 信创</strong>（资金主线）：主力净流入前六全在这一条线，涨停梯队完整（天娱数科一字、久其软件、天融信、中安科），是资金最确定的方向。持续性：<strong>强</strong>。</li>
+<li><strong>主线切换信号</strong>：AI 硬件（光模块）炸板分歧（三六零、铭普光磁、德科立炸板），资金正从「AI 硬件」向「AI 应用 / 软件」切换。</li>
+</ul>
+<h2>六、明日推演初稿</h2>
+<h3>明日关注方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th>关注标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 应用 / 软件</td>
+<td>资金主攻，涨停梯队完整</td>
+<td>天娱数科、久其软件、天融信</td>
+</tr>
+<tr>
+<td>农业 / 种业</td>
+<td>今日最强价格主线，看能否延续</td>
+<td>万向德农、新赛股份</td>
+</tr>
+<tr>
+<td>算力 / 网络</td>
+<td>星网锐捷逆势涨停，看独立行情</td>
+<td>星网锐捷</td>
+</tr>
+</tbody>
+</table></div>
+<h3>观察要点</h3>
+<ol>
+<li>天娱数科能否继续连板（AI 应用人气龙头的空间高度）</li>
+<li>上证能否站稳 3950 并再次冲击 4000 关口</li>
+<li>AI 硬件炸板后资金是否回流，还是彻底切向软件 / 应用方向</li>
+</ol>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年08月29日 10:15</p>
+</footer>
+
+</body>
+</html>
