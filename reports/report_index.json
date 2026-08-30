@@ -1,9 +1,39 @@
 {
-    "last_updated":  "2026-08-29 10:37:12",
-    "total":  202,
-    "daily_count":  164,
+    "last_updated":  "2026-08-31 00:03:24",
+    "total":  205,
+    "daily_count":  167,
     "industry_count":  38,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-08-29/周度盘前.html",
+                        "id":  "2026-08-29-周度盘前",
+                        "display_date":  "8月29日",
+                        "title":  "周度盘前",
+                        "category":  "周度盘前",
+                        "type":  "daily",
+                        "size_kb":  22.9,
+                        "date":  "2026-08-29"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-30/深度复盘.html",
+                        "id":  "2026-08-30-深度复盘",
+                        "display_date":  "8月30日",
+                        "title":  "深度复盘",
+                        "category":  "深度复盘",
+                        "type":  "daily",
+                        "size_kb":  30.4,
+                        "date":  "2026-08-30"
+                    },
+                    {
+                        "relative_path":  "reports/2026-08-30/周度盘前.html",
+                        "id":  "2026-08-30-周度盘前",
+                        "display_date":  "8月30日",
+                        "title":  "周度盘前",
+                        "category":  "周度盘前",
+                        "type":  "daily",
+                        "size_kb":  20.1,
+                        "date":  "2026-08-30"
+                    },
                     {
                         "relative_path":  "reports/2026-08-28/宏观择时周度综述_MTIv3_20260828.html",
                         "id":  "2026-08-28-宏观择时周度综述_MTIv3_20260828",

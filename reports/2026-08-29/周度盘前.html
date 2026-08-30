@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月29日 周度盘前策略</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>8月29日 周度盘前策略</h1>
+  <div class="meta">
+    📅 2026年08月29日 周六 | 下周一8月31日开盘 | 投资小龙虾 AI 自动生成 | 仅供参考
+  </div>
+</header>
+
+<hr>
+<h2>🌍 周末全球市场汇总</h2>
+<h3>外盘走势（周五收盘·截至8月28日）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数/品种</th>
+<th style="text-align: center;">最新值</th>
+<th style="text-align: center;">涨跌</th>
+<th>关键信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标普500（SPY）</td>
+<td style="text-align: center;">$769.35</td>
+<td style="text-align: center;">-0.23%</td>
+<td>沃什鹰派讲话后承压</td>
+</tr>
+<tr>
+<td>纳指（QQQ）</td>
+<td style="text-align: center;">$716.43</td>
+<td style="text-align: center;">-0.65%</td>
+<td>芯片股获利回吐</td>
+</tr>
+<tr>
+<td>道指（DIA）</td>
+<td style="text-align: center;">$535.06</td>
+<td style="text-align: center;">-0.03%</td>
+<td>基本持平</td>
+</tr>
+<tr>
+<td>VIX恐慌指数</td>
+<td style="text-align: center;">约15.5</td>
+<td style="text-align: center;">上行</td>
+<td>加息预期升温，恐慌抬头</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td style="text-align: center;">约99.1</td>
+<td style="text-align: center;">高位震荡</td>
+<td>7月PCE超预期强化加息预期</td>
+</tr>
+<tr>
+<td>现货黄金</td>
+<td style="text-align: center;">约$4490-4500</td>
+<td style="text-align: center;">单日重挫约3%</td>
+<td>失守4500，跌破200日均线</td>
+</tr>
+<tr>
+<td>WTI原油</td>
+<td style="text-align: center;">约$83.2</td>
+<td style="text-align: center;">周跌约4.5%</td>
+<td>霍尔木兹海峡通航改善</td>
+</tr>
+<tr>
+<td>布伦特原油</td>
+<td style="text-align: center;">约$89.2</td>
+<td style="text-align: center;">周跌约5.1%</td>
+<td>地缘溢价回吐</td>
+</tr>
+<tr>
+<td>日经225</td>
+<td style="text-align: center;">66405.56</td>
+<td style="text-align: center;">周五+0.41%</td>
+<td>亚太偏强</td>
+</tr>
+<tr>
+<td>韩国KOSPI</td>
+<td style="text-align: center;">6788.88</td>
+<td style="text-align: center;">周五-1.79%</td>
+<td>半导体出口链走弱</td>
+</tr>
+<tr>
+<td>恒生指数</td>
+<td style="text-align: center;">25584.79</td>
+<td style="text-align: center;">周五+0.07%</td>
+<td>港股平稳</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>一句话：外盘「鹰派压制、科技回调」。美联储主席沃什杰克逊霍尔首秀放鹰，称通胀「还有工作要做」、暗示若通胀不快速下行则准备加息，9月加息概率飙升至约五成；英伟达财报利好兑现后大跌4.57%引发AI算力股全面获利回吐，但软件/云逆势走强（亚马逊+3.97%、赛富时+1.57%）。黄金创6月初以来最差单日，油价因中东局势缓和周跌5%。</p>
+</div>
+<h3>周末重大消息（按影响强度排序）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>事件</th>
+<th>影响板块</th>
+<th>情绪</th>
+<th style="text-align: center;">强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>周五收盘后央行+证监会+金融监管总局同步发布房地产重磅文件：证监会《关于资本市场支持构建房地产发展新模式的意见》+ 央行/金监总局《关于改革完善房地产信贷管理推动加快构建房地产发展新模式的意见》+ 五份贷款管理办法（商品房开发贷、个人住房贷、商业地产贷、城市更新贷、信托业务）</td>
+<td>房地产/银行/REITs/建筑</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>美联储主席沃什杰克逊霍尔首秀放鹰：通胀目标「坚定、固定」，数据不足以证明通胀「有意义改善」，9月加息概率升至约五成，市场押注明年3月前两次加息</td>
+<td>全球风险资产/成长股</td>
+<td>利空</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>英伟达财报利好兑现后大跌4.57%，AI算力股全面获利回吐；但软件/云逆势走强（亚马逊+3.97%、赛富时+1.57%）</td>
+<td>AI硬件链/AI应用</td>
+<td>分化</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>全球430万TEU港口待泊，华东塞港情况不容乐观，航运有效运力阶段性下降</td>
+<td>航运/集运/港口</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>存储芯片短缺加剧、涨价预期强烈；国产厂商产能利用率维持高位</td>
+<td>存储芯片</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>国家航天局设立商业航天司，商业航天进入规范发展期；「AI+」产业生态大会在京召开</td>
+<td>商业航天/AI应用</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>7</td>
+<td>相关方面考虑额外加征7.5%关税，商务部回应：典型单边主义、保护主义，中方坚决反对</td>
+<td>出口链/全市场情绪</td>
+<td>利空</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>8</td>
+<td>焦煤期货8月累计涨超45%，能源成本端持续抬升</td>
+<td>煤炭/焦煤</td>
+<td>中性偏多</td>
+<td style="text-align: center;">⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🔍 重点新闻情绪催化验证</h3>
+<ul>
+<li><strong>房地产新政（周五收盘后重磅）</strong>：证监会明确五大维度支持房企业合理融资（再融资、并购重组、债券、存量资产盘活、不动产私募基金），推动房企融资从「主体信用」转向「项目信用」；央行/金监总局同步优化个人住房贷款规则（「先拿房、再还贷」方向）、建立开发贷主办银行制度。联动标的：房企（保利发展、万科A）、REITs/不动产（招商蛇口、华润置地）、银行（房贷重定价）、建筑（中国建筑、中国中铁）。判断：<strong>政策级别催化（⭐⭐⭐）</strong>，制度框架初步成形，且与商业不动产REITs试点协同推进，对地产链+银行是「预期修复」型利好，具备中期持续性。下周一开盘关注地产板块能否放量启动、REITs概念是否发酵。</li>
+<li><strong>美联储放鹰</strong>：9月加息概率从59.7%升至约五成（市场消化鹰派后），美元走强、黄金重挫3%失守4500。联动：A股贵金属/黄金板块承压（深中华A 7连板高位风险加大）、成长股估值受压。判断：<strong>短期压制，但不构成A股系统性利空</strong>——A股核心矛盾是内部政策与量能，外部仅影响开盘情绪。</li>
+<li><strong>英伟达回调</strong>：财报利好兑现后-4.57%，纳指转跌。联动：A股AI硬件链（PCB/光通信/存储/算力芯片）周一开盘或低开，但存储（涨价逻辑独立）与AI应用（Salesforce逻辑独立）受冲击较小。判断：<strong>硬件链「映射驱动」阶段结束，进入「业绩验证」阶段</strong>，需半年报兑现支撑。</li>
+<li><strong>概念区分说明</strong>：周一开盘需严格区分三条AI线——<strong>AI硬件链</strong>（英伟达映射，今日美股回调直接利空，看半年报）、<strong>AI应用/软件</strong>（Salesforce/Anthropic映射，亚马逊+赛富时美股逆势走强，逻辑独立）、<strong>存储芯片</strong>（涨价逻辑+国产替代，独立于英伟达股价）。三者下周一节奏将分化，不可混为一谈。</li>
+</ul>
+<hr>
+<h2>💰 上周板块资金趋势回顾（8月24日-8月28日）</h2>
+<blockquote>
+<p>数据来源：本地板块资金雷达系统（最新数据更新至2026-08-28）+ 通达信概念板块主力资金流向</p>
+</div>
+<h3>上周资金持续流入/在榜板块</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">在榜天数</th>
+<th style="text-align: center;">波段趋势</th>
+<th style="text-align: center;">上周表现</th>
+<th>本周预期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI应用/软件（AIGC/ChatGPT/信创）</td>
+<td style="text-align: center;">新上榜</td>
+<td style="text-align: center;">↗ 资金大幅流入（AIGC单日+41.1亿居全市场第一）</td>
+<td style="text-align: center;">周五+0.57%~+0.80%</td>
+<td>延续强势，关注连板高度</td>
+</tr>
+<tr>
+<td>农业/种业/粮食</td>
+<td style="text-align: center;">主升第5周</td>
+<td style="text-align: center;">↗ 涨停梯队向化肥/水产/供销社扩散</td>
+<td style="text-align: center;">种业+4.02%、化肥+3.16%</td>
+<td>高位延续，警惕分歧</td>
+</tr>
+<tr>
+<td>化工涨价链</td>
+<td style="text-align: center;">持续</td>
+<td style="text-align: center;">↗ 全周主力净流入逾233亿</td>
+<td style="text-align: center;">分散染料+3.32%</td>
+<td>轮动延续，关注涨价品种</td>
+</tr>
+<tr>
+<td>存储芯片</td>
+<td style="text-align: center;">分歧转修复</td>
+<td style="text-align: center;">↗ 香农芯创+4.09%获主力净流入5.33亿</td>
+<td style="text-align: center;">资金回流</td>
+<td>修复延续，关注DRAM涨价</td>
+</tr>
+</tbody>
+</table></div>
+<h3>上周资金持续流出/退潮板块</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>退潮信号</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI硬件链（光通信/CPO/先进封装）</td>
+<td>光通信在榜50天、CPO在榜59天、先进封装52天，周五单日净流出（光通信-89.6亿、CPO-99.7亿），英伟达美股回调共振</td>
+<td>⚠️ 高位兑现风险加大，波段资金撤退信号</td>
+</tr>
+<tr>
+<td>贵金属/黄金</td>
+<td>黄金单日重挫3%失守4500，深中华A情绪高标与基本面背离</td>
+<td>🔴 回避，防高标断板踩踏</td>
+</tr>
+<tr>
+<td>半导体设备/新能源权重</td>
+<td>创业板指-1.41%，科技权重持续拖累指数</td>
+<td>观察，暂不介入</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🔔 机构建仓信号</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>信号</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI应用/软件</td>
+<td>主力净流入首日放量居首（AIGC+41.1亿），股价未大涨（+0.57%）</td>
+<td>🟢 资金先行、价格未动，发酵期特征，关注建仓</td>
+</tr>
+<tr>
+<td>存储芯片</td>
+<td>香农芯创资金回流+5.33亿，DRAM涨价预期增强</td>
+<td>🟢 分歧转修复初期，回调企稳可关注</td>
+</tr>
+</tbody>
+</table></div>
+<h3>⚠️ 短线退潮信号</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>之前状态</th>
+<th>当前信号</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>光通信/CPO/先进封装</td>
+<td>在榜50-59天（超长在榜）</td>
+<td>周五单日大幅净流出（光通信-89.6亿、CPO-99.7亿、先进封装-45.3亿），英伟达美股-4.57%共振</td>
+<td>🔴 建议减仓/回避，映射驱动阶段结束</td>
+</tr>
+<tr>
+<td>贵金属/黄金</td>
+<td>深中华A 7连板高标</td>
+<td>黄金价格破位（失守4500+跌破200日均线），价格与情绪背离</td>
+<td>🔴 建议撤退，防高标断板</td>
+</tr>
+</tbody>
+</table></div>
+<h3>📈 资金轮动方向</h3>
+<ul>
+<li><strong>资金进攻方向</strong>：AI应用/软件（AIGC+41.1亿、ChatGPT+28.3亿、信创+27.2亿）为核心，叠加化工涨价、农业上游补涨。周五收盘后房地产新政落地，下周一地产链或成为新进攻方向。</li>
+<li><strong>资金撤退方向</strong>：AI硬件链（光通信/CPO/先进封装）超长在榜后单日转负，英伟达美股回调共振，波段资金明确撤离。</li>
+<li><strong>排位飙升板块</strong>：AIGC概念（首日登顶净流入榜）、跨境电商、华为鸿蒙等软件方向，是上周最显著的资金转向信号。</li>
+</ul>
+<hr>
+<h2>🎯 本周主线预判（8月31日-9月4日）</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th>关注标的</th>
+<th>预期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>房地产/REITs（新方向）</td>
+<td>周五收盘后央行+证监会+金监总局重磅双文件+五份管理办法，制度框架初步成形，与商业不动产REITs试点协同</td>
+<td>保利发展、万科A、招商蛇口、中国建筑；REITs/不动产相关标的</td>
+<td>强（政策级别催化，观察能否放量启动）</td>
+</tr>
+<tr>
+<td>AI应用/软件（延续主线）</td>
+<td>Salesforce+Anthropic催化+资金净流入第一，美股软件逆势走强（亚马逊+3.97%），逻辑独立于英伟达</td>
+<td>天娱数科、鼎捷数智、三六零、华阳国际、科大讯飞</td>
+<td>强（发酵→扩散阶段）</td>
+</tr>
+<tr>
+<td>农业/种业（高位延续）</td>
+<td>厄尔尼诺减产+粮食涨价，主升第5周但进入高位</td>
+<td>万向德农、金健米业、新农股份</td>
+<td>中（高位分歧风险加大）</td>
+</tr>
+<tr>
+<td>存储芯片（修复）</td>
+<td>DRAM涨价+国产厂商高稼动率，逻辑独立</td>
+<td>香农芯创、德科立、兆易创新</td>
+<td>中（分歧转修复初期）</td>
+</tr>
+<tr>
+<td>AI硬件链（风险方向）</td>
+<td>英伟达-4.57%财报兑现，映射阶段结束，转入半年报业绩验证</td>
+<td>寒武纪、光库科技、沃特股份</td>
+<td>弱（本周大概率调整）</td>
+</tr>
+<tr>
+<td>券商（政策催化）</td>
+<td>中金吸收合并获批+房地产新政带动的并购重组预期</td>
+<td>中金公司、锦龙股份、中信证券</td>
+<td>中（关注并购主题发酵）</td>
+</tr>
+</tbody>
+</table></div>
+<h3>主线切换信号（六维框架）</h3>
+<ul>
+<li><strong>旧主线（AI硬件链）退潮信号</strong>：价格（英伟达-4.57%映射）、资金（光通信/CPO单日净流出89-100亿）、量能（板块缩量）、逻辑（财报利好出尽，映射驱动结束）、情绪（美股获利回吐）五个维度同时转弱 → <strong>退潮确认</strong></li>
+<li><strong>新主线（AI应用/软件+房地产）酝酿信号</strong>：AI应用在资金维度（净流入第一）与逻辑维度（Salesforce催化）已确立；房地产在逻辑维度（政策级别催化）具备，等待价格/资金维度确认（下周一开盘地产板块放量即为确认信号）</li>
+<li><strong>切换触发点</strong>：周五收盘后房地产双文件落地，是潜在主线切换的政策触发；AI应用/软件已在资金面抢先确立</li>
+</ul>
+<hr>
+<h2>⚠️ 本周风险日历</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>日期</th>
+<th>风险事件</th>
+<th>影响方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>周一 8/31</td>
+<td>房地产新政开盘消化：高开兑现 vs 放量启动的分水岭</td>
+<td>地产/银行/REITs</td>
+</tr>
+<tr>
+<td>本周</td>
+<td>美联储加息预期发酵：9月加息概率约五成，关注美元与美债走势</td>
+<td>全球风险资产/成长股</td>
+</tr>
+<tr>
+<td>本周</td>
+<td>黄金破位后（失守4500+跌破200日均线）贵金属板块补跌风险</td>
+<td>贵金属/黄金股</td>
+</tr>
+<tr>
+<td>本周</td>
+<td>贸易摩擦：7.5%额外关税消息升级风险</td>
+<td>出口链/全市场情绪</td>
+</tr>
+<tr>
+<td>本周</td>
+<td>AI硬件链半年报兑现期：映射结束后的业绩验证，超预期则修复、不及预期则补跌</td>
+<td>半导体/PCB/光通信</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2>📌 策略建议</h2>
+<div class="highlight">
+<p>💡 <strong>上周五推演回顾</strong>：8/28深度复盘预判「AI应用/软件发酵→扩散需连板高度确认」「农业高位警惕分歧」「AI硬件链关注寒武纪能否突破」。验证：AI应用周五资金继续领跑（AIGC+41.1亿）方向正确；农业高位分歧未兑现但龙头连板仍在；AI硬件链寒武纪周五-0.13%滞涨+美股英伟达回调，兑现压力如预判放大。</p>
+</div>
+<ul>
+<li><strong>仓位建议</strong>：6-7成。政策面（房地产）与题材面（AI应用）有进攻抓手，但外盘鹰派+硬件链退潮构成压制，不满仓、不追高。</li>
+<li><strong>进攻方向</strong>：①房地产/REITs——若周一高开不破关键位、量能配合，可参与政策驱动的预期修复（首选低估值央国企房企+REITs运营方）；②AI应用/软件——发酵期龙头（华阳国际/天娱数科）连板确认后轻仓跟随，回避已炸板的三六零追高。</li>
+<li><strong>防守方向</strong>：红利（电力/银行）、化工涨价链作为仓位缓冲；存储芯片回调企稳（缩量不破位）可低吸。</li>
+<li><strong>风险应对</strong>：①若周一地产高开大幅回落（利好兑现），放弃该方向；②若AI硬件链因英伟达回调放量杀跌，持仓者减仓，观望者不接飞刀；③若上证放量跌破3900（MA20附近），全线收缩至防御仓位；④深中华A等情绪高标断板时，短线情绪周期进入退潮，当日不追任何高位板。</li>
+</ul>
+<h3>周一观察要点</h3>
+<ol>
+<li>房地产板块开盘强度：高开后能否持续（放量+涨停家数），决定政策催化是「一日游」还是「新主线确立」</li>
+<li>AI应用/软件龙头（华阳国际、天娱数科）能否继续连板，三六零能否反包</li>
+<li>AI硬件链低开幅度：若低开高走说明利空消化，若低开低走则退潮确认</li>
+<li>两市成交能否维持2万亿以上</li>
+<li>美元/黄金走势：若黄金继续大跌，贵金属板块补跌风险加剧</li>
+</ol>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+</div>
+<p><strong>数据来源</strong>：
+- 外盘行情：Finnhub API（SPY/QQQ/DIA实时报价）+ web_search（美元/黄金/原油/VIX/亚太指数，金十数据、华尔街见闻等）
+- 周末重大新闻与政策：亿信API（Billions Intelligence）search端点（证监会/央行/金监总局文件、新华社、中新网、上海证券报等）
+- 板块资金雷达：本地板块资金雷达系统（drawer_data.json，数据更新至2026-08-28）+ 通达信概念板块主力资金流向
+- 研报巡逻：今日（08-29）无研报巡逻输出（22:30研报巡逻任务未生成），故未集成研报×资金共振信号
+- A股指数与主线背景：通达信 TdxQuant（tdx_quotes / tdx_kline / tdx_screener）</p>
+<p>生成时间：2026年08月29日 23:20</p>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 TdxClaw AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
