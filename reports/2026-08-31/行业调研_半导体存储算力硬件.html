@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-08-31 行业调研：半导体/存储/算力硬件</title>
+<style>
+/* ============================================================
+   投资小龙虾 行业调研报告 — 红·黄·灰·黑 简洁风
+   ============================================================ */
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --green:   #2e7d32;
+  --green-light: #e8f5e9;
+  --blue:    #1a5276;
+  --blue-light: #eaf2f8;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 34px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+p { margin: 8px 0; }
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  min-width: 560px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 9px 11px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 8px 11px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+.good {
+  background: var(--green-light);
+  border-left: 4px solid var(--green);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.info {
+  background: var(--blue-light);
+  border-left: 4px solid var(--blue);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+
+ul, ol { margin: 8px 0 8px 20px; }
+li { margin: 5px 0; }
+
+.tag {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 4px;
+}
+.tag-ok   { background: var(--green-light); color: var(--green); }
+.tag-warn { background: var(--red-light);  color: var(--red); }
+.tag-info { background: var(--blue-light); color: var(--blue); }
+
+blockquote {
+  margin: 12px 0;
+  padding: 10px 16px;
+  background: var(--gray-100);
+  border-left: 4px solid var(--gray-300);
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+
+.footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-300);
+  font-size: 12px;
+  color: var(--gray-500);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📚 2026-08-31 行业调研：半导体 / 存储 / 算力硬件</h1>
+  <div class="meta">
+    <span>调研轮次：第 5 周（轮换制循环回第 1 主题）</span>
+    <span>生成时间：2026-08-31</span>
+    <span>外部校准 · 防止本地视角固化</span>
+  </div>
+</header>
+
+<div class="highlight">
+<p><strong>一句话结论</strong>：产业面（涨价周期、供需缺口、AI资本开支）与资金面（高位兑现、高低切换）正处在<strong>阶段性撕裂</strong>中。研报一致看多的存储/算力芯片，8月31日资金口径大幅净流出；但同一时点，液冷、覆铜板/PCB材料、半导体设备这些「涨价+低位」硬件分支获得增量资金。产业逻辑没有走坏，坏的是拥挤的筹码结构；硬件内部正在完成一次「高位算力 → 中低位材料/设备」的接力。</p>
+</div>
+
+<h2>一、外部研报核心观点汇总</h2>
+
+<h3>1.1 券商研报（source: report）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th>机构</th><th>日期</th><th>核心观点</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>国盛证券</strong></td><td>2026-08-29</td><td>英伟达财报超预期，看好算力硬件。HBM带宽增速持续追不上算力扩张；存储厂扩产与升级带动设备/材料/先进封装需求。HotChips 看点为「系统级竞争」：竞争单元从芯片上升到整座数据中心（电力、冷却、运维全链条），AMD MI455X+Helios（72颗、31TB HBM4）、Intel 弃 HBM 改用 LPDDR5X、Arm 首款自研服务器 CPU 问世</td></tr>
+<tr><td><strong>国盛证券</strong></td><td>2026-08-24</td><td>科技材料投资机会：AI算力高景气+国产替代提速。硅片三巨头5月10日同步涨价（高端硅片+18%~22%）；电子特气六氟化钨突破315万元/吨；靶材2026Q1常规品+20%、钴钨等小金属靶材+60%~70%；电子级氢氟酸年内+20%~30%；封装材料EMC涨价10%~20%（住友电木5月），台积电CoWoS产能释放拉动</td></tr>
+<tr><td><strong>英大证券</strong></td><td>2026-08-17</td><td>半导体行业配置排名第一（年初至今连续推荐）。下半年短期有回落压力、波动加大，甚至不排除大幅回调，但长期向好逻辑未变；国产替代（大基金三期、税收优惠）进入不可逆加速通道；板块内部分化，回避纯炒作概念、缺乏业绩支撑个股</td></tr>
+<tr><td><strong>长江证券</strong></td><td>2026-08-01</td><td>「超级周期」需求刚性强、持续时间长。存储芯片、PCB战略材料（电子布、铜箔）受益AI算力爆发；龙头减产中低端存储 → 低端供给缺口 → 全线涨价；电子布织布机紧缺、铜箔产线向高端迭代，均有望持续涨价</td></tr>
+<tr><td><strong>中原证券</strong></td><td>2026-08-19</td><td>AI推理与智能体重塑算力结构，服务器CPU重回数据中心核心、供给紧张有望再涨价，国产CPU加速替代。SEMI预测2026年全球300mm存储设备投资520亿美元（同比+29%），2024-2029复合增速19% → 国产半导体设备出海有望加速</td></tr>
+</tbody>
+</table></div>
+
+<h3>1.2 专家纪要（source: expert / meeting）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th>来源</th><th>日期</th><th>核心观点</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>长江电子·周六下午茶197期</strong>（蔡少东）</td><td>2026-08-01</td><td>存储投资的本质是「价格逻辑」：景气向上阶段厂商扩产（海力士/三星已公告未来五年产能翻倍），设备材料蕴含大机会。台积电2026年资本开支560亿美元（同比+37%）；DRAM资本开支25年500多亿→26年600多亿；全球设备材料市场2026-2027年迎来较好增长</td></tr>
+<tr><td><strong>国泰海通·韩国股市现状</strong>（玄之航）</td><td>2026-08-05</td><td>存储价格实证：过去三轮 DRAM 环比涨幅见顶后，实际价格转跌通常滞后4-6个季度。本轮AI需求强度明显高于传统消费电子周期+长协（LTA）提高需求可见度，涨价斜率放缓更接近「高价格高利润下的自然减速」，并非价格见顶信号。半导体已进入<strong>业绩验证阶段</strong>：看长协是否有实质约束力、CSP资本开支能否转化为订单、高利润率能否转为自由现金流</td></tr>
+<tr><td><strong>天风策略·重磅专家小范围</strong></td><td>2026-08-20</td><td>美国拟将「远程云算力租赁」纳入出口管制修订：先进芯片的使用终端用户归美国商务部管，在新加坡/马来西亚采购美国管制芯片训练大模型需向美商务部报备 → 国产算力自主可控逻辑进一步强化</td></tr>
+<tr><td><strong>中信建投·大周期与新材料第30期</strong></td><td>2026-08-09</td><td>半导体材料推荐雅克科技：前驱体全球前三（市占率约15%），下游40%海力士、40%长鑫、10%美光，下半年业绩释放+新客户导入+涨价</td></tr>
+<tr><td><strong>申万宏源策略</strong>（傅静涛）</td><td>2026-08-02</td><td>A股大波段上行行情重启，AI产业链重拾强势是必要条件；但短期反弹仍属超跌反弹，二次探底概率大，需步步为营</td></tr>
+</tbody>
+</table></div>
+
+<h3>1.3 产业新闻（source: web）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th>日期</th><th>事件</th><th>含义</th></tr>
+</thead>
+<tbody>
+<tr><td>2026-08-31</td><td>覆铜板龙头建滔积层板<strong>年内第七次涨价</strong>：FR-4全系+10%、PP厚材+10%、薄材+20%；松下机电9月1日起PCB材料最高+30%。FR-4年内累计复利涨幅<strong>突破100%</strong></td><td>PCB材料超级涨价周期，超出多数机构年初预期</td></tr>
+<tr><td>2026-08-28</td><td>SK海力士CEO郭鲁正：存储短缺将延续至<strong>2030年底</strong>，「没有任何预示下行周期的信号」；HBM由客户与厂商共同开发，已非大宗商品属性，未来下行也不会剧烈</td><td>原厂最权威表态，存储涨价持续性超长</td></tr>
+<tr><td>2026-08-28</td><td>长鑫科技 LPDDR6 内存正式量产（首发小米折叠屏）+ 2026半年报披露；发改委全链条推动集成电路关键核心技术攻关</td><td>国产存储+政策双重催化</td></tr>
+<tr><td>2026-08-28</td><td>央视财经：AI芯片功耗破1000W，液冷成「必选项」，山东广东产线满产，CDU订单排至2026年底、部分交付展望2027年；工信部公布算力互联互通区域节点名单，全国智算总规模245万PFLOPS</td><td>液冷从主题转向订单验证</td></tr>
+<tr><td>2026-08-12</td><td>覆铜板头部企业：6月以来环比涨幅累计超45%，「订单多到接不过来」，头部毛利率或突破30%；生益科技高性能覆铜板动工、金安国纪投建2000万张覆铜板</td><td>涨价+扩产共振，业绩兑现期临近</td></tr>
+<tr><td>2026-08-10</td><td>半导体材料2026年初开启全面涨价潮（硅片/特气/靶材）；磷化铟供需缺口<strong>超过存储芯片</strong>，成最紧缺环节；环球晶圆产线几乎全面满载，洽谈新长约</td><td>材料端紧缺外溢至光互连材料</td></tr>
+</tbody>
+</table></div>
+
+<h2>二、本地资金数据验证</h2>
+
+<p>数据源：板块资金雷达（东财BK接口，2026-08-31）+ 当日复盘报告（盘中异动/收盘总结/周度盘前）。</p>
+
+<h3>2.1 当日价格面：科技硬件午后集体回流</h3>
+<ul>
+<li><strong>液冷服务器</strong>：板块涨幅居前，星网锐捷3连板、海鸥股份3连板、<strong>浪潮信息反包涨停（主力净流入18.1亿，全场第一）</strong>、荣亿精密30cm、英维克+5.78%</li>
+<li><strong>算力芯片/端侧AI</strong>：瑞芯微涨停、万通发展涨停、炬芯科技+10%、博通集成涨停、<strong>寒武纪+6.26%收1112元创历史新高</strong></li>
+<li><strong>硬件细分扩散</strong>：午后新增资金 英维克（液冷+5.2亿）、生益科技（覆铜板+6.2亿）、芯原股份（半导体IP+5.9亿）、罗博特科（半导体设备+5.7亿）；诺德股份（铜箔）涨停、大族激光（PCB/半导体设备）涨停</li>
+</ul>
+
+<h3>2.2 当日资金面：半导体/存储大幅净流出（价格与资金背离）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th>板块</th><th>涨跌幅</th><th>主力净额</th><th>本地复盘归因</th></tr>
+</thead>
+<tbody>
+<tr><td>半导体概念</td><td>—</td><td style="color:var(--red);"><strong>-147.68亿</strong></td><td>前期资金核心，单日大幅兑现</td></tr>
+<tr><td>国产芯片</td><td>—</td><td style="color:var(--red);"><strong>-157.65亿</strong></td><td>AI硬件高位筹码集中出清</td></tr>
+<tr><td>存储芯片</td><td>-1.59%</td><td style="color:var(--red);"><strong>-102.83亿</strong></td><td>前期获利盘集中兑现</td></tr>
+<tr><td>中芯概念</td><td>-1.60%</td><td style="color:var(--red);">-56.83亿</td><td>半导体制造资金大幅撤离</td></tr>
+<tr><td>高带宽内存(HBM)</td><td>-1.87%</td><td style="color:var(--red);">-16.00亿</td><td>本地复盘标注「存储芯片景气预期降温」</td></tr>
+</tbody>
+</table></div>
+
+<h3>2.3 资金雷达进攻榜：AI硬件缺席</h3>
+<p>8月31日资金雷达进攻榜 TOP10：化工原料（955.8）、煤化工（940.9）、环氧丙烷（936.7）、农业种植（924.0）、ERP概念（919.1）、C2M概念（916.5）、装配建筑（913.9）、化债AMC（905.1）、数字水印（895.8）、粮食概念（886.7）。<strong>半导体/存储/算力无一个进入进攻榜</strong>，资金进攻方向集中在「化工涨价+农业+低位软件+地产链」。</p>
+
+<div class="warning">
+<p>⚠️ <strong>当日关键结构信号</strong>（本地复盘原文）：「资金正在从 AI 硬件切向 AI 应用，这是今天最值得重视的结构变化」；同时盘中异动修正为「AI 双轮共振向上，硬件不跌反强（液冷+算力芯片爆发），比午盘预期更强」。两条口径叠加，读出来的真实含义是：<strong>价格层面硬件没有退潮，资金口径却是净流出，分歧巨大</strong>。</p>
+</div>
+
+<h3>2.4 周度视角（8-30 深度复盘口径）</h3>
+<ul>
+<li><strong>AI硬件链</strong>：英伟达财报兑现后 -4.57%，映射驱动阶段结束，六维框架判定「转弱」，短期不接飞刀</li>
+<li><strong>存储芯片</strong>：长鑫 LPDDR6 量产+涨价预期，判定「修复中」，逻辑独立于英伟达</li>
+<li><strong>AI应用/软件</strong>：AIGC 净流入41.1亿居首，判定「发酵→扩散」进行中</li>
+<li><strong>房地产链</strong>：政策级别催化（⭐⭐⭐），新主线酝酿，等待周一放量确认</li>
+<li>资金雷达周度榜：光通信 -375亿/21天、先进封装 -189亿/15天、CPO -280亿/21天、算力租赁 -290亿但单日转正（+2.00亿）</li>
+</ul>
+
+<h2>三、共振信号与背离信号</h2>
+
+<h3>🟢 共振点（研报 + 本地资金双确认）</h3>
+<div class="good">
+<table style="min-width:100%;"><tbody>
+<tr><td><span class="tag tag-ok">共振</span><strong>覆铜板 / PCB 材料涨价链</strong></td><td>研报：长江证券「超级周期」、中银证券三重共振、建滔年内七轮涨价 FR-4 累计超100%；资金：生益科技午后 +6.2亿、诺德股份（铜箔）涨停、大族激光（PCB设备）涨停。产业逻辑与资金行为<strong>完全同向</strong>，是本轮调研最硬的共振</td></tr>
+<tr><td><span class="tag tag-ok">共振</span><strong>液冷 / 算力散热</strong></td><td>研报：央视报道 CDU 订单排至 2026 年底、AI 芯片功耗破 1000W 液冷成必选项；资金：浪潮信息涨停净流入18.1亿全场第一、英维克 +5.2亿、海鸥股份/星网锐捷3连板。催化从「主题」进入「订单验证」阶段</td></tr>
+<tr><td><span class="tag tag-ok">共振</span><strong>半导体设备 / 材料国产替代</strong></td><td>研报：国盛/英大/长江电子一致强调设备材料是扩产周期最大受益环节，SEMI 预测存储设备投资 520亿美元（+29%）；资金：罗博特科 +5.7亿、大族激光涨停、芯原股份 +5.9亿。属于「资金刚进场、研报早布局」的错位共振，空间还在</td></tr>
+</table>
+</div>
+
+<h3>🔴 背离点（研报看多 vs 本地资金流出）</h3>
+<div class="warning">
+<table style="min-width:100%;"><tbody>
+<tr><td><span class="tag tag-warn">背离</span><strong>存储芯片（最显著）</strong></td><td>产业面：SK海力士CEO称短缺至2030年底、长鑫 LPDDR6 量产、DRAM/NAND 全面涨价；本地资金：8-31 单日 -102.83亿，本地复盘甚至标注「景气预期降温」。这是<strong>产业逻辑（中期向上）与交易逻辑（筹码兑现）的撕裂</strong>。参考国泰海通纪要：涨价斜率放缓是自然减速而非见顶，存储进入业绩验证期，短期回撤不破坏产业逻辑</td></tr>
+<tr><td><span class="tag tag-warn">背离</span><strong>算力芯片 / 半导体制造</strong></td><td>产业面：英伟达财报超预期、HBM 供不应求、国产算力政策加码（燧原IPO、全国一体化算力网）；本地资金：半导体概念 -147.68亿、国产芯片 -157.65亿、中芯概念 -56.83亿。资金正在兑现上半年涨幅，但寒武纪当日仍创新高——<strong>个股新高与板块净流出并存</strong>，说明筹码从跟风票向真龙头集中</td></tr>
+<tr><td><span class="tag tag-warn">背离</span><strong>光通信 / CPO / 先进封装</strong></td><td>产业面：长期逻辑（数据中心互连）未破坏；本地资金：周度净流出 280~375亿、21天连续失血，六维框架判定「映射驱动阶段结束」。背离性质为<strong>逻辑切换</strong>：从「英伟达映射」转向「业绩验证」，需半年报兑现来修复</td></tr>
+</table>
+</div>
+
+<h3>🧭 背离的本质解读</h3>
+<blockquote>
+<p>本轮背离不是「产业证伪」，而是「<strong>拥挤度出清</strong>」：上半年算力硬件涨幅巨大（寒武纪年内翻数倍、存储股下半年普遍翻倍），财报兑现后资金系统性减仓高位筹码，同时把增量切向两个方向——①同一产业链里相对低位、涨价刚兑现的分支（液冷、覆铜板、设备材料）；②完全独立的低位方向（AI应用、化工、农业、地产链）。产业逻辑（涨价周期、AI资本开支、国产替代）三个支柱没有一根倒塌，坏的是筹码结构，而非景气度。</p>
+</blockquote>
+
+<h2>四、对本地复盘体系的校准建议</h2>
+
+<h3>4.1 必须更新的认知</h3>
+<ol>
+<li><strong>「AI硬件」不能再当单一板块处理</strong>：8-30 复盘判定「AI硬件转弱」，8-31 液冷/覆铜板/设备就集体爆发。真实结构是硬件内部三级分化：高位算力芯片（兑现中）、中位存储（兑现后待修复）、低位材料设备（刚启动）。建议复盘拆分口径：<strong>算力芯片 / 存储 / PCB材料 / 液冷散热 / 设备 / 封装</strong>六条独立跟踪，禁止合并成「AI硬件」一刀切。</li>
+<li><strong>「存储景气预期降温」这个归因要警惕</strong>：本地复盘 8-31 把 HBM 下跌归因为「景气预期降温」，但产业端（SK海力士2030年底、长鑫量产、原厂持续涨价）没有任何降温信号。更准确的归因是「获利盘集中兑现」——存储 -102.83亿与存储板块半年内翻倍涨幅对应，是筹码问题。校准：<strong>资金流出 ≠ 逻辑破坏</strong>，需区分「逻辑性流出」与「筹码性流出」。</li>
+<li><strong>涨价链是当前最硬的主线锚</strong>：外部研报 8 月最大公约数是「涨价」（存储、覆铜板、硅片、特气、靶材、氢氟酸、EMC），本地资金进攻榜也被化工涨价、环氧丙烷占据。涨价（量价齐升）是产业景气度最直接的证据，本地复盘应把「涨价函跟踪」纳入常规监控项（覆铜板已七轮、松下机电9月跟进）。</li>
+<li><strong>半导体设备出海是新盲区</strong>：SEMI 预测 2026 年全球存储设备投资 520 亿美元（+29%）、2024-2029 复合增速 19%，中原证券据此推「国产设备出海加速」。本地复盘目前只跟踪设备国产替代，<strong>未覆盖出海逻辑</strong>（海外存储厂扩产周期 = 国产设备新增量），建议纳入设备股跟踪框架。</li>
+<li><strong>美国管制升级（云算力租赁）是中期变量</strong>：天风纪要显示美拟将远程算力租赁纳入出口管制，这强化国产算力自主可控（利好国产GPU/服务器/液冷），但也是扰动源。建议加入「外部管制事件」监测，作为算力链的催化-风险双向因子。</li>
+</ol>
+
+<h3>4.2 操作层面的建议</h3>
+<ul>
+<li><strong>存储</strong>：产业逻辑未破坏，但短期筹码兑现未结束。观察「缩量企稳 + 资金净流出收窄」再低吸，参考标的香农芯创/兆易创新/长鑫产业链；把「原厂涨价函 + 合约价环比」作为重启信号。</li>
+<li><strong>液冷/覆铜板/设备材料</strong>：共振最明确，但已发酵数日（液冷3连板股存在），不追高位，等分歧低吸；业绩兑现期（半年报）是分水岭。</li>
+<li><strong>算力芯片</strong>：个股新高与板块流出并存，只做龙头（寒武纪类），回避跟风票。</li>
+<li><strong>背离交易提示</strong>：当「研报看多 + 资金流出」的背离出现，本地体系应默认「等待筹码出清」，而非「跟随研报抄底」，除非出现资金面转向信号（净流入转正/缩量止跌）。</li>
+</ul>
+
+<div class="info">
+<p>💡 <strong>本次调研对本地体系的最大修正</strong>：本地资金雷达擅长捕捉「资金在做什么」，但资金是后视镜（反映已发生的交易），产业研报是望远镜（反映未来 2-4 个季度的景气）。8-31 的背离恰恰说明——<strong>资金流出时，产业逻辑可能正在为下一波蓄势；反之资金流入时，也可能是接盘。</strong>两者必须对照使用，缺一不可。</p>
+</div>
+
+<div class="footer">
+<p><strong>数据来源</strong>：① 外部研报/专家纪要/产业新闻：亿信API（billions-intelligence，search 端点，source=report/expert/web，2026-08-31 检索，time_range=past 1 month）；② 本地资金验证：板块资金雷达（东财BK接口，2026-08-31）+ 分析报告汇总（8-30 深度复盘 / 8-31 盘中异动、收盘总结、周度盘前）；③ 个股/板块涨跌数据：通达信MCP。研报机构包括：国盛证券、英大证券、长江证券、中原证券、中银证券、申万宏源、国泰海通、中信建投、天风证券。</p>
+<p style="margin-top:6px;">⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+</div>
+
+</body>
+</html>

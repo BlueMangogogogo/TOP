@@ -1,9 +1,19 @@
 {
-    "last_updated":  "2026-08-31 21:54:32",
-    "total":  213,
+    "last_updated":  "2026-08-31 22:03:56",
+    "total":  214,
     "daily_count":  175,
-    "industry_count":  38,
+    "industry_count":  39,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-08-31/行业调研_半导体存储算力硬件.html",
+                        "id":  "2026-08-31-行业调研_半导体存储算力硬件",
+                        "display_date":  "8月31日",
+                        "title":  "行业调研_半导体存储算力硬件",
+                        "category":  "深度研究",
+                        "type":  "industry",
+                        "size_kb":  22.6,
+                        "date":  "2026-08-31"
+                    },
                     {
                         "relative_path":  "reports/2026-08-31/宏观择时月度综述_20260831.html",
                         "id":  "2026-08-31-宏观择时月度综述_20260831",
