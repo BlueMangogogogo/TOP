@@ -1,9 +1,19 @@
 {
-    "last_updated":  "2026-08-31 21:43:04",
-    "total":  212,
-    "daily_count":  174,
+    "last_updated":  "2026-08-31 21:54:32",
+    "total":  213,
+    "daily_count":  175,
     "industry_count":  38,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-08-31/宏观择时月度综述_20260831.html",
+                        "id":  "2026-08-31-宏观择时月度综述_20260831",
+                        "display_date":  "8月31日",
+                        "title":  "宏观择时月度综述_20260831",
+                        "category":  "宏观择时",
+                        "type":  "daily",
+                        "size_kb":  20.7,
+                        "date":  "2026-08-31"
+                    },
                     {
                         "relative_path":  "reports/2026-08-31/8月31日 盘中异动.html",
                         "id":  "2026-08-31-8月31日 盘中异动",

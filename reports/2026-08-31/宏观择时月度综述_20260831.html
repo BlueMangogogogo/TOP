@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宏观择时月度综述 · MTI v3（2026年8月）</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<style>
+:root{--brand:#ebb543;--brand-bg:#f7e8c5;--warn:#c0392b;--warn-bg:#fdf0ef;--good:#1e7e34;--good-bg:#eef7ef;--ink:#1a1a1a;--gray:#2c2c2c;--aux:#888;--line:#f0f0f0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",system-ui,sans-serif;color:var(--gray);background:#fff;max-width:960px;margin:0 auto;padding:28px 22px 60px;font-size:15px;line-height:1.8}
+header{border-bottom:3px solid var(--brand);padding-bottom:16px;margin-bottom:24px}
+h1{font-size:25px;color:var(--ink);line-height:1.4;margin-bottom:8px}
+.meta{color:var(--aux);font-size:13px}
+h2{font-size:19px;color:var(--ink);border-left:5px solid var(--brand);padding-left:10px;margin:32px 0 14px}
+h3{font-size:16px;color:var(--ink);margin:20px 0 10px}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th{background:var(--brand);color:#fff;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:#faf8f2}
+.warning{border-left:5px solid var(--warn);background:var(--warn-bg);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0}
+.highlight{border-left:5px solid var(--brand);background:var(--brand-bg);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0}
+.good{border-left:5px solid var(--good);background:var(--good-bg);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0}
+.score-card{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0}
+.score{flex:1;min-width:200px;border:2px solid var(--brand);border-radius:10px;padding:16px 18px;text-align:center}
+.score .label{font-size:12px;color:var(--aux)}
+.score .value{font-size:30px;font-weight:800;color:var(--ink);margin:4px 0}
+.score .state{font-size:13px;font-weight:600}
+.up{color:var(--warn)}.dn{color:var(--good)}
+.chart-box{border:1px solid var(--line);border-radius:8px;padding:14px;margin:14px 0}
+.chart-box .cap{font-size:13px;color:var(--aux);margin-bottom:8px}
+.chart-box canvas{height:250px!important}
+.verdict{border:2px solid var(--ink);border-radius:10px;padding:20px 22px;margin:18px 0;background:#fbfaf7}
+.verdict .v-title{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:1px}
+footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--aux)}
+.small{font-size:12px;color:var(--aux)}
+ul,ol{margin:8px 0 8px 22px}
+li{margin:4px 0}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;margin-right:6px;vertical-align:1px}
+.tag-r{background:var(--warn-bg);color:var(--warn)}
+.tag-g{background:var(--good-bg);color:var(--good)}
+.tag-y{background:var(--brand-bg);color:#8a6d1a}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>宏观择时月度综述 · MTI v3</h1>
+  <div class="meta">📅 2026年8月月度定调 ｜ 数据截至 2026-08-31 ｜ 投资小龙虾宏观择时系统 · 自动生成</div>
+</header>
+
+<div class="score-card">
+  <div class="score">
+    <div class="label">MTI 综合信号（月末）</div>
+    <div class="value">-0.060</div>
+    <div class="state">中性：正常仓位，跟随主线</div>
+  </div>
+  <div class="score">
+    <div class="label">行业离散度（月末）</div>
+    <div class="value" style="font-size:24px">93% 分位</div>
+    <div class="state" style="color:var(--warn)">极致化 ⚠️ 高切低强预警</div>
+  </div>
+  <div class="score">
+    <div class="label">活跃市值 0AMV（最新）</div>
+    <div class="value" style="font-size:24px">19.07 万亿</div>
+    <div class="state" style="color:var(--warn)">数据止步 08-24，清仓信号滞后</div>
+  </div>
+  <div class="score">
+    <div class="label">ERP 仓位天花板</div>
+    <div class="value" style="font-size:24px">90%</div>
+    <div class="state">ERP 83% 分位，股票性价比高</div>
+  </div>
+</div>
+
+<div class="verdict">
+  <div class="v-title">🎯 月度定调：指数修复上行，但内部是"极致分化 + 快速轮动"的结构市</div>
+  <p>上证指数月涨 <strong>+4.6%</strong>（3809→3986），8月收官逼近4000关口。但涨的只是一张"指数脸"：MTI全月贴着零轴震荡（<strong>-0.174 ~ +0.039</strong>），行业离散度月末仍在<strong>93%分位的极致化区间</strong>，大小盘偏离89%分位（国证2000月内20日涨10.5% vs 沪深300仅1.8%），轮动速度0.84（极高）。这是典型的<strong>"指数看着还行、赚钱靠结构、轮动极快"</strong>的市场。</p>
+  <p>全月最重要的两个节点：<strong>8/19 大跌 -2.4%、跌停118家</strong>（情绪冰点，一次性释放）；以及 <strong>0AMV 活跃市值 8/10 见顶 21.4 万亿后持续回落</strong>，8/24 单日 -2.9% 触发体系"清仓信号"。但该信号基于滞后数据，8月最后一周市场明显回暖（上证 +2.7%、涨停回到88家），信号大概率已失效，9月开盘第一件事就是重新导入 0AMV 数据确认热钱真实方向。</p>
+</div>
+
+<h2>一、本月市场结构回顾</h2>
+
+<h3>1. 指数：震荡上行，月末收复失地</h3>
+<p>8月上证指数走出"先涨→中段回调→月末修复"三段式：月初 3809 起步，8/10 摸到 3966；8/18 盘中见 3990 后 <strong>8/19 单日 -2.40% 急跌至 3894</strong>（全月最大回撤）；随后一周连续修复，8/31 收 <strong>3986.3</strong>，月内涨幅 +4.64%，距 4000 关口仅一步之遥。月内量能中枢约 1.05 万亿，低于 7 月末水平，<strong>上涨伴随缩量</strong>，存量博弈特征明显。</p>
+
+<h3>2. 风格：小盘极致占优</h3>
+<p>大小盘偏离因子月末 <strong>89% 分位</strong>：国证2000 近20日涨 <strong>+10.5%</strong>，沪深300 仅 <strong>+1.8%</strong>。8月赚钱效应高度集中在小盘题材，大盘蓝筹基本原地踏步。这是典型的存量资金抱团小盘的格局，偏离度已到历史极值区，9月需要警惕两种收敛路径：小盘补跌（高切低）或大盘补涨（风格切换）。</p>
+
+<h3>3. 情绪：一次冰点、一次高潮，月末偏暖</h3>
+<p>8月中旬情绪数据完整（8/11 起）：<strong>8/17 涨停106家为月内高潮</strong>，紧接着 <strong>8/19 跌停118家、涨停仅36家</strong>形成冰点，随后一周修复，8/31 涨停88家、跌停11家、炸板30家，5日涨跌停比 0.949（强势）。炸板率月末 25.2%，封板质量一般。整体情绪节奏是<strong>高位放量分歧 → 冰点 → 修复</strong>，属于强势震荡中的正常洗盘，而非趋势破坏。</p>
+
+<h2>二、各择时指标月度变化</h2>
+
+<table>
+<tr><th>指标</th><th>7月末（基线）</th><th>8月高点</th><th>8月低点</th><th>8月末</th><th>月度变化</th><th>信号状态</th></tr>
+<tr><td>上证指数</td><td>3832.3</td><td>3990.3 (08/18)</td><td>3809.7 (08/03)</td><td>3986.3</td><td class="up">+154.0（+4.02%）</td><td>逼近4000关口</td></tr>
+<tr><td>MTI 综合信号</td><td>-0.117</td><td>+0.039 (08/12)</td><td>-0.174 (08/03)</td><td>-0.060</td><td class="up">改善 +0.057</td><td>中性，贴零轴震荡</td></tr>
+<tr><td>行业离散度（超额版分位）</td><td>97%</td><td>—</td><td>—</td><td>93%</td><td class="dn">微降 4pct</td><td>极致化 ⚠️ 高切低强预警</td></tr>
+<tr><td>行业离散度（原始×20 复算）</td><td>—</td><td>56.9 (08/19)</td><td>18.1 (08/26)</td><td>36.8</td><td>月内宽幅摆动</td><td>大跌日分化极致</td></tr>
+<tr><td>活跃市值 0AMV（万亿）</td><td>19.72</td><td>21.41 (08/10)</td><td>19.07 (08/24)</td><td>19.07*</td><td class="dn">-0.65（-3.3%）</td><td>*数据止步08/24，清仓信号滞后</td></tr>
+<tr><td>两融余额（亿）</td><td>25891</td><td>26709 (08/18)</td><td>25804 (08/03)</td><td>26302</td><td class="up">+411（+1.59%）</td><td>84% 分位，8/18后回落</td></tr>
+<tr><td>成交额（上证，亿）</td><td>11877</td><td>12181 (08/19)</td><td>8572 (08/26)</td><td>10143</td><td class="dn">-14.6%</td><td>量能不足，存量博弈</td></tr>
+<tr><td>涨停/跌停家数</td><td>—</td><td>涨停106 (08/17)</td><td>涨停36 / 跌停118 (08/19)</td><td>88 / 11</td><td>冰点后修复</td><td>5日涨跌停比 0.949 强势</td></tr>
+<tr><td>炸板率</td><td>—</td><td>36.8% (08/20)</td><td>—</td><td>25.2%</td><td>—</td><td>封板质量一般</td></tr>
+<tr><td>ERP 股权风险溢价</td><td>—</td><td>—</td><td>—</td><td>83% 分位</td><td>—</td><td>仓位天花板 90%</td></tr>
+</table>
+<p class="small">注：两融月末值为 08/28（Tushare 当日数据晚回）；0AMV 末值为 08/24（指南针数据 08/25 起未导入）。</p>
+
+<h2>三、月度轨迹图（悬停查看数值）</h2>
+
+<div class="chart-box">
+  <div class="cap">① MTI 综合信号 8月轨迹（-1 ~ +1，0 轴为中性分界）</div>
+  <canvas id="c1"></canvas>
+</div>
+<div class="chart-box">
+  <div class="cap">② 行业离散度 8月（原始截面标准差 ×20 复算，对齐 onechart 标度；8/19 大跌日 56.9 为峰值）</div>
+  <canvas id="c2"></canvas>
+</div>
+<div class="chart-box">
+  <div class="cap">③ 活跃市值 0AMV（万亿）—— 8/10 见顶后回落，8/24 单日 -2.9% 触发清仓信号（数据止步于此）</div>
+  <canvas id="c3"></canvas>
+</div>
+<div class="chart-box">
+  <div class="cap">④ 两融余额（亿）—— 8/18 见顶 26709 后回落，月末 26302</div>
+  <canvas id="c4"></canvas>
+</div>
+<div class="chart-box">
+  <div class="cap">⑤ 上证收盘与成交额（收盘价 / 亿元）—— 8/19 放量急跌，月末缩量修复</div>
+  <canvas id="c5"></canvas>
+</div>
+<div class="chart-box">
+  <div class="cap">⑥ 涨停 / 跌停 / 炸板家数（8/11 起数据完整）—— 8/19 跌停118家冰点</div>
+  <canvas id="c6"></canvas>
+</div>
+
+<h2>四、综合判断</h2>
+
+<div class="highlight">
+<h3>当前所处阶段：指数修复期尾声 × 结构极致分化期</h3>
+<p><strong>指数层面</strong>：8月完成了一轮"急跌洗盘→修复"的完整循环，上证月末 3986 逼近 4000 关口，5日涨跌停比 0.949 显示多头仍占优。但成交额仅 1.0 万亿且月内递减，量能不足意味着 4000 上方缺乏增量资金接力，<strong>指数突破大概率需要放量确认，否则容易反复</strong>。</p>
+<p><strong>结构层面</strong>：离散度 93% 分位 + 大小盘偏离 89% 分位 + 轮动速度 0.84 三个因子同时处于极值区，指向<strong>高切低势能已累积到临界点</strong>。历史上这个组合出现后，未来 2~3 周内发生一次像样的风格切换或高低切换的概率很高。8/19 那种单日急跌可能就是预演。</p>
+<p><strong>资金层面</strong>：两融 84% 分位且 8/18 见顶后回落（26709→26302），杠杆资金在 4000 关前选择减仓观望；0AMV 活跃市值从 21.4 万亿的高位回落 11%，热钱参与度明显降温（虽然后半段数据缺失，但趋势方向明确）。增量资金因子 0 分，成交额 20 日仅 +2.5%，<strong>市场处在存量甚至减量博弈的临界</strong>。</p>
+</div>
+
+<h3>下月核心变量（按优先级）</h3>
+<ol>
+  <li><strong>0AMV 活跃市值方向（9/1 开盘前必须补数据）</strong>：08/25-08/31 的 0AMV 若收复 20 万亿，说明热钱回流、清仓信号失效，市场可继续看高一线；若确认在 19 万亿下方继续下台阶，则是真正的资金撤离，4000 关前要防守。</li>
+  <li><strong>行业离散度能否回落</strong>：93% 分位 → 若跌破 85% 分位，高切低开启，抱团板块补跌、低位板块接力；若继续冲高，分化进一步加剧，操作难度加大。</li>
+  <li><strong>大小盘偏离的收敛方式</strong>：小盘补跌还是大盘补涨，决定了 9 月主线方向。国证2000 若高位放量滞涨，警惕风格切换。</li>
+  <li><strong>两融 2.63 万亿关口</strong>：守住并回升 = 杠杆资金回流；跌破 2.6 万亿 = 多杀多风险（两融因子 -1.0 触发条件）。</li>
+  <li><strong>成交额能否站回 1.1 万亿</strong>：突破 4000 的充要条件。缩量冲关大概率假突破。</li>
+</ol>
+
+<h3>仓位建议</h3>
+<div class="good">
+<p><strong>建议仓位：底仓 5~6 成，机动仓 0~2 成，总仓位上限 60%</strong>（ERP 允许天花板 90%，但 MTI 中性 + 离散度极致 + 活跃市值信号未确认，不宜满配）。</p>
+<ul>
+  <li><strong>底仓（5~6成）</strong>：ERP 83% 分位，股票性价比仍高，中期底仓可拿住，聚焦业绩与景气度双确认的方向。</li>
+  <li><strong>机动仓（0~2成）</strong>：等两个确认信号再加——① 9/1 0AMV 数据确认热钱回流（收复 20 万亿）；② 成交额连续两日站上 1.1 万亿。二者未兑现前，机动仓保持轻仓。</li>
+  <li><strong>防守触发线</strong>：上证跌破 3900（8月修复起点）→ 降仓至 3 成以下；两融跌破 2.6 万亿 → 多杀多预警，全部机动仓撤出。</li>
+  <li><strong>风格提示</strong>：高切低势能极大，<strong>不追高轮动末端的题材</strong>，抱团高位板块（近20日涨 10%+ 的小盘方向）只减不加；关注离散度回落时承接的低位方向。</li>
+</ul>
+</div>
+
+<h2>五、月度验证清单</h2>
+
+<h3>8月验证（回顾）</h3>
+<table>
+<tr><th>7月末预期/风险点</th><th>8月实际</th><th>验证</th></tr>
+<tr><td>退潮初期特征（7月末 MTI -0.117、离散度97%分位、活跃市值贴防守线）</td><td>指数不跌反涨 +4.6%，8/19 单日急跌洗盘后修复</td><td><span class="tag tag-r">证伪</span>退潮未兑现，转为结构分化市</td></tr>
+<tr><td>高切低压力（离散度 97% 分位）</td><td>分化延续，大小盘偏离冲至 89% 分位，小盘抱团更极端</td><td><span class="tag tag-r">未兑现</span>分化反而加剧，切换推迟</td></tr>
+<tr><td>活跃市值防守线支撑</td><td>0AMV 8/10 见顶 21.4 万亿后回落 11%，8/24 触发清仓信号</td><td><span class="tag tag-y">部分验证</span>热钱降温，但信号基于滞后数据</td></tr>
+</table>
+
+<h3>9月验证（前瞻）</h3>
+<ul>
+  <li>☐ 9/1 导入 0AMV 08/25-08/31 数据：收复 20 万亿 = 热钱回流（利好多头）；19 万亿下方续跌 = 资金撤离（利空）</li>
+  <li>☐ 行业离散度分位：跌破 85% = 高切低启动（关注低位承接方向）；冲高 = 分化加剧（降仓）</li>
+  <li>☐ 大小盘偏离：国证2000 高位放量滞涨 + 沪深300 放量 = 风格切换信号</li>
+  <li>☐ 两融：守 2.63 万亿并回升 = 杠杆回流；破 2.6 万亿 = 多杀多预警</li>
+  <li>☐ 成交额：站回 1.1 万亿 + 上证放量过 4000 = 突破有效；缩量冲关 = 假突破防回落</li>
+  <li>☐ 情绪：涨停家数维持 70+ 且炸板率 &lt; 25% = 情绪健康；炸板率 &gt; 35% = 封板衰竭</li>
+</ul>
+
+<h2>六、数据来源（分条标注）</h2>
+<table>
+<tr><th>数据项</th><th>具体接口 / 来源</th></tr>
+<tr><td>MTI 综合信号与十因子</td><td>宏观择时/run_mti.py（基于下述原始数据合成，v3 权重：结构35% / 资金40% / 情绪25%）</td></tr>
+<tr><td>行业离散度（申万二级131行业）</td><td>AKShare sw_index_second_info + index_hist_sw（新浪申万指数，滞后1日）；分位按近10年窗口</td></tr>
+<tr><td>沪深300/国证2000/上证/深成等指数</td><td>Tushare index_daily</td></tr>
+<tr><td>换手率 / 指数 PE</td><td>Tushare index_dailybasic</td></tr>
+<tr><td>两融余额</td><td>Tushare margin（当日残缺自动回填前值；8月末值为 08/28）</td></tr>
+<tr><td>涨跌停家数</td><td>AKShare stock_zt_pool_em / stock_zt_pool_dtgc_em（东财，仅最近30个交易日，8/11前缺失）</td></tr>
+<tr><td>炸板家数</td><td>AKShare stock_zt_pool_zbgc_em（东财）</td></tr>
+<tr><td>活跃市值 0AMV（万亿）</td><td>指南针 0AMV 活筹指数（import_amv.py 导入，K哥体系；数据止步 08/24，08/25 起未更新）</td></tr>
+<tr><td>ERP 股权风险溢价</td><td>Tushare index_dailybasic（沪深300 PE）+ AKShare bond_zh_us_rate（10Y国债，月末 1.6883%）</td></tr>
+</table>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由投资小龙虾宏观择时系统自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>生成时间：2026年08月31日 ｜ 数据截至：2026-08-31 ｜ 数据架构：三通道独立降级（A股数据/研报产业/美股数据互不跨越）</p>
+</footer>
+
+<script>
+const D = ["08/03","08/04","08/05","08/06","08/07","08/10","08/11","08/12","08/13","08/14","08/17","08/18","08/19","08/20","08/21","08/24","08/25","08/26","08/27","08/28","08/31"];
+const MTI_LABELS = ["08/03","08/05","08/07","08/10","08/11","08/12","08/13","08/14","08/18","08/28","08/31"];
+const MTI_VALS = [-0.174,-0.107,0.010,-0.119,-0.029,0.039,-0.035,-0.034,-0.034,-0.006,-0.060];
+const DISP = [31.6,51.6,40.8,27.4,37.0,26.0,26.4,22.0,22.8,25.8,29.8,29.6,56.9,30.3,31.8,32.3,30.3,18.1,34.3,23.3,36.8];
+const AMV_DATES = ["08/03","08/04","08/05","08/06","08/07","08/10","08/11","08/12","08/13","08/14","08/17","08/18","08/19","08/20","08/21","08/24"];
+const AMV_VALS = [19.32,19.93,20.70,20.87,21.39,21.41,21.08,21.10,20.86,20.75,21.23,21.03,19.92,19.85,19.64,19.07];
+const MARGIN_DATES = ["08/03","08/04","08/05","08/06","08/07","08/10","08/11","08/12","08/13","08/14","08/17","08/18","08/19","08/20","08/21","08/24","08/25","08/26","08/27","08/28"];
+const MARGIN_VALS = [25804,25923,26045,26156,26225,26366,26379,26474,26497,26479,26657,26709,26412,26395,26333,26291,26284,26251,26364,26302];
+const SH_CLOSE = [3809.7,3822.3,3878.4,3900.4,3940.0,3966.6,3934.1,3946.7,3927.0,3927.2,3982.7,3990.3,3894.4,3903.7,3905.2,3882.0,3889.4,3912.5,3956.6,3952.2,3986.3];
+const SH_AMT = [9523,10084,12087,11668,12095,11669,10667,9861,11642,9904,11128,11352,12181,10186,8834,9520,8589,8572,10102,9704,10143];
+const EM_DATES = ["08/11","08/12","08/13","08/14","08/17","08/18","08/19","08/20","08/21","08/24","08/25","08/26","08/27","08/28","08/31"];
+const EM_UP = [58,92,59,63,106,79,36,79,54,46,65,52,77,82,88];
+const EM_DN = [1,0,4,10,1,5,118,12,13,11,2,0,3,1,11];
+const EM_BR = [17,13,36,19,12,23,12,46,18,16,22,20,17,16,30];
+const grid = {color:'#f0f0f0'};
+const tooltip = {backgroundColor:'#2c2c2c'};
+
+if (document.getElementById('c1')) new Chart(document.getElementById('c1'), {
+  type:'line',
+  data:{labels:MTI_LABELS,datasets:[{label:'MTI',data:MTI_VALS,borderColor:'#ebb543',backgroundColor:'rgba(235,181,67,0.15)',fill:true,tension:0.3,pointRadius:4,pointBackgroundColor:'#1a1a1a'}]},
+  options:{plugins:{legend:{display:false}},scales:{y:{grid:grid,ticks:{callback:v=>v.toFixed(2)}},x:{grid:grid}}}
+});
+if (document.getElementById('c2')) new Chart(document.getElementById('c2'), {
+  type:'line',
+  data:{labels:D,datasets:[{label:'行业离散度×20',data:DISP,borderColor:'#c0392b',backgroundColor:'rgba(192,57,43,0.08)',fill:true,tension:0.3,pointRadius:3}]},
+  options:{plugins:{legend:{display:false}},scales:{y:{grid:grid},x:{grid:grid}}}
+});
+if (document.getElementById('c3')) new Chart(document.getElementById('c3'), {
+  type:'line',
+  data:{labels:AMV_DATES,datasets:[{label:'0AMV(万亿)',data:AMV_VALS,borderColor:'#1a1a1a',backgroundColor:'rgba(26,26,26,0.06)',fill:true,tension:0.3,pointRadius:4,pointBackgroundColor:'#ebb543'}]},
+  options:{plugins:{legend:{display:false}},scales:{y:{grid:grid},x:{grid:grid}}}
+});
+if (document.getElementById('c4')) new Chart(document.getElementById('c4'), {
+  type:'line',
+  data:{labels:MARGIN_DATES,datasets:[{label:'两融余额(亿)',data:MARGIN_VALS,borderColor:'#1e7e34',backgroundColor:'rgba(30,126,52,0.08)',fill:true,tension:0.3,pointRadius:3}]},
+  options:{plugins:{legend:{display:false}},scales:{y:{grid:grid},x:{grid:grid}}}
+});
+if (document.getElementById('c5')) new Chart(document.getElementById('c5'), {
+  data:{labels:D,datasets:[
+    {label:'上证收盘',data:SH_CLOSE,borderColor:'#c0392b',tension:0.3,pointRadius:3,yAxisID:'y'},
+    {label:'成交额(亿)',data:SH_AMT,borderColor:'#888',borderDash:[5,4],tension:0.3,pointRadius:0,yAxisID:'y1'}
+  ]},
+  options:{plugins:{legend:{position:'top'}},scales:{
+    y:{grid:grid,position:'left',title:{display:true,text:'收盘价'}},
+    y1:{grid:{drawOnChartArea:false},position:'right',title:{display:true,text:'成交额(亿)'}}
+  }}
+});
+if (document.getElementById('c6')) new Chart(document.getElementById('c6'), {
+  data:{labels:EM_DATES,datasets:[
+    {label:'涨停',data:EM_UP,borderColor:'#c0392b',backgroundColor:'rgba(192,57,43,0.12)',fill:true,tension:0.3,pointRadius:3},
+    {label:'跌停',data:EM_DN,borderColor:'#1e7e34',backgroundColor:'rgba(30,126,52,0.12)',fill:true,tension:0.3,pointRadius:3},
+    {label:'炸板',data:EM_BR,borderColor:'#888',borderDash:[5,4],tension:0.3,pointRadius:3}
+  ]},
+  options:{plugins:{legend:{position:'top'}},scales:{y:{grid:grid},x:{grid:grid}}}
+});
+</script>
+</body>
+</html>
