@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月31日 午盘扫描</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>8月31日 午盘扫描</h1>
+  <div class="meta">
+    📅 2026年08月31日 周一 11:40 | 投资小龙虾 AI | 仅供参考
+  </div>
+</header>
+
+<div class="warning">
+<p>⚠️ 本报告由定时任务延迟补跑生成，指数以当日收盘还原，涨停/炸板/资金为当日最终数据。</p>
+</div>
+<h2>📊 上午全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3986.30</td>
+<td>+0.86%（低开-0.65%后单边走高，收于全天最高，强于预期）</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>14015.00</td>
+<td>+0.44%（同步走强）</td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>沪10143亿+深11167亿≈2.13万亿</td>
+<td>与上周五（2.13万亿）持平，高位量能维持</td>
+</tr>
+<tr>
+<td>涨停/跌停</td>
+<td>89家/13家</td>
+<td>情绪偏暖，但跌停较上周五（13家）持平未收敛</td>
+</tr>
+<tr>
+<td>炸板率</td>
+<td>36家炸板，约28.8%</td>
+<td>高位分化加剧，竞价秒板品种兑现风险高</td>
+</tr>
+<tr>
+<td>上涨/下跌家数</td>
+<td>3181家/约1500家</td>
+<td>上涨占比约67%，市场广度健康</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>一句话：指数低开高走收全天最高，量能维持2.13万亿，AI双主线（应用+硬件）全面进攻，但涨停89家vs炸板36家暴露高位分歧，市场「强指数、强主线、弱后排」结构。</p>
+</div>
+<h2>🔥 上午最强板块</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>涨幅</th>
+<th>主力资金</th>
+<th>龙头</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数字媒体（传媒AI应用）</td>
+<td>+7.33%</td>
+<td>AI应用方向合计流入超200亿</td>
+<td>中文在线20cm、芒果超媒20cm、海看股份20cm</td>
+<td>"AI+"产业生态大会催化，AI应用商业化加速叙事</td>
+</tr>
+<tr>
+<td>影视院线</td>
+<td>+6.32%</td>
+<td>随传媒板块流入</td>
+<td>博纳影业涨停</td>
+<td>AI+短剧/影视内容生成降本逻辑扩散</td>
+</tr>
+<tr>
+<td>短剧游戏</td>
+<td>+4.99%</td>
+<td>板块资金集中进攻</td>
+<td>中文在线、荣信文化20cm</td>
+<td>AI内容生成降低短剧制作门槛，产业落地最快分支</td>
+</tr>
+<tr>
+<td>东数西算/算力</td>
+<td>+2.32%</td>
+<td><strong>净流入131亿（全场第一）</strong></td>
+<td>浪潮信息涨停、寒武纪+6.26%</td>
+<td>燧原科技IPO催化国产算力，英伟达财报验证算力需求</td>
+</tr>
+<tr>
+<td>知识付费/AI营销</td>
+<td>+4.31%/+4.16%</td>
+<td>随AI应用共振</td>
+<td>荣信文化、华是科技</td>
+<td>AI+教育/营销场景落地，低位补涨</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>资金进攻榜清一色AI：东数西算+131亿、AIGC+101亿、腾讯概念+97亿、虚拟现实+94亿、人工智能+90亿、算力租赁+88亿、DeepSeek+81亿、AI眼镜+81亿。AI应用（传媒方向）与AI硬件（算力方向）双轮驱动，主力净流入TOP10个股全部为AI标的。</p>
+</div>
+<h2>📉 上午最弱板块</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>跌幅</th>
+<th>主力资金</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>饰品（黄金链）</td>
+<td>-4.78%</td>
+<td>黄金概念净流出40.5亿</td>
+<td>美元走强+黄金单日暴跌3.43%连续三日下挫，避险资产遭抛售，莱绅通灵跌停</td>
+</tr>
+<tr>
+<td>种业/种植业</td>
+<td>-2.67%/-2.50%</td>
+<td>土地流转-1.55%·粮食概念-1.51%</td>
+<td><strong>主升5周后高位分歧兑现</strong>，龙头万向德农一字加速后板块集体退潮</td>
+</tr>
+<tr>
+<td>光伏设备</td>
+<td>-2.48%</td>
+<td>净流出显著</td>
+<td>赛道资金持续撤离，反弹乏力</td>
+</tr>
+<tr>
+<td>食品加工</td>
+<td>-2.48%</td>
+<td>—</td>
+<td>防御板块资金流出，流向进攻性AI</td>
+</tr>
+<tr>
+<td>医药（创新药/减肥药/仿制药）</td>
+<td>-1.71%/-1.76%/-1.51%</td>
+<td>创新药净流出37.8亿</td>
+<td>行业利空持续发酵，键凯科技-16.36%、万邦医药-13.81%，多股跌停</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>资金撤退方向：风电-42亿、黄金-40亿、钠电池-39亿、创新药-38亿、动力电池回收-37亿。<strong>农业分歧+医药杀跌+黄金链退潮</strong>释放的资金，全部流向AI主线。</p>
+</div>
+<h2>⚡ 异动个股</h2>
+<ul>
+<li><strong>键凯科技</strong>（-16.36%）：昨日20cm跌停后今日继续重挫，医药杀跌领头羊，缩量跌停打开，短线无承接，医药方向暂规避。</li>
+<li><strong>万邦医药</strong>（-13.81%）：CRO方向，跟随板块利空深跌，放量下跌，恐慌未出清。</li>
+<li><strong>香江控股</strong>（-7.28%）：竞价涨停炸板后翻绿收跌，全天最恶劣信号，地产链情绪标杆崩塌，说明地产政策催化仅停留竞价。</li>
+<li><strong>浪潮信息</strong>（涨停+9.99%，主力净流入18.1亿）：AI服务器龙头，封单4亿，全天主力净流入第一，算力硬件主攻核心。</li>
+<li><strong>寒武纪</strong>（+6.26%收1112元，成交131亿）：放量突破1110元创新高，主力净流入12.5亿，国产算力总龙头。</li>
+<li><strong>我爱我家</strong>（涨停+9.85%）：地产服务链唯一强势，但属政策消息面脉冲，板块无跟随。</li>
+<li><strong>白银有色</strong>（跌停-9.96%）：黄金/有色链重挫，配合莱绅通灵跌停，避险链条集体退潮。</li>
+</ul>
+<h2>🎯 下午关注</h2>
+<ol>
+<li><strong>AI内部高低切换</strong>：硬件（寒武纪/浪潮信息高位）vs 应用（传媒低位20cm批量涨停），若硬件高位股午后冲高回落，资金或加速向低位AI应用轮动；若应用继续扩散（超清视频、AI眼镜+3.12%仍在榜），主线强度延续。</li>
+<li><strong>上证4000关口</strong>：指数收于全天最高3986，距4000整数关口一步之遥，午后能否放量突破决定多头空间；缩量滞涨则防冲高回落。</li>
+<li><strong>炸板率与高位股</strong>：36家炸板+香江控股-7.28%的恶劣信号，午后观察地产/农业补跌是否扩散，若跌停家数从13家抬升，情绪转冷需降低追高仓位。</li>
+</ol>
+<h2>✅ 早盘判断验证</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>早盘判断</th>
+<th>午盘实况</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI应用/软件发酵→扩散</td>
+<td>中文在线、芒果超媒、海看股份批量20cm，短剧游戏+4.99%领涨概念</td>
+<td>✅ 充分兑现</td>
+</tr>
+<tr>
+<td>AI硬件链映射回流</td>
+<td>浪潮信息涨停、寒武纪+6.26%新高、东数西算净流入131亿</td>
+<td>✅ 兑现</td>
+</tr>
+<tr>
+<td>农业高位分歧预警</td>
+<td>种业-2.67%领跌，种植业-2.50%，首板集体炸板</td>
+<td>✅ 精准应验</td>
+</tr>
+<tr>
+<td>医药集体杀跌风险</td>
+<td>键凯-16.36%、万邦-13.81%，多股跌停，创新药净流出38亿</td>
+<td>✅ 兑现</td>
+</tr>
+<tr>
+<td>地产链政策观察</td>
+<td>竞价10股涨停→批量炸板，香江控股-7.28%，仅我爱我家封住</td>
+<td>⚠️ 兑现后分歧</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>早盘五条判断兑现率约80%。核心结论：市场主线明确聚焦AI双轮，农业/医药/黄金/地产高位资金加速出清后向AI集中，结构性行情特征显著。</p>
+</div>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+<p>数据来源：① 指数行情/两市成交/板块排行/主力资金：通达信MCP（tdx_quotes/tdx_screener，2026-08-31）；② 涨停/跌停/炸板：通达信MCP（tdx_screener，当日最终数据）；③ 板块资金流：通达信MCP（tdx_screener 概念板块主力净流入/流出榜）；④ 早盘判断对比：当日盘前简报/开盘速览。生成时间：2026年08月31日 21:35</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

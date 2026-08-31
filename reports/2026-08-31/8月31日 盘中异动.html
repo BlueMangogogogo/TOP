@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8月31日 盘中异动</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>8月31日 盘中异动</h1>
+  <div class="meta">
+    📅 2026年08月31日 周一 14:00 | 投资小龙虾 AI | 仅供参考
+  </div>
+</header>
+
+<div class="warning">
+<p>⚠️ 本报告由定时任务延迟补跑生成，指数以当日收盘还原，涨停/炸板/资金为当日最终数据，侧重复盘午后（13:00-15:00）异动。</p>
+</div>
+<h2>📊 午后全景：低开高走，V型反转</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>收盘</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3986.30</td>
+<td>+0.86%，低开-0.65%后单边拉升，收于全天最高，<strong>日线5连阳</strong></td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>14015.00</td>
+<td>+0.44%，同步走强</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>3438.68</td>
+<td>+0.42%，<strong>低开-1.67%→午后V型反转收全天最高</strong></td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>+1.34%</td>
+<td>科技硬件最强指数</td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>2.13万亿</td>
+<td>较上周五放量293亿，量能维持高位</td>
+</tr>
+<tr>
+<td>涨停/跌停</td>
+<td>89家/13家</td>
+<td>情绪偏暖，跌停数持平但高位股批量补跌</td>
+</tr>
+<tr>
+<td>上涨家数</td>
+<td>超3100家</td>
+<td>市场广度健康</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>一句话</strong>：上午是"低开杀跌"（创业板一度-1.6%，超3000股下跌），下午是"科技回流"，半导体/端侧AI/液冷/电子硬件午后集体拉升，指数全线翻红。全天最强信号不是收盘点位，而是午后这轮资金回流本身。</p>
+</div>
+<h2>🔥 午后急速拉升方向</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>午后表现</th>
+<th>龙头</th>
+<th>催化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>液冷服务器</strong></td>
+<td>午后大放异彩，板块涨幅居前</td>
+<td>星网锐捷3连板、海鸥股份3连板、浪潮信息反包涨停、荣亿精密30cm、英维克+5.78%</td>
+<td>央视财经"液冷必选项"报道+工信部算力互联互通节点名单</td>
+</tr>
+<tr>
+<td><strong>算力芯片/端侧AI</strong></td>
+<td>午后异动拉升</td>
+<td>瑞芯微涨停、万通发展涨停、炬芯科技+10%、博通集成涨停、寒武纪+6.26%收1112元创新高</td>
+<td>国产算力+端侧AI共振</td>
+</tr>
+<tr>
+<td><strong>短剧/AI应用</strong></td>
+<td>午后继续扩散，板块10余股涨超9%</td>
+<td>芒果超媒、中文在线、海看股份、中广天择、欢瑞世纪、掌阅科技、博纳影业涨停</td>
+<td>《后西游记》定档，首部上星AI长剧</td>
+</tr>
+<tr>
+<td><strong>化工（能源/化肥）</strong></td>
+<td>全天延续活跃，多股连板</td>
+<td>潞化科技、赤天化、金牛化工连板，泸天化、华锦股份触板</td>
+<td>美伊交火→原油+7%，甲醇/乙二醇/PVC/丙烯涨停</td>
+</tr>
+<tr>
+<td><strong>银行</strong></td>
+<td>防御资金持续流入</td>
+<td>中国银行、中信银行双双续创历史新高</td>
+<td>高位科技波动下的低波配置</td>
+</tr>
+</tbody>
+</table></div>
+<h2>📉 午后跳水/杀跌方向</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>表现</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>医药（创新药/CRO/普药）</strong></td>
+<td>神奇制药一字跌停，汉森制药、誉衡药业、开开实业、百花医药、冀衡医药跌停，键凯科技-16.36%、万邦医药-13.81%</td>
+<td><strong>8月最强主线高位情绪出清</strong>。哈药周期（哈药股份月涨187%）批量兑现，人气龙头一字跌停标志退潮确认，午后跌停名单继续扩大</td>
+</tr>
+<tr>
+<td><strong>农业（种业）</strong></td>
+<td>敦煌种业午后炸板放巨量，万向德农封单漏单严重，金健米业巨量分歧</td>
+<td>主升5周后高位分歧兑现，午后炸板率抬升，板块退潮确认</td>
+</tr>
+<tr>
+<td><strong>黄金链</strong></td>
+<td>白银有色、莱绅通灵跌停，湖南白银、中国黄金跌超6%</td>
+<td>美元走强+现货黄金连续三日下挫，避险资产遭抛售</td>
+</tr>
+<tr>
+<td><strong>光伏设备</strong></td>
+<td>延续弱势</td>
+<td>赛道资金撤离，反弹乏力</td>
+</tr>
+</tbody>
+</table></div>
+<h2>⚡ 午后新催化检查（13:00-15:00）</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>新催化</th>
+<th>影响方向</th>
+<th style="text-align: center;">强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>央视财经液冷报道</strong>：万卡智算中心加速落地，AI芯片功耗破1000W，传统风冷无法满足散热，液冷成"必选项"；山东广东产线满产，CDU订单排至2026年底，部分交付展望2027年</td>
+<td>液冷/散热/铜箔</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>工信部国家算力互联互通区域节点建设名单</strong> + 国家数据局：截至7月底全国智算总规模245万PFLOPS，八大枢纽+三个算电协同区占比超85%</td>
+<td>算力/超节点/服务器</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>美伊再度交火</strong>（伊朗向美军基地发射导弹）→ 原油期货大涨7%，能化品种涨停潮</td>
+<td>化工/能源/化肥</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>《后西游记》正式定档</strong>：国内首部上星AI长剧，Seedance 2.0/2.5提供技术支持，AIGC完成画面与人物演绎，无真人演员，"边制作边审核边播出"</td>
+<td>短剧/传媒AI应用</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>8月制造业PMI回升至49.8%</strong>（+0.6pct），生产指数/新订单重回扩张区间，高技术制造业PMI 52.9%、装备制造业51.4%</td>
+<td>科技/高端制造基本面</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>⚠️ 美联储加息预期升温，费城半导体指数承压</td>
+<td>北美算力供应链短线风险</td>
+<td style="text-align: center;">利空</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>午后新方向增量集中在三条线：<strong>液冷（硬件新分支）、化工（地缘新催化）、AI长剧（应用新叙事）</strong>。其中液冷是午后资金最坚决的进攻方向。</p>
+</div>
+<h2>💰 资金变化（对比午盘）</h2>
+<h3>主力净流入个股TOP（盘后）—— AI硬件持续霸榜</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>个股</th>
+<th style="text-align: center;">涨幅</th>
+<th style="text-align: center;">主力净流入</th>
+<th>午后信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>浪潮信息</td>
+<td style="text-align: center;">+9.99%涨停</td>
+<td style="text-align: center;">+18.1亿（全场第一）</td>
+<td>反包涨停，封单4亿</td>
+</tr>
+<tr>
+<td>寒武纪</td>
+<td style="text-align: center;">+6.26%</td>
+<td style="text-align: center;">+12.5亿</td>
+<td>1112元创新高，成交131亿</td>
+</tr>
+<tr>
+<td>中文在线</td>
+<td style="text-align: center;">+20.02%</td>
+<td style="text-align: center;">+12.1亿</td>
+<td>AI应用吸金</td>
+</tr>
+<tr>
+<td>瑞芯微</td>
+<td style="text-align: center;">+10.00%涨停</td>
+<td style="text-align: center;">+11.4亿</td>
+<td>端侧AI芯片，午后封板</td>
+</tr>
+<tr>
+<td>紫光股份</td>
+<td style="text-align: center;">+8.53%</td>
+<td style="text-align: center;">+9.9亿</td>
+<td>午后涨停炸板</td>
+</tr>
+<tr>
+<td>兆易创新</td>
+<td style="text-align: center;">+2.31%</td>
+<td style="text-align: center;">+9.8亿</td>
+<td>存储芯片</td>
+</tr>
+<tr>
+<td>大族激光</td>
+<td style="text-align: center;">+10.00%涨停</td>
+<td style="text-align: center;">+9.6亿</td>
+<td>半导体设备</td>
+</tr>
+<tr>
+<td>诺德股份</td>
+<td style="text-align: center;">+9.96%涨停</td>
+<td style="text-align: center;">+9.5亿</td>
+<td>铜箔</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>午后资金变化要点</strong>：
+- 与午盘相比，资金进攻方向从"AI应用+算力"进一步向<strong>硬件细分扩散</strong>：新增英维克（液冷，+5.2亿）、生益科技（覆铜板，+6.2亿）、芯原股份（半导体IP，+5.9亿）、罗博特科（半导体设备，+5.7亿）
+- 主力净流入TOP15几乎全部为AI硬件+应用标的，<strong>资金高度集中</strong>
+- 流出方向不变：医药（键凯/万邦/誉衡）、黄金（白银有色）、农业（敦煌/万向）高位资金加速出清</p>
+<h2>🎯 异动个股归因</h2>
+<h3>涨停方向</h3>
+<ul>
+<li><strong>浪潮信息</strong>（+9.99%）：AI服务器龙头，液冷+算力互联互通催化，反包涨停，主力净流入18.1亿全场第一。逻辑：智算中心建设提速+液冷渗透率提升双击。</li>
+<li><strong>瑞芯微</strong>（+10.00%）：端侧AI SoC龙头，午后算力芯片异动拉升核心，AI眼镜/端侧AI落地逻辑。</li>
+<li><strong>芒果超媒/中文在线</strong>（20cm）：AI长剧《后西游记》定档直接催化，AIGC内容降本叙事，传媒低位+新叙事共振。</li>
+<li><strong>大族激光</strong>（+10.00%）：PCB/半导体设备方向，硬件设备补涨。</li>
+<li><strong>诺德股份</strong>（+9.96%）：铜箔，液冷/锂电双属性。</li>
+<li><strong>我爱我家</strong>（+9.85%）：地产服务政策消息脉冲，板块无跟随，孤立行情。</li>
+</ul>
+<h3>大跌方向</h3>
+<ul>
+<li><strong>神奇制药</strong>（-10.00%一字跌停）：医药人气龙头，8月主升后高位一字跌停，板块情绪崩塌的导火索，封单5.5亿出逃坚决。</li>
+<li><strong>白银有色</strong>（-10.01%）：黄金链退潮标杆，与莱绅通灵同步跌停。</li>
+<li><strong>键凯科技</strong>（-16.36%）：昨日20cm跌停后今日继续重挫，医药杀跌领头羊，短线无承接。</li>
+<li><strong>联创光电</strong>（-10.01%）：前期强势股补跌。</li>
+<li><strong>金浦钛业</strong>（-10.04%）：钛白粉，周期资源退潮。</li>
+</ul>
+<h2>✅ 对午盘判断的修正与确认</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>午盘判断</th>
+<th>午后实况</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"若硬件高位股午后冲高回落，资金或加速向低位AI应用轮动"</td>
+<td>硬件午后<strong>不跌反强</strong>（液冷+算力芯片爆发），应用同步扩散（短剧批量涨停）</td>
+<td>⚠️ <strong>修正</strong>：AI双轮共振向上，比午盘预期更强；午盘担忧的高低切换未发生，反而高低都涨</td>
+</tr>
+<tr>
+<td>"上证4000关口，午后能否放量突破"</td>
+<td>收3986.30未破4000，但收于全天最高、5连阳</td>
+<td>✅ 部分兑现：突破悬念留到9月1日，量能2.13万亿配合良好</td>
+</tr>
+<tr>
+<td>"若跌停家数从13家抬升，情绪转冷"</td>
+<td>跌停维持13家未抬升，但医药/农业高位股批量补跌</td>
+<td>⚠️ 修正：性质是<strong>高位出清</strong>而非系统性转冷，炸板36家仍偏高，结构分化加剧</td>
+</tr>
+<tr>
+<td>"农业高位分歧"</td>
+<td>万向漏单严重+敦煌午后炸板放巨量</td>
+<td>✅ 确认：退潮确认，从分歧升级为退潮</td>
+</tr>
+<tr>
+<td>未覆盖：地缘与防御</td>
+<td>化工异动（美伊→原油+7%）、银行新高</td>
+<td>🔔 <strong>新变量</strong>：9月首日需加入观察</td>
+</tr>
+</tbody>
+</table></div>
+<h2>🔭 明日（9月1日）观察要点</h2>
+<ol>
+<li><strong>沪指4000点</strong>：距整数关口14个点，能否放量站稳决定多头空间；若突破但量能萎缩、上涨家数减少，突破意义有限</li>
+<li><strong>哈药股份是否补跌</strong>：医药情绪锚。若明日哈药补跌，医药退潮确认收尾；若不补跌，医药或进入分化修复</li>
+<li><strong>液冷/超节点持续性</strong>：星网锐捷、海鸥股份3连板能否晋级4板，浪潮信息反包后能否延续</li>
+<li><strong>化工地缘持续性</strong>：美伊局势是脉冲还是趋势，原油走势决定</li>
+<li><strong>连板高度</strong>：海鸥住工6连板（股权转让）vs 深中华A止步7连板，晋级率44.4%已回落，高位分歧未解</li>
+</ol>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+<p><strong>数据来源</strong>：① 指数行情/两市成交/涨停跌停/主力资金：通达信MCP（tdx_quotes/tdx_screener，2026-08-31当日最终数据）；② 午后新闻催化：亿信API（billions-intelligence search）+ web_search（财联社收盘综述、焦点复盘、天元证券复盘）；③ 液冷/算力产业消息：web_search（央视财经、工信部名单）；④ 医药板块归因：亿信API（医药跌停快讯）+ web_search（哈药股份集采/异动公告）；⑤ onechart.top 数据源当日不可用（数据停留在2026-05-19），已放弃。生成时间：2026年08月31日 21:45</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
