@@ -1,9 +1,49 @@
 {
-    "last_updated":  "2026-08-31 22:36:27",
-    "total":  216,
-    "daily_count":  177,
+    "last_updated":  "2026-09-12 16:46:29",
+    "total":  220,
+    "daily_count":  181,
     "industry_count":  39,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-08-31/8月31日 深度复盘.html",
+                        "id":  "2026-08-31-8月31日 深度复盘",
+                        "display_date":  "8月31日",
+                        "title":  "8月31日 深度复盘",
+                        "category":  "深度复盘",
+                        "type":  "daily",
+                        "size_kb":  36,
+                        "date":  "2026-08-31"
+                    },
+                    {
+                        "relative_path":  "reports/2026-09-12/宏观择时周度综述_MTIv3_20260912.html",
+                        "id":  "2026-09-12-宏观择时周度综述_MTIv3_20260912",
+                        "display_date":  "9月12日",
+                        "title":  "宏观择时周度综述_MTIv3_20260912",
+                        "category":  "宏观择时",
+                        "type":  "daily",
+                        "size_kb":  22.4,
+                        "date":  "2026-09-12"
+                    },
+                    {
+                        "relative_path":  "reports/2026-09-12/深度复盘.html",
+                        "id":  "2026-09-12-深度复盘",
+                        "display_date":  "9月12日",
+                        "title":  "深度复盘",
+                        "category":  "深度复盘",
+                        "type":  "daily",
+                        "size_kb":  30,
+                        "date":  "2026-09-12"
+                    },
+                    {
+                        "relative_path":  "reports/2026-09-12/周度盘前.html",
+                        "id":  "2026-09-12-周度盘前",
+                        "display_date":  "9月12日",
+                        "title":  "周度盘前",
+                        "category":  "周度盘前",
+                        "type":  "daily",
+                        "size_kb":  15.7,
+                        "date":  "2026-09-12"
+                    },
                     {
                         "relative_path":  "reports/2026-08-31/8月31日 研报巡逻.html",
                         "id":  "2026-08-31-8月31日 研报巡逻",
