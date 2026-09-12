@@ -1,9 +1,19 @@
 {
-    "last_updated":  "2026-09-12 16:46:29",
-    "total":  220,
+    "last_updated":  "2026-09-12 17:00:57",
+    "total":  221,
     "daily_count":  181,
-    "industry_count":  39,
+    "industry_count":  40,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-09-12/行业调研_医药CRO创新药.html",
+                        "id":  "2026-09-12-行业调研_医药CRO创新药",
+                        "display_date":  "9月12日",
+                        "title":  "行业调研_医药CRO创新药",
+                        "category":  "深度研究",
+                        "type":  "industry",
+                        "size_kb":  31.3,
+                        "date":  "2026-09-12"
+                    },
                     {
                         "relative_path":  "reports/2026-08-31/8月31日 深度复盘.html",
                         "id":  "2026-08-31-8月31日 深度复盘",
