@@ -1,9 +1,19 @@
 {
-    "last_updated":  "2026-09-19 15:27:33",
-    "total":  226,
+    "last_updated":  "2026-09-19 15:40:23",
+    "total":  227,
     "daily_count":  186,
-    "industry_count":  40,
+    "industry_count":  41,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-09-19/行业调研_新能源电池锂电储能.html",
+                        "id":  "2026-09-19-行业调研_新能源电池锂电储能",
+                        "display_date":  "9月19日",
+                        "title":  "行业调研_新能源电池锂电储能",
+                        "category":  "深度研究",
+                        "type":  "industry",
+                        "size_kb":  45.6,
+                        "date":  "2026-09-19"
+                    },
                     {
                         "relative_path":  "reports/2026-09-19/宏观择时周度综述_MTIv3_20260919.html",
                         "id":  "2026-09-19-宏观择时周度综述_MTIv3_20260919",
