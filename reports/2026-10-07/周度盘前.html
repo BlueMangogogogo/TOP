@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月7日 周度盘前策略</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月7日 周度盘前策略</h1>
+  <div class="meta">
+    📅 2026年10月07日（周三·节后开盘前夜）| 下一交易日 10月8日（周四）开市 | 投资小龙虾 AI 自动生成 | 仅供参考
+  </div>
+</header>
+
+<h2>🌍 假期全球市场汇总</h2>
+<h3>外盘走势（假期累计：9月30日→10月6日/7日）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th style="text-align: center;">假期涨跌</th>
+<th>期末值</th>
+<th>关键事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纳斯达克</td>
+<td style="text-align: center;">约 +2.5%</td>
+<td>27599.79</td>
+<td>续创收盘新高，AI芯片领涨</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td style="text-align: center;">+2.19%</td>
+<td>7818.93</td>
+<td>10/6 创收盘新高</td>
+</tr>
+<tr>
+<td>道琼斯</td>
+<td style="text-align: center;">约 -0.3%</td>
+<td>51521.22</td>
+<td>权重股拖累，震荡收平</td>
+</tr>
+<tr>
+<td>费城半导体</td>
+<td style="text-align: center;">+4.30%</td>
+<td>—</td>
+<td>假期表现最佳板块</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td style="text-align: center;">回落至 15.49</td>
+<td>15.49</td>
+<td>恐慌指数低位</td>
+</tr>
+<tr>
+<td>恒生指数</td>
+<td style="text-align: center;">-1.96%</td>
+<td>24130.50</td>
+<td>节初跳水、节中修复、节末震荡</td>
+</tr>
+<tr>
+<td>恒生科技</td>
+<td style="text-align: center;">-1.40%</td>
+<td>4194.49</td>
+<td>曾创阶段新低后企稳</td>
+</tr>
+<tr>
+<td>国企指数</td>
+<td style="text-align: center;">-1.67%</td>
+<td>8082.40</td>
+<td>金融股承压</td>
+</tr>
+<tr>
+<td>日经225</td>
+<td style="text-align: center;">约 +7.5%</td>
+<td>70035.71</td>
+<td>领涨全球主要市场（10/7 收跌0.92%）</td>
+</tr>
+<tr>
+<td>韩国KOSPI</td>
+<td style="text-align: center;">约 +2.4%</td>
+<td>6803.90</td>
+<td>半导体出口支撑（10/7 收跌1.98%）</td>
+</tr>
+<tr>
+<td>德国DAX</td>
+<td style="text-align: center;">10/6 +0.77%</td>
+<td>—</td>
+<td>欧债压力缓和</td>
+</tr>
+<tr>
+<td>英国富时100</td>
+<td style="text-align: center;">10/6 +0.42%</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>欧洲斯托克50</td>
+<td style="text-align: center;">10/6 +0.48%</td>
+<td>—</td>
+<td>法国市场假期跌超2%</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td style="text-align: center;">冲高回落</td>
+<td>101.84</td>
+<td>一度创年内新高，10/6 失守102</td>
+</tr>
+<tr>
+<td>现货黄金</td>
+<td style="text-align: center;">震荡偏强</td>
+<td>4163.69</td>
+<td>COMEX期金 4192.70</td>
+</tr>
+<tr>
+<td>布伦特原油</td>
+<td style="text-align: center;">冲高回落</td>
+<td>100.17</td>
+<td>一度逼近104后回落</td>
+</tr>
+<tr>
+<td>WTI原油</td>
+<td style="text-align: center;">震荡</td>
+<td>89.19</td>
+<td>释储预期与地缘风险对冲</td>
+</tr>
+<tr>
+<td>10年期美债</td>
+<td style="text-align: center;">升至近20年高位</td>
+<td>5.286%</td>
+<td>长端利率仍是估值压制</td>
+</tr>
+<tr>
+<td>富时A50期货</td>
+<td style="text-align: center;">微涨</td>
+<td>—</td>
+<td>盘前指引偏多但力度弱</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>一句话：外盘整体偏暖，AI科技与半导体领涨、亚太（日经）最强，但港股与欧洲偏弱。对 A 股节后情绪偏多，港股映射偏中性，商品与利率端信号中性偏空。</p>
+</div>
+<h3>假期重大消息（按影响强度排序）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>事件</th>
+<th>影响板块</th>
+<th>情绪</th>
+<th style="text-align: center;">强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>美国9月非农仅增2.9万人（预期9万）、8月核心PCE降至3.0%（预期3.3%），美联储10月加息预期骤降</td>
+<td>全球风险偏好·成长股</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>央行10月8日开展1.2万亿元买断式逆回购（3个月，净投放2000亿）；财政部部长撰文"研究制定针对性强的增量政策"</td>
+<td>大金融·地产·全市场</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>美光第四财季业绩与下季指引双超预期；韩国9月芯片出口创603亿美元历史新高；麦肯锡将2030全球半导体市场预测上调44%至2.3万亿美元</td>
+<td>存储·半导体全链</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>G7 宣布4个月内协调释放至多1亿桶战略油储、IEA已释放3.25亿桶；中东供应边际修复</td>
+<td>石油石化·油运</td>
+<td>利空（能源）</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>华为与高通达成广泛专利许可协议；华为与赛力斯达成新五年合作（问界）</td>
+<td>华为链·汽车·消费电子</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>诺贝尔生理学或医学奖揭晓（外周免疫耐受）；创新药BD大单不断</td>
+<td>创新药·CXO·生物科技</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>7</td>
+<td>高盛将中国股票上调至"超配"，花旗上调沪深300、恒指目标价</td>
+<td>全市场·外资偏好</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>8</td>
+<td>特朗普成立"超级智能特别工作组"；AMD 称2027年大幅增加芯片供应、Marvell上调FY28收入指引至200亿</td>
+<td>AI算力·半导体</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>9</td>
+<td>首套房贷贴息10月1日起实施（年化1%、最长5年）</td>
+<td>地产链</td>
+<td>利好（温和）</td>
+<td style="text-align: center;">⭐</td>
+</tr>
+<tr>
+<td>10</td>
+<td>甲骨文云业务毛利率承压（英伟达服务器租赁毛利率仅14%）；节前AI硬件链出现密集减持（江波龙、大基金等）</td>
+<td>AI算力租赁·半导体</td>
+<td>利空</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🔍 重点事件催化验证</h3>
+<ul>
+<li><strong>半导体/存储</strong>：海外证据最硬——美光业绩+韩国芯片出口+麦肯锡上调，假期费半+4.30%。但10月6日美股存储链出现明显分化跳水（希捷 -9%、西部数据 -7%、SK海力士 -6%），叠加甲骨文云毛利率质疑。<strong>结论</strong>：产业景气仍在，但已进入"高位震荡、内部分化"阶段，节后A股半导体更可能是结构性而非普涨。</li>
+<li><strong>创新药/CXO</strong>：A股9月30日已先行爆发——康希诺 +20%、昭衍新药/美诺华/贝瑞基因涨停、CXO概念登顶资金雷达。叠加诺奖与BD订单，<strong>持续性偏强</strong>，是节前资金已经"投票"的方向。</li>
+<li><strong>中东能源</strong>：缓和信号+释储，油价回落企稳100美元附近，与9月中旬"脉冲结束"判断一致。A股油运/石化节后大概率承压，属<strong>利好出尽</strong>。</li>
+<li><strong>华为链</strong>：高通专利协议、赛力斯五年合作，指向华为鸿蒙/智驾/消费电子的<strong>情绪催化</strong>，需观察订单与业绩验证。</li>
+<li><strong>大宗商品（分化）</strong>：原糖假期累计 +12.08%（巴西减产、印度出口限制延续），利好糖业；稀土（特朗普政府讨论入股Critical Metals、金力永磁港股 +9.19%）战略属性提升；铜矿端持续偏紧。有色内部由"齐涨齐跌"转向<strong>一金属一逻辑</strong>。</li>
+<li><strong>概念区分提示</strong>：AI算力（英伟达/CSP资本开支驱动）、半导体设计（AMD/Intel映射）、半导体设备制造（国产替代）、存储芯片（涨价周期）、AI应用（商业化落地）驱动逻辑各异，不可混为一谈；本轮海外最强的是<strong>存储与光通信硬件</strong>，A股对应应分别观察。</li>
+</ul>
+<h2>💰 节前板块资金趋势回顾</h2>
+<blockquote>
+<p>数据来源：本地板块资金雷达系统（已补齐至 2026-09-30，269个板块 / 115个交易日；9月21日–9月29日因资金流源缺失仍存在缺口）。</p>
+</div>
+<h3>节前资金集中流入方向（9月30日）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">涨跌幅</th>
+<th style="text-align: center;">单日净额</th>
+<th style="text-align: center;">波段评分</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CXO概念</td>
+<td style="text-align: center;">+3.39%</td>
+<td style="text-align: center;">+31.4亿</td>
+<td style="text-align: center;">0.958</td>
+<td>7天在榜·登顶</td>
+</tr>
+<tr>
+<td>创新药</td>
+<td style="text-align: center;">+2.42%</td>
+<td style="text-align: center;">+38.0亿</td>
+<td style="text-align: center;">0.942</td>
+<td>6天在榜</td>
+</tr>
+<tr>
+<td>免疫治疗</td>
+<td style="text-align: center;">+3.52%</td>
+<td style="text-align: center;">+22.2亿</td>
+<td style="text-align: center;">0.926</td>
+<td>4天在榜</td>
+</tr>
+<tr>
+<td>基因概念</td>
+<td style="text-align: center;">+2.18%</td>
+<td style="text-align: center;">+12.0亿</td>
+<td style="text-align: center;">0.898</td>
+<td>转强</td>
+</tr>
+<tr>
+<td>减肥药</td>
+<td style="text-align: center;">+2.60%</td>
+<td style="text-align: center;">+16.2亿</td>
+<td style="text-align: center;">0.871</td>
+<td>转强</td>
+</tr>
+<tr>
+<td>合成生物</td>
+<td style="text-align: center;">+1.82%</td>
+<td style="text-align: center;">+16.2亿</td>
+<td style="text-align: center;">0.862</td>
+<td>转强</td>
+</tr>
+<tr>
+<td>肝炎概念</td>
+<td style="text-align: center;">+2.42%</td>
+<td style="text-align: center;">+16.4亿</td>
+<td style="text-align: center;">0.854</td>
+<td>转强</td>
+</tr>
+<tr>
+<td>AI医疗概念</td>
+<td style="text-align: center;">+1.35%</td>
+<td style="text-align: center;">+14.9亿</td>
+<td style="text-align: center;">0.850</td>
+<td>转强</td>
+</tr>
+<tr>
+<td>辅助生殖</td>
+<td style="text-align: center;">+2.23%</td>
+<td style="text-align: center;">+12.4亿</td>
+<td style="text-align: center;">0.819</td>
+<td>转强</td>
+</tr>
+<tr>
+<td>仿制药</td>
+<td style="text-align: center;">+2.08%</td>
+<td style="text-align: center;">+12.1亿</td>
+<td style="text-align: center;">0.807</td>
+<td>转强</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>结论</strong>：节前最后一个交易日，资金高度集中流向<strong>医药链（CXO/创新药/免疫治疗/生物科技）</strong>，这是被市场忽视的一处切换信号——当天涨停榜前列几乎被生物医药包揽（康希诺、昭衍新药、美诺华、南模生物、近岸蛋白、百普赛斯、三元基因）。</p>
+<h3>节前资金流出方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">涨跌幅</th>
+<th style="text-align: center;">单日净额</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人工智能</td>
+<td style="text-align: center;">-0.48%</td>
+<td style="text-align: center;">-43.7亿</td>
+<td>9/18 曾登顶后资金转出</td>
+</tr>
+<tr>
+<td>机器人概念</td>
+<td style="text-align: center;">-0.68%</td>
+<td style="text-align: center;">-58.2亿</td>
+<td>高位资金撤离</td>
+</tr>
+<tr>
+<td>工业互联</td>
+<td style="text-align: center;">-0.50%</td>
+<td style="text-align: center;">微流入</td>
+<td>高位滞涨</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>9月30日全市场合计资金净流出（总流入约441亿、总流出约-2890亿），显示节前普遍的避险性减仓，而医药链是少数逆势获资金加仓的方向。</p>
+</div>
+<h3>机构建仓 / 退潮信号</h3>
+<ul>
+<li>🟢 <strong>CXO概念</strong>：连续7天在榜，9月14日起波段评分持续抬升，9月30日登顶且价格 +3.39%，属"资金+价格"同步，关注建仓/延续信号。</li>
+<li>🟢 <strong>创新药 / 免疫治疗</strong>：6天/4天在榜，评分与净额同步上行，处于发酵→扩散阶段。</li>
+<li>🔴 <strong>人工智能</strong>：9月18日以评分0.904、单日 +109.5亿登顶后，9月30日评分仍高但单日净额转为 -43.7亿，价格转跌，<strong>高位分歧预警</strong>。</li>
+<li>🔴 <strong>机器人概念</strong>：在榜但单日净额 -58.2亿，价格转跌，<strong>退潮信号</strong>。</li>
+</ul>
+<h3>资金轮动方向</h3>
+<ul>
+<li><strong>资金进攻方向</strong>：医药链（CXO/创新药/免疫治疗/生物科技）。</li>
+<li><strong>资金撤退方向</strong>：AI算力与机器人（节前获利了结）。</li>
+<li><strong>注意</strong>：AI/机器人的流出发生在外盘半导体假期大涨之前，节后存在"外围映射→资金回流"的修复可能，但需成交与价格确认。</li>
+</ul>
+<h2>🎯 本周主线预判</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th>关注标的</th>
+<th>预期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>半导体/存储全链</td>
+<td>美光业绩+韩国出口+麦肯锡上调+国产替代+十五五，海外映射最强</td>
+<td>兆易创新、香农芯创、江波龙、长电科技、华天科技、南亚新材</td>
+<td>强（高位分化）</td>
+</tr>
+<tr>
+<td>创新药/CXO/生物科技</td>
+<td>诺奖+BD订单+9/30资金投票，产业由"烧钱"转"收获"</td>
+<td>药明康德、康希诺、昭衍新药、恒瑞医药、百济神州</td>
+<td>中强→强</td>
+</tr>
+<tr>
+<td>AI算力硬件（光通信/PCB/液冷）</td>
+<td>美股光通信强（Coherent +11%）+算力资本开支；但需警惕FCC对光模块的潜在限制</td>
+<td>中际旭创、新易盛、沪电股份、工业富联</td>
+<td>中强</td>
+</tr>
+<tr>
+<td>华为链</td>
+<td>高通专利协议+赛力斯合作，事件驱动</td>
+<td>赛力斯、华为鸿蒙链</td>
+<td>中</td>
+</tr>
+<tr>
+<td>有色/贵金属/稀土</td>
+<td>金价高位+货币体系逻辑+稀土战略属性+铜矿偏紧</td>
+<td>山东黄金、北方稀土、紫金矿业</td>
+<td>中</td>
+</tr>
+<tr>
+<td>糖业（事件弹性）</td>
+<td>原糖假期 +12%，巴西减产、印度出口限制延续</td>
+<td>中粮糖业、南宁糖业</td>
+<td>主题</td>
+</tr>
+<tr>
+<td>消费/内需</td>
+<td>出行客流21.3亿人次创新高、以旧换新近200亿、首套房贷贴息落地</td>
+<td>家电、出行链、地产链</td>
+<td>中</td>
+</tr>
+<tr>
+<td>红利防御</td>
+<td>海外扰动下底仓价值</td>
+<td>银行、煤炭、公用事业</td>
+<td>守</td>
+</tr>
+</tbody>
+</table></div>
+<h2>⚠️ 本周风险日历</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>日期</th>
+<th>风险/事件</th>
+<th>影响方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10/7（周三）</td>
+<td>中国9月外汇储备；世界人工智能峰会</td>
+<td>汇率·AI</td>
+</tr>
+<tr>
+<td>10/8（周四）</td>
+<td><strong>A股节后开市</strong>；美国初请失业金；美联储9月会议纪要；台积电9月营收；解禁：中国神华（221.5亿）、中国能建（60.2亿）</td>
+<td>全市场·半导体·相关个股</td>
+</tr>
+<tr>
+<td>10/9（周五）</td>
+<td>中国9月M2/社融/新增人民币贷款；美国30年期国债拍卖；湖南裕能解禁（40.9亿）；韩国休市</td>
+<td>大金融·流动性·相关个股</td>
+</tr>
+<tr>
+<td>本周待定</td>
+<td>中国9月CPI/PPI；美国9月CPI；三星业绩预告；SK海力士美股首秀；智谱/MiniMax解禁</td>
+<td>通胀链·半导体·次新</td>
+</tr>
+<tr>
+<td>本周（结构性）</td>
+<td>三季报披露窗口临近；AI硬件链高管/大基金减持密集；10年期美债5.286%仍处高位</td>
+<td>成长股估值·半导体情绪</td>
+</tr>
+</tbody>
+</table></div>
+<h2>📌 策略建议</h2>
+<div class="highlight">
+<p>💡 <strong>上期判断回顾（9月19日周度盘前）</strong>：核心预判为"半导体全链为第一优先、AI算力硬件第二梯队、仓位维持六至七成偏积极、防守大金融与贵金属"，并提示"节前注意持仓风险"。验证结果：<strong>部分准确</strong>——半导体/AI硬件在9月21–24日仍强，但9月28–30日随大盘快速回调（节前一周全A -2.43%、科创50/创业板领跌）；9月30日资金明显切向医药链，"偏积极"在节前遭遇回调，未能完全兑现"节节高"。休市期间外围（尤其半导体、存储）走强，节后存在修复窗口。</p>
+</div>
+<ul>
+<li><strong>仓位建议</strong>：节后首个交易周可维持 <strong>六至七成</strong>。外围情绪偏暖、宏观不确定性（加息）出清、历史"节后放量启动"规律，均为支撑；但美债长端高位、三季报博弈、AI硬件减持构成压制，不宜追高或满仓。</li>
+<li><strong>进攻方向</strong>：①存储/半导体（海外映射最强，首选业绩确定性环节）；②创新药/CXO（节前资金已投票，诺奖+BD加持）；③AI算力硬件（光通信/PCB，注意光模块政策风险）；④华为链（事件驱动）。</li>
+<li><strong>防守方向</strong>：红利资产（银行、煤炭、公用事业）作为底仓；黄金/有色对冲货币与地缘不确定性。</li>
+<li><strong>风险应对</strong>：①若10月8日高开后半导体冲高回落、炸板率抬升，逢反弹减仓；②若两市成交额无法回到1.5万亿以上，降低对指数弹性的预期；③若10年期美债收益率继续上冲5.5%，压缩成长股仓位；④不参与油运/石化等"利好出尽"方向的反弹。</li>
+</ul>
+<h3>本周观察要点</h3>
+<ol>
+<li><strong>成交额能否重回1.5万亿以上</strong>：历史"节后放量"规律是本轮修复的关键验证。</li>
+<li><strong>半导体/存储的兑现度</strong>：是承接外围强势（美光、韩国出口）走高，还是高开低走，直接决定主线成色。</li>
+<li><strong>医药链能否从单日爆发走向连续</strong>：CXO/创新药的连板高度与资金延续性。</li>
+<li><strong>港股与A50指引的验证</strong>：恒指节内 -1.96%、A50 微涨，观察 A股是否独立走强。</li>
+<li><strong>10月9日中国金融数据（M2/社融）与美债走势</strong>：宏观与估值的两条线。</li>
+</ol>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p style="font-size:12px;color:#888;line-height:1.7;"><strong>数据来源</strong>：<br>① A股节前行情与板块表现：通达信 TdxQuant（tdx_quotes / tdx_screener / tdx_kline），截至 2026-09-30 收盘；<br>② 板块资金趋势：本地板块资金雷达系统（data/hist_metrics.json、boards_flow.json，已补齐至 2026-09-30，269 个板块 / 115 个交易日）；<br>③ 外盘指数 / 商品 / 汇率（美股、亚太、欧洲、黄金、原油、美元、美债）：Finnhub 报价 + web_search 兜底（2026-09-30 至 10-07）；<br>④ 假期重大消息、研报与产业催化、财经日历与解禁：亿信 API search（web / report 多源检索），截至 2026-10-07；<br>⑤ 交易日历与休市安排：上交所公告 + web_search。<br>⑥ 说明：本日 研报巡逻（亿信API研报×资金雷达Top30）报告未生成，未纳入共振/先行信号校验；当日为国庆假期最后一日（A股 10/1–10/7 休市），故按开盘前夜生成周度盘前，无当日 A 股行情可供深度复盘。</p>
+</footer>
+
+</body>
+</html>
