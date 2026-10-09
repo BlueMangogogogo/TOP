@@ -1,9 +1,19 @@
 {
-    "last_updated":  "2026-10-08 00:05:37",
-    "total":  229,
-    "daily_count":  187,
+    "last_updated":  "2026-10-09 19:19:06",
+    "total":  230,
+    "daily_count":  188,
     "industry_count":  42,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-10-09/竞价快报.html",
+                        "id":  "2026-10-09-竞价快报",
+                        "display_date":  "10月9日",
+                        "title":  "竞价快报",
+                        "category":  "竞价快报",
+                        "type":  "daily",
+                        "size_kb":  9.2,
+                        "date":  "2026-10-09"
+                    },
                     {
                         "relative_path":  "reports/2026-10-07/周度盘前.html",
                         "id":  "2026-10-07-周度盘前",
