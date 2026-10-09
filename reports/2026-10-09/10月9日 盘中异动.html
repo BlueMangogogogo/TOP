@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月9日 盘中异动</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月9日 盘中异动</h1>
+  <div class="meta">
+    📅 2026年10月09日 14:00 | 投资小龙虾 AI | 仅供参考
+  </div>
+</header>
+
+<h2>📈 异动速览</h2>
+<p>午后A股上演V型反转。早盘一度下探3754.14（上证）、创业板失守3000点，13:30后资金明显回流，券商、传媒、锂电、宽基ETF同步活跃，三大指数由绿翻红，全市场上涨个股由不足1100只快速回升至2900只以上。</p>
+<h2>🚀 关键异动方向</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>时间</th>
+<th>方向</th>
+<th>异动表现</th>
+<th>驱动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>午后</td>
+<td>券商</td>
+<td>华鑫股份涨停、大智慧涨停，证券板块震荡走高</td>
+<td>牛市旗手护盘，公募新规+券商中报</td>
+</tr>
+<tr>
+<td>午后</td>
+<td>影视传媒</td>
+<td>中文在线20CM、芒果超媒触及20CM、华策影视+11%、捷成股份+10%，新华传媒/上海电影/掌阅科技/慈文传媒涨停</td>
+<td>AI超写实电影定档+AI短剧</td>
+</tr>
+<tr>
+<td>午后</td>
+<td>黄金</td>
+<td>西部黄金涨停，黄金概念震荡反弹</td>
+<td>金价站上4200美元</td>
+</tr>
+<tr>
+<td>午后</td>
+<td>农业/粮食</td>
+<td>敦煌种业、金健米业、万向德农涨停</td>
+<td>超强厄尔尼诺达峰预期</td>
+</tr>
+<tr>
+<td>午后</td>
+<td>房地产</td>
+<td>中交发展直线涨停，深物业A、沙河股份冲高</td>
+<td>政策预期</td>
+</tr>
+<tr>
+<td>午后</td>
+<td>零售</td>
+<td>百大集团、国光连锁涨停</td>
+<td>内需消费回流</td>
+</tr>
+</tbody>
+</table></div>
+<h2>💰 资金动向</h2>
+<ul>
+<li><strong>护盘力量</strong>：多只宽基ETF午后大幅放量，逆市买入迹象明显。</li>
+<li><strong>进攻方向</strong>：AI内容应用（影视/短剧）+ 券商 + 资源（黄金/锂电）+ 内需（农业/零售/地产）。</li>
+<li><strong>撤退方向</strong>：算力硬件（半导体/光模块/PCB/存储）午后仍弱，未随指数反弹。</li>
+<li><strong>港股联动</strong>：恒指涨1.79%站上24000点，恒生科技涨3.06%，风险偏好回暖。</li>
+</ul>
+<h2>🎯 尾盘关注</h2>
+<ol>
+<li>上证能否守住翻红、站稳3825（MA5）。</li>
+<li>传媒涨停潮能否扩散到二线补涨，情绪能否延续到收盘。</li>
+<li>新华传媒9连板，尾盘是否炸板或停牌核查，是高位情绪票的风向标。</li>
+<li>两市成交能否放大至1.9万亿以上。</li>
+</ol>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+</div>
+<p><small>数据来源：指数与板块异动 → 公开资讯检索（新浪/东方财富/财联社 盘中快讯）；生成方式：当日 21:50 收盘口径补录。</small></p>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
