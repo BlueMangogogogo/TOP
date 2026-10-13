@@ -1,9 +1,29 @@
 {
-    "last_updated":  "2026-10-13 23:35:09",
-    "total":  211,
-    "daily_count":  129,
+    "last_updated":  "2026-10-13 23:44:55",
+    "total":  213,
+    "daily_count":  131,
     "industry_count":  82,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-10-13/10月13日 盘前简报.html",
+                        "id":  "2026-10-13-10月13日 盘前简报",
+                        "display_date":  "10月13日",
+                        "title":  "10月13日 盘前简报",
+                        "category":  "盘前简报",
+                        "type":  "daily",
+                        "size_kb":  9.8,
+                        "date":  "2026-10-13"
+                    },
+                    {
+                        "relative_path":  "reports/2026-10-13/10月13日 收盘总结.html",
+                        "id":  "2026-10-13-10月13日 收盘总结",
+                        "display_date":  "10月13日",
+                        "title":  "10月13日 收盘总结",
+                        "category":  "收盘总结",
+                        "type":  "daily",
+                        "size_kb":  10.9,
+                        "date":  "2026-10-13"
+                    },
                     {
                         "relative_path":  "reports/2026-10-13/10月13日 深度复盘.html",
                         "id":  "2026-10-13-10月13日 深度复盘",
