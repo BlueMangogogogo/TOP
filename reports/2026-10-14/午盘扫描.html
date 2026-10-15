@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月14日 午盘扫描</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月14日 午盘扫描</h1>
+  <div class="meta">
+    📅 2026年10月14日 | 投资小龙虾 AI | ⏱ 延迟补跑（当日全时段数据）
+  </div>
+</header>
+
+<h2>📊 盘面全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3767.23</td>
+<td>-0.88%，低开低走、收于全天低位区（最低3761.96），3800关口失守</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>12110.59</td>
+<td>-1.97%，成长股领跌，明显弱于沪指</td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>14144亿</td>
+<td>较昨日16889亿缩量2750亿（-16%），量能明显回落</td>
+</tr>
+<tr>
+<td>涨停/跌停</td>
+<td>39家 / 11家</td>
+<td>昨日70家 / 10家，涨停家数近腰斩，赚钱效应转冷</td>
+</tr>
+<tr>
+<td>炸板</td>
+<td>31家（炸板率约44%）</td>
+<td>昨日24%，封板意愿大幅走弱，接力环境恶化</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>一句话：昨日探底回升的修复今日被回吐，指数全天单边走弱、量能萎缩、涨停腰斩，属于典型的「反抽结束 → 缩量调整」结构。</p>
+</div>
+<h2>🔥 今日最强板块</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>涨幅</th>
+<th>主力资金</th>
+<th>龙头</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>油服工程</td>
+<td>+3.58%</td>
+<td>—</td>
+<td>新潮能源（+5.29%）</td>
+<td>油气/页岩气预期，弱市资源防御</td>
+</tr>
+<tr>
+<td>出版业</td>
+<td>+3.06%</td>
+<td>知识产权+9.0亿</td>
+<td>掌阅科技（涨停）、果麦文化（+14.49%）</td>
+<td>AI内容/IP经济，传媒最强分支</td>
+</tr>
+<tr>
+<td>数字媒体</td>
+<td>+2.97%</td>
+<td>短剧游戏+22.6亿</td>
+<td>慈文传媒（涨停）、凯撒文化（+4.73%）</td>
+<td>短剧游戏+IP，资金合力最强</td>
+</tr>
+<tr>
+<td>油气开采</td>
+<td>+2.58%</td>
+<td>页岩气+6.8亿</td>
+<td>新潮能源</td>
+<td>油气链共振</td>
+</tr>
+<tr>
+<td>石油化工</td>
+<td>+2.18%</td>
+<td>—</td>
+<td>—</td>
+<td>油气链扩散</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>主线总结：<strong>传媒 / IP经济（短剧游戏、知识付费、出版、影视院线）是今日唯一成规模、有资金合力的方向</strong>；油服/油气链是弱市里的资源防御支线。</p>
+</div>
+<h2>📉 今日最弱板块</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>跌幅</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>风电设备</td>
+<td>-5.26%</td>
+<td>昨日强势股「一日游」补跌，大金重工、中材科技跌停</td>
+</tr>
+<tr>
+<td>玻璃玻纤</td>
+<td>-5.21%</td>
+<td>中材科技跌停拖累，风电叶片链共振</td>
+</tr>
+<tr>
+<td>通信设备</td>
+<td>-4.35%</td>
+<td>光模块/CPO龙头中际旭创-5.73%（成交155.6亿），昨日反弹主线当日反转</td>
+</tr>
+<tr>
+<td>消费电子</td>
+<td>-4.11%</td>
+<td>果链/终端走弱，外盘科技映射偏弱</td>
+</tr>
+<tr>
+<td>商用车</td>
+<td>-3.61%</td>
+<td>顺周期回落</td>
+</tr>
+<tr>
+<td>半导体</td>
+<td>-3.27%</td>
+<td>KOSPI与外盘存储链拖累，国产半导体情绪受压</td>
+</tr>
+<tr>
+<td>电池</td>
+<td>-3.05%</td>
+<td>锂电/固态电池继续调整，信宇人-20.01%</td>
+</tr>
+</tbody>
+</table></div>
+<h2>⚡ 异动个股</h2>
+<ul>
+<li><strong>中际旭创（300308）</strong>：-5.73%，报692.9元，成交155.6亿。光学光电子/CPO权重核心，昨日午后翻红、今日单边回落，<strong>放量下跌、量价背离</strong>，算力硬件反弹主线当日失效。</li>
+<li><strong>满坤科技（301132）</strong>：+18.32%，PCB弹性标的，10:00一度封板后炸板回落，<strong>冲高不封 = 分歧加剧</strong>。</li>
+<li><strong>信宇人（688573）</strong>：-20.01%，锂电/固态电池设备，20cm跌停，<strong>趋势加速下杀，情绪冰点未见止跌信号</strong>。</li>
+<li><strong>新潮能源（600777）</strong>：+5.29%，油气开采弹性标的，10:13涨停后炸板，油气链情绪风向标。</li>
+<li><strong>星网宇达（002829）</strong>：-9.97% 跌停，与涨停的航发科技形成军工内部分歧，<strong>同一题材冰火两重天</strong>。</li>
+</ul>
+<h2>🎯 后续关注（下一交易日）</h2>
+<ul>
+<li><strong>传媒/IP经济能否延续</strong>：短剧游戏单日净流入22.6亿居首、出版业+3.06%领涨，是弱市里唯一有资金合力的方向；关注掌阅科技/慈文传媒能否连板、板块能否扩散。</li>
+<li><strong>算力硬件是否二次探底</strong>：通信设备-4.35%、中际旭创-5.73%，昨日主线当日反转；关注龙头能否在前期平台止跌，若继续放量下杀则确认退潮。</li>
+<li><strong>量能与情绪</strong>：两市成交缩至1.41万亿、涨停腰斩、炸板率44%，若继续缩量则赚钱效应进一步收敛；沪指关注3741前低支撑（昨日复盘风险线）。</li>
+</ul>
+<h2>🔍 昨日判断验证</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>昨日（10/13）预判</th>
+<th>今日实际</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算力硬件（PCB/CPO/光通信）能否扩散为板块行情</td>
+<td>通信设备-4.35%、中际旭创-5.73%，主线当日反转</td>
+<td>❌ 未兑现·证伪</td>
+</tr>
+<tr>
+<td>传媒（AI内容/IP/出版）补位接力</td>
+<td>出版业+3.06%、数字媒体+2.97%，短剧游戏净流入22.6亿</td>
+<td>✅ 兑现（今日最强）</td>
+</tr>
+<tr>
+<td>国防军工航展梯队</td>
+<td>航发科技/宝鼎科技涨停，星网宇达跌停，内部分化</td>
+<td>⏳ 部分兑现·分化</td>
+</tr>
+<tr>
+<td>冰雪经济/电商消费脉冲</td>
+<td>冰山冷热涨停，但缺乏板块效应</td>
+<td>⏳ 弱兑现</td>
+</tr>
+<tr>
+<td>风险方向：电池/风电/电力设备</td>
+<td>风电设备-5.26%、电池-3.05%，跌停集群</td>
+<td>✅ 弱势兑现</td>
+</tr>
+<tr>
+<td>沪指3800关口攻防</td>
+<td>低开失守3800，收3767，最低3761.96</td>
+<td>✅ 弱势兑现</td>
+</tr>
+<tr>
+<td>两市成交维持1.6万亿以上</td>
+<td>缩至1.41万亿，跌破</td>
+<td>❌ 未兑现（缩量）</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年10月14日 23:20</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
