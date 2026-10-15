@@ -1,9 +1,29 @@
 {
-    "last_updated":  "2026-10-15 21:31:26",
-    "total":  221,
-    "daily_count":  139,
+    "last_updated":  "2026-10-15 21:58:25",
+    "total":  223,
+    "daily_count":  141,
     "industry_count":  82,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-10-15/10月15日 盘中异动.html",
+                        "id":  "2026-10-15-10月15日 盘中异动",
+                        "display_date":  "10月15日",
+                        "title":  "10月15日 盘中异动",
+                        "category":  "盘中异动",
+                        "type":  "daily",
+                        "size_kb":  17.4,
+                        "date":  "2026-10-15"
+                    },
+                    {
+                        "relative_path":  "reports/2026-10-15/10月15日 收盘总结.html",
+                        "id":  "2026-10-15-10月15日 收盘总结",
+                        "display_date":  "10月15日",
+                        "title":  "10月15日 收盘总结",
+                        "category":  "收盘总结",
+                        "type":  "daily",
+                        "size_kb":  17.4,
+                        "date":  "2026-10-15"
+                    },
                     {
                         "relative_path":  "reports/2026-10-14/竞价快报.html",
                         "id":  "2026-10-14-竞价快报",
