@@ -1,9 +1,19 @@
 {
-    "last_updated":  "2026-10-15 21:58:25",
-    "total":  223,
-    "daily_count":  141,
+    "last_updated":  "2026-10-15 23:18:57",
+    "total":  224,
+    "daily_count":  142,
     "industry_count":  82,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-10-15/10月15日 深度复盘.html",
+                        "id":  "2026-10-15-10月15日 深度复盘",
+                        "display_date":  "10月15日",
+                        "title":  "10月15日 深度复盘",
+                        "category":  "深度复盘",
+                        "type":  "daily",
+                        "size_kb":  27.5,
+                        "date":  "2026-10-15"
+                    },
                     {
                         "relative_path":  "reports/2026-10-15/10月15日 盘中异动.html",
                         "id":  "2026-10-15-10月15日 盘中异动",
