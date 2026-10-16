@@ -1,9 +1,49 @@
 {
-    "last_updated":  "2026-10-15 23:18:57",
-    "total":  224,
-    "daily_count":  142,
+    "last_updated":  "2026-10-16 23:44:39",
+    "total":  228,
+    "daily_count":  146,
     "industry_count":  82,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-10-16/宏观择时日报_MTIv3_20261016.html",
+                        "id":  "2026-10-16-宏观择时日报_MTIv3_20261016",
+                        "display_date":  "10月16日",
+                        "title":  "宏观择时日报_MTIv3_20261016",
+                        "category":  "宏观择时",
+                        "type":  "daily",
+                        "size_kb":  153.6,
+                        "date":  "2026-10-16"
+                    },
+                    {
+                        "relative_path":  "reports/2026-10-16/竞价快报.html",
+                        "id":  "2026-10-16-竞价快报",
+                        "display_date":  "10月16日",
+                        "title":  "竞价快报",
+                        "category":  "竞价快报",
+                        "type":  "daily",
+                        "size_kb":  9.2,
+                        "date":  "2026-10-16"
+                    },
+                    {
+                        "relative_path":  "reports/2026-10-16/开盘速览.html",
+                        "id":  "2026-10-16-开盘速览",
+                        "display_date":  "10月16日",
+                        "title":  "开盘速览",
+                        "category":  "开盘速览",
+                        "type":  "daily",
+                        "size_kb":  8.7,
+                        "date":  "2026-10-16"
+                    },
+                    {
+                        "relative_path":  "reports/2026-10-16/盘中异动.html",
+                        "id":  "2026-10-16-盘中异动",
+                        "display_date":  "10月16日",
+                        "title":  "盘中异动",
+                        "category":  "盘中异动",
+                        "type":  "daily",
+                        "size_kb":  14.4,
+                        "date":  "2026-10-16"
+                    },
                     {
                         "relative_path":  "reports/2026-10-15/10月15日 深度复盘.html",
                         "id":  "2026-10-15-10月15日 深度复盘",
