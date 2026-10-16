@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MTI 宏观择时周度综述（10月12日 ~ 10月16日）</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<style>
+:root{--brand:#ebb543;--brand-bg:#f7e8c5;--warn:#c0392b;--warn-bg:#fdf0ef;--ok:#1e7e34;--ok-bg:#eef7f0;--ink:#1a1a1a;--gray:#2c2c2c;--aux:#888;--line:#f0f0f0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",system-ui,sans-serif;color:var(--gray);background:#fff;max-width:980px;margin:0 auto;padding:28px 22px 60px;font-size:15px;line-height:1.75}
+header{border-bottom:3px solid var(--brand);padding-bottom:14px;margin-bottom:22px}
+h1{font-size:24px;color:var(--ink);line-height:1.4;margin-bottom:6px}
+.meta{color:var(--aux);font-size:13px}
+h2{font-size:19px;color:var(--ink);border-left:5px solid var(--brand);padding-left:10px;margin:28px 0 14px}
+h3{font-size:16px;color:var(--ink);margin:18px 0 8px}
+p{margin:10px 0}
+ul,ol{margin:10px 0 10px 22px}
+li{margin:5px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th{background:var(--brand);color:#fff;padding:8px 10px;text-align:left;font-weight:600}
+td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#faf8f2}
+.warning{border-left:5px solid var(--warn);background:var(--warn-bg);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0}
+.highlight{border-left:5px solid var(--brand);background:var(--brand-bg);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0}
+.okbox{border-left:5px solid var(--ok);background:var(--ok-bg);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0}
+.score-card{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0}
+.score{flex:1;min-width:210px;border:2px solid var(--brand);border-radius:10px;padding:16px 18px;text-align:center}
+.score .label{font-size:12px;color:var(--aux)}
+.score .value{font-size:30px;font-weight:800;color:var(--ink);margin:4px 0}
+.score .state{font-size:14px;font-weight:600;color:var(--warn)}
+.chart-box{border:1px solid var(--line);border-radius:8px;padding:14px;margin:12px 0}
+.chart-box .cap{font-size:13px;color:var(--aux);margin-bottom:8px}
+.chart-box canvas{height:250px!important}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--aux)}
+.small{font-size:12px;color:var(--aux)}
+</style>
+</head>
+<body>
+<header>
+  <h1>宏观择时周度综述 · MTI v3</h1>
+  <div class="meta">📅 综述区间 2026-10-12（周一）~ 2026-10-16（周五） ｜ 数据截至 2026-10-16（活跃市值截至 2026-10-13） ｜ 投资小龙虾宏观择时系统 · 周更</div>
+</header>
+
+<div class="score-card">
+  <div class="score">
+    <div class="label">MTI 综合信号（-1 ~ +1）</div>
+    <div class="value">+0.092</div>
+    <div class="state">中性：正常仓位，跟随主线</div>
+    <div class="small">上周五 10/9 为 +0.109，周内 -0.155 ~ +0.103</div>
+  </div>
+  <div class="score">
+    <div class="label">活跃市值攻防（K哥体系）</div>
+    <div class="value" style="font-size:26px">15.04 万亿</div>
+    <div class="state">观望（历史 95% 分位）</div>
+    <div class="small">⚠ 数据截至 10/13，滞后 3 个交易日</div>
+  </div>
+  <div class="score">
+    <div class="label">ERP 仓位天花板</div>
+    <div class="value" style="font-size:26px">90%</div>
+    <div class="state">ERP 86% 分位，性价比高</div>
+    <div class="small">沪深300 PE / 10Y 国债，权益相对债券偏便宜</div>
+  </div>
+</div>
+
+<h2>一、本周 MTI 走势与阶段判断</h2>
+<div class="highlight">
+  <strong>一句话定性：存量博弈下的加速调整周，权重抗跌、成长杀估值。</strong>
+  八大指数全线下跌，跌幅呈清晰的「权重小、成长大」阶梯：上证50 -1.39% ＜ 上证指数 -2.56% ＜ 沪深300 -3.40% ＜ 国证2000 -6.50% ≈ 中证1000 -6.62% ＜ 深证成指 -6.64% ＜ 科创50 -6.77% ＜ 创业板指 -8.90%。
+  上周报告里「小盘/硬科技右侧苗头」的判断被本周证伪，资金重新撤回低位权重，成长端遭遇系统性杀估值。
+</div>
+<p>MTI 综合信号从上周五 10/9 的 <strong>+0.109</strong> 微降到 10/16 的 <strong>+0.092</strong>，全周停在「中性」区间，周内在 <strong>-0.155 ~ +0.103</strong> 摆动。但这个「中性」的含金量需要打问号：日频 MTI 在 10/12、10/14 两度跌破 -0.01，又在 10/13、10/15、10/16 跳回 +0.10，隔日翻转。</p>
+<div class="warning">
+  <strong>⚠️ 本周最重要的一条记录：MTI 的日频摆动几乎全部是「成交额伪影」，而非真实强弱。</strong>
+  驱动跳变的是增量资金代理因子（成交额 20 日变化率）在 <strong>-0.60 与 +0.10 之间隔日翻转</strong>：10/12 -0.60 → 10/13 +0.10 → 10/14 -0.60 → 10/15 +0.10 → 10/16 +0.10。
+  该因子的 20 日变化率是「同星期几对同星期几」的比值，基期星期的错配会把单因子 0.15 的权重放大成 MTI 的主要跳升来源。
+  <strong>本周真实量能是退潮的</strong>：日均成交 <strong>15,659 亿</strong>，低于上周 16,281 亿；10/14 的 14,161 亿是本周地量。
+  换言之，MTI 的「中性」不是平静，而是一个被噪声反复拨动的指针；真实资金面（两融、量能）在持续走弱。
+</div>
+<p>把伪影剥离后，本周的真实信号是：<strong>指数破位、量能与杠杆资金同步退潮、封板质量恶化</strong>。这是典型的调整中继特征，而非见底信号。</p>
+
+<div class="chart-box">
+  <div class="cap">① MTI 综合信号（9/24 ~ 10/16，日频回算；上下界 ±0.25）</div>
+  <canvas id="c1"></canvas>
+</div>
+
+<h2>二、市场结构回顾</h2>
+<h3>1. 指数层面：满盘皆绿，成长端跌幅是权重的 5~6 倍</h3>
+<table>
+<tr><th>指数</th><th>上周收盘（10/9）</th><th>本周收盘（10/16）</th><th>本周涨跌</th><th>上周涨跌</th></tr>
+<tr><td>上证指数</td><td>3813.79</td><td>3716.28</td><td style='color:var(--warn);font-weight:600'>-2.56%</td><td>-1.92%</td></tr><tr><td>深证成指</td><td>12641.86</td><td>11802.46</td><td style='color:var(--warn);font-weight:600'>-6.64%</td><td>-5.07%</td></tr><tr><td>沪深300</td><td>4317.26</td><td>4170.61</td><td style='color:var(--warn);font-weight:600'>-3.40%</td><td>-2.75%</td></tr><tr><td>上证50</td><td>2807.45</td><td>2768.34</td><td style='color:var(--warn);font-weight:600'>-1.39%</td><td>-1.24%</td></tr><tr><td>中证1000</td><td>7155.91</td><td>6681.94</td><td style='color:var(--warn);font-weight:600'>-6.62%</td><td>-5.47%</td></tr><tr><td>国证2000（小盘）</td><td>9490.64</td><td>8874.07</td><td style='color:var(--warn);font-weight:600'>-6.50%</td><td>-4.99%</td></tr><tr><td>创业板指</td><td>3043.34</td><td>2772.38</td><td style='color:var(--warn);font-weight:600'>-8.90%</td><td>-7.47%</td></tr><tr><td>科创50</td><td>1457.27</td><td>1358.65</td><td style='color:var(--warn);font-weight:600'>-6.77%</td><td>-10.15%</td></tr>
+</table>
+<p class="small">本周八个指数全部收绿，且连续第二周下跌。创业板指单周 -8.90% 为最弱，上证50 仅 -1.39%。成长与权重之间已拉开近 7.5 个百分点的单周差距，资金防御属性极强。</p>
+
+<div class="chart-box">
+  <div class="cap">② 三大指数本周走势（归一化，10/9 = 100）</div>
+  <canvas id="c2"></canvas>
+</div>
+
+<h3>2. 风格：大盘/价值防御，小盘成长补跌</h3>
+<div class="warning">
+  <strong>⚠️ 风格信号再度反转（与上周相反）</strong>：20 日涨幅差从上周五的 0.40pt（6%分位）扩大到本周五的 <strong>2.07pt（29%分位）</strong>。近 20 个交易日沪深300 跌 8.31%、国证2000 跌 10.37%，大盘明显抗跌。这与上周「小盘重新占优」的苗头方向相反，说明上一轮的成长回暖只是超跌反弹，未能形成趋势。
+</div>
+
+<h3>3. 情绪层面：涨停仍有存量，但封板质量恶化</h3>
+<table>
+<tr><th>日期</th><th>涨停</th><th>跌停</th><th>炸板</th><th>炸板率</th><th>5日涨跌停比</th></tr>
+<tr><td>9/28</td><td>33</td><td>56</td><td>11</td><td>24%</td><td>0.367</td></tr><tr><td>9/29</td><td>57</td><td>10</td><td>8</td><td>12%</td><td>0.573</td></tr><tr><td>9/30</td><td>52</td><td>9</td><td>12</td><td>18%</td><td>0.651</td></tr><tr><td>10/8</td><td>43</td><td>13</td><td>32</td><td>42%</td><td>0.675</td></tr><tr><td>10/9</td><td>69</td><td>8</td><td>14</td><td>17%</td><td>0.724</td></tr><tr><td>10/12</td><td>46</td><td>19</td><td>25</td><td>35%</td><td>0.817</td></tr><tr><td>10/13</td><td>67</td><td>8</td><td>19</td><td>22%</td><td>0.827</td></tr><tr><td>10/14</td><td>36</td><td>11</td><td>24</td><td>39%</td><td>0.813</td></tr><tr><td>10/15</td><td>36</td><td>26</td><td>7</td><td>16%</td><td>0.777</td></tr><tr><td>10/16</td><td>61</td><td>10</td><td>49</td><td>44%</td><td>0.766</td></tr>
+</table>
+<p>全周涨停家数合计 <strong>246 家</strong>（上周 254 家），跌停合计 <strong>74 家</strong>（上周 96 家）。10/15 跌停一度扩大到 26 家，为本轮情绪低点；10/16 涨停虽有 61 家、跌停收敛到 10 家，但当日<strong>炸板骤增到 49 家、炸板率高达 44%</strong>，说明赚钱效应只在盘中脉冲、难以封死，情绪修复的根基不牢。</p>
+
+<div class="chart-box">
+  <div class="cap">③ 涨跌停 / 炸板家数（9/28 ~ 10/16）</div>
+  <canvas id="c3"></canvas>
+</div>
+
+<h2>三、十因子周内变化表（MTI v3）</h2>
+<table>
+<tr><th>层级</th><th>因子</th><th>上周五 10/9</th><th>本周五 10/16</th><th>信号分</th><th>周内变化与解读</th></tr>
+<tr><td>结构层 20%</td><td>① 行业离散度（超额）</td><td>raw 2.02 / ma5 1.58 / 95%分位</td><td>raw 1.83 / ma5 1.68 / 93%分位</td><td style='color:#888;font-weight:600'>—</td><td>仍在「极致化」区（分位 93%）。行业间涨跌裂口维持高位，配合指数普跌，属于「集中杀跌＋高切低并存」的典型形态</td></tr><tr><td>结构层 10%</td><td>② 大小盘偏离</td><td>0.40pt（6%分位）</td><td>2.07pt（29%分位）</td><td style='color:#888;font-weight:600'>—</td><td>20 日涨幅差由上周的 0.40pt 扩到 2.07pt，<span style='color:var(--warn)'>大盘相对抗跌</span>：沪深300 近20日 -8.31% vs 国证2000 -10.37%</td></tr><tr><td>结构层 5%</td><td>③ 轮动速度</td><td>0.85</td><td>0.85</td><td style='color:#888;font-weight:600'>—</td><td>轮动速度稳在 0.85 高位，热点持续快速切换，无稳定主线</td></tr><tr><td>资金层 15%</td><td>④ 两融因子 v2</td><td>2.522 万亿 / 74%分位</td><td>2.466 万亿 / 70%分位</td><td style='color:#888;font-weight:600'>-0.10</td><td><span style='color:var(--warn)'>连续 5 个交易日净减</span>，单周 -557 亿；最新数据为 10/15（10/16 交易所两融尚未发布）</td></tr><tr><td>资金层 15%</td><td>⑤ 增量资金代理</td><td>20日 +8.0%</td><td>20日 -5.3%</td><td style='color:#888;font-weight:600'>+0.10</td><td><span style='color:var(--warn)'>量能退潮</span>：本周日均 15,659 亿（上周 16,281 亿），10/14 地量 14,161 亿。因子日频在 -0.60/+0.10 间跳变（星期对齐伪影，见文末）</td></tr><tr><td>资金层 10%</td><td>⑧ 活跃市值</td><td>15.044 万亿（10/13）</td><td>15.044 万亿（10/13）</td><td style='color:#1e7e34;font-weight:600'>+0.54</td><td>⚠ <span style='color:var(--warn)'>数据逾期</span>：0AMV 最新仅到 10/13，自其以来 3 个交易日缺失，本项为滞后读数</td></tr><tr><td>情绪层 10%</td><td>⑥ 涨跌停比</td><td>5日均 0.737</td><td>5日均 0.749</td><td style='color:#888;font-weight:600'>—</td><td>全周涨停合计 246 家、跌停合计 74 家；10/16 涨停回升至 61 家，跌停收敛到 10 家</td></tr><tr><td>情绪层 10%</td><td>⑦ 炸板率</td><td>+0.54</td><td>+0.38</td><td style='color:#1e7e34;font-weight:600'>+0.38</td><td><span style='color:var(--warn)'>10/16 炸板骤增到 49 家、炸板率 44%</span>，为本轮封板质量最差的一天</td></tr><tr><td>情绪层 5%</td><td>⑨ 换手率位置</td><td>+0.00</td><td>+0.00</td><td style='color:#888;font-weight:600'>+0.00</td><td>换手率信号中性（分位约 46%），但数据源滞后（见文末），参考价值有限</td></tr><tr><td>底仓（独立）</td><td>⑩ ERP 股权风险溢价</td><td>86%分位</td><td>86%分位</td><td style='color:#888;font-weight:600'>—</td><td>股票相对债券仍便宜，分位 86%，仓位天花板 90%（PE 数据滞后）</td></tr>
+</table>
+<p class="small">注：① ② ③ ⑥ 四项在计算引擎中没有 score 字段，实际不参与 MTI 加权（详见文末「系统口径提示」）。</p>
+
+<h2>四、活跃市值攻防周内演变</h2>
+<p>0AMV（指南针口径，K哥体系）最新可得数据仍为 <strong>2026-10-13 的 15.044 万亿</strong>，攻防判定维持「<strong>观望</strong>」：当日 +0.7%、3 日累计 -1.0%，既未触及 -2.3% 的清仓线，也未达到 +4% 的进攻线。放在更长窗口看，0AMV 从 9/22 的 17.57 万亿一路退潮到 10/13 的 15.04 万亿，10 个交易日累计 <strong>-14.4%</strong>，热钱撤离在数据末端仍在延续。</p>
+<div class="warning">
+  <strong>⚠️ 数据缺口扩大（重要）</strong>：0AMV 最新只到 <strong>2026-10-13</strong>，自该日以来累计缺失 <strong>3 个交易日</strong>。源文件 <code>day.vdat</code> 需手动打开指南针客户端同步后重跑提取脚本才能补齐。因此本项攻防信号已滞后，本周真实攻防请以量能（成交额）与情绪层替代观察。
+</div>
+<table>
+<tr><th>日期</th><th>0AMV（万亿）</th><th>当日涨跌</th></tr>
+<tr><td>9/22</td><td>17.572</td><td>+0.46%</td></tr><tr><td>9/23</td><td>17.327</td><td>-1.39%</td></tr><tr><td>9/24</td><td>16.733</td><td>-3.43%</td></tr><tr><td>9/28</td><td>16.025</td><td>-4.24%</td></tr><tr><td>9/29</td><td>15.846</td><td>-1.11%</td></tr><tr><td>9/30</td><td>15.540</td><td>-1.93%</td></tr><tr><td>10/8</td><td>15.203</td><td>-2.17%</td></tr><tr><td>10/9</td><td>15.375</td><td>+1.13%</td></tr><tr><td>10/12</td><td>14.937</td><td>-2.85%</td></tr><tr><td>10/13</td><td>15.044</td><td>+0.72%</td></tr>
+</table>
+<div class="chart-box">
+  <div class="cap">④ 活跃市值 0AMV（万亿，9/22 ~ 10/13；攻防按 K哥涨跌幅规则：3日≥+4% 进攻 / 单日≤-2.3% 清仓）</div>
+  <canvas id="c4"></canvas>
+</div>
+
+<h2>五、资金面：两融五连减、量能退潮</h2>
+<table>
+<tr><th>日期</th><th>两市成交额（亿）</th><th>两融余额（万亿）</th></tr>
+<tr><td>9/28</td><td>17,046</td><td>2.574</td></tr><tr><td>9/29</td><td>14,109</td><td>2.571</td></tr><tr><td>9/30</td><td>14,394</td><td>2.532</td></tr><tr><td>10/8</td><td>16,836</td><td>2.536</td></tr><tr><td>10/9</td><td>19,018</td><td>2.522</td></tr><tr><td>10/12</td><td>15,394</td><td>2.517</td></tr><tr><td>10/13</td><td>16,781</td><td>2.508</td></tr><tr><td>10/14</td><td>14,161</td><td>2.497</td></tr><tr><td>10/15</td><td>16,350</td><td>2.466</td></tr><tr><td>10/16</td><td>15,608</td><td>—</td></tr>
+</table>
+<p>两融余额本周<strong>连续 5 个交易日净减</strong>，从 10/9 的 2.522 万亿一路降到 10/15 的 2.466 万亿，单周 <strong>-557 亿</strong>，位置回落至 70% 分位。杠杆资金在持续、单向地离场，这是本周最连贯的负面信号。成交额方面，本周日均 <strong>15,659 亿</strong>低于上周 16,281 亿，10/14 的 14,161 亿创近期地量，仅 10/13、10/15 站上 1.6 万亿。<strong>缩量下跌＋杠杆退潮</strong>，是存量资金在被动撤离，尚无增量入场迹象。</p>
+<div class="chart-box">
+  <div class="cap">⑤ 两市成交额（亿元，9/28 ~ 10/16）</div>
+  <canvas id="c5"></canvas>
+</div>
+<div class="chart-box">
+  <div class="cap">⑥ 因子得分（-1 ~ +1，仅展示有 score 的因子）</div>
+  <canvas id="c6"></canvas>
+</div>
+
+<h2>六、下周展望与验证清单</h2>
+<div class="warning">
+  <strong>核心判断</strong>：MTI 中性（+0.092）但指向失真——它记录的噪声多于信号。剥离成交额伪影后，本周真实状态是<strong>「破位下跌＋资金退潮＋封板质量恶化」</strong>，属于调整的延续而非结束。操作上应<strong>降低仓位预期、以防守为主</strong>：不追创业板/科创的反弹，优先观察权重能否成为避风港；ERP 86% 分位给出的 90% 天花板是上限而非目标。
+</div>
+<table>
+<tr><th>验证项</th><th>触发条件</th><th>信号含义</th><th>应对</th></tr>
+<tr><td>① 两融</td><td>连续净减能否在下周终止、5 日增速转正</td><td>杠杆资金是否止跌</td><td>继续净减则防守；转正放量再加仓</td></tr>
+<tr><td>② 量能</td><td>两市成交额能否重回并站稳 1.6 万亿</td><td>增量资金是否回归</td><td>无法放量则定性为无量阴跌，不抢反弹</td></tr>
+<tr><td>③ 情绪</td><td>炸板率能否从 44% 回落、涨停站稳 60 家</td><td>赚钱效应能否修复</td><td>炸板率居高则继续观望</td></tr>
+<tr><td>④ 风格</td><td>创业板/科创50 能否止跌，或权重加速补跌</td><td>杀成长是阶段性还是系统性</td><td>权重补跌则降仓；成长止跌可小仓试探</td></tr>
+<tr><td>⑤ 离散度</td><td>分位能否从 93% 的「极致化」区回落</td><td>高切低与集中杀跌是否缓和</td><td>维持极致化则控制单票暴露</td></tr>
+<tr><td>⑥ 活跃市值</td><td>补齐 0AMV 数据后复核攻防</td><td>热钱是否回流（数据前置条件）</td><td>3日≥+4% 提仓；单日≤-2.3% 降仓</td></tr>
+<tr><td>⑦ 情绪冰点</td><td>跌停家数是否再度放大到 30 家以上</td><td>恐慌是否加速释放</td><td>出现放量恐慌可关注超跌机会</td></tr>
+<tr><td>⑧ 主线</td><td>是否有板块从普跌中走出连续性主线</td><td>存量资金的新方向</td><td>确认后跟随；无主线则维持防御</td></tr>
+</table>
+
+<h2>七、数据来源（分条标注）</h2>
+<table>
+<tr><th>数据项</th><th>接口 / 来源</th></tr>
+<tr><td>行业离散度（申万二级 124 行业超额截面 std）</td><td>AKShare <code>sw_index_second_info</code> / <code>index_hist_sw</code>（新浪申万指数；<strong>10/15 数据源缺日，日频序列该日离散度按前值延续</strong>）</td></tr>
+<tr><td>沪深300 / 国证2000 / 上证 / 深成 / 创业板 / 科创50 / 中证1000 / 上证50 日线收盘</td><td>AKShare <code>stock_zh_index_daily</code>（新浪，Tushare index_daily 限频时降级）</td></tr>
+<tr><td>两市成交额（增量资金代理）</td><td>上交所 <code>stock_sse_deal_daily</code>（沪股票成交金额，亿元）+ 深交所 <code>stock_szse_summary</code>（深股票成交金额，元）</td></tr>
+<tr><td>换手率 / 沪深300 PE（ERP 底仓）</td><td>Tushare <code>index_dailybasic</code>（<strong>该接口当前无权限，数据最新仅到 9/18，本项为滞后读数</strong>）</td></tr>
+<tr><td>两融余额</td><td>AKShare <code>stock_margin_sse</code>（沪，元）+ <code>stock_margin_szse</code>（深，亿元）；<strong>10/16 交易所尚未发布，数据截至 10/15</strong></td></tr>
+<tr><td>涨跌停家数</td><td>AKShare <code>stock_zt_pool_em</code> / <code>stock_zt_pool_dtgc_em</code>（东财）</td></tr>
+<tr><td>炸板家数</td><td>AKShare <code>stock_zt_pool_zbgc_em</code>（东财）</td></tr>
+<tr><td>活跃市值 0AMV</td><td>指南针本地 <code>day.vdat</code> 解析（K哥体系专属指标，<strong>数据截至 2026-10-13</strong>）</td></tr>
+<tr><td>10 年期国债收益率</td><td>AKShare <code>bond_zh_us_rate</code></td></tr>
+<tr><td>日频 MTI 回算</td><td>本地 <code>宏观择时/backfill_mti.py</code>（逐日截断、无未来函数，交易日轴取自指数/涨跌停真实交易日）</td></tr>
+<tr><td>MTI 合成与因子计算</td><td>本地 <code>宏观择时/macro_timing.py</code>（MTI v3 十因子框架）</td></tr>
+</table>
+
+<div class="warning">
+  <strong>附：系统口径提示（供决策参考）</strong>
+  <ul>
+    <li><strong>MTI 实际加权口径与框架不一致</strong>：<code>run_mti.py</code> 合成时只纳入带 <code>score</code> 字段的因子，而离散度（框架 20%）、大小盘偏离（10%）、轮动速度（5%）、涨跌停比（10%）四项<strong>合计 45% 权重实际未参与加权</strong>；当前 MTI 由两融 15% + 成交额 15% + 活跃市值 10% + 炸板率 10% + 换手率 5% 驱动（合计 55%）。后果是 MTI 灵敏度偏低，且极易被成交额单一因子摆动。</li>
+    <li><strong>成交额因子的「星期对齐伪影」本周再次主导 MTI 日频</strong>。20 日变化率取 <code>amt[-1]/amt[-21]-1</code>，基期恰好是 4 周前的同一星期几，当基期周成交额分布不均时，日间读数会系统性劈叉（本周 -0.60 vs +0.10 隔日翻转）。<strong>建议</strong>：改为「近 5 日均量 / 前 20 日均量」的周频平滑口径，消除星期噪声。</li>
+    <li><strong>本轮数据缺陷</strong>：① 10/16 两融交易所未发布，数据截至 10/15；② 申万二级指数 10/15 缺日，离散度该日按前值延续；③ 活跃市值 0AMV 需手动同步指南针后补齐；④ <code>index_dailybasic</code>（换手率/PE）无权限，数据停在 9/18，ERP 与换手率分位为滞后读数。</li>
+  </ul>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由投资小龙虾宏观择时系统自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>生成时间：2026年10月17日 00:05 ｜ 数据截至：2026-10-16（活跃市值截至 2026-10-13，两融截至 2026-10-15）</p>
+</footer>
+
+<script>
+
+const base = { responsive:true, maintainAspectRatio:false, plugins:{legend:{labels:{font:{size:11}}}} };
+new Chart(document.getElementById('c1'), { type:'line',
+  data:{ labels:["9/24", "9/28", "9/29", "9/30", "10/8", "10/9", "10/12", "10/13", "10/14", "10/15", "10/16"], datasets:[{label:'MTI', data:[-0.1508, -0.151, 0.0066, 0.0078, 0.1092, 0.1089, -0.1546, 0.1007, -0.0126, 0.1029, 0.0919], borderColor:'#ebb543',
+    backgroundColor:'rgba(235,181,67,.15)', fill:true, tension:.3, pointRadius:3}]},
+  options:{...base, scales:{y:{min:-0.25,max:0.25}}}});
+new Chart(document.getElementById('c2'), { type:'line',
+  data:{ labels:["10/9", "10/12", "10/13", "10/14", "10/15", "10/16"], datasets:[
+    {label:'上证指数', data:[100.0, 99.57, 99.66, 98.78, 97.21, 97.44], borderColor:'#c0392b', tension:.25, pointRadius:3},
+    {label:'沪深300', data:[100.0, 99.32, 99.04, 97.69, 96.5, 96.6], borderColor:'#7f8c8d', tension:.25, pointRadius:3},
+    {label:'国证2000', data:[100.0, 98.1, 98.39, 96.6, 93.46, 93.5], borderColor:'#ebb543', tension:.25, pointRadius:3}]},
+  options:base});
+new Chart(document.getElementById('c3'), { type:'bar',
+  data:{ labels:["9/28", "9/29", "9/30", "10/8", "10/9", "10/12", "10/13", "10/14", "10/15", "10/16"], datasets:[
+    {label:'涨停', data:[33, 57, 52, 43, 69, 46, 67, 36, 36, 61], backgroundColor:'#c0392b'},
+    {label:'跌停', data:[56, 10, 9, 13, 8, 19, 8, 11, 26, 10], backgroundColor:'#2c3e50'},
+    {type:'line', label:'炸板', data:[11, 8, 12, 32, 14, 25, 19, 24, 7, 49], borderColor:'#ebb543', backgroundColor:'transparent', pointRadius:3, tension:.3}]},
+  options:base});
+new Chart(document.getElementById('c4'), { type:'line',
+  data:{ labels:["9/22", "9/23", "9/24", "9/28", "9/29", "9/30", "10/8", "10/9", "10/12", "10/13"], datasets:[
+    {label:'0AMV(万亿)', data:[17.572, 17.327, 16.733, 16.025, 15.846, 15.54, 15.203, 15.375, 14.937, 15.044], borderColor:'#1e7e34', backgroundColor:'rgba(30,126,52,.12)', fill:true, tension:.3, pointRadius:3}]},
+  options:base});
+new Chart(document.getElementById('c5'), { type:'bar',
+  data:{ labels:["9/28", "9/29", "9/30", "10/8", "10/9", "10/12", "10/13", "10/14", "10/15", "10/16"], datasets:[{label:'两市成交额(亿)', data:[17046, 14109, 14394, 16836, 19018, 15394, 16781, 14161, 16350, 15608], backgroundColor:'#ebb543', borderRadius:3}]},
+  options:base});
+new Chart(document.getElementById('c6'), { type:'bar',
+  data:{ labels:["\u2463 \u4e24\u878d", "\u2464 \u6210\u4ea4\u989d", "\u2467 \u6d3b\u8dc3\u5e02\u503c", "\u2466 \u70b8\u677f\u7387", "\u2468 \u6362\u624b\u7387"], datasets:[{label:'因子得分', data:[-0.1, 0.1, 0.54, 0.38, 0.0], backgroundColor:["#c0392b", "#ebb543", "#1e7e34", "#1e7e34", "#ebb543"], borderRadius:4}]},
+  options:{...base, indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{min:-1,max:1}}}});
+
+</script>
+</body>
+</html>
