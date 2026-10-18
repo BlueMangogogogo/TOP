@@ -1,9 +1,19 @@
 {
-    "last_updated":  "2026-10-17 00:07:23",
-    "total":  229,
-    "daily_count":  147,
+    "last_updated":  "2026-10-18 23:07:35",
+    "total":  230,
+    "daily_count":  148,
     "industry_count":  82,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-10-18/周度盘前.html",
+                        "id":  "2026-10-18-周度盘前",
+                        "display_date":  "10月18日",
+                        "title":  "周度盘前",
+                        "category":  "周度盘前",
+                        "type":  "daily",
+                        "size_kb":  40.4,
+                        "date":  "2026-10-18"
+                    },
                     {
                         "relative_path":  "reports/2026-10-16/宏观择时周度综述_MTIv3_20261016.html",
                         "id":  "2026-10-16-宏观择时周度综述_MTIv3_20261016",
