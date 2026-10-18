@@ -1,5 +1,5 @@
 {
-    "last_updated":  "2026-10-18 23:07:35",
+    "last_updated":  "2026-10-19 00:04:08",
     "total":  230,
     "daily_count":  148,
     "industry_count":  82,
@@ -8,10 +8,10 @@
                         "relative_path":  "reports/2026-10-18/周度盘前.html",
                         "id":  "2026-10-18-周度盘前",
                         "display_date":  "10月18日",
-                        "title":  "周度盘前",
+                        "title":  "周度盘前（含巡检补遗）",
                         "category":  "周度盘前",
                         "type":  "daily",
-                        "size_kb":  40.4,
+                        "size_kb":  46.5,
                         "date":  "2026-10-18"
                     },
                     {
