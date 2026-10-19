@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月19日 盘前简报</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月19日 盘前简报</h1>
+  <div class="meta">
+    📅 2026年10月19日（周一）| 投资小龙虾 AI | 定时任务延迟至 20:00 补发，已附当日验证
+  </div>
+</header>
+
+<h2>🌍 隔夜外盘</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘</th>
+<th>涨跌</th>
+<th>关键信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纳斯达克</td>
+<td>26140.03</td>
+<td>-2.14%</td>
+<td>科技/AI 硬件最大压制源，周线 -4.48%</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7659.44</td>
+<td>-1.09%</td>
+<td>跌破 50 日均线</td>
+</tr>
+<tr>
+<td>道琼斯</td>
+<td>52002.41</td>
+<td>-0.34%</td>
+<td>能源与防御撑住，周线逆势 +0.67%</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td>19.99</td>
+<td>+21.45%</td>
+<td>四个月来首次盘中破 22，避险升温未至系统性</td>
+</tr>
+<tr>
+<td>美元指数</td>
+<td>约 102.5</td>
+<td>-0.28%</td>
+<td>走弱，对新兴市场偏友好</td>
+</tr>
+<tr>
+<td>现货黄金</td>
+<td>$4167</td>
+<td>-0.08%</td>
+<td>高位横盘，通胀交易未再强化</td>
+</tr>
+<tr>
+<td>布伦特原油</td>
+<td>$109.86</td>
+<td>+3.72%</td>
+<td>五个月新高，盘中破 110</td>
+</tr>
+<tr>
+<td>WTI 原油</td>
+<td>$101.41</td>
+<td>+3.51%</td>
+<td>重回 100 上方</td>
+</tr>
+<tr>
+<td>欧洲斯托克50</td>
+<td>6204.23</td>
+<td>+0.58%</td>
+<td>德 DAX +0.95%、法 CAC +0.28%</td>
+</tr>
+<tr>
+<td>日经225</td>
+<td>65324.29</td>
+<td>+1.39%</td>
+<td>超跌反弹，周线仍 -5.37%</td>
+</tr>
+<tr>
+<td>韩国KOSPI</td>
+<td>5668.04</td>
+<td>+2.05%</td>
+<td>单周 -14.46%，2008 年 10 月以来最大周跌幅</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>一句话：这是一次「科技杀估值、防御占优、油价破 110」的组合。费城半导体连跌 8 个交易日、累计回撤超 20%，全球 AI 硬件的定价锚在被重置；但道指靠能源与防御逆势收周阳，说明风险偏好没有全面坍塌，只是从成长切向事件与资源。</p>
+</div>
+<h2>📰 盘前重大消息</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>事件</th>
+<th>影响板块</th>
+<th style="text-align: center;">情绪</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>前三季度 GDP 同比 +4.6%，三季度单季 +4.5%（环比 +1.2%，较二季度回升 0.2pct）；9 月规上工业增加值 +5.5%，高技术制造业 +14.3%、电子设备 +16.4%</td>
+<td>大盘／高端制造</td>
+<td style="text-align: center;">偏多</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9 月社零 42433 亿、同比仅 +1.1%，前三季度累计 +1.1%</td>
+<td>消费／白酒／零售</td>
+<td style="text-align: center;">偏空</td>
+</tr>
+<tr>
+<td>3</td>
+<td>三季报预喜率 83.02%，回购增持潮集中在半导体：佰维存储、新易盛、天孚通信、卡莱特、长芯博创提议回购，江波龙、恒逸石化预增，沪电股份控股股东提议分红不低于 22 亿</td>
+<td>存储／光通信／PCB</td>
+<td style="text-align: center;">偏多</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2026 金融街论坛 10/19–22 开幕，潘功胜、吴清、丁向群、朱鹤新作主题演讲；10/20 09:00 公布 10 月 LPR（1 年期 3.0%、5 年期 3.5%，已连续 16 个月持平）</td>
+<td>大金融／地产</td>
+<td style="text-align: center;">中性偏多</td>
+</tr>
+<tr>
+<td>5</td>
+<td>本周 45–46 家公司解禁，合计市值约 1003–1004 亿，中船特气 595.6 亿居首，颀中科技 109.9 亿次之</td>
+<td>军工／半导体链情绪</td>
+<td style="text-align: center;">偏空</td>
+</tr>
+<tr>
+<td>6</td>
+<td>美国 9 月 PPI 6.3% 远超预期，10 月加息概率回升；证监会座谈会提出拓宽中长期资金来源、鼓励分红回购、研究储备增量稳市工具</td>
+<td>高估值成长／券商</td>
+<td style="text-align: center;">分歧</td>
+</tr>
+</tbody>
+</table></div>
+<h2>🔍 今日关注方向</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th>关注标的</th>
+<th style="text-align: center;">盘前预期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>军工／低空／商业航天</td>
+<td>珠海航展 10/19 门票开售、12/7 开幕，事件催化密度全周最高；但上周全周资金仍净流出，需连续验证</td>
+<td>长城军工、航发科技、中航沈飞、万丰奥威</td>
+<td style="text-align: center;">中（强脉冲、弱趋势）</td>
+</tr>
+<tr>
+<td>AI 应用／政策线</td>
+<td>国常会「落地应用 + 算电协同」，上周五完全未定价，是最大的预期差</td>
+<td>科大讯飞、金山办公、太极股份、润建股份</td>
+<td style="text-align: center;">中强</td>
+</tr>
+<tr>
+<td>存储链超跌修复</td>
+<td>上周五存储价格 -0.10% 却主力净流入 24.1 亿，全周唯一「价未动、钱先回」；三季报（长鑫扭亏、江波龙预增）提供支撑</td>
+<td>兆易创新、江波龙、香农芯创、大普微</td>
+<td style="text-align: center;">中（需两日资金确认）</td>
+</tr>
+<tr>
+<td>汽车链</td>
+<td>四部门车企座谈反内卷利好龙头，江淮涨停打开空间；9 月汽车制造业增加值 +6.7%</td>
+<td>江淮汽车、赛力斯、保隆科技</td>
+<td style="text-align: center;">中</td>
+</tr>
+<tr>
+<td>防御底仓</td>
+<td>白酒上周净流入 7.9 亿，银行高股息；但社零仅 +1.1% 制约消费弹性</td>
+<td>贵州茅台、招商银行</td>
+<td style="text-align: center;">中弱</td>
+</tr>
+<tr>
+<td>规避</td>
+<td>CPO／光模块／PCB 高位补跌未止，AI 内容（传媒／短剧／IP）出清未完，种业／次新主题结束</td>
+<td>—</td>
+<td style="text-align: center;">—</td>
+</tr>
+</tbody>
+</table></div>
+<h2>⚠️ 今日风险提示</h2>
+<ul>
+<li><strong>量能是核心矛盾</strong>：上周五已缩至 1.56 万亿，连续两日缩量。缩量修复与缩量阴跌只差一根 K 线，成交不能回到 1.5 万亿以上，任何反弹都只能按短线处理。</li>
+<li><strong>费半 8 连跌未见止跌</strong>：A 股科技链的每一次反抽，都要先问「外盘定价锚稳住了没有」。这条不解除，AI 硬件只能做超跌修复，不能做趋势。</li>
+<li><strong>解禁 + 三季报双压</strong>：本周 1003 亿解禁（中船特气一家 595.6 亿），叠加三季报密集披露期，无预告公司存在暴雷风险。</li>
+<li><strong>消费端失速</strong>：社零同比 +1.1%，是全年最弱读数之一，白酒、乳品、零售的「防御属性」在基本面层面并不牢固。</li>
+</ul>
+<h2>📍 当日验证（补发新增）</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>上周盘前观察点</th>
+<th>今日实际</th>
+<th style="text-align: center;">判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3674 攻防</td>
+<td>上证低开 3694.12，最低 3692.29，收 3730.92（+0.39%），未测试 3674</td>
+<td style="text-align: center;">✅ 守住</td>
+</tr>
+<tr>
+<td>量能能否止跌</td>
+<td>两市 1.44 万亿，较上周五 1.56 万亿继续缩量约 8%</td>
+<td style="text-align: center;">⚠️ 缩量上涨，抛压衰竭但增量未至</td>
+</tr>
+<tr>
+<td>军工成色</td>
+<td>万丰奥威涨停、索辰科技 +20%、航材股份 +8.71%、北方导航 +8.33%、金盾股份 +14.37%；长城军工未涨停</td>
+<td style="text-align: center;">✅ 分支扩散，仍属脉冲</td>
+</tr>
+<tr>
+<td>存储链第二日资金</td>
+<td>大普微 +20%（企业级 SSD）；需明日再确认</td>
+<td style="text-align: center;">◐ 单点强，未成链</td>
+</tr>
+<tr>
+<td>AI 应用能否被接住</td>
+<td>太极股份、能科科技、润建股份涨停，凡拓数创 +20%，吉大正元涨停</td>
+<td style="text-align: center;">✅ 政策线被资金接住</td>
+</tr>
+<tr>
+<td>外盘与 A 股科技链</td>
+<td>纳指上周五 -2.14%，A 股反而反攻：亨通光电涨停、四会富仕 +20%、宇树科技 +16.15%</td>
+<td style="text-align: center;">⚠️ 短期脱钩，A 股走自己的叙事</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>当日全景</strong>：上证 3730.92（+0.39%）、深成指 11817.42（+0.13%），涨停 49 家、跌停 25 家、炸板 25 家（炸板率约 34%，较上周五 46.5% 明显改善）。
+<strong>结构</strong>：AI 硬件与机器人（亨通光电、四会富仕、大普微、宇树科技、宁波东力）、军工低空（万丰奥威、索辰、航材）、汽车零部件（保隆科技、东安动力）三条线同时走强；传媒 IP 全线崩塌（新华文轩、读者传媒、新经典、华媒控股集体跌停），与上周「退潮出清」判断一致。
+<strong>一处判断偏差</strong>：上周把 CPO／光模块列入规避，今日亨通光电涨停、四会富仕 +20%，光通信链在超跌位置先于大盘反攻。规避方向没错，但对「资金抢跑超跌」的时点估计偏慢。</p>
+<h2>🔭 明日（10/20）关注</h2>
+<ol>
+<li><strong>09:00 LPR</strong>：连续 16 个月持平，若下调则是超预期宽松信号，直接利好地产、券商、银行。</li>
+<li><strong>AI 硬件第二日</strong>：亨通光电、四会富仕能否给溢价，决定这是超跌反抽还是主线重启。</li>
+<li><strong>军工是否从脉冲转趋势</strong>：万丰奥威连板 + 航发科技修复 + 中航沈飞放量，三取二才算成立。</li>
+<li><strong>量能</strong>：1.44 万亿能否回到 1.5 万亿上方，是本周仓位从 3–5 成往上加的唯一前提。</li>
+</ol>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant · 亿信API · Finnhub | 生成时间：2026年10月19日 20:00</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
