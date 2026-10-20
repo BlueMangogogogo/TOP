@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月20日 深度复盘</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月20日 深度复盘</h1>
+  <div class="meta">
+    📅 2026年10月20日 | 投资小龙虾 AI 自动生成 | 仅供参考
+  </div>
+</header>
+
+<h2>📊 指数全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3735.37</td>
+<td>+0.12%</td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>14,561 亿</td>
+<td>较昨日 14,375 亿放量 186 亿（+1.3%）</td>
+</tr>
+<tr>
+<td>上涨家数</td>
+<td>3,777 家</td>
+<td>昨日 2,274 家，广度翻倍修复</td>
+</tr>
+<tr>
+<td>下跌家数</td>
+<td>1,667 家</td>
+<td>昨日 3,129 家</td>
+</tr>
+<tr>
+<td>涨停</td>
+<td>56 家</td>
+<td>昨日 49 家</td>
+</tr>
+<tr>
+<td>跌停</td>
+<td>7 家</td>
+<td>昨日 25 家，杀跌盘收敛七成</td>
+</tr>
+<tr>
+<td>炸板</td>
+<td>33 家（炸板率 37.1%）</td>
+<td>封板率 62.9%，追高意愿不足</td>
+</tr>
+<tr>
+<td>两市主力</td>
+<td>净流出 117 亿</td>
+<td>沪市 -76.6 亿、深市 -40.4 亿</td>
+</tr>
+<tr>
+<td>北证50</td>
+<td>—</td>
+<td>+3.88%，政策驱动独立走强</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>上证压力位：3740（今日高点）→ 3800（10月13日高点）｜支撑位：3702（今日低点）→ 3692（上周四收盘一带）</p>
+<p>市场情绪：中性偏暖（修复初期）。依据：跌停 25→7、上涨家数翻倍至 3,777、涨停创近期新高；但炸板率 37.1%、成交 1.46 万亿未过 1.5 万亿、两市主力连续净流出（沪市 5 日 -563 亿、10 日 -1,084 亿）。这是存量资金的高低切换，不是增量入场。</p>
+</div>
+<p>今日盘面的核心矛盾：指数几乎没动（上证 +0.12%、深成指 -0.14%），内部结构发生剧烈换血。权重端银行、保险、证券、煤炭、军工全线退守，科技成长端机器人、端侧AI、半导体接力爆发，尾盘宽基ETF放量把沪指从绿盘托回红盘。指数掩护下的板块切换。</p>
+<h2>🌍 外盘与宏观环境</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>最新</th>
+<th>涨跌</th>
+<th>对A股影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道指（DIA 代理）</td>
+<td>525.20</td>
+<td>+1.21%</td>
+<td>权重股修复，风险偏好回暖</td>
+</tr>
+<tr>
+<td>标普（SPY 代理）</td>
+<td>771.11</td>
+<td>+0.60%</td>
+<td>中性偏多</td>
+</tr>
+<tr>
+<td>纳指（QQQ 代理）</td>
+<td>721.63</td>
+<td>+0.46%</td>
+<td>科技映射温和</td>
+</tr>
+<tr>
+<td>英伟达</td>
+<td>217.93</td>
+<td>+0.39%</td>
+<td>AI算力链企稳</td>
+</tr>
+<tr>
+<td>特斯拉</td>
+<td>376.40</td>
+<td>+2.27%</td>
+<td>机器人链最强外部催化</td>
+</tr>
+<tr>
+<td>美光</td>
+<td>918.26</td>
+<td>+1.48%</td>
+<td>存储涨价链修复</td>
+</tr>
+<tr>
+<td>AMD</td>
+<td>545.34</td>
+<td>+1.35%</td>
+<td>半导体设计端回暖</td>
+</tr>
+<tr>
+<td>苹果</td>
+<td>340.33</td>
+<td>-0.76%</td>
+<td>消费电子分化</td>
+</tr>
+<tr>
+<td>韩国 KOSPI</td>
+<td>—</td>
+<td>-4.26%</td>
+<td>亚太科技出口重挫</td>
+</tr>
+<tr>
+<td>日经225</td>
+<td>约 64,415</td>
+<td>-0.8%（盘中）</td>
+<td>亚太情绪偏弱</td>
+</tr>
+<tr>
+<td>恒生科技</td>
+<td>—</td>
+<td>创调整新低</td>
+<td>南向净流出 17.23 亿港元</td>
+</tr>
+<tr>
+<td>黄金</td>
+<td>—</td>
+<td>三连跌</td>
+<td>贵金属链承压</td>
+</tr>
+<tr>
+<td>铜</td>
+<td>—</td>
+<td>高位承压</td>
+<td>有色拖累指数</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>外盘呈现"美股科技回暖、亚太科技崩塌"的撕裂格局。美股（盘中进行中）AI硬件止跌反弹，特斯拉 +2.27% 直接给机器人链加了火；但韩国 KOSPI -4.26%、恒生科技创新低、联想跌 10%、宁德时代 H 股跌 6.58%，说明亚太资金正在从科技出口链撤离。A 股今日科技普涨是在这种外部逆风中走出来的，独立性值得记一笔，但明日若港股继续走弱，高开必然承压。</p>
+</div>
+<h2>📰 今日核心新闻简报</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>新闻</th>
+<th>影响板块</th>
+<th>情绪</th>
+<th style="text-align: center;">强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>发改委10月发布会：强调"稳、新、韧"，释放人形机器人、创新药利好</td>
+<td>机器人、创新药</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>金融街论坛：央行将设非银大额赎回流动性支持工具、扩大SLF适用范围</td>
+<td>大金融、债市</td>
+<td>中性</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>证监会吴清：同意首批18只主动ETF注册、推北证50ETF与市值配售</td>
+<td>北交所、被动资金</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>特斯拉向SEC提交文件，明确 Optimus 三代已备大规模量产</td>
+<td>人形机器人</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>英伟达 GTC 柏林开幕，物理AI、机器人列为核心议题（黄仁勋21日演讲）</td>
+<td>AI算力、机器人</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>九部门出台18条举措，加快推进科技金融</td>
+<td>科技成长、创投</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+<tr>
+<td>7</td>
+<td>思源电气跌停，三季报"增收不增利"+美国14420号行政令限制采购</td>
+<td>电力设备出海</td>
+<td>利空</td>
+<td style="text-align: center;">⭐⭐⭐</td>
+</tr>
+<tr>
+<td>8</td>
+<td>长盈精密控股股东承诺未来6个月不减持</td>
+<td>机器人结构件</td>
+<td>利好</td>
+<td style="text-align: center;">⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🔍 重点新闻情绪催化验证</h3>
+<ul>
+<li><strong>发改委发布会</strong>：左刚用"稳、新、韧"定调前三季度经济，市场把"新动能"直接翻译成人形机器人。联动结果：长盈精密 20cm、大业股份 3 连板、减速器 +3.13%。这是政策语言被资金二次解读的典型，催化强度中等但时点极好——刚好叠加特斯拉的量产表态。</li>
+<li><strong>特斯拉 Optimus 三代量产表态</strong>：这是今日最硬的一条产业催化。弗若斯特沙利文数据显示上半年全球人形机器人销量 3.6 万台、已超 2025 年全年，前五名全是中国企业。逻辑从"愿景"落到了"订单"，所以资金愿意在 10 日累计仍失血 248 亿的位置上抢筹。持续性取决于两点：特斯拉量产节奏能否被后续文件证实，以及国内厂商能否给出三季度出货数据。</li>
+<li><strong>金融街论坛政策包</strong>：央行设立非银流动性支持工具、扩大 SLF 范围，本质是给债券市场装稳定器，利好的是债市和非银流动性，不是券商牌照红利。这解释了今日证券 -1.52%、主力 -21.5 亿的反常——政策是"防风险"而非"促交易"，券商在利好落地日反而成了提款机。</li>
+<li><strong>证监会北证50ETF与市值配售</strong>：北证50 +3.88%、嘉晨智能与格利尔 30cm 涨停，是最直接的情绪受益。这条线的问题在于容量小、流动性薄，适合做情绪不适合做仓位。</li>
+<li><strong>思源电气跌停</strong>：三季报窗口期的第一个"杀估值"样本。上半年营收 +27.05%、净利仅 +13.23%，叠加瑞银下调评级、美国 14420 号行政令限制采购中国大型电力设备，出海叙事被重新定价。龙虎榜总买 5.89 亿、总卖 9.58 亿，北向净卖 8,250 万，机构 1 买 7 卖。这条经验对今日所有高 PE 科技股同样适用：增速一旦失速，30 倍 PE 撑不住。</li>
+<li><strong>概念区分说明</strong>：今日上涨的三条线驱动逻辑完全不同——机器人链看特斯拉量产与国内出货（产业订单）；端侧AI硬件（AI眼镜、无线耳机、AI手机PC）看苹果、Meta 新品周期与端侧大模型落地（消费电子创新周期）；MCU芯片、星闪看国产替代与无线连接标准（自主可控）。存储涨价、半导体设备国产替代今日并未成为主线，不能与上述三条混为一谈。</li>
+</ul>
+<h2>🔥 今日最强主线</h2>
+<h3>板块涨幅 TOP5</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: center;">排名</th>
+<th>板块</th>
+<th style="text-align: center;">涨幅</th>
+<th style="text-align: center;">主力净流入</th>
+<th>龙头股</th>
+<th>驱动逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>星闪概念</td>
+<td style="text-align: center;">+3.92%</td>
+<td style="text-align: center;">+11.8 亿</td>
+<td>移远通信、博通集成涨停</td>
+<td>近距离无线连接标准，端侧AI外设标配</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>工业软件</td>
+<td style="text-align: center;">+3.86%</td>
+<td style="text-align: center;">+5.8 亿</td>
+<td>凡拓数创 20cm、能科科技</td>
+<td>国产替代 + 数字孪生，资金三日连续流入</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>AI眼镜</td>
+<td style="text-align: center;">+3.51%</td>
+<td style="text-align: center;">+43.3 亿</td>
+<td>恒玄科技 20cm、龙旗科技涨停</td>
+<td>新品周期 + 端侧大模型落地</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>无线耳机</td>
+<td style="text-align: center;">+3.46%</td>
+<td style="text-align: center;">+26.1 亿</td>
+<td>朝阳科技、天键股份</td>
+<td>AI音频交互升级</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>AI手机PC</td>
+<td style="text-align: center;">+3.27%</td>
+<td style="text-align: center;">+23.3 亿</td>
+<td>鹏鼎控股、福蓉科技</td>
+<td>端侧算力下放，换机周期预期</td>
+</tr>
+</tbody>
+</table></div>
+<p>紧随其后：机器视觉 +3.26%（+24.1 亿）、减速器 +3.43%、人形机器人 +3.07%、多模态AI +3.18%、智能穿戴 +3.35%。今日概念板块 16 个涨幅超 3%、近 60 个涨幅超 2%，是 10 月以来最集中的一次科技普涨。</p>
+<h3>板块跌幅 TOP5</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: center;">排名</th>
+<th>板块</th>
+<th style="text-align: center;">跌幅</th>
+<th style="text-align: center;">主力净流出</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>地面兵装</td>
+<td style="text-align: center;">-3.02%</td>
+<td style="text-align: center;">—</td>
+<td>军工连续走强后集中兑现</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>航海装备</td>
+<td style="text-align: center;">-2.90%</td>
+<td style="text-align: center;">—</td>
+<td>船舶海工前期涨幅大，补跌</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>林业</td>
+<td style="text-align: center;">-2.28%</td>
+<td style="text-align: center;">—</td>
+<td>纯题材退潮，无资金承接</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>专业连锁</td>
+<td style="text-align: center;">-2.13%</td>
+<td style="text-align: center;">—</td>
+<td>消费权重休整</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>白色家电</td>
+<td style="text-align: center;">-2.10%</td>
+<td style="text-align: center;">—</td>
+<td>红利低估值集体退守</td>
+</tr>
+</tbody>
+</table></div>
+<p>概念端最弱：分散染料 -3.76%（-4.0 亿）、军贸概念 -1.09%（-3.8 亿）、中特估 -0.86%。金融权重：证券 -1.52%（-21.5 亿）、保险 -1.68%、地方性银行 -1.66%。撤退方向就两条：大金融和军工。</p>
+<h3>主线持续性分析</h3>
+<ul>
+<li><strong>人形机器人（零部件优先）</strong>：今日强度 强。持续性 有，节奏是"脉冲—分歧—再确认"。今日唯一形成梯队的题材：长盈精密 20cm、大业股份 3 连板、福莱新材/宁波东力/浙江荣泰 2 连板。资金三日 +96.8 亿，但 10 日仍失血，属于深坑反弹第一波，不是趋势中段。明日看长盈能否 2 板、大业能否 4 板，前排断板而后排补涨即为分歧日。</li>
+<li><strong>端侧AI硬件（AI眼镜为核心）</strong>：今日强度 极强。持续性 中等偏强。6 个细分涨幅超 3%，资金向 AI眼镜单点集中 43 亿，单日流入率 11.3%。短板是缺少订单兑现，纯靠新品发布节奏，事件一过就降温。恒玄科技 20cm 封单仅 1,581 手，说明是资金拉抬而非惜售，次日承接压力大。</li>
+<li><strong>工业软件 / 信创</strong>：今日强度 正常偏强。持续性 可能有。这是资金榜里唯一"形态健康"的方向——三日连续流入、5 日刚转正、10 日缺口最小，且股价今日才放量突破，没有透支。</li>
+<li><strong>退潮一方：大金融 + 军工 + 资源</strong>。证券四周期资金同向流出（单日 -21.5 亿、10 日 -59.9 亿），地面兵装与航海装备高位放量下跌，金价三连跌、铜价承压。资金主动从"防御+顺周期"撤出去换科技弹性，这不是普通回调。</li>
+<li><strong>主线切换信号</strong>：切换已发生，尚未确认。六维检验——价格（科技逆势涨停 ✓）、资金（三日净流入 ✓）、联动（机器人 3 板梯队 ✓）、量能（1.46 万亿未过 1.5 万亿 ✗）、逻辑（特斯拉+英伟达独立催化 ✓）、情绪（分歧中上涨 ✓）。五比一，所以现在的位置是"切换进行中"，量能是最后一道确认关口。</li>
+</ul>
+<h2>💰 板块资金雷达趋势</h2>
+<blockquote>
+<p>数据来源：本地板块资金雷达系统（每日 22:00 自动更新）</p>
+</div>
+<h3>资金进攻榜 TOP10（加权评分排序）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">加权评分</th>
+<th style="text-align: center;">涨跌幅</th>
+<th style="text-align: center;">单日净额</th>
+<th style="text-align: center;">单日流入率</th>
+<th style="text-align: center;">排名路径（10/15→10/20）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>减速器</td>
+<td style="text-align: center;">0.891</td>
+<td style="text-align: center;">+3.13%</td>
+<td style="text-align: center;">+22.3 亿</td>
+<td style="text-align: center;">5.06%</td>
+<td style="text-align: center;">252 → 16 → 4 → 1</td>
+</tr>
+<tr>
+<td>无线耳机</td>
+<td style="text-align: center;">0.869</td>
+<td style="text-align: center;">+3.46%</td>
+<td style="text-align: center;">+26.1 亿</td>
+<td style="text-align: center;">4.58%</td>
+<td style="text-align: center;">224 → 228 → 91 → 2</td>
+</tr>
+<tr>
+<td>星闪概念</td>
+<td style="text-align: center;">0.863</td>
+<td style="text-align: center;">+3.92%</td>
+<td style="text-align: center;">+11.8 亿</td>
+<td style="text-align: center;">5.56%</td>
+<td style="text-align: center;">218 → 219 → 205 → 3</td>
+</tr>
+<tr>
+<td>混合现实</td>
+<td style="text-align: center;">0.850</td>
+<td style="text-align: center;">+2.98%</td>
+<td style="text-align: center;">+20.6 亿</td>
+<td style="text-align: center;">6.20%</td>
+<td style="text-align: center;">165 → 188 → 25 → 4</td>
+</tr>
+<tr>
+<td>人形机器人</td>
+<td style="text-align: center;">0.812</td>
+<td style="text-align: center;">+3.07%</td>
+<td style="text-align: center;">+50.9 亿</td>
+<td style="text-align: center;">2.31%</td>
+<td style="text-align: center;">154 → 58 → 17 → 6</td>
+</tr>
+<tr>
+<td>毫米波雷达</td>
+<td style="text-align: center;">0.807</td>
+<td style="text-align: center;">+2.16%</td>
+<td style="text-align: center;">+12.1 亿</td>
+<td style="text-align: center;">1.43%</td>
+<td style="text-align: center;">17 → 10 → 1 → 7</td>
+</tr>
+<tr>
+<td>工业软件</td>
+<td style="text-align: center;">0.806</td>
+<td style="text-align: center;">+3.86%</td>
+<td style="text-align: center;">+5.8 亿</td>
+<td style="text-align: center;">4.36%</td>
+<td style="text-align: center;">227 → 206 → 18 → 8</td>
+</tr>
+<tr>
+<td>MCU芯片</td>
+<td style="text-align: center;">0.797</td>
+<td style="text-align: center;">+3.07%</td>
+<td style="text-align: center;">+13.8 亿</td>
+<td style="text-align: center;">2.50%</td>
+<td style="text-align: center;">175 → 52 → 80 → 9</td>
+</tr>
+<tr>
+<td>AI眼镜</td>
+<td style="text-align: center;">0.793</td>
+<td style="text-align: center;">+3.51%</td>
+<td style="text-align: center;">+43.3 亿</td>
+<td style="text-align: center;">3.92%</td>
+<td style="text-align: center;">144 → 174 → 98 → 10</td>
+</tr>
+<tr>
+<td>机器视觉</td>
+<td style="text-align: center;">0.784</td>
+<td style="text-align: center;">+3.26%</td>
+<td style="text-align: center;">+24.1 亿</td>
+<td style="text-align: center;">2.88%</td>
+<td style="text-align: center;">174 → 114 → 60 → 11</td>
+</tr>
+</tbody>
+</table></div>
+<p>TOP10 只有一个方向：端侧AI硬件 + 机器人零部件。10 个板块里 6 个属于消费电子/端侧AI、3 个属于机器人链、1 个属于通信链。这不是轮动，是资金一次性把筹码从权重搬到科技。</p>
+<h3>📈 三日趋势：一条清晰的回补曲线</h3>
+<p>把 10/15 到 10/20 四天的排名连起来看，画面比单日榜单更清楚：10/15 全市场几乎没有板块能进前 100（减速器 252、工业软件 227、AI眼镜 144、机器视觉 174），10/16 开始有人试探性回流（人形机器人 58、毫米波雷达 10），10/19 加速（人形机器人 17、混合现实 25、工业软件 18），10/20 集体冲进前十。</p>
+<p>人形机器人单日净额的变化最典型：-81.9 亿 → +9.8 亿 → +36.1 亿 → +50.9 亿，四天完成从流出到加速流入的全过程，且金额逐日放大。减速器同样从 -15.4 亿连升四日至 +22.3 亿。</p>
+<p>这说明今日的科技普涨不是突发事件，而是 10/16 就已启动的回补，今天是第三天，也是最集中、最没有分歧的一天。三日回补的特征是：速度快、幅度大、但累计仍是净流出（人形机器人 10 日 -248 亿、AI眼镜 10 日 -194 亿）。踏空资金正在追，但从"回补"转成"趋势"，需要第四天以后的资金继续加速，而不是今天这种一拥而上。</p>
+<h3>🔔 机构建仓信号</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">在榜</th>
+<th style="text-align: center;">净额趋势</th>
+<th style="text-align: center;">排名趋势</th>
+<th style="text-align: center;">股价表现</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>减速器</td>
+<td style="text-align: center;">6 天</td>
+<td style="text-align: center;">-15.4 → +7.6 → +8.7 → +22.3 亿</td>
+<td style="text-align: center;">252 → 1，连续四日上行</td>
+<td style="text-align: center;">今日 +3.13%，未极端</td>
+<td>🟢 关注建仓</td>
+</tr>
+<tr>
+<td>工业软件</td>
+<td style="text-align: center;">2 天</td>
+<td style="text-align: center;">-5.4 → -0.6 → +2.9 → +5.8 亿</td>
+<td style="text-align: center;">227 → 8，连续四日上行</td>
+<td style="text-align: center;">今日 +3.86%，刚放量突破</td>
+<td>🟢 关注建仓</td>
+</tr>
+<tr>
+<td>毫米波雷达</td>
+<td style="text-align: center;">12 天</td>
+<td style="text-align: center;">-7.3 → +6.7 → +9.1 → +12.1 亿</td>
+<td style="text-align: center;">17 → 1 → 7，小幅回落</td>
+<td style="text-align: center;">今日 +2.16%，温和</td>
+<td>🟡 观察，位置偏高</td>
+</tr>
+<tr>
+<td>AI眼镜</td>
+<td style="text-align: center;">4 天</td>
+<td style="text-align: center;">-36.3 → -6.8 → +3.3 → +43.3 亿</td>
+<td style="text-align: center;">144 → 98 → 10，仍在上升</td>
+<td style="text-align: center;">今日 +3.51%，六连阳</td>
+<td>🟡 情绪型资金，非建仓</td>
+</tr>
+</tbody>
+</table></div>
+<p>减速器是全场唯一同时满足"连续在榜、净额四日递增、排名四日上升、股价未透支"的板块，形态最健康。工业软件次之，但样本只有两日，需要再给一天确认。</p>
+<h3>⚠️ 短线退潮信号</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>之前状态</th>
+<th>当前信号</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>证券</td>
+<td>主线之一，5 日线之上</td>
+<td>-1.52%，单日 -21.5 亿、3 日 -41.7 亿、5 日 -45.1 亿、10 日 -59.9 亿，四周期同向流出</td>
+<td>🔴 明确撤退</td>
+</tr>
+<tr>
+<td>军贸概念</td>
+<td>近 5 日资金前三</td>
+<td>-1.09%，单日 -3.8 亿，流入率 -3.28%，排名跌至 184</td>
+<td>🔴 获利回吐第一天，趋势已破</td>
+</tr>
+<tr>
+<td>分散染料</td>
+<td>昨日在榜</td>
+<td>-3.76%，-4.0 亿，流入率 -6.08%，排名 241</td>
+<td>🔴 退潮确认</td>
+</tr>
+<tr>
+<td>地面兵装 / 航海装备</td>
+<td>连续强势</td>
+<td>-3.02% / -2.90%，高位放量下跌</td>
+<td>🔴 短期头部，禁止抄底</td>
+</tr>
+<tr>
+<td>存储芯片</td>
+<td>长期在榜</td>
+<td>+2.09% 但主力 -13.0 亿，流入率 -0.72%</td>
+<td>🟠 价涨量减，背离初期</td>
+</tr>
+</tbody>
+</table></div>
+<h3>📈 资金轮动方向</h3>
+<ul>
+<li><strong>进攻方向</strong>：端侧AI硬件 + 机器人零部件。共同点是有真实产业催化、有海外映射（特斯拉、苹果、英伟达 GTC）、前期跌幅足够深。</li>
+<li><strong>撤退方向</strong>：大金融（证券、保险、银行）、军工（兵装、航海、军贸）、资源（黄金、铜）。这是高低切换 + 金价三连跌 + 铜价承压的三重结果。</li>
+<li><strong>排位飙升</strong>：星闪概念从 205 名冲至第 3、工业软件从 206 名冲至第 8，都是"低位补涨"性质，持续性弱于 AI眼镜与机器人。毫米波雷达已在榜 12 天、排名从第 1 滑到第 7，属于老资金在退、新资金在接的换手期。</li>
+</ul>
+<h2>🎯 核心个股拆解</h2>
+<h3>长盈精密（300115 · 机器人结构件 / 消费电子）</h3>
+<ul>
+<li><strong>今日表现</strong>：涨停 +19.99%（创业板 20cm），收 24.67 元，成交 21.83 亿，换手 6.87%，封单约 4.9 万手（约 12 亿）</li>
+<li><strong>异动原因</strong>：特斯拉 Optimus 三代量产表态 + 英伟达 GTC 物理 AI 议题 + 全球人形机器人上半年销量超去年全年，三重催化叠加；叠加控股股东 6 个月不减持承诺，抛压疑虑被打掉</li>
+<li><strong>概念定位</strong>：机器人结构件 + 消费电子精密零组件双身份，是机器人链里少数同时挂在苹果链上的标的，今日同时受益端侧AI与机器人两条线</li>
+<li><strong>技术面</strong>：均线多头排列，放量突破前高，MACD 零轴上方金叉延续</li>
+<li><strong>资金信号</strong>：主力净买 +7.47 亿，占成交额 33.2%；3 日 +8.05 亿、5 日 +7.25 亿、10 日 +6.29 亿，四个周期全部为正，是今日涨停股里资金连续性最好的</li>
+<li><strong>关注价值</strong>：高。本轮机器人反弹的"资金锚"，明日能否 2 连板基本决定这条线是脉冲还是趋势</li>
+</ul>
+<h3>恒玄科技（688608 · 端侧AI SoC）</h3>
+<ul>
+<li><strong>今日表现</strong>：20cm 涨停 +20.00%，收 106.32 元，成交 13.49 亿，换手 5.60%，全天最低 87.41、收盘即最高，日内单边拉升</li>
+<li><strong>异动原因</strong>：AI眼镜连续第 6 个交易日上行，智能眼镜 SoC 是这条链上壁垒最高、最直接受益的环节；IDC 预测 2026 年全球智能眼镜出货突破 2,368 万台、中国突破 491 万台</li>
+<li><strong>概念定位</strong>：端侧AI主控芯片（可穿戴/耳机/眼镜），对标海外可穿戴 SoC 龙头。与存储涨价、半导体设备国产替代是完全不同的驱动逻辑</li>
+<li><strong>技术面</strong>：跳空高开拉升，站上所有均线，MACD 金叉，但 20cm 涨停无换手，短线偏离度大</li>
+<li><strong>资金信号</strong>：主力 +1.16 亿（占成交 8.6%），封单仅约 1,581 手，一字未封，资金拉抬而非惜售；3 日主力 -0.28 亿、10 日 +1.13 亿</li>
+<li><strong>关注价值</strong>：中高。逻辑最硬但封板质量一般，次日高开兑现压力大，适合看换手承接而非追板</li>
+</ul>
+<h3>思源电气（002028 · 电力设备出海）</h3>
+<ul>
+<li><strong>今日表现</strong>：跌停 -10.00%，收 112.59 元，成交 24.05 亿，换手 3.36%，开盘 125 元即全天最高，午后封死跌停</li>
+<li><strong>异动原因</strong>：三季报窗口期，市场对"增收不增利"容忍度归零（上半年营收 +27.05%、归母净利仅 +13.23%，汇兑损失拖累）；叠加瑞银 9 月下调评级、美国 14420 号行政令限制采购中国大型电力设备</li>
+<li><strong>概念定位</strong>：电力设备出海链核心资产，海外收入占比高，地缘政策敏感度大于国内同业</li>
+<li><strong>技术面</strong>：放量破位，一举跌破 20 日与 60 日均线，形态转空，MACD 死叉</li>
+<li><strong>资金信号</strong>：龙虎榜总买 5.89 亿、总卖 9.58 亿，净卖 3.70 亿；北向买入 3.60 亿、卖出 4.42 亿，净卖 8,250 万；机构 1 买 7 卖；主力净额 -2.39 亿</li>
+<li><strong>关注价值</strong>：中。它是"业绩兑现期杀估值"的活样本：产业逻辑没坏，但 30 倍 PE + 增速失速 + 地缘风险三者共振就会跌停。这条经验对今日所有高位科技股同样适用</li>
+</ul>
+<h2>⚠️ 风险预警</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>风险类型</th>
+<th>内容</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外围风险偏好</td>
+<td>韩国 KOSPI -4.26%、恒生科技创调整新低、联想跌 10%、宁德时代 H 股跌 6.58%，南向净流出 17.23 亿港元</td>
+<td>压制 A 股科技与新能源龙头估值，两地上市标的首当其冲</td>
+</tr>
+<tr>
+<td>业绩兑现</td>
+<td>三季报进入加速披露期，高估值成长股开始为增速买单，思源电气为首个样本</td>
+<td>机器人、端侧AI 中报高增但三季度失速的标的随时补跌</td>
+</tr>
+<tr>
+<td>情绪结构</td>
+<td>炸板率 37.1%，56 家涨停中相当一部分缺业绩支撑，尾盘拉升居多</td>
+<td>次日高开低走概率大，追高性价比低</td>
+</tr>
+<tr>
+<td>存量博弈</td>
+<td>两市主力连续净流出（沪市 5 日 -563 亿、10 日 -1,084 亿），指数靠尾盘 ETF 托底</td>
+<td>ETF 托底力度一旦减弱，指数回落快于个股</td>
+</tr>
+<tr>
+<td>大宗商品</td>
+<td>金价三连跌、铜价高位承压</td>
+<td>有色、煤炭、贵金属继续拖累指数</td>
+</tr>
+</tbody>
+</table></div>
+<h2>🔭 明日推演</h2>
+<h3>明日关注方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th>关注标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机器人零部件（延续）</td>
+<td>今日唯一形成 3 板梯队，资金四周期全为正的标的优先</td>
+<td>长盈精密、大业股份、浙江荣泰、绿的谐波、双环传动</td>
+</tr>
+<tr>
+<td>减速器 / 执行器（资金最健康）</td>
+<td>雷达榜第一，净额四日递增、排名四日上升、股价未透支</td>
+<td>绿的谐波、双环传动、中大力德</td>
+</tr>
+<tr>
+<td>端侧AI硬件（延续）</td>
+<td>AI眼镜六连阳，英伟达 GTC 黄仁勋 21 日演讲是盘中催化</td>
+<td>恒玄科技、移远通信、龙旗科技、鹏鼎控股</td>
+</tr>
+<tr>
+<td>工业软件 / 信创（补涨）</td>
+<td>三日资金连续流入、5 日刚转正，唯一形态健康的方向</td>
+<td>凡拓数创、能科科技、中望软件</td>
+</tr>
+<tr>
+<td>北证50（政策驱动）</td>
+<td>北证50ETF、市值配售落地预期，情绪最直接受益</td>
+<td>北证50 中流动性最好的标的</td>
+</tr>
+<tr>
+<td>潜在风险方向</td>
+<td>大金融、军工、有色煤炭，资金持续流出，反弹是减仓机会</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<h3>策略建议</h3>
+<ul>
+<li><strong>持仓者</strong>：机器人、端侧AI 仓位可持有，但明日若"高开冲高不封板"，按纪律减 1/3；军工、电力设备出海链今日已破位，反弹即减。</li>
+<li><strong>观望者</strong>：昨日设定的门槛（成交 1.5 万亿 + 涨停 60 家）今日均未达到（1.46 万亿 / 56 家），按纪律仍不构成加仓信号。明日若量能补上且涨停过 60 家，再考虑参与机器人前排，优先选减速器、执行器这类资金曲线最干净的环节。</li>
+<li><strong>风险应对</strong>：上证失守 3702 视为本轮修复结束；长盈精密若大幅低开破 5 日线，机器人线整体回避；港股恒生科技再创新低，科技板块高开一律不追。</li>
+</ul>
+<h3>明日观察要点</h3>
+<ol>
+<li>长盈精密能否 2 连板、大业股份能否 4 连板——决定机器人是"接力"还是"退潮"</li>
+<li>两市成交能否补到 1.5 万亿以上——主线切换的最后一道确认</li>
+<li>涨停家数能否站上 60 家、炸板率能否回落到 30% 以下</li>
+<li>证券、军工是否止跌——继续下跌，指数还会被拖累</li>
+<li>英伟达 GTC 黄仁勋演讲（北京时间 21 日傍晚）对 AI 算力链的即时反应</li>
+<li>港股恒生科技与韩国 KOSPI 的次日走势，决定 A 股科技能否维持独立</li>
+</ol>
+<h3>昨日推演复核</h3>
+<ul>
+<li>✅ 机器人零部件（预判"政策催化后的资金扩散首选"）：减速器 +3.13%、机器视觉 +3.26%、长盈精密 20cm，兑现</li>
+<li>❌ 军工 / 军贸（预判"趋势延续"）：地面兵装 -3.02%、航海装备 -2.90%、军贸 -1.09%，判断错误，昨日高位就是短期头部</li>
+<li>❌ 电力设备 / 特高压（预判"机构型资金建仓"）：思源电气跌停，板块全线走弱，单日与 5 日双正也可能是一日游</li>
+<li>⚪ 半导体设备 / 光刻（预判"ASML 映射高开"）：半导体整体活跃但设备端未成主线，设计端更强，方向对、结构错</li>
+</ul>
+<hr>
+<blockquote>
+<p>数据来源：通达信 TdxQuant（指数行情、板块行情、涨跌停统计、主力资金、个股盘口与龙虎榜）｜本地板块资金雷达系统（东财/通达信双口径资金流与排名趋势）｜Finnhub API（美股盘中报价）｜公开财经媒体与亿信API（政策、产业催化、亚太市场）</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
