@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>开盘速览</title>
+<style>
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+header { border-bottom: 3px solid var(--yellow); padding-bottom: 20px; margin-bottom: 28px; }
+header h1 { font-size: 24px; font-weight: 700; color: var(--black); margin-bottom: 6px; letter-spacing: 0.5px; }
+header .meta { font-size: 13px; color: var(--gray-500); }
+header .meta span { margin-right: 16px; }
+h2 { font-size: 18px; font-weight: 700; color: var(--black); margin: 32px 0 10px; padding-left: 12px; border-left: 4px solid var(--yellow); }
+h3 { font-size: 16px; font-weight: 700; color: var(--gray-900); margin: 22px 0 8px; }
+p { margin: 8px 0; }
+blockquote { margin: 14px 0; padding: 10px 16px; border-left: 4px solid var(--gray-300); color: var(--gray-700); font-size: 14px; background: #fafafa; }
+.table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 14px 0 20px; border: 1px solid var(--gray-300); border-radius: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 460px; }
+thead th { background: var(--yellow); color: var(--black); font-weight: 700; padding: 10px 12px; text-align: left; white-space: nowrap; border-bottom: 2px solid #d4a734; }
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td { padding: 9px 12px; border-bottom: 1px solid var(--gray-100); vertical-align: top; }
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.highlight { background: var(--yellow-light); border-left: 4px solid var(--yellow); padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+.warning { background: var(--red-light); border-left: 4px solid var(--red); padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; font-size: 14px; color: #8b1a1a; }
+ul, ol { margin: 8px 0 8px 20px; }
+li { margin: 4px 0; }
+hr { border: none; border-top: 1px solid var(--gray-100); margin: 24px 0; }
+.tag { display: inline-block; background: var(--yellow-light); color: #8b6914; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 3px; margin: 0 4px 4px 0; }
+.tag-red { background: var(--red-light); color: var(--red); }
+footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--gray-100); font-size: 12px; color: var(--gray-500); line-height: 1.6; }
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+.up { color: var(--red); font-weight: 600; }
+.down { color: #1f7a3f; font-weight: 600; }
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>开盘速览</h1>
+  <div class="meta">
+    📅 2026年10月20日 09:40 时点 · 20:26 补发 | 投资小龙虾 AI
+  </div>
+</header>
+
+<blockquote>
+本期为延迟补发。指数取 9:35 与 9:40 两个五分钟收盘实测值，开盘价为 9:25 撮合价；涨停、连板、资金为盘后口径，末尾附收盘核验。
+</blockquote>
+
+<h2>📊 指数开盘</h2>
+
+<div class="table-wrapper"><table>
+<thead>
+<tr><th>指数</th><th class="num">开盘</th><th class="num">开盘涨跌</th><th class="num">9:40 点位</th><th class="num">9:40 涨跌</th><th>十分钟走势</th></tr>
+</thead>
+<tbody>
+<tr><td>上证指数</td><td class="num">3718.44</td><td class="num down">-0.33%</td><td class="num">3715.46</td><td class="num down">-0.41%</td><td>再走低 0.08pct</td></tr>
+<tr><td>深证成指</td><td class="num">11774.39</td><td class="num down">-0.36%</td><td class="num">11752.45</td><td class="num down">-0.55%</td><td>再走低 0.19pct</td></tr>
+<tr><td>创业板指</td><td class="num">2732.68</td><td class="num down">-0.50%</td><td class="num">2725.80</td><td class="num down">-0.75%</td><td>最弱，再走低 0.25pct</td></tr>
+<tr><td>科创50</td><td class="num">1319.66</td><td class="num down">-0.72%</td><td class="num">1322.59</td><td class="num down">-0.50%</td><td><span class="up">逆势修复 0.22pct</span></td></tr>
+</tbody>
+</table></div>
+
+<p>四大指数统一低开，开盘后十分钟三跌一升。<strong>科创50 是唯一在 9:40 之前完成修复的指数</strong>，从开盘最弱（-0.72%）回到 -0.50%；创业板反而扩大跌幅，成长内部的强弱当天一开盘就分了岔。上证在 3715 附近横盘，没有跌破 3700。</p>
+
+<h2>🔥 涨停结构</h2>
+
+<div class="table-wrapper"><table>
+<thead>
+<tr><th>项目</th><th class="num">数值</th><th>读法</th></tr>
+</thead>
+<tbody>
+<tr><td>竞价一字涨停</td><td class="num">6 家</td><td>吉大正元、东安动力、海正药业、同为股份、大业股份、昂立教育</td></tr>
+<tr><td>连板 / 首板</td><td class="num">14 / 42 家</td><td>连板占比 25%，梯队完整但不高</td></tr>
+<tr><td>最高连板</td><td class="num">4 板</td><td>吉大正元（信创·密码），一字封死</td></tr>
+<tr><td>9:40 前炸板</td><td class="num">2 家</td><td>城市传媒 09:35:46、银河微电 09:38:32</td></tr>
+<tr><td>竞价跌停</td><td class="num">7 家</td><td>思源电气、蔚蓝锂芯、闽东电力、读者传媒、福建金森、芯能科技、*ST皇庭</td></tr>
+</tbody>
+</table></div>
+
+<div class="warning">
+<strong>炸板预警</strong>：城市传媒封了不到六分钟就被撬开，全天收 +1.82%；银河微电在 +18% 的位置也没封住，收 +16.22%。<strong>开盘阶段封板质量最差的是传媒和科创边缘小票</strong>，这类板在 9:40 之后基本没有接力价值。
+</div>
+
+<h2>🎯 主线方向</h2>
+
+<div class="table-wrapper"><table>
+<thead>
+<tr><th>强度</th><th>方向</th><th>盘面证据</th></tr>
+</thead>
+<tbody>
+<tr><td><span class="tag">强</span></td><td>机器人零部件</td><td>长盈精密 20cm 涨停（主力净流入 7.47 亿居首）、绿的谐波 +7.09%、嘉晨智能 +29.98%、赛摩智能 20cm、长龄液压涨停</td></tr>
+<tr><td><span class="tag">强</span></td><td>端侧 AI 与消费电子</td><td>恒玄科技 20cm、龙旗科技涨停、移远通信涨停、美格智能涨停、瑞芯微涨停、歌尔 +7.01%、立讯 +3.03%</td></tr>
+<tr><td><span class="tag">强</span></td><td>AI 应用与数字孪生</td><td>博汇科技 20cm、凡拓数创 20cm、海天瑞声 +17.55%、南威软件涨停、粤传媒涨停</td></tr>
+<tr><td><span class="tag">中</span></td><td>汽车零部件</td><td>东安动力 3 板、长春一东 3 板、浙江荣泰 2 板、科森科技 2 板，但新泉股份封板后炸开</td></tr>
+<tr><td><span class="tag">中</span></td><td>医药</td><td>海正药业 2 板一字、迪安诊断 20cm、昂利康涨停，<strong>昭衍新药与金域医学双双炸板</strong>，莱美药业 -15.49%</td></tr>
+<tr><td><span class="tag tag-red">弱</span></td><td>电力设备</td><td>思源电气一字跌停，芯能科技跌停，板块龙头级杀跌</td></tr>
+<tr><td><span class="tag tag-red">弱</span></td><td>锂电 / 福建本地</td><td>蔚蓝锂芯跌停；闽东电力、福建金森跌停，海峡创新 -11.59%</td></tr>
+</tbody>
+</table></div>
+
+<p>开盘的结构特征很清楚：<strong>昨天的一字身位股继续封住，板块整体却没有高开</strong>。真正在开盘十分钟里被资金接走的是机器人零部件和端侧 AI 这条重叠带，龙头是长盈精密。</p>
+
+<h2>💰 资金态度</h2>
+
+<p><strong>进攻方向</strong>：主力净流入前八依次为长盈精密 7.47 亿、超声电子 4.18 亿、瑞芯微 3.91 亿、立讯精密 3.89 亿、九阳股份 3.72 亿、移远通信 3.49 亿、歌尔股份 3.33 亿、绿的谐波 3.11 亿。<strong>八个席位里六个落在精密制造、消费电子元器件和机器人执行器上</strong>，这是"果链 + 人形机器人"的重叠区，不是单条线的脉冲。</p>
+
+<p><strong>撤退方向</strong>：电力设备、锂电、红利避险资产在竞价阶段就被卖掉，开盘十分钟没有出现承接盘。资金从防御资产搬家到成长制造的意图，在 9:40 之前已经摆明。</p>
+
+<div class="highlight">
+<strong>一句话</strong>：9:40 的盘面是"指数偏冷、结构偏热"。指数低开且继续走低，但涨停梯队完整、资金单点极重。这种组合下的正确读法是盯个股承接，不是盯指数点位。
+</div>
+
+<h2>🔎 收盘核验</h2>
+
+<div class="table-wrapper"><table>
+<thead>
+<tr><th>项目</th><th class="num">9:40 时点</th><th class="num">收盘</th><th>结论</th></tr>
+</thead>
+<tbody>
+<tr><td>上证指数</td><td class="num">3715.46（-0.41%）</td><td class="num up">3735.37（+0.12%）</td><td>低开未延续，尾盘翻红</td></tr>
+<tr><td>科创50</td><td class="num">1322.59（-0.50%）</td><td class="num up">1342.42（+1.00%）</td><td>9:40 的修复信号兑现为全天领涨</td></tr>
+<tr><td>创业板指</td><td class="num">2725.80（-0.75%）</td><td class="num down">2739.20（-0.26%）</td><td>修复但未翻红，成长内部分化延续</td></tr>
+<tr><td>涨停 / 炸板</td><td class="num">—</td><td class="num">56 / 33（炸板率 37%）</td><td>封板质量一般，题材小票反复开板</td></tr>
+</tbody>
+</table></div>
+
+<p>两市全天成交 1.46 万亿，下跌不放大、反弹有量。开盘十分钟的"偏冷"是假信号，<strong>科创50 在 9:40 前的那次逆势修复，才是当天真正的方向指针</strong>。判断对了指数，但开盘阶段最容易被误判的，恰恰是把低开当成弱势确认。</p>
+
+<hr>
+
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。<br>
+数据来源：指数开盘价、9:40 五分钟线、收盘价 → 通达信 TdxQuant（tdx_quotes / tdx_kline）；涨停、连板、炸板、跌停家数 → 通达信 TdxQuant（tdx_screener）；主力资金净流入 → 通达信 TdxQuant（tdx_screener）。生成时间：2026年10月20日 20:26</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年10月20日 20:26</p>
+</footer>
+
+</body>
+</html>

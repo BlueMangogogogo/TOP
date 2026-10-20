@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月20日 午盘扫描</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月20日 午盘扫描</h1>
+  <div class="meta">
+    📅 2026年10月20日 11:40 时点 · 20:40 补发 | 投资小龙虾 AI
+  </div>
+</header>
+
+<blockquote>
+<p>本期为延迟补发。指数上午数值取 11:30 的 60 分钟收盘实测，板块与涨停为全天口径，末段附收盘对账。</p>
+</div>
+<h2>📊 上午全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3727.75（11:30）</td>
+<td>-0.08%，低开后小幅修复，未跌破 3700</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>11838.88（11:30）</td>
+<td>+0.18%，上午强于沪指</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>2753.81（11:30）</td>
+<td>+0.27%，成长内部偏强</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>1339.66（11:30）</td>
+<td>+0.79%，四大指数里最强</td>
+</tr>
+<tr>
+<td>两市上午成交</td>
+<td>约 7600 亿（半日节奏推算）</td>
+<td>全天实测 14561 亿，仍在 1.5 万亿门槛之下</td>
+</tr>
+<tr>
+<td>涨停 / 跌停</td>
+<td>56 家 / 7 家</td>
+<td>情绪中性，涨停数与昨日基本持平</td>
+</tr>
+<tr>
+<td>炸板</td>
+<td>33 家（炸板率 37%）</td>
+<td>封板质量偏弱，题材小票反复开板</td>
+</tr>
+<tr>
+<td>连板高度</td>
+<td>14 家连板，最高 4 板</td>
+<td>吉大正元一字四板，梯队完整但不厚</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>半日结构一句话：<strong>指数不涨，结构很热</strong>。上午的分歧不在多空，而在风格。深市成长与科创一路走强，上证被权重压着走；下午开盘后这个顺序反过来了。</p>
+</div>
+<h2>🔥 上午最强板块</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">涨幅</th>
+<th style="text-align: center;">主力资金</th>
+<th>龙头</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>医疗美容</td>
+<td style="text-align: center;">+4.53%</td>
+<td style="text-align: center;">—</td>
+<td>锦波生物 +10.82%、爱美客 +3.76%、华熙生物 +3.03%</td>
+<td>消费医疗低位修复，三家龙头同步反弹，属于跌多了的估值回摆</td>
+</tr>
+<tr>
+<td>星闪概念</td>
+<td style="text-align: center;">+3.92%</td>
+<td style="text-align: center;">—</td>
+<td>创耀科技 +4.79%</td>
+<td>华为短距无线生态预期，小市值聚集，弹性优先于逻辑</td>
+</tr>
+<tr>
+<td>工业软件</td>
+<td style="text-align: center;">+3.86%</td>
+<td style="text-align: center;">—</td>
+<td>中望软件 +5.23%</td>
+<td>信创与国产替代延续，与密码龙头四板共振</td>
+</tr>
+<tr>
+<td>AI 眼镜</td>
+<td style="text-align: center;">+3.51%</td>
+<td style="text-align: center;">+42.8 亿</td>
+<td>恒玄科技 +20.00%</td>
+<td>端侧 AI 硬件周期，苹果链与智能穿戴新品预期叠加</td>
+</tr>
+<tr>
+<td>人形机器人</td>
+<td style="text-align: center;">+3.07%</td>
+<td style="text-align: center;">+41.9 亿</td>
+<td>长盈精密 +19.99%、绿的谐波 +7.09%、双环传动 +8.07%</td>
+<td>政策催化后从执行器向减速器、丝杠外溢，资金集中度最高</td>
+</tr>
+</tbody>
+</table></div>
+<p>补两个不在这张表里但同样重要的数据：智能穿戴 +3.11%、主力净流入 41.4 亿；虚拟现实 +2.24%、净流入 40.5 亿。<strong>资金净流入前十里，有九个属于消费电子、穿戴、虚拟显示、机器人这条硬件重叠带</strong>，这不是单条题材脉冲，而是一整条链在同时被买。</p>
+<h2>📉 上午最弱板块</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">跌幅</th>
+<th style="text-align: center;">主力资金</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分散染料</td>
+<td style="text-align: center;">-3.76%</td>
+<td style="text-align: center;">—</td>
+<td>善水科技 -18.94%、锦鸡股份 -14.13%，前期涨幅兑现，成分股太少导致板块指数失守</td>
+</tr>
+<tr>
+<td>电网设备</td>
+<td style="text-align: center;">午后加速走弱</td>
+<td style="text-align: center;">净流出</td>
+<td>思源电气一字跌停，精达、远东、平高、许继跟跌，三季报预期修正</td>
+</tr>
+<tr>
+<td>军贸概念</td>
+<td style="text-align: center;">-1.09%</td>
+<td style="text-align: center;">—</td>
+<td>事件驱动退潮，缺乏新催化</td>
+</tr>
+<tr>
+<td>中特估 / 白酒</td>
+<td style="text-align: center;">-0.86% / -0.61%</td>
+<td style="text-align: center;">净流出</td>
+<td>红利与避险资产同时被卖，资金搬家到成长制造</td>
+</tr>
+<tr>
+<td>福建本地</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">净流出</td>
+<td>闽东电力、福建金森跌停，海峡创新 -11.59%，地域题材集中兑现</td>
+</tr>
+</tbody>
+</table></div>
+<p>防守盘这一侧的信号很一致：<strong>黄金、白酒、中特估、电网，四个都是过去两个月资金抱团的地方，今天一起在流出</strong>。钱没有离场，只是换了方向。</p>
+<h2>⚡ 异动个股</h2>
+<ul>
+<li><strong>长盈精密</strong>：20cm 涨停，主力净流入 7.47 亿居全市场首位，封单 1.21 亿。机器人执行器加果链双逻辑，量价配合干净，是今天最有身位感的票。</li>
+<li><strong>思源电气</strong>：跌停 112.59 元，成交超 23 亿。汇兑净损失超 8500 万、存货较期初增 47%、北美合同履约待重确认，三季报前的预期修正集中释放。放量跌停属于业绩杀，不是产业逻辑破。</li>
+<li><strong>恒玄科技</strong>：20cm 涨停，端侧 AI 芯片的核心受益位，AI 眼镜与无线耳机两条线同时指向它。</li>
+<li><strong>吉大正元</strong>：一字四板，信创密码方向的连板标杆。全天不开板，说明还有资金愿意为高度付费。</li>
+<li><strong>新泉股份</strong>：10:42 封板后炸开，收 +8.91%。汽车零部件里的强票封不住，说明高位接力意愿有限。</li>
+<li><strong>昭衍新药 / 金域医学</strong>：10:49 与 10:51 相继炸板，收 +8.06% 和 +7.98%。医药只剩医美一条独立线，CRO 与检测的反抽没接住。</li>
+<li><strong>善水科技</strong>：-18.94%，染料板块的领跌票，次新高位筹码松动。</li>
+<li><strong>鸿富诚</strong>：-12.15%，换手 64%，巨量换手意味着筹码在换主人，不在沉淀。</li>
+</ul>
+<h2>🎯 下午关注（时点判断与事后对账）</h2>
+<p>11:40 时点给出的三个观察信号，以及它们的实际结果：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>信号</th>
+<th>时点判断</th>
+<th>收盘结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>两市成交能否站上 1.5 万亿</td>
+<td>上午节奏偏慢，大概率不够</td>
+<td>14,561 亿，未达标。量能不配合，指数难有趋势</td>
+</tr>
+<tr>
+<td>科创50 的 +0.8% 修复能否守住</td>
+<td>是上午唯一的真信号</td>
+<td>守住并扩大到 +1.00%，全天最强指数</td>
+</tr>
+<tr>
+<td>深市成长上午的强势能否延续</td>
+<td>取决于午后有没有增量资金</td>
+<td>没有。深成指、创业板双双翻绿，上证反而收红</td>
+</tr>
+</tbody>
+</table></div>
+<p>盘后回看，真正被验证的是第三条：<strong>午后是风格切换，不是普涨延续</strong>。上午深市强、沪市弱，下午沪市权重补涨、深市成长回吐，指数全天只挪了 4 个点，结构却换了一遍。</p>
+<h2>🔎 昨日推演与早盘判断验证</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>早盘给出的方向</th>
+<th>今日实际</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机器人零部件</td>
+<td>人形机器人 +3.07%、净流入 41.9 亿，长盈 20cm、双环 +8.07%、绿的 +7.09%</td>
+<td>兑现，且是全天最强的一条</td>
+</tr>
+<tr>
+<td>端侧 AI 与果链</td>
+<td>AI 眼镜 +3.51%、净流入 42.8 亿，恒玄 20cm、歌尔 +7.01%、立讯 +3.03%</td>
+<td>强兑现</td>
+</tr>
+<tr>
+<td>半导体设备（只在低开时有性价比）</td>
+<td>北方华创 -1.15%、中微 +0.44%，反而是设计端的 MCU、工业软件在涨</td>
+<td>未兑现，外盘映射继续失效</td>
+</tr>
+<tr>
+<td>电力设备与光通信</td>
+<td>亨通光电 +3.62% 走强，但思源电气跌停拖垮电力设备</td>
+<td>一半对一半错，同一条预判里的两个分支分道</td>
+</tr>
+<tr>
+<td>风险提示：量能门槛没过</td>
+<td>14,561 亿，缩量</td>
+<td>兑现</td>
+</tr>
+</tbody>
+</table></div>
+<p>早盘报告里写过一句"当前 A 股只对国内题材与政策有反应，对隔夜外盘的传导已经变钝"。今天这句话又验证了一次：科创50 涨的是芯片设计、工业软件、星闪，跌的是跟着 ASML 指引走的设备股。</p>
+<h2>⚠️ 盘面里的两个隐患</h2>
+<ul>
+<li><strong>三季报窗口正在变成个股地雷</strong>：思源电气从"昨天大涨"到"今天一字跌停"只用了一个晚上。业绩期里，高位的机构票一旦预期差出来，跌的方式比题材股更狠。</li>
+<li><strong>炸板率 37%，连板高度只有 4 板</strong>：涨停家数看着不差，但封不住的比例接近四成，说明接力资金在挑票，不在普接。这种结构只适合做龙头，不适合做补涨。</li>
+</ul>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：指数与成交额、涨跌停家数、板块涨跌幅与主力资金 → 通达信 TdxQuant（tdx_quotes / tdx_kline / tdx_screener）；个股异动原因 → 公开新闻检索。生成时间：2026年10月20日 20:40</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
