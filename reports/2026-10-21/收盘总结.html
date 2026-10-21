@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月21日 收盘总结</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月21日 收盘总结</h1>
+  <div class="meta">
+    📅 2026年10月21日 15:30 | 投资小龙虾 AI
+  </div>
+</header>
+
+<h2>📊 指数与情绪全景</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3713.03（-0.60%）</td>
+<td>高开0.14%，冲高3743后回落，收在低位</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>11704.35（-0.82%）</td>
+<td>弱于沪指</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>2694.71（-1.62%）</td>
+<td>锂电权重拖累，本轮最弱</td>
+</tr>
+<tr>
+<td>科创综指</td>
+<td>-0.08%</td>
+<td>科技品种相对抗跌</td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>14293亿，较昨日缩267亿</td>
+<td>存量博弈，无增量资金</td>
+</tr>
+<tr>
+<td>上涨/下跌</td>
+<td>1981家 / 3364家</td>
+<td>涨跌比0.59，普跌结构</td>
+</tr>
+<tr>
+<td>涨停/跌停</td>
+<td>50家 / 5家</td>
+<td>涨停家数尚可，但质量下降</td>
+</tr>
+<tr>
+<td>炸板</td>
+<td>25家（炸板率约33%）</td>
+<td>偏高，承接不足</td>
+</tr>
+<tr>
+<td>主力资金</td>
+<td>沪市-20.3亿 深市-28.3亿</td>
+<td>全天净流出，尾盘无回补</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>上证压力位：3735（昨收，缺口回补位）/ 3743（今日高点）| 支撑位：3703（今日低点）/ 3700（整数关）</p>
+<p>市场情绪：中性偏冷。依据：涨跌比0.59、炸板率33%、首封率从92%塌到55%、成交缩量。情绪值是分歧日，不是退潮日，但修复质量明显弱于昨日。</p>
+</div>
+<h2>🔥 今日最强主线</h2>
+<h3>板块涨幅榜</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">涨幅</th>
+<th style="text-align: center;">主力净额</th>
+<th>核心逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DRG-DIP</td>
+<td style="text-align: center;">+2.92%</td>
+<td style="text-align: center;">+2.68亿</td>
+<td>医保支付改革，数据要素的医疗分支</td>
+</tr>
+<tr>
+<td>水产品</td>
+<td style="text-align: center;">+2.25%</td>
+<td style="text-align: center;">+2.38亿</td>
+<td>内需防御，无强逻辑</td>
+</tr>
+<tr>
+<td>猪肉</td>
+<td style="text-align: center;">+2.16%</td>
+<td style="text-align: center;">+1.29亿</td>
+<td>产能去化预期，资金避险选择</td>
+</tr>
+<tr>
+<td>数据确权</td>
+<td style="text-align: center;">+2.08%</td>
+<td style="text-align: center;">+3.04亿</td>
+<td>今日最强题材的核心分支</td>
+</tr>
+<tr>
+<td>AI营销</td>
+<td style="text-align: center;">+1.91%</td>
+<td style="text-align: center;">+2.28亿</td>
+<td>AI应用端扩散</td>
+</tr>
+<tr>
+<td>智慧政务</td>
+<td style="text-align: center;">+1.48%</td>
+<td style="text-align: center;">+8.78亿</td>
+<td>资金认可度最高，单日流入居前</td>
+</tr>
+</tbody>
+</table></div>
+<h3>板块跌幅榜</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">跌幅</th>
+<th style="text-align: center;">主力净额</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>钠电池</td>
+<td style="text-align: center;">-2.21%</td>
+<td style="text-align: center;">-58.2亿</td>
+<td>宁德财报杀跌外溢</td>
+</tr>
+<tr>
+<td>动力电池回收</td>
+<td style="text-align: center;">-1.55%</td>
+<td style="text-align: center;">-32.6亿</td>
+<td>锂电产业链共振下行</td>
+</tr>
+<tr>
+<td>锂矿</td>
+<td style="text-align: center;">-1.49%</td>
+<td style="text-align: center;">-21.6亿</td>
+<td>碳酸锂价格承压</td>
+</tr>
+<tr>
+<td>固态电池</td>
+<td style="text-align: center;">-1.48%</td>
+<td style="text-align: center;">-48.4亿</td>
+<td>故事性方向，杀估值</td>
+</tr>
+<tr>
+<td>次新股</td>
+<td style="text-align: center;">-1.43%</td>
+<td style="text-align: center;">+7.8亿</td>
+<td>情绪退潮先杀高位</td>
+</tr>
+</tbody>
+</table></div>
+<h3>主线持续性判断</h3>
+<ul>
+<li><strong>数据要素</strong>：今日强度极强，是唯一逆势连板的题材。持续性：可能有，但需明日验证。风险在于深桑达A一字炸板已经暴露内部分歧，前排（南威软件、海量数据、三维天地）若断板，题材一日游概率上升。</li>
+<li><strong>AI硬件（CPO/光通信/存储）</strong>：全天主力净流入居前，芯片+49.5亿、CPO+39.5亿、光通信+33.8亿、数据中心+33.3亿、存储+25.6亿。特征是"资金进、股价不涨"，属于低位吸筹式建仓，不是主升。持续性：有，但需要股价端的确认。</li>
+<li><strong>锂电/新能源车</strong>：主力净流出超过200亿，宁德时代跌12%是导火索。持续性：转弱明确，短期不宜抄底。</li>
+<li><strong>主线切换信号</strong>：资金正从"高位算力硬件"切向"低位数据要素/传媒/政务IT"，同时从"新能源权重"整体撤出。今日的切换是高低切换，不是风格切换。</li>
+</ul>
+<h2>💰 板块资金雷达（加权评分）</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: center;">排名</th>
+<th>板块</th>
+<th style="text-align: center;">加权评分</th>
+<th style="text-align: center;">涨跌幅</th>
+<th style="text-align: center;">单日净额</th>
+<th style="text-align: center;">30天在榜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>AI眼镜</td>
+<td style="text-align: center;">0.8866</td>
+<td style="text-align: center;">+0.71%</td>
+<td style="text-align: center;">+8.97亿</td>
+<td style="text-align: center;">5天</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>卫星导航</td>
+<td style="text-align: center;">0.8809</td>
+<td style="text-align: center;">+0.45%</td>
+<td style="text-align: center;">+6.20亿</td>
+<td style="text-align: center;">12天</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>智能穿戴</td>
+<td style="text-align: center;">0.8595</td>
+<td style="text-align: center;">+0.59%</td>
+<td style="text-align: center;">+13.86亿</td>
+<td style="text-align: center;">4天</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>人形机器人</td>
+<td style="text-align: center;">0.8528</td>
+<td style="text-align: center;">-0.28%</td>
+<td style="text-align: center;">-7.31亿</td>
+<td style="text-align: center;">3天</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>混合现实</td>
+<td style="text-align: center;">0.8479</td>
+<td style="text-align: center;">+1.27%</td>
+<td style="text-align: center;">+8.82亿</td>
+<td style="text-align: center;">4天</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>无线耳机</td>
+<td style="text-align: center;">0.8391</td>
+<td style="text-align: center;">+0.66%</td>
+<td style="text-align: center;">+5.20亿</td>
+<td style="text-align: center;">2天</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>MCU芯片</td>
+<td style="text-align: center;">0.7941</td>
+<td style="text-align: center;">+0.55%</td>
+<td style="text-align: center;">+4.54亿</td>
+<td style="text-align: center;">3天</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td>6G概念</td>
+<td style="text-align: center;">0.7650</td>
+<td style="text-align: center;">+0.53%</td>
+<td style="text-align: center;">+5.04亿</td>
+<td style="text-align: center;">10天</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td>智慧政务</td>
+<td style="text-align: center;">0.7489</td>
+<td style="text-align: center;">+1.48%</td>
+<td style="text-align: center;">+8.78亿</td>
+<td style="text-align: center;">2天</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td>铜缆高速连接</td>
+<td style="text-align: center;">0.7468</td>
+<td style="text-align: center;">+0.79%</td>
+<td style="text-align: center;">+9.50亿</td>
+<td style="text-align: center;">4天</td>
+</tr>
+</tbody>
+</table></div>
+<h3>🔔 机构建仓信号</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: center;">30天在榜</th>
+<th style="text-align: center;">三日趋势</th>
+<th style="text-align: center;">今日单日净额</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>光通信</td>
+<td style="text-align: center;">8天</td>
+<td style="text-align: center;">昨-18.0亿 → 今+33.8亿</td>
+<td style="text-align: center;">+33.8亿，涨幅仅+1.05%</td>
+<td>🟢 关注建仓</td>
+</tr>
+<tr>
+<td>数据中心</td>
+<td style="text-align: center;">8天</td>
+<td style="text-align: center;">昨-14.9亿 → 今+33.3亿</td>
+<td style="text-align: center;">+33.3亿，涨幅仅+0.40%</td>
+<td>🟢 关注建仓</td>
+</tr>
+<tr>
+<td>先进封装</td>
+<td style="text-align: center;">7天</td>
+<td style="text-align: center;">昨-18.1亿 → 今+20.6亿</td>
+<td style="text-align: center;">+20.6亿，股价-0.06%</td>
+<td>🟢 关注建仓</td>
+</tr>
+<tr>
+<td>存储芯片</td>
+<td style="text-align: center;">4天</td>
+<td style="text-align: center;">昨-13.0亿 → 今+25.6亿</td>
+<td style="text-align: center;">+25.6亿，涨幅仅+0.06%</td>
+<td>🟢 关注建仓</td>
+</tr>
+</tbody>
+</table></div>
+<h3>⚠️ 短线退潮信号</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>之前状态</th>
+<th>当前信号</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>减速器</td>
+<td>昨日评分第1（+22.3亿）</td>
+<td>今日掉到第44位，净流出8.6亿，跌1.0%</td>
+<td>🔴 撤退</td>
+</tr>
+<tr>
+<td>次新股</td>
+<td>昨日第5</td>
+<td>今日掉到第148位，跌1.43%</td>
+<td>🔴 撤退</td>
+</tr>
+<tr>
+<td>AIGC概念</td>
+<td>在榜9天</td>
+<td>今日净流出5.3亿</td>
+<td>🟠 减仓</td>
+</tr>
+<tr>
+<td>短剧游戏</td>
+<td>在榜9天</td>
+<td>今日净流出5.7亿</td>
+<td>🟠 减仓</td>
+</tr>
+</tbody>
+</table></div>
+<h3>📈 资金轮动方向</h3>
+<ul>
+<li><strong>进攻</strong>：硬件端资金集中流向芯片、CPO、光通信、数据中心、存储，属于同一产业链的不同环节，方向一致；题材端流向数据确权、智慧政务、AI营销。</li>
+<li><strong>撤退</strong>：锂电、钠电池、固态电池、储能、新能源车，五个板块单日合计流出超260亿。</li>
+<li><strong>排位飙升</strong>：AI眼镜从昨日第10升至第1，混合现实第4升至第5，智慧政务从第73升至第9。</li>
+</ul>
+<h2>🎯 核心个股拆解</h2>
+<h3>宁德时代（300750·动力电池）</h3>
+<ul>
+<li><strong>今日表现</strong>：跌12.03%，收227.9元附近，成交额超180亿（半天口径），市值单日蒸发超1400亿，创2025年7月以来新低。</li>
+<li><strong>异动原因</strong>：三季报预期差。营收1652.21亿（+58.58%）符合预期，但归母净利212.46亿（+14.54%）环比下滑约5.8%，低于机构230-260亿的一致预期。毛利率20.7%，环比降2.5个百分点，连续三个季度走低，为2022Q4以来最低；单Wh净利从0.097元降至0.082元，环比降15%。</li>
+<li><strong>概念定位</strong>：全球动力与储能电池龙头，储能业务占比升至约四分之一，是A股新能源权重的锚。</li>
+<li><strong>资金信号</strong>：主力大幅净流出，H股沽空比例17.9%，是同期恒指平均的15倍，摩根大通下调评级至中性。这是机构定价的重估，不是情绪杀。</li>
+<li><strong>关注价值</strong>：中。短期看是否守住225-230元区间，中期看毛利率能否在Q4企稳。锂电链的机会要等权重先止跌。</li>
+</ul>
+<h3>海量数据（603138·数据要素）</h3>
+<ul>
+<li><strong>今日表现</strong>：涨停（+10.01%），高开秒板，全天未开板。</li>
+<li><strong>异动原因</strong>：数据要素题材的核心辨识度标的，叠加数据确权、智慧政务资金共振。</li>
+<li><strong>技术面</strong>：低位放量突破，属于题材启动第一波。</li>
+<li><strong>关注价值</strong>：高（短线）。明日能否连板决定数据要素是主线还是一日游。</li>
+</ul>
+<h3>三维天地（301159·数据要素）</h3>
+<ul>
+<li><strong>今日表现</strong>：20CM涨停（+20.00%），收38.76元。</li>
+<li><strong>异动原因</strong>：数据资产管理方向，与DRG-DIP、数据确权形成共振。</li>
+<li><strong>关注价值</strong>：中高。20CM品种弹性大，但一旦题材退潮杀跌也快，属于高风险高收益的位置。</li>
+</ul>
+<h3>润建股份（002929·算力租赁）</h3>
+<ul>
+<li><strong>今日表现</strong>：涨停（+9.99%），3连板，收56.14元。</li>
+<li><strong>异动原因</strong>：算力租赁方向的连板龙头，资金在AI硬件内部找低位分支。</li>
+<li><strong>关注价值</strong>：中。3板是分歧位，明日缩量加速或高开炸板将决定短线情绪方向。</li>
+</ul>
+<h2>⚠️ 风险预警</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>风险类型</th>
+<th>内容</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>权重风险</td>
+<td>宁德时代单日-12%，锂电产业链全线杀跌</td>
+<td>创业板指、新能源主题基金净值</td>
+</tr>
+<tr>
+<td>情绪风险</td>
+<td>炸板率33%，首封率从92%降至55%</td>
+<td>短线接力资金亏钱效应扩散</td>
+</tr>
+<tr>
+<td>外围风险</td>
+<td>高位AI硬件（CPO）冲高回落</td>
+<td>算力链短期涨幅过大，有获利兑现压力</td>
+</tr>
+<tr>
+<td>结构风险</td>
+<td>白酒、券商同步走弱</td>
+<td>指数缺乏护盘力量</td>
+</tr>
+</tbody>
+</table></div>
+<h2>🔭 明日观察要点</h2>
+<h3>明日关注方向</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>逻辑</th>
+<th>关注标的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据要素（延续）</td>
+<td>今日唯一逆势主线，看能否连板扩散</td>
+<td>海量数据、南威软件、三维天地、太极股份</td>
+</tr>
+<tr>
+<td>AI硬件（低吸）</td>
+<td>资金持续净流入但股价未涨，属低位建仓</td>
+<td>光通信、存储芯片、先进封装方向</td>
+</tr>
+<tr>
+<td>传媒/AI漫剧</td>
+<td>情绪接力分支，弹性大但持续性弱</td>
+<td>粤传媒、读者传媒、天威视讯</td>
+</tr>
+<tr>
+<td>锂电（回避）</td>
+<td>权重杀跌未止，抄底过早</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<h3>明日观察要点</h3>
+<ol>
+<li><strong>数据要素前排是否断板</strong>：海量数据、南威软件若集体炸板，题材退潮确认。</li>
+<li><strong>宁德时代能否止跌</strong>：225元一线是短期心理位，跌破则创业板指继续补跌。</li>
+<li><strong>量能是否重回1.45万亿以上</strong>：连续缩量意味着存量博弈加剧，指数难有趋势行情。</li>
+<li><strong>存储芯片午后异动能否延续</strong>：这是AI硬件内部最有性价比的方向。</li>
+</ol>
+<h3>策略建议</h3>
+<ul>
+<li><strong>持仓者</strong>：数据要素与算力租赁的短线仓位可在明日冲高时减半；AI硬件低位品种可继续持有；锂电相关持仓等权重止跌再考虑。</li>
+<li><strong>观望者</strong>：不追数据要素的高位板，等分歧转一致的回封机会；AI硬件在资金持续流入但股价横盘的位置分批建仓。</li>
+<li><strong>风险应对</strong>：若明日上证跌破3700，短线仓位降至三成以下，等情绪冰点后的修复。</li>
+</ul>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年10月21日 22:55</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
