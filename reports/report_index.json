@@ -1,9 +1,19 @@
 {
-    "last_updated":  "2026-10-21 22:42:34",
-    "total":  255,
-    "daily_count":  173,
+    "last_updated":  "2026-10-21 23:12:55",
+    "total":  256,
+    "daily_count":  174,
     "industry_count":  82,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-10-21/深度复盘.html",
+                        "id":  "2026-10-21-深度复盘",
+                        "display_date":  "10月21日",
+                        "title":  "深度复盘",
+                        "category":  "深度复盘",
+                        "type":  "daily",
+                        "size_kb":  32.9,
+                        "date":  "2026-10-21"
+                    },
                     {
                         "relative_path":  "reports/2026-10-21/盘中异动.html",
                         "id":  "2026-10-21-盘中异动",
