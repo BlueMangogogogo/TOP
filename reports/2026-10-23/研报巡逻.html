@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月23日 研报巡逻</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月23日 研报巡逻</h1>
+  <div class="meta">
+    📅 2026-10-23 22:30 · 深度复盘前置侦察环 · 东财资金雷达 × 亿信研报交叉比对
+  </div>
+</header>
+
+<h2>一、数据摘要</h2>
+<h3>雷达 Top30（东财概念板块，按 score 降序）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>排名</th>
+<th>板块</th>
+<th>评分</th>
+<th>当日涨幅</th>
+<th>净流入(亿)</th>
+<th>资金位次</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>虚拟现实</td>
+<td>939.4</td>
+<td>3.62%</td>
+<td>12.09</td>
+<td>17</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2026三季报扭亏</td>
+<td>928.2</td>
+<td>3.80%</td>
+<td>1.93</td>
+<td>33</td>
+</tr>
+<tr>
+<td>3</td>
+<td>人形机器人</td>
+<td>926.7</td>
+<td>4.92%</td>
+<td>62.56</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>智能穿戴</td>
+<td>921.2</td>
+<td>3.91%</td>
+<td>26.84</td>
+<td>7</td>
+</tr>
+<tr>
+<td>5</td>
+<td>无线耳机</td>
+<td>920.3</td>
+<td>3.81%</td>
+<td>32.66</td>
+<td>5</td>
+</tr>
+<tr>
+<td>6</td>
+<td>混合现实</td>
+<td>918.6</td>
+<td>5.33%</td>
+<td>28.47</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>AI眼镜</td>
+<td>913.4</td>
+<td>4.10%</td>
+<td>40.22</td>
+<td>2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>信创</td>
+<td>910.2</td>
+<td>3.93%</td>
+<td>0.94</td>
+<td>37</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Web3.0</td>
+<td>909.8</td>
+<td>4.86%</td>
+<td>5.86</td>
+<td>24</td>
+</tr>
+<tr>
+<td>10</td>
+<td>超清视频</td>
+<td>901.8</td>
+<td>3.61%</td>
+<td>3.63</td>
+<td>29</td>
+</tr>
+<tr>
+<td>11</td>
+<td>虚拟机器人</td>
+<td>897.5</td>
+<td>5.34%</td>
+<td>-1.03</td>
+<td>57</td>
+</tr>
+<tr>
+<td>12</td>
+<td>AI芯片</td>
+<td>896.8</td>
+<td>4.81%</td>
+<td>18.41</td>
+<td>9</td>
+</tr>
+<tr>
+<td>13</td>
+<td>传感器</td>
+<td>895.9</td>
+<td>3.62%</td>
+<td>33.93</td>
+<td>4</td>
+</tr>
+<tr>
+<td>14</td>
+<td>智能家居</td>
+<td>894.5</td>
+<td>2.60%</td>
+<td>6.61</td>
+<td>22</td>
+</tr>
+<tr>
+<td>15</td>
+<td>虚拟数字人</td>
+<td>894.3</td>
+<td>4.69%</td>
+<td>-2.59</td>
+<td>83</td>
+</tr>
+<tr>
+<td>16</td>
+<td>汽车芯片</td>
+<td>893.1</td>
+<td>4.17%</td>
+<td>15.14</td>
+<td>13</td>
+</tr>
+<tr>
+<td>17</td>
+<td>MicroLED</td>
+<td>887.9</td>
+<td>3.13%</td>
+<td>4.46</td>
+<td>27</td>
+</tr>
+<tr>
+<td>18</td>
+<td>小红书概念</td>
+<td>885.2</td>
+<td>2.66%</td>
+<td>10.95</td>
+<td>18</td>
+</tr>
+<tr>
+<td>19</td>
+<td>数据确权</td>
+<td>884.5</td>
+<td>3.59%</td>
+<td>7.96</td>
+<td>21</td>
+</tr>
+<tr>
+<td>20</td>
+<td>减速器</td>
+<td>881.8</td>
+<td>5.13%</td>
+<td>36.74</td>
+<td>3</td>
+</tr>
+<tr>
+<td>21</td>
+<td>元宇宙概念</td>
+<td>881.6</td>
+<td>4.24%</td>
+<td>-3.64</td>
+<td>103</td>
+</tr>
+<tr>
+<td>22</td>
+<td>电子后视镜</td>
+<td>875.9</td>
+<td>2.99%</td>
+<td>1.11</td>
+<td>35</td>
+</tr>
+<tr>
+<td>23</td>
+<td>增强现实</td>
+<td>874.3</td>
+<td>4.19%</td>
+<td>15.56</td>
+<td>12</td>
+</tr>
+<tr>
+<td>24</td>
+<td>AIPC</td>
+<td>872.4</td>
+<td>3.52%</td>
+<td>17.10</td>
+<td>11</td>
+</tr>
+<tr>
+<td>25</td>
+<td>显示技术</td>
+<td>871.6</td>
+<td>2.95%</td>
+<td>-0.59</td>
+<td>48</td>
+</tr>
+<tr>
+<td>26</td>
+<td>生物识别</td>
+<td>869.5</td>
+<td>4.39%</td>
+<td>3.11</td>
+<td>30</td>
+</tr>
+<tr>
+<td>27</td>
+<td>ChatGPT概念</td>
+<td>868.6</td>
+<td>5.20%</td>
+<td>-4.28</td>
+<td>112</td>
+</tr>
+<tr>
+<td>28</td>
+<td>空间计算</td>
+<td>867.0</td>
+<td>4.03%</td>
+<td>25.37</td>
+<td>8</td>
+</tr>
+<tr>
+<td>29</td>
+<td>智能电视</td>
+<td>858.1</td>
+<td>3.96%</td>
+<td>5.97</td>
+<td>23</td>
+</tr>
+<tr>
+<td>30</td>
+<td>裸眼3D</td>
+<td>852.8</td>
+<td>4.34%</td>
+<td>9.79</td>
+<td>19</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>口径说明：10-22 的雷达快照只存了净流入字段（涨幅 / score 均为 0），跨日 score 排名无法直接相减，所以本表的「资金位次」用当日全市场 439 个概念板块的净流入排名代替跨日排名变化，作为资金是否真到位的判断依据。这一点请勿忽略，昨天的榜单排序本质上是净流入排序。</p>
+</div>
+<p><strong>一句话概括今天的结构</strong>：Top30 里 XR 终端系（虚拟现实 / 混合现实 / 增强现实 / 空间计算 / AI眼镜 / 智能穿戴 / 无线耳机 / AIPC / 裸眼3D / MicroLED / 显示技术）占了 11 席，机器人系（人形机器人 / 减速器 / 传感器 / 汽车芯片）占 4 席，两个链条加起来 15 席，而且净流入前 8 名里 7 个是这两条链上的。</p>
+<h2>二、🔴 研报 + 资金共振</h2>
+<h3>共振一：MR 内容生态拐点 —— 今日最强的一对</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>评分/资金位次</th>
+<th>匹配研报</th>
+<th>机构</th>
+<th>日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>混合现实</td>
+<td>#6 / 资金第6</td>
+<td>我们需要什么样的AI硬件</td>
+<td>财通证券</td>
+<td>10-23</td>
+</tr>
+<tr>
+<td>空间计算</td>
+<td>#28 / 资金第8</td>
+<td>同上</td>
+<td>财通证券</td>
+<td>10-23</td>
+</tr>
+<tr>
+<td>增强现实</td>
+<td>#23 / 资金第12</td>
+<td>同上</td>
+<td>财通证券</td>
+<td>10-23</td>
+</tr>
+<tr>
+<td>虚拟现实</td>
+<td>#1 / 资金第17</td>
+<td>同上</td>
+<td>财通证券</td>
+<td>10-23</td>
+</tr>
+<tr>
+<td>AI眼镜</td>
+<td>#7 / 资金第2</td>
+<td>2026人工智能产业十大关键词</td>
+<td>中国信通院</td>
+<td>10-22</td>
+</tr>
+<tr>
+<td>智能穿戴</td>
+<td>#4 / 资金第7</td>
+<td>同上</td>
+<td>中国信通院</td>
+<td>10-22</td>
+</tr>
+</tbody>
+</table></div>
+<p>财通证券这篇的核心逻辑值得记住：MR 卡了这么多年不是硬件不行，是<strong>内容生态供给不足</strong>——三维空间内容做不起量。多模态大模型和世界模型成熟后，AI 能低成本批量生成适配空间场景的三维内容，内容生产成本指数级下降，这才把「硬件完善但没人用」的死结打开。这条逻辑的产业含义是整条链（光学显示、空间传感、终端）会被内容侧拉动，而不是继续靠硬件参数内卷。</p>
+<p>信通院那份是冷静的一侧：智能体终端里的 AI 眼镜、智能手表<strong>仍然缺杀手级应用</strong>，还是「可用」而不是「必用」，跨应用调用、长周期任务规划、异常恢复这些能力离可靠助手有距离。也就是说产业界自己承认现在处在叙事发酵早期，不是兑现期。</p>
+<p>这两份研报放在一起看，共振的性质就清楚了：<strong>资金打的是内容生态拐点的预期，不是当期业绩</strong>。混合现实当日涨幅 5.33% 是全榜单第一，净流入第 6，属于资金和情绪同时到位的品种；虚拟现实虽然评分第 1，但净流入只排 17（12 亿），有一点「指数型普涨、真金白银没那么猛」的味道。</p>
+<h3>共振二：人形机器人 —— 研报密度最高，资金也最狠</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>评分/资金位次</th>
+<th>匹配研报</th>
+<th>机构</th>
+<th>日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人形机器人</td>
+<td>#3 / 资金第1（62.56亿）</td>
+<td>人形机器人核心零部件深度：量价分化寻胜势</td>
+<td>浙商证券</td>
+<td>10-21</td>
+</tr>
+<tr>
+<td>人形机器人</td>
+<td>—</td>
+<td>人形机器人行业动态点评：OpenAI入局打造机器人</td>
+<td>西部证券</td>
+<td>10-23</td>
+</tr>
+<tr>
+<td>人形机器人</td>
+<td>—</td>
+<td>专题周报：Gemini4Argon 可直接控制人形机器人</td>
+<td>华龙证券</td>
+<td>10-22</td>
+</tr>
+<tr>
+<td>人形机器人</td>
+<td>—</td>
+<td>高端制造出口月报：量产与资本化推动下一阶段</td>
+<td>光大证券</td>
+<td>10-23</td>
+</tr>
+<tr>
+<td>人形机器人</td>
+<td>—</td>
+<td>Humanoid Robot and Physical AI: Optimus 3 read-throughs</td>
+<td>JPMorgan</td>
+<td>10-22</td>
+</tr>
+<tr>
+<td>减速器</td>
+<td>#20 / 资金第3（36.74亿）</td>
+<td>同上（浙商 / 光大均点名减速器产业链）</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>传感器</td>
+<td>#13 / 资金第4（33.93亿）</td>
+<td>万凯新材首次覆盖（三大执行器占零部件价值73%）</td>
+<td>国泰海通</td>
+<td>10-23</td>
+</tr>
+</tbody>
+</table></div>
+<p>两天之内五家机构出人形机器人报告，且方向不重复：浙商从零部件量价分化切入、西部证券抓 OpenAI 入局的产业叙事变化、华龙抓 Google Gemini4Argon 直接控制整机这个技术拐点、光大从出口数据看量产落地、JPM 从特斯拉 Optimus 3 的部署进度和技术瓶颈倒推。</p>
+<p>值得标注的是国泰海通那份给的量化锚：<strong>线性执行器 + 旋转执行器 + 灵巧手三大执行器占整机成本 73%</strong>，灵巧手和触觉传感器是上游资本最集中的两个方向，且不依赖整机量产节奏。这解释了为什么减速器（36.74 亿）和传感器（33.93 亿）的资金流入能排到第 3、第 4——资金在买「不赌整机放量也能兑现」的环节。</p>
+<p>传感器这里有个细节：净流入第 4，但涨幅只排第 60，钱进去了价格没怎么动。这是承接型资金还是被套盘对冲，明天开盘半小时能看出来。</p>
+<h3>共振三：AI 芯片 / 汽车芯片 —— 有研报但资金强度中等</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>评分/资金位次</th>
+<th>匹配研报</th>
+<th>机构</th>
+<th>日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI芯片</td>
+<td>#12 / 资金第9</td>
+<td>鸿富诚：从传统功能材料到高端TIM，AI芯片散热打开成长空间</td>
+<td>招商证券</td>
+<td>10-23</td>
+</tr>
+<tr>
+<td>AI芯片</td>
+<td>—</td>
+<td>晨会聚焦：AI驱动全球晶圆厂加速扩产，国产半导体设备迎高速成长期</td>
+<td>中原证券</td>
+<td>10-23</td>
+</tr>
+<tr>
+<td>汽车芯片</td>
+<td>#16 / 资金第13</td>
+<td>同上（半导体设备 / 晶圆扩产）</td>
+<td>中原证券</td>
+<td>10-23</td>
+</tr>
+</tbody>
+</table></div>
+<p>这条链的研报视角是「卖铲子的上游」：散热材料（TIM）、晶圆厂扩产、国产设备。落点不在芯片设计而在产能和材料，说明机构对芯片股的态度是跟着资本开支走而非跟着终端需求走。</p>
+<h3>研报有、资金弱的背离项（务必留意）</h3>
+<ul>
+<li><strong>信创</strong>：评分第 8，但净流入只有 0.94 亿（资金第 37）。渤海证券 10-23 晨会纪要里有《DeepSeek 迭代降本增效，Agent 生态持续演进》计算机行业周报，中原证券也提到 Muse 引发个人智能体热潮、Agentic AI。研报在讲 Agent，资金在讲硬件，同一个 AI 叙事下资金明显选了硬的。</li>
+<li><strong>ChatGPT概念</strong>：涨幅 5.20% 排第 8，但净流入 -4.28 亿（资金第 112）。纯情绪，无承接。</li>
+<li><strong>虚拟数字人 / 元宇宙概念</strong>：净流入分别为 -2.59 亿、-3.64 亿，评分却在 15、21 位。这两个是典型的「评分靠涨幅，资金在撤退」，靠 AIGC 老叙事被顺带拉起，没有独立逻辑。</li>
+</ul>
+<h2>三、🟡 资金先行 · 研报未覆盖</h2>
+<p>以下板块进了 Top30、资金也到位，但近两日研报里找不到对应的细分方向命中，属于研报侧的空白区：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>评分排名</th>
+<th>资金位次</th>
+<th>涨幅位次</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无线耳机</td>
+<td>#5</td>
+<td>5（32.66亿）</td>
+<td>47</td>
+<td>资金极强、涨幅滞，属 TWS / 声学链条被 XR 行情带起，研报侧尚未单独覆盖</td>
+</tr>
+<tr>
+<td>小红书概念</td>
+<td>#18</td>
+<td>18（10.95亿）</td>
+<td>131</td>
+<td>钱进了但几乎不涨，题材属性强于产业属性</td>
+</tr>
+<tr>
+<td>数据确权</td>
+<td>#19</td>
+<td>21（7.96亿）</td>
+<td>62</td>
+<td>数据要素老题材，无新研报</td>
+</tr>
+<tr>
+<td>裸眼3D</td>
+<td>#30</td>
+<td>19（9.79亿）</td>
+<td>24</td>
+<td>显示分支，资金和情绪同步，但机构覆盖薄</td>
+</tr>
+<tr>
+<td>MicroLED</td>
+<td>#17</td>
+<td>27（4.46亿）</td>
+<td>89</td>
+<td>显示技术分支，涨幅滞</td>
+</tr>
+<tr>
+<td>超清视频</td>
+<td>#10</td>
+<td>29（3.63亿）</td>
+<td>61</td>
+<td>评分虚高，资金量级小</td>
+</tr>
+<tr>
+<td>电子后视镜</td>
+<td>#22</td>
+<td>35（1.11亿）</td>
+<td>101</td>
+<td>汽车智能化边角料，量级可忽略</td>
+</tr>
+<tr>
+<td>生物识别</td>
+<td>#26</td>
+<td>30（3.11亿）</td>
+<td>23</td>
+<td>与 AI 眼镜 / 空间感知有隐性关联，值得留意是否被研报侧补上</td>
+</tr>
+<tr>
+<td>虚拟机器人</td>
+<td>#11</td>
+<td>57（-1.03亿）</td>
+<td>6</td>
+<td>涨幅第 6 但资金净流出，纯情绪跟风</td>
+</tr>
+<tr>
+<td>Web3.0</td>
+<td>#9</td>
+<td>24（5.86亿）</td>
+<td>12</td>
+<td>无近期研报，叙事与 AI 主线无关，属轮动噪音</td>
+</tr>
+</tbody>
+</table></div>
+<p>这里面唯一值得当成「预期差候选」的是<strong>无线耳机</strong>和<strong>生物识别</strong>：前者有 32.66 亿的真金白银但涨幅滞后，后者涨幅和资金都不错却完全没有研报——如果明天有机构补上覆盖，就是研报与资金的二次共振点。其余多为跟风尾巴，不必花精力。</p>
+<h2>四、🟢 研报先行 · 资金未进榜</h2>
+<p>研报里反复出现、但今天完全没进 Top30 的方向。这些是明日及下周的观察池：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>细分方向</th>
+<th>研报</th>
+<th>机构</th>
+<th>日期</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>液冷 / AI 散热运维</td>
+<td>AI散热系列（四）：液冷运维走向全生命周期服务</td>
+<td>开源证券</td>
+<td>10-21</td>
+<td>系列第四篇，服务网络与耗材复购构筑壁垒；前一篇讲微通道冷板从选配走向必选（10-19）</td>
+</tr>
+<tr>
+<td>玻璃基板 / 先进封装</td>
+<td>玻璃基板系列（三）：先进封装多路径演进</td>
+<td>开源证券</td>
+<td>10-18</td>
+<td>玻璃基板应用空间拓宽，与 CoWoS/C2W 同一条资本开支主线</td>
+</tr>
+<tr>
+<td>ABF 载板 / PCB</td>
+<td>Ibiden：与英伟达达成数十亿美元产能预订协议</td>
+<td>JPMorgan</td>
+<td>10-22</td>
+<td>上游载板厂被大客户提前锁产能，是最硬的算力资本开支信号</td>
+</tr>
+<tr>
+<td>MLCC / 被动元件</td>
+<td>Electronic Components: Earnings Outlook，聚焦 MLCC/ABF 扩产</td>
+<td>JPMorgan</td>
+<td>10-22</td>
+<td>与载板共振，指向服务器硬件景气</td>
+</tr>
+<tr>
+<td>算力 / AIDC</td>
+<td>算力稀缺持续验证，能源价格走强</td>
+<td>国泰海通</td>
+<td>10-22</td>
+<td>中观景气跟踪，算力稀缺 + 能源价格双线</td>
+</tr>
+<tr>
+<td>光器件 / 光纤</td>
+<td>AI 光器件延续供需紧张，光纤价格中枢保持稳定</td>
+<td>中原证券</td>
+<td>10-23</td>
+<td>光通信链条基本面支撑仍在</td>
+</tr>
+<tr>
+<td>AI 云</td>
+<td>Baidu 3Q26 Preview：AI Cloud Infra 收入加速</td>
+<td>Citi</td>
+<td>10-21</td>
+<td>国内 AI 云需求侧验证</td>
+</tr>
+</tbody>
+</table></div>
+<p>这组研报有个共同点：<strong>全部指向算力基础设施的供给侧（产能、载板、散热、光器件），而不是终端应用</strong>。而今天 A 股资金全在终端（眼镜、耳机、机器人）。终端和应用在资金端已经极致拥挤，供给侧反而安静——这个错位是明天最值得盯的。</p>
+<h2>五、📈 资金新进攻方向</h2>
+<p><strong>量级变化</strong>：昨日全市场净流入第一名只有 17.45 亿（减速器），今日第一名人形机器人 62.56 亿，前 8 名全部在 15 亿以上。资金不是简单换方向，是从「分散在小题材里试探」切换成「集中打两条主线」。</p>
+<p><strong>今日净流入前 15 与前一日对照</strong>：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>今日净流入</th>
+<th>是否昨日已在净流入前列</th>
+<th>归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人形机器人</td>
+<td>62.56</td>
+<td>否</td>
+<td>新进攻</td>
+</tr>
+<tr>
+<td>AI眼镜</td>
+<td>40.22</td>
+<td>否</td>
+<td>新进攻</td>
+</tr>
+<tr>
+<td>减速器</td>
+<td>36.74</td>
+<td>是</td>
+<td>延续</td>
+</tr>
+<tr>
+<td>传感器</td>
+<td>33.93</td>
+<td>是</td>
+<td>延续</td>
+</tr>
+<tr>
+<td>无线耳机</td>
+<td>32.66</td>
+<td>否</td>
+<td>新进攻</td>
+</tr>
+<tr>
+<td>混合现实</td>
+<td>28.47</td>
+<td>否</td>
+<td>新进攻</td>
+</tr>
+<tr>
+<td>智能穿戴</td>
+<td>26.84</td>
+<td>否</td>
+<td>新进攻</td>
+</tr>
+<tr>
+<td>空间计算</td>
+<td>25.37</td>
+<td>是</td>
+<td>延续</td>
+</tr>
+<tr>
+<td>AI芯片</td>
+<td>18.41</td>
+<td>是</td>
+<td>延续</td>
+</tr>
+<tr>
+<td>机器人执行器</td>
+<td>17.96</td>
+<td>是</td>
+<td>延续</td>
+</tr>
+<tr>
+<td>AIPC</td>
+<td>17.10</td>
+<td>否</td>
+<td>新进攻</td>
+</tr>
+<tr>
+<td>增强现实</td>
+<td>15.56</td>
+<td>否</td>
+<td>新进攻</td>
+</tr>
+<tr>
+<td>汽车芯片</td>
+<td>15.14</td>
+<td>否</td>
+<td>新进攻</td>
+</tr>
+<tr>
+<td>2026一季报扭亏</td>
+<td>14.73</td>
+<td>是</td>
+<td>财报题材，非产业</td>
+</tr>
+<tr>
+<td>3D摄像头</td>
+<td>14.63</td>
+<td>是</td>
+<td>延续（XR 感知）</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>结论</strong>：新进攻方向全部落在「AI 眼镜 + XR 终端 + 声学/摄像头配套」这条横切面上（AI眼镜、混合现实、智能穿戴、无线耳机、增强现实、AIPC、汽车芯片），机器人链条（人形机器人本体、减速器、传感器、执行器）是延续而非新起。昨日榜上的净水概念、户外露营、GDR、页岩气、油气设服这些已全线退出——那是典型的无主线环境下的避险轮动，今天被主线一口吃掉了。</p>
+<p><strong>研报配合度</strong>：新进攻方向里，混合现实 / 增强现实 / 智能穿戴 / AI眼镜有财通、信通院两份研报支撑，属于「研报+资金」双确认；无线耳机和 AIPC 缺研报，属资金自发进攻。</p>
+<h2>六、🔭 明日观察要点</h2>
+<ol>
+<li><strong>MR 这条线能不能续第二天</strong>。今天混合现实涨幅 5.33% 全场第一、资金第 6，是标准的首日强攻形态。看点是明天高开后能否放量收阳：如果缩量滞涨，说明财通那份内容生态逻辑被当成一次性题材消费掉了；如果放量接力，则「AIGC 生成三维内容」这条产业逻辑才真正开始定价。</li>
+<li><strong>传感器的滞涨能不能补上</strong>。33.93 亿净流入排第 4，涨幅只排第 60。资金进去价格不动，要么是低位承接（后面补涨），要么是有人在对倒出货。明天开盘半小时的量价是唯一答案。</li>
+<li><strong>机器人链条是主线还是余温</strong>。五家机构两天内出报告、资金量 62.56 亿居首，但板块指数位置已经不低。重点看减速器和执行器这类「不依赖整机放量」的环节能否继续强于整机，那是资金在做防御性选择还是进攻，一眼就分得出来。</li>
+<li><strong>算力供给侧是不是下一个接棒位</strong>。液冷、玻璃基板、ABF 载板、光器件四组研报全部指向供给侧，今天资金一个都没进。如果明天 XR 终端开始分歧，资金很可能回补这条更硬的逻辑。</li>
+<li><strong>纯情绪板块的退潮速度</strong>。虚拟数字人 -2.59 亿、元宇宙 -3.64 亿、ChatGPT概念 -4.28 亿，这三个评分还在前 30 但资金已经在走。它们退潮的速度，是判断这轮 AI 硬件行情是「主线切换」还是「无差别普涨」的体温计。</li>
+<li><strong>数据缺口</strong>。今日雷达 score 已完整计算，昨日快照只有净流入字段，跨日排名对比失真。如果后续复盘要用连续性排名，需要先把前几日的 score 补算出来，否则容易把「净流入排序」误读成「评分排序」。</li>
+</ol>
+<h2>七、免责声明与数据来源</h2>
+<p>本报告为自动化研报巡逻产物，所有结论基于公开数据与机构研报文本的交叉比对，不构成任何投资建议。板块评分与净流入为量化指标，不代表未来收益；研报观点属于发布机构，本报告仅做归类与匹配，不背书其结论。市场有风险，决策请独立判断。</p>
+<p><strong>数据来源</strong></p>
+<ul>
+<li>资金雷达：东财概念板块数据源 <code>板块资金雷达/data_em/tdx_style/hist_metrics.json</code>（2026-10-23 快照，439 个概念板块，score 降序）；排名变化辅助数据取同源 <code>drawer_data.json</code> 历史序列。未使用通达信 boards_flow.json。</li>
+<li>研报数据：亿信 API（billions-intelligence，Endpoint=search，source=report，search_mode=advanced，time_range=past 2~3 days，共 3 轮检索、60 条返回、去重后 40 条，其中近一周内有效条目 24 条）。</li>
+<li>未使用 Tushare / AKShare / web_search / 问达 等替代数据源。</li>
+</ul>
+<p>生成时间：2026-10-23 22:35</p>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
