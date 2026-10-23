@@ -1,9 +1,79 @@
 {
-    "last_updated":  "2026-10-23 00:02:15",
-    "total":  265,
-    "daily_count":  183,
+    "last_updated":  "2026-10-23 20:34:54",
+    "total":  272,
+    "daily_count":  190,
     "industry_count":  82,
     "reports":  [
+                    {
+                        "relative_path":  "reports/2026-10-23/宏观择时日报_MTIv3_20261023.html",
+                        "id":  "2026-10-23-宏观择时日报_MTIv3_20261023",
+                        "display_date":  "10月23日",
+                        "title":  "宏观择时日报_MTIv3_20261023",
+                        "category":  "宏观择时",
+                        "type":  "daily",
+                        "size_kb":  18.3,
+                        "date":  "2026-10-23"
+                    },
+                    {
+                        "relative_path":  "reports/2026-10-23/竞价快报.html",
+                        "id":  "2026-10-23-竞价快报",
+                        "display_date":  "10月23日",
+                        "title":  "竞价快报",
+                        "category":  "竞价快报",
+                        "type":  "daily",
+                        "size_kb":  7.2,
+                        "date":  "2026-10-23"
+                    },
+                    {
+                        "relative_path":  "reports/2026-10-23/开盘速览.html",
+                        "id":  "2026-10-23-开盘速览",
+                        "display_date":  "10月23日",
+                        "title":  "开盘速览",
+                        "category":  "开盘速览",
+                        "type":  "daily",
+                        "size_kb":  8.4,
+                        "date":  "2026-10-23"
+                    },
+                    {
+                        "relative_path":  "reports/2026-10-23/盘前简报.html",
+                        "id":  "2026-10-23-盘前简报",
+                        "display_date":  "10月23日",
+                        "title":  "盘前简报",
+                        "category":  "盘前简报",
+                        "type":  "daily",
+                        "size_kb":  8.8,
+                        "date":  "2026-10-23"
+                    },
+                    {
+                        "relative_path":  "reports/2026-10-23/盘中异动.html",
+                        "id":  "2026-10-23-盘中异动",
+                        "display_date":  "10月23日",
+                        "title":  "盘中异动",
+                        "category":  "盘中异动",
+                        "type":  "daily",
+                        "size_kb":  7.7,
+                        "date":  "2026-10-23"
+                    },
+                    {
+                        "relative_path":  "reports/2026-10-23/收盘总结.html",
+                        "id":  "2026-10-23-收盘总结",
+                        "display_date":  "10月23日",
+                        "title":  "收盘总结",
+                        "category":  "收盘总结",
+                        "type":  "daily",
+                        "size_kb":  24.1,
+                        "date":  "2026-10-23"
+                    },
+                    {
+                        "relative_path":  "reports/2026-10-23/午盘扫描.html",
+                        "id":  "2026-10-23-午盘扫描",
+                        "display_date":  "10月23日",
+                        "title":  "午盘扫描",
+                        "category":  "午盘扫描",
+                        "type":  "daily",
+                        "size_kb":  8.6,
+                        "date":  "2026-10-23"
+                    },
                     {
                         "relative_path":  "reports/2026-10-22/深度复盘.html",
                         "id":  "2026-10-22-深度复盘",

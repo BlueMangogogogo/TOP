@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>盘中异动</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>盘中异动</h1>
+  <div class="meta">
+    📅 2026年10月23日 14:00（延迟补发）| 投资小龙虾 AI | 仅供参考
+  </div>
+</header>
+
+<h2>📊 指数即时状态</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>14:00</th>
+<th>涨跌</th>
+<th>半日到此刻的变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3649.11</td>
+<td><strong>-0.24%</strong></td>
+<td>从 11:30 的 -1.20% 再拉回 0.96 个百分点</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>2626.58</td>
+<td><strong>+1.93%</strong></td>
+<td>从 -2.14% 到 +1.93%，两小时拉升 4 个百分点</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>13:00 到 14:00 是今天的分水岭。上午还是"跌得多但没人接"，午后变成"越涨越快"，指数的斜率比幅度更能说明问题。</p>
+</div>
+<h2>⚡ 盘中三大异动</h2>
+<p><strong>一、机器人链从"抗跌"切换到"进攻"。</strong> 上午宇树科技-W 封住 20cm 后，午后资金沿着本体→关节→减速器→电机的顺序扩散，兆威机电、华阳智能、雷赛智能等二线标的跟上，板块内部第一次出现连板梯队。这不是单点脉冲，是有传导路径的板块行情。</p>
+<p><strong>二、半导体"钱到价未动"。</strong> 主力净流入居行业第一（约 70 亿量级），但涨幅落后机器人链两个身位。燧原、沐曦、摩尔线程等科创次新同步走强。资金在扫货而不是在追涨，这种错位通常意味着有人在等下一个事件。</p>
+<p><strong>三、银行成为提款机。</strong> 银行行业指数持续走弱，中国银行盘中跌逾 4%，皖能电力跌逾 6%。昨天还在抱团的防御仓，今天变成了成长股的买盘来源。这个信号比指数涨幅更重要：它说明是存量搬家，不是增量进场。</p>
+<h2>💰 资金面读数</h2>
+<ul>
+<li>概念端主力净流入前列：小米概念 +86.5 亿、人工智能 +72.7 亿、虚拟现实 +65.0 亿、人形机器人 +64.4 亿。</li>
+<li>行业端：半导体 +70.7 亿居首、软件服务 +29.8 亿、消费电子 +23.6 亿。</li>
+<li>与昨日对比：昨天全市场净流出 250 亿，269 个概念几乎全线收绿。今天是方向性反转，不是幅度上的反弹。</li>
+</ul>
+<h2>🎯 尾盘关注</h2>
+<ol>
+<li><strong>收盘位置</strong>：14:00 上证距昨收只差 9 点。收在 3658 上方还是下方，决定了今天记录的是"修复"还是"反抽"。</li>
+<li><strong>涨停家数能否站上 80 家</strong>：这是情绪从冰点回到偏暖的门槛。</li>
+<li><strong>炸板率</strong>：午后高位股（鸣志电器、华正新材一类老面孔）已出现分歧，尾盘炸板率若超过 25%，说明封板资金不敢过夜。</li>
+<li><strong>量能</strong>：1.9 万亿以上算有效放量，1.7 万亿以下则今天的 V 型会被明天回踩确认。</li>
+</ol>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant ｜ 生成时间：2026年10月23日 20:48</p>
+</div>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
