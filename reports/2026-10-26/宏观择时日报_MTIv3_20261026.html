@@ -52,7 +52,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);font-si
   <div class="score">
     <div class="label">ERP 未校准仓位研究参考</div>
     <div class="value" style="font-size:26px">45%</div>
-    <div class="state">ERP 40%分位，性价比偏低，未校准仓位研究参考 45%</div>
+    <div class="state">ERP 40%分位，性价比偏低，未校准仓位研究参考 45%；⚠ 分位距 40% 档边界仅 0.01pp，跨档即整档跳变（本档 45% / 另一侧 60%），该档位差异不具实质含义</div>
   </div>
 </div>
 
@@ -80,20 +80,21 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);font-si
 </div>
 
 <h2>二、十因子明细（MTI v4.1）</h2>
-<table><tr><th>层级</th><th>因子</th><th>当前值</th><th>信号分</th><th>解读</th></tr><tr><td>结构层<br>20%</td><td>① 行业收益截面离散度</td><td>ma5=1.45 / 88%分位</td><td style='color:#c0392b;font-weight:600'>-0.76</td><td>极致化 ⚠️（极度分化，高切低强预警）</td></tr><tr><td>结构层<br>10%</td><td>② 大小盘偏离</td><td>3.8%（20日）</td><td style='color:#888;font-weight:600'>-0.09</td><td>20日大小盘偏离54%分位</td></tr><tr><td>结构层<br>5%</td><td>③ 轮动速度</td><td>0.85</td><td style='color:#c0392b;font-weight:600'>-0.70</td><td>120日平滑轮动速度0.848</td></tr><tr><td>资金层<br>15%</td><td>④ 两融因子 v2</td><td>66%分位 / 2.39万亿</td><td style='color:#888;font-weight:600'>-0.10</td><td>中位横盘：两融66%分位</td></tr><tr><td>资金层<br>15%</td><td>⑤ 增量资金代理</td><td>成交额20日-23%；成交额是活动代理，不等于净流入</td><td style='color:#c0392b;font-weight:600'>-0.70</td><td>成交额20日-23%；成交额是活动代理，不等于净流入</td></tr><tr><td>资金层<br>10%</td><td>⑧ 活跃市值</td><td>观望：3日 +0.4%，历史 54% 分位</td><td style='color:#888;font-weight:600'>+0.05</td><td>观望：3日 +0.4%，历史 54% 分位</td></tr><tr><td>情绪层<br>10%</td><td>⑥ 涨跌停比</td><td>5日均值 0.754</td><td style='color:#1e7e34;font-weight:600'>+0.51</td><td>5日涨停占比75.4%</td></tr><tr><td>情绪层<br>10%</td><td>⑦ 炸板率</td><td>最新炸板率 29.5%</td><td style='color:#1e7e34;font-weight:600'>+0.42</td><td>当日炸板率29.5%</td></tr><tr><td>情绪层<br>5%</td><td>⑨ 换手率位置</td><td>量能中性（39%分位）；代理口径为上证指数，非全A</td><td style='color:#888;font-weight:600'>+0.00</td><td>量能中性（39%分位）；代理口径为上证指数，非全A</td></tr><tr><td>底仓</td><td>⑩ ERP 股权风险溢价</td><td>5.515 个百分点；40% 分位</td><td>—</td><td>ERP 40%分位，性价比偏低，未校准仓位研究参考 45%</td></tr></table>
+<table><tr><th>层级</th><th>因子</th><th>当前值</th><th>信号分</th><th>解读</th></tr><tr><td>结构层<br>20%</td><td>① 行业收益截面离散度</td><td>ma5=1.45 / 88%分位</td><td style='color:#c0392b;font-weight:600'>-0.76</td><td>极致化 ⚠️（极度分化，高切低强预警）</td></tr><tr><td>结构层<br>10%</td><td>② 大小盘偏离</td><td>3.8%（20日）</td><td style='color:#888;font-weight:600'>-0.09</td><td>20日大小盘偏离54%分位</td></tr><tr><td>结构层<br>5%</td><td>③ 轮动速度</td><td>0.85</td><td style='color:#c0392b;font-weight:600'>-0.70</td><td>120日平滑轮动速度0.848</td></tr><tr><td>资金层<br>15%</td><td>④ 两融因子 v2</td><td>66%分位 / 2.39万亿</td><td style='color:#888;font-weight:600'>-0.10</td><td>中位横盘：两融66%分位</td></tr><tr><td>资金层<br>15%</td><td>⑤ 增量资金代理</td><td>成交额20日-23%；成交额是活动代理，不等于净流入</td><td style='color:#c0392b;font-weight:600'>-0.70</td><td>成交额20日-23%；成交额是活动代理，不等于净流入</td></tr><tr><td>资金层<br>10%</td><td>⑧ 活跃市值</td><td>观望：3日 +0.4%，历史 54% 分位</td><td style='color:#888;font-weight:600'>+0.05</td><td>观望：3日 +0.4%，历史 54% 分位</td></tr><tr><td>情绪层<br>10%</td><td>⑥ 涨跌停比</td><td>5日均值 0.754</td><td style='color:#1e7e34;font-weight:600'>+0.51</td><td>5日涨停占比75.4%</td></tr><tr><td>情绪层<br>10%</td><td>⑦ 炸板率</td><td>最新炸板率 29.5%</td><td style='color:#1e7e34;font-weight:600'>+0.42</td><td>当日炸板率29.5%</td></tr><tr><td>情绪层<br>5%</td><td>⑨ 换手率位置</td><td>量能中性（39%分位）；代理口径为上证指数，非全A</td><td style='color:#888;font-weight:600'>+0.00</td><td>量能中性（39%分位）；代理口径为上证指数，非全A</td></tr><tr><td>底仓</td><td>⑩ ERP 股权风险溢价</td><td>5.515 个百分点；40% 分位</td><td>—</td><td>ERP 40%分位，性价比偏低，未校准仓位研究参考 45%；⚠ 分位距 40% 档边界仅 0.01pp，跨档即整档跳变（本档 45% / 另一侧 60%），该档位差异不具实质含义</td></tr></table>
 
 <h2>三、今日要点</h2>
-<p>MTI 综合信号 <strong>-0.218</strong>：偏弱观察（工程阈值，尚未完成策略校准）。活跃市值 14.14 万亿（观望），ERP 未校准仓位研究参考 45%。详细解读与明日验证清单请结合各因子 msg 与图表观察。</p>
+<p>MTI 综合信号 <strong>-0.218</strong>：偏弱观察（工程阈值，尚未完成策略校准）。活跃市值 14.14 万亿（观望），ERP 未校准仓位研究参考 45%（⚠ 分位贴档位边界 -0.01pp，两档差异不具实质含义）。详细解读与明日验证清单请结合各因子 msg 与图表观察。</p>
 
 <h2>四、数据来源（分条标注）</h2>
 <table>
 <tr><th>数据项</th><th>接口</th></tr>
-<tr><td>行业离散度（申万二级131行业）</td><td>AKShare sw_index_second_info / index_hist_sw（新浪申万指数，滞后1日）</td></tr>
+<tr><td>行业离散度（申万二级行业，数量以当期截面为准）</td><td>AKShare sw_index_second_info / index_hist_sw（新浪申万指数，滞后1日）；东财申万历史当日未发布时改用申万官网收盘后快照，截面数量可能少于 131，不直接与前日比较</td></tr>
 <tr><td>沪深300/国证2000/上证/深成</td><td>本地指数缓存（采集可能经 Tushare/AKShare 降级，须核对 fetch_status）</td></tr>
 <tr><td>换手率 / 指数 PE</td><td>本地指数基本面缓存（PE 为倍数，换手率为百分数）</td></tr>
 <tr><td>两融余额</td><td>Jin10 沪深两交易所融资余额，原始单位元；禁止前值填充</td></tr>
-<tr><td>涨跌停家数</td><td>AKShare stock_zt_pool_em / stock_zt_pool_dtgc_em</td></tr>
+<tr><td>涨跌停家数</td><td>AKShare stock_zt_pool_em / stock_zt_pool_dtgc_em（主源，因子计算口径）</td></tr>
 <tr><td>炸板家数</td><td>AKShare stock_zt_pool_zbgc_em（仅最近15交易日）</td></tr>
+<tr><td>涨跌停交叉核对</td><td>通达信 screener 仅作当日核对，含 ST 标的，家数高于 AKShare 主源，两套口径不可混用</td></tr>
 <tr><td>活跃市值（指南针 Z_SK0AMV 原生指标）</td><td>本地 day.vdat 提取；来源与校验记录见 amv_source_manifest.json</td></tr>
 <tr><td>10年期国债收益率</td><td>AKShare bond_zh_us_rate</td></tr>
 </table>
@@ -101,8 +102,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);font-si
 
 <footer>
   <p><strong>免责声明</strong>：本报告由投资小龙虾宏观择时系统自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
-  <p>生成时间：2026-10-26 21:27 ｜ 数据截至：2026-10-26</p>
-  <p class='small'>数据来源：通达信（指数行情/涨跌停/炸板/成交额，index_daily 成交额由本地日线与缓存 730 日逐日对账后补入）、申万官网收盘后快照（20261026 二级行业截面 123 个，东财申万历史当日未发布）、指南针 0AMV 原生指标、交易所两融（as_of 20261023，滞后 1 个交易日）。本版本 9/9 因子有效，权重 100%。</p>
+  <p>生成时间：2026年10月26日 ｜ 数据截至：2026-10-26</p>
 </footer>
 
 <script>

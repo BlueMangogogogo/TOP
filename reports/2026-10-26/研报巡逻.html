@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月26日 研报巡逻</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月26日 研报巡逻</h1>
+  <div class="meta">
+    📅 2026-10-26 22:30 · 研报 × 板块资金雷达 · 深度复盘前置侦察
+  </div>
+</header>
+
+<div class="highlight">
+<p>📊 <strong>今晚一句话：</strong> 卖方研报的共识压在 AI 算力产业链上，资金却在往机器人零部件里跑。全市场 439 个板块里，存储芯片第 434、国产芯片第 439、CPO 概念第 431、半导体概念第 438；而人形机器人单日净流入 26.32 亿、波段净额 84.03 亿，双双全市场第一。研报在讲产业趋势，资金在做仓位切换，两边指向同一个词：物理 AI。</p>
+</div>
+<h2>一、数据摘要</h2>
+<p>评分口径为东财板块三因子百分位加权（波段净额 40% + 流入强度 30% + 单日净额 30%，×1000），均值约 500，900 分以上属极强。下表为今日评分前 30。排名变化按「评分排名」口径计算，即前一个交易日（10-23）到今日的位次变动。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th style="text-align: left;">板块</th>
+<th style="text-align: right;">评分</th>
+<th style="text-align: right;">单日净额(亿)</th>
+<th style="text-align: right;">波段净额(亿)</th>
+<th style="text-align: right;">评分排名变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">资源开采概念</td>
+<td style="text-align: right;">962.9</td>
+<td style="text-align: right;">+5.17</td>
+<td style="text-align: right;">+4.14</td>
+<td style="text-align: right;"><strong>246→1 (+245)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">AI芯片</td>
+<td style="text-align: right;">962.6</td>
+<td style="text-align: right;">+15.84</td>
+<td style="text-align: right;">+24.70</td>
+<td style="text-align: right;"><strong>12→2 (+10)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">婴童概念</td>
+<td style="text-align: right;">959.7</td>
+<td style="text-align: right;">+11.35</td>
+<td style="text-align: right;">+1.37</td>
+<td style="text-align: right;"><strong>260→3 (+257)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">智谱AI概念</td>
+<td style="text-align: right;">958.3</td>
+<td style="text-align: right;">+6.75</td>
+<td style="text-align: right;">+2.31</td>
+<td style="text-align: right;"><strong>37→4 (+33)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">人形机器人</td>
+<td style="text-align: right;">956.5</td>
+<td style="text-align: right;">+26.32</td>
+<td style="text-align: right;">+84.03</td>
+<td style="text-align: right;">3→5 (-2)</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">数字孪生</td>
+<td style="text-align: right;">953.5</td>
+<td style="text-align: right;">+5.00</td>
+<td style="text-align: right;">+8.68</td>
+<td style="text-align: right;"><strong>31→6 (+25)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">2026三季报扭亏</td>
+<td style="text-align: right;">951.3</td>
+<td style="text-align: right;">+5.48</td>
+<td style="text-align: right;">+8.11</td>
+<td style="text-align: right;">2→7 (-5)</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">电子烟</td>
+<td style="text-align: right;">949.7</td>
+<td style="text-align: right;">+6.88</td>
+<td style="text-align: right;">+5.08</td>
+<td style="text-align: right;"><strong>49→8 (+41)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">PLC概念</td>
+<td style="text-align: right;">943.1</td>
+<td style="text-align: right;">+4.42</td>
+<td style="text-align: right;">+1.04</td>
+<td style="text-align: right;"><strong>65→9 (+56)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">页岩气</td>
+<td style="text-align: right;">934.4</td>
+<td style="text-align: right;">+3.88</td>
+<td style="text-align: right;">+7.01</td>
+<td style="text-align: right;"><strong>118→10 (+108)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">机器视觉</td>
+<td style="text-align: right;">932.6</td>
+<td style="text-align: right;">+6.16</td>
+<td style="text-align: right;">+0.24</td>
+<td style="text-align: right;"><strong>58→11 (+47)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">DRG/DIP</td>
+<td style="text-align: right;">927.1</td>
+<td style="text-align: right;">+2.54</td>
+<td style="text-align: right;">-0.13</td>
+<td style="text-align: right;"><strong>217→12 (+205)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">酿酒概念</td>
+<td style="text-align: right;">925.7</td>
+<td style="text-align: right;">+1.64</td>
+<td style="text-align: right;">+1.70</td>
+<td style="text-align: right;"><strong>41→13 (+28)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">水产概念</td>
+<td style="text-align: right;">924.6</td>
+<td style="text-align: right;">+2.74</td>
+<td style="text-align: right;">+1.36</td>
+<td style="text-align: right;"><strong>63→14 (+49)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">白酒</td>
+<td style="text-align: right;">924.6</td>
+<td style="text-align: right;">+1.98</td>
+<td style="text-align: right;">+3.22</td>
+<td style="text-align: right;"><strong>42→14 (+28)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">电子后视镜</td>
+<td style="text-align: right;">921.4</td>
+<td style="text-align: right;">+2.37</td>
+<td style="text-align: right;">+3.81</td>
+<td style="text-align: right;">22→16 (+6)</td>
+</tr>
+<tr>
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">机器人执行器</td>
+<td style="text-align: right;">913.7</td>
+<td style="text-align: right;">+2.81</td>
+<td style="text-align: right;">+18.62</td>
+<td style="text-align: right;"><strong>36→17 (+19)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">减速器</td>
+<td style="text-align: right;">911.2</td>
+<td style="text-align: right;">+3.13</td>
+<td style="text-align: right;">+38.60</td>
+<td style="text-align: right;">20→18 (+2)</td>
+</tr>
+<tr>
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">预制菜概念</td>
+<td style="text-align: right;">906.6</td>
+<td style="text-align: right;">+4.20</td>
+<td style="text-align: right;">-2.92</td>
+<td style="text-align: right;"><strong>185→19 (+166)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">基因测序</td>
+<td style="text-align: right;">904.1</td>
+<td style="text-align: right;">+4.38</td>
+<td style="text-align: right;">-3.07</td>
+<td style="text-align: right;"><strong>122→20 (+102)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">3D摄像头</td>
+<td style="text-align: right;">904.1</td>
+<td style="text-align: right;">+2.30</td>
+<td style="text-align: right;">+13.55</td>
+<td style="text-align: right;"><strong>40→20 (+20)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">22</td>
+<td style="text-align: left;">SPD概念</td>
+<td style="text-align: right;">901.1</td>
+<td style="text-align: right;">+1.65</td>
+<td style="text-align: right;">-0.80</td>
+<td style="text-align: right;"><strong>268→22 (+246)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">23</td>
+<td style="text-align: left;">智能电视</td>
+<td style="text-align: right;">894.5</td>
+<td style="text-align: right;">+1.74</td>
+<td style="text-align: right;">+9.20</td>
+<td style="text-align: right;">29→23 (+6)</td>
+</tr>
+<tr>
+<td style="text-align: right;">23</td>
+<td style="text-align: left;">ERP概念</td>
+<td style="text-align: right;">894.5</td>
+<td style="text-align: right;">+1.44</td>
+<td style="text-align: right;">+0.46</td>
+<td style="text-align: right;"><strong>35→23 (+12)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">MLOps概念</td>
+<td style="text-align: right;">892.7</td>
+<td style="text-align: right;">+0.53</td>
+<td style="text-align: right;">-0.30</td>
+<td style="text-align: right;"><strong>61→25 (+36)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">26</td>
+<td style="text-align: left;">电子车牌</td>
+<td style="text-align: right;">890.2</td>
+<td style="text-align: right;">+1.11</td>
+<td style="text-align: right;">+2.01</td>
+<td style="text-align: right;"><strong>78→26 (+52)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">27</td>
+<td style="text-align: left;">谷子经济</td>
+<td style="text-align: right;">888.8</td>
+<td style="text-align: right;">+4.11</td>
+<td style="text-align: right;">-3.40</td>
+<td style="text-align: right;"><strong>51→27 (+24)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">28</td>
+<td style="text-align: left;">包装材料</td>
+<td style="text-align: right;">887.9</td>
+<td style="text-align: right;">+1.10</td>
+<td style="text-align: right;">-1.19</td>
+<td style="text-align: right;"><strong>225→28 (+197)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">29</td>
+<td style="text-align: left;">华为欧拉</td>
+<td style="text-align: right;">879.0</td>
+<td style="text-align: right;">+0.94</td>
+<td style="text-align: right;">-1.93</td>
+<td style="text-align: right;"><strong>124→29 (+95)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">EDA概念</td>
+<td style="text-align: right;">878.6</td>
+<td style="text-align: right;">+0.36</td>
+<td style="text-align: right;">-0.78</td>
+<td style="text-align: right;"><strong>69→30 (+39)</strong></td>
+</tr>
+</tbody>
+</table></div>
+<div class="warning">⚠️ <strong>两个必须说明的口径缺口：</strong>① 东财数据源本次快照不含板块当日涨幅（数据文件里 <em>unavailable_fields</em> 明确列出 <em>chg</em>），因此本表不给涨幅列，也不做涨跌家数统计，不用其他数据源补。② <strong>评分高不等于资金流入。</strong>评分是 439 个板块的横截面百分位打分，全市场普跌时，净流出很少的板块也能拿到很高的分。今日 Top30 里 DRG/DIP（−0.13 亿）、SPD 概念（−0.80 亿）、基因测序（−3.07 亿）、华为欧拉（−1.93 亿）、谷子经济（−3.40 亿）当日都是净流出。真正有量的流入只有人形机器人、AI 芯片、婴童概念、电子烟、智谱 AI 概念这几条。</div>
+
+<p>指数层面补一个背景（来源：粤开证券《粤开市场日报》，2026-10-26）：沪指涨 0.19% 收 3697.52 点，深证成指跌 1.19%，创业板指跌 1.71%，科创 50 跌 2.23%；沪深两市成交 16088 亿元，较上一交易日缩量 3475 亿元。指数缩量分化、成长杀跌，而机器人链在吸金，这个组合本身就说明今天是结构切换而不是普涨。</p>
+<h2>二、🔴 研报 + 资金共振</h2>
+<h3>共振（最强）人形机器人链：单日、波段、研报三重成立</h3>
+<p><strong>资金：</strong> 人形机器人评分 956.5（第 5），单日主力净流入 26.32 亿（全市场第 1），波段净额 84.03 亿（第 1），5 日累计 +105.72 亿。往下拆到零部件：减速器单日 +3.13 亿、波段 +38.60 亿（全市场第 2）；机器人执行器单日 +2.81 亿、波段 +18.62 亿（第 6）；3D 摄像头单日 +2.30 亿、波段 +13.55 亿（第 9）；机器视觉单日 +6.16 亿。这是今天唯一「单日资金 + 波段资金 + 研报观点」三条同时指向的方向。</p>
+<p><strong>研报：</strong> 九家机构在同一周把话说到了同一个地方。</p>
+<ul>
+<li>国信证券《物理 AI 行业深度报告：技术路径基本成熟》（10-25）：给出端侧 AI 模组、具身智能的产业链公司梳理。</li>
+<li>国盛证券《硬科技核心策略：三季报去伪存真，物理 AI 接棒》（10-26）：把「物理 AI 接棒」直接写成标题，配置建议围绕国产存储、物理 AI 及硬件链。</li>
+<li>国金证券《Tesla 弗里蒙特工厂开启生产，OpenAI 入局人形机器人》（10-25）：本周零部件进展集中在灵巧手、关节模组、感知系统；宇树 Dex5-S 五指灵巧手、伊梦动力超亿元融资。</li>
+<li>万联证券《人形机器人行业跟踪：特斯拉确认 Optimus 生产进入初期爬坡》（10-26）：点名精密减速器、执行器、传感器三个价值量高、壁垒高的环节。</li>
+<li>华安证券《电力设备行业周报》（10-26）：马斯克给出 2027 年底每周 2 万台目标，硬件最大瓶颈在手部执行器，AI-5 芯片计划明年 4 月集成上机。</li>
+<li>华福证券《物理 AI：机器人是核心载体》：直接落到标的层，丝杠、结构件、减速器、电机执行器分环节点名。</li>
+<li>中泰证券《机械周报（10.26-10.30）》：看好物理 AI、机器人、热界面材料。</li>
+<li>海通国际《万凯新材》（10-26）：给出价值量硬数据，线性执行器、旋转执行器、灵巧手三大件合计占整机成本 73%。</li>
+<li>东吴证券《领益智造》（10-26）：精密制造平台卡位 AI 硬件，人形机器人渗透率提升拉动上游精密件。</li>
+<li>申万宏源《一周一刻钟》（10-26）：物理 AI 成为热点，行业需求跌幅收窄。</li>
+</ul>
+<p><strong>读法：</strong> 研报不是泛泛看多机器人，是集体往「上游零部件」收口——执行器、减速器、丝杠、灵巧手、传感器。资金也正好在这几个板块上给钱，减速器波段排名第 2、执行器第 6。观点和筹码对上了，这是今晚最干净的一个信号。</p>
+<h3>共振（带分歧）AI 芯片：算力芯片在进，制造封装在出</h3>
+<p><strong>资金：</strong> AI 芯片评分 962.6（第 2），单日净流入 15.84 亿（第 2），波段净额 24.70 亿（第 4），评分排名从第 12 升到第 2。</p>
+<p><strong>研报：</strong> 华源证券《燧原科技（688801）：云端 AI 芯片领军企业，全栈系统自研开启新篇章》（10-26）是标准的个股深度；华西证券《半导体设备去日化专题》（10-26）给了需求侧的硬数字，字节上调 2026 年资本开支至 2000 亿元，腾讯 2026Q2 单季资本开支同比激增 176%；国信证券《粤港湾智算》（10-26）与国盛证券《硬科技核心策略》同向。</p>
+<p><strong>但分歧就在这里：</strong> 同一天 5G 概念 −140.23 亿、华为概念 −122.37 亿、半导体概念 −106.70 亿、国产芯片 −86.82 亿、PCB −88.48 亿。这是同一个产业内部的严格分化——算力芯片设计与智算服务端有钱进，制造、封测、通信链在失血。所以不能写成「半导体在吸金」，只能写到分支：<strong>钱在芯片设计端，不在制造端。</strong></p>
+<h3>共振（弱）数字孪生：研报只给了概念外壳</h3>
+<p><strong>资金：</strong> 数字孪生评分 953.5（第 6），单日净流入 5.00 亿，波段净额 8.68 亿（第 14），评分排名 31→6。</p>
+<p><strong>研报：</strong> 没有一条研报直接写「数字孪生」。能挂上的只有国信《物理 AI》里那段「采集—标注—训练—部署—反馈」的数据闭环与数采平台（凡拓数创、海天瑞声），以及联想《AI 驱动产业新生》里的 AI 训练场。这属于叙事层面的邻接，不是研报点名。</p>
+<p><strong>读法：</strong> 资金进了 5 个亿，研报没接住。放在 🟡 里更诚实，这里保留在共振段只作为「物理 AI 叙事外溢」的观察项，不计入正式共振。</p>
+<h2>三、🟡 资金先行 · 研报未覆盖</h2>
+<p>今晚 40 条研报里，找不到任何一条覆盖下面这些当日吸金的方向。它们要么是小体量脉冲，要么是纯情绪修复，只有一条值得单独拎出来。</p>
+<h3>预期差：页岩气 / 能源线，唯一有正波段的非科技方向</h3>
+<p>页岩气评分 934.4（第 10），单日 +3.88 亿，波段 +7.01 亿（第 17），5 日 +10.03 亿，评分排名 118→10（+108 位）。这是 Top30 里除了机器人链和 AI 芯片之外，唯一一个单日、5 日、波段三项都为正的板块。近两日 40 条研报零覆盖，能源类研报这一轮集中在电力设备与储能（华安《电力设备周报》），没有一条落到上游油气。</p>
+<p>读法：资金已经连续多日在这个方向上加仓，但没有卖方叙事配合。这种「无研报 + 连续正流入」的组合，要么是产业端有尚未公开的变化，要么是纯资金博弈。在没有第二重证据之前，只能当观察，不能当方向。</p>
+<h3>预期差：电子烟，单日与波段同向但缺产业逻辑</h3>
+<p>电子烟评分 949.7（第 8），单日 +6.88 亿（第 7），波段 +5.08 亿（第 19），5 日 +13.54 亿，评分排名 49→8。研报零覆盖。10 日为 −9.23 亿，说明这是新起的一段，不是延续。</p>
+<h3>预期差：婴童概念，单日第三但波段几乎为零</h3>
+<p>婴童概念评分 959.7（第 3），单日 +11.35 亿（全市场第 3），但波段只有 +1.37 亿，10 日 −3.52 亿、30 日 −3.88 亿。评分排名从 260 直接跳到 3（+257 位）。这是典型的单日脉冲叠加百分位打分效应：一天的钱进来，把 30 个交易日的加权分抬到了前排，中长期资金其实还在走。研报零覆盖。</p>
+<h3>预期差：资源开采概念，评分第一但只有 5 个亿</h3>
+<p>资源开采概念评分 962.9，全场第一，单日 +5.17 亿，波段 +4.14 亿，评分排名 246→1（+245 位）。量级完全撑不起榜首位置，这是全市场普跌下「净流出得少」拿到的百分位红利，不是资金进攻。研报零覆盖。同类还有 SPD 概念（268→22）、DRG/DIP（217→12）、包装材料（225→28），波段全部为负，归为噪音，不列为方向。</p>
+<h2>四、🟢 研报先行 · 资金未进榜</h2>
+<p>这一节是今晚最有信息量的部分：研报最看好的方向，正好是资金撤得最狠的方向。</p>
+<h3>反向观察：存储 / 国产存储产业链</h3>
+<p>国盛证券《硬科技核心策略》把「国产存储产业链」写进配置建议第一节。现实是：存储芯片评分 79.7，在 439 个板块里排第 434，单日 −85.61 亿，波段 −134.57 亿（第 403），5 日 −115.22 亿，10 日 −224.21 亿，30 日 −48.48 亿。四个周期全部为负，评分排名从第 155 掉到 434。</p>
+<p>读法：研报讲的是三季报兑现与国产替代，资金走的是连续四周的撤退。这两个事实可以同时为真——产业周期在往上，筹码结构在往下。不需要为其中一边否定另一边，只需要知道「现在没有买盘在验证它」。</p>
+<h3>反向观察：CPO / 光模块</h3>
+<p>西部证券《新兴产业周报 20261025》给光模块（CPO）「超配」、技术面「偏强」、盈利预期「上修」，并给出催化：英伟达与矽品扩大共同封装光学合作，2027 年中产能提升至当前 15 倍，2028 年底再翻一倍。</p>
+<p>现实是：CPO 概念评分 90.0，第 431，单日 −99.01 亿，波段 −255.01 亿（第 427），10 日 −415.66 亿；光通信模块评分 98.9，第 430，单日 −86.01 亿，10 日 −269.38 亿。两个板块的 30 日累计也是负的。</p>
+<div class="warning">🔴 <strong>这是今晚最硬的背离。</strong>产业催化给到了 15 倍产能这种量级，资金给的是十亿级的连续净流出。研报的超配判断和筹码行为完全相反。明日看两件事：CPO 单日流出能否收敛到 50 亿以内、龙头是否在 60 日线附近被承接。收敛说明背离在修复，继续放量则说明超配要等下一个筹码周期。</div>
+
+<h3>反向观察：IDC / 智算</h3>
+<p>三份研报同向：国泰海通《IDC 行业报告：IDC 上行周期启动》（2025-2030 年中国智能算力规模复合增速 50.3%）、国信《粤港湾智算》、华创《AI 洞见系列（一）：算力需求由训练转向推理》。华创那句最具体：AI 算力需求已从「以训练为主」进入「训练与推理并重、推理开始占优」的阶段。</p>
+<p>现实是：数据中心评分 107.5，第 428，单日 −60.48 亿；算力概念第 370，单日 −22.03 亿，波段 −158.00 亿；液冷服务器第 422，单日 −47.09 亿。智算这条线上，只有 AI 芯片一个分支拿到了钱。</p>
+<h3>反向观察：半导体设备国产化</h3>
+<p>华西证券《半导体设备去日化专题》（10-26）认为「去日化」是重要趋势，大扩产下国产设备与零部件加速突破，并给了中芯国际、华虹之外的永芯科技、北电集成两家新晶圆厂的注册资本（235 亿、200 亿）作为预期差来源。</p>
+<p>现实是：半导体概念评分 64.9，第 438，单日 −106.70 亿；先进封装第 380，单日 −24.25 亿；EDA 概念虽然在 Top30 第 30，但单日只有 +0.36 亿、波段 −0.78 亿，是被动进榜。设备端的钱今天没有来。</p>
+<h3>反向观察：智谱 AI</h3>
+<p>R2 检索到两条智谱相关研报，一条是港股智谱（02513）深度（2026-03-16），一条把目标价上调至 2000 港元、重申增持（2026-07-07）。都不在近两日窗口内，属于陈旧观点。资金侧智谱 AI 概念今天是第 4 名、单日 +6.75 亿，但波段只有 +2.31 亿、10 日 −2.73 亿。研报新不新、资金厚不厚，两边都不满足共振条件。</p>
+<h2>五、📈 资金新进攻方向</h2>
+<p>筛选条件：评分排名上升 ≥10 位。下表同时给出单日净额与波段净额，用来区分「真进攻」和「百分位假象」。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: left;">板块</th>
+<th style="text-align: right;">评分排名变化</th>
+<th style="text-align: right;">单日净额(亿)</th>
+<th style="text-align: right;">波段净额(亿)</th>
+<th style="text-align: left;">研报配合</th>
+<th style="text-align: left;">判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>人形机器人</strong></td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">+26.32</td>
+<td style="text-align: right;">+84.03</td>
+<td style="text-align: left;">弱</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>AI芯片</strong></td>
+<td style="text-align: right;">+10</td>
+<td style="text-align: right;">+15.84</td>
+<td style="text-align: right;">+24.70</td>
+<td style="text-align: left;">有</td>
+<td style="text-align: left;">共振：华源《燧原科技：云端 AI 芯片领军企业》、国盛《硬科技核心策略》、华西《半导体设备去日化》。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>机器人执行器</strong></td>
+<td style="text-align: right;">+19</td>
+<td style="text-align: right;">+2.81</td>
+<td style="text-align: right;">+18.62</td>
+<td style="text-align: left;">有</td>
+<td style="text-align: left;">共振：海通国际明确执行器三大件占整机成本 73%，万联点名执行器为价值量最高环节。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3D摄像头</strong></td>
+<td style="text-align: right;">+20</td>
+<td style="text-align: right;">+2.30</td>
+<td style="text-align: right;">+13.55</td>
+<td style="text-align: left;">有</td>
+<td style="text-align: left;">共振：属机器人感知/视觉链，研报多点名感知系统与视觉方案。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>数字孪生</strong></td>
+<td style="text-align: right;">+25</td>
+<td style="text-align: right;">+5.00</td>
+<td style="text-align: right;">+8.68</td>
+<td style="text-align: left;">有</td>
+<td style="text-align: left;">弱共振：国信《物理 AI》讲「采集—标注—训练—部署—反馈」数据闭环与数采平台，联想《AI 驱动产业新生》讲 AI 训练场。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>智谱AI概念</strong></td>
+<td style="text-align: right;">+33</td>
+<td style="text-align: right;">+6.75</td>
+<td style="text-align: right;">+2.31</td>
+<td style="text-align: left;">弱</td>
+<td style="text-align: left;">研报有但陈旧（智谱 2026-03-16、目标价上调 2026-07-07），不在近两日窗口。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>婴童概念</strong></td>
+<td style="text-align: right;">+257</td>
+<td style="text-align: right;">+11.35</td>
+<td style="text-align: right;">+1.37</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">无研报。单日资金第 3，但波段仅 +1.37 亿、10 日与 30 日仍在流出，是单日脉冲。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>资源开采概念</strong></td>
+<td style="text-align: right;">+245</td>
+<td style="text-align: right;">+5.17</td>
+<td style="text-align: right;">+4.14</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">无研报。评分榜首却只有 5.17 亿，量级撑不起榜首位置，属百分位效应。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>电子烟</strong></td>
+<td style="text-align: right;">+41</td>
+<td style="text-align: right;">+6.88</td>
+<td style="text-align: right;">+5.08</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">无研报。单日 +6.88 亿、波段 +5.08 亿，方向本身缺产业逻辑支撑。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>页岩气</strong></td>
+<td style="text-align: right;">+108</td>
+<td style="text-align: right;">+3.88</td>
+<td style="text-align: right;">+7.01</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">无研报。单日 +3.88 亿、波段 +7.01 亿，能源线里唯一有正波段的品种。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PLC概念</strong></td>
+<td style="text-align: right;">+56</td>
+<td style="text-align: right;">+4.42</td>
+<td style="text-align: right;">+1.04</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">无研报。工控/自动化，可作物理 AI 的边缘延伸，但波段仅 +1.04 亿。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>机器视觉</strong></td>
+<td style="text-align: right;">+47</td>
+<td style="text-align: right;">+6.16</td>
+<td style="text-align: right;">+0.24</td>
+<td style="text-align: left;">弱</td>
+<td style="text-align: left;">有间接配合（国信《物理 AI》、东吴领益智造谈视觉/精密件）。但波段仅 +0.24 亿、10 日 −18.48 亿，单日进、中期出。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DRG/DIP</strong></td>
+<td style="text-align: right;">+205</td>
+<td style="text-align: right;">+2.54</td>
+<td style="text-align: right;">-0.13</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">无研报。波段为负，评分靠百分位堆出来。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SPD概念</strong></td>
+<td style="text-align: right;">+246</td>
+<td style="text-align: right;">+1.65</td>
+<td style="text-align: right;">-0.80</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">无研报。波段与 5 日均转负，纯单日反弹。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>预制菜概念</strong></td>
+<td style="text-align: right;">+166</td>
+<td style="text-align: right;">+4.20</td>
+<td style="text-align: right;">-2.92</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">无研报。10 日 −8.64 亿，属超跌反抽。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>基因测序</strong></td>
+<td style="text-align: right;">+102</td>
+<td style="text-align: right;">+4.38</td>
+<td style="text-align: right;">-3.07</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">无研报。波段为负，单日脉冲。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>电子车牌</strong></td>
+<td style="text-align: right;">+52</td>
+<td style="text-align: right;">+1.11</td>
+<td style="text-align: right;">+2.01</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">无研报。体量小，不构成方向。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>包装材料</strong></td>
+<td style="text-align: right;">+197</td>
+<td style="text-align: right;">+1.10</td>
+<td style="text-align: right;">-1.19</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">无研报。波段、5 日、10 日全负，噪音。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>水产概念</strong></td>
+<td style="text-align: right;">+49</td>
+<td style="text-align: right;">+2.74</td>
+<td style="text-align: right;">+1.36</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">无研报。体量小。</td>
+</tr>
+</tbody>
+</table></div>
+<p>只有三行同时满足「排名跳升 + 单日净额为正 + 波段净额为正 + 研报配合」：<strong>人形机器人、机器人执行器、3D 摄像头</strong>。AI 芯片也算，但它在产业内部分歧，前面已单列。</p>
+<h2>六、🔭 明日观察要点</h2>
+<ol>
+<li>
+<p><strong>物理 AI 的接力能不能从零部件走到整机。</strong> 今天钱在执行器、减速器、3D 摄像头上，人形机器人整体波段 84 亿。明天看的是这条链能否扩散到丝杠、灵巧手、触觉传感器这些研报点名但今天没进榜的分支。不扩散就还是零部件行情，扩散才是主线。</p>
+</li>
+<li>
+<p><strong>CPO 与存储的流出会不会收敛。</strong> 这两个方向 5 日、10 日、30 日全部净流出，不是一天的事。明天如果单日流出收敛到 50 亿以内，说明筹码在换手；如果继续放量，研报的超配判断要等下个周期。这是研报与资金正面碰撞的第一现场。</p>
+</li>
+<li>
+<p><strong>AI 芯片的内部分化会往哪边走。</strong> 今天算力芯片设计端进钱（AI 芯片 +15.84 亿）、制造端失血（半导体概念 −106.70 亿）。明天若设计端继续吸金而制造端止跌，是产业内部再平衡；若设计端也开始流出，整个半导体链就进入统一的退潮。</p>
+</li>
+<li>
+<p><strong>页岩气的无研报连续流入要不要跟。</strong> 单日、5 日、波段三项全正，但零研报支撑。明天看是否有卖方开始覆盖能源上游，或者补一条政策/价格类消息。连续 3 日正流入且出现研报，才升级为可交易方向。</p>
+</li>
+<li>
+<p><strong>Top30 里的假象要剔掉。</strong> 婴童概念（波段 +1.37 亿）、资源开采（+4.14 亿）、SPD（−0.80 亿）、DRG/DIP（−0.13 亿）、包装材料（−1.19 亿）、预制菜（−2.92 亿）都是靠百分位打分进榜，中长期资金仍在流出。这些不改主线判断，也不该出现在明天的交易计划里。</p>
+</li>
+</ol>
+
+<footer>
+<p><strong>免责声明：</strong>本文为每日研报与板块资金数据的交叉整理，所有判断基于公开数据与卖方观点，不构成任何投资建议。市场有风险，决策请独立完成。</p>
+<p><strong>数据来源：</strong></p>
+<ol>
+<li><strong>板块资金雷达（东财口径）：</strong>本地文件 <em>板块资金雷达/data_em/tdx_style/hist_metrics.json</em>，as_of 2026-10-26，前值 2026-10-23，覆盖 439 个东财概念/行业板块。评分 = 波段净额 40% + 流入强度 30% + 单日净额 30% 的横截面百分位加权 ×1000；波段净额 = 5 日×0.5 + 10 日×0.3 + 30 日×0.2（单位：亿元）。逐板块的 5/10/30 日净额与排名取自同源 <em>data_em/em_metrics.json</em>（algorithm_version = em-local-v4.1，date = 20261026）。</li>
+<li><strong>数据缺口：</strong>该快照不含板块当日涨幅，数据文件 <em>unavailable_fields</em> 字段明确列出 <em>chg</em> 与 <em>avgInflow</em>，故本报告不提供涨幅列、不做涨跌家数统计，也未用其他数据源回填。</li>
+<li><strong>研报：</strong>亿信 API（billions-intelligence，POST /v2/search，source=report，search_mode=advanced，count=20，time_range=past 2 days），两轮检索共 40 条，均返回 success=true。涉及机构：国信、国盛、国金、万联、华安、华福、中泰、海通国际、东吴、申万宏源、华源、华西、西部、国泰海通、华创、粤开、招商、中金、光大、山西、华联期货、头豹研究院、联想集团等。</li>
+<li><strong>指数背景：</strong>粤开证券《粤开市场日报》2026-10-26（同为亿信 API report 检索结果），沪指、深证成指、创业板指、科创 50 收盘点位与两市成交额。</li>
+<li>本次未使用 Tushare、AKShare、通达信（TDX）或网页搜索作为替代数据源；研报部分未降级到其他通道。</li>
+<li><strong>方法限制：</strong>板块主力净额是成分股求和，同一只大市值成分股会同时计入多个板块，板块净额不可跨板块加总。本报告只做单板块内读数与排名比较，未做成分集中度拆解，因此「板块净流入」不等同于「真实增量资金」。</li>
+</ol>
+<p style="margin-top:10px">研报巡逻 · 深度复盘前置侦察环 · 生成时间：2026-10-26 22:36（系统时钟，Asia/Shanghai）</p>
+</footer>
+
+</body>
+</html>
