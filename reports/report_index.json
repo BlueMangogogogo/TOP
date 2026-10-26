@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-10-26T20:31:58",
-  "total": 280,
-  "daily_count": 197,
+  "last_updated": "2026-10-26T21:28:30",
+  "total": 281,
+  "daily_count": 198,
   "industry_count": 83,
   "reports": [
     {
@@ -22,6 +22,16 @@
       "category": "日常复盘",
       "type": "daily",
       "size_kb": 26.3,
+      "date": "2026-10-26"
+    },
+    {
+      "relative_path": "reports/2026-10-26/宏观择时日报_MTIv3_20261026.html",
+      "id": "2026-10-26-宏观择时日报_MTIv3_20261026",
+      "display_date": "10月26日",
+      "title": "宏观择时日报_MTIv3_20261026",
+      "category": "宏观择时",
+      "type": "daily",
+      "size_kb": 271.7,
       "date": "2026-10-26"
     },
     {
