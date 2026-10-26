@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月25日 周度盘前</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月25日 周度盘前</h1>
+  <div class="meta">
+    📅 2026年10月25日 22:30 名义截止 ｜ 下周 5 个交易日（10/26–10/30）｜ 投资小龙虾 AI
+  </div>
+</header>
+
+<blockquote>
+<p><strong>补跑说明</strong>：本报告为 22:30 定时任务的补建产物，实际生成晚于名义截止时间。数据 as_of 为 2026-10-23（最后一个交易日）收盘，10-24、10-25 无行情。所有行情、涨跌停、行业、资金、MTI 数据取自本地已核验文件；新闻为亿信标题级检索，未逐篇回核原文，凡属媒体口径的均单独标注。</p>
+</blockquote>
+<h2>一句话</h2>
+<p>周五是恐慌的对称修复，不是趋势的起点。上证收在全部均线上方失败之后的第二天，唯一有用的数字是 3658.03。</p>
+<h2>上周五收盘与位置</h2>
+<table>
+<thead>
+<tr>
+<th>指数</th>
+<th>10/23 收</th>
+<th>当日</th>
+<th>当周</th>
+<th>MA5</th>
+<th>MA20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3690.48</td>
+<td>+0.89%</td>
+<td>-0.69%</td>
+<td>3705.57</td>
+<td>3803.88</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>11673.83</td>
+<td>+2.79%</td>
+<td>-1.09%</td>
+<td>11670.84</td>
+<td>12539.07</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>2684.10</td>
+<td>+4.16%</td>
+<td>-3.18%</td>
+<td>2688.24</td>
+<td>3006.20</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>1345.51</td>
+<td>+3.04%</td>
+<td>-0.97%</td>
+<td>1333.25</td>
+<td>1472.27</td>
+</tr>
+<tr>
+<td>沪深300</td>
+<td>4105.33</td>
+<td>+1.71%</td>
+<td>-1.57%</td>
+<td>4116.04</td>
+<td>4295.86</td>
+</tr>
+<tr>
+<td>国证2000</td>
+<td>8919.01</td>
+<td>+2.29%</td>
+<td>+0.51%</td>
+<td>8902.19</td>
+<td>9434.34</td>
+</tr>
+</tbody>
+</table>
+<p>涨停 82 家、跌停 6 家；前一日是 33 家涨停、49 家跌停。一天之内情绪从冰点打到常温，这个速度只在超跌反弹里出现。</p>
+<p>均线结构仍空：上证收盘 3690.48 低于 MA5（3705.57）、MA10（3731.69）、MA20（3803.88）、MA60（3871.57）、MA120（3965.67）。深成指、创业板指同样在 MA5 附近徘徊，只有科创50、上证50、国证2000 勉强站上 MA5。<strong>指数层面没有一条均线被收复，只有下跌速度被中止。</strong></p>
+<p>沪深300 已连跌 11 周（按本地日线周收盘核验，自 8 月中旬起）。这个数字说明位置极端，不说明方向确定。极端只改善赔率，不改变胜率。</p>
+<h2>周末外盘</h2>
+<table>
+<thead>
+<tr>
+<th>品种</th>
+<th>10/23 收盘</th>
+<th>当日</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道琼斯</td>
+<td>52215.16</td>
+<td>-1.23%</td>
+</tr>
+<tr>
+<td>纳斯达克</td>
+<td>25955.34</td>
+<td>-0.21%</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7623.68</td>
+<td>-0.52%</td>
+</tr>
+<tr>
+<td>布伦特原油</td>
+<td>约 117 美元</td>
+<td>涨近 4%（媒体口径）</td>
+</tr>
+<tr>
+<td>现货黄金</td>
+<td>失守 4000 美元</td>
+<td>下跌</td>
+</tr>
+</tbody>
+</table>
+<p>标普 11 个板块 8 跌 3 涨：能源 +2.51%、科技 +0.35% 领涨，必需消费 -1.83% 领跌。这个组合不是衰退定价，是油价通胀定价加上科技股的估值压力。</p>
+<p>周一开盘的外部压力主要来自油价，不是美股跌幅。美股周五跌幅温和（纳指仅 -0.21%），真正在动的是原油和利率。</p>
+<h2>周末消息</h2>
+<ol>
+<li><strong>国办 10/23 印发</strong>《关于适应人工智能技术发展助力构建就业友好型发展方式的意见》，继续部署"人工智能+"行动。方向层面是延续，不是新增变量。</li>
+<li><strong>证监会核准花旗证券（中国）</strong>，第七家外资独资券商，注册资本 12 亿元。慢变量，对下周盘面无直接作用。</li>
+<li><strong>上交所修订上证系列综合指数编制方案，10/26 起实施</strong>：单一样本权重上限 15%，风险警示证券剔除起算点由"实施日"提前至"公告日"。规则层确实变了，但<strong>10/26 不是权重因子调整日</strong>（权重因子在每月第二个星期五的下一交易日调整，10 月为 10/12，已过），本次只加上限、无新增样本，15% 触发条件不成立，因此<strong>周一不产生被动调仓</strong>。这是制度补丁，不是资金事件；周一若出现权重股或 ST 异动，也不能归因于此。</li>
+<li><strong>央行将于 10/26 开展 7000 亿元 1 年期 MLF</strong>（10/23 公告）：10 月 MLF 到期 9000 亿，MLF 项下净回笼 2000 亿；但合并两个期限买断式逆回购加量 4000 亿后，<strong>10 月中期流动性整体净投放 2000 亿</strong>，与 9 月持平，为连续第 4 个月净投放。这是本周末最容易被读错的一条：单看 MLF 是净回笼，看中期流动性总量是净投放，读数应落在"相机微调、避免中长期流动性过度叠加"，而不是"货币边际收紧"。</li>
+<li><strong>美伊</strong>：特朗普 10/24 表态"随时可能再打伊朗，也可能达成协议"；媒体称美方打击方案已就位、待总统审批。消息双向，油价已经把最坏情形定价了一部分。</li>
+<li>下周日程：10/29 凌晨美联储决议（媒体汇总 94% 经济学家预期维持 3.75%–4% 不变），同日 9 月 PCE 与三季度 GDP；10/30 日本央行（预期 1.25% 不变）、欧央行。</li>
+<li>财报密集：微软、Alphabet、亚马逊、英特尔，三星、SK 海力士、铠侠；A 股宇树科技、贵州茅台及中际旭创、天孚通信、新易盛集中在季报截止前登场。</li>
+</ol>
+<p><strong>需要点明的一处叙事冲突</strong>：部分自媒体称"美联储重启加息、仅完成单次加息"，与"94% 预期维持不变"直接矛盾。两种说法不能同时成立，我按"决议未出、预期不变"处理，不把加息当成已知事实。</p>
+<h2>板块资金（10-23 单日，通达信口径）</h2>
+<table>
+<thead>
+<tr>
+<th>流入前五</th>
+<th>净额（亿）</th>
+<th>涨幅</th>
+<th>净额/成交额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人工智能</td>
+<td>+99.63</td>
+<td>+3.05%</td>
+<td>2.21%</td>
+</tr>
+<tr>
+<td>人形机器人</td>
+<td>+72.53</td>
+<td>+4.40%</td>
+<td>2.48%</td>
+</tr>
+<tr>
+<td>机器人概念</td>
+<td>+70.23</td>
+<td>+3.42%</td>
+<td>1.32%</td>
+</tr>
+<tr>
+<td>小米概念</td>
+<td>+69.33</td>
+<td>+3.49%</td>
+<td>2.79%</td>
+</tr>
+<tr>
+<td>虚拟现实</td>
+<td>+64.80</td>
+<td>+3.57%</td>
+<td>4.06%</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>流出前三</th>
+<th>净额（亿）</th>
+<th>涨幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中特估</td>
+<td>-51.15</td>
+<td>+0.58%</td>
+</tr>
+<tr>
+<td>PCB概念</td>
+<td>-28.18</td>
+<td>+1.75%</td>
+</tr>
+<tr>
+<td>绿色电力</td>
+<td>-23.31</td>
+<td>+1.01%</td>
+</tr>
+</tbody>
+</table>
+<p>流入前十几乎全在 AI、机器人、消费电子，且标签高度重叠，本质是同一批钱的多个名字。流出侧是防守端（中特估、绿电、风电）。</p>
+<p><strong>两处背离要记住</strong>：PCB 涨 1.75% 却净流出 28 亿，CIPS 涨 3.10% 却流出 23 亿。上涨中出货，配合不上。</p>
+<p>口径约束：本地版本化资金流只覆盖 2026-10-23 一天（<code>source_date_verified=true</code>），更早日期仍为 legacy 口径，因此<strong>不给"连续进攻 N 天"这类结论</strong>，也不做东财/通达信两口径交叉比较（东财侧缺日期字段，仍为 degraded）。</p>
+<h2>周一的三档情景</h2>
+<p>不给概率。概率需要样本校准，目前没有。</p>
+<p><strong>A 修复延续</strong>：竞价不低开超过 0.5%，早盘半小时涨停家数维持 60 家以上，AI 链出现第二个净流入日。这种情况下反弹从"情绪修复"升级为"资金接力"，上证有空间去试 3731.69（MA10）。动作上不需要加，只需要不动。</p>
+<p><strong>B 低开震荡</strong>（基准情形）：受油价与美股拖累小幅低开，全天在上周五区间内消化。判断标准是 3658.03 是否被击穿，不破就是箱体，破了就是另一种情形。</p>
+<p><strong>C 反弹失败</strong>：上证有效跌破 3658.03，同时涨停家数掉到 40 家以下、跌停回升到 20 家以上。这意味着周五那根阳线只是下跌中继，需要在结构上认输，而不是摊平。</p>
+<h2>周一观察清单</h2>
+<ol>
+<li>上证 3658.03（10/22 收盘低点）是否失守，这是本周唯一的多空分界。</li>
+<li>MA5 3705.57 能否收回并站住，站不住就还是空头排列下的反抽。</li>
+<li>涨停家数能否维持在 60 家以上，炸板率是否失控（周五炸板率 12.8%，偏低，这是修复的证据之一）。</li>
+<li>AI/机器人链是否出现第二个净流入日。单日 100 亿是脉冲，第二天不接力就是情绪。</li>
+<li>PCB、CIPS 这类"涨着流出"的方向，若继续放量不涨，确认资金撤离。</li>
+<li>三季报：从"叙事"切到"兑现"的窗口。业绩不达预期的科技股，反弹中会被优先卖出。</li>
+<li>10/26 指数新规实施首日，权重股与 ST 板块的异动是否被错误解读为方向信号。</li>
+</ol>
+<h2>仓位纪律</h2>
+<p>MTI = -0.0125，中性观察，9 因子齐全（quality=complete）。正分全在情绪（涨停占比 +0.51、炸板 +0.42、小盘 +0.39），负分在结构（行业离散度 -0.61，处近 750 日 80% 分位；轮动 -0.30）。ERP 5.55 个百分点，40.8% 分位，中性。</p>
+<p>这个组合的含义很直接：<strong>情绪层面可以交易，结构层面不支持重仓。</strong> 判别线（±0.2、±0.5）是工程观察线，未做策略收益校准，不能直接换成仓位指令。</p>
+<p>两融是这周最实在的负面证据：10/22 余额 2.4191 万亿，单日 -233 亿，近 10 个交易日 -1174 亿，距 6/25 序列峰值 3.0009 万亿累计 -5818 亿（-19.39%），为 6 月以来最低；9/3 的 2.619 万亿只是 9 月局部高点。杠杆在真实退出，这解释了周四为什么会有 49 家跌停。</p>
+<h2>数据来源</h2>
+<ul>
+<li>指数日线与均线：本地 <code>宏观择时/data/index_daily.json</code>，as_of 20261023（8 个指数，733 个交易日）。<code>amount</code> 字段无单位标注、10-23 <code>volume</code> 为 null，故不引用绝对成交额。</li>
+<li>涨跌停家数：本地 <code>宏观择时/data/limit_series.json</code>，20261023 为 82/6、20261022 为 33/49。（此前 10-23 周报称 10/22 跌停 55 家，以本文件 49 家为准。）</li>
+<li>行业涨跌：本地 <code>宏观择时/data/industry_matrix.json</code> 20261023 切片，28 个申万二级行业（代码 801xxx；此前报告误称"申万一级"，此处更正）。</li>
+<li>板块资金：<code>板块资金雷达/data/hist_metrics.json</code> 2026-10-23，radar-v4.1，266 个板块，个股覆盖 5068/5384，<code>boards_flow.meta.json</code> 记 <code>source_date_verified=true</code>，manifest quality=complete。</li>
+<li>MTI 与 ERP：<code>宏观择时/data/mti_result.json</code>，research-v4.1，as_of 20261023，quality=complete，有效权重 1.0。</li>
+<li>两融：<code>宏观择时/data/margin.json</code>（沪深合计，人民币元，Jin10 分发），最后日期 20261022，滞后 1 个交易日。</li>
+<li>美股与商品：亿信 <code>/v2/search</code>（source=web），新华社、证券时报、东方财富等 10/24 报道，标题与摘要级，未逐篇核验原文。</li>
+<li>周末消息与日程：亿信 <code>/v2/search</code>（source=web，past 3 days），仅取标题与摘要，未核验原文；油价、私募新规为媒体口径。MLF 一项已按 10/23 央行公告与买断式逆回购加量口径复核（MLF 净回笼 2000 亿 / 中期流动性净投放 2000 亿），非媒体转述。</li>
+<li>本报告：补建于 2026-10-25T23:24，晚于名义截止 22:30，未使用任何 10-23 收盘后新增的行情数据。</li>
+<li>勘误（2026-10-25T23:24 复核）：两融峰值参照与 MTI 因子命名按 margin.json / mti_result.json 原始值更正；指数表各列已逐项复算，与 index_daily.json 一致。</li>
+</ul>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant（本地核验）｜亿信API 标题级检索｜东方财富/新华社 10-24 报道 &nbsp;|&nbsp; 生成时间：2026年10月25日 23:24</p>
+</footer>
+
+</body>
+</html>
