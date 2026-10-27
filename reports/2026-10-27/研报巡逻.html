@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月27日 研报巡逻</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月27日 研报巡逻</h1>
+  <div class="meta">
+    📅 2026-10-27 22:45 · 研报×板块资金雷达交叉比对（深度复盘前置侦察）
+  </div>
+</header>
+
+<blockquote>
+<p>一句话结论：今日雷达 Top30 几乎被小市值概念板块占满，资金侧大面积是单票事件；研报端过去两日唯一有连续支撑的方向是<strong>能源/燃气链</strong>，而研报反复提示的 <strong>CPO/HBM/先进封装、人形机器人/物理AI、红利煤炭银行</strong> 全部未进榜。真正的分歧不在"哪个板块强"，而在"雷达这张榜今天还能不能当资金证据用"。</p>
+</div>
+<hr>
+<h2>一、数据摘要</h2>
+<p>资金雷达（东财数据源 <code>hist_metrics.json</code>，as_of 2026-10-27，439 个概念板块，score 降序前 30）：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: right;">名次</th>
+<th>板块</th>
+<th style="text-align: right;">score</th>
+<th style="text-align: right;">当日主力净额(亿)</th>
+<th>排名变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>油气设服</td>
+<td style="text-align: right;">983.8</td>
+<td style="text-align: right;">+2.70</td>
+<td>66→1（+65）</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>轮毂电机</td>
+<td style="text-align: right;">973.6</td>
+<td style="text-align: right;">+1.78</td>
+<td>69→2（+67）</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>股权转让</td>
+<td style="text-align: right;">970.4</td>
+<td style="text-align: right;">+0.68</td>
+<td>115→3（+112）</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>彩票概念</td>
+<td style="text-align: right;">969.9</td>
+<td style="text-align: right;">+2.40</td>
+<td>46→4（+42）</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>供销社概念</td>
+<td style="text-align: right;">956.9</td>
+<td style="text-align: right;">+3.64</td>
+<td>235→5（+230）</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>退税商店</td>
+<td style="text-align: right;">956.7</td>
+<td style="text-align: right;">+0.45</td>
+<td>80→6（+74）</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>噪声防治</td>
+<td style="text-align: right;">956.7</td>
+<td style="text-align: right;">+0.07</td>
+<td>37→6（+31）</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>滨海新区</td>
+<td style="text-align: right;">952.6</td>
+<td style="text-align: right;">+0.53</td>
+<td>73→8（+65）</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>电子后视镜</td>
+<td style="text-align: right;">946.0</td>
+<td style="text-align: right;">−0.34</td>
+<td>16→9（+7）</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>激光雷达</td>
+<td style="text-align: right;">944.9</td>
+<td style="text-align: right;">+2.34</td>
+<td>188→10（+178）</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>酿酒概念</td>
+<td style="text-align: right;">940.3</td>
+<td style="text-align: right;">−0.22</td>
+<td>13→11（+2）</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td>B股</td>
+<td style="text-align: right;">937.6</td>
+<td style="text-align: right;">−0.02</td>
+<td>70→12（+58）</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td>盲盒经济</td>
+<td style="text-align: right;">921.0</td>
+<td style="text-align: right;">+0.74</td>
+<td>39→13（+26）</td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td>冰雪经济</td>
+<td style="text-align: right;">917.5</td>
+<td style="text-align: right;">+4.50</td>
+<td>267→14（+253）</td>
+</tr>
+<tr>
+<td style="text-align: right;">15</td>
+<td>信托重仓</td>
+<td style="text-align: right;">912.3</td>
+<td style="text-align: right;">−0.10</td>
+<td>103→15（+88）</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td>第四代半导体</td>
+<td style="text-align: right;">909.8</td>
+<td style="text-align: right;">−0.24</td>
+<td>160→16（+144）</td>
+</tr>
+<tr>
+<td style="text-align: right;">17</td>
+<td>社区团购</td>
+<td style="text-align: right;">902.7</td>
+<td style="text-align: right;">+0.05</td>
+<td>91→17（+74）</td>
+</tr>
+<tr>
+<td style="text-align: right;">18</td>
+<td>油气资源</td>
+<td style="text-align: right;">894.5</td>
+<td style="text-align: right;">+3.35</td>
+<td>79→18（+61）</td>
+</tr>
+<tr>
+<td style="text-align: right;">19</td>
+<td>空气能热泵</td>
+<td style="text-align: right;">889.7</td>
+<td style="text-align: right;">+1.62</td>
+<td>303→19（+284）</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td>汽车一体化压铸</td>
+<td style="text-align: right;">888.6</td>
+<td style="text-align: right;">−0.06</td>
+<td>158→20（+138）</td>
+</tr>
+<tr>
+<td style="text-align: right;">21</td>
+<td>页岩气</td>
+<td style="text-align: right;">883.1</td>
+<td style="text-align: right;">−1.67</td>
+<td>10→21（−11）</td>
+</tr>
+<tr>
+<td style="text-align: right;">22</td>
+<td>拼多多概念</td>
+<td style="text-align: right;">882.2</td>
+<td style="text-align: right;">−0.56</td>
+<td>65→22（+43）</td>
+</tr>
+<tr>
+<td style="text-align: right;">23</td>
+<td>3D摄像头</td>
+<td style="text-align: right;">877.8</td>
+<td style="text-align: right;">−1.95</td>
+<td>20→23（−3）</td>
+</tr>
+<tr>
+<td style="text-align: right;">24</td>
+<td>环氧丙烷</td>
+<td style="text-align: right;">876.8</td>
+<td style="text-align: right;">−0.04</td>
+<td>130→24（+106）</td>
+</tr>
+<tr>
+<td style="text-align: right;">25</td>
+<td>抗菌面料</td>
+<td style="text-align: right;">866.3</td>
+<td style="text-align: right;">−0.38</td>
+<td>53→25（+28）</td>
+</tr>
+<tr>
+<td style="text-align: right;">26</td>
+<td>氦气概念</td>
+<td style="text-align: right;">864.2</td>
+<td style="text-align: right;">+1.75</td>
+<td>196→26（+170）</td>
+</tr>
+<tr>
+<td style="text-align: right;">27</td>
+<td>天然气</td>
+<td style="text-align: right;">862.9</td>
+<td style="text-align: right;">+3.79</td>
+<td>117→27（+90）</td>
+</tr>
+<tr>
+<td style="text-align: right;">28</td>
+<td>共享经济</td>
+<td style="text-align: right;">854.4</td>
+<td style="text-align: right;">−0.74</td>
+<td>42→28（+14）</td>
+</tr>
+<tr>
+<td style="text-align: right;">29</td>
+<td>造纸印刷</td>
+<td style="text-align: right;">854.0</td>
+<td style="text-align: right;">−0.69</td>
+<td>139→29（+110）</td>
+</tr>
+<tr>
+<td style="text-align: right;">30</td>
+<td>乳业</td>
+<td style="text-align: right;">851.3</td>
+<td style="text-align: right;">−0.70</td>
+<td>62→30（+32）</td>
+</tr>
+</tbody>
+</table></div>
+<p>三处必须先说清的口径：</p>
+<ol>
+<li><strong>板块涨幅字段全为 null。</strong> 雷达 <code>radar-v4.1</code> 明确把不可验证的 chg / avgInflow 置空，本次未用任何收盘涨跌或估算值填补，因此本报告不做"涨幅—资金是否同向"的判断。</li>
+<li><strong>score 是本地三因子的历史百分位，不是原作者 14 指标模型。</strong> 可回看窗口仅 22 个观测日（2026-08-07 起），榜内名次日间跳变极大（供销社 235→5、空气能热泵 303→19），这类跳变来自分位重算，不来自新增资金。</li>
+<li><strong>Top30 单板块净额最大只有 4.50 亿，量级属小市值轮动。</strong> 板块净额是成分股求和、不可跨板块加总，同一只大票会同时计入多个板块（今日最典型的是雪人集团同时挂在天然气与冰雪经济）。</li>
+</ol>
+<hr>
+<h2>二、🔴 研报 + 资金共振（方向级，资金侧待验证）</h2>
+<h3>能源 / 燃气链：Top30 里唯一同时有研报与榜位的链条</h3>
+<p>榜位分布：油气设服（1，+2.70亿）、油气资源（18，+3.35亿）、页岩气（21，−1.67亿）、氦气概念（26，+1.75亿）、天然气（27，+3.79亿）。</p>
+<p>研报支撑（过去两日）：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>日期</th>
+<th>机构</th>
+<th>研报</th>
+<th>命中细分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-10-27</td>
+<td>申万宏源证券</td>
+<td>申万公用环保周报：9 月全国用电同比微增，<strong>欧亚气价延续涨势</strong></td>
+<td>天然气 / 油气</td>
+</tr>
+<tr>
+<td>2026-10-27</td>
+<td>财通证券</td>
+<td>9 月工业利润：上游涨价支撑，中游盈利转弱（9 月<strong>油气价格延续回升</strong>）</td>
+<td>油气资源</td>
+</tr>
+<tr>
+<td>2026-10-26</td>
+<td>天风证券</td>
+<td>天风晨会集萃：行业轮动观点含煤炭、石油石化，ETF 轮动观点含<strong>油气</strong></td>
+<td>能源链</td>
+</tr>
+</tbody>
+</table></div>
+<p>资金侧的核验结果<strong>并不支持把它当板块级信号</strong>：</p>
+<ul>
+<li><strong>天然气</strong>：雪人集团（002639）单票主力净额 +6.21 亿，占板块当日净额（+3.79 亿）的 164%。前五为正买入的个股合计约 9.2 亿，雪人一只占 68%。按集中度规则，这是个股事件，不是板块信号。</li>
+<li><strong>油气设服</strong>：东财口径 +2.70 亿，但通达信"油气开采"（881007，7 只成分）今日合计约 −0.57 亿，两者方向相反、成分口径不一致，无法对账。该榜位（66→1）不可作为资金证据。</li>
+<li><strong>页岩气</strong> 已是净流出（−1.67 亿），仍在榜 21 位，说明名次由分位驱动而非流入驱动。</li>
+</ul>
+<p>结论：能源链的<strong>研报方向是真的</strong>（气价上行、上游涨价、红利属性），但<strong>今日雷达给出的资金证据是假的或至少不可验证</strong>。方向保留给深度复盘，榜位不作为题材候选。</p>
+<hr>
+<h2>三、🟡 资金先行 · 研报未覆盖</h2>
+<p>过去两日研报检索（<code>source=report</code>，3 轮）无任何对应细分方向命中的榜内板块：</p>
+<ul>
+<li><strong>冰雪经济</strong>（14，+4.50亿，267→14）：同样由雪人集团单票驱动（占板块净额 138%），且伴随峨眉山Ａ（+10.02% 涨停）、盾安环境（+9.96%）、奥雅股份（+9.72%）的旅游/消费侧跟涨。研报端零覆盖，纯盘面行为。</li>
+<li><strong>彩票概念</strong>（4，+2.40亿）：粤传媒（002181）+4.21 亿，单票超过板块净额 100%，换手 15.5%。属单票事件。</li>
+<li><strong>激光雷达</strong>（10，+2.34亿，188→10）：东财口径 +2.34 亿，通达信"激光雷达"主题 22 只成分中前 20 只合计约 <strong>−4.28 亿</strong>，且成分全线下跌（罗博特科 −1.95 亿、雷科防务 −0.52 亿）。两口径方向相反，榜位 188→10 是分位噪声。研报端只有 2026-08 的海外 LiDAR 深度与 2023 年产业报告，不满足时间口径。</li>
+<li><strong>轮毂电机、电子后视镜、汽车一体化压铸、退税商店、噪声防治、滨海新区、股权转让、供销社概念</strong>：研报端仅有 2023–2024 年的一体化压铸/汽车轻量化旧报告，或只有公司层面股权转让、收购公告类信息（中信建投周观点中的开创电气股权转让等），无近期细分产业研报。</li>
+</ul>
+<p>这批榜位的共同点：市值小、单票占比高、研报覆盖为零。适合当"盘面异动观察清单"，不适合当方向。</p>
+<hr>
+<h2>四、🟢 研报先行 · 资金未进榜</h2>
+<p>研报密度最高、但今日完全不在 Top30 的方向：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>研报</th>
+<th>机构 / 日期</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPO / 光模块 / HBM / 先进封装</strong></td>
+<td>半导体：湾芯展 2026 论坛交流总结——建议关注 CPO 与 NPO 客户导入、上游光芯片与测试设备；先进逻辑、<strong>HBM 与先进封装扩产</strong>带动设备与零部件需求</td>
+<td>招银国际，2026-10-27</td>
+<td>当日榜内唯一沾边的是"第四代半导体"（16，−0.24亿），属材料端，不等于 CPO/HBM</td>
+</tr>
+<tr>
+<td><strong>人形机器人 / 物理AI</strong></td>
+<td>产业赛道与主题投资风向标：宇树加码生态布局，英伟达升级机器人平台</td>
+<td>天风证券，2026-10-27</td>
+<td>与 10-26 中信建投"物理AI发展提速"形成连续两日覆盖</td>
+</tr>
+<tr>
+<td><strong>机器人（延续）</strong></td>
+<td>周观点：物理AI发展提速，船舶订单持续景气</td>
+<td>中信建投，2026-10-26</td>
+<td>同上</td>
+</tr>
+<tr>
+<td><strong>红利 / 煤炭 / 银行</strong></td>
+<td>从择时轮动到"红利贵族"；晨会行业轮动：煤炭、纺织服装、石油石化、交通运输、银行</td>
+<td>华泰证券 2026-10-27；天风证券 2026-10-26</td>
+<td>榜内只有"信托重仓"（15）勉强沾边，煤炭、银行、交运均未进榜</td>
+</tr>
+<tr>
+<td><strong>免税消费</strong></td>
+<td>关注三季报业绩表现及优质标的修复机遇（免税板块，海南离岛免税）</td>
+<td>中信建投，2026-10-27</td>
+<td>榜内"退税商店"（6）≠ 免税，逻辑同源但细分不同，不硬凑</td>
+</tr>
+</tbody>
+</table></div>
+<p>这组信号的价值在于<strong>背离</strong>：今日指数缩量震荡（创元期货：外围地缘政治缓和，A股缩量震荡；国信证券：指高开低走，银行逆市走强），而研报的落点是半导体设备/先进封装、机器人、红利三条线，资金却跑去炒彩票、供销社、滨海新区。研报与资金今天不在同一个市场里。</p>
+<hr>
+<h2>五、📈 资金新进攻方向（排名上升 ≥10 位）</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align: right;">名次变化</th>
+<th style="text-align: right;">净额(亿)</th>
+<th>研报配合</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空气能热泵</td>
+<td style="text-align: right;">303→19（+284）</td>
+<td style="text-align: right;">+1.62</td>
+<td>无近期研报（仅 2026-04 热泵产业年鉴：2025 年零售额 291.8 亿，同比 −3.7%）</td>
+<td>分位噪声为主</td>
+</tr>
+<tr>
+<td>冰雪经济</td>
+<td style="text-align: right;">267→14（+253）</td>
+<td style="text-align: right;">+4.50</td>
+<td>无</td>
+<td>单票（雪人集团）</td>
+</tr>
+<tr>
+<td>供销社概念</td>
+<td style="text-align: right;">235→5（+230）</td>
+<td style="text-align: right;">+3.64</td>
+<td>无</td>
+<td>未核验，小市值</td>
+</tr>
+<tr>
+<td>激光雷达</td>
+<td style="text-align: right;">188→10（+178）</td>
+<td style="text-align: right;">+2.34</td>
+<td>仅 2026-08 海外深度</td>
+<td>两口径方向相反</td>
+</tr>
+<tr>
+<td>氦气概念</td>
+<td style="text-align: right;">196→26（+170）</td>
+<td style="text-align: right;">+1.75</td>
+<td>间接（能源/气体涨价链）</td>
+<td>观察</td>
+</tr>
+<tr>
+<td>第四代半导体</td>
+<td style="text-align: right;">160→16（+144）</td>
+<td style="text-align: right;">−0.24</td>
+<td>仅 2025-11 金刚石/第四代半导体旧报告</td>
+<td>净流出，名次虚高</td>
+</tr>
+<tr>
+<td>汽车一体化压铸</td>
+<td style="text-align: right;">158→20（+138）</td>
+<td style="text-align: right;">−0.06</td>
+<td>2023–2024 旧报告</td>
+<td>名次虚高</td>
+</tr>
+<tr>
+<td>股权转让</td>
+<td style="text-align: right;">115→3（+112）</td>
+<td style="text-align: right;">+0.68</td>
+<td>公司公告类（开创电气等）</td>
+<td>事件驱动，非题材</td>
+</tr>
+<tr>
+<td>造纸印刷</td>
+<td style="text-align: right;">139→29（+110）</td>
+<td style="text-align: right;">−0.69</td>
+<td>无</td>
+<td>净流出</td>
+</tr>
+<tr>
+<td>环氧丙烷</td>
+<td style="text-align: right;">130→24（+106）</td>
+<td style="text-align: right;">−0.04</td>
+<td>无</td>
+<td>噪声</td>
+</tr>
+<tr>
+<td>信托重仓</td>
+<td style="text-align: right;">103→15（+88）</td>
+<td style="text-align: right;">−0.10</td>
+<td>无</td>
+<td>净流出</td>
+</tr>
+<tr>
+<td>油气设服</td>
+<td style="text-align: right;">66→1（+65）</td>
+<td style="text-align: right;">+2.70</td>
+<td><strong>有（气价上行）</strong></td>
+<td>唯一有研报的方向，但两口径矛盾</td>
+</tr>
+<tr>
+<td>滨海新区</td>
+<td style="text-align: right;">73→8（+65）</td>
+<td style="text-align: right;">+0.53</td>
+<td>无</td>
+<td>区域概念</td>
+</tr>
+<tr>
+<td>油气资源</td>
+<td style="text-align: right;">79→18（+61）</td>
+<td style="text-align: right;">+3.35</td>
+<td><strong>有（油气价格回升）</strong></td>
+<td>方向可信，资金量级小</td>
+</tr>
+<tr>
+<td>天然气</td>
+<td style="text-align: right;">117→27（+90）</td>
+<td style="text-align: right;">+3.79</td>
+<td><strong>有（欧亚气价延续涨势）</strong></td>
+<td>单票（雪人集团）</td>
+</tr>
+</tbody>
+</table></div>
+<p>十六条里只有三条有近期研报配合，且全部落在能源链；十二条的净额是负的或接近零。"新进攻方向"这个词今天不成立，更准确的说法是<strong>分位重算造成的名次漂移</strong>。</p>
+<hr>
+<h2>六、🔭 明日观察要点</h2>
+<ol>
+<li><strong>能源链要看扩散不看名次。</strong> 气价有研报、有基本面变量（欧亚气价、9 月油气价格回升），但要等出现"非单票"的资金扩散才算板块级：若明日天然气/油气资源的主力净额里 top1 占比降到 30% 以下，才算真流入。</li>
+<li><strong>盯雪人集团（002639）。</strong> 它今天同时把"冰雪经济"和"天然气"两个榜位撑了起来（+6.21 亿，换手 23.14%，+5.24%）。它一旦走弱，这两个名次会同步消失——这两个榜位本质上是同一只票的两个标签。</li>
+<li><strong>研报与资金的背离是否收敛。</strong> CPO/HBM/先进封装、人形机器人/物理AI、红利煤炭银行，若明日进入雷达 Top30，才算资金真的转向；若继续缺席，说明研报端在提前于资金，属于"研报先行、资金未动"的等待期，而不是买点。</li>
+<li><strong>雷达榜的可信度本身要打折。</strong> 22 个观测日的百分位评分让 200+ 位的名次抬升成为常态。明日若再出现大面积 100 位以上的跳升，先按评分噪声处理，不要写成"资金进攻"。</li>
+<li><strong>第四代半导体与一体化压铸是"名次高、净额负"的典型。</strong> 这两个今天分别 160→16、158→20，但资金是净流出的。名次上升不等于资金进场，这条区别明日要继续守住。</li>
+</ol>
+<hr>
+<h2>免责声明</h2>
+<p>本报告为盘后研究记录，不构成投资建议。雷达 score 为本地三因子历史百分位模型（radar-v4.1），非原作者私有 14 指标复刻，阈值与档位未经收益或概率校准；板块主力净额为成分股求和，同一股票可重复计入多个板块，不可跨板块加总；单票集中度检查仅对冰雪经济、天然气、彩票概念、激光雷达、油气设服五个板块执行，其余榜位未做全量分页核验，故一律不进入题材候选；板块涨幅字段按模型设计为 null，本报告未用任何估算值填补。</p>
+<h2>数据来源</h2>
+<ul>
+<li><strong>板块资金雷达</strong>：东财数据源 <code>D:\库\Desktop\投资小龙虾\板块资金雷达\data_em\tdx_style\hist_metrics.json</code>（as_of 2026-10-27，439 个概念板块，radar-v4.1，窗口 2026-08-07 起 22 个观测日）；原始日数据 <code>data_em\em_bkzj_20261027.json</code>（d1/d5/d10/d30 主力净额），已用 d1 与榜单净额字段逐条对账 60 条、0 条不一致。</li>
+<li><strong>研报</strong>：亿信 API <code>search</code> 端点，<code>source=report</code>，<code>search_mode=advanced</code>，<code>time_range=past 2 days</code>，共 3 轮（通用主题 / 雷达 Top8 定向 / 研报相关细分定向），三轮 HTTP 200 且 success=true，各返回 20 条；原始响应落盘 <code>分析报告汇总\2026-10-27\raw_yanbao\{01_general,02_top8_radar,03_directed}.json</code>。</li>
+<li><strong>个股集中度</strong>：通达信 MCP <code>tdx_screener</code>（2026-10-27 收盘口径），用于冰雪经济、天然气、彩票概念、激光雷达、油气设服的成分股主力净额取样；通达信板块与东财概念成分不完全一致，两者差异已在正文标注，未做跨源拼接。</li>
+<li><strong>未使用</strong>：Tushare、AKShare、web_search 研报/新闻数据、问达问答。研报全部来自亿信通道。</li>
+</ul>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>
