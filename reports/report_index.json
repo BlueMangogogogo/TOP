@@ -1,9 +1,29 @@
 {
-  "last_updated": "2026-10-26T23:46:37",
-  "total": 283,
-  "daily_count": 200,
+  "last_updated": "2026-10-27T22:34:45",
+  "total": 285,
+  "daily_count": 202,
   "industry_count": 83,
   "reports": [
+    {
+      "relative_path": "reports/2026-10-27/收盘总结.html",
+      "id": "2026-10-27-收盘总结",
+      "display_date": "10月27日",
+      "title": "收盘总结",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 13.8,
+      "date": "2026-10-27"
+    },
+    {
+      "relative_path": "reports/2026-10-27/宏观择时日报_MTIv3_20261027.html",
+      "id": "2026-10-27-宏观择时日报_MTIv3_20261027",
+      "display_date": "10月27日",
+      "title": "宏观择时日报_MTIv3_20261027",
+      "category": "宏观择时",
+      "type": "daily",
+      "size_kb": 271.9,
+      "date": "2026-10-27"
+    },
     {
       "relative_path": "reports/2026-10-26/行业调研_医药CRO创新药.html",
       "id": "2026-10-26-行业调研_医药CRO创新药",
