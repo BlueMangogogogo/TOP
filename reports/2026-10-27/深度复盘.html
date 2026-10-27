@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月27日 深度复盘</title>
+<style>
+:root{--yellow:#ebb543;--yellow-light:#f7e8c5;--red:#c0392b;--red-light:#fdf0ef;--black:#1a1a1a;--gray-900:#2c2c2c;--gray-700:#555;--gray-500:#888;--gray-300:#bbb;--gray-100:#f0f0f0;--white:#fff;--font:"Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",system-ui,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font);font-size:15px;line-height:1.75;color:var(--gray-900);background:var(--white);max-width:820px;margin:0 auto;padding:40px 28px 60px;-webkit-font-smoothing:antialiased;}
+header{border-bottom:3px solid var(--yellow);padding-bottom:20px;margin-bottom:28px;}
+header h1{font-size:24px;font-weight:700;color:var(--black);margin-bottom:6px;letter-spacing:.5px;}
+header .meta{font-size:13px;color:var(--gray-500);}
+header .meta span{margin-right:16px;}
+h2{font-size:18px;font-weight:700;color:var(--black);margin:32px 0 10px;padding-left:12px;border-left:4px solid var(--yellow);}
+h3{font-size:16px;font-weight:700;color:var(--gray-900);margin:22px 0 8px;}
+p{margin:8px 0;}
+.table-wrapper{overflow-x:auto;margin:14px 0 20px;border:1px solid var(--gray-300);border-radius:6px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:500px;}
+thead th{background:var(--yellow);color:var(--black);font-weight:700;padding:10px 12px;text-align:left;white-space:nowrap;border-bottom:2px solid #d4a734;}
+tbody td{padding:9px 12px;border-bottom:1px solid var(--gray-100);vertical-align:top;}
+tbody tr:nth-child(even){background:#fafafa;}
+tbody tr:hover{background:var(--yellow-light);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+.highlight{background:var(--yellow-light);border-left:4px solid var(--yellow);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;}
+.warning{background:var(--red-light);border-left:4px solid var(--red);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;color:#8b1a1a;}
+ul,ol{margin:8px 0 8px 20px;}
+li{margin:4px 0;}
+hr{border:none;border-top:1px solid var(--gray-100);margin:24px 0;}
+.down{color:var(--red);font-weight:700;}
+.up{color:#1f8b4c;font-weight:700;}
+p.src{font-size:12px;color:var(--gray-500);line-height:1.9;margin-top:14px;}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--gray-300);font-size:12px;color:var(--gray-500);line-height:1.9;}
+@media (max-width:600px){body{padding:20px 14px 40px;font-size:14px;}table{font-size:12px;}thead th,tbody td{padding:7px 8px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月27日 深度复盘</h1>
+  <div class="meta">
+    <span>2026年10月27日 星期二</span>
+    <span>补跑生成（23:00 定时任务中断）</span>
+  </div>
+</header>
+
+<h2>一、一句话结论</h2>
+<div class="highlight">
+<strong>今天不是被外盘打下去的。</strong>隔夜美股上涨、费半创一个月最大涨幅、SK 海力士与美光齐涨，A 股四大指数却高开低走、全部收在当日最低附近。上证收 3648.30，正好等于当日最低价；创业板收 2548.15，当日最低 2548.11。<strong>全市场 605 涨 / 4925 跌，中位 −2.98%，位分中位数 0.025</strong>。这是一次从开盘持续到收盘、没有尾盘承接的内生减仓，性质比"跟随外盘回调"更差：外部的利多被完全无视，说明卖方不是被消息推着走，是在执行自己的减仓计划。
+</div>
+
+<h2>二、隔夜外盘：利多，所以不是原因</h2>
+<p>美东 10 月 26 日（周一，即 A 股今日的隔夜）：</p>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>标的</th><th class="num">涨跌</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td>纳斯达克综指</td><td class="num up">+0.82%</td><td>收 26,169.38</td></tr>
+<tr><td>标普 500</td><td class="num up">+0.70%</td><td>收 7,676.77</td></tr>
+<tr><td>道琼斯</td><td class="num up">+0.28%</td><td>收 52,361.58</td></tr>
+<tr><td>费城半导体指数</td><td class="num up">+2.82%</td><td>一个月最大涨幅，成分股全部收涨</td></tr>
+<tr><td>存储三巨头</td><td class="num up">+3%~+4%</td><td>SK 海力士 +4%、西部数据 +3%、美光 +3%</td></tr>
+<tr><td>光通信</td><td class="num up">+5%~+8%</td><td>Lumentum +8%、Coherent +5%</td></tr>
+<tr><td>纳斯达克中国金龙</td><td class="num up">+0.63%</td><td>中概同步收涨</td></tr>
+</tbody>
+</table>
+</div>
+<p>驱动是 Anthropic 公开提交 S-1（上半年营收 163 亿美元、二季度同比 +1368%），重新点燃 AI 交易情绪；特斯拉 +5.21%、英伟达 +2.39% 领涨。换句话说，<strong>今天 A 股 AI 硬件链面对的隔夜信息是正向的</strong>：费半涨近 3%、存储原厂与光模块全线走强、中概金龙收涨。市场开盘也照做了——上证高开 3698.44（前收 3697.52），创业板高开 2661.71（前收 2638.23，+0.9%）。</p>
+<div class="warning">
+这条核掉了昨天留下的最大空白。10/26 晚的三态判定卡把"隔夜外盘"列为两条待补的独立变量之一，并明确"没有查证，不作任何归因"。现在可以给出结论：<strong>外盘这条解释被排除</strong>。今日下跌的原因不在境外市场，也不能拿"科技股全球回调"当挡箭牌——费半是涨的。
+</div>
+
+<h2>三、指数位置：四大指数全部收在当日最低</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>指数</th><th class="num">收盘</th><th class="num">涨跌</th><th class="num">当日低点</th><th class="num">收盘位分</th><th class="num">距 MA20</th><th class="num">距 MA60</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td class="num">3648.30</td><td class="num down">−1.33%</td><td class="num">3648.30</td><td class="num">0.000</td><td class="num down">−3.44%</td><td class="num down">−5.63%</td></tr>
+<tr><td>深证成指</td><td class="num">11245.73</td><td class="num down">−2.50%</td><td class="num">11245.72</td><td class="num">0.000</td><td class="num down">−8.64%</td><td class="num down">−15.68%</td></tr>
+<tr><td>创业板指</td><td class="num">2548.15</td><td class="num down">−3.41%</td><td class="num">2548.11</td><td class="num">0.003</td><td class="num down">−12.94%</td><td class="num down">−21.87%</td></tr>
+<tr><td>科创 50</td><td class="num">1252.28</td><td class="num down">−4.81%</td><td class="num">1249.76</td><td class="num">0.032</td><td class="num down">−12.74%</td><td class="num down">−20.60%</td></tr>
+</tbody>
+</table>
+</div>
+<p>位分 0.000 的含义是收盘价等于当日最低价。四个指数同时做到这一点，概率很低，它排除了"尾盘抢反弹失败"这种偶然，指向的是<strong>卖压均匀分布在全天、且到尾盘仍无接盘</strong>。高开后单边下行，落差集中在成长端：创业板从高开 +0.9% 到收 −3.41%，日内振幅超过 4 个百分点。</p>
+<p>位置数字比跌幅更值得看：创业板距 MA60 −21.87%、科创 50 −20.60%，已经在中长期趋势线下方两成；上证距 MA60 只有 −5.63%。指数之间 15 个百分点的差距，是这轮资金撤离的排序表：先卖成长，权重只是没被砸那么狠。</p>
+
+<h2>四、广度与情绪：赚钱效应清零，但没到无差别抛售</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>指标</th><th class="num">10/27</th><th class="num">10/26</th><th>读法</th></tr></thead>
+<tbody>
+<tr><td>样本（沪深北 A 股）</td><td class="num">5572</td><td class="num">5572</td><td>含北交所 355 只</td></tr>
+<tr><td>上涨 / 下跌 / 平盘</td><td class="num">605 / 4925 / 42</td><td class="num">2251 / 3160</td><td>上涨占比 10.9%</td></tr>
+<tr><td>涨跌幅中位数</td><td class="num down">−2.98%</td><td class="num down">−0.47%</td><td>中位数单日恶化 2.5pp</td></tr>
+<tr><td>p10 / p90</td><td class="num">−5.81% / +0.21%</td><td class="num">−4.29% / +2.46%</td><td>最强一成只勉强收平</td></tr>
+<tr><td>位分中位数</td><td class="num">0.025</td><td class="num">0.467</td><td>一半股票收在当日振幅最底部</td></tr>
+<tr><td>个股成交额合计</td><td class="num">14879.5 亿</td><td class="num">—</td><td>含北交所约 270 亿</td></tr>
+</tbody>
+</table>
+</div>
+<p>p90 = +0.21% 是今天最有信息量的一个数：涨幅最好的一成股票，也只涨了 0.2%。这意味着<strong>几乎没有一个位置是安全的</strong>，不是"选错了方向"，是"任何方向都没有钱赚"。位分中位数 0.025 补上另一半：多数股票不是低开反弹，而是从早盘就被压着走、收在接近当日最低。</p>
+<p>不过要诚实：今天仍有 605 只上涨、p90 还是正数，所以它不是 2015 年那种流动性踩踏式的无差别抛售。差别在于——这些上涨的股票没有体量。这一点在下面的资金面数据里会看得更清楚。</p>
+
+<h2>五、资金面：266 个板块里 13 个为正，合计只有 26.9 亿</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>观察项</th><th class="num">10/27</th><th>含义</th></tr></thead>
+<tbody>
+<tr><td>净流入板块数</td><td class="num">13 / 266</td><td>95.1% 的板块在失血</td></tr>
+<tr><td>净流入合计</td><td class="num up">+26.9 亿</td><td>榜首供销社 +4.58 亿</td></tr>
+<tr><td>净流出板块数</td><td class="num">253</td><td>最深处芯片 −172.70 亿</td></tr>
+<tr><td>板块净额中位数</td><td class="num down">−8.82 亿</td><td>一半板块单日失血 8.8 亿以上</td></tr>
+</tbody>
+</table>
+</div>
+<p>流入前四：供销社 +4.58 亿、天然气 +3.78 亿、博彩概念 +3.57 亿、热泵 +2.92 亿，第五是职业教育 +2.43 亿。全是小市值、非主线的边缘品种。<strong>流出端最小的一笔是储能 −85.97 亿，流入端最大的一笔是 +4.58 亿——量级差约 19 倍。</strong>资金不是在换方向，是在减仓位；今天不存在"承接主线"这种东西，只有零星试探。</p>
+<h3>AI 硬件链：从上游到下游无一例外</h3>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>板块</th><th class="num">主力净额</th><th class="num">名次/266</th><th>相对 10/26</th></tr></thead>
+<tbody>
+<tr><td>芯片</td><td class="num down">−172.70 亿</td><td class="num">266</td><td>连续两日约 −170 亿，最大流出</td></tr>
+<tr><td>人工智能</td><td class="num down">−135.31 亿</td><td class="num">265</td><td>10/26 仅 −0.6 亿，单日骤变</td></tr>
+<tr><td>机器人概念</td><td class="num down">−123.26 亿</td><td class="num">264</td><td>三日加速</td></tr>
+<tr><td>数据中心</td><td class="num down">−100.35 亿</td><td class="num">263</td><td>维持大额</td></tr>
+<tr><td>DeepSeek 概念</td><td class="num down">−96.30 亿</td><td class="num">—</td><td>由 −40.2 放大</td></tr>
+<tr><td>CPO</td><td class="num down">−75.09 亿</td><td class="num">255</td><td>—</td></tr>
+<tr><td>存储芯片</td><td class="num down">−69.27 亿</td><td class="num">251</td><td>—</td></tr>
+<tr><td>光通信 / PCB</td><td class="num down">−50.38 / −49.10 亿</td><td class="num">241 / 237</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+<p>寒武纪今日所属的 12 个板块全部净流出、名次落在 165–266 之间。<strong>这条数据的分量在于它把"单票伪影"这种解释彻底排除了</strong>：10/26 人脑工程 +21.13 亿里寒武纪占 13.71 亿，那是个股把板块拉起来的假象；今天连假象都造不出来，说明板块层面是真的没有买盘。</p>
+
+<h2>六、存储链：外围三巨头齐涨，A 股四只收在最低</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>标的</th><th class="num">收盘</th><th class="num">涨跌</th><th class="num">当日低</th><th class="num">位分</th><th class="num">距 MA20</th><th class="num">近 20 日</th></tr></thead>
+<tbody>
+<tr><td>德明利 001309</td><td class="num">224.00</td><td class="num down">−7.64%</td><td class="num">224.00</td><td class="num">0.000</td><td class="num down">−23.13%</td><td class="num down">−46.02%</td></tr>
+<tr><td>兆易创新 603986</td><td class="num">268.98</td><td class="num down">−2.70%</td><td class="num">268.88</td><td class="num">0.007</td><td class="num down">−15.44%</td><td class="num down">−31.33%</td></tr>
+<tr><td>江波龙 301308</td><td class="num">228.09</td><td class="num down">−2.11%</td><td class="num">228.09</td><td class="num">0.000</td><td class="num down">−17.02%</td><td class="num down">−34.42%</td></tr>
+<tr><td>佰维存储 688525</td><td class="num">151.35</td><td class="num down">−3.65%</td><td class="num">151.30</td><td class="num">0.005</td><td class="num down">−14.37%</td><td class="num down">−30.44%</td></tr>
+</tbody>
+</table>
+</div>
+<p>这是今天最干净的一处背离：<strong>SK 海力士 +4%、西部数据 +3%、美光 +3%、费半 +2.82%，A 股存储四只全部收在当日最低附近，位分 0.000–0.007。</strong>同一个产业逻辑，在两个市场得到相反定价。可能的解释只有两个：一是 A 股这边跌的是估值与筹码，不是产业；二是境外那波涨的是"Anthropic 招股书带来的 AI 情绪修复"，与存储现货基本面无关。两种解释都指向同一件事——<strong>存储链的问题不在外面，在这里</strong>。</p>
+<p>德明利要单独看。近 20 个交易日 −46.02%（从 424.80 到 224.00，120 日内最高 980.00），今天 −7.64% 且收在最低，是四只里唯一跌幅超过 5% 的。前期弹性最大的票，在退潮时承担最大的杀幅，这个结构本身说明筹码还在出清过程中，而不是已经出清完。<strong>存储链的第三根阴线，暂不构成"最后一跌"的证据</strong>——第三态判定卡的 A1 档（趋势确认）指的是这个意思，不是预测明天。</p>
+<div class="highlight">
+口径提醒：10/26 晚定的 A 判定要求"四只中至少 3 只位分 &lt; 0.35 且收低于前收"。今天四只位分 0.000–0.007、全部收低，<strong>A1 趋势确认命中</strong>。按卡面的含义，本轮不做存储弹性；要等到 A2（≥2 只位分 &gt; 0.50 且成交额 ≥ 前 5 日均额）出现对手盘，才谈止跌。
+</div>
+
+<h2>七、寒武纪与东财：两个锚点都没守住</h2>
+<p><strong>寒武纪 912.98，−5.68%，位分 0.026</strong>，收在 900 整数关之上但离得很近（当日低 911.51）。按 10/26 卡面，B3 档"收跌且补跌"命中，B 的完整读法是"个股补跌 + 12 个板块同向退"，比"个股跌、板块扛"更糟——没有任何第二梯队接它的位置。</p>
+<p><strong>东方财富 18.11，−2.37%，收在当日最低</strong>，正好压在 MA20（18.08）上。它昨天收 18.55，今天从 18.50 开盘一路走低。这条数据的作用是排除"高低切换"：如果资金真在做风格切换，券商应该是最直接的受益者；它跟着跌并且收在最低，说明<strong>没有钱从科技换到金融，只有钱离开市场</strong>。</p>
+
+<h2>八、涨停结构：高位缩圈与低位政策脉冲，两条线都不是做多</h2>
+<p>高度 5 板上海九百（国企改革、新零售）；4 板三只——多伦科技、襄阳轴承、赛福天，全在机器人链；2 板里机器人方向还有光洋股份、大洋电机、弘景光电、横河精密、凯中精密、秦安股份一串。</p>
+<p>另一条线在内需：国芳集团、广百股份、茂业商业、新华百货、桂发祥、青岛食品、阳光乳业、九牧王、峨眉山Ａ。催化是发改委研究制定扩大内需战略实施方案（2026—2030 年）。<strong>但这条催化不是今天的新闻</strong>：发改委 10 月 20 日发布会就已披露，10 月 26 日财媒才集中转述。所以准确说法是"旧催化滞后发酵"，不是"新政策出台"——这类脉冲的持续性通常比新政策短。</p>
+<div class="warning">
+必须点明一处背离：机器人概念板块主力净流出 123.26 亿，同时有 3 只 4 板。板块净额是成员求和，不代表成员同向。今天的机器人内部是<strong>少数龙头封板、多数成员失血</strong>。表述要落到个股，不能说成"机器人板块在走强"，也不能用板块净额去反驳涨停事实——两者测的不是同一件事。
+</div>
+
+<h2>九、宏观择时读数（研究指标，非操作指令）</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>项目</th><th class="num">读数</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td>MTI（research-v4.1，9 因子）</td><td class="num">−0.299</td><td>偏弱观察；9/9 因子有效，quality complete</td></tr>
+<tr><td>活跃市值 0AMV</td><td class="num down">13.694 万亿，−3.13%</td><td>触发防守观察（≤ −2.3%），规则未校准</td></tr>
+<tr><td>ERP</td><td class="num">5.60pp，42% 分位</td><td>中性；距 40% 档边界 1.99pp，不跨档</td></tr>
+<tr><td>两融余额</td><td class="num">2.389 万亿，65% 分位</td><td>滞后 1 个交易日</td></tr>
+<tr><td>指数离散度</td><td class="num">1.443，68.6% 分位</td><td>结构抱团</td></tr>
+</tbody>
+</table>
+</div>
+<p>活跃市值单日 −3.13% 是今天最硬的一个数：它按当日全部 A 股真实成交额折算市场活跃规模，单日掉三个点，对应的就是资金真实离场，而不是价格波动。MTI 综合 −0.299 进入偏弱区，但 ±0.2 / ±0.5 是未校准的工程观察线，不能直接换算成仓位。</p>
+
+<h2>十、明日（10/28）三态判定卡</h2>
+<p>完整判据见《10/28 三态判定卡》，此处只留执行摘要。基线：上证 3648.30、寒武纪 912.98、存储四只 224.00 / 268.98 / 228.09 / 151.35。</p>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>维度</th><th>判定档</th><th>核心条件</th></tr></thead>
+<tbody>
+<tr><td>A 存储链第三天</td><td>A1 趋势确认 / A2 首次承接 / A3 不动</td><td>A1：≥3 只位分 &lt; 0.35 且收低于今日；A2：≥2 只位分 &gt; 0.50 且成交额 ≥ 前 5 日均</td></tr>
+<tr><td>B 寒武纪 900 关</td><td>B1 守住 / B2 破位 / B3 拉锯</td><td>收 &lt; 900 即 B2，AI 硬件失去唯一锚点</td></tr>
+<tr><td>C 上证方向</td><td>C1 收复 / C2 缩量续跌 / C3 放量续跌 / C4 不动</td><td>C1：收 &gt; 3664.82；C2/C3：收 &lt; 3648.30 且成交额 ≤ / &gt; 7388 亿；下一档看 10/23 低点 3574.27</td></tr>
+<tr><td>D 广度</td><td>D1 修复 / D2 一致下跌 / D3 不动</td><td>D1：p90 ≥ +1.0% 且上涨 ≥ 1500 家；D2：p90 &lt; 0 且上涨 &lt; 800 家</td></tr>
+</tbody>
+</table>
+</div>
+<h3>今天这张卡暴露的一个缺陷</h3>
+<p>D 档今天落在 D3"分化但无方向"，但这个描述是错的：今天 605 涨、4925 跌，p90 还是 +0.21%，属于<strong>几乎全跌、但残存局部赚钱效应</strong>的形态，现有三档没有一档能描述它。D1 要求 p90 ≥ 1.0（差 0.79pp），D2 要求 p90 &lt; 0（差 0.21pp），两头都够不着。</p>
+<p>提一档候选：<strong>D4 普跌但非无差别</strong>——p90 介于 0 至 +1.0% 且上涨家数 &lt; 800。今天会落在 D4，含义是"个股选择几乎无效，但止损盘尚未失控"。阈值同样是未校准的，先记下来，不做历史回测前不当作判据用。</p>
+<h3>两个独立变量，一条已核、一条仍缺</h3>
+<ul>
+<li><strong>隔夜外盘：已核，利多，排除。</strong>费半 +2.82%、存储三巨头齐涨，A 股反向下跌，外盘不能解释今日，也不构成明日的独立变量。</li>
+<li><strong>下跌驱动本身：仍未查明。</strong>已排除外盘、排除政策（今日无重大利空政策）、排除单一板块（13 个板块净流入虽小但存在，说明不是全市场一致性清仓）。剩下最可能的候选是机构的被动减仓或某类资金的集中调仓，<strong>但本轮没有交易与持仓数据可以验证，任何归因都只是猜测</strong>，所以不写。</li>
+</ul>
+
+<h2>十一、口径审计与未核边界</h2>
+<h3>三套涨跌停数字并存，趋势只看东财序列</h3>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>来源</th><th class="num">涨停</th><th class="num">跌停</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>东财序列（limit_series / broken_series）</td><td class="num">41</td><td class="num">22</td><td>炸板 28；趋势读法以此为准</td></tr>
+<tr><td>通达信 screener</td><td class="num">42</td><td class="num">—</td><td>含 ST</td></tr>
+<tr><td>本机 .day 复算（tools/breadth_scan.py）</td><td class="num">44</td><td class="num">28</td><td>按前收 × 涨跌停幅反推，明细可逐只核对</td></tr>
+</tbody>
+</table>
+</div>
+<p>跌停 22（东财）与 28（本机）差 6 只，比涨停的 3 只差得更大。本机口径的 28 只全部是主板 10% 跌幅、逐只核过收盘价等于跌停价，所以不是拆分或算术问题，而是东财序列的定义差异。<strong>本轮未查明差异来源，两个数字都不用绝对值下结论</strong>：今天"跌停多于炸板减少"的趋势判断，在 22 与 28 两种口径下都成立。</p>
+<p>另需注意一个容易混的地方：东财炸板 28 与本机跌停 28 数值相同，纯属巧合，不是一个东西。</p>
+<h3>其他边界</h3>
+<ul>
+<li><strong>两市成交额两个口径</strong>：指数口径 14609 亿（沪 6724.1 + 深 7885），个股合计 14879.5 亿，差额约 270 亿对应北交所。写"两市成交"时用指数口径，写"全市场成交"时标明含北交所。</li>
+<li><strong>板块净额不做全板块合计</strong>：266 个板块互相重叠、单票多挂，合计是重复计数，只能看中位数、正负家数与名次。</li>
+<li><strong>流入端未做 top1 集中度拆解</strong>：今日流入榜首仅 4.58 亿，即便单票占大头，结论（没有承接主线）只会更强，不影响方向，故未拆。</li>
+<li><strong>未核</strong>：北向资金（无有效日频口径）、CFM 存储现货周评（未取）、10/27 下跌的资金主体（无持仓数据）。</li>
+<li><strong>补跑说明</strong>：今日 23:00 定时任务在 23:03 抓完四组新闻后中断，本报告由 23:24 起的巡检按已核数据重建，不含盘中实时状态，也不回填任何盘前未知信息。</li>
+</ul>
+
+<p class="src">数据来源：指数与个股行情—本机通达信日线（D:\new_tdx64\vipdoc，as_of 20261027，tools/dayfile_ma.py）与 MCP tdx_quotes（HQDate 20261027）；全市场广度与涨跌停复算—tools/breadth_scan.py（5572 只，含北交所）；东财涨跌停序列—宏观择时/data/limit_series.json、broken_series.json（as_of 20261027）；板块主力净额—板块资金雷达/data/boards_flow.json（as_of 20261027，266 板块，source_date_verified=true，fetched 22:14）；MTI/ERP/两融/离散度—宏观择时/data/mti_result.json（quality complete，as_of 20261027）；活跃市值—指南针 Z_SK0AMV（extracted 22:26）；隔夜美股—美东 10/26 收盘，TradingKey / 格隆汇 / 美国中文网 / 每日经济新闻交叉一致（纳指 +0.82%、费半 +2.82%）；内需政策—发改委 10/20 发布会，财媒 10/26 转述。</p>
+
+<footer>
+  <div>生成时间：2026-10-27 23:24 中国标准时间（系统时钟）</div>
+  <div>补跑重建 · 23:00 定时任务中断 · 数据截至 2026-10-27 收盘，隔夜外盘为美东 10-26 收盘</div>
+  <div>本报告为研究记录，不含操作建议；所有阈值均为未校准的工程档位。</div>
+</footer>
+
+</body>
+</html>
