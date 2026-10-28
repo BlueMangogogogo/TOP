@@ -38,7 +38,8 @@ a{color:var(--blue);text-decoration:none}button{font-family:inherit}
 .sel-info{font-size:13px;color:var(--t2);white-space:nowrap}
 .panels{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1900px;margin:0 auto;padding:14px 24px 48px}
 @media(max-width:1000px){.panels{grid-template-columns:1fr}}
-.panel{background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:0 8px;box-shadow:var(--sh)}
+.panel{min-width:0;background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:0 8px;box-shadow:var(--sh)}
+@media(max-width:700px){.top-bar{flex-wrap:wrap;padding:12px;gap:10px}.top-bar .right{flex-wrap:wrap;gap:8px}.top-bar .tagline{display:block;margin:6px 0 0}.top-bar .future{display:none}.panels{min-width:0;padding:10px 4px}.search-bar{flex-wrap:wrap;padding:12px}.search-bar input{min-width:0}.mode-btns{flex-wrap:wrap}.panel-header{flex-wrap:wrap;gap:6px;padding:12px}.panel-header .panel-title{font-size:15px}}
 .panel-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px}
 .panel-header.attack{border-bottom:2px solid var(--cyan)}
 .panel-header.outflow{border-bottom:2px solid var(--magenta)}
@@ -174,7 +175,7 @@ a{color:var(--blue);text-decoration:none}button{font-family:inherit}
 4. <b>涨跌幅</b> = 同一东财板块代码、同交易日的指数涨跌幅（f3 ÷ 100，单位为百分数）；逐板块检查行情时间戳与收盘时段，并用现价/昨收价核对。无法验证或历史缺失时显示“—”，不填0、不使用当前值补历史。<br>
 5. <b>百分位</b> = (板块总数 − 排名) ÷ 板块总数 × 100（当日横截面排名百分位，越大越强）<br>
 6. <b>综合分</b> = 波段百分位×40% + 流入强度百分位×30% + 单日净额百分位×30%（三因子加权，范围 0~1000）<br>
-7. <b>在榜</b> = 30日净额为正计 1 天在榜，为负计 1 天流出（当日 30 日窗口净额方向）<br>
+7. <b>在榜</b> = 最近最多30个有效观测日内，进入综合评分前/后 min(30, 板块数÷2取整) 名的天数；与首页前/后10%展示数量不同；旧版未验证观测不计入。<br>
 ⚠️ 免责声明：本页面仅供量化投研学习与逻辑复盘参考，不构成任何投资建议。股市有风险，入市须谨慎。<br>
 数据来源：东方财富数据中心板块资金流接口（data.eastmoney.com/dataapi），交易日 17:00 后更新。
 </div><div class="footer" id="price-coverage">涨跌幅数据日期：2026-10-28；已验证 439/439 个板块；来源：东方财富同代码收盘报价。</div>
@@ -216,11 +217,11 @@ ALL=buildAllData(curDate);DATA=buildData(ALL);
 
 function changeDate(d){
   if(!HIST[d]){
-    let nd=DATES.find(dd=>dd>=d);
+    let nd=DATES.slice().reverse().find(dd=>dd<=d);
     if(!nd){toast('该日期无数据');document.getElementById('datePicker').value=curDate;return}
     d=nd;setTimeout(()=>document.getElementById('datePicker').value=d,100);
   }
-  curDate=d;closeDrawer();ALL=buildAllData(d);DATA=buildData(ALL);
+  curDate=d;closeDrawer();closeDays();ALL=buildAllData(d);DATA=buildData(ALL);
   document.getElementById('headerDate').textContent='东财板块资金流 · '+d+' · '+ALL.length+'个板块';
   ld();uh();ca('atk');ca('otk');
   let c=DATA[cur];
@@ -340,10 +341,10 @@ function toggleAll(){
 }
 
 function doSearch(){
-  let q=document.getElementById('searchInput').value.toLowerCase(),c=DATA[cur],sa=showAll?c.allAtk:c.defAtk,so=showAll?c.allOtk:c.defOtk;
+  let q=document.getElementById('searchInput').value.trim().toLowerCase(),c=DATA[cur],sa=q?c.allAtk:(showAll?c.allAtk:c.defAtk),so=q?c.allOtk:(showAll?c.allOtk:c.defOtk);
   if(q){
-    atkData=sa.filter(r=>r.name.toLowerCase().includes(q)||r.code.includes(q));
-    otkData=so.filter(r=>r.name.toLowerCase().includes(q)||r.code.includes(q));
+    atkData=sa.filter(r=>r.name.toLowerCase().includes(q)||r.code.toLowerCase().includes(q));
+    otkData=so.filter(r=>r.name.toLowerCase().includes(q)||r.code.toLowerCase().includes(q));
   }else{
     atkData=sa.slice();otkData=so.slice();
     if(c.sortKeyAtk){
@@ -368,8 +369,18 @@ function toast(m){let e=document.getElementById('toast');e.textContent=m;e.class
 // ══════════ DRAWER v2 ══════════
 let drCode=null,drChart=null,drMulti=false,drMetrics=[];
 
+function boardAtDate(code){
+  const base=BOARD[code];
+  const row=ALL.find(r=>r.code===code);
+  if(!base||!row)return null;
+  const ranks=(field)=>1+ALL.filter(r=>r[field]!=null&&r[field]>row[field]).length;
+  return {...base,...row,r_ws:ranks('score'),r_inflow:ranks('inflow'),r_band_net:ranks('bandNet'),
+    leading:curDate===DATES[DATES.length-1]?base.leading:null,
+    history:(base.history||[]).filter(p=>p&&p.d<=curDate)};
+}
+
 function openDrawer(code){
-  drCode=code;let b=BOARD[code];if(!b)return;
+  let b=boardAtDate(code);if(!b)return;drCode=code;
   document.getElementById('drName').textContent=b.name;document.getElementById('drCode').textContent=code;
   let lead=b.leading,leadHtml='';
   if(lead){
@@ -381,7 +392,7 @@ function openDrawer(code){
     leadHtml+='</div>';
   }
   let cards='<div class="mcards"><div class="mcard"><div class="ml">当日涨跌幅</div><div class="mv '+(b.chg>0?'c-up':'c-dn')+'">'+fmtP(b.chg)+'</div></div>';
-  cards+='<div class="mcard"><div class="ml">加权评分排名</div><div class="mv">#'+b.r_ws+'</div><div class="ms">加权评分 '+b.score.toFixed(1)+'</div></div>';
+  cards+='<div class="mcard"><div class="ml">加权评分排名</div><div class="mv">#'+b.r_ws+'</div><div class="ms">加权评分 '+(b.score==null?'—':b.score.toFixed(1))+'</div></div>';
   cards+='<div class="mcard"><div class="ml">单日流入率排名</div><div class="mv">#'+b.r_inflow+'</div><div class="ms">单日流入率 '+fmtR(b.inflow)+'</div></div>';
   cards+='<div class="mcard"><div class="ml">波段净额排名</div><div class="mv">#'+b.r_band_net+'</div><div class="ms">波段净额 '+fmtN(b.bandNet)+'亿</div></div></div>';
   let ol=b.overlap||[],olHtml='';
@@ -391,7 +402,7 @@ function openDrawer(code){
     olHtml+='</div>';
   }
   document.getElementById('drawerBody').innerHTML=
-    '<div class="drawer-date">📅 2026-10-28</div>'+leadHtml+cards+
+    '<div class="drawer-date">📅 '+curDate+'</div>'+leadHtml+cards+
     '<div class="chart-section"><div class="chart-toolbar">'+
     '<button class="chart-active" data-m="ws" onclick="drChartSwitch(\'ws\',this)">加权评分</button>'+
     '<button data-m="rank" onclick="drChartSwitch(\'rank\',this)">排名</button>'+
@@ -441,7 +452,7 @@ function drChartSwitch(metric,btn){
 
 // ═══ CHART v2: rank fix (no reverse, use yAxis.reverse) + K-line bars for chg/inflow/main ═══
 function drRenderChart(){
-  if(!drCode)return;let b=BOARD[drCode],h=b.history||[];if(!h.length)return;
+  if(!drCode)return;let b=boardAtDate(drCode);if(!b)return;let h=b.history||[];if(!h.length)return;
   if(drChart){drChart.destroy();drChart=null}
   let ctx=document.getElementById('drCanvas');if(!ctx)return;
   let TN=ALL.length,labels=h.map(p=>p.d.slice(5));
@@ -450,7 +461,7 @@ function drRenderChart(){
     ws:{label:'加权评分',key:'ws',c:0,style:'line'},
     rank:{label:'排名',key:'r_ws',c:1,style:'line',revAx:true},
     chg:{label:'涨跌幅',key:'chg',c:2,style:'kl',unit:'%'},
-    inflow:{label:'单日流入率',key:'inflow',c:3,style:'kl',unit:'%'},
+    inflow:{label:IS_EM?'流入强度(倍)':'单日流入率(%)',key:'inflow',c:3,style:'kl',unit:IS_EM?'倍':'%'},
     band:{label:'波段净额',key:'bandNet',c:5,style:'kl',unit:'亿',noCum:true},
     main:{label:'单日净额',key:'mainNet',c:4,style:'kl',unit:'亿'},
     ondays:{label:'在榜天数',key:'aDays',c:6,style:'line'}
@@ -465,10 +476,10 @@ function drRenderChart(){
 
     if(mm.style==='kl'){
       chartType='bar';
-      let bg=vals.map(v=>v>=0?'rgba(22,163,74,0.5)':'rgba(220,38,38,0.5)');
-      let bc=vals.map(v=>v>=0?'rgb(22,163,74)':'rgb(220,38,38)');
+      let bg=vals.map(v=>v>=0?'rgba(220,38,38,0.5)':'rgba(22,163,74,0.5)');
+      let bc=vals.map(v=>v>=0?'rgb(220,38,38)':'rgb(22,163,74)');
       datasets.push({label:mm.label,data:vals,backgroundColor:bg,borderColor:bc,borderWidth:1,yAxisID:yAx,type:'bar',order:2});
-      if(!mm.noCum){
+      if(m==='main'){
         let cum=0,cumul=vals.map(v=>{cum+=(v||0);return +cum.toFixed(2);});
         datasets.push({label:mm.label+' (累)',data:cumul,borderColor:cList[mm.c],backgroundColor:'transparent',borderWidth:2.5,tension:.3,pointRadius:2,fill:false,yAxisID:yAx,type:'line',order:1});
       }
@@ -495,9 +506,9 @@ function exportStocks(){if(!drCode)return;let s=STOCKS[drCode]||[],b=BOARD[drCod
 // ═══ 在榜日历弹窗 ═══
 let daysCode=null,daysPanel=null;
 function openDays(code,panel){
-  let b=BOARD[code];if(!b)return;
+  let b=boardAtDate(code);if(!b)return;
   daysCode=code;daysPanel=panel;
-  let total=ALL.length,topN=Math.max(1,Math.round(total*.1));
+  let total=ALL.length,topN=Math.min(30,Math.max(1,Math.floor(total/2)));
   let isAtk=(panel==='atk');
   document.getElementById('daysTitle').textContent=b.name;
   document.getElementById('daysCode').textContent=code+' · '+(isAtk?'进攻榜前'+topN+'名':'重灾区后'+topN+'名');
@@ -507,14 +518,16 @@ function openDays(code,panel){
   h.forEach(p=>{
     if(!p||!p.d)return;
     let d=p.d,dt=new Date(d),wd=dt.getDay();
-    let inList=isAtk?(p.rank<=topN):(p.rank>total-topN);
+    let dayTotal=(HIST[p.d]||[]).length,dayTop=Math.min(30,Math.max(1,Math.floor(dayTotal/2)));
+    let inList=p.algorithm_version!=='legacy_unverified'&&(isAtk?(p.rank<=dayTop):(p.rank>dayTotal-dayTop));
     let cls='days-cell'+(inList?(isAtk?' in-atk':' in-otk'):'')+(wd===0||wd===6?' weekend':'');
     let rankHtml=inList?'<div class="dc-rank" style="color:'+(isAtk?'var(--red)':'var(--green)')+'">#'+p.rank+'</div>':'<div class="dc-rank" style="color:var(--t3)">—</div>';
     cells+='<div class="'+cls+'"><div class="dc-date">'+d.slice(5).replace('-','/')+'</div>'+rankHtml+'</div>';
   });
-  let inCount=h.filter(p=>p&&(isAtk?p.rank<=topN:p.rank>total-topN)).length;
+  let observed=h.filter(p=>p&&p.algorithm_version!=='legacy_unverified');
+  let inCount=observed.filter(p=>{let n=(HIST[p.d]||[]).length,t=Math.min(30,Math.max(1,Math.floor(n/2)));return isAtk?p.rank<=t:p.rank>n-t}).length;
   html+='<div class="days-grid">'+cells+'</div>';
-  html+='<div class="days-sum">近30个交易日，该板块'+(isAtk?'进入进攻榜前'+topN+'名':'落入重灾区后'+topN+'名')+'共 <b style="color:var(--text)">'+inCount+'</b> 天。上方曲线为在榜天数变化，红色=进攻榜在榜，绿色=重灾区在榜，数字为该日加权评分排名。</div>';
+  html+='<div class="days-sum">最近最多30个观测日（有效 '+observed.length+' 日），该板块'+(isAtk?'进入进攻榜前'+topN+'名':'落入重灾区后'+topN+'名')+'共 <b style="color:var(--text)">'+inCount+'</b> 天。上方曲线为在榜天数变化，红色=进攻榜在榜，绿色=重灾区在榜，数字为该日加权评分排名。</div>';
   document.getElementById('daysBody').innerHTML=html;
   renderDaysChart(h,isAtk);
   document.getElementById('daysModal').classList.add('open');
