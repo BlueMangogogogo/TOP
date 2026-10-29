@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月29日 深度复盘</title>
+<style>
+:root{--yellow:#ebb543;--yellow-light:#f7e8c5;--red:#c0392b;--red-light:#fdf0ef;--black:#1a1a1a;--gray-900:#2c2c2c;--gray-700:#555;--gray-500:#888;--gray-300:#bbb;--gray-100:#f0f0f0;--white:#fff;--font:"Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",system-ui,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font);font-size:15px;line-height:1.75;color:var(--gray-900);background:var(--white);max-width:820px;margin:0 auto;padding:40px 28px 60px;-webkit-font-smoothing:antialiased;}
+header{border-bottom:3px solid var(--yellow);padding-bottom:20px;margin-bottom:28px;}
+header h1{font-size:24px;font-weight:700;color:var(--black);margin-bottom:6px;letter-spacing:.5px;}
+header .meta{font-size:13px;color:var(--gray-500);}
+header .meta span{margin-right:16px;}
+h2{font-size:18px;font-weight:700;color:var(--black);margin:32px 0 10px;padding-left:12px;border-left:4px solid var(--yellow);}
+h3{font-size:16px;font-weight:700;color:var(--gray-900);margin:22px 0 8px;}
+p{margin:8px 0;}
+.table-wrapper{overflow-x:auto;margin:14px 0 20px;border:1px solid var(--gray-300);border-radius:6px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:500px;}
+thead th{background:var(--yellow);color:var(--black);font-weight:700;padding:10px 12px;text-align:left;white-space:nowrap;border-bottom:2px solid #d4a734;}
+tbody td{padding:9px 12px;border-bottom:1px solid var(--gray-100);vertical-align:top;}
+tbody tr:nth-child(even){background:#fafafa;}
+tbody tr:hover{background:var(--yellow-light);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+.highlight{background:var(--yellow-light);border-left:4px solid var(--yellow);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;}
+.warning{background:var(--red-light);border-left:4px solid var(--red);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;color:#8b1a1a;}
+ul,ol{margin:8px 0 8px 20px;}
+li{margin:4px 0;}
+hr{border:none;border-top:1px solid var(--gray-100);margin:24px 0;}
+.down{color:var(--red);font-weight:700;}
+.up{color:#1f8b4c;font-weight:700;}
+p.src{font-size:12px;color:var(--gray-500);line-height:1.9;margin-top:14px;}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--gray-300);font-size:12px;color:var(--gray-500);line-height:1.9;}
+@media (max-width:600px){body{padding:20px 14px 40px;font-size:14px;}table{font-size:12px;}thead th,tbody td{padding:7px 8px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月29日 深度复盘</h1>
+  <div class="meta">
+    <span>2026年10月29日 星期四</span>
+    <span>生成时间 2026-10-29 23:56（23:00 定时任务未产出，本轮按已核数据补建）</span>
+  </div>
+</header>
+
+<p>生成时间：2026-10-29 23:55（23:00 定时任务未产出，本轮按已核数据补建）</p>
+<hr />
+<h2>一、一句话结论</h2>
+<p>10/28 那根 4157 家上涨的阳线，今天用 4730 家下跌全额吐回，而且是按 1.3–2.5 倍加码卖出。四个指数里三个「开盘即最高」，上证只靠红利与军工权重撑在破位线上方 3 点——<strong>指数看着还在箱体里，个股层面已经是破位。</strong> 今日的核心不是跌了多少，而是<strong>跌的时候没有任何板块接过钱</strong>：265 个板块 2 正 263 负，单板块最大流入 6.55 亿，总净额 −8704.8 亿为近八日最深。</p>
+<hr />
+<h2>二、指数全景：三个指数开盘即最高，上证是唯一没破的</h2>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>指数</th>
+<th>开</th>
+<th>高</th>
+<th>低</th>
+<th>收</th>
+<th>涨幅</th>
+<th>额（亿）</th>
+<th>位分</th>
+<th>vs 10/27 收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证</td>
+<td>3676.77</td>
+<td>3678.46</td>
+<td><strong>3645.26</strong></td>
+<td>3651.43</td>
+<td>−0.82%</td>
+<td>7156.2</td>
+<td>0.186</td>
+<td><strong>+0.09%</strong></td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>11379.00</td>
+<td>11379.00</td>
+<td>11135.97</td>
+<td>11138.20</td>
+<td>−2.92%</td>
+<td>8409.0</td>
+<td>0.009</td>
+<td><strong>−0.96%</strong></td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>2596.22</td>
+<td>2597.45</td>
+<td>2516.78</td>
+<td>2517.59</td>
+<td>−4.45%</td>
+<td>4214.3</td>
+<td>0.010</td>
+<td><strong>−1.20%</strong></td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>1271.81</td>
+<td>1271.81</td>
+<td>1220.52</td>
+<td>1228.09</td>
+<td>−4.27%</td>
+<td>711.0</td>
+<td>0.148</td>
+<td><strong>−1.93%</strong></td>
+</tr>
+<tr>
+<td>沪深300</td>
+<td>4075.47</td>
+<td>4075.47</td>
+<td>4030.23</td>
+<td>4041.84</td>
+<td>−1.03%</td>
+<td>4118.9*</td>
+<td>0.257</td>
+<td>−1.09%</td>
+</tr>
+</tbody>
+</table></div>
+<p>* 沪深300 的成交额为成分股合计，与沪深两市总额有重叠，不可加总。</p>
+<p>三条从表里直接读出来的东西：</p>
+<p><strong>1. 深成、创业板、科创50、沪深300 全部「开盘即最高」。</strong> 开盘价等于当日最高价，意味着全天没有一个时点让早盘买入者解套。这比 10/27「高开后收在最低」更弱——10/27 至少还有一段高开的空间，今天是跳空之后一路向下。四个指数的收盘位分分别是 0.009 / 0.010 / 0.148 / 0.257，全部收在当日最低附近。</p>
+<p><strong>2. 上证是唯一还站在 3648.30 上方的指数，但只高 3.13 点（0.09%），且盘中低点 3645.26 已经破过。</strong> 更关键的是：<strong>深成、创业板、科创50 相对 10/27 收盘已分别低 0.96%、1.20%、1.93%，全部跌回 10/28 反抽起点之下。</strong> 也就是说，10/28 那根普涨阳线在成长端已被完全抹掉并倒欠。上证的「没破位」是红利、军工、银行这些权重撑出来的，不是市场整体的位置。</p>
+<p><strong>3. 指数跌幅梯度 −0.82% / −1.03% / −2.92% / −4.27% / −4.45% 是一条严格按 beta 排列的曲线。</strong> 权重最抗跌、成长杀最重。这与板块面的「红利与证金流入、半导体流出 229 亿」是同一件事：资金在做的是降低 beta，不是换赛道。</p>
+<p>上证全天最高 3678.46，距箱体上沿 3697.52 差 19 点。这是十月以来<strong>第五次</strong>测试 3697.52 失败，也是第一次连「够到」都没做到。</p>
+<hr />
+<h2>三、广度：一天之内从 4157 涨翻成 4730 跌，两尾同时被削平</h2>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>指标</th>
+<th>10/28</th>
+<th>10/29</th>
+<th>变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上涨 / 下跌</td>
+<td>4157 / 1240</td>
+<td><strong>780 / 4730</strong></td>
+<td>完全反转</td>
+</tr>
+<tr>
+<td>中位涨幅</td>
+<td>+1.2%（估）</td>
+<td><strong>−2.60%</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>p10</td>
+<td>—</td>
+<td>−6.52%</td>
+<td>尾部重新扩大</td>
+</tr>
+<tr>
+<td>p90</td>
+<td>+5.45%</td>
+<td><strong>+0.73%</strong></td>
+<td>右尾被削平</td>
+</tr>
+<tr>
+<td>涨停 / 跌停</td>
+<td>73 / 8</td>
+<td><strong>39 / 52</strong></td>
+<td>跌停首次多于涨停</td>
+</tr>
+<tr>
+<td>位分中位</td>
+<td>0.636</td>
+<td><strong>0.091</strong></td>
+<td>全线收在低位</td>
+</tr>
+<tr>
+<td>全市场成交额</td>
+<td>16601 亿</td>
+<td>15887.6 亿</td>
+<td>−4.3%</td>
+</tr>
+</tbody>
+</table></div>
+<p>10/28 是「一端被削平」（p90 掉到 +0.73、上涨家数低于 P5），今天是<strong>两端一起塌</strong>：p90 只剩 +0.73%（意味着最好的一成股票平均只涨不到 1%），p10 掉到 −6.52%。这不是普跌，是<strong>连最好的那批也涨不动</strong>。</p>
+<p>跌停 52 家反超涨停 39 家，是十月以来第一次。涨停从 73 腰斩到 39、跌停从 8 翻到 52，这是退潮日的标准形态。但要注意一个反向证据：<strong>昨日 73 只涨停股今日中位 −2.22%，好于全市场 −2.60%。</strong> 强势股不是今天被杀的主体，抛压来自持有非强势股的那批人。打板资金没有溃散，是没人接力。</p>
+<p>成交额 15887.6 亿，比昨日缩 4.3%，上证 7156 亿也没到 1.65 万亿的门槛。<strong>卖压不大、买盘更小</strong>——缩量阴跌比放量下跌更难在次日修复，因为没有换手，套牢盘没出清。</p>
+<hr />
+<h2>四、板块与资金：2 正 263 负，最深的一根柱子</h2>
+<p>通达信口径（265 板块，成分重叠，只比单板块净额，不跨板块加总）：</p>
+<ul>
+<li>涨跌：<strong>2 正 / 263 负</strong>，中位 <strong>−2.79%</strong>，p10 −4.32%、p90 −1.52%（<strong>p90 也是负的</strong>，即前 10% 的板块同样在跌）。</li>
+<li>单日净额：<strong>17 正 / 248 负</strong>，全样本合计 <strong>−8704.8 亿</strong>。</li>
+<li>流入前五合计 <strong>22.77 亿</strong>：大飞机 6.55、军民融合 5.87、地热能 3.83、白酒 3.50、钛金属 3.02。</li>
+<li>流出前五合计 <strong>−1383.3 亿</strong>：芯片 −379.93、数据中心 −262.24、5G −259.87、CPO −248.88、机器人 −232.38。</li>
+<li><strong>流出前五 / 流入前五 ≈ 61 倍。</strong></li>
+</ul>
+<h3>4.1 八日序列：今天是最深的一天</h3>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>日期</th>
+<th>涨&gt;0</th>
+<th>中位</th>
+<th>净&gt;0</th>
+<th>总净额(亿)</th>
+<th>最大流入</th>
+<th>最大流出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10-19</td>
+<td>122</td>
+<td>−0.09</td>
+<td>97</td>
+<td>−318.0</td>
+<td>36.11</td>
+<td>−48.74</td>
+</tr>
+<tr>
+<td>10-20</td>
+<td>247</td>
+<td>+1.31</td>
+<td>131</td>
+<td>+178.6</td>
+<td>61.23</td>
+<td>−67.79</td>
+</tr>
+<tr>
+<td>10-21</td>
+<td>144</td>
+<td>+0.06</td>
+<td>123</td>
+<td>−238.8</td>
+<td>49.51</td>
+<td>−62.46</td>
+</tr>
+<tr>
+<td>10-22</td>
+<td>0</td>
+<td>−2.83</td>
+<td>4</td>
+<td>−7164.1</td>
+<td>6.99</td>
+<td>−256.58</td>
+</tr>
+<tr>
+<td>10-23</td>
+<td>263</td>
+<td>+2.03</td>
+<td>146</td>
+<td>+1878.3</td>
+<td>99.63</td>
+<td>−51.15</td>
+</tr>
+<tr>
+<td>10-26</td>
+<td>73</td>
+<td>−0.56</td>
+<td>58</td>
+<td>−3343.8</td>
+<td>21.13</td>
+<td>−168.30</td>
+</tr>
+<tr>
+<td>10-27</td>
+<td>0</td>
+<td>−3.10</td>
+<td>13</td>
+<td>−5402.9</td>
+<td>4.58</td>
+<td>−172.70</td>
+</tr>
+<tr>
+<td>10-28</td>
+<td>257</td>
+<td>+1.71</td>
+<td>189</td>
+<td>+3720.9</td>
+<td>207.03</td>
+<td>−15.27</td>
+</tr>
+<tr>
+<td><strong>10-29</strong></td>
+<td><strong>2</strong></td>
+<td><strong>−2.79</strong></td>
+<td><strong>17</strong></td>
+<td><strong>−8704.8</strong></td>
+<td><strong>6.55</strong></td>
+<td><strong>−379.93</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>10/28 那 +3720.9 亿在两天内全额吐回还倒欠，两日净额 −4983.9 亿。最深单板块流出 −379.93 亿也是八日最深（此前 −256.58）。</p>
+<h3>4.2 昨日资金前 15：今天 15/15 下跌且全部转负</h3>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>板块</th>
+<th>10/28 净额</th>
+<th>10/29 涨跌</th>
+<th>10/29 净额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>芯片</td>
+<td>+207.03</td>
+<td>−4.20%</td>
+<td>−379.93</td>
+</tr>
+<tr>
+<td>5G概念</td>
+<td>+145.67</td>
+<td>−4.39%</td>
+<td>−259.87</td>
+</tr>
+<tr>
+<td>机器人概念</td>
+<td>+139.19</td>
+<td>−3.47%</td>
+<td>−232.38</td>
+</tr>
+<tr>
+<td>CPO概念</td>
+<td>+134.45</td>
+<td>−6.21%</td>
+<td>−248.88</td>
+</tr>
+<tr>
+<td>汽车电子</td>
+<td>+127.55</td>
+<td>−4.62%</td>
+<td>−171.48</td>
+</tr>
+<tr>
+<td>数据中心</td>
+<td>+126.20</td>
+<td>−3.79%</td>
+<td>−262.24</td>
+</tr>
+<tr>
+<td>光通信</td>
+<td>+95.16</td>
+<td>−5.24%</td>
+<td>−175.30</td>
+</tr>
+<tr>
+<td>新能源车</td>
+<td>+82.72</td>
+<td>−3.64%</td>
+<td>−206.97</td>
+</tr>
+<tr>
+<td>人形机器人</td>
+<td>+80.30</td>
+<td>−4.10%</td>
+<td>−144.35</td>
+</tr>
+<tr>
+<td>无人驾驶</td>
+<td>+79.91</td>
+<td>−3.51%</td>
+<td>−123.92</td>
+</tr>
+<tr>
+<td>小米概念</td>
+<td>+75.00</td>
+<td>−4.20%</td>
+<td>−132.09</td>
+</tr>
+<tr>
+<td>存储芯片</td>
+<td>+73.52</td>
+<td>−5.24%</td>
+<td>−126.11</td>
+</tr>
+<tr>
+<td>PCB概念</td>
+<td>+71.01</td>
+<td>−5.34%</td>
+<td>−123.72</td>
+</tr>
+<tr>
+<td>液冷服务器</td>
+<td>+69.13</td>
+<td>−4.08%</td>
+<td>−93.86</td>
+</tr>
+<tr>
+<td>物联网</td>
+<td>+67.73</td>
+<td>−3.40%</td>
+<td>−131.74</td>
+</tr>
+</tbody>
+</table></div>
+<p>15/15 下跌、15/15 由正转负，且翻转后的流出普遍大于前一日流入（芯片 +207→−380，CPO +134→−249）。<strong>能在一天内被同样规模反向打穿的流入，不叫配置，叫 T+0。</strong> 这条也把 10/28 那根阳线的趋势含义彻底否掉了。</p>
+<p>东财 547 板块口径下的反转倍数更直观：半导体 2.52x、PCB 2.10x、CPO 1.98x、国产芯片 1.93x、存储芯片 1.83x、机器人 1.55x、算力 1.36x。凡是反转超过 1.5 倍的板块，都不该被读作资金配置。</p>
+<h3>4.3 榜单顶部今天读的是「最不坏」</h3>
+<p>三因子加权的评分前 15：大飞机 −0.91、短剧游戏 −1.92、航运 −0.91、天然气 −1.70、网络游戏 −2.03、军民融合 −1.42、海洋经济 −0.88、民营医院 −1.34、可控核聚变 −1.73、免疫治疗 −2.31、婴童 −1.99、培育钻石 −1.33、军工信息化 −2.10、IP经济 −1.90、高端装备 −2.50。</p>
+<p><strong>全部仍在下跌，只是跌得少。</strong> 横截面评分在普跌日排的是「谁跌得少」，不是「谁在被买」。这类日子榜单只能读作风险偏好刻度，不能读作主线候选。同时今日前 26 名里仅 10 个 aDays≥2（昨日 18/26），领涨面孔多是近一月没上过榜的「新人」，进一步印证无既有主线。</p>
+<h3>4.4 「无买盘日」判据与历史校准</h3>
+<p>判据：单板块最大流入 &lt; 10 亿 且 板块涨跌中位 &lt; −2.5%。137 个交易日命中 11 天，剔除 4 天资金流全 0 的伪命中与 1 天量级未稳，真实样本 6 例。</p>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>无买盘日</th>
+<th>次日中位</th>
+<th>次日涨&gt;0</th>
+<th>次日总净额(亿)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>07-13</td>
+<td>+1.33</td>
+<td>236</td>
+<td>+1363</td>
+</tr>
+<tr>
+<td>07-17</td>
+<td>−1.92</td>
+<td>25</td>
+<td>−6708</td>
+</tr>
+<tr>
+<td>08-19</td>
+<td>+1.15</td>
+<td>259</td>
+<td>−748</td>
+</tr>
+<tr>
+<td>10-15</td>
+<td>+0.28</td>
+<td>170</td>
+<td>−298</td>
+</tr>
+<tr>
+<td>10-22</td>
+<td>+2.03</td>
+<td>263</td>
+<td>+1878</td>
+</tr>
+<tr>
+<td>10-27</td>
+<td>+1.71</td>
+<td>257</td>
+<td>+3721</td>
+</tr>
+</tbody>
+</table></div>
+<p>次日板块中位转正 5/6。<strong>但价格反抽和资金回流是两件事</strong>，要看次日流入端最大单板块：≥100 亿三次全部净额转正，50–100 亿两次价涨钱不回，&lt;50 亿继续跌。今日这个基线是 6.55 亿——明日要跳到 100 亿是整整一个量级的反转。</p>
+<p>样本仅 6 例、且下跌成因各不相同（7 月杀小盘、10 月杀 AI 资本开支链），只能当「明天大概率有技术性反抽」的弱基准，不能当方向判断。</p>
+<hr />
+<h2>五、涨停结构：39 家涨停，所在板块无一为正</h2>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>项</th>
+<th>10/28</th>
+<th>10/29</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>涨停</td>
+<td>73</td>
+<td><strong>39</strong></td>
+</tr>
+<tr>
+<td>炸板</td>
+<td>69</td>
+<td>27</td>
+</tr>
+<tr>
+<td>炸板率</td>
+<td>48.6%</td>
+<td>40.9%</td>
+</tr>
+<tr>
+<td>涨停额 / 炸板额</td>
+<td>—</td>
+<td>242.7 亿 / 197.6 亿</td>
+</tr>
+<tr>
+<td>首板占比</td>
+<td>89%</td>
+<td>74%</td>
+</tr>
+<tr>
+<td>最高连板</td>
+<td>5 板</td>
+<td><strong>4 板</strong></td>
+</tr>
+<tr>
+<td>晋级率</td>
+<td>18.2%</td>
+<td><strong>13.7%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>炸板率从 48.6% 降到 40.9% 不是情绪修复。</strong> 涨停 73→39、封板 39、炸板 27，分母同步塌掉。炸掉的钱（197.6 亿）几乎等于封住的钱（242.7 亿）。</p>
+<p>梯队：1 板 29、2 板 6、3 板 2、4 板 2。最高 4 板两只（光洋股份、青岛食品）都是「一字 + 小盘」，不是资金主攻，是没人卖。<strong>当前高度是缩量顶出来的，不是接力顶出来的。</strong></p>
+<p>最硬的一条：涨停家数前五的板块——商业航天 10 家、国防军工 8、机器人 8、一带一路 8、新零售 8——<strong>当日主力净额全部为负</strong>（商业航天 −52.69 亿、机器人 −232.38 亿、国防军工 −24.45 亿）。芯片、存储、CPO、PCB 零涨停。</p>
+<p><strong>涨停是板块内部少数票的脉冲，不是资金进攻某个方向。</strong> 今日 39 个涨停没有任何一个能反证「有资金在买」。</p>
+<p>催化核查：当日公开信息里<strong>没有找到能对应军工/商业航天涨停的硬催化</strong>，检索到的都是存量背景（10/14 一箭十星、10/28 贵州「十五五」规划提卫星互联网、航天日系列任务）。定性为「低位 + 政策叙事 + 无预告季报风险」的避风港型小票异动，不是新主线启动。要确认它是主线，需要同时满足：板块净额转正、涨停家数扩散到 15 以上、出现 5 板。</p>
+<hr />
+<h2>六、核心个股：四只存储全破半回吐位，佰维 −15.79%</h2>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>标的</th>
+<th>10/29 收</th>
+<th>涨幅</th>
+<th>位分</th>
+<th>量能比</th>
+<th>半回吐位</th>
+<th>两日累计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>德明利 001309</td>
+<td>215.40</td>
+<td><strong>−6.58%</strong></td>
+<td>0.015</td>
+<td>0.63</td>
+<td>227.28</td>
+<td>−3.84%</td>
+</tr>
+<tr>
+<td>兆易创新 603986</td>
+<td>275.99</td>
+<td>−4.79%</td>
+<td>0.134</td>
+<td>1.01</td>
+<td>279.43</td>
+<td><strong>+2.60%</strong></td>
+</tr>
+<tr>
+<td>江波龙 301308</td>
+<td>221.51</td>
+<td>−7.40%</td>
+<td>0.028</td>
+<td>0.94</td>
+<td>233.645</td>
+<td>−2.88%</td>
+</tr>
+<tr>
+<td>佰维存储 688525</td>
+<td>138.10</td>
+<td><strong>−15.79%</strong></td>
+<td>0.003</td>
+<td>1.75</td>
+<td>157.68</td>
+<td><strong>−8.75%</strong></td>
+</tr>
+<tr>
+<td>寒武纪 688256</td>
+<td>913.00</td>
+<td>−4.70%</td>
+<td>0.222</td>
+<td>0.80</td>
+<td>—</td>
+<td>−0.10%</td>
+</tr>
+<tr>
+<td>东方财富 300059</td>
+<td>17.96</td>
+<td>−0.28%</td>
+<td>0.319</td>
+<td>0.85</td>
+<td>—</td>
+<td>−0.83%</td>
+</tr>
+</tbody>
+</table></div>
+<p>（两日累计 = 10/29 收 ÷ 10/27 收 − 1）</p>
+<p>四只存储位分全部塌到 0.003–0.134，收在全天最低附近。A2 档「一日游」4/4 全中，且是深度穿透。</p>
+<h3>6.1 昨日「分层确认」的读法被证伪一半——这是今天最该记的一条</h3>
+<p>昨天我写：<em>「同一份存储利好，设计端和封测端放量抢，模组端缩量跟不上……这不是资金挑食，是 SK海力士那份财报压根没覆盖渠道现货。」</em></p>
+<p>两天账算下来，只有一半成立：</p>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>标的</th>
+<th>定位</th>
+<th>10/28</th>
+<th>10/29</th>
+<th>两日累计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>兆易创新</td>
+<td>设计 + 利基 DRAM</td>
+<td>+7.77%</td>
+<td>−4.79%</td>
+<td><strong>+2.60%</strong></td>
+</tr>
+<tr>
+<td>江波龙</td>
+<td>模组 + 品牌</td>
+<td>+4.87%</td>
+<td>−7.40%</td>
+<td>−2.88%</td>
+</tr>
+<tr>
+<td>德明利</td>
+<td>模组 + 渠道</td>
+<td>+2.93%</td>
+<td>−6.58%</td>
+<td>−3.84%</td>
+</tr>
+<tr>
+<td>佰维存储</td>
+<td>封测 + 模组</td>
+<td><strong>+8.36%</strong></td>
+<td><strong>−15.79%</strong></td>
+<td><strong>−8.75%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>成立的部分</strong>：设计端（兆易）是唯一两日净正的，跌幅也最小之一。原厂 DRAM/HBM 那一层确实有独立支撑。</li>
+<li><strong>被证伪的部分</strong>：昨日把佰维的 1.45 倍量能 + 8.36% 读成「封测端放量抢筹」。今天它 −15.79%、放量 1.75 倍、收在最低。<strong>那不是承接，是杠杆</strong>——高弹性在上涨日被误读成了资金偏好。</li>
+<li><strong>德明利的「缩量落后」也没换来抗跌</strong>：昨涨最少，今跌 6.58%，两日 −3.84%。「模组弱」方向对，但它弱的原因是没人买，不是被抛弃后会被接。</li>
+</ul>
+<p>方法论落点（已写入 <code>tools/研究执行规范.md</code>）：<strong>「涨幅差 → 基本面分层」这类判据只在上行日有效，下跌日不计入；分层必须看两日及以上累计收益。单日涨幅差测的是 beta 排序，不是资金偏好。</strong></p>
+<h3>6.2 寒武纪：业绩在改善，价格在破位</h3>
+<p>今日收 913.00（−4.70%），盘中低 901.68，900 关口只剩 1.68 点，量能比 0.80。它是 12 个板块的权重锚，破 900 会连带板块面继续失血。</p>
+<p>而三季报显示它同比 +131.5%、单季环比 +8.2%，是这一批里少见的环比正增长。<strong>这条分歧不是业绩证伪，是估值与资金结构问题</strong>——明日跌破 900 不能读作「业绩变脸」。</p>
+<hr />
+<h2>七、基本面闭环：Q3 环比把存储的价格走势解释清楚了</h2>
+<h3>7.1 存储三只 Q3 环比全负</h3>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>简称</th>
+<th>净利同比</th>
+<th>单季环比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>江波龙</td>
+<td>+1909.7%</td>
+<td><strong>−44.2%</strong></td>
+</tr>
+<tr>
+<td>兆易创新</td>
+<td>+921.6%</td>
+<td><strong>−22.0%</strong></td>
+</tr>
+<tr>
+<td>佰维存储</td>
+<td>+28728.1%</td>
+<td><strong>−62.4%</strong></td>
+</tr>
+<tr>
+<td>寒武纪</td>
+<td>+131.5%</td>
+<td><strong>+8.2%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>存储三只环比全负，与 10/27 CFM 周评「现货转弱、512Gb TLC 降至 $20、渠道 SSD −4%~−13%」，以及今日 A2 档「四只全跌破半回吐位」，构成完整闭环：<strong>Q3 的利润高点在 7–8 月，9 月现货已在下行，环比先于同比暴露。</strong></p>
+<p>同比不能当利好读。江波龙 +1909%、佰维 +28728% 全是低基数放大。三季报行情里「同比炸裂」的公告经常换来高开低走，这两天板块的走势已经给了样本。</p>
+<h3>7.2 披露尾部：越晚越差，明晚还有 579 家</h3>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>公告日期</th>
+<th>家数</th>
+<th>亏损占比</th>
+<th>净利同比中位</th>
+<th>同比 &lt; −30%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤ 10/20</td>
+<td>108</td>
+<td>10.2%</td>
+<td>+19.4%</td>
+<td>16.7%</td>
+</tr>
+<tr>
+<td>10/21–10/25</td>
+<td>740</td>
+<td>19.2%</td>
+<td>+2.0%</td>
+<td>27.0%</td>
+</tr>
+<tr>
+<td>10/26–10/27</td>
+<td>898</td>
+<td>22.9%</td>
+<td>+0.1%</td>
+<td>28.5%</td>
+</tr>
+<tr>
+<td>10/28</td>
+<td>982</td>
+<td>24.2%</td>
+<td>−7.2%</td>
+<td>34.6%</td>
+</tr>
+<tr>
+<td>10/29</td>
+<td>1064</td>
+<td>27.4%</td>
+<td>−5.7%</td>
+<td>34.4%</td>
+</tr>
+<tr>
+<td>10/30（今晚已出）</td>
+<td>1200</td>
+<td><strong>32.2%</strong></td>
+<td><strong>−6.6%</strong></td>
+<td><strong>36.4%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>亏损占比六个桶单调上行，最晚一批是最早一批的 3.2 倍。A 股 4992 家已披露，<strong>剩余 579 家（10.4%）压在 10/30 盘后至 10/31</strong>，按斜率外推亏损占比高于 32.2%，而业绩预告只覆盖 197 家（3.9%），尾部基本是盲盒。</p>
+<p>行业分层更沉：半导体晚批同比中位从 +51.9% 掉到 +22.4%、亏损率 6.5%→35.7%；光学光电子晚批中位 −56.6%、六成亏损；软件开发亏损率 61.1%。<strong>今日刚被杀的科技成长线，明晚还要再过一道尾部检验。</strong></p>
+<hr />
+<h2>八、MTI：−0.3070 为十月最低，两个因子要改读法</h2>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>日期</th>
+<th>MTI</th>
+<th>读法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10-23</td>
+<td>−0.0125</td>
+<td>中性</td>
+</tr>
+<tr>
+<td>10-26</td>
+<td>−0.2178</td>
+<td>偏弱</td>
+</tr>
+<tr>
+<td>10-27</td>
+<td>−0.2988</td>
+<td>偏弱</td>
+</tr>
+<tr>
+<td>10-28</td>
+<td>−0.2361</td>
+<td>偏弱（原缺，今日补全）</td>
+</tr>
+<tr>
+<td>10-29</td>
+<td><strong>−0.3070</strong></td>
+<td>偏弱，本轮最低</td>
+</tr>
+</tbody>
+</table></div>
+<p>10/29 因子账：dispersion −0.873（20% 权重，极度分化）、rotation −0.690（5%）、size −0.608（10%）、margin −0.100（15%，两融滞后一日）、inflow 0.000（15%，成交额低于 20 日均 11.8%）、ld +0.455（10%）、break_rate +0.325（10%）、active_mv −1.000（10%，0AMV 单日 −3.1%）、turnover_pos 0.000（5%）。ERP 5.5813、41.85% 分位，距 40% 悬崖 1.85pp，档位上限仍 60%。</p>
+<p>两条读法修正：</p>
+<ol>
+<li><strong>MTI 这两天度量的不是价格动量，是「结构有没有修好」。</strong> 10/28 指数 +0.91%、4157 家上涨，MTI 只从 −0.2988 回升到 −0.2361（+0.06），10/29 一天跌回更低。这与「反抽无资金背书」同向。</li>
+<li><strong>break_rate 在低活跃度日会给错误的正分。</strong> 今日炸板率因子给 +0.325，但这是分母崩塌（涨停 72→39）所致，同时跌停反超涨停。<strong>低活跃度下的「炸板率下降」不能读作情绪修复</strong>，明天看这个因子必须同时读涨停家数与跌停家数。</li>
+</ol>
+<p>口径备注：涨停 39 东财池与本机 <code>.day</code> 一致；跌停东财 41 vs 本机 52，差 11 只，与此前（10/27 为 22 vs 28）同向的系统性差异，全文沿用本机口径。</p>
+<hr />
+<h2>九、外盘：杀的是 AI 变现端，半导体内部在换手</h2>
+<p>北京 23:24–23:35 实拉（对应美东 11:24–11:35，常规时段进行中）。<strong>以下为盘中价，不是收盘价</strong>，美东收盘为北京 10/30 04:00。</p>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>标的</th>
+<th>涨跌%（盘中）</th>
+<th>标的</th>
+<th>涨跌%（盘中）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QQQ</td>
+<td>−1.29</td>
+<td>SMH</td>
+<td>−0.79</td>
+</tr>
+<tr>
+<td>SPY</td>
+<td>−0.33</td>
+<td>NVDA</td>
+<td>−0.75</td>
+</tr>
+<tr>
+<td><strong>GOOGL</strong></td>
+<td><strong>−11.71</strong></td>
+<td>MU</td>
+<td>−3.14</td>
+</tr>
+<tr>
+<td>MSFT</td>
+<td>−1.38</td>
+<td>SNDK</td>
+<td>−2.55</td>
+</tr>
+<tr>
+<td>AMZN</td>
+<td>−2.68</td>
+<td>WDC</td>
+<td>+0.44</td>
+</tr>
+<tr>
+<td>META</td>
+<td>+2.53</td>
+<td>STX</td>
+<td>+1.43</td>
+</tr>
+<tr>
+<td>AAPL</td>
+<td>+1.42</td>
+<td><strong>KLAC</strong></td>
+<td><strong>+7.28</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>1. 今夜的杀跌中心是 AI 应用/软件，不是半导体。</strong> 谷歌 Q3 营收与 EPS 双 miss、云 +103% beat、<strong>自由现金流 −90.7 亿美元（连续第二季为负）</strong>、2027 capex「显著增加」，盘后 −9.34%、盘中 −11.7%，市值缩水约 5000 亿美元为史上最大单日。同一时段 ServiceNow、Fortinet 财报 miss 后同跌。对照 SMH −0.79%、NVDA −0.75%，半导体整体跌幅远小于 QQQ。</p>
+<p><strong>2. 半导体内部：设备全涨、颗粒全跌。</strong> 涨 KLAC +7.28（自身 FY27Q1 财报，卖方维持评级但下调目标价）、LRCX +2.40、AMAT +1.34、ASML +1.51；跌 MU −3.14、SNDK −2.55、AVGO −2.10、TSM −1.11；不跌 WDC +0.44、STX +1.43。<strong>近线 HDD 与存储颗粒不是同一条供需曲线</strong>，A 股四只对应的是颗粒/模组一侧，外部传导为负，不能拿「存储短缺到 2029」的叙事对冲。</p>
+<p><strong>3. 三星 Q3：营业利润创纪录，净利润 miss。</strong> 营收 195.25 万亿韩元（环比 +14%、同比 +127%）、营业利润 107.44 万亿（同比 +783%，创纪录）、<strong>净利润 75.21 万亿 vs 预估 89.06 万亿</strong>。叠加三星与 SK 海力士自 6 月底以来跌 36% / 52%。<strong>「业绩创纪录 + 股价下跌」由此从 A 股个案升级为全球共同现象</strong>——这不是需求破坏，是预期定价跑在利润前面的典型特征。</p>
+<p><strong>4. 宏观一条（不进判据）</strong>：美东 10/29 公布 9 月 PCE 同比 3.6%（预期 3.6%、前值 3.4%），通胀方向仍向上、符合预期；昨夜 FOMC 维持不变已在价内。外部流动性不是顺风。</p>
+<p><strong>5. 明早唯一未决变量：亚马逊 Q3。</strong> 美东 10/29 盘后（北京 10/30 约 04:00 公布、05:00 电话会），A 股开盘前可读。读法同谷歌：<strong>看 FCF 与 capex 指引，不看营收是否 beat。</strong> 超大规模厂里 Alphabet（−90.7 亿）、Meta（−21.2 亿）已经两家现金流为负，亚马逊是第三张牌。反例要留着：微软 Azure +48%、capex 低于预期，盘后 +3%——市场否定的不是 capex 本身，是「capex 换不来增速」。</p>
+<p><strong>归因纪律（本轮收紧三条）</strong>：
+1. 盘中价不得当收盘引用，04:00 后引用必须换收盘价并重标时间；
+2. 个股财报事件不得外推为板块结论；
+3. 今夜分化到「QQQ −1.29% 而 SPY −0.33%、META +2.53%、AAPL +1.42%」的程度，是<strong>结构性调仓而非系统性 risk-off</strong>。明日低开不能用「外盘大跌」解释——缩量阴跌不需要外部理由。</p>
+<hr />
+<h2>十、明日推演（10/30）</h2>
+<h3>10.1 四档判定卡</h3>
+<p><strong>A 档｜存储四只（基线：10/29 收与低点）</strong></p>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>标的</th>
+<th>收</th>
+<th>10/29 低</th>
+<th>量能比</th>
+<th>0.6x 对应明日额阈值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>德明利</td>
+<td>215.40</td>
+<td>215.20</td>
+<td>0.63</td>
+<td>35.73 亿</td>
+</tr>
+<tr>
+<td>兆易创新</td>
+<td>275.99</td>
+<td>273.99</td>
+<td>1.01</td>
+<td>60.46 亿</td>
+</tr>
+<tr>
+<td>江波龙</td>
+<td>221.51</td>
+<td>221.08</td>
+<td>0.94</td>
+<td>19.37 亿</td>
+</tr>
+<tr>
+<td>佰维存储</td>
+<td>138.10</td>
+<td>138.06</td>
+<td>1.75</td>
+<td>23.92 亿</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>A1 缩量止跌</strong>：≥3 只「量能比 &lt; 0.6 且 最低 &gt; 10/29 低」→ 卖压自然衰减，是底部的第一块砖，仍不是买点。</li>
+<li><strong>A2 放量止跌（换手）</strong>：≥3 只「量能比 ≥ 1.2 且 收阳」→ 换手不是止跌。</li>
+<li><strong>A3 继续找位置</strong>：≥3 只「最低 &lt; 10/29 低」→ 没有第三态，四只同创新低则存储线整段作废。</li>
+<li><strong>A4 缩量阴跌（不动档）</strong>：量能比 0.6–1.2、无新低、涨跌幅 ±2% 内，不构成任何结论。</li>
+</ul>
+<p><strong>B 档｜寒武纪（10/29 收 913.00）</strong>：破位 &lt; 900.00；门口徘徊 900.00–930.45；不动 930.45–958.00；修复 ≥ 958.00。</p>
+<p><strong>C 档｜上证（前收 3651.43）</strong>：失守 &lt; 3648.30（下一目标 3574.27）；重回上沿需盘中高 ≥ 3697.52 且收 ≥ 3651.43；触顶失败为高 ≥ 3697.52 但收在其下；区间内走强为高 &lt; 3697.52 且收 ≥ 3651.43；<strong>C5｜弱势未测顶：高 &lt; 3697.52 且收 &lt; 3651.43</strong>（连测试的力气都没有，比触顶失败更弱）。</p>
+<p><strong>E 档｜上证成交额</strong>：&lt; 7000 亿存量博弈；7000–8000 亿中间态（今日 7156 亿）；≥ 8000 亿才有方向可言。</p>
+<p><strong>D 档｜广度</strong>：只作状态注脚。D1 已被历史校准判定失效（命中 78%，次日表现与全样本无差别）。</p>
+<h3>10.2 预承诺（盘前写死，收盘后不许改口径）</h3>
+<div class="table-wrapper"><table>
+
+<thead>
+<tr>
+<th>#</th>
+<th>组合</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>C1 + A3</td>
+<td>退潮第二阶段确认，中期看 3574.27，不参与任何反抽</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A1 + C4/C2</td>
+<td>缩量止跌 + 指数走强，可把存储列入「可观察」，仍不是买点</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A2 + C1</td>
+<td>最差组合：放量换手发生在指数破位日，四只全部下调</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B1 + 板块流入端 &lt; 50 亿</td>
+<td>板块面整体失血确认，寒武纪的 12 板块锚失效</td>
+</tr>
+</tbody>
+</table></div>
+<p>第 4 条的流入端按无买盘日校准分三档：&lt;50 亿 = 反抽纯技术性、不参与；50–100 亿 = 只看一天；≥100 亿 = 资金真回流。今日基线 6.55 亿。</p>
+<h3>10.3 三个观察锚点</h3>
+<ol>
+<li><strong>存储是否「缩量止跌」</strong>：今天佰维放量 1.75 倍杀、德明利缩量 0.63 倍杀。缩量止跌才叫止跌，放量止跌是换手。四只量能比全部回到 0.6 以下且不新低，才谈得上底部。</li>
+<li><strong>军工与红利的持续性</strong>：今日空间站/卫星/大飞机流入合计约 30 亿，量级太小。明日继续流入并放大到 50 亿以上才算独立线；回吐就只是避险一日游。</li>
+<li><strong>明晚的三季报尾巴</strong>：579 家无预告覆盖的小票是盲盒，在今日 780 涨 / 4730 跌的流动性状态下，这类票的坏消息没有承接。</li>
+</ol>
+<h3>10.4 本卡最可能失效的三处</h3>
+<ol>
+<li><strong>C5 是新增档</strong>，尚无历史分布，第一次出现只记录不给权重。</li>
+<li><strong>A 档「量能比 0.6」的分母含 10/28、10/29 两天高换手</strong>，连续大跌后会偏低，可能出现「看着缩量、其实还是放量」。若两只落在 0.55–0.65，按 A4 处理不判 A1。</li>
+<li><strong>900 整数关口</strong>在退潮期常被反复试探，收盘破与盘中破要给不同权重，盘中破不算 B1。</li>
+</ol>
+<hr />
+<h2>十一、数据来源与边界</h2>
+<p><strong>来源</strong>
+- 本机通达信日线 <code>.day</code>（as_of 20261029，19:30:56 客户端自动落地；广度样本 5571 家含北交所）
+- <code>tools/breadth_scan.py 20261029</code> 实跑（广度、涨停 39 / 跌停 52、位分中位 0.091）
+- <code>板块资金雷达\data\boards_flow.json</code>（20261029，266 板块，19:34:32）与 <code>hist_metrics.json</code>（20:50 三因子完成，265 板块）
+- <code>板块资金雷达\output\board-radar.html</code>（20:5x 重建，sha256 5f51990d…，已发布 commit 5f48cf6）
+- 东财板块资金 <code>em_bkzj_20261029.json</code>（547 板块口径，source_date_verified=true）
+- 东财业绩报表 <code>stock_yjbb_em(20260930)</code>（22:20 取数，剔除 B 股 4992 家）
+- <code>宏观择时\data\mti_result.json</code>（as_of 20261029，complete 9/9，−0.3070）
+- Finnhub <code>/quote</code> 实拉（北京 23:24–23:35，盘中价）+ 三星/PCE 中文财经一手转述</p>
+<p><strong>口径</strong>
+- 量能比 = 当日成交额 ÷ 前 5 日均额（不含当日）；位分 = (收 − 低) ÷ (高 − 低)。
+- 涨停/炸板由 <code>.day</code> 逐只反推，含北交所，ST 幅度未特殊处理；炸板率与 MTI 口径差 2 只（27/40.9% vs 25/39.1%），方向不变。
+- 板块净额按重叠成分求和，跨板块不可加总，只作量级参照。
+- aDays/oDays = 近 30 交易日窗口进入 TOP30/BOTTOM30 的次数，不连续、不重置。</p>
+<p><strong>未核与边界</strong>
+- <code>^SOX</code>、<code>FXI</code> 未取到（前者无报价代码、后者 SSL 中断），费半精确点位缺，用 SMH 代理。
+- 三星分部拆分与「净利 miss 主因」未核一手英文原文；9 月核心 PCE 同比未取。
+- 美股为盘中价，04:00 后若有引用需换收盘价。
+- 三季报环比为东财字段，未与财报原文核对，存在追溯调整失真风险；579 家为倒算值，停牌股可能低估。
+- 军工链「无硬催化」是基于公开检索的否定判断，不等于不存在。
+- 10/29 两融、北向未取（当日源未就绪）；0AMV 10/29 截图仍为 00:57 的 invalid_desktop，但数据已入库。
+- 报告链今日仅 MTI 日报有产物：盘前简报、竞价快报、收盘总结、研报巡逻均未生成，连续性断三天。</p>
+
+<footer>
+  <p>数据来源：本机通达信日线 .day（as_of 20261029，含北交所，19:30:56 落地）· 板块资金流 boards_flow.json（266 板块，19:34:32）· hist_metrics.json（265 板块三因子，20:50）· 板块资金雷达 board-radar.html（sha256 5f51990d…，commit 5f48cf6）· 东财板块资金 em_bkzj_20261029 · 东财业绩报表（20260930，22:20）· MTI as_of 20261029 complete 9/9 · Finnhub 美股盘中（北京 23:24–23:35）。</p>
+  <p>口径：量能比 = 当日成交额 ÷ 前 5 日均额（不含当日）；位分 = (收−低)÷(高−低)；涨停/炸板由 .day 逐只反推（含北交所，ST 幅度未特殊处理），跌停本机口径 52 与东财 41 存在系统性差异，全文用本机口径；板块净额按重叠成分求和，跨板块不可加总；美股为盘中价非收盘价。</p>
+  <p>本文为复盘记录与概率判断，不构成投资建议。</p>
+</footer>
+
+</body>
+</html>

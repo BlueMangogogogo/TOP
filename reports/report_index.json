@@ -1,9 +1,19 @@
 {
-  "last_updated": "2026-10-29T21:42:31",
-  "total": 289,
-  "daily_count": 206,
+  "last_updated": "2026-10-29T23:58:30",
+  "total": 290,
+  "daily_count": 207,
   "industry_count": 83,
   "reports": [
+    {
+      "relative_path": "reports/2026-10-29/深度复盘.html",
+      "id": "2026-10-29-深度复盘",
+      "display_date": "10月29日",
+      "title": "深度复盘",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 37.1,
+      "date": "2026-10-29"
+    },
     {
       "relative_path": "reports/2026-10-29/宏观择时日报_MTIv3_20261029.html",
       "id": "2026-10-29-宏观择时日报_MTIv3_20261029",
