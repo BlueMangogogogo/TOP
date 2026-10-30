@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月30日 深度复盘</title>
+<style>
+:root{--yellow:#ebb543;--yellow-light:#f7e8c5;--red:#c0392b;--red-light:#fdf0ef;--black:#1a1a1a;--gray-900:#2c2c2c;--gray-700:#555;--gray-500:#888;--gray-300:#bbb;--gray-100:#f0f0f0;--white:#fff;--font:"Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",system-ui,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font);font-size:15px;line-height:1.75;color:var(--gray-900);background:var(--white);max-width:820px;margin:0 auto;padding:40px 28px 60px;-webkit-font-smoothing:antialiased;}
+header{border-bottom:3px solid var(--yellow);padding-bottom:20px;margin-bottom:28px;}
+header h1{font-size:24px;font-weight:700;color:var(--black);margin-bottom:6px;letter-spacing:.5px;}
+header .meta{font-size:13px;color:var(--gray-500);}
+header .meta span{margin-right:16px;}
+h2{font-size:18px;font-weight:700;color:var(--black);margin:32px 0 10px;padding-left:12px;border-left:4px solid var(--yellow);}
+h3{font-size:16px;font-weight:700;color:var(--gray-900);margin:22px 0 8px;}
+p{margin:8px 0;}
+.table-wrapper{overflow-x:auto;margin:14px 0 20px;border:1px solid var(--gray-300);border-radius:6px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:500px;}
+thead th{background:var(--yellow);color:var(--black);font-weight:700;padding:10px 12px;text-align:left;white-space:nowrap;border-bottom:2px solid #d4a734;}
+tbody td{padding:9px 12px;border-bottom:1px solid var(--gray-100);vertical-align:top;}
+tbody tr:nth-child(even){background:#fafafa;}
+tbody tr:hover{background:var(--yellow-light);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+.highlight{background:var(--yellow-light);border-left:4px solid var(--yellow);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;}
+.warning{background:var(--red-light);border-left:4px solid var(--red);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;color:#8b1a1a;}
+ul,ol{margin:8px 0 8px 20px;}
+li{margin:4px 0;}
+hr{border:none;border-top:1px solid var(--gray-100);margin:24px 0;}
+.down{color:var(--red);font-weight:700;}
+.up{color:#1f8b4c;font-weight:700;}
+p.src{font-size:12px;color:var(--gray-500);line-height:1.9;margin-top:14px;}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--gray-300);font-size:12px;color:var(--gray-500);line-height:1.9;}
+@media (max-width:600px){body{padding:20px 14px 40px;font-size:14px;}table{font-size:12px;}thead th,tbody td{padding:7px 8px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>10月30日 深度复盘</h1>
+  <div class="meta">
+    <span>2026年10月30日 星期五</span>
+    <span>生成时间 2026-10-30 23:40（23:00 定时任务未产出，本轮按已核数据补建）</span>
+  </div>
+</header>
+
+<div class="highlight">
+<p>生成时间：2026-10-30 23:40（23:00 定时任务未产出，本轮按当日已核数据补建）
+数据源：本机 <code>.day</code>（深市 10/30 全落地）+ <code>daypatch/20261030.json</code> 沪市外源补丁（新浪，2670 只）+ 腾讯批量行情（全市场 5671 只，交叉验证）+ 板块雷达 <code>boards_flow.json</code> as_of 20261030 + 东财 <code>em_bkzj_20261030</code> + 东财业绩报表 20260930 + MTI <code>mti_history_v4</code> + Finnhub 美股盘中</p>
+</div>
+<hr />
+<h2>一、一句话结论</h2>
+<p>今天不是"跌"，是<strong>换手</strong>：红利 +1.14% 与科创50 −5.48% 之间拉开了 <strong>6.61pp 的近 39 个交易日最大单日风格差</strong>，涨停里坐着泸州老窖这类千亿白马，跌停里躺着短剧游戏 16.3% 的成片小票；同一天，白酒交出全板块 −20.4% 的三季报却 4 只涨停，存储链业绩创纪录却四只全部创新低。<strong>市场今天定价的不是业绩方向，是"预期出清程度"。</strong> 而指数 3599.02 已破 3648.30 破位线，下一目标 3574.27 只剩 0.69%。</p>
+<hr />
+<h2>二、指数全景：跌幅按久期排序，深成与创业板收在当日最低</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>前收</th>
+<th>开</th>
+<th>高</th>
+<th>低</th>
+<th>收</th>
+<th>涨跌</th>
+<th>位分</th>
+<th>额（亿）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证</td>
+<td>3651.43</td>
+<td>3605.65</td>
+<td>3660.21</td>
+<td>3595.26</td>
+<td><strong>3599.02</strong></td>
+<td>−1.44%</td>
+<td>0.058</td>
+<td>7642.3</td>
+</tr>
+<tr>
+<td>深成</td>
+<td>11138.20</td>
+<td>10871.13</td>
+<td>11171.58</td>
+<td>10833.78</td>
+<td><strong>10833.78</strong></td>
+<td>−2.73%</td>
+<td><strong>0.000</strong></td>
+<td>9102.4</td>
+</tr>
+<tr>
+<td>创业板</td>
+<td>2517.59</td>
+<td>2434.80</td>
+<td>2518.24</td>
+<td>2413.63</td>
+<td><strong>2413.63</strong></td>
+<td>−4.13%</td>
+<td><strong>0.000</strong></td>
+<td>4541.7</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>1228.09</td>
+<td>1190.95</td>
+<td>1218.80</td>
+<td>1159.57</td>
+<td><strong>1160.84</strong></td>
+<td>−5.48%</td>
+<td>0.021</td>
+<td>703.7</td>
+</tr>
+<tr>
+<td>沪深300</td>
+<td>4041.84</td>
+<td>3985.24</td>
+<td>4046.87</td>
+<td>3968.86</td>
+<td><strong>3985.50</strong></td>
+<td>−1.39%</td>
+<td>0.213</td>
+<td>4568.6</td>
+</tr>
+<tr>
+<td>上证50</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>2742.11</td>
+<td>−0.75%</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>红利指数</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><strong>3348.19</strong></td>
+<td><strong>+1.14%</strong></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p>四条读法：</p>
+<ol>
+<li><strong>跌幅随久期单调放大</strong>：上证50 −0.75% &lt; 沪深300 −1.39% &lt; 上证 −1.44% &lt; 深成 −2.73% &lt; 创业板 −4.13% &lt; 科创50 −5.48%。这是按"现金流久期"排队抛售，不是板块轮动。</li>
+<li><strong>深成与创业板收在当日最低（位分 0.000）</strong>，上证收 3599.02 距最低 3595.26 仅 3.76 点。全天没有一次反抽留下痕迹。</li>
+<li><strong>盘内形态比收盘价重要</strong>：上证低开 3605.65，午后被白酒/消费拉到 3660.21 一度翻红，尾盘被科技杀回 3599.02。同一天两种力量方向相反、先后主导——所以指数跌幅（−1.44%）与个股中位（−3.13%）差了 1.7pp，指数被权重消费托住了。</li>
+<li><strong>量能三连增</strong>：沪市 7642.3 亿（10/29 7156.2 亿，+6.8%；10/28 7510.2 亿）。量在增、价在跌、收在最低——判定卡第七节写的外盘归因豁免条件（缩量阴跌）不成立，<strong>这是放量出货</strong>。</li>
+</ol>
+<p>风格差序列（红利 − 科创50，pp）：10/26 +3.44、10/27 +5.90、10/28 −2.69、10/29 +5.33、<strong>10/30 +6.61</strong>。四个交易日里三天在 5pp 以上，10/28 那根反弹是唯一例外。这不是单日避险，是一条走了四天的斜线。</p>
+<hr />
+<h2>三、广度：两端同时变厚，中间被抽空</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>10/29（5571）</th>
+<th>10/30（5573 overlay）</th>
+<th>变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上涨 / 下跌</td>
+<td>780 / 4730</td>
+<td><strong>892 / 4605</strong></td>
+<td>上涨 +112</td>
+</tr>
+<tr>
+<td>中位</td>
+<td>−2.60%</td>
+<td><strong>−3.13%</strong></td>
+<td>−0.53pp</td>
+</tr>
+<tr>
+<td>p10</td>
+<td>−6.52%</td>
+<td><strong>−7.4%</strong></td>
+<td>左尾再深</td>
+</tr>
+<tr>
+<td>p90</td>
+<td>+0.73%</td>
+<td><strong>约 +0.9%</strong></td>
+<td>右尾抬高</td>
+</tr>
+<tr>
+<td>位分中位</td>
+<td>0.091</td>
+<td><strong>0.080</strong></td>
+<td>−0.011</td>
+</tr>
+<tr>
+<td>涨停 / 跌停</td>
+<td>39 / 52</td>
+<td><strong>49 / 92–93</strong></td>
+<td>双升</td>
+</tr>
+</tbody>
+</table></div>
+<p>交叉验证：腾讯全市场 5671 只口径为 901 涨 / 4662 跌 / 平 108、中位 −3.09%、p10 −7.29%、p90 +0.96%、涨停 49 / 跌停 89，与 overlay 口径<strong>差 0.16%</strong>，差异来自停牌与代码表边界。两套独立来源给同一个方向。</p>
+<p>正确的读法（这一条今天必须写清楚）：</p>
+<ul>
+<li>上涨家数<strong>增</strong>、涨停<strong>增 26%</strong>、p90 <strong>抬</strong>；同时中位<strong>降</strong>、p10 <strong>降</strong>、跌停<strong>增 71%</strong>（52→89～93）。</li>
+<li>这不是全面阴跌，也不是高低切换（10/27 已否掉一次同样的解释）。是<strong>中间层被抽走、两端同时变厚</strong>：一端是消费/商贸/上海本地股与白酒的题材脉冲，另一端是传媒内容、消费电子/PCB、汽车零部件的成片跌停。</li>
+<li><strong>跌停增速（+71%）远快于涨停增速（+26%），净极化方向向下。</strong> 位分中位 0.080、p10 位分 0.000 → 有一大批股票收在当日最低。</li>
+</ul>
+<p>分市场：沪市跌停密度 2.29%（49/2330 只含 ST 口径）vs 深市 1.34%（40/2982），尾部更极端在沪市；但沪市中位 −2.86% 反而好于深市 −3.28%，<strong>沪市是极端值的战场，深市是普跌的战场</strong>。北交所 359 只上涨占比 10.9%、涨跌停均 0。</p>
+<hr />
+<h2>四、板块与资金：25 正 241 负，卖压衰减但承接只有 22.7 亿</h2>
+<p>通达信口径 266 板块：<strong>正 25 / 负 241</strong>，总净额 <strong>−5749.0 亿</strong>，中位 −11.38 亿。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>日期</th>
+<th>净额为正板块</th>
+<th>总净额</th>
+<th>最大单板块流入</th>
+<th>芯片</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10/28</td>
+<td>189</td>
+<td>+3721 亿</td>
+<td>芯片 +207.03</td>
+<td>+207.03</td>
+</tr>
+<tr>
+<td>10/29</td>
+<td>17</td>
+<td>−8706 亿</td>
+<td>6.55 亿</td>
+<td>−379.93</td>
+</tr>
+<tr>
+<td>10/30</td>
+<td>25</td>
+<td><strong>−5749 亿</strong></td>
+<td><strong>22.66 亿</strong></td>
+<td><strong>−216.26</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>4.1 流入端：白酒创 8 日最大单日流入</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>10/30 净额（亿）</th>
+<th>近 8 日序列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>白酒概念</td>
+<td><strong>+22.66</strong></td>
+<td>−4.0 / −0.8 / −0.4 / +1.8 / −2.3 / −3.6 / +3.5 / <strong>+22.7</strong></td>
+</tr>
+<tr>
+<td>CXO概念</td>
+<td>+16.02</td>
+<td>8 日最高</td>
+</tr>
+<tr>
+<td>创新药</td>
+<td>+11.60</td>
+<td></td>
+</tr>
+<tr>
+<td>免疫治疗</td>
+<td>+7.91</td>
+<td></td>
+</tr>
+<tr>
+<td>页岩气</td>
+<td>+6.44</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>白酒 +22.66 亿占正端 21.9%，4 只涨停分散在 000568 / 000596 / 603198 / 000995，<strong>不是单票伪影</strong>。</p>
+<h3>4.2 流出端：还是同一批 AI 硬件，力度减半</h3>
+<p>芯片 −216.26、数据中心 −144.60、机器人概念 −128.78、人工智能 −119.28、5G概念 −110.00，合计 −718.9 亿。昨天这五个也在前五，今天只是内部换位（机器人 −232→−129，芯片 −380→−216）。<strong>方向没变，力度减半。</strong></p>
+<h3>4.3 两句必须同时说的话</h3>
+<ul>
+<li>方向上：这是<strong>切换</strong>。白酒 / CXO / 创新药 / 新零售连续两日由负转正，白酒创 8 日最大流入。</li>
+<li>量级上：这<strong>不是切换</strong>。正端合计 103.7 亿，负端 −5852.7 亿，量级差 56 倍。承接盘只能托住，不能拉起——证据是今日板块涨幅 &gt;0 的只有 4 个，而净额为正的有 25 个。</li>
+</ul>
+<p>所以准确的表述是：<strong>卖压在衰减（总净额 −8706→−5749，−34%），衰减出来的钱找到了一个去处，但没有新增资金进场。</strong></p>
+<h3>4.4 与东财口径的交叉：方向互印，总量不可比</h3>
+<p>东财 562 板块：正 77 / 负 470，总净额 −10649.4 亿（10/29 为 −8704.8 亿，流出<strong>扩大</strong> 22%）。看似与通达信口径（流出<strong>收窄</strong> 34%）矛盾，实际不可比：东财含宽基/风格/融资融券/沪深股通这类重复计数的壳（单「融资融券」一项 −374.61 亿）。<strong>两条链唯一的共同信号是流入端</strong>：东财是酿酒 26.10 / 白酒 26.09 / CRO 18.72，通达信是白酒 22.66 / CXO 16.02 / 创新药 11.60——两套独立成分表都算钱在往防御与内需跑。</p>
+<hr />
+<h2>五、涨停结构：49 涨停 / 34 炸板 / 93 跌停，昨涨停 8 只跌停</h2>
+<p><strong>涨停 49</strong>：5 板 1 只（青岛食品）、3 板 2 只（澳洋健康、上海沪工）、2 板 6 只、首板 <strong>40 只（81.6%）</strong>；一字 3 只（上海沪工、盛洋科技、阳光照明）；20% 涨停 6 只。</p>
+<ul>
+<li>消费医药是绝对主线：白酒 4 只（泸州老窖 +10.01%、古井贡酒、迎驾贡酒、皇台酒业）、食品 4 只、新零售/纺服 3 只、医药 6 只。</li>
+<li><strong>泸州老窖流通市值 1133 亿、时隔 9 个月再涨停、成交 27.78 亿；茅台 +2.81% 创近半年新高。游资打不出这种票</strong>——这是机构在换仓位，性质与题材涨停完全不同。</li>
+<li>板块密度（涨停/成员）：<strong>白酒概念 9.80% 全场第一</strong>（5/51），预制菜 4.55%、CXO 3.90%、冷链物流 3.42%。消费链密度压倒性。</li>
+<li>芯片仅 2 只涨停，密度 0.23%。</li>
+</ul>
+<p><strong>炸板 34，炸板率 41.0%</strong>（10/29 40.9%）。今日是放量日（16745 亿），这个数字可以读：封板质量差，涨停是被反复争夺后勉强收住的。炸板前十 PCB/CPO/消费电子占 5 只——科技端连"冲高"都留不住。</p>
+<p><strong>跌停 93</strong>（沪 52 / 深 41 / 北 0），ST 仅 4 只，<strong>96% 是正常票被砸到跌停</strong>。密度口径才是真信号：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>成员</th>
+<th>跌停</th>
+<th>密度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>短剧游戏</td>
+<td>86</td>
+<td>14</td>
+<td><strong>16.28%</strong></td>
+</tr>
+<tr>
+<td>网络游戏</td>
+<td>103</td>
+<td>14</td>
+<td>13.59%</td>
+</tr>
+<tr>
+<td>IP经济</td>
+<td>192</td>
+<td>18</td>
+<td>9.38%</td>
+</tr>
+<tr>
+<td>元宇宙</td>
+<td>177</td>
+<td>13</td>
+<td>7.34%</td>
+</tr>
+<tr>
+<td>AIGC</td>
+<td>286</td>
+<td>19</td>
+<td>6.64%</td>
+</tr>
+<tr>
+<td>人形机器人</td>
+<td>445</td>
+<td>17</td>
+<td>3.82%</td>
+</tr>
+<tr>
+<td>人工智能</td>
+<td>1050</td>
+<td>32</td>
+<td>3.05%</td>
+</tr>
+<tr>
+<td>芯片</td>
+<td>878</td>
+<td>19</td>
+<td><strong>2.16%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>两种伤害必须分开</strong>：传媒内容端（短剧/游戏/IP/元宇宙，密度 9%–16%）是情绪性崩塌，死得快但死得浅；芯片/数据中心是<strong>大额净流出 + 低密度</strong>（−216 亿 / 2.16%），是权重股被减仓，死得慢但死得重。混成一句"科技被砸"会丢掉全部信息。</p>
+<p><strong>昨涨停池 40 只今日：晋级 9 只（22.5%）、跌停 8 只、中位 −0.28%。</strong> 接近四分之一的昨日涨停今天被按到跌停，全部集中在传媒/机器人/汽零（文投控股、山东矿机、横店影视、实丰文化、联明股份、东贝集团、龙溪股份、福建金森）；晋级的 9 只里 6 只是消费医药。同一批涨停股一天之内分成两组，这比指数更能说明资金在做什么选择。</p>
+<hr />
+<h2>六、核心个股：存储四只全创新低，寒武纪破 900</h2>
+<h3>6.1 存储四只：A3 命中，无量下台阶</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>10/30 开</th>
+<th>高</th>
+<th>低</th>
+<th>收</th>
+<th>涨跌</th>
+<th>额（亿）</th>
+<th>量能比</th>
+<th>位分</th>
+<th>新低</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>德明利</td>
+<td>209.00</td>
+<td>221.85</td>
+<td>205.89</td>
+<td>209.71</td>
+<td>−2.64%</td>
+<td>37.87</td>
+<td>0.64</td>
+<td>0.239</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>兆易创新</td>
+<td>260.89</td>
+<td>274.59</td>
+<td>257.60</td>
+<td>257.80</td>
+<td>−6.59%</td>
+<td>100.17</td>
+<td>0.99</td>
+<td><strong>0.012</strong></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>江波龙</td>
+<td>210.01</td>
+<td>223.93</td>
+<td>210.01</td>
+<td>212.17</td>
+<td>−4.22%</td>
+<td>25.40</td>
+<td>0.79</td>
+<td>0.155</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>佰维存储</td>
+<td>131.00</td>
+<td>139.97</td>
+<td>130.33</td>
+<td>130.77</td>
+<td>−5.31%</td>
+<td>32.02</td>
+<td>0.80</td>
+<td>0.046</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>四只全部创出新低，判定卡 A3「四只同创低则存储线整段作废」<strong>命中</strong>。</li>
+<li>量能比全部 &lt; 1.0，<strong>没有一只放量</strong>。这不是恐慌杀，是<strong>买盘消失后的无量下台阶</strong>。</li>
+<li>判定卡第十五节的提醒被验证：德明利 0.6x 阈值的绝对额只有 35.73 亿，实际 37.87 亿刚过线，比值 0.64 看着"缩量"其实绝对额并不小——按比值判 A1 会误判，按绝对额看是 A4 边缘。</li>
+<li>昨日的 A2「放量止跌」被证伪：10/29 的四根止跌位今天全部跌穿。</li>
+</ul>
+<h3>6.2 寒武纪：B1 命中，但额没放</h3>
+<p>开 882.70 / 高 920.00 / 低 <strong>861.89</strong> / 收 <strong>880.00</strong>，−3.61%，额 82.06 亿（10/29 80.78 亿）。收在 900 之下 20 点，盘中最低破 900 关口 38 点。</p>
+<p>额与前两日持平，说明是<strong>持续失血而非一次性砸盘</strong>——与"B 档跌破 900 是估值与资金结构问题，不是业绩证伪"这条判断同向。它挂着 12 个板块，破位继续拖累板块净额。</p>
+<h3>6.3 东方财富：17.60，−2.00%</h3>
+<p>券商没有起到"稳定器"作用，量能比 0.91。破位日金融不接盘，说明这不是一次可以靠权重护盘化解的调整。</p>
+<hr />
+<h2>七、基本面闭环：三季报收官，利润在往原厂集中</h2>
+<h3>7.1 七个桶单调跑完，最后一桶最差</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>公告日期</th>
+<th>家数</th>
+<th>亏损占比</th>
+<th>净利同比中位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤ 10/20</td>
+<td>108</td>
+<td>10.2%</td>
+<td>+19.4%</td>
+</tr>
+<tr>
+<td>10/21–10/25</td>
+<td>740</td>
+<td>19.2%</td>
+<td>+2.0%</td>
+</tr>
+<tr>
+<td>10/26–10/27</td>
+<td>897</td>
+<td>23.0%</td>
+<td>+0.0%</td>
+</tr>
+<tr>
+<td>10/28</td>
+<td>982</td>
+<td>24.2%</td>
+<td>−7.2%</td>
+</tr>
+<tr>
+<td>10/29</td>
+<td>1064</td>
+<td>27.4%</td>
+<td>−5.7%</td>
+</tr>
+<tr>
+<td>10/30</td>
+<td>1262</td>
+<td>32.3%</td>
+<td>−4.9%</td>
+</tr>
+<tr>
+<td><strong>10/31（今晚批）</strong></td>
+<td><strong>629</strong></td>
+<td><strong>35.9%</strong></td>
+<td><strong>−11.8%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>七个桶单一方向上行（10.2%→35.9%，3.5 倍），没有一档回头。全A 5682 家：亏损 1522 家（<strong>26.8%</strong>）、同比中位 <strong>−3.7%</strong>、同比为负 52.2%。<strong>这个三季报季，中位公司在负增长，四分之一在亏钱。</strong></p>
+<p>实质收官：5577 只全A覆盖 5572，未披露仅 5 家（中芯、华虹、百济三家 A+H 可延披，奥精医疗、萃华退）。<strong>11/2 起进入业绩真空期。</strong></p>
+<p>今晚批的地雷结构：房地产开发 22 家亏 16 家（72.7%）、光伏设备 14 家亏 12 家（85.7%，通威/隆基/晶科/天合合计亏 167.8 亿）、普钢 6 家全亏、军工电子 85.7%。<strong>光伏"反内卷"还停在价格预期上，报表没有转身。</strong></p>
+<h3>7.2 存储：利润与增速都在往原厂集中</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>环节</th>
+<th>标的</th>
+<th>9M 同比</th>
+<th><strong>Q3 单季环比</strong></th>
+<th>10/30</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原厂</td>
+<td>长鑫科技</td>
+<td>负基数失效</td>
+<td><strong>+3.0%</strong>（544.35 亿）</td>
+<td>−2.50%</td>
+</tr>
+<tr>
+<td>模组</td>
+<td>江波龙</td>
+<td>+1909.7%</td>
+<td><strong>−44.2%</strong></td>
+<td>−4.22%</td>
+</tr>
+<tr>
+<td>利基</td>
+<td>兆易创新</td>
+<td>+921.6%</td>
+<td><strong>−22.0%</strong></td>
+<td>−6.59%</td>
+</tr>
+<tr>
+<td>模组</td>
+<td>佰维存储</td>
+<td>高增</td>
+<td><strong>−62.4%</strong></td>
+<td>−5.31%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>原厂毛利率 86.85%、净利率 73.05%（9M），模组在涨价周期里单季利润腰斩。<strong>涨价对模组是成本先行、售价后行</strong>——市场不是不信涨价，是不信模组能吃到涨价。</li>
+<li>但原厂的增速拐点也已经出现：Q1→Q2 环比 +113%，Q3 只剩 +3.0%。<strong>这是这轮周期第一根"增速见顶"的证据</strong>，与"原厂产能紧到 2029"并不矛盾（高基数 + 产能爬坡压增长）。</li>
+<li>因此存储的任何反弹只能按情绪修复读，不能按业绩兑现读。今日四只创新低就是这条逻辑的盘面兑现。</li>
+</ul>
+<h3>7.3 白酒：全板块 −20.4% 的报表，4 只涨停的股价</h3>
+<p>东财「白酒Ⅱ」36 家 9M 同比中位 <strong>−20.42%</strong>：五粮液之外，汾酒 −26.9%、泸州老窖 −47.3%、古井贡 −42.9%、洋河 −53.9%、舍得 −58.8%、金种子亏损，只有茅台 −0.25% 基本持平。</p>
+<p>对照今日盘面：4 只涨停、板块密度 9.80% 全场第一、茅台创近半年新高。<strong>基本面没有转向，涨的是预期出清</strong>——渠道库存与价盘压力一次性卸掉、股息率 4.6% 对 10 年国债利差 2.97pp 处历史高位。三家券商口径（中信磨底后期、华泰底部、开源可布局）与行业人士（蔡学飞"低估值+低预期+高低切换，并非基本面反转"）一致。</p>
+<p><strong>结论不变：这是修复，不是反转。</strong> 验证信号是 11/2 能否连续第三日净流入、龙头能否跟上。</p>
+<hr />
+<h2>八、MTI：−0.2627 的"回升"是窗口滞后，不是企稳</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>日期</th>
+<th>10/26</th>
+<th>10/27</th>
+<th>10/28</th>
+<th>10/29</th>
+<th>10/30</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MTI</td>
+<td>−0.2178</td>
+<td>−0.2988</td>
+<td>−0.2361</td>
+<td>−0.3070</td>
+<td><strong>−0.2627</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>complete 9/9。相比 10/29 只回升 0.044，而且回升全部来自两个 5 日平滑因子的滞后窗口仍包含 10/28 的情绪高点：</p>
+<ul>
+<li><code>ld</code>（涨跌停比）5 日平滑：10/26 0.6707、10/27 0.6406、10/28 <strong>0.9231</strong>、10/29 0.4815、10/30 <strong>0.3615</strong>（近 6 日最低），均值 0.6155 → 仍给 +0.2310。</li>
+<li><code>break_rate</code>（炸板率）5 日平滑当日 0.3924，但其分母里<strong>没有跌停</strong>，所以"涨停萎缩 + 跌停 90 家"的日子照样给正分 +0.2184。</li>
+<li>真正在恶化的因子：dispersion −0.9213（极度分化）、size −0.7340（20 日偏离 87% 分位）、rotation −0.6917。</li>
+</ul>
+<p><strong>周一 <code>ld</code> 因子里的 0.9231 出窗，MTI 会自动再往下掉一档，除非涨停结构自己修复。</strong> 表达上只能写"当日原始读数继续恶化"，不能写"情绪企稳"。</p>
+<hr />
+<h2>九、外盘：存储三巨头业绩超预期仍被砸，这是全球同一件事</h2>
+<h3>9.1 美东 10/30 盘中（北京 23:12 取数，非收盘价）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>现价</th>
+<th>涨跌</th>
+<th></th>
+<th>标的</th>
+<th>现价</th>
+<th>涨跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SNDK</td>
+<td>1201.28</td>
+<td><strong>−9.68%</strong></td>
+<td></td>
+<td>AMD</td>
+<td>513.17</td>
+<td><strong>−9.40%</strong></td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>371.11</td>
+<td><strong>−6.15%</strong></td>
+<td></td>
+<td>SMH</td>
+<td>526.87</td>
+<td><strong>−6.20%</strong></td>
+</tr>
+<tr>
+<td>STX</td>
+<td>660.16</td>
+<td><strong>−5.75%</strong></td>
+<td></td>
+<td>AVGO</td>
+<td>327.03</td>
+<td>−5.21%</td>
+</tr>
+<tr>
+<td>MU</td>
+<td>892.21</td>
+<td>−4.50%</td>
+<td></td>
+<td>TSM</td>
+<td>411.26</td>
+<td>−4.76%</td>
+</tr>
+<tr>
+<td>KLAC</td>
+<td>161.41</td>
+<td>−3.60%</td>
+<td></td>
+<td>NVDA</td>
+<td>206.37</td>
+<td>−3.41%</td>
+</tr>
+<tr>
+<td>AMZN</td>
+<td>240.76</td>
+<td>−1.24%</td>
+<td></td>
+<td>MSFT</td>
+<td>522.12</td>
+<td>−1.51%</td>
+</tr>
+<tr>
+<td>AAPL</td>
+<td>348.07</td>
+<td>−0.24%</td>
+<td></td>
+<td>META</td>
+<td>624.11</td>
+<td>−0.07%</td>
+</tr>
+<tr>
+<td>QQQ</td>
+<td>695.74</td>
+<td>−2.74%</td>
+<td></td>
+<td>SPY</td>
+<td>759.01</td>
+<td>−1.35%</td>
+</tr>
+</tbody>
+</table></div>
+<p>昨夜（10/29 收盘）还是"设备涨 / 颗粒跌"的分层：KLAC +5.45%、WDC/STX 不跌，MU −4.98%、SNDK −5.32%。<strong>今天这一夜分层被打破，变成半导体全链同跌，且 KLAC 也翻绿。</strong></p>
+<h3>9.2 触媒已核到消息层</h3>
+<ul>
+<li><strong>SNDK 财报超预期、上调指引、8 拆 1，股价仍跌 9.7%</strong>（Yahoo：Sandisk Sinks 9% Despite Earnings Beat, Raised Guidance and 8-for-1 Split）。分析师口径一致指向估值与"盈利上调空间收窄"。</li>
+<li><strong>Intel 因展望疲弱单日 −29%</strong>（"Still PC Dependent"）。这是今晚最极端的单点暴击。</li>
+<li>WDC −6~8%、STX −7%，跟随 NAND/HDD 定价预期。</li>
+<li>AMZN 因 Q3 FCF −42.4B 与 Q4 营收指引中值不及预期继续下挫。</li>
+</ul>
+<p><strong>这条跨市场共振是本篇最值得记的一条</strong>：一家业绩创纪录、上调指引、还拆股的公司跌 9.7%——与 A 股存储链"业绩创纪录 + 四只创新低"是同一个定价机制。<strong>当持仓拥挤到一定程度，"好业绩"不再是买点而是兑现窗口。</strong> 这也反过来支持白酒那条判断：市场买的不是业绩，是筹码与预期的位置。</p>
+<p>AMD −9.40% 未查到当日自有一手财报催化，按板块联动记（Intel 展望 + SMH 系统性回落），不作个股归因。</p>
+<hr />
+<h2>十、周一（11/2）推演</h2>
+<h3>10.1 基线（.day + 沪市外源补丁，收盘价已与 MCP 交叉核验）</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标的</th>
+<th>10/30 收</th>
+<th>11/2 涨停</th>
+<th>11/2 跌停</th>
+<th>5 日均额（亿）</th>
+<th>0.6x（亿）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>德明利</td>
+<td>209.71</td>
+<td>230.68</td>
+<td>188.74</td>
+<td>51.21</td>
+<td>30.73</td>
+</tr>
+<tr>
+<td>兆易创新</td>
+<td>257.80</td>
+<td>283.58</td>
+<td>232.02</td>
+<td>94.99</td>
+<td>56.99</td>
+</tr>
+<tr>
+<td>江波龙</td>
+<td>212.17</td>
+<td>254.60</td>
+<td>169.74</td>
+<td>29.03</td>
+<td>17.42</td>
+</tr>
+<tr>
+<td>佰维存储</td>
+<td>130.77</td>
+<td>156.92</td>
+<td>104.62</td>
+<td>38.13</td>
+<td>22.88</td>
+</tr>
+<tr>
+<td>寒武纪</td>
+<td>880.00</td>
+<td>1056.00</td>
+<td>704.00</td>
+<td>92.83</td>
+<td>55.70</td>
+</tr>
+<tr>
+<td>东方财富</td>
+<td>17.60</td>
+<td>21.12</td>
+<td>14.08</td>
+<td>32.33</td>
+<td>19.40</td>
+</tr>
+</tbody>
+</table></div>
+<p>上证 11/2 前 5 日（10/26–10/30）均额 7299.6 亿；绝对额档位用 6500 / 7500 / 8000 亿三档，不用 0.6x（=4379.8 亿，无历史样本）。</p>
+<h3>10.2 四档判定卡</h3>
+<p><strong>A 档｜存储四只（整段作废后的观察点变成"跌不动"）</strong>
+- <strong>A1</strong> 四只中至少两只上涨，且四只量能比中位 &lt; 0.55 → 第一根"缩量止跌"，只是止跌不是反转。
+- <strong>A2</strong> 四只中至少三只再创 10/30 新低（德明利 205.89 / 兆易 257.60 / 江波龙 210.01 / 佰维 130.33）→ 存储线继续作废，不参与。
+- <strong>A3</strong> 出现单日反抽 &gt; 5%，但收盘回吐一半以上 → 假反抽，按卖出信号读。
+- <strong>A4（不动档）</strong> 落在此三档之间 → 记"无量磨底"，不改变判断。</p>
+<p><strong>B 档｜寒武纪</strong>
+- <strong>B1</strong> 跌破 861.89 并收在其下 → 12 个板块继续失血，下一观察位看 800 整数关。
+- <strong>B2</strong> 收在 900.00 之上 → 破位修复，但需连续两日才改判。
+- <strong>B3（不动档）</strong> 在 861.89–900 区间内 → 记"破位后横盘"，不改判断。</p>
+<p><strong>C 档｜上证</strong>
+- <strong>C1</strong> 收盘跌破 3574.27 → 退潮第三阶段确认，下一档看 3500。
+- <strong>C2</strong> 收在 3574.27–3648.30 之间 → 中继，仍未修复。
+- <strong>C3</strong> 收复 3648.30（原破位线）→ 破位修复，但需配合 C4 的量能条件才认。
+- <strong>C5</strong> 低开破 3574 后当日收回 3574 上方 → 弱势未测顶，只能读"下跌减速"。</p>
+<p><strong>D 档｜广度（注脚，不单独立论）</strong>
+- <strong>D1</strong> 涨停/跌停比继续恶化（跌停 &gt; 100 或涨停 &lt; 35）→ 情绪进冰点区。
+- <strong>D2</strong> 涨停回升至 60 以上且跌停 &lt; 60 → 情绪修复第一个信号。
+- 历史校准：D1 类"冰点"次日反弹概率约 8/11，但两日内重回弱势 7/11——<strong>只做情绪修复，不做趋势</strong>。</p>
+<p><strong>E 档｜量能（沪市绝对额）</strong>
+- <strong>E1</strong> &lt; 6500 亿 → 缩量，归因豁免条件成立（外盘可作解释）。
+- <strong>E2</strong> 6500–8000 亿 → 中间态，外盘不可作理由。
+- <strong>E3</strong> &gt; 8000 亿 → 放量，方向即结论。</p>
+<h3>10.3 预承诺（盘前写死，收盘后不许改口径）</h3>
+<ol>
+<li><strong>C1 + A2 同时成立</strong> → 退潮第三阶段确认，存储与 AI 硬件全线不参与，任何反弹按"无量修复"处理。</li>
+<li><strong>C3 且沪市额 &gt; 7500 亿且白酒/CXO 连续第三日净流入为正</strong> → 承认"出清交易"可延长，但仓位上限仍为观察仓（承接量级只有 100 亿级，托不住趋势）。</li>
+<li><strong>D1 成立（跌停 &gt; 100）</strong> → 次日反弹按情绪修复做，不许当转折；若反弹日量能 &lt; 6500 亿，视为无效修复。</li>
+<li><strong>外盘归因纪律</strong>：周日核对美东 10/30 <strong>收盘价</strong>（本篇为盘中价）。若 SMH 收盘跌幅 &gt; 5%，周一科技低开算外盘传导；但<strong>低开 &gt; 3% 且当日不收回</strong>仍记内生——今天已经示范过一次 A 股跌幅远超外盘。</li>
+<li><strong>MTI 出窗纪律</strong>：<code>ld</code> 因子的 0.9231 周一出窗，MTI 下行是机械结果，<strong>不得反推为"情绪恶化超预期"</strong>；反之若 MTI 逆势回升，才是信号。</li>
+</ol>
+<h3>10.4 三个观察锚点</h3>
+<ol>
+<li><strong>3574.27 是否被测试</strong>：今日低 3595.26 距其 0.69%。周一低开直接测试且量能不缩，才是第三阶段。</li>
+<li><strong>白酒能不能连续第三日净流入</strong>：近 8 日只有 10/29、10/30 连正。断掉即证明是超跌反弹。</li>
+<li><strong>沪市个股 <code>.day</code> 是否补下</strong>：今日 0 落地，全靠外源补丁。若周一仍缺，所有沪市个股的量能与涨停价计算都必须走腾讯/MCP 兜底，且<strong>周线级 5 日均额会出现窗口错位</strong>（缺 10/30 这根就错位一个交易日）。</li>
+</ol>
+<h3>10.5 本卡最可能失效的三处</h3>
+<ol>
+<li><strong>政策窗口</strong>：二十届五中全会 10/26–29 已闭幕，公报（10/29 17:42）主题是党建与"完成全年目标、深入挖掘内需潜力"，未见增量刺激表述。<strong>10/30 消费/内需走强、科技杀跌，与"不加码刺激 → 防守内需"的读法吻合，但这只是假设，未取得政策文本层面的增量证据。</strong> 若周末有部委配套政策落地（消费/内需方向），本卡 C 档会直接失效。</li>
+<li><strong>10/31 09:30 的 10 月 PMI</strong>（按惯例月末最后一日发布，未核具体公告）：若制造业 PMI 跌破 49，周一低开是宏观定价而非筹码出清，本卡 A/B 档的解读要整体换框架。</li>
+<li><strong>美东 10/30 收盘</strong>：盘中 SMH −6.20% 若收盘扩大到 −8% 以上，周一科技低开幅度会超出本卡基线，C 档的档位需要重设。</li>
+</ol>
+<hr />
+<h2>十一、数据来源与边界</h2>
+<p><strong>来源</strong>
+1. 指数与六只标的：本机 <code>.day</code>（深市 10/30 已全落地）+ <code>daypatch/20261030.json</code>（沪市 2670 只，新浪日线，<code>flagged=0</code>），与 19:30 <code>tdx-finance</code> MCP 在线行情逐项一致（德明利 −2.64%、兆易 −6.59%、江波龙 −4.22%、佰维 −5.31%、寒武纪 −3.61%、东财 −2.00%）。
+2. 全市场广度：<code>breadth_scan.py</code> overlay 口径 5573 只；腾讯批量行情 5671 只作交叉验证，差 0.16%。
+3. 板块：<code>板块资金雷达/data/boards_flow.json</code> as_of 20261030（266 板块）+ 东财 <code>em_bkzj_20261030.json</code>（562 板块），两套口径只交叉方向、不比总量。
+4. 涨停结构：<code>_zt_struct_1030.py</code>（腾讯全市场 + 本地 <code>.day</code> 连板历史 + <code>boards_constituents.json</code>）。
+5. 基本面：东财 <code>stock_yjbb_em(20260930)</code> 22:20 取数 + 同花顺财务摘要（长鑫 1320.40 亿两处一致）。
+6. MTI：<code>mti_history_v4.json</code>，10/30 complete 9/9 = −0.2627，面板已发布（commit <code>cc2fea7</code>）。
+7. 外盘：Finnhub <code>/quote</code> 北京 23:12（美东 11:12，<strong>盘中价</strong>）+ <code>/company-news</code> 10/29–10/31。</p>
+<p><strong>边界（明确未核）</strong>
+1. 沪市个股 <code>.day</code> 今日 0 更新，本机数据靠外源补丁；补丁无成交额字段，沪市个股的 10/30 额取自 MCP 已核值（兆易 100.17 / 佰维 32.02 / 寒武纪 82.06 亿），非 <code>.day</code> 原始字段。
+2. 涨跌停存在口径漂移：本机等值判定 49/92–93，东财涨跌停池 47/82，MTI <code>limit_series</code> 走东财。差 10 只集中在跌停端，疑为北交所 30% 与主板 ST 5% 限幅口径不同，<strong>未逐只对账</strong>，全文用本机口径。
+3. 跌停股的行业归属按板块成分表计算（密度表），但「传媒成片跌停」这个判断的成分表覆盖未逐只核（部分个股挂多个概念）。
+4. 白酒涨停的资金属性层未核：无法区分公募调仓、险资配置还是量化风格因子；北向与融资当日数据无源。
+5. 炸板率 41% 缺历史基准序列（未做近 20 日均值），全文未做"高于均值"表述。
+6. 二十届五中全会公报的市场含义只是<strong>读法假设</strong>，未取得公报中关于资本市场/产业政策的条款级引用。
+7. 五粮液 9M 同比 +49.98% 与单季大幅下滑方向冲突，疑负基数或追溯调整，未核，未用于板块判断。
+8. 三季报家数 5682 含已退市/新上市代码，与 5577 只全A名单不是同一集合，差 105 只未逐一核对。
+9. 昨日涨停 40 只与 10/29 底稿记的 39 只差 1 只，属涨跌停判定漂移，晋级率 22.5% 有 ±2.5pp 的容差。</p>
+<hr />
+<p><em>本篇为复盘记录与概率判断，不构成投资建议。</em></p>
+
+<footer>
+  <p>数据来源：本机通达信日线 .day（as_of 20261030，深市全落地）· daypatch 沪市外源补丁（新浪，2670 只，flagged 0）· 腾讯批量行情 5671 只（交叉验证差 0.16%）· 板块资金雷达 boards_flow.json 266 板块（as_of 20261030）· 东财 em_bkzj_20261030 562 板块 · 东财业绩报表 20260930（22:20 取数）· MTI mti_history_v4 complete 9/9 = −0.2627 · Finnhub 美股盘中（北京 23:12，美东 11:12）。</p>
+  <p>口径：量能比 = 当日成交额 ÷ 前 5 日均额（不含当日）；位分 = (收−低)÷(高−低)；涨跌停按 .day + 外源补丁逐只等值反推（含停牌剔除），与东财涨跌停池存在 ±10 只口径差，全文用本机口径；板块净额按重叠成分求和，跨板块不可加总；美股为盘中价非收盘价。</p>
+  <p>本文为复盘记录与概率判断，不构成投资建议。</p>
+</footer>
+
+</body>
+</html>
