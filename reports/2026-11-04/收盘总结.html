@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11月4日 收盘总结</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>11月4日 收盘总结</h1>
+  <div class="meta">
+    📅 2026年11月04日 21:04
+  </div>
+</header>
+
+<blockquote>
+<p>补跑生成 · 行情 cutoff 2026-11-04 15:00 · 实际生成 21:10</p>
+</div>
+<h2>一、指数全景：涨幅巨大，位置未修复</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘</th>
+<th>涨跌</th>
+<th>成交额</th>
+<th>距 MA20</th>
+<th>距 MA60</th>
+<th>近 20 日</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3686.17</td>
+<td>+2.16%</td>
+<td>9532 亿</td>
+<td>-0.58%</td>
+<td>-4.22%</td>
+<td>-4.06%</td>
+</tr>
+<tr>
+<td>沪深 300</td>
+<td>4101.33</td>
+<td>+2.31%</td>
+<td>—</td>
+<td>-0.83%</td>
+<td>-7.29%</td>
+<td>-5.88%</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>11335.69</td>
+<td>+4.22%</td>
+<td>10844 亿</td>
+<td>-2.92%</td>
+<td>-13.42%</td>
+<td>-12.04%</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>2544.73</td>
+<td>+6.40%</td>
+<td>5493 亿</td>
+<td>-5.77%</td>
+<td>-19.87%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>科创 50</td>
+<td>1265.47</td>
+<td>+9.92%</td>
+<td>1045 亿</td>
+<td>-4.08%</td>
+<td>-17.61%</td>
+<td>-17.29%</td>
+</tr>
+</tbody>
+</table></div>
+<p>两市成交 2.04 万亿（沪 9532 亿 + 深 10844 亿），较上一交易日放量 3343 亿。全市场宽度口径为 2.05 万亿，两套数字来自不同统计源，量级一致但口径不同，不混用。</p>
+<p><strong>这张表最重要的一列不是涨跌幅，是距 MA20。</strong> 四大指数今天涨幅从 2.16% 到 9.92%，但没有一个收复 20 日均线：上证差 0.58%、沪深 300 差 0.83%，科创 50 差 4.08%，创业板差 5.77%。科创 50 单日涨 9.92% 看着惊心动魄，但这只把它从"近 20 日 -17.29%"的位置拉回到距 MA20 仍有 4% 的差距。</p>
+<p>一句话：今天是深度超跌后的修复第一天，不是趋势反转的确认日。涨幅的绝对值说明压抑得久，均线偏离说明修复才刚开始。这两件事同时成立，不能只讲前者。</p>
+<h2>二、量能与情绪：封板率 76.6%，是强势结构</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>2026-11-04</th>
+<th>读法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上涨 / 下跌 / 平</td>
+<td>4614 / 828 / 130</td>
+<td>上涨占比 82.8%，样本 5572 只</td>
+</tr>
+<tr>
+<td>个股涨跌幅中位数</td>
+<td>+1.79%</td>
+<td>中位数远低于指数涨幅</td>
+</tr>
+<tr>
+<td>个股涨跌幅均值</td>
+<td>+2.75%</td>
+<td>均值高于中位数，权重端更强</td>
+</tr>
+<tr>
+<td>涨停 / 跌停</td>
+<td>121 / 11</td>
+<td>百股涨停，跌停仅 11 家</td>
+</tr>
+<tr>
+<td>炸板</td>
+<td>37</td>
+<td>封板率 76.6%</td>
+</tr>
+<tr>
+<td>收盘位分中位数</td>
+<td>0.859</td>
+<td>收在日内高位，非尾盘跳水</td>
+</tr>
+</tbody>
+</table></div>
+<p>中位数 +1.79% 与科创 50 +9.92% 之间的落差，就是今天最诚实的描述：指数是被成长权重抬起来的，多数个股跟涨但幅度有限。这不是"全面牛市"，是"权重修复 + 普涨跟风"。</p>
+<p>封板率 76.6% 值得单独说。对照 10 月 27 日那个退潮日，涨停 41 家、炸板 28 家、炸板率 40.6%——今天涨停 121 家、炸板 37 家，绝对炸板数只多 9 家，但分母扩大了近四倍。封板意愿是实质性抬升的。</p>
+<h2>三、板块资金：224 个板块净流入，昨天几乎全在流出</h2>
+<p>板块主力净额口径，266 个板块中 <strong>224 个净流入，合计 +7025 亿</strong>。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>净流入 TOP8</th>
+<th>今日</th>
+<th>前一日</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>芯片</td>
+<td>+389.68 亿</td>
+<td>-299.14 亿</td>
+</tr>
+<tr>
+<td>5G 概念</td>
+<td>+206.66 亿</td>
+<td>-200.06 亿</td>
+</tr>
+<tr>
+<td>CPO 概念</td>
+<td>+189.92 亿</td>
+<td>-206.61 亿</td>
+</tr>
+<tr>
+<td>数据中心</td>
+<td>+182.00 亿</td>
+<td>-218.42 亿</td>
+</tr>
+<tr>
+<td>汽车电子</td>
+<td>+169.37 亿</td>
+<td>-152.81 亿</td>
+</tr>
+<tr>
+<td>存储芯片</td>
+<td>+159.91 亿</td>
+<td>-107.77 亿</td>
+</tr>
+<tr>
+<td>新能源车</td>
+<td>+151.24 亿</td>
+<td>-105.46 亿</td>
+</tr>
+<tr>
+<td>光通信</td>
+<td>+138.29 亿</td>
+<td>-141.59 亿</td>
+</tr>
+</tbody>
+</table></div>
+<p>这张表真正的内容在第三列：<strong>流入 TOP8 的板块，昨天全部是百亿级净流出</strong>。芯片从 -299 亿到 +390 亿，一天摆动 689 亿。这不是新增资金慢慢建仓的形态，是空头回补叠加集中抢筹。</p>
+<p>流出端只剩 42 个板块，且量级很小：中特估 -17.60 亿、白酒 -11.96 亿、跨境支付 -7.54 亿、预制菜 -6.19 亿、天然气 -6.00 亿、高铁 -5.56 亿。最大一笔流出不到流入榜首的 5%。</p>
+<p>这个不对称本身就是结论：<strong>今天的方向不是"资金换赛道"，是"资金整体回场"，回避险品种切向科技成长。</strong> 白酒、中特估这类防御资产被减，不是被看空，是在这个位置的机会成本变高了。</p>
+<p>需要说明口径：以上是板块主力净额，是成员求和的结果，不等于真实机构持仓变化。板块净额为正也不代表每个成员都被买入。</p>
+<h2>四、涨停结构：半导体链占绝对多数</h2>
+<p>121 家涨停中，前 20 名里 11 家属半导体与电子链——北方华创、通富微电、长电科技、中科飞测（+20%）、华峰测控（+20%）、雅克科技、有研新材、深南电路、金安国纪、中钨高新、先导基电。</p>
+<p>其余方向分散：贵金属（赤峰黄金、盛达资源，催化为三季度央行购金同比 +42%）、CXO（药明康德、凯莱英，催化为三季报与在手订单）、AI 漫剧与短剧（浙文影业 3 板、大晟文化 3 板）。</p>
+<p><strong>集中度检查</strong>：按 MEMORY 里那条口径，榜首板块要过成员集中度——今天的答案是不需要打折。资金流入 TOP12 覆盖 12 个互不相同的板块（芯片、5G、CPO、数据中心、汽车电子、存储、新能源车、光通信、消费电子、机器人、先进封装、物联网），涨停也分布在封测、设备、材料、载板多个环节。这是产业链级别的横向扩散，不是单只大票拉起来的假板块。</p>
+<h2>五、上涨的三重驱动</h2>
+<p><strong>政策</strong>：11 月 4 日起，央行下调股票回购增持再贷款利率 0.25 个百分点至 1%，并继续充分满足银行再贷款需求。</p>
+<p><strong>增量资金</strong>：证监会与央行同意 31 家证券公司和基金管理公司开展第三批互换便利操作，申请额度超 1000 亿元；11 月 3 日多家券商已公告中标。</p>
+<p><strong>估值</strong>：科创 50 自 7 月以来持续调整，估值压缩至较低区间。预期被充分定价后，边际改善即触发剧烈修复。</p>
+<p>三者的顺序值得注意：政策是扳机，资金是弹药，估值是弹簧。缺一个都打不出今天的幅度。</p>
+<h2>六、核心个股</h2>
+<p><strong>北方华创</strong>（535.50，+10.00%）：国产半导体设备龙头，存储设备覆盖 DRAM/NAND，HBM 领域可提供 TSV 刻蚀、电镀设备并已批量交付。10 月 30 日完成收购诺合键维，补齐混合键合。它是今天设备链的锚。</p>
+<p><strong>中科飞测</strong>（246.74，+20.00%）：检测设备，前道制程订单占比约 80%，先进封装订单约 15%（来自 HBM、2.5D/3D）。当日公告董事长提议回购 1—1.5 亿元。20CM 涨停 + 回购提议，是设备链里弹性最大的一个。</p>
+<p><strong>药明康德</strong>（148.81，+10.00%）：CXO 龙头，在手订单 767.4 亿（较二季度末增约 103 亿），全年收入指引由 585—605 亿上调至 610—619 亿。它的涨停说明这轮不只炒半导体，医药外包同步获得资金。</p>
+<h2>七、下一交易日的四个观察点</h2>
+<ol>
+<li><strong>能否收复 MA20</strong>：上证 3707.63、沪深 300 4135.86、科创 50 1319.28。站上且守住，才谈得上趋势修复；冲高回落，今天就是一根反抽。</li>
+<li><strong>芯片链是否连续第二天净流入</strong>：今天 +389 亿是脉冲还是起点，明天见分晓。单日百亿级流入在历史上多数是脉冲，连续两日才构成趋势。</li>
+<li><strong>炸板率</strong>：今天 23.4%。明天若回到 35% 以上，说明今天封板的是情绪不是资金。</li>
+<li><strong>高低切换是否延续</strong>：白酒、中特估的流出是小幅试探还是开始。若这两个板块明天转为净流入，说明资金在回撤，今天是短促反弹。</li>
+</ol>
+<h2>八、缺口声明</h2>
+<ul>
+<li>本报告为 <strong>21:10 补跑</strong>，原定触发时刻 15:30。行情 cutoff 为 15:00 收盘定稿值，所有数字可复核。</li>
+<li>盘中五份报告（盘前简报、竞价快报、开盘速览、午盘扫描、盘中异动）因当日未开机而未生成，对应时点快照已不可回溯，不做回填重建。</li>
+<li>活跃市值（0AMV，20:10 任务）未执行，本报告未引用该指标。</li>
+<li>板块资金数据 <code>source_date_verified=true</code>，as_of 20261104，覆盖 266 板块 / 5060 只个股。</li>
+</ul>
+<hr>
+<p>数据来源：通达信行情（指数与个股，cutoff 15:00）／本机通达信 .day 全市场宽度扫描（5572 只样本）／板块资金雷达（板块主力净额，source_date_verified）／亿信（政策与新闻检索）。</p>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：2026年11月04日 21:04</p>
+</footer>
+
+</body>
+</html>
