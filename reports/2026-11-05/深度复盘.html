@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11月5日 深度复盘</title>
+<style>
+:root{--yellow:#ebb543;--yellow-light:#f7e8c5;--red:#c0392b;--red-light:#fdf0ef;--green:#1f8b4c;--black:#1a1a1a;--gray-900:#2c2c2c;--gray-700:#555;--gray-500:#888;--gray-300:#bbb;--gray-100:#f0f0f0;--white:#fff;--font:"Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",system-ui,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font);font-size:15px;line-height:1.75;color:var(--gray-900);background:var(--white);max-width:820px;margin:0 auto;padding:40px 28px 60px;-webkit-font-smoothing:antialiased;}
+header{border-bottom:3px solid var(--yellow);padding-bottom:20px;margin-bottom:28px;}
+header h1{font-size:24px;font-weight:700;color:var(--black);margin-bottom:6px;letter-spacing:.5px;}
+header .meta{font-size:13px;color:var(--gray-500);}
+header .meta span{margin-right:16px;}
+h2{font-size:18px;font-weight:700;color:var(--black);margin:30px 0 10px;padding-left:12px;border-left:4px solid var(--yellow);}
+p{margin:8px 0;}
+.table-wrapper{overflow-x:auto;margin:12px 0 18px;border:1px solid var(--gray-300);border-radius:6px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:500px;}
+thead th{background:var(--yellow);color:var(--black);font-weight:700;padding:9px 11px;text-align:left;white-space:nowrap;border-bottom:2px solid #d4a734;}
+tbody td{padding:8px 11px;border-bottom:1px solid var(--gray-100);vertical-align:top;}
+tbody tr:nth-child(even){background:#fafafa;}
+tbody tr:hover{background:var(--yellow-light);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+.highlight{background:var(--yellow-light);border-left:4px solid var(--yellow);padding:11px 15px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;}
+.warning{background:var(--red-light);border-left:4px solid var(--red);padding:11px 15px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;color:#8b1a1a;}
+ul,ol{margin:8px 0 8px 20px;}
+li{margin:4px 0;}
+hr{border:none;border-top:1px solid var(--gray-100);margin:22px 0;}
+.up{color:var(--red);font-weight:700;}
+.down{color:var(--green);font-weight:700;}
+footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--gray-300);font-size:12px;color:var(--gray-500);line-height:1.9;}
+code{background:#f4f4f4;padding:1px 4px;border-radius:3px;font-size:13px;}
+@media (max-width:600px){body{padding:20px 14px 40px;font-size:14px;}table{font-size:12px;}thead th,tbody td{padding:7px 8px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>11月5日 深度复盘</h1>
+  <div class="meta">
+    <span>2026年11月05日 星期四（交易日）</span>
+    <span>生成 2026-11-05 23:08（系统时钟，Asia/Shanghai）</span>
+  </div>
+</header>
+
+<div class="highlight">
+<p><strong>时间与口径分离</strong>：行情 cutoff <code>2026-11-05T15:00:00+08:00</code>（收盘定稿），消息 cutoff <code>2026-11-05T23:00:00+08:00</code>，生成时间取系统时钟 23:20。23:00 之后的信息未回填进当日判断；本篇以当日收盘数据写，不涉及非交易日兼容。</p>
+</div>
+
+<h2>一、一句话结论</h2>
+<p>今天是普涨的第二天，<strong>但领涨的人换了</strong>。指数全线低开高走，87.4% 个股上涨、跌停归零，表面比昨天更强；封板率却从 76.9% 掉到 63.24%，涨停从 123 家缩到 86 家，上证只涨 0.10%——<strong>广度扩张、强度衰减</strong>。真正的位置变化在资金：光模块、CPO、PCB 三组净流出 61—102 亿，钱转进半导体国产化与电池，光伏拿走的是价格不是资金。昨日给半导体设的四条确认条件只兑现一条，且已被电力设备借用，主线<strong>不升级</strong>。</p>
+
+<h2>二、指数与宽度</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>指数</th><th class="num">收盘</th><th class="num">涨跌</th><th class="num">开盘</th><th class="num">最高</th><th class="num">收盘距高</th><th class="num">成交(亿)</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td class="num">3689.91</td><td class="num up">+0.10%</td><td class="num down">−1.07%</td><td class="num">3701.59</td><td class="num">−0.32%</td><td class="num">9797</td></tr>
+<tr><td>深证成指</td><td class="num">11471.09</td><td class="num up">+1.19%</td><td class="num down">−1.05%</td><td class="num">11613.40</td><td class="num">−1.23%</td><td class="num">11382</td></tr>
+<tr><td>创业板指</td><td class="num">2566.80</td><td class="num up">+0.87%</td><td class="num down">−2.00%</td><td class="num">2625.98</td><td class="num">−2.25%</td><td class="num">5786</td></tr>
+<tr><td>科创50</td><td class="num">1286.68</td><td class="num up">+1.68%</td><td class="num down">−2.33%</td><td class="num">1329.14</td><td class="num">−3.20%</td><td class="num">1173</td></tr>
+<tr><td>沪深300</td><td class="num">4113.41</td><td class="num up">+0.29%</td><td class="num down">−0.87%</td><td class="num">4136.80</td><td class="num">−0.57%</td><td class="num">6221</td></tr>
+<tr><td>北证50</td><td class="num">910.07</td><td class="num up">+1.79%</td><td class="num down">−1.52%</td><td class="num">922.84</td><td class="num">−1.38%</td><td class="num">174</td></tr>
+</tbody>
+</table>
+</div>
+<p>宽度独立重跑（<code>breadth_scan.py 20261105</code>，样本 5571，patched 0）：涨 4867 / 跌 627 / 平 77，上涨占比 87.4%，中位 +2.02%，p90 +5.10%；涨停 86、<strong>跌停 0</strong>，封板率 63.24%（50 股封板未遂）。沪深成交 21179 亿、较昨日放量 803 亿，含北证合计 21351 亿。</p>
+<p>六个指数全部低开 0.87%—2.33%、全部收红，但收的位置分两拨：上证距当日最高仅 0.32%、沪深300 差 0.57%，创业板差 2.25%、科创50 差 3.20%。午后是成长端回吐、权重端只是没跌（沪深300 全天仅 +0.29%），<strong>今日的高点出现在上午</strong>。</p>
+
+<h2>三、最重要的五条资讯</h2>
+<ol>
+<li><strong>美股内部撕裂，不是普涨。</strong>11月4日道指 +3.03% 收 53356.12（2025-04-09 以来最佳单日），纳指 +1.44%；同日费半 <span class="down">−3.13%</span>，美光、Marvell 双双 <span class="down">−7%</span>，微软 +6.68%、亚马逊 +6.12%。A股 今日 CPO、光模块、PCB 价格微涨但资金大幅流出，正是这条消息的对应。</li>
+<li><strong>美国中期选举民主党胜选，点燃光伏。</strong>市场预期将优先恢复《通胀削减法案》中被"大而美法案"提前终止的清洁能源税收抵免，11月4日申万光伏设备已涨 5.28%，今日传导至涨停潮：86 家涨停中电力设备居首（证券时报·数据宝）。</li>
+<li><strong>央行 5 个月来首次净回笼。</strong>11月5日开展 3000 亿元 3 个月买断式逆回购，当月到期 5000 亿元，净回笼 2000 亿元；同日外汇存款准备金率上调至 6%。流动性边际收紧，与今日普涨方向相反。</li>
+<li><strong>碳酸锂期货单日 +4800 元。</strong>2701 合约报 93160 元/吨，自低点累计拉涨约 6700 元，锂矿股 4 连涨：天华新能 +12%、融捷股份涨停。但同日六氟磷酸锂 <span class="down">−1250 元/吨</span>，11 月电池排产预计环比 <span class="down">−5%</span>——期货领先，现货与排产没跟。</li>
+<li><strong>半导体的产业证据仍在加厚。</strong>11月5日两份电子深度：先进封装正从连接保护转向高密度布线、异构集成与三维堆叠，代工产能紧、ASP 上行；协创数据调研称 DDR 报价已上调 30% 且被接受、HBM 挤占产能至少三年。证据成立，定价权不在此侧。</li>
+</ol>
+
+<h2>四、主线：三条线各占一格</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>链条</th><th class="num">价格(涨跌)</th><th class="num">单日净额(亿)</th><th class="num">波段(亿)</th><th class="num">aDays</th></tr></thead>
+<tbody>
+<tr><td>半导体·先进封装</td><td class="num up">+2.71%</td><td class="num">+56.9</td><td class="num">+39.8</td><td class="num">3</td></tr>
+<tr><td>半导体·中芯概念</td><td class="num up">+2.89%</td><td class="num">+57.9</td><td class="num up">+87.6</td><td class="num">3</td></tr>
+<tr><td>半导体·存储芯片</td><td class="num up">+2.37%</td><td class="num">+12.8</td><td class="num">+2.6</td><td class="num">4</td></tr>
+<tr><td>新能源·光伏(HJT)</td><td class="num up">+6.17%</td><td class="num">+15.0</td><td class="num">+7.0</td><td class="num">2</td></tr>
+<tr><td>新能源·电池(固态)</td><td class="num up">+3.34%</td><td class="num">+41.5</td><td class="num">+45.6</td><td class="num">2</td></tr>
+<tr><td>AI应用(AIGC)</td><td class="num up">+4.45%</td><td class="num">+39.1</td><td class="num">+40.8</td><td class="num">2</td></tr>
+<tr><td>AI硬件(CPO)</td><td class="num up">+0.91%</td><td class="num down">−85.5</td><td class="num">—</td><td class="num">1</td></tr>
+</tbody>
+</table>
+</div>
+<p>结论要按口径分开说，不能合成"科技主线"：<strong>资金在半导体与电池，价格在光伏，情绪在 AI 应用</strong>，三者今天不重合。HJT 涨 6.17% 只配到 15.0 亿净额，同日先进封装涨 2.71% 却有 56.9 亿——量级差近 4 倍，属典型的"价格领先、资金未验证"，不能因涨幅榜第一就写成主线。反过来 CPO 与光模块价格仍红，资金却流出 85.5 亿、86.6 亿：外部 AI 硬件的抛售今天只打到资金面，还没打到价格面。</p>
+<p>三条线各有反证条件：半导体若先进封装 aDays 停在 3 不再抬升、或单日净额转负，降级为普通轮动；光伏若 HJT/TOPCon 净额低于 20 亿、涨停家数减半，按一日游处理，IRA 抵免属立法程序，预期一被证伪即失效；AI 应用若 AIGC 波段再度转负（今日 +40.8），视为钝化。</p>
+
+<h2>五、昨日四条条件：只兑现一条</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>昨日设的条件</th><th>阈值</th><th>今日实际</th><th>判定</th></tr></thead>
+<tbody>
+<tr><td>芯片链连续净流入</td><td>&gt;100 亿</td><td>单项最大中芯概念 +57.9 亿（板块成员重叠，不可加总）</td><td>未达</td></tr>
+<tr><td>涨停家数</td><td>≥80 家</td><td>86 家</td><td>达成，但结构换成电力设备</td></tr>
+<tr><td>封板率</td><td>&gt;70%</td><td>63.24%（炸板率 36.76%）</td><td>未达</td></tr>
+<tr><td>上证站上 3707.63 并收其上</td><td>3707.63</td><td>3689.91，日内最高 3701.59，差 6.04 点</td><td>未达</td></tr>
+</tbody>
+</table>
+</div>
+<p>四条里唯一达成的"涨停 ≥80 家"，主力是电力设备而非芯片，不能算半导体的确认：<strong>维持"发酵、待确认"，不升 confirmed</strong>。昨日三档情景<strong>无一完整命中</strong>——A 档 1/4；B 档只兑现炸板率 36.76%&gt;35% 这一子项，"芯片转净流出"没发生；C 档白酒仍 −3.6 亿、中特估 −13.3 亿，没有转正。按纪律记"多档部分命中"，不反推任一分支：市场走的是第四种走法，普涨延续、内部换人。</p>
+
+<h2>六、已验证雷达</h2>
+<p><strong>em-local-v4.1</strong>（东财板块资金，as_of 20261105，454 板块，面板清单 quality=complete、sha256 <code>2c35d885…</code> 已核）：450 涨 / 4 跌，中位 +2.35%；净流入 285 个、净流出 168 个。流入端专精特新 +80.5、半导体概念 +64.9、中芯概念 +57.9、先进封装 +56.9；流出端 5G 概念 −102.1、通信技术 −99.9、光模块 −86.6、CPO −85.5、PCB −61.9；中特估 −13.3、大盘价值 −10.5，红利与权重是今天的资金来源。</p>
+<p>口径提醒：板块净额是成员求和，成分大量重叠，<strong>不可跨板块加总，也不能相减当净流量</strong>；资金指标不等于真实机构持仓。<strong>radar-v4.1</strong>（TDX 266 板块）今日未更新，as_of 仍为 2026-11-04，只作对照不作今日依据。</p>
+
+<h2>七、核心个股</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>个股</th><th class="num">收盘</th><th class="num">涨跌</th><th class="num">日高/收盘距高</th><th class="num">换手</th><th class="num">成交(亿)</th></tr></thead>
+<tbody>
+<tr><td>长电科技 600584</td><td class="num">53.63</td><td class="num up">+3.65%</td><td class="num">56.10 / −4.40%</td><td class="num">7.12%</td><td class="num">68.5</td></tr>
+<tr><td>时创能源 688429</td><td class="num">10.69</td><td class="num up">+19.98%</td><td class="num">10.69 / 0</td><td class="num">0.83%</td><td class="num">0.34</td></tr>
+<tr><td>兆易创新 603986</td><td class="num">263.15</td><td class="num down">−3.03%</td><td class="num">272.99 / −3.60%</td><td class="num">6.49%</td><td class="num">115.3</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>长电科技</strong>是封装链当日唯一"资金 + 研报 + 价格"三项同时成立的大票，量比 1.72、换手 7.12%。但盘中最高 56.10（+8.43%）到收盘只剩 +3.65%，收在日高下方 4.40%——有买盘，也有等量兑现盘。关键不是今天涨多少，而是明日能否守住 53.6。</p>
+<p><strong>时创能源</strong>9:33 封板后全天未开，收 10.69 涨 19.98%，但封单仅 3534 万元（占流通市值 0.83%）、总市值 42.8 亿、中报每股收益 −0.88 元仍亏。这是 HJT 情绪的载体而非基本面标的：封单薄意味着开板即无承接，只当情绪温度计，<strong>不计入主线</strong>。</p>
+<p><strong>兆易创新</strong>是今天最该记的反证。存储的叙事是"DDR 报价上调 30% 已被接受、HBM 挤占产能至 2027"，HBM 板块当天还涨 2.54%，设计端却低开 4.19%、收跌 3.03%。同一条链上颗粒紧、设计钝，两个方向同时为真——这直接削弱"存储是主线"，也说明板块涨幅不能当成员同向的证据。</p>
+
+<h2>八、风险</h2>
+<div class="warning">
+<p><strong>1. 外部贴现方向不利。</strong>CME 口径 12 月加息 25bp 概率 81.5%（昨 78.9%），加息预期升温下成长股大涨属背离。</p>
+<p><strong>2. 流动性边际收紧。</strong>买断式逆回购 5 个月来首次净回笼 2000 亿，外汇存款准备金率上调至 6%。</p>
+<p><strong>3. 政策预期未落地。</strong>光伏行情建立在"民主党胜选→恢复 IRA 抵免"预期上，属立法程序而非条款；2018 类比是叙事不是证据。</p>
+</div>
+<p><strong>4. 强度在退。</strong>涨停 123→86、封板率 76.9%→63.24%、跌停 11→0。跌停归零是好事，封板率下滑说明追高意愿在降，普涨靠广度不靠承接。</p>
+<p><strong>5. 结构未检验。</strong><code>boards_constituents.json</code> 的 stocks 全为空，Top30 排不掉单票拉动；HJT 6.17% 只对应 15.0 亿净额，量价不匹配无法排除单票。</p>
+
+<h2>九、下一交易日推演（11月6日 周五）</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>情景</th><th>触发条件（明日收盘可判）</th><th>含义与动作</th></tr></thead>
+<tbody>
+<tr><td>A 光伏二次确认</td><td>HJT/TOPCon 单日净额 ≥30 亿（今日 15.0/11.9），涨停家数不明显减少</td><td>升为正式候选；只做电池与设备，不追 20% 涨停小票</td></tr>
+<tr><td>B 半导体接力</td><td>先进封装 aDays 3→4，中芯概念波段守住 +87.6，上证站上 3707.63</td><td>定价权回半导体，优先设备与封测</td></tr>
+<tr><td>C 强度继续衰减</td><td>封板率 &lt;55%，涨停 &lt;70 家，上证失守 3686.17</td><td>定性为普涨末端，不加仓，等跌停家数抬升再谈风险</td></tr>
+<tr><td>未作答</td><td>上证在 3686—3700 横盘、成交回落至 2 万亿以下</td><td>记"未作答"，不反推任一分支</td></tr>
+</tbody>
+</table>
+</div>
+<p>另两个结构观测点：<strong>① CPO/光模块净流出是否连续第二天</strong>（今日 −85.5、−86.6，价格仍红）。若明日价格补跌，说明隔夜费半 −3.13% 的冲击刚开始传导；若价格继续红、资金继续走，则属内部换仓。<strong>② 碳酸锂 2701 能否站稳 93000、同时六氟磷酸锂止跌</strong>。期货单独涨只说明预期，两者同向才算真修复；11 月排产环比 −5% 是最硬的反向证据。</p>
+
+<h2>十、缺口与口径声明</h2>
+<ul>
+<li><strong>前置产物缺失</strong>：今日目录只有《研报巡逻》（22:37，complete / validated / sha256 <code>3ee4fc04…</code> 已核），<strong>《收盘总结》未生成</strong>。指数与宽度改由通达信行情（HQDate 全为 20261105）加 <code>breadth_scan.py</code> 重算。</li>
+<li><strong>宏观维度缺失</strong>：MTI as_of 2026-11-03 未重建；0AMV 最新 2026-11-03（截图有、CSV 未提取）；两融、北向无源。均标缺失，不填 0。</li>
+<li><strong>雷达</strong>：radar-v4.1（TDX 266 板块）as_of 2026-11-04 未更新；em-local-v4.1 今日 complete 且 sha256 已核，两者不混算。</li>
+<li><strong>来源与统计</strong>：行情走通达信；新闻研报只走亿信，8 组检索全部 HTTP 200 且 success=true；美股为 11月4日美东收盘值。封板率取证券时报·数据宝口径，与本地涨停 86 一致；炸板率 36.76% 由 100−封板率倒算。研报结论只计一次证据，不与雷达、价格重复计票。</li>
+</ul>
+
+<footer>
+<p>数据来源：通达信行情（cutoff 2026-11-05T15:00:00+08:00）｜本机 .day 全市场宽度扫描（5571 只，native 5571、patched 0）｜em-local-v4.1（东财板块资金，454 板块，as_of 20261105）｜亿信新闻与研报（cutoff 2026-11-05T23:00:00+08:00）｜同日《研报巡逻》已核对产物</p>
+<p>口径：score 为本地三因子横截面百分位（0—1000），与 onechart 原作者 14 指标模型不可比；aDays/oDays 为近 30 个交易日进 TOP30/BOTTOM30 的次数，非连续天数；资金指标不等于真实机构持仓；成分重叠，净额不可跨板块求和；缺失保留 null。</p>
+<p>免责声明：本报告由投资小龙虾 AI 自动生成，仅供研究参考，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+<p>生成时间：2026年11月05日 23:08（Asia/Shanghai，系统时钟）</p>
+</footer>
+
+</body>
+</html>
