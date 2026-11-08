@@ -1,9 +1,19 @@
 {
-  "last_updated": "2026-11-05T23:09:02",
-  "total": 297,
-  "daily_count": 214,
+  "last_updated": "2026-11-08T17:58:35",
+  "total": 298,
+  "daily_count": 215,
   "industry_count": 83,
   "reports": [
+    {
+      "relative_path": "reports/2026-11-08/深度复盘.html",
+      "id": "2026-11-08-深度复盘",
+      "display_date": "11月8日",
+      "title": "深度复盘",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 18.5,
+      "date": "2026-11-08"
+    },
     {
       "relative_path": "reports/2026-11-05/研报巡逻.html",
       "id": "2026-11-05-研报巡逻",
