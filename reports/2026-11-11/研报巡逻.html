@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11月11日 研报巡逻</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+.up{color:#c0392b;font-weight:700;margin-left:3px;}
+.down{color:#1e8449;font-weight:700;margin-left:3px;}
+</style><style>
+code{background:#f6f6f6;padding:1px 5px;border-radius:3px;font-size:13px;color:#333;font-family:Consolas,Menlo,monospace;}
+.tag.nat-warn{background:#efe9d8;color:#8a6d1f;border:1px solid #d9c98f;}
+.new{color:#8a6d1f;font-weight:700;}
+</style>
+<body>
+<header>
+  <h1>11月11日 研报巡逻</h1>
+  <div class="meta">
+    <span>生成 2026-11-11 22:36</span><span>雷达 as_of 2026-11-11（行情 cutoff 19:24:03+08:00）</span><span>研报 cutoff 22:30+08:00</span><span>研报源：亿信 report</span>
+  </div>
+</header>
+
+<div class="highlight">
+<p><strong>结论：应用端退潮、硬件端接棒，但真正对上研报的只有三条链。</strong>455 个板块涨 404、跌 49，Top30 换掉 21 席。昨日榜首的文娱消费跌到第 274、短剧互动游戏 5&rarr;235、AIGC 9&rarr;311，应用端整片撤退。今天的榜上大半是光、芯、算；研报与资金同时在场的只有<strong>光通信、先进封装、半导体设备与存储</strong>。算力研报最密，但资金只在榜一日，属单日冲榜。</p>
+</div>
+
+<h2>一、口径与校验</h2>
+<ul>
+<li>目标日 2026-11-11（周三，交易日）。455 个板块按 <code>score</code> 降序取前 30，11-10 为 454 个同源全榜，名次可精确比较。雷达清单 as_of=20261111、quality=complete、sha256 <code>74cea180…</code> 与页面一致；日期证据双通道通过（对通达信同日净额符号一致率 0.811、spearman 0.7943，d5 自洽 562/562）。</li>
+<li><strong>普涨但更窄</strong>：涨 404、跌 49、平 2，均 +1.07%；前一日涨 439、跌 14，均 +1.92%。指数只体现结构：上证 3680.64（+0.46%）、创业板 2572.07（+3.11%）。</li>
+<li>先剔四席非行业标签：基金减仓（1）、保险新进（6）、高市净率（14）、股权分散（30），涨幅 1.14%—2.34%，分数靠资金强度而非方向。</li>
+<li><strong>集中度只能代理</strong>：东财板块成分表 stocks 仍全空（458 板、0 个有成员），BK 口径无法直接检验。改取通达信同名「光通信」100 只成分：top1 中际旭创 31.25 亿占 14.8%，top5 占 50.7%——不是单票事件，但头部过半，属龙头驱动。该代理不等于东财板块自身集中度。</li>
+</ul>
+
+<h2>二、Top30 简表（按 score 降序）</h2>
+<div class="table-wrapper"><table><thead><tr><th>名次</th><th>板块</th><th>score</th><th>当日涨跌</th><th>波段净额(亿)</th><th>单日净额(亿)</th><th>在榜</th><th>名次变化</th><th>方向</th></tr></thead><tbody><tr><td>1</td><td>基金减仓</td><td>975.8</td><td>+1.14%</td><td>+38.0</td><td>+189.3</td><td>2</td><td>54&rarr;1<span class="up">(+53)</span></td><td>风格</td></tr><tr><td>2</td><td>光通信模块</td><td>964.6</td><td>+5.33%</td><td>+74.0</td><td>+190.9</td><td>2</td><td>196&rarr;2<span class="up">(+194)</span></td><td>光通信</td></tr><tr><td>3</td><td>通信技术</td><td>964.4</td><td>+3.29%</td><td>+57.0</td><td>+261.6</td><td>2</td><td>228&rarr;3<span class="up">(+225)</span></td><td>通信设备</td></tr><tr><td>4</td><td>5G概念</td><td>963.3</td><td>+3.05%</td><td>+50.6</td><td>+226.0</td><td>2</td><td>221&rarr;4<span class="up">(+217)</span></td><td>通信设备</td></tr><tr><td>5</td><td>CPO概念</td><td>962.0</td><td>+5.83%</td><td>+57.4</td><td>+205.5</td><td>2</td><td>218&rarr;5<span class="up">(+213)</span></td><td>光通信</td></tr><tr><td>6</td><td>保险新进</td><td>954.5</td><td>+1.81%</td><td>+72.6</td><td>+79.1</td><td>3</td><td>17&rarr;6<span class="up">(+11)</span></td><td>风格</td></tr><tr><td>7</td><td>算力概念</td><td>932.1</td><td>+1.90%</td><td>+49.7</td><td>+107.2</td><td>1</td><td>49&rarr;7<span class="up">(+42)</span></td><td>算力/IDC</td></tr><tr><td>8</td><td>芯片概念</td><td>931.0</td><td>+2.22%</td><td>+44.2</td><td>+118.8</td><td>4</td><td>23&rarr;8<span class="up">(+15)</span></td><td>半导体</td></tr><tr><td>9</td><td>半导体概念</td><td>926.6</td><td>+2.22%</td><td>+75.1</td><td>+112.0</td><td>5</td><td>30&rarr;9<span class="up">(+22)</span></td><td>半导体</td></tr><tr><td>10</td><td>苹果概念</td><td>919.6</td><td>+2.73%</td><td>+40.9</td><td>+54.8</td><td>4</td><td>15&rarr;10<span class="up">(+5)</span></td><td>消费电子链</td></tr><tr><td>11</td><td>华为概念</td><td>917.1</td><td>+1.62%</td><td>+36.9</td><td>+81.8</td><td>4</td><td>8&rarr;11<span class="down">(-3)</span></td><td>算力/半导体</td></tr><tr><td>12</td><td>存储芯片</td><td>913.4</td><td>+2.94%</td><td>+15.4</td><td>+65.7</td><td>4</td><td>46&rarr;12<span class="up">(+34)</span></td><td>存储</td></tr><tr><td>13</td><td>F5G概念</td><td>910.1</td><td>+4.18%</td><td>+17.0</td><td>+59.2</td><td>2</td><td>168&rarr;13<span class="up">(+155)</span></td><td>光通信/固网</td></tr><tr><td>14</td><td>高市净率</td><td>909.5</td><td>+2.34%</td><td>+40.7</td><td>+76.6</td><td>3</td><td>37&rarr;14<span class="up">(+23)</span></td><td>风格</td></tr><tr><td>15</td><td>特斯拉概念</td><td>909.5</td><td>+2.19%</td><td>+25.4</td><td>+46.2</td><td>4</td><td>29&rarr;15<span class="up">(+14)</span></td><td>机器人/汽车链</td></tr><tr><td>16</td><td>专精特新</td><td>909.2</td><td>+2.00%</td><td>+98.1</td><td>+77.6</td><td>5</td><td>18&rarr;16<span class="up">(+2)</span></td><td>政策标签</td></tr><tr><td>17</td><td>光纤概念</td><td>906.8</td><td>+4.71%</td><td>+7.1</td><td>+135.8</td><td>2</td><td>216&rarr;17<span class="up">(+199)</span></td><td>光通信</td></tr><tr><td>18</td><td>MiniLED</td><td>896.0</td><td>+1.61%</td><td>+6.7</td><td>+31.8</td><td>1</td><td>159&rarr;18<span class="up">(+141)</span></td><td>显示</td></tr><tr><td>19</td><td>OLED</td><td>895.6</td><td>+1.51%</td><td>+18.1</td><td>+33.1</td><td>4</td><td>57&rarr;19<span class="up">(+38)</span></td><td>显示</td></tr><tr><td>20</td><td>先进封装</td><td>891.2</td><td>+3.15%</td><td>+85.1</td><td>+49.6</td><td>5</td><td>64&rarr;20<span class="up">(+44)</span></td><td>封装</td></tr><tr><td>21</td><td>机器人概念</td><td>889.9</td><td>+1.86%</td><td>+35.5</td><td>+61.9</td><td>3</td><td>2&rarr;21<span class="down">(-19)</span></td><td>机器人</td></tr><tr><td>22</td><td>消费电子概念</td><td>888.6</td><td>+1.93%</td><td>+8.9</td><td>+51.7</td><td>5</td><td>14&rarr;22<span class="down">(-8)</span></td><td>消费电子链</td></tr><tr><td>23</td><td>新能源车</td><td>881.8</td><td>+1.89%</td><td>+8.1</td><td>+64.4</td><td>4</td><td>104&rarr;23<span class="up">(+80)</span></td><td>汽车链</td></tr><tr><td>24</td><td>节能环保</td><td>881.5</td><td>+1.18%</td><td>+11.4</td><td>+36.3</td><td>1</td><td>61&rarr;24<span class="up">(+37)</span></td><td>其他</td></tr><tr><td>25</td><td>LED概念</td><td>880.4</td><td>+1.49%</td><td>+9.6</td><td>+23.9</td><td>1</td><td>112&rarr;25<span class="up">(+87)</span></td><td>显示</td></tr><tr><td>26</td><td>人形机器人</td><td>875.6</td><td>+2.30%</td><td>+29.8</td><td>+42.3</td><td>5</td><td>7&rarr;26<span class="down">(-19)</span></td><td>机器人</td></tr><tr><td>27</td><td>第三代半导体</td><td>875.6</td><td>+2.15%</td><td>+23.1</td><td>+20.1</td><td>5</td><td>138&rarr;27<span class="up">(+111)</span></td><td>半导体</td></tr><tr><td>28</td><td>高端装备</td><td>864.2</td><td>+1.77%</td><td>+26.3</td><td>+17.3</td><td>4</td><td>104&rarr;28<span class="up">(+76)</span></td><td>其他</td></tr><tr><td>29</td><td>数据中心</td><td>861.3</td><td>+1.86%</td><td>+3.0</td><td>+77.0</td><td>2</td><td>268&rarr;29<span class="up">(+239)</span></td><td>算力/IDC</td></tr><tr><td>30</td><td>股权分散</td><td>861.1</td><td>+1.24%</td><td>+2.8</td><td>+41.8</td><td>1</td><td>43&rarr;30<span class="up">(+13)</span></td><td>风格</td></tr></tbody></table></div>
+
+<h2>三、细分研报与资金共同支持（3 条）</h2>
+<h3>1. 光通信／CPO／光纤：今日唯一涨幅与资金双高</h3>
+<p>光通信模块第 2（+5.33%，波段 +74.0 亿、单日 +190.9 亿）、CPO 第 5（+5.83%）、光纤第 17（+4.71%），F5G 第 13 同步 +4.18%。国金 11-01 三季报总结指 AI 算力拉动光互联、龙头量价齐升、CPO/NPO 提速；申港 11-04 提到 Marvell 洽购 Lumentum，InP 激光器是光链路最稀缺环节、全球产能集中在两家手上；粤开 11-09 日报已记 11-09 光模块(CPO) 成交 950 亿、光通信 850 亿。这条链不是今天才启动，今天是加速。反证留一条：AI 周观察 11-06 称光模块与 PCB 普遍下跌，一周前还在调整。</p>
+
+<h3>2. 先进封装：证据最完整的一条</h3>
+<p>第 20，aDays 5，波段 +85.1 亿。天风 11-10 引台积电法说，CoWoS 月产能 2026 年底 11.5—14 万片、2027 约 17 万片，两年翻倍，2026 年推 5.5 倍光罩、2027 年 9.5 倍以支持 12 层 HBM；招商 11-03 记台积电据传拟上调先进封装价格最高 20%，万联 11-02 记为 10%—20%；东北 11-02 把 2027 月产能看到 19—20 万片，与天风 17 万片口径不同，两家扩产指引尚未收敛；东方 11-09 记通富微电前三季归母 +255.7%、单季扣非 +76.3%，中高端封测量价景气。研报讲产能与提价，资金连续 5 日在榜，两边对齐。</p>
+
+<h3>3. 半导体设备／材料与存储：支持的是上游，不是整个板块</h3>
+<p>芯片第 8、半导体第 9、存储芯片第 12，涨幅 2.2%—2.9%。中原 11-10 月报给出 2026 年存储增速 302%、IC 122%、Logic 42%，并指向设备与零部件；开源 11-01 引 Lam 预计 2026 全球 WFE 1500 亿美元中段、2027 超 2000 亿；招商 11-03 称存储供需缺口未消。但「芯片」「半导体」是打包口径，含设计与封测，与研报所指的上游设备材料并不等价——这条只算方向对得上，不等于板块内多数公司受益。</p>
+
+<h2>四、本次检索未命中：资金在榜、研报无直接证据</h2>
+<p>风格四席之外，MiniLED（18）、OLED（19）、节能环保（24）、LED（25）、高端装备（28）、专精特新（16）均无可读证据；第三代半导体（27）只有 SiC／GaN 的间接提及、无专项研报，暂不计入支持。最需要说明的是<strong>通信三席</strong>：通信技术第 3、5G 第 4、F5G 第 13 占据前列，但 6G 不能用来解释——中信建投 10-16 明确 3GPP Release 21 第三阶段冻结在 2028 年 12 月，实质开支还要数年；5G 侧 2025 年 12 月新增基站仅 0.8 万个、同比 -87%，2026—2027 新增指引继续下台阶。这三席成分与光模块、光纤高度重叠，归因应落在光通信链，不写成 6G。可引的通信研报只有西南 11-10 四季度策略：申万通信估值分位已回落到 20%。</p>
+<p><strong>苹果概念（10）</strong>属另一类：折叠 iPhone 是 2027 年逻辑，TrendForce 11-04 估首年约 500 万部、份额 24.8%；但研报多停在 9 月之前，且 09-14 一份渠道跟踪（接口未返机构名）显示 18 Pro 预购除中国外偏弱，证据新旧不一，不足以并入共同支持。本栏只代表 9 次检索未命中，不代表全市场无覆盖。</p>
+
+<h2>五、研报方向未进榜</h2>
+<ul>
+<li><strong>电网与特高压</strong>：申万宏源 11-10 晨会给出 2026 年前五批特高压招标 759.05 亿、同比 +41.95%，配网量价边际改善；五矿 11-09、中金 11-09 的电网跟踪同向。实际特高压第 230（前日 435），波段 -28.7 亿，资金在撤，方向与研报相反。</li>
+<li><strong>液冷与 AIDC 电源</strong>：申万 11-10 讲 Rubin 量产叠加 800VDC、单柜价值量提升；招商 11-07 拆数据中心供电方式；海通 11-09 讲模块化前置。液冷服务器第 124（前日 286），单日 +43.8 亿但波段仍 -12.4 亿，排名未进前三十，属研报热、资金未确认。</li>
+<li><strong>量子科技</strong>：开源 11-10 中小盘 2027 策略提耐数电子全球第六、市占 5%；板块第 143，波段 -22.8 亿。未进榜不等于被证伪。</li>
+</ul>
+
+<h2>六、来源与不确定性</h2>
+<ul>
+<li>亿信 report 9 次请求（通用 1 次 20 条 + 8 方向各 16 条），全部 HTTP 200、success=true，去重 140 条，发布时间 2022-01 至 2026-11-11；部分条目无 link 与机构，<strong>证据等级为标题+摘要段落</strong>。</li>
+<li>按 22:30 正常档执行：行情 cutoff 为雷达快照 2026-11-11T19:24:03+08:00，研报检索截至 22:30+08:00，不含盘后新发。</li>
+<li>边界：共同支持不代表收益保证，未命中不代表无覆盖，未进榜不代表被证伪。最大缺口是东财 BK 板块集中度仍无法直接检验，现以通达信同名板块代理，两者成分并不等同。</li>
+</ul>
+
+</body>
+</html>

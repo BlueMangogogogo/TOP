@@ -1,9 +1,149 @@
 {
-  "last_updated": "2026-11-08T18:50:00+08:00",
-  "total": 299,
-  "daily_count": 215,
+  "last_updated": "2026-11-15T23:24:51",
+  "total": 313,
+  "daily_count": 230,
   "industry_count": 83,
   "reports": [
+    {
+      "relative_path": "reports/2026-11-15/深度复盘.html",
+      "id": "2026-11-15-深度复盘",
+      "display_date": "11月15日",
+      "title": "深度复盘",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 19.2,
+      "date": "2026-11-15"
+    },
+    {
+      "relative_path": "reports/2026-11-15/周度盘前.html",
+      "id": "2026-11-15-周度盘前",
+      "display_date": "11月15日",
+      "title": "周度盘前",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 10.4,
+      "date": "2026-11-15"
+    },
+    {
+      "relative_path": "reports/2026-11-13/研报巡逻.html",
+      "id": "2026-11-13-研报巡逻",
+      "display_date": "11月13日",
+      "title": "研报巡逻",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 16.2,
+      "date": "2026-11-13"
+    },
+    {
+      "relative_path": "reports/2026-11-13/深度复盘.html",
+      "id": "2026-11-13-深度复盘",
+      "display_date": "11月13日",
+      "title": "深度复盘",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 18.1,
+      "date": "2026-11-13"
+    },
+    {
+      "relative_path": "reports/2026-11-13/收盘总结.html",
+      "id": "2026-11-13-收盘总结",
+      "display_date": "11月13日",
+      "title": "收盘总结",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 35.8,
+      "date": "2026-11-13"
+    },
+    {
+      "relative_path": "reports/2026-11-12/研报巡逻.html",
+      "id": "2026-11-12-研报巡逻",
+      "display_date": "11月12日",
+      "title": "研报巡逻",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 16.2,
+      "date": "2026-11-12"
+    },
+    {
+      "relative_path": "reports/2026-11-12/深度复盘.html",
+      "id": "2026-11-12-深度复盘",
+      "display_date": "11月12日",
+      "title": "深度复盘",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 19.5,
+      "date": "2026-11-12"
+    },
+    {
+      "relative_path": "reports/2026-11-12/收盘总结.html",
+      "id": "2026-11-12-收盘总结",
+      "display_date": "11月12日",
+      "title": "收盘总结",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 17.7,
+      "date": "2026-11-12"
+    },
+    {
+      "relative_path": "reports/2026-11-11/研报巡逻.html",
+      "id": "2026-11-11-研报巡逻",
+      "display_date": "11月11日",
+      "title": "研报巡逻",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 16.8,
+      "date": "2026-11-11"
+    },
+    {
+      "relative_path": "reports/2026-11-11/深度复盘.html",
+      "id": "2026-11-11-深度复盘",
+      "display_date": "11月11日",
+      "title": "深度复盘",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 18.4,
+      "date": "2026-11-11"
+    },
+    {
+      "relative_path": "reports/2026-11-10/研报巡逻.html",
+      "id": "2026-11-10-研报巡逻",
+      "display_date": "11月10日",
+      "title": "研报巡逻",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 22.3,
+      "date": "2026-11-10"
+    },
+    {
+      "relative_path": "reports/2026-11-10/深度复盘.html",
+      "id": "2026-11-10-深度复盘",
+      "display_date": "11月10日",
+      "title": "深度复盘",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 18.3,
+      "date": "2026-11-10"
+    },
+    {
+      "relative_path": "reports/2026-11-09/研报巡逻.html",
+      "id": "2026-11-09-研报巡逻",
+      "display_date": "11月9日",
+      "title": "研报巡逻",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 23.7,
+      "date": "2026-11-09"
+    },
+    {
+      "relative_path": "reports/2026-11-09/深度复盘.html",
+      "id": "2026-11-09-深度复盘",
+      "display_date": "11月9日",
+      "title": "深度复盘",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 18.1,
+      "date": "2026-11-09"
+    },
     {
       "relative_path": "reports/2026-11-08/深度复盘.html",
       "id": "2026-11-08-深度复盘",
@@ -11,8 +151,18 @@
       "title": "深度复盘",
       "category": "日常复盘",
       "type": "daily",
-      "size_kb": 18.5,
+      "size_kb": 19.1,
       "date": "2026-11-08"
+    },
+    {
+      "relative_path": "reports/2026-11-06/深度复盘.html",
+      "id": "2026-11-06-深度复盘",
+      "display_date": "11月6日",
+      "title": "深度复盘",
+      "category": "日常复盘",
+      "type": "daily",
+      "size_kb": 66.8,
+      "date": "2026-11-06"
     },
     {
       "relative_path": "reports/2026-11-05/研报巡逻.html",
@@ -2983,16 +3133,6 @@
       "title": "5月15日深度复盘",
       "relative_path": "reports/2026-05-16/5月15日深度复盘.html",
       "size_kb": 18.1
-    },
-    {
-      "relative_path": "reports/2026-11-06/深度复盘.html",
-      "id": "2026-11-06-深度复盘",
-      "display_date": "11月6日",
-      "title": "深度复盘",
-      "category": "日常复盘",
-      "type": "daily",
-      "size_kb": 66.8,
-      "date": "2026-11-06"
     }
   ]
 }

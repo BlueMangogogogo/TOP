@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11月10日 研报巡逻</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style><style>
+code{background:#f6f6f6;padding:1px 5px;border-radius:3px;font-size:13px;color:#333;font-family:Consolas,Menlo,monospace;}
+.tag.nat-warn{background:#efe9d8;color:#8a6d1f;border:1px solid #d9c98f;}
+.new{color:#8a6d1f;font-weight:700;}
+</style><body>
+<header>
+  <h1>11月10日 研报巡逻</h1>
+  <div class="meta">
+    <span>生成 2026-11-11 00:00</span><span>雷达 as_of 2026-11-10（行情 cutoff 23:55:43+08:00）</span><span>研报 cutoff 23:57+08:00</span><span>研报源：亿信 report</span>
+  </div>
+</header>
+
+<div class="highlight">
+<p><strong>结论：普涨日的应用端榜单，不是新主线的确认。</strong>454 个板块涨 439、跌 14，前一日涨 221、跌 229；Top30 有 25 席昨日在 30 名外。但 <code>score</code> 是横截面百分位，普涨会洗整榜，换席数不等于主线扩散。研报与资金同时对得上的只有四条：<strong>AI 内容生产、AI 智能硬件、人形机器人零部件、国产算力</strong>；液冷与红利低估值是研报强、资金走的两处反向。</p>
+</div>
+
+<h2>一、口径与校验</h2>
+<ul>
+<li>目标日 2026-11-10（周二，交易日）。454 板块按 <code>score</code> 降序取前 30；11-09 同为 454 同源全榜，名次可精确比较。清单 as_of=20261110、quality=complete、sha256 <code>54d7848c…</code> 与页面一致。</li>
+<li>有一次修正要说清：23:45 首版快照缺跨厂商校验，清单记为 degraded；23:53 通达信同日净额到位，双通道复检通过（同日符号一致率 0.874、spearman 0.886，d5 自洽 562/562），按同一快照重建后页面哈希逐字节不变，只有日期证据与 quality 变了。按 complete 走闸门是校验真过了，不是改标签。</li>
+<li><strong>普涨日</strong>：涨 439、跌 14、平 1，均 +1.92%；11-09 涨 221、跌 229，均 +0.11%。score 由资金强度驱动，会把涨幅小而净额厚的板块顶上来。先剔除两席风格标签：连续亏损（第 3，aDays 5）、保险新进（第 17，aDays 2）。</li>
+<li>缺口：<code>boards_constituents.json</code> 的 stocks 全空（457 板、0 个有成员），<strong>集中度无法检验</strong>；净额为东财板块口径（f62/f164/f174），不等于机构持仓，成分重叠、不可相加当总量。</li>
+</ul>
+
+<h2>二、Top30 简表（按 score 降序）</h2>
+<div class="table-wrapper"><table>
+<thead><tr><th class="num">名次</th><th>板块</th><th class="num">score</th><th class="num">当日涨跌</th><th class="num">波段净额(亿)</th><th class="num">单日净额(亿)</th><th class="num">在榜</th><th class="num">名次变化</th><th>方向</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td><strong>文娱消费</strong></td><td class="num">917.2</td><td class="num" style="color:#c0392b">+3.61%</td><td class="num" style="color:#c0392b">+33.5</td><td class="num" style="color:#c0392b">+34.5</td><td class="num">6</td><td class="num">344&rarr;1 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">内容/AI应用</span></td></tr>
+<tr><td class="num">2</td><td><strong>机器人概念</strong></td><td class="num">904.4</td><td class="num" style="color:#c0392b">+2.92%</td><td class="num" style="color:#c0392b">+40.7</td><td class="num" style="color:#c0392b">+94.6</td><td class="num">2</td><td class="num">156&rarr;2 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">机器人</span></td></tr>
+<tr><td class="num">3</td><td><strong>连续亏损</strong></td><td class="num">894.1</td><td class="num" style="color:#c0392b">+2.41%</td><td class="num" style="color:#c0392b">+57.9</td><td class="num" style="color:#c0392b">+40.0</td><td class="num">5</td><td class="num">1&rarr;3 <span style="color:#1e8449">(-2)</span></td><td><span class="tag nat-warn">风格</span></td></tr>
+<tr><td class="num">4</td><td><strong>虚拟现实</strong></td><td class="num">891.0</td><td class="num" style="color:#c0392b">+3.98%</td><td class="num" style="color:#c0392b">+79.0</td><td class="num" style="color:#c0392b">+60.5</td><td class="num">4</td><td class="num">45&rarr;4 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">XR/智能硬件</span></td></tr>
+<tr><td class="num">5</td><td><strong>短剧互动游戏</strong></td><td class="num">888.5</td><td class="num" style="color:#c0392b">+5.48%</td><td class="num" style="color:#c0392b">+38.4</td><td class="num" style="color:#c0392b">+31.6</td><td class="num">8</td><td class="num">30&rarr;5 <span style="color:#c0392b">(+25)</span></td><td><span class="tag">内容/AI应用</span></td></tr>
+<tr><td class="num">6</td><td><strong>谷子经济</strong></td><td class="num">883.3</td><td class="num" style="color:#c0392b">+3.63%</td><td class="num" style="color:#c0392b">+22.2</td><td class="num" style="color:#c0392b">+22.8</td><td class="num">9</td><td class="num">343&rarr;6 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">内容/AI应用</span></td></tr>
+<tr><td class="num">7</td><td><strong>人形机器人</strong></td><td class="num">881.7</td><td class="num" style="color:#c0392b">+3.70%</td><td class="num" style="color:#c0392b">+25.9</td><td class="num" style="color:#c0392b">+57.7</td><td class="num">4</td><td class="num">147&rarr;7 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">机器人</span></td></tr>
+<tr><td class="num">8</td><td><strong>华为概念</strong></td><td class="num">879.7</td><td class="num" style="color:#c0392b">+2.78%</td><td class="num" style="color:#c0392b">+49.6</td><td class="num" style="color:#c0392b">+85.7</td><td class="num">3</td><td class="num">152&rarr;8 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">算力/半导体</span></td></tr>
+<tr><td class="num">9</td><td><strong>AIGC概念</strong></td><td class="num">878.4</td><td class="num" style="color:#c0392b">+3.86%</td><td class="num" style="color:#c0392b">+34.1</td><td class="num" style="color:#c0392b">+35.7</td><td class="num">3</td><td class="num">421&rarr;9 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">内容/AI应用</span></td></tr>
+<tr><td class="num">10</td><td><strong>元宇宙概念</strong></td><td class="num">876.7</td><td class="num" style="color:#c0392b">+3.78%</td><td class="num" style="color:#c0392b">+41.5</td><td class="num" style="color:#c0392b">+38.6</td><td class="num">4</td><td class="num">241&rarr;10 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">XR/智能硬件</span></td></tr>
+<tr><td class="num">11</td><td><strong>智能穿戴</strong></td><td class="num">875.8</td><td class="num" style="color:#c0392b">+4.03%</td><td class="num" style="color:#c0392b">+43.9</td><td class="num" style="color:#c0392b">+45.2</td><td class="num">5</td><td class="num">218&rarr;11 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">XR/智能硬件</span></td></tr>
+<tr><td class="num">12</td><td><strong>AI眼镜</strong></td><td class="num">874.3</td><td class="num" style="color:#c0392b">+4.55%</td><td class="num" style="color:#c0392b">+44.5</td><td class="num" style="color:#c0392b">+42.6</td><td class="num">2</td><td class="num">128&rarr;12 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">XR/智能硬件</span></td></tr>
+<tr><td class="num">13</td><td><strong>影视概念</strong></td><td class="num">873.6</td><td class="num" style="color:#c0392b">+5.03%</td><td class="num" style="color:#c0392b">+28.8</td><td class="num" style="color:#c0392b">+20.5</td><td class="num">7</td><td class="num">19&rarr;13 <span style="color:#c0392b">(+6)</span></td><td><span class="tag">内容/AI应用</span></td></tr>
+<tr><td class="num">14</td><td><strong>消费电子概念</strong></td><td class="num">873.1</td><td class="num" style="color:#c0392b">+3.72%</td><td class="num" style="color:#c0392b">+38.0</td><td class="num" style="color:#c0392b">+57.6</td><td class="num">4</td><td class="num">282&rarr;14 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">消费电子链</span></td></tr>
+<tr><td class="num">15</td><td><strong>苹果概念</strong></td><td class="num">867.4</td><td class="num" style="color:#c0392b">+3.83%</td><td class="num" style="color:#c0392b">+30.0</td><td class="num" style="color:#c0392b">+36.8</td><td class="num">3</td><td class="num">105&rarr;15 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">消费电子链</span></td></tr>
+<tr><td class="num">16</td><td><strong>AI语料</strong></td><td class="num">865.6</td><td class="num" style="color:#c0392b">+4.54%</td><td class="num" style="color:#c0392b">+25.1</td><td class="num" style="color:#c0392b">+23.7</td><td class="num">7</td><td class="num">39&rarr;16 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">内容/AI应用</span></td></tr>
+<tr><td class="num">17</td><td><strong>保险新进</strong></td><td class="num">860.4</td><td class="num" style="color:#c0392b">+1.26%</td><td class="num" style="color:#c0392b">+30.0</td><td class="num" style="color:#c0392b">+30.2</td><td class="num">2</td><td class="num">108&rarr;17 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag nat-warn">风格</span></td></tr>
+<tr><td class="num">18</td><td><strong>专精特新</strong></td><td class="num">860.1</td><td class="num" style="color:#c0392b">+2.49%</td><td class="num" style="color:#c0392b">+93.0</td><td class="num" style="color:#c0392b">+68.5</td><td class="num">4</td><td class="num">112&rarr;18 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">算力/半导体</span></td></tr>
+<tr><td class="num">19</td><td><strong>知识产权</strong></td><td class="num">859.5</td><td class="num" style="color:#c0392b">+3.58%</td><td class="num" style="color:#c0392b">+15.6</td><td class="num" style="color:#c0392b">+15.4</td><td class="num">6</td><td class="num">81&rarr;19 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">内容/AI应用</span></td></tr>
+<tr><td class="num">20</td><td><strong>网红经济</strong></td><td class="num">857.3</td><td class="num" style="color:#c0392b">+2.67%</td><td class="num" style="color:#c0392b">+15.4</td><td class="num" style="color:#c0392b">+18.9</td><td class="num">6</td><td class="num">387&rarr;20 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">内容/AI应用</span></td></tr>
+<tr><td class="num">21</td><td><strong>无线耳机</strong></td><td class="num">848.7</td><td class="num" style="color:#c0392b">+3.79%</td><td class="num" style="color:#c0392b">+41.5</td><td class="num" style="color:#c0392b">+28.5</td><td class="num">4</td><td class="num">51&rarr;21 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">消费电子链</span></td></tr>
+<tr><td class="num">22</td><td><strong>混合现实</strong></td><td class="num">847.8</td><td class="num" style="color:#c0392b">+4.97%</td><td class="num" style="color:#c0392b">+49.0</td><td class="num" style="color:#c0392b">+28.7</td><td class="num">4</td><td class="num">15&rarr;22 <span style="color:#1e8449">(-7)</span></td><td><span class="tag">XR/智能硬件</span></td></tr>
+<tr><td class="num">23</td><td><strong>国产芯片</strong></td><td class="num">845.8</td><td class="num" style="color:#c0392b">+2.58%</td><td class="num" style="color:#c0392b">+73.0</td><td class="num" style="color:#c0392b">+62.6</td><td class="num">3</td><td class="num">131&rarr;23 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">算力/半导体</span></td></tr>
+<tr><td class="num">24</td><td><strong>百度概念</strong></td><td class="num">843.8</td><td class="num" style="color:#c0392b">+3.07%</td><td class="num" style="color:#c0392b">+38.5</td><td class="num" style="color:#c0392b">+30.7</td><td class="num">3</td><td class="num">392&rarr;24 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">内容/AI应用</span></td></tr>
+<tr><td class="num">25</td><td><strong>虚拟数字人</strong></td><td class="num">840.5</td><td class="num" style="color:#c0392b">+3.87%</td><td class="num" style="color:#c0392b">+26.7</td><td class="num" style="color:#c0392b">+25.3</td><td class="num">4</td><td class="num">274&rarr;25 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">内容/AI应用</span></td></tr>
+<tr><td class="num">26</td><td><strong>抖音概念(字节概念)</strong></td><td class="num">839.3</td><td class="num" style="color:#c0392b">+3.73%</td><td class="num" style="color:#c0392b">+16.3</td><td class="num" style="color:#c0392b">+30.0</td><td class="num">3</td><td class="num">419&rarr;26 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">内容/AI应用</span></td></tr>
+<tr><td class="num">27</td><td><strong>智能家居</strong></td><td class="num">839.2</td><td class="num" style="color:#c0392b">+2.62%</td><td class="num" style="color:#c0392b">+38.6</td><td class="num" style="color:#c0392b">+27.1</td><td class="num">6</td><td class="num">21&rarr;27 <span style="color:#1e8449">(-6)</span></td><td><span class="tag">消费电子链</span></td></tr>
+<tr><td class="num">28</td><td><strong>网络游戏</strong></td><td class="num">835.2</td><td class="num" style="color:#c0392b">+4.12%</td><td class="num" style="color:#c0392b">+7.7</td><td class="num" style="color:#c0392b">+15.3</td><td class="num">2</td><td class="num">262&rarr;28 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">内容/AI应用</span></td></tr>
+<tr><td class="num">29</td><td><strong>特斯拉概念</strong></td><td class="num">834.1</td><td class="num" style="color:#c0392b">+2.51%</td><td class="num" style="color:#c0392b">+3.3</td><td class="num" style="color:#c0392b">+33.4</td><td class="num">3</td><td class="num">150&rarr;29 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">机器人</span></td></tr>
+<tr><td class="num">30</td><td><strong>半导体概念</strong></td><td class="num">832.4</td><td class="num" style="color:#c0392b">+2.39%</td><td class="num" style="color:#c0392b">+125.5</td><td class="num" style="color:#c0392b">+55.2</td><td class="num">4</td><td class="num">159&rarr;30 <span style="color:#c0392b">(出 30 外)</span></td><td><span class="tag">算力/半导体</span></td></tr>
+</tbody></table></div>
+
+<h2>三、细分研报与资金共同支持（4 条）</h2>
+<h3>1. AI 内容生产：短剧、影视、文娱消费</h3>
+<p>文娱消费第 1（+3.61%，波段 +33.5 亿，aDays 6）、短剧互动游戏第 5（+5.48%，aDays 8）、影视概念第 13（+5.03%，aDays 7）、谷子经济第 6（aDays 9 最长）。研报四家同指一处：国泰海通 11-05 称 AI 短剧周期由 30 天压到 3 天、单部成本由 30 万降到 5 万；中金 11-08 认为微短剧治理推动精品化，虎鲸「鲸锐 AI」单分钟省 30% 以上成本；平安 11-09 讲 AI 影视工业化；财信 11-09 从机构低配给配置修复。支持的是<strong>制作与平台</strong>，不是整个传媒。</p>
+
+<h3>2. AI 智能硬件：智能穿戴、AI 眼镜、消费电子链</h3>
+<p>智能穿戴 11、AI 眼镜 12、消费电子 14、苹果概念 15、无线耳机 21，涨幅 3.72%—4.55%，波段均超 +30 亿。开源 11-08 引 IDC：2026 上半年智能眼镜出货 711.4 万台、同比 +70.5%，音频拍摄眼镜 +54%；亿欧 11-09 归因端侧模型与供应链成熟。证据在<strong>整机与声学</strong>，不等于上游芯片。</p>
+
+<h3>3. 人形机器人：丝杠与减速器</h3>
+<p>机器人概念第 2，单日 +94.6 亿，产业席里最厚；人形机器人第 7、特斯拉概念第 29。浙商 11-05 指丝杠受高精度磨床产能约束、国产磨床突破微米级；国联民生 11-08 把降本拆到减速器、丝杠、电机、传感器，点名中大力德、鼎智科技、恒立液压。支持<strong>零部件国产化</strong>，榜内是主题打包。</p>
+
+<h3>4. 国产算力：方向对得上，位置靠后</h3>
+<p>华为概念第 8（+2.78%，单日 +85.7 亿）、国产芯片 23、半导体 30（波段 +125.5 亿为全榜最大）。国联民生 11-08 讲国模配国芯由推理向训练延伸（昇腾、TileLang）；中原 11-09 称 AI 芯片国产化率 64%、出口单价连 4 个月反超。资金位置靠后，偏<strong>波段存量</strong>。</p>
+
+<h2>四、本次检索未命中：资金在榜，研报无直接证据</h2>
+<p>虚拟现实（4）、元宇宙概念（10）、AI 语料（16）、专精特新（18）、知识产权（19，仅中邮 11-10 对阜博版权有间接）、网红经济（20）、混合现实（22）、抖音概念（26）、智能家居（27）。虚拟现实与混合现实最易误判：智能眼镜研报谈出货与端侧模型，不是 MR 头显内容生态，同义词召回后细分不成立，故不并入第二条。本栏只代表 9 次检索未命中，<strong>不代表全市场无覆盖</strong>。</p>
+
+<h2>五、研报方向未进榜</h2>
+<p><strong>液冷与超节点</strong>：开源 11-08 的「光、超节点、液冷」框架最完整，但液冷服务器第 286（前日 139），单日 +8.3 亿、波段 -28.2 亿，资金在撤；军工 137&rarr;377、云计算 389&rarr;445 同步掉队。<strong>红利与低估值</strong>：华创 11-08 建议增配低估值、天风 11-08 提防守反击，实际中特估第 450（-0.60%，-19.2 亿）、中字头、低市盈率、一带一路居榜尾，方向相反。<strong>存储芯片</strong>第 46（前日 428），单日 +23.2 亿，是榜外最近一席，但国产存储细分无直接证据，不列共同支持。未进榜不等于被证伪。</p>
+
+<h2>六、来源与不确定性</h2>
+<ul>
+<li>亿信 report 9 次请求（通用 1 次 20 条、前 8 方向 8 次 16 条），全部 HTTP 200、success=true，去重后 34 条；接口无 link，<strong>证据等级为标题+摘要段落</strong>，个别只到标题级。</li>
+<li>本次为 22:30 档延迟执行：23:52 触发，生成已过零点，属跨日补跑；研报截止 2026-11-10T23:57+08:00，可能含当日盘后内容；行情 cutoff 为雷达快照 23:55:43+08:00。</li>
+<li>边界：共同支持不代表收益保证，未命中不代表无覆盖，未进榜不代表被证伪。最大缺口是集中度未检验，打包口径下个别大票即可拉高板块分。</li>
+</ul>
+
+</body>
+</html>

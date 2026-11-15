@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11月9日 研报巡逻</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style><style>
+code{background:#f6f6f6;padding:1px 5px;border-radius:3px;font-size:13px;color:#333;font-family:Consolas,Menlo,monospace;}
+.tag.nat-warn{background:#efe9d8;color:#8a6d1f;border:1px solid #d9c98f;}
+.new{color:#8a6d1f;font-weight:700;}
+</style><body>
+
+<header>
+  <h1>11月9日 研报巡逻</h1>
+  <div class="meta">
+    <span>生成 2026-11-09 22:35</span><span>雷达 as_of 2026-11-09（行情 cutoff 19:22:41+08:00）</span><span>研报 cutoff 22:33+08:00</span><span>研报源：亿信 report</span>
+  </div>
+</header>
+
+<div class="highlight">
+<p><strong>结论：分化日的结构榜，不是普涨回补榜。</strong>30 席里 29 席昨日在 30 名外，但全市场涨 221、跌 229，Top30 涨幅多在 +0.5%—+2.6%，分数来自资金强度而非指数推力；榜首三席是风格标签。资金与细分研报对得上的只有五条：<strong>卫星互联网、AI 芯片、先进封装、减速器、AI 视频/短剧</strong>。</p>
+</div>
+
+<h2>一、口径与宽度</h2>
+<ul>
+<li>目标日 454 板块按 <code>score</code> 降序取前 30；11-06 同为 454 同源全榜，名次可精确比较。清单 as_of=20261109、quality=complete、sha256 <code>c943fa77…</code> 与本地一致。</li>
+<li><strong>两日方向完全不同。</strong>11-06 涨 8、跌 446（杀跌日），今日涨 221、跌 229、平 4（分化日）。11-06 的 Top30 由农业、大基金持股、光刻机等防守席占据，今日全数退出，唯一延续是电子烟（29&rarr;24）。两套名单不能接续读。</li>
+<li>Top30 平均 <code>aDays</code>=4.2，13 席在榜 5 日以上，减速器 9 日最长；但 <code>aDays</code> 只计近 30 个观测日进入前 30 的次数，不等于资金连续净流入。</li>
+<li><strong>榜首三席是风格标签</strong>：连续亏损 +0.06%、外资背景 +0.43%、高市盈率 +0.86%，涨幅近零而分数最高，第 17 位微利股同理。<code>score</code> 由资金强度与波段净额驱动，不追涨幅；剔除这 4 席后产业首位才是卫星互联网。</li>
+</ul>
+
+<h2>二、Top30 简表（按 score 降序）</h2>
+<div class="table-wrapper"><table>
+<thead><tr><th class="num">名次</th><th>板块</th><th class="num">score</th><th class="num">当日涨跌</th><th class="num">波段净额(亿)</th><th class="num">单日净额(亿)</th><th class="num">在榜</th><th class="num">名次变化</th><th>方向</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td><strong>连续亏损</strong></td><td class="num">961.7</td><td class="num" style="color:#c0392b">+0.06%</td><td class="num" style="color:#c0392b">+12.11</td><td class="num">23.42</td><td class="num">4</td><td class="num">342&rarr;1 <span style="color:#c0392b">(+341)</span></td><td><span class="tag nat-warn">风格</span></td></tr>
+<tr><td class="num">2</td><td><strong>外资背景</strong></td><td class="num">955.9</td><td class="num" style="color:#c0392b">+0.43%</td><td class="num" style="color:#c0392b">+13.37</td><td class="num">27.74</td><td class="num">3</td><td class="num">325&rarr;2 <span style="color:#c0392b">(+323)</span></td><td><span class="tag nat-warn">风格</span></td></tr>
+<tr><td class="num">3</td><td><strong>卫星互联网</strong></td><td class="num">935.5</td><td class="num" style="color:#c0392b">+1.75%</td><td class="num" style="color:#c0392b">+4.77</td><td class="num">34.10</td><td class="num">2</td><td class="num">355&rarr;3 <span style="color:#c0392b">(+352)</span></td><td><span class="tag">商业航天</span></td></tr>
+<tr><td class="num">4</td><td><strong>高端装备</strong></td><td class="num">930.8</td><td class="num" style="color:#c0392b">+0.50%</td><td class="num" style="color:#c0392b">+4.33</td><td class="num">23.20</td><td class="num">3</td><td class="num">361&rarr;4 <span style="color:#c0392b">(+357)</span></td><td><span class="tag">装备制造</span></td></tr>
+<tr><td class="num">5</td><td><strong>高市盈率</strong></td><td class="num">923.8</td><td class="num" style="color:#c0392b">+0.86%</td><td class="num" style="color:#c0392b">+18.63</td><td class="num">17.67</td><td class="num">4</td><td class="num">251&rarr;5 <span style="color:#c0392b">(+246)</span></td><td><span class="tag nat-warn">风格</span></td></tr>
+<tr><td class="num">6</td><td><strong>空气能热泵</strong></td><td class="num">919.2</td><td class="num" style="color:#c0392b">+1.62%</td><td class="num" style="color:#c0392b">+2.45</td><td class="num">16.65</td><td class="num">7</td><td class="num">235&rarr;6 <span style="color:#c0392b">(+229)</span></td><td><span class="tag">家电出口</span></td></tr>
+<tr><td class="num">7</td><td><strong>冰雪经济</strong></td><td class="num">914.2</td><td class="num" style="color:#c0392b">+1.85%</td><td class="num" style="color:#c0392b">+12.64</td><td class="num">12.63</td><td class="num">6</td><td class="num">189&rarr;7 <span style="color:#c0392b">(+182)</span></td><td><span class="tag">季节消费</span></td></tr>
+<tr><td class="num">8</td><td><strong>AI芯片</strong></td><td class="num">909.9</td><td class="num" style="color:#c0392b">+1.06%</td><td class="num" style="color:#c0392b">+7.26</td><td class="num">20.14</td><td class="num">6</td><td class="num">261&rarr;8 <span style="color:#c0392b">(+253)</span></td><td><span class="tag">国产算力</span></td></tr>
+<tr><td class="num">9</td><td><strong>减速器</strong></td><td class="num">902.9</td><td class="num" style="color:#c0392b">+1.88%</td><td class="num" style="color:#c0392b">+9.07</td><td class="num">12.46</td><td class="num">9</td><td class="num">266&rarr;9 <span style="color:#c0392b">(+257)</span></td><td><span class="tag">机器人</span></td></tr>
+<tr><td class="num">10</td><td><strong>AI视频</strong></td><td class="num">901.3</td><td class="num" style="color:#c0392b">+0.79%</td><td class="num" style="color:#c0392b">+13.89</td><td class="num">6.91</td><td class="num">2</td><td class="num">129&rarr;10 <span style="color:#c0392b">(+119)</span></td><td><span class="tag">AI应用</span></td></tr>
+<tr><td class="num">11</td><td><strong>空间站概念</strong></td><td class="num">894.1</td><td class="num" style="color:#c0392b">+1.94%</td><td class="num" style="color:#c0392b">+4.14</td><td class="num">7.29</td><td class="num">2</td><td class="num">180&rarr;11 <span style="color:#c0392b">(+169)</span></td><td><span class="tag">商业航天</span></td></tr>
+<tr><td class="num">12</td><td><strong>脑机接口</strong></td><td class="num">885.9</td><td class="num" style="color:#c0392b">+0.67%</td><td class="num" style="color:#c0392b">+3.52</td><td class="num">9.85</td><td class="num">1</td><td class="num">287&rarr;12 <span style="color:#c0392b">(+275)</span></td><td><span class="tag">医疗器械</span></td></tr>
+<tr><td class="num">13</td><td><strong>纳米银</strong></td><td class="num">884.8</td><td class="num" style="color:#c0392b">+2.59%</td><td class="num" style="color:#c0392b">+9.55</td><td class="num">9.66</td><td class="num">3</td><td class="num">54&rarr;13 <span style="color:#c0392b">(+41)</span></td><td><span class="tag">材料</span></td></tr>
+<tr><td class="num">14</td><td><strong>水利建设</strong></td><td class="num">879.1</td><td class="num" style="color:#c0392b">+0.08%</td><td class="num" style="color:#c0392b">+18.69</td><td class="num">12.54</td><td class="num">1</td><td class="num">62&rarr;14 <span style="color:#c0392b">(+48)</span></td><td><span class="tag">基建</span></td></tr>
+<tr><td class="num">15</td><td><strong>混合现实</strong></td><td class="num">872.0</td><td class="num" style="color:#c0392b">+1.41%</td><td class="num" style="color:#c0392b">+17.55</td><td class="num">14.10</td><td class="num">3</td><td class="num">52&rarr;15 <span style="color:#c0392b">(+37)</span></td><td><span class="tag">消费电子</span></td></tr>
+<tr><td class="num">16</td><td><strong>稀缺资源</strong></td><td class="num">868.5</td><td class="num" style="color:#c0392b">+0.79%</td><td class="num" style="color:#c0392b">+3.77</td><td class="num">15.31</td><td class="num">1</td><td class="num">360&rarr;16 <span style="color:#c0392b">(+344)</span></td><td><span class="tag">资源</span></td></tr>
+<tr><td class="num">17</td><td><strong>微利股</strong></td><td class="num">867.0</td><td class="num" style="color:#c0392b">+0.40%</td><td class="num" style="color:#c0392b">+0.03</td><td class="num">9.01</td><td class="num">6</td><td class="num">268&rarr;17 <span style="color:#c0392b">(+251)</span></td><td><span class="tag nat-warn">风格</span></td></tr>
+<tr><td class="num">18</td><td><strong>氦气概念</strong></td><td class="num">866.1</td><td class="num" style="color:#c0392b">+0.66%</td><td class="num" style="color:#c0392b">+5.67</td><td class="num">6.86</td><td class="num">3</td><td class="num">211&rarr;18 <span style="color:#c0392b">(+193)</span></td><td><span class="tag">材料</span></td></tr>
+<tr><td class="num">19</td><td><strong>影视概念</strong></td><td class="num">864.5</td><td class="num" style="color:#c0392b">+0.58%</td><td class="num" style="color:#c0392b">+7.53</td><td class="num">3.72</td><td class="num">6</td><td class="num">53&rarr;19 <span style="color:#c0392b">(+34)</span></td><td><span class="tag">AI应用</span></td></tr>
+<tr><td class="num">20</td><td><strong>先进封装</strong></td><td class="num">862.6</td><td class="num" style="color:#c0392b">+0.68%</td><td class="num" style="color:#c0392b">+45.31</td><td class="num">21.65</td><td class="num">4</td><td class="num">78&rarr;20 <span style="color:#c0392b">(+58)</span></td><td><span class="tag">半导体</span></td></tr>
+<tr><td class="num">21</td><td><strong>智能家居</strong></td><td class="num">860.8</td><td class="num" style="color:#c0392b">+0.22%</td><td class="num" style="color:#c0392b">+1.78</td><td class="num">14.33</td><td class="num">5</td><td class="num">323&rarr;21 <span style="color:#c0392b">(+302)</span></td><td><span class="tag">家电</span></td></tr>
+<tr><td class="num">22</td><td><strong>卫星导航</strong></td><td class="num">858.8</td><td class="num" style="color:#c0392b">+1.16%</td><td class="num" style="color:#1e8449">-1.20</td><td class="num">9.44</td><td class="num">5</td><td class="num">265&rarr;22 <span style="color:#c0392b">(+243)</span></td><td><span class="tag">导航定位</span></td></tr>
+<tr><td class="num">23</td><td><strong>婴童概念</strong></td><td class="num">857.7</td><td class="num" style="color:#1e8449">-0.18%</td><td class="num" style="color:#c0392b">+0.81</td><td class="num">5.70</td><td class="num">6</td><td class="num">84&rarr;23 <span style="color:#c0392b">(+61)</span></td><td><span class="tag">消费</span></td></tr>
+<tr><td class="num">24</td><td><strong>电子烟</strong></td><td class="num">857.0</td><td class="num" style="color:#c0392b">+1.64%</td><td class="num" style="color:#c0392b">+25.59</td><td class="num">10.34</td><td class="num">6</td><td class="num">29&rarr;24 <span style="color:#c0392b">(+5)</span></td><td><span class="tag">消费</span></td></tr>
+<tr><td class="num">25</td><td><strong>供销社概念</strong></td><td class="num">852.6</td><td class="num" style="color:#1e8449">-0.68%</td><td class="num" style="color:#c0392b">+0.06</td><td class="num">5.32</td><td class="num">5</td><td class="num">132&rarr;25 <span style="color:#c0392b">(+107)</span></td><td><span class="tag">农业流通</span></td></tr>
+<tr><td class="num">26</td><td><strong>新消费</strong></td><td class="num">850.4</td><td class="num" style="color:#1e8449">-0.69%</td><td class="num" style="color:#c0392b">+1.11</td><td class="num">5.61</td><td class="num">1</td><td class="num">278&rarr;26 <span style="color:#c0392b">(+252)</span></td><td><span class="tag">消费</span></td></tr>
+<tr><td class="num">27</td><td><strong>净水概念</strong></td><td class="num">845.8</td><td class="num" style="color:#c0392b">+0.38%</td><td class="num" style="color:#c0392b">+1.16</td><td class="num">4.11</td><td class="num">9</td><td class="num">111&rarr;27 <span style="color:#c0392b">(+84)</span></td><td><span class="tag">家电</span></td></tr>
+<tr><td class="num">28</td><td><strong>辅助生殖</strong></td><td class="num">838.1</td><td class="num" style="color:#1e8449">-0.16%</td><td class="num" style="color:#c0392b">+0.85</td><td class="num">3.95</td><td class="num">2</td><td class="num">179&rarr;28 <span style="color:#c0392b">(+151)</span></td><td><span class="tag">医疗</span></td></tr>
+<tr><td class="num">29</td><td><strong>并购重组概念</strong></td><td class="num">837.4</td><td class="num" style="color:#c0392b">+0.62%</td><td class="num" style="color:#1e8449">-2.54</td><td class="num">22.06</td><td class="num">4</td><td class="num">387&rarr;29 <span style="color:#c0392b">(+358)</span></td><td><span class="tag">重组</span></td></tr>
+<tr><td class="num">30</td><td><strong>短剧互动游戏</strong></td><td class="num">837.0</td><td class="num" style="color:#1e8449">-0.40%</td><td class="num" style="color:#c0392b">+3.89</td><td class="num">4.46</td><td class="num">7</td><td class="num">109&rarr;30 <span style="color:#c0392b">(+79)</span></td><td><span class="tag">AI应用</span></td></tr>
+</tbody></table></div>
+<p style="font-size:13px;color:#888;">净额为成员求和，成分重叠不可跨板块相加；<code>avgInflow</code> 全为 null，保留缺失不填 0。</p>
+
+<h2>三、资金与研报共同支持（候选）</h2>
+<ol>
+<li><strong>卫星互联网（3，935.5）证据链最完整。</strong>11-08 中信建投记力箭二号首飞承担组网、千帆在轨升至 274 颗；11-03 华龙证券记上海《卫星互联网产业创新发展行动方案（2027—2030）》；11-08 开源证券记千帆规划约 1.5 万颗、政府工作报告列入「加快发展卫星互联网」；10-30 东北证券讲测控需求由单星转向星座协同。波段净额 +4.77 亿、<code>aDays</code>=2，政策与组网双落地、资金刚起。</li>
+<li><strong>AI 芯片（8，909.9）业绩已兑现。</strong>10-24 国盛证券记上半年国内 AI 加速器出货 200.8 万颗、华为份额 28%、寒武纪 26Q3 营收 35.31 亿元同比 +104.47%；10-29 中原证券记国产化率 64%；11-08 国联民生延续同判。<code>aDays</code>=6，波段净额 +7.26 亿。</li>
+<li><strong>先进封装（20，862.6）资金最厚，须先过集中度。</strong>10-25 国盛记台积电称 CoWoS 供不应求、持续扩产；10-22 国金讲 CoWoS 设备国产替代；11-02 东北指出 HBM 由海外三家寡头垄断、设备国产化率由 20% 向 50% 提升。波段净额 +45.31 亿为全榜最高，<code>aDays</code>=4、<code>oDays</code>=4。<strong>但当日仅涨 0.68%</strong>，净额与涨幅不匹配，成分表为空时不能排除单票拉动。</li>
+<li><strong>减速器（9，902.9）持续性最好。</strong>11-05 浙商证券讲 Optimus 量产渐进、柔轮与波发生器为壁垒；10-21 同机构讲核心零部件量价分化；10-24 国盛把减速器定位为旋转关节核心。<code>aDays</code>=9 全榜最长，属持续在榜而非单日冲榜。</li>
+<li><strong>AI 视频 / 影视 / 短剧（10、19、30）同链三席。</strong>11-01 招商称 AI 影视是 AI 应用扛旗者；10-27 东吴称其为大模型 C 端最快规模化场景；11-05 国泰海通记 AI 短剧单部成本由 40—80 万元大幅压缩、团队从 40 人降至 3—10 人。短剧互动游戏当日 -0.40% 而波段净额 +3.89 亿，涨幅与资金背离。</li>
+<li><strong>空气能热泵（6，919.2）是外需链。</strong>10-20 方正记 9 月对欧出口 +215%；11-02 银河记 2025 年对欧出口约 68 亿元占四成、2026 年高景气；10-22 中金记欧洲销量回升至 288 万台。<strong>反向证据</strong>：10-19 Bernstein 美国住宅 HVAC 仍弱、中央空调内销承压，只能按出口理解。</li>
+<li><strong>冰雪经济（7，914.2）是季节窗口。</strong>10-14 江海记冰雪旅游 3.6 亿人次、收入 4500 亿元；11-09 华源记吉林、阿勒泰设雪假；11-05 国盛记冰雪运动 3.08 亿人。催化都在冬季窗口内，跨季不延续。</li>
+</ol>
+
+<h2>四、本次检索未命中（不代表全市场未覆盖）</h2>
+<ul>
+<li><strong>空间站概念（11）：</strong>只返回商业航天邻近材料，无载人航天、在轨实验本体研报。<strong>星座组网不等于空间站</strong>，两者产业链重叠而驱动不同。</li>
+<li><strong>卫星导航（22）：</strong>北斗、高精度定位检索零相关命中。<strong>宽带星座的证据不能平移给导航终端</strong>，这正是它波段净额 -1.20 亿、与卫星互联网分道的原因。</li>
+<li><strong>高端装备（4）：</strong>11-07 中信建投「三线共振」讲的是军工装备与大国重器，11-05 兴业只有高技术投资宏观数据。<strong>「装备」同义词陷阱</strong>，军工景气不能确认通用高端装备。</li>
+<li><strong>无细分正文：</strong>混合现实（15）、稀缺资源（16）、氦气（18）、纳米银（13）、净水（27）、电子烟（24）、婴童（23）、辅助生殖（28）、供销社（25）、并购重组（29，仅北交所单案例）。属覆盖缺口，不写「无催化」。</li>
+</ul>
+
+<h2>五、研报方向未进榜</h2>
+<ul>
+<li><strong>液冷服务器：</strong>11-08 开源「光、超节点、液冷」三重奏、11-07 光大点名 AIDC 液冷压缩机国产替代；今日排名 139、score 577.1、波段净额 -74.03 亿。<strong>研报热、资金撤</strong>，本轮最清楚的一处背离。</li>
+<li><strong>太空算力：</strong>11-08 长江（Starcloud、Blue Origin 分层布局）、11-08 华福（太空算力崛起）。榜内无对应板块，仅卫星互联网与空间站邻近，不构成独立方向。</li>
+<li><strong>半导体设备：</strong>11-02 东吴、10-22 国金均指设备国产替代，榜内无设备专板；先进封装是设备下游，不能替代设备本身的资金证据。</li>
+<li><strong>服务消费 / 文旅：</strong>11-09 申万宏源、11-08 东北、11-05 兴业均有覆盖，榜内只有影视与冰雪两个细分席，整体方向未进榜。</li>
+<li><strong>水利建设方向相反（14）：</strong>10-21 华创记 1—8 月水利管理业投资 -12.0%、距全年 1 万亿目标有压力，今日波段净额 +18.69 亿。<strong>资金进、上游投资减速</strong>，是背离不是共振。</li>
+</ul>
+
+<h2>六、缺口与明日观察</h2>
+<ol>
+<li><code>boards_constituents.json</code> 的 <code>stocks</code> 全为空，<strong>集中度未检验</strong>；先进封装 +45.31 亿、电子烟 +25.59 亿这类量级须先核 top1 占比，本报告不写「板块级流入」。</li>
+<li>亿信 report 两轮 18 次检索全部 HTTP 200 且 <code>success=true</code>，返回含标题、摘要、日期、机构，<code>link</code> 为空；正文只做摘要级引用，未扩写为全文结论。</li>
+<li><strong>11-06 档研报巡逻未生成</strong>，本报告不与 11-06 做研报侧对比，也不以当前时点回填该日结论。</li>
+<li><strong>明日观察：</strong>卫星互联网 <code>aDays</code> 能否由 2 抬升；先进封装能否转为量价同向；29 个新面孔需第二日确认；液冷服务器波段净额转正，与研报的背离才算收敛。</li>
+</ol>
+
+<footer>
+数据来源：东财板块资金 <code>hist_metrics.json</code>（em-local-v4.1，as_of 2026-11-09，清单 quality=complete、sha256 c943fa77… 已核）。研报：亿信 report 通道两轮检索（10+8 次）。<br>
+口径：<code>score</code> 为本地三因子横截面百分位（0—1000），与 onechart 原作者 14 指标不可比；资金指标不等于真实机构持仓；成分重叠，净额不可求和；缺失保留 null。生成 2026-11-09 22:35（Asia/Shanghai）。
+</footer>
+
+</body>
+</html>

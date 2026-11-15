@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11月13日 研报巡逻</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+.up{color:#c0392b;font-weight:700;margin-left:3px;}
+.down{color:#1e8449;font-weight:700;margin-left:3px;}
+</style><style>
+code{background:#f6f6f6;padding:1px 5px;border-radius:3px;font-size:13px;color:#333;font-family:Consolas,Menlo,monospace;}
+.tag.nat-warn{background:#efe9d8;color:#8a6d1f;border:1px solid #d9c98f;}
+.new{color:#8a6d1f;font-weight:700;}
+</style>
+<body>
+<header>
+  <h1>11月13日 研报巡逻</h1>
+  <div class="meta">
+    <span>生成 2026-11-13 22:35</span><span>雷达 as_of 2026-11-13（行情 cutoff 19:21:44+08:00）</span><span>研报 cutoff 22:37+08:00</span><span>研报源：亿信 report</span>
+  </div>
+</header>
+
+<div class="highlight">
+<p><strong>结论：第二个普跌日，Top30 整榜换人，换进来的却不是主线。</strong>474 个板块涨 10、跌 463、均跌 2.03%，30 席里 29 席当日净额为正、仅 2 席上涨，仍是「逆势净流入榜」。与昨日仅 2 席连榜，昨日前五全部跌到 61 名外。钱与研报真正同向的只有一条：华为算力。榜首时空大数据与第 9 工业大麻，研报对不上。</p>
+</div>
+
+<h2>一、口径与校验</h2>
+<ul>
+<li>目标日 2026-11-13（周五，交易日）。474 板按 <code>score</code> 降序取前 30。清单 as_of=20261113、quality=complete、sha256 <code>680700c7…</code> 与页面一致；通道 A 符号一致率 0.917、spearman 0.8503，通道 B d5 自洽 562/562。通道 A 相对边际 0.2388 未达 0.3，靠通道 B 补证。</li>
+<li><strong>口径变了</strong>：今日 474 板，较昨日 455 新增 19 个（BK1772—BK1794），华为鲲鹏当日即第 2。名次比较在 474 口径内做，19 个新板无昨日名次、不计升降。</li>
+<li>宽度：涨 10、跌 463、平 1（昨日 13/441/1、-1.71%）。上证 -0.59%、创业板 -3.32%；两市 16556.6 亿，缩量 14.3%。跌的是弹性，茅台 +1.77%、农行 +1.52%。</li>
+<li><strong>缺口照记</strong>：boards_constituents.json 477 板 stocks 全空，集中度未检验，不填 0。资金为净额估算，不等于机构持仓。</li>
+</ul>
+
+<h2>二、Top30 简表（按 score 降序）</h2>
+<div class="table-wrapper"><table><thead><tr><th>名次</th><th>板块</th><th>score</th><th>涨跌</th><th>波段(亿)</th><th>单日(亿)</th><th>在榜</th><th>名次变化</th><th>方向</th></tr></thead><tbody><tr><td>1</td><td>时空大数据</td><td>972.2</td><td>-0.98%</td><td>+14.2</td><td>+13.7</td><td>3</td><td>176&rarr;1</td><td>数据要素</td></tr><tr><td>2</td><td>华为鲲鹏</td><td>969.2</td><td>-1.21%</td><td>+9.4</td><td>+8.4</td><td>1</td><td><span class="new">新板首日</span></td><td>华为算力</td></tr><tr><td>3</td><td>影视概念</td><td>967.7</td><td>+1.10%</td><td>+4.0</td><td>+8.4</td><td>8</td><td>332&rarr;3</td><td>影视院线</td></tr><tr><td>4</td><td>净水概念</td><td>952.5</td><td>-0.33%</td><td>+4.2</td><td>+4.7</td><td>10</td><td>178&rarr;4</td><td>家电</td></tr><tr><td>5</td><td>空气能热泵</td><td>942.6</td><td>-2.12%</td><td>+7.3</td><td>+2.8</td><td>6</td><td>198&rarr;5</td><td>热泵出口</td></tr><tr><td>6</td><td>信托重仓</td><td>940.9</td><td>-1.11%</td><td>+1.5</td><td>+4.1</td><td>2</td><td>256&rarr;6</td><td>标签</td></tr><tr><td>7</td><td>包装材料</td><td>939.0</td><td>-1.82%</td><td>+2.2</td><td>+1.5</td><td>7</td><td>164&rarr;7</td><td>包装印刷</td></tr><tr><td>8</td><td>房屋检测</td><td>936.7</td><td>-1.05%</td><td>+1.5</td><td>+2.3</td><td>3</td><td>130&rarr;8</td><td>建筑检测</td></tr><tr><td>9</td><td>工业大麻</td><td>936.5</td><td>-0.91%</td><td>+1.0</td><td>+3.7</td><td>4</td><td>46&rarr;9</td><td>主题</td></tr><tr><td>10</td><td>华为欧拉</td><td>936.1</td><td>-0.52%</td><td>+0.6</td><td>+3.6</td><td>2</td><td>78&rarr;10</td><td>华为算力</td></tr><tr><td>11</td><td>电子车牌</td><td>934.6</td><td>-0.90%</td><td>+2.0</td><td>+1.6</td><td>7</td><td>109&rarr;11</td><td>交通</td></tr><tr><td>12</td><td>低碳冶金</td><td>929.5</td><td>-0.34%</td><td>+0.6</td><td>+1.0</td><td>6</td><td>121&rarr;12</td><td>钢铁/低碳</td></tr><tr><td>13</td><td>数字水印</td><td>929.1</td><td>-1.13%</td><td>+3.2</td><td>+0.8</td><td>2</td><td>59&rarr;13</td><td>数据安全</td></tr><tr><td>14</td><td>光刻机</td><td>927.8</td><td>-2.99%</td><td>+33.8</td><td>+0.3</td><td>3</td><td>9&rarr;14<span class="down">(-5)</span></td><td>设备</td></tr><tr><td>15</td><td>户外露营</td><td>924.7</td><td>-1.23%</td><td>-0.4</td><td>+3.3</td><td>5</td><td>94&rarr;15</td><td>消费</td></tr><tr><td>16</td><td>EDA概念</td><td>908.2</td><td>-1.71%</td><td>+2.0</td><td>+0.1</td><td>3</td><td>49&rarr;16</td><td>EDA</td></tr><tr><td>17</td><td>智慧政务</td><td>907.4</td><td>-0.96%</td><td>-2.6</td><td>+10.6</td><td>1</td><td>216&rarr;17</td><td>政务</td></tr><tr><td>18</td><td>2026中报首亏</td><td>904.4</td><td>-1.76%</td><td>+0.1</td><td>+0.7</td><td>3</td><td>324&rarr;18</td><td>标签</td></tr><tr><td>19</td><td>华为昇腾</td><td>903.0</td><td>-0.55%</td><td>-2.7</td><td>+4.7</td><td>1</td><td>293&rarr;19</td><td>华为算力</td></tr><tr><td>20</td><td>WiFi</td><td>896.2</td><td>-1.81%</td><td>+17.3</td><td>-0.7</td><td>2</td><td>53&rarr;20</td><td>通信</td></tr><tr><td>21</td><td>猪肉概念</td><td>895.1</td><td>+1.48%</td><td>-2.7</td><td>+2.5</td><td>2</td><td>65&rarr;21</td><td>养殖</td></tr><tr><td>22</td><td>造纸印刷</td><td>894.5</td><td>-1.76%</td><td>+1.3</td><td>+0.1</td><td>4</td><td>28&rarr;22<span class="up">(+6)</span></td><td>造纸</td></tr><tr><td>23</td><td>空间站概念</td><td>890.5</td><td>-1.26%</td><td>-2.4</td><td>+1.4</td><td>3</td><td>237&rarr;23</td><td>航天</td></tr><tr><td>24</td><td>电子身份证</td><td>887.1</td><td>-1.17%</td><td>-2.1</td><td>+1.1</td><td>1</td><td>183&rarr;24</td><td>身份</td></tr><tr><td>25</td><td>GDR</td><td>881.0</td><td>-0.31%</td><td>-3.7</td><td>+4.6</td><td>1</td><td>203&rarr;25</td><td>制度</td></tr><tr><td>26</td><td>谷子经济</td><td>878.9</td><td>-0.83%</td><td>-3.3</td><td>+6.4</td><td>10</td><td>380&rarr;26</td><td>消费</td></tr><tr><td>27</td><td>代糖概念</td><td>878.9</td><td>-1.31%</td><td>-1.1</td><td>+0.1</td><td>1</td><td>93&rarr;27</td><td>添加剂</td></tr><tr><td>28</td><td>阿兹海默</td><td>877.2</td><td>-2.21%</td><td>-1.7</td><td>+0.3</td><td>4</td><td>38&rarr;28</td><td>医药</td></tr><tr><td>29</td><td>C2M概念</td><td>874.9</td><td>-1.06%</td><td>-0.6</td><td>+0.0</td><td>2</td><td>139&rarr;29</td><td>制造</td></tr><tr><td>30</td><td>财税数字化</td><td>867.1</td><td>-0.95%</td><td>-3.5</td><td>+2.7</td><td>3</td><td>142&rarr;30</td><td>财税IT</td></tr></tbody></table></div>
+
+<h2>三、研报与资金共同支持（3 硬 2 半）</h2>
+<h3>1. 华为算力（鲲鹏 2、欧拉 10、昇腾 19）：今日唯一「钱进 + 研报密」</h3>
+<p>当日 +8.4 亿、+3.6 亿、+4.7 亿。证据是订单不是观点：国盛 11-08 记中国移动 2026—2027 年 AI 超节点集采 10-26 开标，20480 卡及配套 RoCE 交换机，候选含华鲲振宇等三家；11-02 大华子公司华启智慧中标约 26.3 亿；昇腾 950DT 万卡池已在电信内蒙园区落地。中信建投 10-20 称超节点为「国产算力下一个主战场」，960DT 提前至 2027Q1；上海 10-12 记鲲鹏超节点 4096 节点、256TB 内存池。分歧要留：华安 10-16 说昇腾软件生态仍弱于 CUDA；鲲鹏专属证据只有超节点规格，CPU 出货与信创招标量价空白，且 aDays=1，969.2 分不可与老板横比。</p>
+
+<h3>2. 净水概念（4，在榜 10 日）：政策给的是分母</h3>
+<p>+4.7 亿，全场在榜最久之一。东吴 10-22 判断净水已转「存量换新 + 产品升级」；国泰海通 11-02 记河南、山西、四川等地把净水器纳入地方补贴，售价 15%、单件上限 1500 元。反证更新：湘财 11-13 确认全年 2500 亿分四批、第四批 625 亿 10 月落地，但核销「总额控制、先到先得」，四季度「前高后稳」；NielsenIQ 3-15 判断 2026 以旧换新资金规模收缩。补贴是分母，研报没给销量数。</p>
+
+<h3>3. 空气能热泵（5，在榜 6 日）：唯一有当月出口同比</h3>
+<p>+2.8 亿。方正 10-20 记 9 月对欧 21 国出口 +215%、全球出口翻倍；中金 11-10 从海外财报印证，开利 3Q26 欧洲有机订单 +30%、家用及轻商热泵销量 +35%；银河 11-02 给 2025 年对欧出口约 68 亿、占 41%。三条独立来源同向，是今日证据链最完整的一条。风险在补贴依赖。</p>
+
+<h3>4. 房屋检测（8，在榜 3 日）：制度已定，订单未验</h3>
+<p>+2.3 亿。国盛 5-31 记城市更新「十五五」要求建房屋安全体检制度、地级市 2026 年全面体检；中信建投 7-05 给节奏——城镇住宅每 10 年全面体检、C/D 级危房每年一次；国检集团 1-22 披露存量房检测 2025 年收入约 1 亿。核心逻辑停在 5—7 月，11 月只有周报复述，无新订单。</p>
+
+<h3>5. 光刻机 / EDA（14、16）：波段猛，当日几乎没买</h3>
+<p>光刻机 -2.99% 却挂波段 +33.8 亿（全场第二），单日仅 +0.285 亿，差额本身是提醒：波段是前期累积。华源 11-03 讲晶圆厂扩产叠加制程升级；国泰海通 10-24 给华大九天 2026—2028 年营收 16.73/21.81/29.04 亿；浦银 10-13 提醒中国 EDA 全球占比仅约 2%，现实位置是「局部替代」。方向对、当期无业绩。</p>
+
+<h2>四、本次检索未命中（钱在榜、研报对不上）</h2>
+<ul>
+<li><strong>时空大数据（1，+13.7 亿全场第一，在榜 3 日）</strong>：只回到「数据要素」整体——海通国际 10-21 记国家数据集团落地雄安、从「建规则」转向「做运营」。落到「时空」维度只有广发 7-12 的中科星图数字地球。数据要素不等于时空大数据，不合并计入。</li>
+<li><strong>工业大麻（9，在榜 4 日）</strong>：唯一沾边是莱茵生物 4-01 分析师会议，讲糖税与天然甜味剂，工业大麻只被问了一句；海外大麻报告不构成 A 股证据。今日最大空洞。</li>
+<li><strong>影视概念（3，+1.1%，+8.4 亿，在榜 8 日）</strong>：钱在，研报是反的。长江 11-13 记光线传媒前三季营收 6.58 亿、同比 -81.79%，归母 -97.85%；浙商 11-05 记上海电影 Q3 收入 -49.6%、归母 -96.2%。唯一多头是档期（广发 11-08 建议关注春节档定档），属事件预期不是业绩。</li>
+<li><strong>包装材料（7）、智慧政务（17）</strong>：包装只有调研纪要与海外纸价（OCC 环比 +19%）；智慧政务是反向证据——中泰 9-18 记新点软件该业务收入 1.57 亿、同比 -20.07%。</li>
+<li><strong>未定向检索的 11 席</strong>（12、15、11、13、24、26、29、30、25）：不宣称无研报。信托重仓（6）、2026 中报首亏（18）是持仓与财务标签，不参与共振判断。</li>
+</ul>
+
+<h2>五、研报方向未进榜（研报在、钱走了）</h2>
+<ul>
+<li><strong>先进封装（196，昨日 4）</strong>：波段 +82.4 亿仍全榜最大，当日 -45.8 亿。招商 11-02 记 ASMPT 3Q26 订单创历史新高，TCB 与光子学均创纪录。</li>
+<li><strong>中芯 / 大基金（169 / 97，昨日 2 / 1）</strong>：波段仍正（+52.9 / +45.4 亿），当日 -13.3 / -10.1 亿，华源 11-03 的晶圆厂扩产逻辑未被证伪。人形机器人、机器人（436 / 467）波段 -125.8 / -195.8 亿，华福 10-26 仍在讲物理 AI 与数采环节。</li>
+<li>液冷（450）、创新药（348，昨日 161）当日 -47.3 / -15.3 亿，研报未转空。未进榜不等于被证伪。</li>
+</ul>
+
+<h2>六、来源与不确定性</h2>
+<ul>
+<li>亿信 report 18 次请求（10 + 8，每次 ≤10 条），全部 HTTP 200、success=true，返回 157 条、去重 151 条。无 link 字段，<strong>证据等级为标题 + 摘要</strong>。</li>
+<li>行情 cutoff 2026-11-13T19:21:44+08:00，研报截至 22:37。score 为横截面百分位，普跌日会把「跌得少 + 当日净流入」推上前排，Top30 不代表全市场强度排序。</li>
+</ul>
+
+</body>
+</html>

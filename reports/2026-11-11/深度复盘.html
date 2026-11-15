@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11月11日 深度复盘 · 投资小龙虾</title>
+<style>
+:root{--yellow:#ebb543;--yellow-light:#f7e8c5;--red:#c0392b;--red-light:#fdf0ef;--green:#1f8b4c;--black:#1a1a1a;--gray-900:#2c2c2c;--gray-700:#555;--gray-500:#888;--gray-300:#bbb;--gray-100:#f0f0f0;--white:#fff;--font:"Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",system-ui,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font);font-size:15px;line-height:1.75;color:var(--gray-900);background:var(--white);max-width:820px;margin:0 auto;padding:40px 28px 60px;-webkit-font-smoothing:antialiased;}
+header{border-bottom:3px solid var(--yellow);padding-bottom:20px;margin-bottom:28px;}
+header h1{font-size:24px;font-weight:700;color:var(--black);margin-bottom:6px;letter-spacing:.5px;}
+header .meta{font-size:13px;color:var(--gray-500);}
+header .meta span{margin-right:16px;}
+h2{font-size:18px;font-weight:700;color:var(--black);margin:30px 0 10px;padding-left:12px;border-left:4px solid var(--yellow);}
+p{margin:8px 0;}
+.table-wrapper{overflow-x:auto;margin:12px 0 18px;border:1px solid var(--gray-300);border-radius:6px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:500px;}
+thead th{background:var(--yellow);color:var(--black);font-weight:700;padding:9px 11px;text-align:left;white-space:nowrap;border-bottom:2px solid #d4a734;}
+tbody td{padding:8px 11px;border-bottom:1px solid var(--gray-100);vertical-align:top;}
+tbody tr:nth-child(even){background:#fafafa;}
+tbody tr:hover{background:var(--yellow-light);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+.highlight{background:var(--yellow-light);border-left:4px solid var(--yellow);padding:11px 15px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;}
+.warning{background:var(--red-light);border-left:4px solid var(--red);padding:11px 15px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;color:#8b1a1a;}
+ul,ol{margin:8px 0 8px 20px;}
+li{margin:4px 0;}
+.up{color:var(--red);font-weight:700;}
+.down{color:var(--green);font-weight:700;}
+footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--gray-300);font-size:12px;color:var(--gray-500);line-height:1.9;}
+code{background:#f4f4f4;padding:1px 4px;border-radius:3px;font-size:13px;}
+@media (max-width:600px){body{padding:20px 14px 40px;font-size:14px;}table{font-size:12px;}thead th,tbody td{padding:7px 8px;}}
+</style>
+</head>
+<body>
+<header>
+<h1>11月11日 深度复盘</h1>
+<div class="meta"><span>2026-11-11（周三，交易日）</span><span>行情 cutoff 15:00</span><span>资讯 cutoff 23:00</span><span>生成 23:29</span></div>
+</header>
+
+<div class="highlight">
+<strong>一句话结论：</strong>有钱进来，但只进了二十只票。主线一条：AI 算力硬件里的光通信／CPO 链，状态<strong>待验证</strong>，形态是<strong>窄基抱团</strong>：涨停池里链上密集，但最高仅 4 板、晋级率 16.00%。消息在 11-10 落地、资金在 11-11 才选择，而<strong>14 日累计仍净流出</strong>——进的是新钱，没回补的是存量。只支持反弹，不支持反转。
+</div>
+
+<h2>一、指数涨得漂亮，个股涨得难看</h2>
+<p>六个指数全部低开高走、收盘贴当日最高（−0.20% 至 −0.32%）。但涨幅梯度极端：沪深300 +0.41% 对创业板 +3.11%，<strong>差 2.70pp</strong>。不是风格轮动，是权重被按住、少数龙头被买爆。</p>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>指数</th><th class="num">收盘</th><th class="num">涨跌</th><th class="num">开盘</th><th class="num">距最高</th><th class="num">MA20</th><th class="num">MA60</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td class="num">3680.64</td><td class="num up">+0.46%</td><td class="num down">−0.22%</td><td class="num">−0.24%</td><td class="num up">+0.15%</td><td class="num down">−3.84%</td></tr>
+<tr><td>沪深300</td><td class="num">4075.71</td><td class="num up">+0.41%</td><td class="num down">−0.24%</td><td class="num">−0.23%</td><td class="num down">−0.19%</td><td class="num">—</td></tr>
+<tr><td>深证成指</td><td class="num">11389.74</td><td class="num up">+1.32%</td><td class="num down">−0.32%</td><td class="num">−0.23%</td><td class="num down">−0.02%</td><td class="num down">−11.35%</td></tr>
+<tr><td>创业板指</td><td class="num">2572.07</td><td class="num up">+3.11%</td><td class="num down">−0.17%</td><td class="num">−0.32%</td><td class="num down">−0.50%</td><td class="num down">−16.76%</td></tr>
+<tr><td>科创50</td><td class="num">1300.38</td><td class="num up">+2.80%</td><td class="num down">−0.39%</td><td class="num">−0.21%</td><td class="num up">+1.59%</td><td class="num down">−13.24%</td></tr>
+<tr><td>北证50</td><td class="num">923.31</td><td class="num up">+2.30%</td><td class="num">—</td><td class="num">—</td><td class="num down">−1.19%</td><td class="num">—</td></tr>
+</tbody></table></div>
+
+<p>只有上证、科创50 站上 MA20，且上证是<strong>首次越线</strong>（11-10 尚低 0.43%），MA60 全线 −3.84% 至 −16.76%。<strong>越线一日不算有效突破；指数涨 3% 仍碰不到 MA20，是超跌反弹不是趋势重启。</strong></p>
+
+<h2>二、四个方向里三个背离</h2>
+<div class="table-wrapper"><table>
+<thead><tr><th>指标</th><th class="num">11-10</th><th class="num">11-11</th><th>方向</th></tr></thead>
+<tbody>
+<tr><td>成交额（沪深京，亿）</td><td class="num">15151.5</td><td class="num up">16887.0</td><td>放量约 1700 亿</td></tr>
+<tr><td>涨停家数</td><td class="num">95</td><td class="num">85</td><td>减少 10 家</td></tr>
+<tr><td>上涨占比</td><td class="num">76.58%</td><td class="num down">63.47%</td><td>收窄 13.11pp</td></tr>
+<tr><td>涨跌中位</td><td class="num">+1.31%</td><td class="num down">+0.59%</td><td>回落 0.72pp</td></tr>
+<tr><td>最高连板</td><td class="num">7</td><td class="num down">4</td><td>5 板以上全空</td></tr>
+<tr><td>封板率</td><td class="num">82.61%</td><td class="num down">77.27%</td><td>曾触 110／封 85／炸 25</td></tr>
+<tr><td>首板次日晋级</td><td class="num">—</td><td class="num down">16.00%</td><td>11-10 首板 75 → 12</td></tr>
+</tbody></table></div>
+
+<p>放量与涨停减少同时出现，量没落到「制造涨停」上。涨幅 ≤0% 的个股从 1305 家（23.42%）升到 2036 家（36.53%）——<strong>接近四成没涨，指数却涨 0.46%—3.11%</strong>。两日样本 5572／5574，量能记约数。六指数量比均 <1；晋级率属 11-10 首板。</p>
+
+<h2>三、全市场的净流入，是二十只票凑出来的</h2>
+<p>个股去重后全市场主力净额只有 <strong>+208.10 亿</strong>，而 TOP20 合计 +209.18 亿，占 <strong>100.5%</strong>。剔除这二十只，剩下五千多只合计为负；板块榜的正数是同一笔钱换了标签。</p>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>口径</th><th class="num">净流入板块</th><th class="num">净流出板块</th><th class="num">流入端 TOP10 集中度</th></tr></thead>
+<tbody>
+<tr><td>东财 em-local-v4.1（455）</td><td class="num">44.4%（前 69.2%）</td><td class="num">—</td><td class="num up">35.8%（前 19.9%）</td></tr>
+<tr><td>通达信 radar-v4.1（265）</td><td class="num">132（前 180）</td><td class="num">134（前 86）</td><td class="num">—</td></tr>
+</tbody></table></div>
+
+<p>落点：五个光模块板块并集 1511 只 +310.74 亿，四只光模块股贡献 +97.11 亿。集中度要连口径读：61 只 top3 43.68%／top5 57.12%，184 只降至 34.55%／45.18%，差 9.13／11.94pct 是成分稀释非资金行为。流出端创新药 −26.23、动力电池回收 −25.20、AIGC −20.87、短剧游戏 +41.95→−16.08。流入/流出比 5.50 倍，<strong>不足判「高低切换」</strong>；防守端（茅指数、宁组合、中特估）同时净流出，也不是「躲防御」。全市场是<strong>存量资金向少数标的再集中</strong>；板块内部相反：交集 top3 62.4%→43.7%、top5 75.9%→57.1%，流入/流出家数 43/17→48/12，光通信独有 74 只 −4.31 转 +11.73 亿——<strong>窄是状态，广度在扩；但核心占 CPO 全口径 69.4%→79.1%，组间仍向核心收、组内扩散</strong>。</p>
+
+<h2>四、主线：一条，待验证</h2>
+<div class="table-wrapper"><table>
+<thead><tr><th>证据线</th><th>强度</th><th>关键事实</th></tr></thead>
+<tbody>
+<tr><td>资金</td><td class="up">强</td><td>当日主力净额：光通信 东财 +190.90／通达信 +198.91（差 4.0%）、5G 差 4.3%，两源可并列；两口径同名且连２日净流入 46 条；个股级集中度过线</td></tr>
+<tr><td>结构</td><td>中</td><td>板块涨幅 +4.71%—+5.83%；85 只涨停里光通信／CPO／PCB 链密集出现（东山精密、剑桥科技、源杰科技、沪电股份等），但<strong>最高仅 4 板、首板 66 家、晋级率 16.00%</strong>，池内集中而高度缺失</td></tr>
+<tr><td>消息</td><td>中</td><td>原文级只有台积电资本预算（指向先进封装）、台积电 10 月营收、剑桥科技单公司产能 IR；光模块<strong>板块级</strong>催化为零</td></tr>
+</tbody></table></div>
+
+<p>三条线同向但都没到确认线：资金是<strong>边际转正、存量未回补</strong>（14 日累计光通信 −162.65、CPO −228.80、芯片 −210.90 亿，当日 +198.91／+236.65／+236.15 亿把光通信缺口从 −361.57 收窄到 −162.65）；结构是<strong>池内集中、高度只有 4 板</strong>；消息是<strong>个股级、无板块级</strong>。故判<strong>待验证</strong>——同向不等于确认。支持「比昨天更强」的是超额：芯片相对板块涨幅中位的超额 11-10 仅 +0.47pp（东财）／+0.55pp（通达信），11-11 放大到 +1.15pp／+1.08pp，<strong>两源差 0.07—0.08pp，交叉验证成立</strong>。</p>
+
+<div class="warning">
+<strong>三条必须写清的读法边界。</strong><br>
+一、<strong>当日与累计分开说</strong>：两口径当日都大额净流入，差别只在累计：东财波段已转正，通达信 14 日累计仍净流出、单日收窄 198.91 亿。故<strong>不可写「波段资金仍全负」</strong>（只在 14 日窗口成立），<strong>也不可写「跨源确认转正」</strong>。<br>
+二、<strong>名次不能当证据</strong>：265 板块 ≥+3% 从 41 缩到 6，涨幅中位 +1.97%→+1.14%，芯片链两天涨幅几乎一样（2.25%—3.21% 对 2.14%—3.06%）。「芯片 86→20」<strong>全来自分母收缩</strong>。<br>
+三、<strong>CPO 只报单库子集，不给跨库区间</strong>：184 只 ∩ 光通信 61 只，11-11 主力净额 <span class="up">+187.18</span> 亿（60/61 覆盖），标<strong>子集口径</strong>：是当日读数，非板块合计也非下界（11-10 该交集占光通信 109.56%，子集和可超板块和）。东财全成分 205.54、通达信全成分 236.65 各属另一口径，差 31.11＝通达信独有 49.47−东财额外 18.36，但东财 458 个成分表全空、<strong>差额不可核</strong>，故不并列成区间、不称谁更纯；236.65 有 121 只同挂芯片，弃用。芯片超额 +1.15／+1.08pp 可互验；先进封装 +2.08／+1.43pp 不可跨源（涨幅已差 0.58pp）。
+</div>
+
+<p><strong>排除项，逐条给理由：</strong></p>
+<ul>
+<li><strong>芯片／半导体</strong>：当日 +258.53 亿为通达信口径全场第一，但 14 日累计仍 −210.90 亿，与 CPO 重叠 121/192 只，合并后不能单独计票。</li>
+<li><strong>机器人</strong>：超额 +1.00pp→+0.79pp；头号贡献股东山精密同挂两链，是同一笔钱，<strong>不构成独立主线</strong>。</li>
+<li><strong>AI 应用／短剧／文娱</strong>：文娱消费第 1→274、短剧 5→235、AIGC 9→311，资金由正转负；退潮无原文级利空，属资金撤离。创新药等流出前段、评分居尾，不作候选。</li>
+</ul>
+
+<h2>五、消息：五条，没有一条是光模块的板块级催化</h2>
+<div class="table-wrapper"><table>
+<thead><tr><th>资讯</th><th>级别与时点</th><th>与今日盘面的关系</th></tr></thead>
+<tbody>
+<tr><td>台积电董事会核准 409.27 亿美元资本预算，含先进封装</td><td>原文级；台北 11-10</td><td>发布日 A 股已收盘，属<strong>二次反应</strong>；且指向先进封装，不能外推为光模块催化</td></tr>
+<tr><td>剑桥科技 11-10 盘后投资者关系记录：2027 年底前高速光模块年产能 +1000 万支</td><td>原文级；<strong>个股级</strong></td><td>单公司规划，可解释个股不代表板块；盘后发布，只能进次日推演</td></tr>
+<tr><td>路透：微软游说美方放弃对华光收发器禁令</td><td>二手级；<strong>未落地</strong></td><td>无 FCC 正式文件，仍在审议；写成「禁令取消」是错的</td></tr>
+<tr><td>隔夜外盘：道指 −0.30%、纳指 −0.74%、英伟达 −5.53%、美股光通信集体下跌</td><td>二手级；美东 11-10 定盘</td><td><strong>与 A 股方向相反</strong>。若滞后传导明日补跌；若独立定价需给 A 股独有理由——目前没有</td></tr>
+</tbody></table></div>
+
+<p>「消息日」与「资金日」必须分开，这是今天最易写错处。台积电资本预算 11-10 台北公布，A 股 11-10 下午已完成第一波定价：芯片 +2.52%（前一日 +0.67%，放大 <strong>3.76 倍</strong>），五个芯片链板块全涨。今天<strong>没有首日跳升</strong>：芯片 −0.30pct、汽车芯片 −0.27pct、三代 −0.12pct 回落，仅存储加速 0.73pct。首日该跳空放量，实测同幅延续——<strong>11-11 是二次反应</strong>。</p>
+
+
+<h2>六、核心个股：两只票吃掉全市场 3.34% 的成交</h2>
+<div class="table-wrapper"><table>
+<thead><tr><th>标的</th><th class="num">涨跌</th><th class="num">成交</th><th class="num">距最高</th><th class="num">换手</th><th class="num">量比</th><th>角色</th></tr></thead>
+<tbody>
+<tr><td>300308 中际旭创</td><td class="num up">+15.07%</td><td class="num">312.29 亿</td><td class="num">−1.06%</td><td class="num">5.47%</td><td class="num">1.149</td><td>光模块龙头，未封板</td></tr>
+<tr><td>300502 新易盛</td><td class="num up">+16.97%</td><td class="num">252.34 亿</td><td class="num">−0.62%</td><td class="num">9.96%</td><td class="num">1.282</td><td>同链第二，换手近 10%</td></tr>
+</tbody></table></div>
+
+<p>两只合计 564.63 亿占全市场 <strong>3.34%</strong>，同属创业板权重，正是创业板 +3.11% 的来源；均<strong>未封板</strong>，属机构换手非打板。</p>
+
+<h2>七、风险</h2>
+<ul>
+<li><strong>集中度就是最大的风险</strong>：TOP20 贡献净额 100.5%，一只龙头松动全市场即转负；叠加 14 日累计 −162.65 亿，流入不续即脉冲。</li>
+<li><strong>接力生态弱</strong>：最高 4 板、晋级率 16.00%，赚钱效应在大票不在涨停板。</li>
+</ul>
+
+<h2>八、昨日 A 档核对：形式 5／6，实质是换棒</h2>
+<p>11-10 预登记六项：成交 ≥16700 亿 <span class="up">✓</span>、涨停 ≥80 家 <span class="up">✓</span>（85）、封板率 ≥65% <span class="up">✓</span>、上证站上 MA20 <span class="up">✓</span>（高 5.35）、芯片与半导体单日续正 <span class="up">✓</span>、半导体五日守 +80 亿 <span class="down">✗</span>（东财口径 +75.13）。五项命中，但昨日主线是「半导体—芯片链＋机器人链」，今天领涨的是光模块，芯片是二次反应，机器人是同一笔钱。按 11-05 先例，<strong>记「形式命中、实质换棒」，不据此升 confirmed</strong>。</p>
+
+<h2>九、下一交易日推演（11 月 12 日 周四）</h2>
+<p><strong>A 档 · 抱团扩散</strong>：净流入板块 ≥180（今 132）、成交 ≥17500 亿、涨停 ≥90 家、封板率 ≥78%、创业板站上 MA20 2585.06，14 日累计缺口收窄至 −100 亿内。<strong>五项全中才升 confirmed</strong>，只中前三按存量抱团处理。</p>
+<p><strong>B 档 · 窄基延续、指数滞涨（基准）</strong>：净流入板块 100—150、成交 16000—17500 亿、涨停 60—85 家、上证 3675—3690 震荡、创业板冲 MA20 未过。只在光通信内部做结构，不追换手近 10% 的标的。</p>
+<p><strong>C 档 · 单日脉冲结束</strong>：两龙头合计净额转负、净流入板块跌破 100、上证跌破 3650.31、创业板跌破 2490.10，任一即判单日集中脉冲。盯五个数：<strong>净流入板块数、两龙头合计净额、14 日累计缺口、封板率、创业板 MA20</strong>。</p>
+
+<h2>十、口径与缺失</h2>
+<p><strong>缺失不填 0：</strong>今日无《收盘总结》，指数与宽度由本地日线＋通达信快照重算（补丁 0）；《研报巡逻》已核 22:36。MTI 停 11-06；0AMV 未提取；两融与北向无源；东财 BK 成分表全空，<strong>该口径集中度未检验</strong>，以通达信代理；封板率严格口径 77.27%（110／85／25），11-10 同口径 82.61%（115／95／20），两日均剔除萃华退 002731。下滑 5.34pct 源于<strong>封板 −10、炸板 +5、冲板 −5</strong>，三向同弱；分母收缩本该抬高封板率，故是<strong>赚钱效应收缩非统计稀释</strong>。涨跌停价按 .day 反推、ST 按板块判定，两日名单逐只核对零差异；日线未除权，除权股涨跌幅偏小，今日 1 只（002275）已剔出跌停。radar-em 的「波段净额」不可复现，不引用。</p>
+<p><strong>字段归属：</strong>涨幅与名次 → 东财 455；bandNet（14 日累计）、当日主力净额 → 通达信 265。aDays 不可反推、全篇不用。主力净额是正负相抵净值，不等于持仓；成分重叠不可相加，两套雷达不可混算。</p>
+
+<footer>
+行情：通达信快照（HQDate 全 20261111）＋ 本地日线宽度扫描（5574 样本、补丁 0）· 板块资金：东财 em_bkzj_20261111（455 板块）＋ 通达信 boards_flow.json[20261111]（265 板块）＋ 个股主力净额去重 · 资讯：亿信通道定向检索；研报只读同日《研报巡逻》（22:36 已验证）· 团队调度：三名成员（行情数据官、资金面分析师、研报证据官）分头取证，主理人汇编，未降级。<br>
+本稿为数据复盘，不构成投资建议。生成时间 2026-11-11 23:29（系统时钟）。
+</footer>
+</body>
+</html>
