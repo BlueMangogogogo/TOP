@@ -1,129 +1,270 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>11月16日 竞价快报 · 投资小龙虾</title>
+<title>竞价快报 2026-11-16</title>
 <style>
-:root{--yellow:#ebb543;--yellow-light:#f7e8c5;--red:#c0392b;--red-light:#fdf0ef;--green:#1f8b4c;--black:#1a1a1a;--gray-900:#2c2c2c;--gray-700:#555;--gray-500:#888;--gray-300:#bbb;--gray-100:#f0f0f0;--white:#fff;--font:"Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",system-ui,sans-serif;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:var(--font);font-size:15px;line-height:1.75;color:var(--gray-900);background:var(--white);max-width:820px;margin:0 auto;padding:40px 28px 60px;-webkit-font-smoothing:antialiased;}
-header{border-bottom:3px solid var(--yellow);padding-bottom:20px;margin-bottom:28px;}
-header h1{font-size:24px;font-weight:700;color:var(--black);margin-bottom:6px;letter-spacing:.5px;}
-header .meta{font-size:13px;color:var(--gray-500);}
-header .meta span{margin-right:16px;}
-h2{font-size:18px;font-weight:700;color:var(--black);margin:30px 0 10px;padding-left:12px;border-left:4px solid var(--yellow);}
-h3{font-size:15px;font-weight:700;color:var(--gray-900);margin:18px 0 6px;}
-p{margin:8px 0;}
-.table-wrapper{overflow-x:auto;margin:12px 0 18px;border:1px solid var(--gray-300);border-radius:6px;}
-table{width:100%;border-collapse:collapse;font-size:14px;min-width:500px;}
-thead th{background:var(--yellow);color:var(--black);font-weight:700;padding:9px 11px;text-align:left;white-space:nowrap;border-bottom:2px solid #d4a734;}
-tbody td{padding:8px 11px;border-bottom:1px solid var(--gray-100);vertical-align:top;}
-tbody tr:nth-child(even){background:#fafafa;}
-tbody tr:hover{background:var(--yellow-light);}
-td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
-.highlight{background:var(--yellow-light);border-left:4px solid var(--yellow);padding:11px 15px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;}
-.warning{background:var(--red-light);border-left:4px solid var(--red);padding:11px 15px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;color:#8b1a1a;}
-ul,ol{margin:8px 0 8px 20px;}
-li{margin:4px 0;}
-.up{color:var(--red);font-weight:700;}
-.down{color:var(--green);font-weight:700;}
-footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--gray-300);font-size:12px;color:var(--gray-500);line-height:1.9;}
-code{background:#f4f4f4;padding:1px 4px;border-radius:3px;font-size:13px;}
-@media (max-width:600px){body{padding:20px 14px 40px;font-size:14px;}table{font-size:12px;}thead th,tbody td{padding:7px 8px;}}
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
 </style>
 </head>
 <body>
+
 <header>
-<h1>11月16日 竞价快报</h1>
-<div class="meta"><span>2026-11-16（周一，交易日）</span><span>名义时点 09:26</span><span>数据 cutoff 09:25</span><span>生成 11:08</span></div>
+  <h1>竞价快报</h1>
+  <div class="meta">
+    📅 2026年11月16日 · 行情截止 09:25 竞价口径 · 生成 11:30 延迟补录 | 投资小龙虾 AI | 仅供参考
+  </div>
 </header>
 
-<div class="warning"><strong>时点与口径（先读这段）：</strong>本任务名义 09:26 触发，实际起跑 11:07。09:25 的竞价快照<strong>从未落盘</strong>——全工作区 09:18–09:32 无任何行情文件写入，本地分时首条 09:35 且 stale（数据日 11-13），通达信日线停 20261113（studio_job_12 于 09:47 已按此登记 <code>blocked_snapshot</code>）。本轮不走实时行情回填，而是取「今开／昨收」两个<strong>在 09:25 撮合后即固定、盘中不再变动</strong>的字段做全市场普查，等价于复原 09:25 切片；09:30 之后的成交价、成交额、资金流一律未使用。</div>
+<div class="warning">
+  <strong>口径提示：</strong>本报告为 11:30 延迟补录，不是 09:25 实时快照。统计只使用<strong>开盘价、昨收、交易所涨跌停价</strong>三项 —— 这三项在 09:25 撮合后即固定、全天不变，故家数可事后唯一确定；竞价挂单、竞价金额、封单及开盘后任何走势均未使用。质量标记 <strong>degraded</strong>。
+</div>
 
-<h2>一、竞价宽度：低开 3834 只，占可交易股票 68.8%</h2>
-<p>新浪 <code>Market_Center.getHQNodeData</code> 分页取全 A（hs_a，含北交所、含 ST），声明 <strong>5578</strong> 只、实取 <strong>5578</strong> 只、56 页，分页完整无缺页。剔除停牌 7 只后有效样本 <strong>5571</strong> 只：<strong>高开 1046、低开 3834、平开 691</strong>，涨跌比 0.27:1。低开是全面性的，不是个别板块拖累。</p>
-<div class="table-wrapper"><table>
-<thead><tr><th>竞价缺口档位</th><th class="num">家数</th><th class="num">占比</th><th>读数</th></tr></thead>
+<h2>一、竞价宽度</h2>
+<p>三大指数竞价全线低开：上证 3611.54 点跌 0.63%，深成指 10881.91 点跌 0.79%，创业板指 2395.52 点跌 1.26%。5217 只可比个股高开 954 只（18.29%）、低开 3608 只（69.16%）、平开 655 只，开盘涨幅中位数 −0.39%，低开家数为高开 3.8 倍，属普跌式低开。</p>
+<p>涨停开盘 7 只（岳阳兴长、中国稀土、北纬科技、九阳股份、凯撒文化、金逸影视、博瑞传播），跌停开盘 3 只（惠城环保、永臻股份、惠发食品）；高开 2% 以上 80 只、低开 2% 以上 284 只，下行尾部厚于上行。</p>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>指数</th><th class="num">开盘</th><th class="num">较昨收</th></tr></thead>
+<tbody><tr><td>上证指数</td><td class='num'>3611.54</td><td class='num'>-0.63%</td></tr><tr><td>深证成指</td><td class='num'>10881.91</td><td class='num'>-0.79%</td></tr><tr><td>创业板指</td><td class='num'>2395.52</td><td class='num'>-1.26%</td></tr></tbody>
+</table>
+</div>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th>竞价分项（沪深 A 股 5217 只）</th><th class="num">家数</th><th class="num">占比</th></tr></thead>
+<tbody><tr><td>高开（开盘价 &gt; 昨收）</td><td class="num">954</td><td class="num">18.29%</td></tr>
+<tr><td>低开（开盘价 &lt; 昨收）</td><td class="num">3608</td><td class="num">69.16%</td></tr>
+<tr><td>平开（开盘价 = 昨收）</td><td class="num">655</td><td class="num">12.56%</td></tr>
+<tr><td>涨停开盘（开盘价 = 交易所涨停价）</td><td class="num">7</td><td class="num">0.13%</td></tr>
+<tr><td>跌停开盘（开盘价 = 交易所跌停价）</td><td class="num">3</td><td class="num">0.06%</td></tr></tbody>
+</table>
+</div>
+
+<h2>二、强弱方向</h2>
+<p>对照盘前简报三档，开盘落在 B 档（3600—3668.61）下沿，距 C 档 3600 点仅 11.5 点。观察条件：上证守 3600 且低开 2% 以上个股回补判 B 档成立；失守 3600 且涨停开盘股炸板增多转 C 档。本补录不复核兑现。</p>
+
+<h3>涨停开盘（7 只）</h3>
+<div class="table-wrapper">
+<table><thead><tr><th>代码 名称</th></tr></thead><tbody><tr><td>000819 岳阳兴长</td></tr><tr><td>000831 中国稀土</td></tr><tr><td>002148 北纬科技</td></tr><tr><td>002242 九阳股份</td></tr><tr><td>002425 凯撒文化</td></tr><tr><td>002905 金逸影视</td></tr><tr><td>600880 博瑞传播</td></tr></tbody></table>
+</div>
+
+<h3>跌停开盘（3 只）</h3>
+<div class="table-wrapper">
+<table><thead><tr><th>代码 名称</th></tr></thead><tbody><tr><td>300779 惠城环保</td></tr><tr><td>603381 永臻股份</td></tr><tr><td>603536 惠发食品</td></tr></tbody></table>
+</div>
+
+<h2>三、口径与缺口</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>项目</th><th>说明</th></tr></thead>
 <tbody>
-<tr><td>高开 ≥ +5%</td><td class="num up">19</td><td class="num">0.34%</td><td>仅复牌与事件股，无普涨</td></tr>
-<tr><td>高开 +2% ~ +5%</td><td class="num up">65</td><td class="num">1.17%</td><td>稀疏</td></tr>
-<tr><td>微幅高开 0 ~ +2%</td><td class="num up">962</td><td class="num">17.27%</td><td>主要构成</td></tr>
-<tr><td>平开</td><td class="num">691</td><td class="num">12.40%</td><td>含低价窄幅股</td></tr>
-<tr><td>微幅低开 −2% ~ 0</td><td class="num down">3540</td><td class="num">63.54%</td><td><strong>共识性低开，非恐慌</strong></td></tr>
-<tr><td>低开 −5% ~ −2%</td><td class="num down">269</td><td class="num">4.83%</td><td>集中在双创</td></tr>
-<tr><td>低开 −8% ~ −5%</td><td class="num down">19</td><td class="num">0.34%</td><td>个股事件为主</td></tr>
-<tr><td>低开 ≤ −8%</td><td class="num down">6</td><td class="num">0.11%</td><td>含 3 只跌停开盘</td></tr>
-</tbody></table></div>
-<p>结构上看，低开的 3834 只里 <strong>3540 只（92.3%）跌幅在 2% 以内</strong>——这是一个「整体让一步、不夺门而出」的竞价，与 11-13 收盘后外盘杀跌（费半 −3.43%、QQQ −1.20%）的传导幅度相比，A 股竞价给出的折价并不极端。</p>
-
-<h3>分板块宽度</h3>
-<div class="table-wrapper"><table>
-<thead><tr><th>板块</th><th class="num">高开</th><th class="num">低开</th><th class="num">平开</th><th class="num">低开占比</th></tr></thead>
-<tbody>
-<tr><td>主板（沪主＋深主）</td><td class="num up">580</td><td class="num down">2162</td><td class="num">449</td><td class="num">67.8%</td></tr>
-<tr><td>创业板</td><td class="num up">246</td><td class="num down">999</td><td class="num">165</td><td class="num">70.8%</td></tr>
-<tr><td>科创板</td><td class="num up">127</td><td class="num down">447</td><td class="num">41</td><td class="num down"><strong>72.6%</strong></td></tr>
-<tr><td>北交所</td><td class="num up">93</td><td class="num down">226</td><td class="num">36</td><td class="num">63.6%</td></tr>
-</tbody></table></div>
-<p>科创板低开比例最高，与盘前「算力硬件能否止血」的观察方向同向；北交所最轻。</p>
-
-<h2>二、竞价涨跌停：涨停开盘 7 只、跌停开盘 3 只</h2>
-<p>按「今开 = 当日涨停价／跌停价」判定（限幅由昨收按板块推算：主板 10%、ST 5%、双创 20%、北交所 30%），竞价即封板 <strong>7 只涨停、3 只跌停</strong>；其中一字板 <strong>1 涨 1 跌</strong>。该数量远低于 11-13 全天（涨停 73／跌停 48，均为收盘值），说明竞价阶段既没有承接式抢筹，也没有出现跌停扩散。</p>
-<div class="table-wrapper"><table>
-<thead><tr><th>代码</th><th>名称</th><th class="num">竞价涨幅</th><th>备注</th></tr></thead>
-<tbody>
-<tr><td>000831</td><td>中国稀土</td><td class="num up">+10.00%</td><td>今日复牌，竞价一字涨停（盘前已列事件驱动）</td></tr>
-<tr><td>002425</td><td>凯撒文化</td><td class="num up">+10.10%</td><td>2 板，竞价封板未开</td></tr>
-<tr><td>002148</td><td>北纬科技</td><td class="num up">+10.06%</td><td>4 板，竞价封板未开</td></tr>
-<tr><td>002242</td><td>九阳股份</td><td class="num up">+10.02%</td><td>竞价封板</td></tr>
-<tr><td>002905</td><td>金逸影视</td><td class="num up">+10.00%</td><td>2 板，竞价封板</td></tr>
-<tr><td>000819</td><td>岳阳兴长</td><td class="num up">+9.98%</td><td>竞价封板</td></tr>
-<tr><td>600880</td><td>博瑞传播</td><td class="num up">+9.95%</td><td>竞价封板</td></tr>
-<tr><td>300779</td><td>惠城环保</td><td class="num down">−20.00%</td><td>创业板 20% 跌停开盘（一字）</td></tr>
-<tr><td>603381</td><td>永臻股份</td><td class="num down">−10.00%</td><td>跌停开盘</td></tr>
-<tr><td>603536</td><td>惠发食品</td><td class="num down">−9.97%</td><td>跌停开盘</td></tr>
-</tbody></table></div>
-<p>7 只涨停开盘里 5 只是连板股（凯撒文化 2 板、北纬科技 4 板、金逸影视 2 板等），只有中国稀土属新增事件。行业上分散在家电、影视、化工、传媒、稀土，<strong>没有形成板块级聚集</strong>，不宣布主线。</p>
-
-<h2>三、指数竞价缺口：八个宽基全低开，科创50 最深</h2>
-<div class="table-wrapper"><table>
-<thead><tr><th>指数</th><th class="num">昨收</th><th class="num">竞价开盘</th><th class="num">缺口</th></tr></thead>
-<tbody>
-<tr><td>上证指数</td><td class="num">3634.35</td><td class="num">3611.54</td><td class="num down">−0.63%</td></tr>
-<tr><td>深证成指</td><td class="num">10968.79</td><td class="num">10881.91</td><td class="num down">−0.79%</td></tr>
-<tr><td>创业板指</td><td class="num">2426.08</td><td class="num">2395.52</td><td class="num down">−1.26%</td></tr>
-<tr><td>科创50</td><td class="num">1279.66</td><td class="num">1254.48</td><td class="num down"><strong>−1.97%</strong></td></tr>
-<tr><td>沪深300</td><td class="num">4016.29</td><td class="num">3984.77</td><td class="num down">−0.78%</td></tr>
-<tr><td>中证500</td><td class="num">6465.48</td><td class="num">6424.17</td><td class="num down">−0.64%</td></tr>
-<tr><td>中证1000</td><td class="num">6357.26</td><td class="num">6310.58</td><td class="num down">−0.73%</td></tr>
-<tr><td>北证50</td><td class="num">876.33</td><td class="num">868.85</td><td class="num down">−0.85%</td></tr>
-</tbody></table></div>
-<p>缺口排序是<strong>科创50 −1.97% &gt; 创业板 −1.26% &gt; 北证50 −0.85% &gt; 深成 −0.79% &gt; 沪深300 −0.78% &gt; 中证1000 −0.73% &gt; 中证500 −0.64% ≈ 上证 −0.63%</strong>。成长与算力权重越重的指数折价越深，价值与中小盘相对抗跌，与盘前「权重与低估值承接」的观察方向不矛盾，但<strong>竞价阶段没有任何资金流数据，不能据此确认承接</strong>。</p>
-
-<h2>四、对盘前三方向的竞价读数</h2>
-<div class="table-wrapper"><table>
-<thead><tr><th>盘前方向</th><th>竞价读数（09:25）</th><th>是否触发反证</th></tr></thead>
-<tbody>
-<tr><td>算力硬件能否止血</td><td>中际旭创 −3.47%、工业富联 −2.69%、亨通光电 −2.64%、新易盛 −2.56%、天孚通信 −2.39%，全线低开且幅度大于指数；科创50 缺口最深</td><td><strong>竞价未给出止血信号</strong>。止血判据是单日净流出收窄至 −300 亿内，需收盘资金流验证，竞价无法判定</td></tr>
-<tr><td>权重与低估值</td><td>沪深300 缺口 −0.78%，浅于创业板 0.48 个百分点；银行与红利类竞价多落在小幅低开区间</td><td>未触发（反证条件是证金／保险／红利三者同时转负，属日频资金数据）</td></tr>
-<tr><td>事件驱动（不追高）</td><td>复牌股给出第一读数：<strong>中国稀土 +10.00% 竞价一字涨停</strong>、<strong>TCL中环 +9.81%</strong>（接近但未封板）</td><td>复牌补涨兑现中；按盘前纪律只看兑现时点的量价，不提前定价</td></tr>
-</tbody></table></div>
-<p>盘前设定的关键位：上证上沿 3668.61／下沿 3600、创业板 2376.28。竞价开盘 3611.54 距上沿 −1.56%，仍在区间内；创业板 2395.52 位于 2376.28 之上。<strong>两个下沿都未被竞价击穿</strong>，日内仍按区间震荡对待，不因低开直接下调结构判断。</p>
-
-<h2>五、下一时点观察条件</h2>
-<ul>
-<li><strong>09:40—10:00</strong>：涨停家数能否从竞价的 7 只扩张到 15 只以上。若停在个位数，说明情绪仅由事件驱动，赚钱效应未扩散。</li>
-<li><strong>跌停扩散是第一风险</strong>：竞价跌停仅 3 只（含 1 只 20% 一字）。若 10:00 前跌停增至 10 只以上，尤其出现双创 20% 跌停连片，则盘前「跌停扩散」风险转为现实。</li>
-<li><strong>算力硬件</strong>：看 09:30—10:00 能否把低开收窄一半（中际旭创从 −3.47% 收至 −1.7% 以内）；收不回来则 11-13 的 −1066 亿流出没有止住。</li>
-<li><strong>复牌股</strong>：中国稀土一字板若开板，是当日情绪的第一个真实抛压读数。</li>
-</ul>
+<tr><td>股票池</td><td>本机通达信 lday 目录 <code>sh6*</code>／<code>sz00*</code>／<code>sz30*</code> 共 5247 只；剔除 B 股、基金、指数；<strong>不含北交所</strong>（本接口 setcode=2 无返回）</td></tr>
+<tr><td>分页完整性</td><td>无分页截断，逐只全量请求 5247 只；成功 5217 只（99.43%），失败 30 只；失败股不计入任何分项，不填补为 0</td></tr>
+<tr><td>快照时间</td><td>HQDate 全部 <code>20261116</code>；HQTime 区间 <code>112104</code>—<code>112944</code>（即 11:21—11:29 取数），非 09:25</td></tr>
+<tr><td>阈值</td><td>高开／低开＝开盘价与昨收直接比较，平开＝完全相等，不做四舍五入；涨停开盘＝开盘价等于交易所涨停价（容差 0.01 元），跌停同理</td></tr>
+<tr><td>ST／新股</td><td>涨跌停价直接取交易所口径 <code>ZTPrice</code>／<code>DTPrice</code>，不按 5%／10%／20% 反推，ST 的板块差异与新股无涨跌幅自动体现；无涨跌停价的 1 只不计入涨跌停开盘</td></tr>
+<tr><td>来源</td><td>通达信 TQLEX <code>TdxShare.PBHQInfo</code>（与 tdx-connector 同一后端，入口 <code>tools/auction_snapshot_tdx.py</code>）</td></tr>
+<tr><td>缺口</td><td>缺 09:25 原始截止快照与竞价过程数据（挂单、竞价金额、封单量）；缺 30 只个股行情；观察条件未在本报告中用盘中数据复核</td></tr>
+</tbody>
+</table>
+</div>
 
 <footer>
-<p><strong>数据来源：</strong>新浪财经 <code>Market_Center.getHQNodeData</code>（node=hs_a，56 页全量 5578 只，取 open／settlement 字段）；指数昨收与竞价开盘取 <code>hq.sinajs.cn</code> 的 open／prev_close 字段。</p>
-<p><strong>cutoff：</strong>2026-11-16T09:25:00+08:00（集合竞价撮合完成时点）。名义生成时刻 09:26，本文件实际生成 11:08。</p>
-<p><strong>缺口（degraded 原因）：</strong>①本地无 09:25 落盘快照，本报告系外部字段复原而非原始截屏，无法给出当日分页 total 的原始快照哈希；②竞价阶段无资金流／北向数据，第四节关于「止血」只做方向描述、不做金额判定；③涨停／跌停判定依赖按昨收推算的限幅（ST 5%、主板 10%、双创 20%、北交所 30%），新股上市首日等特殊情形未单独剔除，可能存在个位数误差；④行业归属未逐只核对，仅按已知名称标注。</p>
-<p>本报告由 studio_job_25 补跑链生成，取代 studio_job_12 于 09:47 登记的 <code>竞价快报.blocked_snapshot.json</code> 结论（该文件保留不删）。资金指标不等于真实机构持仓。</p>
+正文字数 347 字（不含表格与口径）。生成时刻 2026-11-16 11:30，数据为 11:21—11:29 取数的开盘价口径延迟补录。<br>
+本报告为数据分析参考，不构成投资建议。资金指标不等于真实机构持仓。
 </footer>
 
 </body>
