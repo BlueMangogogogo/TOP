@@ -1,9 +1,20 @@
 {
-  "last_updated": "2026-11-16T10:50:34",
-  "total": 315,
-  "daily_count": 232,
+  "last_updated": "2026-11-16T11:09:10",
+  "total": 316,
+  "daily_count": 233,
   "industry_count": 83,
   "reports": [
+    {
+      "relative_path": "reports/2026-11-16/竞价快报.html",
+      "id": "2026-11-16-竞价快报",
+      "display_date": "11月16日",
+      "title": "竞价快报",
+      "category": "日常复盘",
+      "type": "daily",
+      "quality": "degraded",
+      "size_kb": 13.4,
+      "date": "2026-11-16"
+    },
     {
       "relative_path": "reports/2026-11-16/盘前简报.html",
       "id": "2026-11-16-盘前简报",
