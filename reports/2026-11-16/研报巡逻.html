@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11月16日 研报巡逻</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+.up{color:#c0392b;font-weight:700;margin-left:3px;}
+.down{color:#1e8449;font-weight:700;margin-left:3px;}
+</style><style>
+code{background:#f6f6f6;padding:1px 5px;border-radius:3px;font-size:13px;color:#333;font-family:Consolas,Menlo,monospace;}
+.tag.nat-warn{background:#efe9d8;color:#8a6d1f;border:1px solid #d9c98f;}
+.new{color:#8a6d1f;font-weight:700;}
+</style>
+<body>
+<header>
+  <h1>11月16日 研报巡逻</h1>
+  <div class="meta">
+    <span>生成 2026-11-16 22:36</span><span>雷达 as_of 2026-11-16（行情 cutoff 20:47:07+08:00）</span><span>研报 cutoff 22:50+08:00</span><span>研报源：亿信 report</span>
+  </div>
+</header>
+<div class="highlight">
+<p><strong>结论：第三个普跌日跌得更深，Top30 换掉 26 席，换进来的却不是主线。</strong>474 个板块涨 16、跌 457，均跌 2.43%（昨日 10/463、-2.03%）。30 席里「波段与单日净额同时为正」只有 5 个，研报对得上的只有婴童、包装材料、户外露营三条。钱撤进低 beta 消费与制度标签，没撤进新故事。</p>
+</div>
+
+<h2>一、口径与校验</h2>
+<ul>
+<li>目标日 2026-11-16（周一，交易日）。474 板按 <code>score</code> 降序取前 30。清单 as_of=20261116、quality=complete、validated=true、sha256 <code>4b151d8f…</code> 与页面逐字节一致。通道 A 符号一致率 0.95、spearman 0.9218，相对边际 0.1406 未达 0.3 阈值，靠通道 B（d5 自洽 562/562）补证，沿用清单页判定。</li>
+<li>换血 26 席：仅净水（4→2）、包装材料（7→4）、户外露营（15→5）、GDR（25→3）连榜，昨日前五全部跌到 36 名外。板块口径与 11-13 同为 474。</li>
+<li>指数与板块背离：上证 -0.87% 报 3602.57，创业板 -4.37%，两市 14943 亿、缩量 1729 亿；33 涨停、67 跌停。板块均跌 2.43% 而指数只跌 0.87%，杀的是中小市值与弹性品种。</li>
+<li><strong>缺口照记</strong>：<code>data_em/tdx_style/boards_constituents.json</code> 477 板 stocks 全空，集中度未检验，不填 0；本地清单不含「银行」「煤炭」，而当日研报记这两者领涨，名次无法核对。</li>
+</ul>
+
+<h2>二、Top30 简表（按 score 降序）</h2>
+<div class="table-wrapper"><table><thead><tr><th>名次</th><th>板块</th><th>score</th><th>涨跌</th><th>波段(亿)</th><th>单日(亿)</th><th>在榜</th><th>名次变化</th><th>方向</th></tr></thead><tbody><tr><td>1</td><td>婴童概念</td><td>985.9</td><td>-0.88%</td><td>+3.97</td><td>+5.36</td><td>8</td><td>139&rarr;1</td><td>生育政策</td></tr><tr><td>2</td><td>净水概念</td><td>980.0</td><td>+0.44%</td><td>+6.15</td><td>+2.69</td><td>11</td><td>4&rarr;2<span class="up">(+2)</span></td><td>家电</td></tr><tr><td>3</td><td>GDR</td><td>968.8</td><td>+0.90%</td><td>-0.69</td><td>+1.59</td><td>2</td><td>25&rarr;3<span class="up">(+22)</span></td><td>制度</td></tr><tr><td>4</td><td>包装材料</td><td>967.5</td><td>-1.04%</td><td>+1.46</td><td>+0.56</td><td>8</td><td>7&rarr;4<span class="up">(+3)</span></td><td>包装印刷</td></tr><tr><td>5</td><td>户外露营</td><td>967.3</td><td>-0.96%</td><td>+0.76</td><td>+0.74</td><td>6</td><td>15&rarr;5<span class="up">(+10)</span></td><td>消费</td></tr><tr><td>6</td><td>B股</td><td>960.5</td><td>-0.96%</td><td>+0.04</td><td>+0.03</td><td>5</td><td>117&rarr;6</td><td>制度</td></tr><tr><td>7</td><td>抽水蓄能</td><td>956.5</td><td>-0.47%</td><td>-2.29</td><td>+4.89</td><td>1</td><td>135&rarr;7</td><td>电力/储能</td></tr><tr><td>8</td><td>核污染防治</td><td>955.1</td><td>-1.93%</td><td>+2.11</td><td>-0.06</td><td>4</td><td>40&rarr;8</td><td>核环保</td></tr><tr><td>9</td><td>托育服务</td><td>954.6</td><td>-2.35%</td><td>-0.24</td><td>+0.10</td><td>5</td><td>31&rarr;9</td><td>生育政策</td></tr><tr><td>10</td><td>可燃冰</td><td>948.1</td><td>-1.54%</td><td>-1.65</td><td>+0.15</td><td>3</td><td>37&rarr;10</td><td>能源</td></tr><tr><td>11</td><td>智能电视</td><td>945.8</td><td>-0.84%</td><td>-1.71</td><td>+0.58</td><td>5</td><td>104&rarr;11</td><td>家电</td></tr><tr><td>12</td><td>跨境支付</td><td>935.9</td><td>-1.24%</td><td>-3.50</td><td>+2.46</td><td>1</td><td>38&rarr;12</td><td>金融科技</td></tr><tr><td>13</td><td>超级品牌</td><td>918.6</td><td>+0.73%</td><td>-5.59</td><td>+8.57</td><td>6</td><td>66&rarr;13</td><td>标签</td></tr><tr><td>14</td><td>胎压监测</td><td>918.1</td><td>-1.30%</td><td>-4.50</td><td>+0.97</td><td>1</td><td>127&rarr;14</td><td>汽车零部件</td></tr><tr><td>15</td><td>味蕾经济</td><td>906.3</td><td>-0.07%</td><td>-6.81</td><td>+6.00</td><td>5</td><td>69&rarr;15</td><td>食品</td></tr><tr><td>16</td><td>土壤修复</td><td>903.2</td><td>-0.89%</td><td>-3.65</td><td>-0.28</td><td>3</td><td>51&rarr;16</td><td>环保</td></tr><tr><td>17</td><td>染料</td><td>902.4</td><td>-2.02%</td><td>-3.06</td><td>-0.21</td><td>1</td><td>43&rarr;17</td><td>化工</td></tr><tr><td>18</td><td>白酒</td><td>900.0</td><td>-0.11%</td><td>-7.15</td><td>+4.76</td><td>8</td><td>64&rarr;18</td><td>食饮</td></tr><tr><td>19</td><td>抗菌面料</td><td>896.4</td><td>-2.88%</td><td>-2.84</td><td>-0.33</td><td>3</td><td>59&rarr;19</td><td>纺服</td></tr><tr><td>20</td><td>肝素概念</td><td>896.2</td><td>-0.56%</td><td>-2.99</td><td>-0.35</td><td>3</td><td>71&rarr;20</td><td>其他</td></tr><tr><td>21</td><td>酿酒概念</td><td>891.4</td><td>+0.32%</td><td>-7.60</td><td>+5.17</td><td>9</td><td>70&rarr;21</td><td>其他</td></tr><tr><td>22</td><td>乳业</td><td>886.5</td><td>-0.45%</td><td>-6.91</td><td>+0.87</td><td>6</td><td>227&rarr;22</td><td>食饮</td></tr><tr><td>23</td><td>退税商店</td><td>886.5</td><td>+0.70%</td><td>-4.06</td><td>-0.46</td><td>4</td><td>36&rarr;23</td><td>零售</td></tr><tr><td>24</td><td>建筑节能</td><td>886.1</td><td>-1.86%</td><td>-6.53</td><td>+0.74</td><td>2</td><td>165&rarr;24</td><td>建筑</td></tr><tr><td>25</td><td>草甘膦</td><td>878.5</td><td>-0.49%</td><td>-6.04</td><td>-0.24</td><td>2</td><td>65&rarr;25</td><td>化工</td></tr><tr><td>26</td><td>噪声防治</td><td>878.5</td><td>-2.88%</td><td>-2.40</td><td>-0.50</td><td>9</td><td>79&rarr;26</td><td>环保</td></tr><tr><td>27</td><td>DRG/DIP</td><td>877.0</td><td>-2.21%</td><td>-5.54</td><td>-0.30</td><td>4</td><td>157&rarr;27</td><td>医疗</td></tr><tr><td>28</td><td>宠物经济</td><td>875.7</td><td>-0.93%</td><td>-6.10</td><td>-0.27</td><td>2</td><td>105&rarr;28</td><td>消费</td></tr><tr><td>29</td><td>低市净率</td><td>872.6</td><td>+0.36%</td><td>-8.59</td><td>+3.40</td><td>1</td><td>82&rarr;29</td><td>标签</td></tr><tr><td>30</td><td>啤酒概念</td><td>871.7</td><td>-0.53%</td><td>-3.82</td><td>-0.60</td><td>2</td><td>58&rarr;30</td><td>其他</td></tr></tbody></table></div>
+
+<h2>三、研报与资金共同支持（3 硬 2 半）</h2>
+
+<h3>1. 婴童概念（1，在榜 8 日）：政策给的是现金流</h3>
+<p>波段 +3.97 亿、单日 +5.36 亿、aDays=8，昨日 139 位。研报给的是账面数字：2025 年出生 792 万、同比 -16.98%，但母婴电商销售额 2237.8 亿、同比 +12.6%；2026 年中央育儿补贴 999 亿、同比 +10.6%，全年各级财政约 1100 亿，且免征个税。分歧要留：板块当日仍跌 0.88%，本质是「跌得少」；出生人口是长期分母，政策托底不反转。</p>
+
+<h3>2. 包装材料（4，在榜 8 日）：量价与格局双证据</h3>
+<p>波段 +1.46 亿、单日 +0.56 亿，昨日 7 位，是 Top30 中少数连榜且双正者。7—9 月酒饮料茶制造业增加值同比 +2.6%/+3.0%/+5.5% 逐月抬升；昇兴股份上半年营收 +16.28%、归母 +65.29%，金属包装毛利率 +3.05pct 至 13.39%，宝钢包装营收 +19.67%、归母 +40.42%。逻辑是格局改善与提价，非需求爆发，弹性有限但可验证。</p>
+
+<h3>3. 户外露营（5，在榜 6 日）：旺季前置，海外口径在减速</h3>
+<p>波段 +0.76 亿、单日 +0.74 亿，昨日 15 位。露营经济核心市场 2025 年 2483.2 亿；2025 年户外鞋服 +22%，运动鞋服大盘仅 +6%；11 月「滑雪」「冰雪」搜索环比 +1.2 倍、雪场周边酒店预订超 +50%。反证要留：11 月外资报告称 10 月户外已被跑步反超，成因是户外明显减速。</p>
+
+<h3>4. 食饮防御簇（白酒 18、酿酒 21、乳业 22、啤酒 30）——半条</h3>
+<p>单日 +4.76/+5.18/+0.87/-0.60 亿，是 Top30 里金额最大的一簇，但四席波段净额全为负（-7.15/-7.60/-6.91/-3.82 亿）。研报确在转多：食饮过去一月 +7.1%、居 31 个一级行业第 1，PE 近十年 10—13% 分位，基金全仓仓位历史分位仅 3.6%，主动权益配置由 1.5% 回到 2.2%；白酒 26Q1—3 收入/利润 -8%/-10%、Q3 -10%/-13% 但降幅收窄，茅台 Q3 +3%/+4%、9M26 转正；伊利 11-13 三季报维持买入。反面同样明确：秋糖冷清，普五批价由 770—780 回落至 760。定性只能是避险配置，不是趋势反转。</p>
+
+<h3>5. 抽水蓄能（7，昨日 135）——半条</h3>
+<p>单日 +4.89 亿、波段 -2.29 亿、aDays=1。11-13 发改委《十五五新型储能实施方案》给 2030 年新型储能 3 亿千瓦，能源局 11-06 给抽蓄 1.6 亿千瓦；南网储能 1—9M26 抽蓄收入 +23.75% 至 40.90 亿、在建 1080 万千瓦。政策与公司数据双硬，资金仅一天，属脉冲未确认。</p>
+
+<h2>四、本次检索未命中（钱在榜，研报对不上或反向）</h2>
+<ul>
+<li><strong>净水概念（2，波段 +6.15 亿全场最强、aDays=11）</strong>：钱最猛，研报方向相反。2025 年扩围才把净水器纳入国补，2026 年补贴聚焦冰洗、电视、空调、热水器、电脑 6 类，净水器已退出，叙事转为存量换新与滤芯耗材。是资金领先还是研报滞后无法判定，这是今日最大背离。</li>
+<li><strong>GDR（3）、B股（6）、超级品牌（13）、低市净率（29）</strong>：全是制度或风格标签。GDR 只回到券商承销，无板块级证据；B股 10 条返回全为无关内容，当日净额仅 +0.03 亿；超级品牌单日 +8.58 亿居全榜第一，但它就是「白马」的同义词。</li>
+<li><strong>核污染防治（8）</strong>：只有泛核环保背景，无板块盈利或订单证据，当日净额已转 -0.06 亿。</li>
+<li><strong>研报反向 4 席</strong>：味蕾经济（15，单日 +6.00 亿）——消费周报明确建议低配调味品；宠物经济（28）、啤酒（30）同在该报告低配名单；土壤修复（16）对应环保三季报「生态修复营收 -16.7%、扣非亏损由 0.71 亿扩大至 3.97 亿」，后三席资金亦双负。</li>
+<li><strong>13 席未做定向检索</strong>，不宣称无研报；托育服务资金仅 +0.10 亿，可忽略。</li>
+</ul>
+
+<h2>五、研报方向未进榜（研报在，钱走了）</h2>
+<ul>
+<li><strong>储能 / 固态电池</strong>：本周最强政策是 2030 年 300GW，但储能概念 358/474（单日 -41.7 亿、波段 -174.8 亿）、固态电池 357/474（-36.4 亿）。</li>
+<li><strong>算力链</strong>：11-15 研报仍称算力与国产替代有基本面支撑、建议关注高端 PCB 与先进封装；实际 CPO 474/474（-152.1 亿）、半导体 473/474（-209.1 亿）、存储芯片 467（-114.3 亿）。榜尾四席全在算力链。</li>
+<li><strong>军工（423，-73.8 亿）、创新药（329，-20.7 亿）</strong>研报未转空。未进榜不等于被证伪，三类结论都不代表全市场未覆盖或未来收益优势。</li>
+</ul>
+
+<h2>六、来源与不确定性</h2>
+<ul>
+<li>亿信 report 通道 16 次请求（通用 8 + 前 8 方向 8，每次 ≤10 条），全部 HTTP 200、success=true，返回 160 条、去重 148 条，发布时间 08-18 至 11-16，96 条在 11-01 之后。无机构字段、link 为空，<strong>证据等级为标题 + 摘要</strong>。</li>
+<li>行情 cutoff 2026-11-16T20:47:07+08:00，研报检索截至 22:35。score 为横截面百分位，普跌日会把「跌得少 + 当日净流入」推上前排，Top30 不代表全市场强度排序；资金为净额估算，不等于真实机构持仓。</li>
+<li>同义词先召回再核细分：食饮按白酒/乳业/啤酒分别检索，未用「消费」整体替代；户外露营与「体育」区分。</li>
+</ul>
+
+</body>
+</html>
