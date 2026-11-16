@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-11-16T13:45:05",
-  "total": 326,
-  "daily_count": 243,
+  "last_updated": "2026-11-16T14:02:55",
+  "total": 327,
+  "daily_count": 244,
   "industry_count": 83,
   "reports": [
     {
@@ -23,6 +23,17 @@
       "category": "日常复盘",
       "type": "daily",
       "size_kb": 12.0,
+      "date": "2026-11-16"
+    },
+    {
+      "relative_path": "reports/2026-11-16/盘中异动.html",
+      "id": "2026-11-16-盘中异动",
+      "display_date": "11月16日",
+      "title": "盘中异动",
+      "category": "日常复盘",
+      "type": "daily",
+      "quality": "degraded",
+      "size_kb": 9.7,
       "date": "2026-11-16"
     },
     {
