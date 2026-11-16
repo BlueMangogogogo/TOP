@@ -139,7 +139,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--gray-100);fon
 <ul>
 <li><span class="tag tag-warn">GAP</span><strong>涨股比与成分中位数缺失</strong>：通达信 MCP 配额 11-16 13:34 耗尽（14:17 探针返回 <code>usage quota has been reached</code>），NeoData MCP 本会话未配置 → 无法做"板块涨幅 vs 成分股涨幅中位数 + 上涨占比"的集中度校验。本期<strong>不能断言储能的相对抗跌是板块级共识而非个别大票拉起</strong>。</li>
 <li><span class="tag tag-warn">GAP</span><strong>板块定义跨源不可比</strong>：新浪 <code>sina_boards.py</code>（20:56，172 概念/84 行业，成分上限 100）与雷达 265 板块口径不同——新浪锂电池 −2.20%、光伏概念 −5.84%，雷达锂电池概念 −2.53%、光伏 −3.00%。<strong>本文只引雷达一套，不混排</strong>。</li>
-<li><span class="tag tag-mid">口径</span>涨跌家数引 11-16 收盘总结（1135 涨 / 4344 跌 / 97 平，涨停 33 / 跌停 71，成交 14939 亿）；超额统一为"板块涨跌幅 − 265 板块平均涨幅"，不用中位数，避免与历史报告口径漂移。</li>
+<li><span class="tag tag-mid">口径</span>涨跌家数引 11-16 收盘总结（1135 涨 / 4344 跌 / 97 平，涨停 33 / 跌停 68，成交 14939 亿；跌停按交易所板价口径，11-17 00:34 上游已由 71 订正为 68）；超额统一为"板块涨跌幅 − 265 板块平均涨幅"，不用中位数，避免与历史报告口径漂移。</li>
 <li><span class="tag tag-warn">GAP</span><strong>亿信仅返回标题 + 摘要</strong>，未回核原文，券商数字按摘要口径引用；国信 433GWh（2026 全年新增预测）与中金 396GWh（2026-06 累计投运）基数不同，不可直接比较。</li>
 <li><span class="tag tag-warn">GAP</span><strong>事后重建</strong>：原定 19:00 生成，因模型 429 限流未执行，21:03 补跑。行情 cutoff 15:00、亿信检索在 20:00 后，两者时点不同但均属事后唯一可确定事实，不涉不可复原字段。</li>
 </ul>
@@ -192,7 +192,8 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--gray-100);fon
 ④ <strong>本地资金</strong>：<code>板块资金雷达/data/hist_metrics.json</code>（radar-v4.1，as_of 2026-11-16，265 板块，字段序 <code>[rank, code, name, chg%, ws*1000, bandNet亿, mainNet亿, ratio, net/amount*100, aDays, oDays, ratio, amt_5d]</code>）；板块清单取 <code>boards_constituents.json</code>（269 个）；<br>
 ⑤ <strong>旁证</strong>：<code>_raw/sina_boards.json</code>（11-16 20:56，concept 172 / industry 84 / area 31，成分上限 100）；涨跌家数与成交额引 <code>分析报告汇总/2026-11-16/收盘总结.html</code>；<br>
 ⑥ <strong>缺口与降级</strong>：通达信 MCP 配额 13:34 耗尽、NeoData MCP 本会话未配置 → <strong>涨股比与成分中位数缺失，成员集中度未严格校验</strong>；新浪与雷达板块定义不同源、不混排；亿信仅摘要级、未回核原文；本报告 21:03 事后重建（原定 19:00，模型 429 限流）。quality=<strong>degraded</strong>；<br>
-⑦ <strong>时间口径</strong>：外部资料截至 2026-11-16 21:00；本地资金截至 11-16 收盘（cutoff 15:00）；生成时间 21:03（系统时钟）。</p>
+⑦ <strong>时间口径</strong>：外部资料截至 2026-11-16 21:00；本地资金截至 11-16 收盘（cutoff 15:00）；生成时间 21:03（系统时钟）。<br>
+⑧ <strong>修订记录</strong>：2026-11-17 04:49 仅订正口径声明中的跌停数（71→68），随《收盘总结》00:34 交易所板价口径结案；<strong>正文分析与结论未变</strong>（本报告结论基于板块超额与资金方向，未使用涨跌停数量）。</p>
 </footer>
 
 </body>
