@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>竞价快报</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>竞价快报</h1>
+  <div class="meta">
+    📅 2026年10月27日 09:26 竞价口径 · 21:32 延迟补录 | 投资小龙虾 AI | 仅供参考
+  </div>
+</header>
+
+<div class="warning">
+<p>⚠ 延迟补录说明：9:15–9:25 的实时挂单、竞价量与封单快照当时未留存，下文竞价读数由当日开盘价（即集合竞价成交价）回溯计算，未用盘中与收盘价充当盘前信息。今日 8:00 盘前简报未产出，验证一节改为对照 10 月 26 日深度复盘的推演条件。</p>
+</div>
+<h2>📊 竞价开盘</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>昨收</th>
+<th>竞价开盘</th>
+<th>竞价涨幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3697.52</td>
+<td>3698.44</td>
+<td>+0.02%</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>11534.38</td>
+<td>11591.36</td>
+<td>+0.49%</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>2638.23</td>
+<td>2661.71</td>
+<td>+0.89%</td>
+</tr>
+</tbody>
+</table></div>
+<h2>🔢 竞价分布</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align: center;">今日</th>
+<th style="text-align: center;">昨日</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开盘涨停（竞价即封板）</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr>
+<td>开盘跌停</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>高开 &gt;3%</td>
+<td style="text-align: center;">128</td>
+<td style="text-align: center;">86</td>
+</tr>
+<tr>
+<td>低开 &lt;-3%</td>
+<td style="text-align: center;">89</td>
+<td style="text-align: center;">144</td>
+</tr>
+</tbody>
+</table></div>
+<h2>⚡ 竞价方向</h2>
+<p><strong>强势：电子硬件全链高开，但没有龙头。</strong> 概念板块开盘涨幅前十全是电子链：CPO +1.48%、存储芯片 +1.38%、电子纸 +1.35%、光通信 +1.23%、先进封装 +1.20%、复合铜箔 +1.12%、PCB +1.11%、汽车芯片 +1.04%、第三代半导体 +1.02%、OLED +1.01%。可昨日刚跌停的华正新材竞价低开 3.47%，龙头不跟、成份股普涨，这种高开是摊大饼摊出来的。</p>
+<p><strong>弱势：农业与传媒小票。</strong> 云游戏 -0.86%、鸡肉 -0.69%、外骨骼机器人 -0.58%、土地流转 -0.54%、博彩 -0.46%，最弱也就 1% 以内，是没人接，不是有人砸。</p>
+<h2>🧭 开盘情绪：偏暖</h2>
+<p>三个指数同步高开，高开低开家数 128:89 明显好于昨日 86:144，竞价涨停对跌停 5:3，这些都指向偏暖。但封板资金从 12 家缩到 5 家，热度堆在"高开不封板"的电子链上，缺一字板的锚，这份暖意是浮的。</p>
+<h2>🔍 对昨日推演的验证</h2>
+<p><strong>华正新材是今天最该盯的那只。</strong> 昨日设定的条件是"华正新材、金安国纪连续第二个跌停，AI 硬件降到回避"。竞价阶段华正新材 -3.47%、金安国纪 +2.0%，两者已经分道，条件尚未确认，但方向偏坏的一边站在华正新材。</p>
+<p><strong>机器人链还是老结构。</strong> 昨日说"看竞价强度决定是否减半"，今日外骨骼机器人竞价 -0.58% 整体不强，多伦科技、赛福天继续一字，依旧是二线接力、板块不跟。</p>
+<h2>🕐 事后对照（补记）</h2>
+<p>上证收 3648.30（-1.33%），收在全天最低，跌破昨日设定的 3658 防守线；创业板 -3.41%，电子链从 +1.2% 高开一路杀到 -4%。真正的盘前信号不是竞价有多暖，而是"高开无量、龙头低开"这两条在 9:25 就写好了。</p>
+<hr>
+<div class="warning">
+<p>⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。数据来源：通达信 TdxQuant | 生成时间：2026年10月27日 21:32</p>
+</div>
+<p><sub>数据来源：指数竞价开盘→通达信MCP tdx_quotes（000001/399001/399006，HQInfo.Open 与 Close）；涨跌停与高开低开家数→通达信MCP tdx_screener（开盘涨停/跌停、开盘涨幅&gt;3%、开盘跌幅&gt;3%，均核对 total）；板块开盘涨幅→tdx_screener rang=ZS 概念板块；个股竞价→tdx_quotes（603186、002636）。缺失：9:15–9:25 实时挂单、竞价金额、竞价封单、今日盘前简报。</sub></p>
+
+<footer>
+  <p><strong>免责声明</strong>：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
+  <p>数据来源：通达信 TdxQuant &nbsp;|&nbsp; 生成时间：</p>
+</footer>
+
+</body>
+</html>

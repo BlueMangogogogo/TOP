@@ -1,0 +1,25 @@
+<!doctype html><meta charset="utf-8"><title>宏观择时周报</title><h1>宏观择时周报</h1><p>2026-11-09 至 2026-11-13；research-v4.1，未校准研究。缺失历史不补写市场故事；观测日期回算不等于当时已知。</p><table><tr><th>日期</th><th>MTI</th><th>观察分级</th><th>质量</th><th>有效权重</th></tr><tr><td>20261109</td><td>null（未计算）</td><td>数据不完整：仅供观察，暂停自动仓位建议</td><td>degraded</td><td>0.75</td></tr><tr><td>20261113</td><td>null（未计算）</td><td>数据不完整：仅供观察，暂停自动仓位建议</td><td>degraded</td><td>0.85</td></tr></table>
+<h2>本周交易日覆盖（预期 vs 实际）</h2>
+<p>交易日历取自 index_daily.json（000300.SH）实际成交日；「无记录」表示 mti_history_v4 当日没有行。</p>
+<table><tr><th>日期</th><th>星期</th><th>交易日</th><th>mti_history_v4</th><th>quality</th><th>mti</th><th>有效权重</th></tr><tr><td>20261109</td><td>周一</td><td>是</td><td>有记录</td><td>degraded</td><td>null（未计算）</td><td>0.75</td></tr><tr><td>20261110</td><td>周二</td><td>是</td><td>无记录</td><td>—</td><td>—</td><td>—</td></tr><tr><td>20261111</td><td>周三</td><td>是</td><td>无记录</td><td>—</td><td>—</td><td>—</td></tr><tr><td>20261112</td><td>周四</td><td>是</td><td>无记录</td><td>—</td><td>—</td><td>—</td></tr><tr><td>20261113</td><td>周五</td><td>是</td><td>有记录</td><td>degraded</td><td>null（未计算）</td><td>0.85</td></tr></table>
+<h2>本周因子观测（仅 20261113 有因子输出）</h2>
+<p>下列数值全部来自 mti_result.json 的 research-v4.1 因子层，观测日 20261113，quality 均为 observed：</p>
+<ul>
+<li>离散度 dispersion：1.818（ma5 1.509，20日分位 88.2%），极致化 ⚠️（极度分化，高切低强预警），覆盖 124 个行业，score -0.764</li>
+<li>大小盘 size：20日偏离分位 14.1%，score +0.718（20日大小盘偏离14%分位）</li>
+<li>轮动速度 rotation：0.8525，score -0.705</li>
+<li>成交额 inflow：score +0.000；成交额20日+6.4%；成交额是活动代理，不等于净流入（成交额是活动代理，非净流入）</li>
+<li>涨停占比 ld：5日涨停占比86.5%，样本 37 涨 / 33 跌，score +0.729</li>
+<li>炸板率 break_rate：score +0.348</li>
+<li>活跃市值 0AMV：14.579 万亿，单日 -3.0%，三日 -2.3%，状态「清仓/空仓」；活跃市值单日 -3.0% ≤ -2.3%，触发本地防守观察规则（未校准，非账户操作指令），score -1.000</li>
+<li>换手分位 turnover_pos：score +0.000</li>
+</ul>
+<p>0AMV 序列（源 Compass Z_SK0AMV）本周逐日：1109 14.84、1110 14.916、1111 15.157、1112 15.025、1113 14.579（万亿）。该序列覆盖 11/10—11/12，但这三天没有 MTI 记录，不能用它反推当时 MTI。</p><h2>降级原因与缺口</h2>
+<ul>
+<li>本周 5 个交易日，mti_history_v4 仅 2 条记录，且两条 mti 均为 null（quality=degraded）：20261109, 20261113。</li>
+<li>缺失记录日：20261110、20261111、20261112，属数据断层，不是「无信号」。</li>
+<li>20261113 的综合 MTI 未成立：valid_factor_count 8，有效权重 0.85，partial_mti -0.1084，signal「数据不完整：仅供观察，暂停自动仓位建议」。</li>
+<li>data_status：margin rzye停在20261105，滞后6个交易日；erp pe停在20261111，滞后2个交易日。</li>
+<li>quality=degraded，未通过发布门禁，本周报不进入线上报告索引；不宣称整周完整，也不以「现有行全 complete」代替覆盖率。</li>
+</ul><h2>结论边界</h2>
+<p>本周仅 20261113 一个有因子输出的观测点，且综合 MTI 未成立，因此不给方向性结论、不做周度强弱定性、不做仓位推断。已观测因子只说明当下的分化与活跃度状态，不能外推为整周趋势。所有阈值均为工程阈值，未经策略收益校准（strategy_status=uncalibrated_research，decision_ready=false），不构成交易指令。</p>
