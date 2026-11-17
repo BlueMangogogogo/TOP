@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>宏观择时日报 · MTI v4.1（2026-11-17）</title>
+<title>宏观择时日报 · MTI v4.1（2026-11-18）</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <style>
 :root{--brand:#ebb543;--brand-bg:#f7e8c5;--warn:#c0392b;--warn-bg:#fdf0ef;--ink:#1a1a1a;--gray:#2c2c2c;--aux:#888;--line:#f0f0f0}
@@ -35,7 +35,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);font-si
 
 <header>
   <h1>宏观择时日报 · MTI v4.1</h1>
-  <div class="meta">📅 2026年11月17日 ｜ 数据截至 2026-11-17 ｜ 投资小龙虾宏观择时系统 · 自动生成</div>
+  <div class="meta">📅 2026年11月18日 ｜ 数据截至 2026-11-17 ｜ 投资小龙虾宏观择时系统 · 自动生成</div>
 </header>
 
 <div class="score-card">
@@ -91,29 +91,28 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);font-si
 <tr><td>行业离散度（申万二级行业，数量以当期截面为准）</td><td>AKShare sw_index_second_info / index_hist_sw（新浪申万指数，滞后1日）；东财申万历史当日未发布时改用申万官网收盘后快照，截面数量可能少于 131，不直接与前日比较</td></tr>
 <tr><td>沪深300/国证2000/上证/深成</td><td>本地指数缓存（采集可能经 Tushare/AKShare 降级，须核对 fetch_status）</td></tr>
 <tr><td>换手率 / 指数 PE</td><td>本地指数基本面缓存（PE 为倍数，换手率为百分数）</td></tr>
-<tr><td>两融余额</td><td>11-06 起为沪深交易所官方口径（AKShare stock_margin_sse / stock_margin_szse），Jin10 CDN 仅覆盖至 20261105；原始单位元；禁止前值填充</td></tr>
+<tr><td>两融余额</td><td>Jin10 沪深两交易所融资余额，原始单位元；禁止前值填充</td></tr>
 <tr><td>涨跌停家数</td><td>AKShare stock_zt_pool_em / stock_zt_pool_dtgc_em（主源，因子计算口径）</td></tr>
 <tr><td>炸板家数</td><td>AKShare stock_zt_pool_zbgc_em（仅最近15交易日）</td></tr>
 <tr><td>涨跌停交叉核对</td><td>通达信 screener 仅作当日核对，含 ST 标的，家数高于 AKShare 主源，两套口径不可混用</td></tr>
 <tr><td>活跃市值（指南针 Z_SK0AMV 原生指标）</td><td>本地 day.vdat 提取；来源与校验记录见 amv_source_manifest.json</td></tr>
 <tr><td>10年期国债收益率</td><td>AKShare bond_zh_us_rate</td></tr>
 </table>
-<h2>五、缺口与口径（本轮实测）</h2>
-<table>
-<tr><th>项</th><th>状态</th><th>说明</th></tr>
-<tr><td>两融因子（资金层 15%）</td><td><strong>已补齐</strong></td><td>原缺 11-16/11-17。本轮 21:50 定向探源：Jin10 CDN 仍停在 20261105（改用交易所官方口径后仅作历史底仓），沪深交易所官方接口已有 <strong>20261116</strong>（SSE 融资余额 1,159,812,862,911 元 + SZSE 10,685.62 亿元 = 2.2284 万亿），11-17 属 T+1 尚未披露。MTI 两融因子取 <code>max_lag=1</code>，故 11-16 即满足；因子本期得 61% 分位、信号分 −0.10（中位横盘）。<br>口径自检：同法复算 11-13 得 1,169,263,907,994 元，与缓存 <code>sh_rzye</code> 逐值一致，方写入。未做任何前值填充。</td></tr>
-<tr><td>ERP</td><td><strong>空值</strong></td><td>沪深300 PE 为 T+1 发布：11-16 已入库（13.74），11-17 的值需 11-18 午后挂出。不以前值补位。</td></tr>
-<tr><td>综合信号 MTI</td><td><strong>已出值</strong></td><td>有效因子由 8/9 升至 <strong>9/9</strong>、有效权重 0.85 → <strong>1.00</strong>，MTI = <strong>−0.174</strong>（原为 null，仅出 partial −0.1586）。quality 仍为 degraded，原因是 ERP 单因子空值，与两融无关。</td></tr>
-<tr><td>行业截面</td><td>124 / 131</td><td>申万二级声明 131 个、当期有值 124 个（7 个源端当日无数据，与 11-13、11-16 同口径），行业离散度与轮动速度按 124 个截面计算，不直接与前日数值比较。</td></tr>
-<tr><td>代理口径</td><td>非真实资金</td><td>「增量资金」用成交额代理（20 日 +0.1%），「换手率位置」以上证指数代全 A；资金类指标不等于真实机构持仓。</td></tr>
-<tr><td>取数与生成时刻</td><td>晚于名义时点</td><td>名义 15:40；行业矩阵当日 18:18 才从源端取到（申万收盘后发布），两融 11-16 行于 21:50 补齐后重算，本报告生成 21:52，属事后重建。所用数据均为当日收盘或 T+1 终值，无未来价回填；「当日」表述均为收盘后回看。</td></tr>
-</table>
-<p class='small'>⚠ 系统自动缺口声明：erp:pe停在20261116，滞后1个交易日；strategy:未校准研究版本；不自动提供账户仓位建议</p>
-<p class='small'>取数来源：行业＝AKShare index_hist_sw（申万二级 131 只，18:18 全量 131/131 成功）；指数/成交额＝本地指数缓存（index_daily.json、11-17 15:48）；涨跌停与炸板＝AKShare stock_zt_pool_em / stock_zt_pool_zbgc_em；活跃市值＝指南针 Z_SK0AMV（amv_history.json、11-17 17:17）；两融＝SSE/SZSE 官方接口（stock_margin_sse / stock_margin_szse，11-16 于 21:50 补入）；沪深300 PE＝index_dailybasic.json（11-16=13.74）。</p>
+<h2>五、缺口与口径</h2>
+<ul>
+<li><strong>ERP 未出值</strong>：沪深300 PE 由中证指数 T+1 发布，原表最新为 20261116，20261117 的 PE 尚未挂出，故 ERP 记为 <code>null</code>、页面显示「-」。ERP 不计入 MTI 权重，不影响本文 MTI 数值。</li>
+<li><strong>两融为 T+1</strong>：<code>margin.json</code> 尾日 20261116（沪 1,159,812,862,911 元 + 深 10,685.62 亿元 = 2.2284 万亿元），相对目标日滞后 1 个交易日，按 <code>lagged</code> 接受；Jin10 CDN 源仍停 20261105，现由交易所官方口径补行。</li>
+<li><strong>因子口径</strong>：标题所称「十因子」含 ERP 展示项，实际计入权重为 9 个，有效权重 100%，<code>valid_factor_count=9</code>。</li>
+<li><strong>行业截面</strong>：申万二级行业离散度取 20261117 收盘后快照；若当期发布不全，截面数量将少于 131，不与前一交易日直接比较。</li>
+<li><strong>策略未校准</strong>：工程阈值未经策略收益校验，<code>decision_ready=false</code>，本页不产出仓位建议。</li>
+<li><strong>生成方式</strong>：本稿由 <code>build_report.py</code> 于 2026-11-18 00:55 自动生成（名义时点 2026-11-17 15:40 的延迟补跑），数据均取自 2026-11-17 收盘后缓存；01:05 仅补入本节缺口说明与清单声明，未重算因子、未改动任何数值。</li>
+</ul>
+<p class='small'>⚠ 以上缺口未填 0、未做前值填充；数据质量标记 <code>quality=degraded</code>。</p>
 
 <footer>
   <p><strong>免责声明</strong>：本报告由投资小龙虾宏观择时系统自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。</p>
-  <p>生成时间：2026年11月17日 21:52（事后重建，名义 15:40；两融 11-16 于 21:50 补入后重算） ｜ 数据截至：2026-11-17</p>
+  <p>生成时间：2026年11月18日 ｜ 数据截至：2026-11-17</p>
+  <p>修订：2026-11-18 01:05 补入「五、缺口与口径」（00:55 自动稿未含该节）；因子数值与结论未变。</p>
 </footer>
 
 <script>
