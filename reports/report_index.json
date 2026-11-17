@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-17T22:43:44",
+  "last_updated": "2026-11-17T22:56:03",
   "total": 340,
   "daily_count": 256,
   "industry_count": 84,
@@ -45,7 +45,7 @@
       "category": "日常复盘",
       "type": "daily",
       "quality": "degraded",
-      "size_kb": 21.3,
+      "size_kb": 22.0,
       "date": "2026-11-17"
     },
     {

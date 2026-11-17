@@ -39,7 +39,7 @@ code{font-size:12.5px;background:#f2f2f2;padding:1px 4px;border-radius:3px;}
 <body>
 <header>
 <h1>11月17日 盘中异动（14:00）</h1>
-<div class="meta"><span>2026-11-17（周二，交易日）</span><span>行情 cutoff 14:00</span><span>对比基准 11:30</span><span>同一批 5m 切片</span><span>质量 degraded</span></div>
+<div class="meta"><span>2026-11-17（周二，交易日）</span><span>行情 cutoff 14:00</span><span>对比基准 11:30</span><span>同一批 5m 切片</span><span>质量 degraded</span><span>修订 22:58（缺口校准）</span></div>
 </header>
 
 <div class="warning"><strong>本稿是 14:00 时点的事后重建，取数时刻 2026-11-17 14:59，不是 14:00 的实时快照。</strong>
@@ -121,7 +121,7 @@ code{font-size:12.5px;background:#f2f2f2;padding:1px 4px;border-radius:3px;}
 
 <h2>七、缺口与口径</h2>
 <ul>
-<li><strong>【保留】资金流全缺</strong>：通达信云端 MCP、NeoData、妙想本会话均未配置（<code>KeyError: tdx-connector</code>），东财 <code>push2</code> 长期不可用，<strong>板块与个股主力净额、板块涨股比本轮均不可得</strong>，正文未使用任何资金指标。板块强弱仅由板指、成分中位、上涨占比三项价格类指标判定。</li>
+<li><strong>【保留】主力资金净额全缺</strong>：通达信云端 MCP、NeoData、妙想本会话均未配置（<code>KeyError: tdx-connector</code>），东财 <code>push2</code> 长期不可用，<strong>板块与个股主力净额不可得</strong>，正文未使用任何资金指标。板块强弱仅由板指、成分中位、上涨占比三项价格类指标判定——<strong>其中「上涨占比」即板块级涨股比</strong>，由 <code>boards_constituents.json</code> 的 269 板块成员清单在本地算出（268 个可算），不经任何资金通道，故不构成缺口。<span class="note-inline">（22:58 校准：原缺口①把「板块涨股比」与资金流并列为不可得，属误记——本稿第三节、第六节通篇在用该指标。）</span></li>
 <li><strong>【保留】封板时刻是 5 分钟粒度</strong>：涨停/跌停的「封板时刻」取首次收盘价贴板价那根 5m 线的区间<strong>结束</strong>时刻，不是逐笔首封时间；封单额、封单量无通道，本轮不补。</li>
 <li><strong>【口径】板块名统一为通达信 269 板块</strong>，与新浪同名板块<strong>成员定义不同</strong>：如「黄金概念」通达信口径 82 只成分、14:00 中位 +0.97%、上涨占比 71.6%（有宽度），新浪口径同名板块仅 27 只、中位 0.00%、占比 46.2%（首稿据此判为单票拉动）。<strong>同名不同义，本稿不混排、不引用新浪口径结论</strong>。</li>
 <li><strong>【恒定缺口】269 个声明板块中 268 个可算</strong>：<code>880719</code> 地摊经济服务端无板块线、<code>含可转债</code> 成分清单为空。两项非本轮取数失败，不重复重试。</li>
@@ -137,7 +137,8 @@ code{font-size:12.5px;background:#f2f2f2;padding:1px 4px;border-radius:3px;}
 ③ <code>板块资金雷达/data/boards_constituents.json</code>：269 个板块成员清单，用于成分级中位与上涨占比。<br>
 原始切片：<code>_raw/intraday1400_exact.json</code>（本轮重建，含两时点全量明细）。11:30 侧与本目录《午盘扫描》逐项一致（3244 涨／1754 跌／219 平、中位 +0.48%、涨停 41／跌停 25），可作口径互校。<br>
 <strong>生成时刻</strong> 2026-11-17 15:01（Asia/Shanghai）；取数时刻 14:59｜<strong>行情 cutoff</strong> 14:00｜<strong>对比基准</strong> 11:30｜14:00 之后的价格未参与任何判断。<br>
-本稿 quality=degraded：资金流全缺、封单额与逐笔首封不可得、股票池不含北交所、个股成交额未累加，缺口见第七节。资金指标不等于真实机构持仓。
+本稿 quality=degraded：主力资金净额缺失、封单额与逐笔首封不可得、股票池不含北交所、个股成交额未累加，缺口见第七节。资金指标不等于真实机构持仓。<br>
+<strong>修订 2026-11-17 22:58</strong>：缺口校准（「板块涨股比」由缺口①剥离，其为本地可算的价格类指标，非资金流缺陷）；指数、宽度、涨跌停、板块、成交额等全部行情数字与结论一字未动。
 </footer>
 </body>
 </html>
