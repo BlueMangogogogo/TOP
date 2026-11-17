@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>收盘总结 · 2026-11-17</title><style>
+:root{--yellow:#ebb543;--yellow-light:#f7e8c5;--red:#c0392b;--red-light:#fdf0ef;--green:#1e8449;
+--black:#1a1a1a;--gray-900:#2c2c2c;--gray-700:#555;--gray-500:#888;--gray-300:#bbb;--gray-100:#f0f0f0;--white:#fff;
+--font:"Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",system-ui,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font);font-size:15px;line-height:1.75;color:var(--gray-900);background:var(--white);
+max-width:820px;margin:0 auto;padding:40px 28px 60px;-webkit-font-smoothing:antialiased;}
+header{border-bottom:3px solid var(--yellow);padding-bottom:20px;margin-bottom:28px;}
+header h1{font-size:24px;font-weight:700;color:var(--black);margin-bottom:6px;letter-spacing:.5px;}
+header .meta{font-size:13px;color:var(--gray-500);}
+header .meta span{margin-right:16px;}
+h2{font-size:18px;font-weight:700;color:var(--black);margin:32px 0 10px;padding-left:12px;border-left:4px solid var(--yellow);}
+h3{font-size:16px;font-weight:700;color:var(--gray-900);margin:22px 0 8px;}
+p{margin:8px 0;}
+.table-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0 20px;border:1px solid var(--gray-300);border-radius:6px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:520px;}
+thead th{background:var(--yellow);color:var(--black);font-weight:700;padding:10px 12px;text-align:left;white-space:nowrap;border-bottom:2px solid #d4a734;}
+tbody td{padding:9px 12px;border-bottom:1px solid var(--gray-100);vertical-align:top;}
+tbody tr:nth-child(even){background:#fafafa;}
+tbody tr:hover{background:var(--yellow-light);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+.highlight{background:var(--yellow-light);border-left:4px solid var(--yellow);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;}
+.warning{background:var(--red-light);border-left:4px solid var(--red);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;color:#8b1a1a;}
+ul,ol{margin:8px 0 8px 20px;}li{margin:4px 0;}
+hr{border:none;border-top:1px solid var(--gray-100);margin:24px 0;}
+.up{color:var(--red);font-weight:600;}.down{color:var(--green);font-weight:600;}
+blockquote{background:#fafafa;border-left:4px solid var(--gray-300);padding:10px 16px;margin:14px 0;font-size:14px;color:var(--gray-700);}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--gray-100);font-size:12px;color:var(--gray-500);line-height:1.7;}
+strong{color:var(--black);}code{background:var(--gray-100);padding:1px 5px;border-radius:3px;font-size:13px;}
+@media (max-width:600px){body{padding:20px 14px 40px;font-size:14px;}header h1{font-size:20px;}h2{font-size:16px;}table{font-size:12px;}thead th,tbody td{padding:7px 8px;}}
+</style></head><body>
+
+<header>
+<h1>收盘总结 · 2026-11-17（周二）</h1>
+<div class="meta"><span>行情 cutoff 15:00</span><span>生成 15:44</span><span>质量 degraded</span><span>样本 5217 只沪深 A</span></div>
+</header>
+
+<blockquote>
+<b>取数与口径。</b>tdx-connector MCP 本轮未挂载（<code>KeyError:'tdx-connector'</code>，14:00 探针已记入 <code>tdx_channel_state.json</code>），全市场横截面改走通达信 <code>TQLEX TdxShare.PBHQInfo</code> HTTPS 直连——与 tdx-connector 同一后端，零 MCP 配额，5217 只一次取全，<code>HQDate=20261117</code>、<code>HQTime 15:30:00—15:32:06</code>。指数与成交额另由新浪 5 分钟 K 线切片复核。收盘价、涨跌家数、成交额、交易所板价在 15:00 后即为固定值，盘后读取不含 15:00 之后的增量信息。<b>涨跌停一律用交易所板价（ExtInfo.ZTPrice/DTPrice）逐只比对，不按百分比反推。</b>板块口径为通达信 268 个板块（成分清单取自 <code>板块资金雷达/data/boards_constituents.json</code> 的 6 位代码，269 个中 268 个取到 ≥3 只成分），统计等权涨幅、成分涨幅中位数、上涨占比三项；板块名不与新浪、东财口径混排。
+</blockquote>
+
+<div class="highlight">
+<b>摘要：冲高回落，尾盘跌停翻倍，全场只剩半导体材料一条有宽度的线。</b>上证收 3584.58（<span class="down">−0.50%</span>），深证成指 −0.49%、创业板指 <span class="down">−1.20%</span>，科创 50 逆势 <span class="up">+0.62%</span>。全市场 1216 涨 / 3882 跌 / 119 平，涨跌幅中位数 <b>−1.41%</b>，涨停 37 家、跌停 <b>84 家</b>。两市成交 14577 亿，为昨日 14845 亿的 0.98 倍。268 个板块只有 14 个等权上涨，上涨占比 ≥60% 的仅 5 个——指数跌幅温和，个股是普跌加跌停潮。
+</div>
+
+<h2>一、指数与量能：低开、上午翻红、午后单边回落</h2>
+<p>九个指数无例外地重复同一条路径：竞价低开约 0.5%，上午翻红（11:30 上证 3602.07、−0.01%），午后一路下台阶（14:00 3590.20、−0.34%），收盘 3584.58、−0.50%，午后净吐 17.5 点。沪深 300 仅 −0.08%，中证 1000 −1.17%，剪刀差 1.09pp：权重在托、小盘在失血。科创 50 与北证 50 是唯一两个红盘指数，均为上午的领涨者，午后回吐但未转绿。</p>
+<div class="table-wrapper"><table>
+<thead><tr><th>指数</th><th class="num">收盘</th><th class="num">涨跌</th><th class="num">较今开</th><th class="num">成交额(亿)</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td class="num">3584.58</td><td class="num down">−0.50%</td><td class="num down">−0.03%</td><td class="num">6905</td></tr>
+<tr><td>深证成指</td><td class="num">10638.52</td><td class="num down">−0.49%</td><td class="num up">+0.31%</td><td class="num">3915</td></tr>
+<tr><td>创业板指</td><td class="num">2292.20</td><td class="num down">−1.20%</td><td class="num down">−0.34%</td><td class="num">3658</td></tr>
+<tr><td>科创 50</td><td class="num">1221.19</td><td class="num up">+0.62%</td><td class="num up">+0.73%</td><td class="num">968</td></tr>
+<tr><td>北证 50</td><td class="num">841.49</td><td class="num up">+0.59%</td><td class="num up">+1.18%</td><td class="num">100</td></tr>
+<tr><td>沪深 300</td><td class="num">3976.46</td><td class="num down">−0.08%</td><td class="num up">+0.27%</td><td class="num">4095</td></tr>
+<tr><td>中证 500</td><td class="num">6283.01</td><td class="num down">−0.23%</td><td class="num up">+0.49%</td><td class="num">2593</td></tr>
+<tr><td>中证 1000</td><td class="num">6092.40</td><td class="num down">−1.17%</td><td class="num down">−0.31%</td><td class="num">2832</td></tr>
+<tr><td>深证综指</td><td class="num">2033.97</td><td class="num down">−0.90%</td><td class="num down">−0.12%</td><td class="num">7672</td></tr>
+</tbody></table></div>
+<p><b>量能模型与假设（收盘实际值，非预测）：</b>沪市取上证指数 5m <code>Amount</code> 累加 6905.1 亿，深市取深证综指 5m <code>Amount</code> 累加 7671.8 亿，两口径不重叠、不做加减，合计 14577 亿；北证 50 另计 99.9 亿，未并入。分段看上午 8946 亿、下午 5631 亿，下午较上午缩量 37%。全天量为昨日 0.98 倍——<b>缩量而跌停翻倍，说明抛压来自承接缺失，不是放量出逃</b>。</p>
+
+<h2>二、宽度：跌停 84 家，跌停潮集中在 13:00 之后</h2>
+<div class="table-wrapper"><table>
+<thead><tr><th>指标</th><th class="num">收盘</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>上涨 / 下跌 / 平盘</td><td class="num">1216 / 3882 / 119</td><td>上涨占比 23.3%（沪 25.5%、深 21.6%）</td></tr>
+<tr><td>涨跌幅中位 / 均值</td><td class="num down">−1.41% / −1.58%</td><td>中位与均值贴近，全体下移</td></tr>
+<tr><td>P10 / P90</td><td class="num">−5.01% / +1.40%</td><td>左尾厚于右尾</td></tr>
+<tr><td>涨停 / 跌停</td><td class="num">37 / 84</td><td>11-16 为 33 / 68，跌停连续第二日扩大</td></tr>
+<tr><td>炸板 / 炸板率</td><td class="num">20 / 35.1%</td><td>封板质量中等偏弱</td></tr>
+<tr><td>跌超 9.5% / 涨超 9.5%</td><td class="num">127 / 49</td><td>比值 2.6 : 1</td></tr>
+</tbody></table></div>
+<p>盘中轨迹最能说明问题：涨跌停配比在 11:30 是 41 / 25，14:00 是 43 / 46，收盘 37 / 84——<b>涨停少了 6 家、跌停多了 59 家，且几乎全部发生在 13:00 之后</b>。分布上 −3%~−1% 装了 1693 只、−5%~−3% 装了 754 只，大多数个股是小跌，真正的伤害集中在 127 只深跌股。涨停 37 只中首板 31、二板 5、三板 1（华东重机，09:25 竞价封），最高板仅 3 板，且这只三板股属工程机械、与当日主线无关；11:30 尚在的 4 板 广百股份尾盘断板，收 +5.61%、换手 28.3%、成交 16.5 亿。<b>情绪高度被压到 3 板，是退潮期的典型特征。</b></p>
+
+<h2>三、板块强弱：只有两条线同时过了集中度校验</h2>
+<p>268 个板块中，等权上涨 14 个、成分中位为正 11 个、上涨占比 ≥60% 仅 5 个。按「板块涨幅 vs 成分中位 + 上涨占比」三条同时过关的，只有光刻机与工业气体两块。</p>
+<div class="table-wrapper"><table>
+<thead><tr><th>板块（通达信口径）</th><th class="num">等权涨幅</th><th class="num">成分中位</th><th class="num">上涨占比</th><th class="num">成分</th><th>集中度判定</th></tr></thead>
+<tbody>
+<tr><td>光刻机</td><td class="num up">+2.25%</td><td class="num up">+1.60%</td><td class="num">65.0%</td><td class="num">117</td><td>有宽度，gap +0.66，主线成立</td></tr>
+<tr><td>工业气体</td><td class="num up">+1.21%</td><td class="num up">+1.18%</td><td class="num">67.9%</td><td class="num">28</td><td>有宽度，gap +0.03，辅线</td></tr>
+<tr><td>OLED 概念</td><td class="num up">+0.59%</td><td class="num">0.00%</td><td class="num">49.0%</td><td class="num">149</td><td>单票拉动，非主线</td></tr>
+<tr><td>存储芯片</td><td class="num up">+0.53%</td><td class="num down">−0.04%</td><td class="num">47.8%</td><td class="num">184</td><td>单票拉动，非主线</td></tr>
+<tr><td>短剧游戏</td><td class="num down">−6.28%</td><td class="num down">−6.49%</td><td class="num">4.7%</td><td class="num">85</td><td>一致性杀跌</td></tr>
+<tr><td>AI 营销</td><td class="num down">−5.34%</td><td class="num down">−5.92%</td><td class="num">4.7%</td><td class="num">43</td><td>一致性杀跌</td></tr>
+<tr><td>知识付费</td><td class="num down">−4.78%</td><td class="num down">−4.79%</td><td class="num">9.1%</td><td class="num">22</td><td>一致性杀跌</td></tr>
+<tr><td>云游戏</td><td class="num down">−4.25%</td><td class="num down">−4.96%</td><td class="num">7.7%</td><td class="num">26</td><td>一致性杀跌</td></tr>
+</tbody></table></div>
+<p><b>集中度校验的必要性在今天特别明显。</b>榜单第 3—5 位的 OLED、存储芯片、先进封装看着是红的，但成分中位落在 0 至 −0.10%、上涨占比不足 50%，三者的最强股都是国林科技（+19.96%）同一只 20cm 票——一只票同时挂在四个板块里，把四个板块的等权涨幅一起抬起来，这不是扩散。反过来，光刻机 117 只成分里 65% 上涨、中位 +1.60%，等权与中位只差 0.66，是全体上移而非头部拉动。<b>同一个道理也在跌幅端：短剧游戏 −6.28% 而中位 −6.49%，中位比均值更差，说明是整板的一致性出清，不是权重砸盘。</b>交叉校验：新浪概念榜首位聚氨酯 +1.96%、华为海思 +1.80%，行业榜房屋建筑业 +4.28% 但成分仅 3 只（样本不足，不计主线），与通达信口径量级一致、方向同为半导体材料与化工新材料，两套板块名各自成立、未混排。</p>
+
+<h2>四、三只核心个股</h2>
+<div class="table-wrapper"><table>
+<thead><tr><th>个股</th><th class="num">收盘涨跌</th><th class="num">成交额</th><th class="num">换手</th><th>角色</th></tr></thead>
+<tbody>
+<tr><td>有研新材 600206</td><td class="num up">+10.01% 涨停</td><td class="num">47.5 亿</td><td class="num">14.51%</td><td>半导体材料端核心载体，09:52 首封，全天未开板，量能级别是权重股而非题材股</td></tr>
+<tr><td>中芯国际 688981</td><td class="num up">+6.59%</td><td class="num">83.8 亿</td><td class="num">3.73%</td><td>科创 50 唯一红盘的主要支撑，晶圆代工承接材料端景气传导</td></tr>
+<tr><td>惠城环保 300779</td><td class="num down">−19.99% 跌停</td><td class="num">7.8 亿</td><td class="num">12.73%</td><td>高位股杀跌样本，换手 12.73% 说明是筹码换手型崩塌，退潮风险的另一端</td></tr>
+</tbody></table></div>
+<p>三只票分别代表当日的三件事：材料端有资金愿意用 47.5 亿在涨停板上换手；权重端撑住了科创板指数；高位股一旦失去承接就是 20cm 跌停。三者不矛盾——<b>资金在做高低切换，不是全线撤退。</b></p>
+
+<h2>五、主线证据与反证</h2>
+<p><b>证据侧：</b>光刻机 11:30 时等权 +5.33%、14:00 +3.08%、收盘 +2.25%，全程是 268 个板块的第一名，没有掉出过榜首；电子化学今天封出三只涨停（西陇科学 09:35、江化微 10:28、格林达 10:59），加上有研新材 09:52、国林科技 09:34，<b>封板时间均匀分布在上午 09:34—10:59，不是尾盘拉抬</b>；半导体材料的上涨与科创 50 红盘、创业板指弱势同时存在，说明是结构性而非普涨。</p>
+<p><b>反证侧同样硬：</b>光刻机全天回吐 3.08pp，跌幅超过一半，尾盘是跟着大盘一起下来的；37 只涨停里属于半导体材料的<b>没有一只连板</b>，空间龙头缺位，最高板是无关主线的华东重机 3 板；板块上涨占比 65%、中位只有 +1.60%——宽度够、高度不够。按项目口径，这只能定义为<b>「主线成立、处于首板扩散初期」</b>，不能写成资金系统性加仓；用进攻/退潮观察描述，不套用「机构建仓」这类未证实结论。</p>
+
+<h2>六、下一交易日观察</h2>
+<ol>
+<li><b>跌停家数是最硬的观察点。</b>84 家是 11-16 的 68 家之后的连续第二日扩大。明日若仍在 50 家以上，退潮未完；回落到 30 家以下才谈得上企稳。</li>
+<li><b>主线能否出高度。</b>光刻机、工业气体今日涨停全为首板，明日看板块内能否长出 2 板以上的连板股、且首板能接续。若仍是首板日抛，今日只是缩量反抽，不是切换。</li>
+<li><b>断板与补跌是否止住。</b>广百股份（4 板断板、换手 28.3%）与百货、影视跌停群（东百集团、百大集团、宁波中百、华策影视 −13.34%、中文在线 −9.89%）若继续补跌，情绪还有二次杀跌。</li>
+<li><b>量能与剪刀差。</b>14577 亿若明日跌破 1.35 万亿，缩量阴跌格局延续；沪深 300 与中证 1000 的 1.09pp 差是否收敛，决定这是权重护盘的结构市还是一致性下跌。</li>
+</ol>
+
+<div class="warning">
+<b>本轮缺口（quality=degraded）。</b>①板块主力净流入、涨股比缺失——NeoData MCP 本轮未配置，板块强度只能用成分清单自算的等权/中位/上涨占比三项替代，<b>资金流方向无法确认</b>；②涨停封单额、个股主力净额缺失——妙想 MCP 未配置；③新闻与研报归因缺失——亿信与妙想均不可用，<b>本稿不做消息面解释，任何因果推断均未给出</b>；④跌停 84 家为板价口径自算，无第二源交叉（NeoData 缺）；⑤宽度样本为 5217 只沪深 A，不含北交所 355 只，北证 50 +0.59% 单列未并入统计。
+</div>
+
+<footer>
+<b>来源：</b>通达信 TQLEX <code>TdxShare.PBHQInfo</code> 全市场收盘横截面（5217/5247 只，<code>HQDate=20261117</code>，<code>HQTime 153000—153206</code>）；新浪 5m <code>getKLineData</code>（9 个指数点位与成交额，与 TQLEX 双源一致）；东财 <code>push2ex</code> 涨停池（37 只，与板价口径逐一重合、无一漏项）；板块成分清单 <code>板块资金雷达/data/boards_constituents.json</code>（269 个，268 个可用）。<br>
+<b>口径：</b>涨跌停＝收盘价等于交易所涨跌停价（1e-6 容差）；板块等权＝成分涨幅算术平均，中位＝成分涨幅中位数；<code>gap</code>＝等权−中位，≥1.0pp 或上涨占比 &lt;50% 判为单票拉动。<br>
+生成 2026-11-17 15:44（Asia/Shanghai）｜行情 cutoff 2026-11-17T15:00:00+08:00｜本稿为收盘事后取数，15:00 后为固定值，不含未来信息。
+</footer>
+
+</body></html>
