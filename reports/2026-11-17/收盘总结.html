@@ -90,7 +90,7 @@ strong{color:var(--black);}code{background:var(--gray-100);padding:1px 5px;borde
 
 <h2>四、板块资金：265 个板块 39 进 226 出，涨幅榜前三都是单日回补</h2>
 <div class="highlight">
-<b>本节口径：</b>取 <code>板块资金雷达/output/board-radar.html</code> 内嵌 <code>BOARD</code> 的 <code>mainNet</code>（当日主力净额）与 <code>bandNet</code>（5 日波段净额），该雷达 <code>as_of=20261117</code>、数据 cutoff 15:00、产出 17:22，本轮取数 19:29。覆盖 265 个板块；板块涨幅为 board-radar 口径，<b>与第三节 268 个板块的等权口径不同，两套只作方向互证，排序不混排</b>。金额单位亿元。
+<b>本节口径：</b>取 <code>板块资金雷达/output/board-radar.html</code> 内嵌 <code>BOARD</code> 的 <code>mainNet</code>（当日主力净额）与 <code>bandNet</code>（5 日波段净额），该雷达 <code>as_of=20261117</code>、数据 cutoff 15:00、产出 17:22，本轮取数 19:26。覆盖 265 个板块；板块涨幅为 board-radar 口径，<b>与第三节 268 个板块的等权口径不同，两套只作方向互证，排序不混排</b>。金额单位亿元。
 </div>
 <p>265 个板块中 <b>39 个当日净流入、226 个净流出</b>，合计 −2526.6 亿元——成分股跨板块重叠，<b>这个合计不能当全市场净流出</b>，只用于板块间相对强弱。流入前五合计 +126.5 亿（OLED 概念 +36.22、存储芯片 +31.91、先进封装 +30.55、光刻机 +17.74、冷链物流 +10.12），流出前五合计 −336.0 亿（机器人概念 −80.08、人工智能 −70.76、人形机器人 −64.61、DeepSeek −60.95、新能源车 −59.60），<b>流出规模是流入的 2.7 倍</b>，资金面与指数收跌同向。</p>
 <div class="table-wrapper"><table>
@@ -159,13 +159,13 @@ strong{color:var(--black);}code{background:var(--gray-100);padding:1px 5px;borde
 </ul>
 
 <div class="warning">
-<b>本轮缺口（quality=degraded，已关闭 2 条 / 在册 5 条）。</b>①资金流口径未逐板对账：通达信 <code>mainNet/bandNet</code> 已由 <code>board-radar</code>（<code>as_of=20261117</code>、17:22 产出、cutoff 15:00）补入第四节，板块涨股比即第三节「上涨占比」列，两者均已具备；但通达信板块名（880/881 口径）与东财 861 概念、申万行业三套<b>不可混排、未逐板映射对账</b>，<code>board-radar</code> 自身亦为 degraded（265/269 板块、450 只个股无资金流口径）——故本条由「缺主口径」降级为「口径未映射」；②涨停封单额、个股主力净额缺失（妙想 MCP 未配置），第八节引用的 255 万手为文投控股卖一挂单、非涨停封单，不构成全样本；③跌停 84 家为板价口径自算，媒体"近 80 只"仅量级参考，<b>未逐只对账</b>；④宽度样本为 5217 只沪深 A，不含北交所 355 只，北证 50 +0.59% 单列；⑤消息面为亿信<b>摘要级</b>，多数条目无逐条精确发布时间，研报只取摘要不引全文。<br><b>已关闭：</b>原第③条"新闻与研报归因缺失（亿信不可用）"——亿信通道实测可用（4 组查询 66 条，17:12），第八节即据此撰写；该缺口原为误判。<b>原第①条</b>「缺通达信 <code>mainNet/bandNet</code>、<code>board-radar</code> 11-17 未产出」——<code>board-radar</code> 已于 17:22 产出 <code>as_of=20261117</code>，第四节即据此补入（取数 19:29）。
+<b>本轮缺口（quality=degraded，已关闭 2 条 / 在册 5 条）。</b>①资金流口径未逐板对账：通达信 <code>mainNet/bandNet</code> 已由 <code>board-radar</code>（<code>as_of=20261117</code>、17:22 产出、cutoff 15:00）补入第四节，板块涨股比即第三节「上涨占比」列，两者均已具备；但通达信板块名（880/881 口径）与东财 861 概念、申万行业三套<b>不可混排、未逐板映射对账</b>，<code>board-radar</code> 自身亦为 degraded（265/269 板块、450 只个股无资金流口径）——故本条由「缺主口径」降级为「口径未映射」；②涨停封单额、个股主力净额缺失（妙想 MCP 未配置），第八节引用的 255 万手为文投控股卖一挂单、非涨停封单，不构成全样本；③跌停 84 家为板价口径自算，媒体"近 80 只"仅量级参考，<b>未逐只对账</b>；④宽度样本为 5217 只沪深 A，不含北交所 355 只，北证 50 +0.59% 单列；⑤消息面为亿信<b>摘要级</b>，多数条目无逐条精确发布时间，研报只取摘要不引全文。<br><b>已关闭：</b>原第③条"新闻与研报归因缺失（亿信不可用）"——亿信通道实测可用（4 组查询 66 条，17:12），第八节即据此撰写；该缺口原为误判。<b>原第①条</b>「缺通达信 <code>mainNet/bandNet</code>、<code>board-radar</code> 11-17 未产出」——<code>board-radar</code> 已于 17:22 产出 <code>as_of=20261117</code>，第四节即据此补入（取数 19:26）。
 </div>
 
 <footer>
 <b>来源：</b>通达信 TQLEX <code>TdxShare.PBHQInfo</code> 收盘横截面（5217/5247 只，<code>HQDate=20261117</code>，<code>HQTime 153000—153206</code>）；新浪 5m <code>getKLineData</code>（指数与成交额，与 TQLEX 双源一致）；东财 <code>push2ex</code> 涨停池（37 只，与板价口径逐一重合）；板块成分清单 <code>板块资金雷达/data/boards_constituents.json</code>（269 个，268 个可用）；板块资金 <code>板块资金雷达/output/board-radar.html</code> 内嵌 <code>BOARD</code>（<code>as_of=20261117</code>、cutoff 15:00、17:22 产出、265 个板块）。<br>
 <b>口径：</b>涨跌停＝收盘价等于交易所涨跌停价（1e-6 容差）；板块等权＝成分涨幅算术平均，中位＝成分涨幅中位数，<code>gap</code>＝等权−中位，≥1.0pp 或上涨占比 &lt;50% 判为单票拉动；成交额为收盘实际值，非预测值，未做全天外推。<br>
-生成 2026-11-17 15:47（Asia/Shanghai）｜行情 cutoff 2026-11-17T15:00:00+08:00｜15:00 后数据为固定值，不含未来信息。<br>修订 2026-11-17 19:29（Asia/Shanghai）：新增第四节「板块资金」（通达信 <code>mainNet/bandNet</code>，源 <code>board-radar</code> <code>as_of=20261117</code>、17:22 产出、数据 cutoff 15:00、取数 19:29），原四至七节顺延为五至八节，关闭原缺口①的通达信资金流部分；本节只补资金口径，<b>行情数字与结论未改动</b>。<br>修订 2026-11-17 17:18（Asia/Shanghai）：补入消息面归因一节（当时为第七节，现第八节；亿信检索，取数时刻 17:12—17:13，4 组查询 66 条），关闭原缺口③；原有各节行情数字与结论均未改动。
+生成 2026-11-17 15:47（Asia/Shanghai）｜行情 cutoff 2026-11-17T15:00:00+08:00｜15:00 后数据为固定值，不含未来信息。<br>修订 2026-11-17 19:28（Asia/Shanghai）：新增第四节「板块资金」（通达信 <code>mainNet/bandNet</code>，源 <code>board-radar</code> <code>as_of=20261117</code>、17:22 产出、数据 cutoff 15:00、取数 19:26），原四至七节顺延为五至八节，关闭原缺口①的通达信资金流部分；本节只补资金口径，<b>行情数字与结论未改动</b>。<br>修订 2026-11-17 17:18（Asia/Shanghai）：补入消息面归因一节（当时为第七节，现第八节；亿信检索，取数时刻 17:12—17:13，4 组查询 66 条），关闭原缺口③；原有各节行情数字与结论均未改动。
 </footer>
 
 </body></html>
