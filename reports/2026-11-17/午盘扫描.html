@@ -36,10 +36,10 @@ code{background:#f4f4f4;padding:1px 4px;border-radius:3px;font-size:13px;}
 <body>
 <header>
 <h1>11月17日 午盘扫描</h1>
-<div class="meta"><span>2026-11-17（周二，交易日）</span><span>名义时点 11:40</span><span>数据 cutoff 11:30</span><span>事后重建 12:52</span><span>quality degraded</span></div>
+<div class="meta"><span>2026-11-17（周二，交易日）</span><span>名义时点 11:40</span><span>数据 cutoff 11:30</span><span>事后重建 12:39</span><span>quality degraded</span></div>
 </header>
 
-<div class="warning"><strong>重建与口径说明：</strong>11:52 首稿因本会话未挂通达信 MCP，宽度、涨跌停、板块均走新浪替代口径，留下 5 条缺口。本稿用通达信 <code>TQLEX TdxShare.PBFXT</code> 5m 直连（<strong>零 MCP 配额</strong>）重建全部切片：5217 只沪深个股 + 268 个板块 + 9 个指数一次取全，失败 0。5 分钟线标签为区间结束时刻，<code>Second=46800</code> 按项目规范归一到 41400（11:30）。<strong>取数时刻 12:45 处于休市（11:30—13:00），价格冻结在 11:30 收盘态，不存在用午后价格回填历史时点</strong>；涨跌停一律用交易所板价（<code>ExtInfo.ZTPrice/DTPrice</code>，日内不变），不按百分比反推。</div>
+<div class="warning"><strong>重建与口径说明：</strong>11:52 首稿因本会话未挂通达信 MCP，宽度、涨跌停、板块均走新浪替代口径，留下 5 条缺口。本稿用通达信 <code>TQLEX TdxShare.PBFXT</code> 5m 直连（<strong>零 MCP 配额</strong>）重建全部切片：5217 只沪深个股 + 268 个板块 + 9 个指数一次取全，失败 0。5 分钟线标签为区间结束时刻，<code>Second=46800</code> 按项目规范归一到 41400（11:30）。<strong>取数时刻 12:36 处于休市（11:30—13:00），价格冻结在 11:30 收盘态，不存在用午后价格回填历史时点</strong>；涨跌停一律用交易所板价（<code>ExtInfo.ZTPrice/DTPrice</code>，日内不变），不按百分比反推。</div>
 
 <h2>一、指数与量能</h2>
 <p>低开翻红：上证 3602.07（<span class="down">−0.01%</span>）较今开高 0.46%，几乎贴平昨收；科创50 <span class="up">+3.31%</span> 最强、较 09:40 再升 1.48 个点；沪深300 仅 <span class="up">+0.05%</span>，权重没跟上。两市上午 8946 亿，为昨日同期 0.99 倍，<strong>翻红无放量配合</strong>。</p>
@@ -177,7 +177,7 @@ code{background:#f4f4f4;padding:1px 4px;border-radius:3px;font-size:13px;}
 
 <footer>
 数据来源：<code>TQLEX TdxShare.PBFXT</code> 5m 直连（5217 只沪深个股 + 268 个板块 + 9 个指数，零 MCP 配额，失败 0）；昨收与交易所板价 <code>TQLEX TdxShare.PBHQInfo</code>（5217/5247，<code>ExtInfo.ZTPrice/DTPrice</code>）；涨停连板数与首封时间 <code>push2ex.eastmoney.com</code>（首封 ≤11:30，不含 ST，作字段来源不与板价口径互校）；板块成员清单 <code>板块资金雷达/data/boards_constituents.json</code>（269 个声明板块，268 个可算）。<br>
-cutoff 2026-11-17T11:30:00+08:00 ｜ 名义生成 11:40 ｜ 首稿 11:52 ｜ 本稿事后重建 12:52（休市，价格冻结于 11:30）｜ 个股样本 5217 ｜ 板块样本 268 ｜ quality degraded<br>
+cutoff 2026-11-17T11:30:00+08:00 ｜ 名义生成 11:40 ｜ 首稿 11:52 ｜ 本稿事后重建 12:39（休市，价格冻结于 11:30）｜ 个股样本 5217 ｜ 板块样本 268 ｜ quality degraded<br>
 涨跌停一律取交易所板价，跌停不用百分比阈值反推；ST 限幅不按 5% 猜。板块为通达信 880/881 口径，与新浪、东财三套不可混排。资金指标不等于真实机构持仓。本报告为数据复盘，不构成投资建议。
 </footer>
 </body>
