@@ -1,9 +1,20 @@
 {
-  "last_updated": "2026-11-17T04:50:19",
-  "total": 332,
-  "daily_count": 248,
+  "last_updated": "2026-11-17T08:16:15",
+  "total": 333,
+  "daily_count": 249,
   "industry_count": 84,
   "reports": [
+    {
+      "relative_path": "reports/2026-11-17/盘前简报.html",
+      "id": "2026-11-17-盘前简报",
+      "display_date": "11月17日",
+      "title": "盘前简报",
+      "category": "日常复盘",
+      "type": "daily",
+      "quality": "complete",
+      "size_kb": 12.9,
+      "date": "2026-11-17"
+    },
     {
       "relative_path": "reports/2026-11-16/行业调研_新能源电池锂电储能.html",
       "id": "2026-11-16-行业调研_新能源电池锂电储能",

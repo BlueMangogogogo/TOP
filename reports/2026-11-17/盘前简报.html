@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11月17日 盘前简报 · 投资小龙虾</title>
+<style>
+:root{--yellow:#ebb543;--yellow-light:#f7e8c5;--red:#c0392b;--red-light:#fdf0ef;--green:#1f8b4c;--black:#1a1a1a;--gray-900:#2c2c2c;--gray-700:#555;--gray-500:#888;--gray-300:#bbb;--gray-100:#f0f0f0;--white:#fff;--font:"Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",system-ui,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font);font-size:15px;line-height:1.75;color:var(--gray-900);background:var(--white);max-width:820px;margin:0 auto;padding:40px 28px 60px;-webkit-font-smoothing:antialiased;}
+header{border-bottom:3px solid var(--yellow);padding-bottom:20px;margin-bottom:28px;}
+header h1{font-size:24px;font-weight:700;color:var(--black);margin-bottom:6px;letter-spacing:.5px;}
+header .meta{font-size:13px;color:var(--gray-500);}
+header .meta span{margin-right:16px;}
+h2{font-size:18px;font-weight:700;color:var(--black);margin:30px 0 10px;padding-left:12px;border-left:4px solid var(--yellow);}
+h3{font-size:15px;font-weight:700;color:var(--gray-900);margin:18px 0 6px;}
+p{margin:8px 0;}
+.table-wrapper{overflow-x:auto;margin:12px 0 18px;border:1px solid var(--gray-300);border-radius:6px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:500px;}
+thead th{background:var(--yellow);color:var(--black);font-weight:700;padding:9px 11px;text-align:left;white-space:nowrap;border-bottom:2px solid #d4a734;}
+tbody td{padding:8px 11px;border-bottom:1px solid var(--gray-100);vertical-align:top;}
+tbody tr:nth-child(even){background:#fafafa;}
+tbody tr:hover{background:var(--yellow-light);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+.highlight{background:var(--yellow-light);border-left:4px solid var(--yellow);padding:11px 15px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;}
+.warning{background:var(--red-light);border-left:4px solid var(--red);padding:11px 15px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;color:#8b1a1a;}
+ul,ol{margin:8px 0 8px 20px;}
+li{margin:4px 0;}
+.up{color:var(--red);font-weight:700;}
+.down{color:var(--green);font-weight:700;}
+footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--gray-300);font-size:12px;color:var(--gray-500);line-height:1.9;}
+code{background:#f4f4f4;padding:1px 4px;border-radius:3px;font-size:13px;}
+@media (max-width:600px){body{padding:20px 14px 40px;font-size:14px;}table{font-size:12px;}thead th,tbody td{padding:7px 8px;}}
+</style>
+</head>
+<body>
+<header>
+<h1>11月17日 盘前简报</h1>
+<div class="meta"><span>2026-11-17（周二，交易日）</span><span>名义时点 08:00</span><span>数据 cutoff 08:15</span><span>生成 08:16</span></div>
+</header>
+
+<div class="warning"><strong>先读时点与缺口：</strong><br>
+① 名义 08:00，实际启动 08:12、cutoff 08:15（迟到 15 分钟，仍在盘前窗口内，08:00—08:15 无 A 股交易，不存在盘后回填）。<br>
+② 外盘为<strong>美股 11-16 周一收盘</strong>，ETF 时间戳 <code>t=1794862800</code>＝北京 11-17 05:00，交易时段已结束且在 cutoff 前，未被盘后数据污染。<br>
+③ VIX、A50、欧股与日韩现货无直取源（Finnhub 免费档限制），属既存缺口，不填 0。</div>
+
+<h2>一、隔夜外盘：美股 11-16 收盘，科技领跌</h2>
+<p>交易时段：美股 11-16（周一）常规时段收盘价，非盘后、非亚洲早盘。</p>
+<div class="table-wrapper"><table>
+<thead><tr><th>品种（ETF 直取）</th><th class="num">收盘</th><th class="num">涨跌</th><th class="num">前收</th><th>解读</th></tr></thead>
+<tbody>
+<tr><td>SPY（标普 500）</td><td class="num">739.95</td><td class="num down">−1.91%</td><td class="num">754.37</td><td>开盘 749.66 后单边走低，收盘接近日内最低</td></tr>
+<tr><td>QQQ（纳指 100）</td><td class="num">661.75</td><td class="num down">−2.67%</td><td class="num">679.89</td><td>跌幅最深，AI 硬件为主要拖累</td></tr>
+<tr><td>DIA（道指）</td><td class="num">515.68</td><td class="num down">−1.43%</td><td class="num">523.15</td><td>防御相对抗跌，但仍收绿</td></tr>
+<tr><td>IWM（罗素 2000）</td><td class="num">272.94</td><td class="num down">−1.66%</td><td class="num">277.54</td><td>小盘同步走弱，无独立行情</td></tr>
+</tbody></table></div>
+<p style="font-size:13px;color:var(--gray-700);">亿信转述（指数口径）：道指 −1.41%、标普 500 −1.92%、纳指 −2.49%；费城半导体指数重挫逾 5%，英伟达跌超 4%、台积电跌超 6%、美光与英特尔跌超 7%，光通信股跌超 8%。WTI <strong>−3.95% 报 85.06</strong>、布油 −4.2% 报 91.81，黄金续跌。美元指数突破 103 创年内新高，两年期美债单周升超 30bp，12 月加息 25bp 定价抬升。</p>
+<div class="highlight">一句话：<strong>这不是普通回调。</strong>半导体 −5%、油价 −4%、美元破 103 三件事同向，是「加息预期重新定价 + AI 换帅后溢价重估」的双杀。DIA 跌幅比 QQQ 少 1.24 个百分点，防御相对占优，但四大宽基无一收红——<strong>没有避险去处，只有跌幅差异</strong>。</div>
+
+<h2>二、盘前重大消息（亿信，截至 08:00）</h2>
+<div class="table-wrapper"><table>
+<thead><tr><th>#</th><th>事件</th><th>影响</th><th>情绪</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>第三批互换便利（SFISF）加速落地：截至 11-16，中信证券、国泰海通、中金、东方证券、中信建投、国信等已完成首批买入，<strong>千亿元级直达投资端</strong></td><td>唯一带金额的增量资金线索；但落地到买入是分批的，对单日盘面的边际量有限</td><td class="up">偏多</td></tr>
+<tr><td>2</td><td>央行 11-16 开展 2000 亿元 6 个月买断式逆回购（当月到期 3000 亿，<strong>缩量续作 1000 亿</strong>）+ 4600 亿元隔夜逆回购；11-15 起外汇存款准备金率 4%→6%</td><td>跨月流动性不缺，但中期工具净回笼；外汇存准上调是汇率层面的收紧，与美元破 103 形成对冲而非对冲掉压力</td><td>中性偏紧</td></tr>
+<tr><td>3</td><td>证监会：吴清 11-14 在资本市场学术年会提出深化市场稳定长效机制研究、评估量化与减持制度优化；11-17 头版披露国际顾问委员会第 23 次会议聚焦「增强资本市场韧性」</td><td>表态层面持续，仍无具体工具与金额，属托底不属拉升</td><td>中性</td></tr>
+<tr><td>4</td><td>10 月经济数据（统计局 11-16）：规上工业增加值同比 <strong>+4.8%</strong>、社零 <strong>+0.4%</strong>（1—10 月 +1.0%），70 城中一线房价环比转涨、二三线降</td><td>生产端稳、需求端弱，与「稳市」叙事形成落差；地产链仍是拖累项</td><td class="down">偏空</td></tr>
+<tr><td>5</td><td>英伟达将于<strong>美股 11-17 盘后</strong>（北京 11-18 凌晨）披露三季报；黄仁勋已于 11-12 辞任总裁、CEO 及董事</td><td>本周全球科技股最大不确定；财报前算力方向的反弹都是空头回补，不是趋势确认</td><td>事件风险</td></tr>
+</tbody></table></div>
+<p>不入表但该提：证券时报 11-17 头版——美的创新高、市值破 7000 亿，长电、工行、建行同步新高，蓝筹修复有实物证据，多家回购增持获专项贷款承诺函；另一端 11 月以来约 11 家被立案，压制题材情绪。</p>
+
+<h2>三、昨日 A 股基准（11-16 收盘，复用不改写）</h2>
+<div class="table-wrapper"><table>
+<thead><tr><th>指数</th><th class="num">收盘</th><th class="num">涨跌</th><th class="num">成交额(亿)</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td class="num">3602.57</td><td class="num down">−0.87%</td><td class="num">7062</td></tr>
+<tr><td>深证成指</td><td class="num">10690.78</td><td class="num down">−2.53%</td><td class="num">4044</td></tr>
+<tr><td>创业板指</td><td class="num">2320.02</td><td class="num down">−4.37%</td><td class="num">3693</td></tr>
+<tr><td>科创 50</td><td class="num">1213.68</td><td class="num down">−5.16%</td><td class="num">851</td></tr>
+<tr><td>沪深 300</td><td class="num">3979.80</td><td class="num down">−0.91%</td><td class="num">4306</td></tr>
+<tr><td>北证 50</td><td class="num">836.57</td><td class="num down">−4.54%</td><td class="num">98</td></tr>
+</tbody></table></div>
+<p>宽度：上涨 1135 / 下跌 4344，中位 <strong>−2.11%</strong>；涨停 32 家（板价口径 33，含 ST 1 只）、炸板 16 家、跌停 <strong>68 家</strong>。沪深成交 <strong>14845 亿</strong>，较 11-13 的 16557 亿缩 10.3%。结构是「权重护指数、个股在失血」：CPO −6.41%、芯片 −4.49%，而中特估 +0.69% 的 98 只里 69 只上涨、这 69 只合计净额却是 −2.27 亿——涨着失血，不是资金抱团。</p>
+
+<h2>四、今日关注方向与反证条件</h2>
+<div class="table-wrapper"><table>
+<thead><tr><th>方向</th><th>截至 08:00 的证据</th><th>反证条件（什么算打脸）</th></tr></thead>
+<tbody>
+<tr><td><strong>算力硬件低开后能否承接</strong></td><td>隔夜费半 −5%、英伟达 −4%，外部无修复线索；11-16 CPO −6.41%、芯片 −4.49%，四龙头（中际旭创、新易盛、沪电股份、东山精密）当日成交合计约 630 亿</td><td>四只成交合计 <strong>≥630 亿且继续下跌</strong>；或低开后 <strong>30 分钟内未收复 11-16 收盘价</strong>——两者任一即「一次性释放」判错，按 C 档（第一波未完）处理</td></tr>
+<tr><td><strong>权重防御能否续命</strong></td><td>11-16 上证仅 −0.87% 而创业板 −4.37%，靠的就是权重；蓝筹创新高与回购贷款提供实物支撑</td><td><strong>上证跌幅大于创业板跌幅</strong>（权重补跌），或中特估 98 只的上涨占比从 70% 落到 50% 以下——防御抱团结束，指数失去第二道防线</td></tr>
+<tr><td><strong>情绪高度是否塌陷</strong></td><td>11-16 涨停 32 家但封板率 67.3%，北纬科技 4 板为现存唯一高度，天普股份已停牌核查</td><td>北纬科技<strong>断板且涨停家数缩到 20 家以下</strong>——连板梯队清零，情绪二次探底，任何低开修复都不可信</td></tr>
+</tbody></table></div>
+<div class="highlight">基准情形是<strong>低开后缩量震荡</strong>（昨日 B 档）：撤离端 5 日波段已 −31819 亿，存量出清较充分，同力度再砸需新边际卖盘；但承接端仅 11 个板块净流入、合计 +14.4 亿且全部单票主导，没有方向具备接棒资格，所以也涨不上去。要盯的是<strong>算力四龙头成交能否压到 441 亿以下</strong>——这是 A 档的硬门槛，压不下去就只是缩量阴跌。</div>
+
+<h2>五、风险提示</h2>
+<ul>
+<li><strong>英伟达财报在 11-18 凌晨</strong>：今日算力若反弹属事件前调仓，不具备趋势含义；若今日不跌，也不代表利空出尽。</li>
+<li><strong>跌停扩散是第一位风险</strong>：跌停 6→39→68 家逐日放大，今日若 ≥70 家，C 档无需再等指数条件。</li>
+<li><strong>汇率与加息双紧</strong>：美元破 103、12 月加息定价抬升叠加外汇存准上调至 6%，压制外资被动流入；油价 −4% 对石油石化偏空。</li>
+<li><strong>VIX／A50 缺失</strong>：无法量化恐慌度，也读不到盘前方向。这是数据缺口，不能反读成「外盘平静」。</li>
+</ul>
+
+<h2>六、口径与缺口</h2>
+<ul>
+<li><strong>外盘</strong>：Finnhub 直取四只 ETF（HTTP 200），<code>t=1794862800</code>＝11-17 05:00+08:00＝11-16 美股收盘；指数、费半、油价、美元为亿信转述，两套口径不混算。</li>
+<li><strong>资讯</strong>：亿信检索 1 组（limit 12，命中 10，HTTP 200 success=true），原始响应 <code>_raw/yx_01.json</code>；11-17 早评链接内嵌 <code>20261117060409</code>（06:04）可证 ≤cutoff，其余按内容判为盘前稿。</li>
+<li><strong>A 股基准</strong>：复用 <code>2026-11-16/_raw/intraday_1500.json</code> 与同日两份 validated 报告，未重建板块全扫，MCP 调用 0 次。</li>
+<li><strong>缺口</strong>：VIX、A50、欧洲与日韩现货无直取源（Finnhub 免费档订阅限制），不替代、不填 0。</li>
+<li><strong>时点</strong>：started 08:12、cutoff 08:15、generated 08:16。上期《深度复盘》三档推演仍属<strong>待验证</strong>，本报告只复述判据，不代替开盘定价。</li>
+</ul>
+
+<footer>
+⚠️ 免责声明：本报告由 投资小龙虾 AI 自动生成，仅供参考研究，不构成任何投资建议。投资有风险，决策须谨慎。<br>
+数据来源：Finnhub 直取报价（外盘）｜亿信通道（资讯与指数转述）｜11-16 收盘快照与已 validated 的《收盘总结》《深度复盘》（A 股）<br>
+生成时间：2026-11-17 08:16 ｜ quality=complete ｜ 任务 studio_job_11
+</footer>
+</body>
+</html>
