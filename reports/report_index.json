@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-11-17T17:15:08",
-  "total": 338,
-  "daily_count": 254,
+  "last_updated": "2026-11-17T18:21:57",
+  "total": 339,
+  "daily_count": 255,
   "industry_count": 84,
   "reports": [
     {
@@ -57,6 +57,17 @@
       "type": "daily",
       "quality": "degraded",
       "size_kb": 18.6,
+      "date": "2026-11-17"
+    },
+    {
+      "relative_path": "reports/2026-11-17/宏观择时日报_MTIv3_20261117.html",
+      "id": "2026-11-17-宏观择时日报_MTIv3_20261117",
+      "display_date": "11月17日",
+      "title": "宏观择时日报_MTIv3_20261117",
+      "category": "宏观择时",
+      "type": "daily",
+      "quality": "degraded",
+      "size_kb": 273.8,
       "date": "2026-11-17"
     },
     {
