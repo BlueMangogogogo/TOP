@@ -36,110 +36,149 @@ code{background:#f4f4f4;padding:1px 4px;border-radius:3px;font-size:13px;}
 <body>
 <header>
 <h1>11月17日 午盘扫描</h1>
-<div class="meta"><span>2026-11-17（周二，交易日）</span><span>名义时点 11:40</span><span>数据 cutoff 11:30</span><span>生成 11:52</span><span>quality degraded</span></div>
+<div class="meta"><span>2026-11-17（周二，交易日）</span><span>名义时点 11:40</span><span>数据 cutoff 11:30</span><span>事后重建 12:52</span><span>quality degraded</span></div>
 </header>
 
-<div class="warning"><strong>口径提示：</strong>本会话未挂通达信 MCP，指数与成交额取新浪 5m 切片（末根标签 11:30）；<strong>涨跌家数、涨跌停、成分中位改由新浪全 A 与板块成员分页逐只现价统计</strong>——11:30—13:00 休市，午休取到的收盘价即 11:30 收盘态（个股时间戳回读 11:30:00，已核）。板块为<strong>新浪口径</strong>，与 09:40 稿的通达信 880/881 <strong>不可比位次</strong>，仅作方向一致性参考。</div>
+<div class="warning"><strong>重建与口径说明：</strong>11:52 首稿因本会话未挂通达信 MCP，宽度、涨跌停、板块均走新浪替代口径，留下 5 条缺口。本稿用通达信 <code>TQLEX TdxShare.PBFXT</code> 5m 直连（<strong>零 MCP 配额</strong>）重建全部切片：5217 只沪深个股 + 268 个板块 + 9 个指数一次取全，失败 0。5 分钟线标签为区间结束时刻，<code>Second=46800</code> 按项目规范归一到 41400（11:30）。<strong>取数时刻 12:45 处于休市（11:30—13:00），价格冻结在 11:30 收盘态，不存在用午后价格回填历史时点</strong>；涨跌停一律用交易所板价（<code>ExtInfo.ZTPrice/DTPrice</code>，日内不变），不按百分比反推。</div>
 
 <h2>一、指数与量能</h2>
-<p>低开翻红：上证 3602.07（<span class="down">−0.01%</span>）较今开高 0.46%，科创50 <span class="up">+3.31%</span> 最强、较 09:40 再升 1.48 个点；沪深300 仅 <span class="up">+0.05%</span>，权重没跟上。两市上午 8946 亿，为昨日同期 0.99 倍，<strong>翻红无放量配合</strong>。</p>
+<p>低开翻红：上证 3602.07（<span class="down">−0.01%</span>）较今开高 0.46%，几乎贴平昨收；科创50 <span class="up">+3.31%</span> 最强、较 09:40 再升 1.48 个点；沪深300 仅 <span class="up">+0.05%</span>，权重没跟上。两市上午 8946 亿，为昨日同期 0.99 倍，<strong>翻红无放量配合</strong>。</p>
 <div class="table-wrapper"><table>
-<thead><tr><th>指数</th><th class="num">昨收</th><th class="num">今开</th><th class="num">11:30</th><th class="num">涨跌幅</th><th class="num">较今开</th></tr></thead>
+<thead><tr><th>指数</th><th class="num">昨收</th><th class="num">今开</th><th class="num">11:30</th><th class="num">涨跌幅</th><th class="num">较今开</th><th class="num">成交额(亿)</th></tr></thead>
 <tbody>
-<tr><td>上证指数</td><td class="num">3602.57</td><td class="num">3585.67</td><td class="num">3602.07</td><td class="num down">−0.01%</td><td class="num up">+0.46%</td></tr>
-<tr><td>深证成指</td><td class="num">10690.78</td><td class="num">10605.17</td><td class="num">10764.89</td><td class="num up">+0.69%</td><td class="num up">+1.51%</td></tr>
-<tr><td>创业板指</td><td class="num">2320.02</td><td class="num">2299.97</td><td class="num">2336.80</td><td class="num up">+0.72%</td><td class="num up">+1.60%</td></tr>
-<tr><td>科创50</td><td class="num">1213.68</td><td class="num">1212.39</td><td class="num">1253.91</td><td class="num up">+3.31%</td><td class="num up">+3.42%</td></tr>
-<tr><td>北证50</td><td class="num">836.57</td><td class="num">831.70</td><td class="num">857.01</td><td class="num up">+2.44%</td><td class="num up">+3.04%</td></tr>
-<tr><td>沪深300</td><td class="num">3979.80</td><td class="num">3965.90</td><td class="num">3981.91</td><td class="num up">+0.05%</td><td class="num up">+0.40%</td></tr>
-<tr><td>中证500</td><td class="num">6297.18</td><td class="num">6252.19</td><td class="num">6375.49</td><td class="num up">+1.24%</td><td class="num up">+1.97%</td></tr>
-<tr><td>中证1000</td><td class="num">6164.62</td><td class="num">6111.05</td><td class="num">6225.56</td><td class="num up">+0.99%</td><td class="num up">+1.87%</td></tr>
-<tr><td>深证综指</td><td class="num">2052.39</td><td class="num">2036.34</td><td class="num">2066.31</td><td class="num up">+0.68%</td><td class="num up">+1.47%</td></tr>
+<tr><td>上证指数</td><td class="num">3602.57</td><td class="num">3585.67</td><td class="num">3602.07</td><td class="num down">−0.01%</td><td class="num up">+0.46%</td><td class="num">4242.9</td></tr>
+<tr><td>深证成指</td><td class="num">10690.78</td><td class="num">10605.17</td><td class="num">10764.89</td><td class="num up">+0.69%</td><td class="num up">+1.51%</td><td class="num">4703.3</td></tr>
+<tr><td>创业板指</td><td class="num">2320.02</td><td class="num">2299.97</td><td class="num">2336.80</td><td class="num up">+0.72%</td><td class="num up">+1.60%</td><td class="num">2242.9</td></tr>
+<tr><td>科创50</td><td class="num">1213.68</td><td class="num">1212.39</td><td class="num">1253.91</td><td class="num up">+3.31%</td><td class="num up">+3.42%</td><td class="num">633.6</td></tr>
+<tr><td>北证50</td><td class="num">836.57</td><td class="num">831.70</td><td class="num">857.01</td><td class="num up">+2.44%</td><td class="num up">+3.04%</td><td class="num">64.4</td></tr>
+<tr><td>沪深300</td><td class="num">3979.80</td><td class="num">3965.90</td><td class="num">3981.91</td><td class="num up">+0.05%</td><td class="num up">+0.40%</td><td class="num">2395.4</td></tr>
+<tr><td>中证500</td><td class="num">6297.18</td><td class="num">6252.19</td><td class="num">6375.49</td><td class="num up">+1.24%</td><td class="num up">+1.97%</td><td class="num">1572.0</td></tr>
+<tr><td>中证1000</td><td class="num">6164.62</td><td class="num">6111.05</td><td class="num">6225.56</td><td class="num up">+0.99%</td><td class="num up">+1.87%</td><td class="num">1726.6</td></tr>
+<tr><td>深证综指</td><td class="num">2052.39</td><td class="num">2036.34</td><td class="num">2066.31</td><td class="num up">+0.68%</td><td class="num up">+1.47%</td><td class="num">4703.3</td></tr>
 </tbody></table></div>
+<div class="note">成交额为 5m <code>Amount</code> 累加（沪＝上证指数口径 4242.9 亿、深＝深证综指口径 4703.3 亿，两者不重叠），沪深合计 <strong>8946.2 亿</strong>；北证50 另计 64.4 亿，全市场 9010.6 亿。指数点位与首稿新浪 5m 逐位一致（上证 3602.071、深成 10764.885），属双源互证通过。</div>
 
-<h2>二、宽度：整段反转</h2>
-<p>竞价 80% 低开、09:40 涨跌比 0.39，11:30 已 <strong>涨 3545／跌 1789、涨跌比 1.98、上涨占比 66.5%</strong>，深市 68.2% 强于沪市 60.8%。但跌停同期 25→31 只，<strong>涨的在扩散、跌的也在扩散</strong>。</p>
+<h2>二、宽度：整段反转，且是「涨的在扩散、跌的没扩散」</h2>
+<p>竞价 80% 低开、09:40 涨跌比 0.39，11:30 已 <strong>涨 3244／跌 1754、涨跌比 1.85、上涨占比 62.2%、个股中位 +0.48%</strong>。深市 65.7% 强于沪市 58.6%。关键是跌停：<strong>09:40 25 只 → 11:30 仍是 25 只，零新增</strong>——首稿「跌的也在扩散」是新浪估算口径（31 只）导致的误判，板价口径下不成立。</p>
 <div class="table-wrapper"><table>
 <thead><tr><th>时点</th><th class="num">涨</th><th class="num">跌</th><th class="num">平</th><th class="num">涨跌比</th><th class="num">涨停</th><th class="num">跌停</th></tr></thead>
 <tbody>
 <tr><td>09:25 竞价</td><td class="num">577 高开</td><td class="num">4179 低开</td><td class="num">460</td><td class="num">0.14</td><td class="num">3</td><td class="num">16</td></tr>
 <tr><td>09:40</td><td class="num">1415</td><td class="num">3600</td><td class="num">201</td><td class="num">0.39</td><td class="num">19</td><td class="num">25</td></tr>
-<tr><td><strong>11:30</strong></td><td class="num up"><strong>3545</strong></td><td class="num down"><strong>1789</strong></td><td class="num">243</td><td class="num up"><strong>1.98</strong></td><td class="num">45*</td><td class="num">31*</td></tr>
+<tr><td><strong>11:30</strong></td><td class="num up"><strong>3244</strong></td><td class="num down"><strong>1754</strong></td><td class="num">219</td><td class="num up"><strong>1.85</strong></td><td class="num up"><strong>41</strong></td><td class="num">25</td></tr>
 </tbody></table></div>
-<div class="note">* 11:30 涨停 45／跌停 31 为按交易所板价逐只估算（含 ST）；东财 <code>push2ex</code> 池按首封 ≤11:30 且不含 ST 为 <strong>42 只</strong>，正文以 42 只池为准。跌停名单未取。</div>
-
-<h2>三、涨停与炸板</h2>
-<p>涨停池 42 只：<strong>首板 35、连板 7</strong>，高度广百股份 4 板。炸板 7 只、<strong>炸板率 14.3%</strong>，其中金逸影视、凯撒文化<strong>与跌停方向同源</strong>（传媒游戏）。</p>
 <div class="table-wrapper"><table>
-<thead><tr><th>连板高度</th><th>个股</th><th class="num">首封</th></tr></thead>
+<thead><tr><th>分市场（11:30）</th><th class="num">涨</th><th class="num">跌</th><th class="num">平</th><th class="num">上涨占比</th><th>指数 K 线 up/down 互校</th></tr></thead>
 <tbody>
-<tr><td>4 板</td><td>广百股份（一般零售）</td><td class="num">09:30:03</td></tr>
-<tr><td>3 板</td><td>华东重机（工程机械）</td><td class="num">09:25:00</td></tr>
-<tr><td>2 板</td><td>顺钠股份、长虹美菱、北投科技、瀛通通讯、小熊电器</td><td class="num">09:30—10:49</td></tr>
-<tr><td>炸板 7 只</td><td>金逸影视、天虹股份、皖通科技、凯撒文化、百合花、冰山冷热、深华发Ａ</td><td class="num">09:30—11:09</td></tr>
+<tr><td>沪市</td><td class="num">1356</td><td class="num">871</td><td class="num">87</td><td class="num">58.6%</td><td>1363 / 893（差 7 / 22）</td></tr>
+<tr><td>深市</td><td class="num">1888</td><td class="num">883</td><td class="num">132</td><td class="num">65.7%</td><td>1894 / 900（差 6 / 17）</td></tr>
 </tbody></table></div>
-
-<h2>四、强弱板块（已过成员集中度）</h2>
-<p>只有两条干净宽度：<strong>华为概念</strong>（51 只，中位 +1.86%、占比 76.5%、与板块差 0.01）、<strong>触摸屏</strong>（31 只，中位 +2.36%、占比 87.1%）。华为海思、聚氨酯差 &gt;2，<strong>含龙头拉动</strong>；3D打印 59% 已分化；地热能 14 只样本不足。弱势端广播影视 <span class="down">−6.23%</span>、<strong>19 只 0 只上涨</strong>，属板块级崩塌。</p>
 <div class="table-wrapper"><table>
-<thead><tr><th>板块（新浪口径）</th><th class="num">板块涨幅</th><th class="num">成分</th><th class="num">成分中位</th><th class="num">上涨占比</th><th class="num">差</th><th>判读</th></tr></thead>
-<tbody>
-<tr><td>华为海思</td><td class="num up">+3.83%</td><td class="num">36</td><td class="num up">+1.62%</td><td class="num">83.3%</td><td class="num">+2.21</td><td>强，含芯源微拉动</td></tr>
-<tr><td>触摸屏</td><td class="num up">+3.28%</td><td class="num">31</td><td class="num up">+2.36%</td><td class="num">87.1%</td><td class="num">+0.92</td><td><strong>宽度成立</strong></td></tr>
-<tr><td>地热能</td><td class="num up">+2.86%</td><td class="num">14</td><td class="num up">+1.29%</td><td class="num">78.6%</td><td class="num">+1.57</td><td>样本不足</td></tr>
-<tr><td>聚氨酯</td><td class="num up">+2.82%</td><td class="num">23</td><td class="num up">+0.72%</td><td class="num">73.9%</td><td class="num">+2.10</td><td>单票拉动（雅克 +8.42%）</td></tr>
-<tr><td>智能穿戴</td><td class="num up">+2.72%</td><td class="num">19</td><td class="num up">+1.67%</td><td class="num">84.2%</td><td class="num">+1.05</td><td>宽度成立</td></tr>
-<tr><td>3D打印</td><td class="num up">+2.64%</td><td class="num">39</td><td class="num up">+1.02%</td><td class="num">59.0%</td><td class="num">+1.62</td><td>分化，不达阈值</td></tr>
-<tr><td>华为概念</td><td class="num up">+1.87%</td><td class="num">51</td><td class="num up">+1.86%</td><td class="num">76.5%</td><td class="num">+0.01</td><td><strong>宽度最广，额 308.6 亿</strong></td></tr>
-<tr><td>互联网和相关服务</td><td class="num down">−1.49%</td><td class="num">63</td><td class="num down">−1.42%</td><td class="num">28.6%</td><td class="num">−0.07</td><td>弱势，非崩塌</td></tr>
-<tr><td>煤炭开采和洗选业</td><td class="num down">−2.55%</td><td class="num">25</td><td class="num down">−2.41%</td><td class="num">4.0%</td><td class="num">−0.14</td><td>板块级下跌</td></tr>
-<tr><td>广播、电视、电影和影视录音制作业</td><td class="num down">−6.23%</td><td class="num">19</td><td class="num down">−5.97%</td><td class="num">0.0%</td><td class="num">−0.26</td><td><strong>板块级崩塌</strong></td></tr>
-</tbody></table></div>
+<thead><tr><th>涨跌幅分布</th><th class="num">≥9.9%</th><th class="num">5~9.9%</th><th class="num">2~5%</th><th class="num">0~2%</th><th class="num">−2~0</th><th class="num">−5~−2%</th><th class="num">−9.9~−5%</th><th class="num">≤−9.9%</th></tr></thead>
+<tbody><tr><td>只数</td><td class="num">56</td><td class="num">173</td><td class="num">813</td><td class="num">2421</td><td class="num">1318</td><td class="num">293</td><td class="num">118</td><td class="num">25</td></tr></tbody>
+</table></div>
+<div class="note">样本＝本地 <code>.day</code> 清单中的 5217 只沪深 A（不含北交所，故与首稿「全 A 5577 只」不可直接对数）。涨跌家数为逐只「11:30 收盘 vs PBHQInfo 昨收」判定，与指数 K 线自带 <code>up/down</code> 差 7—22 只，属本地清单与指数快照的成分差异，两源方向与量级一致。涨超 2% 共 1042 只、跌超 5% 共 143 只，<strong>反弹是普遍修复而非少数拉动</strong>。</div>
 
-<h2>五、异动个股（截至 11:30）</h2>
-<ul>
-<li><strong>芯源微</strong> 235.40 <span class="up">+8.37%</span>／10.44 亿，自平盘 217.10 起步，华为海思最大贡献者。</li>
-<li><strong>怡达股份</strong> 18.26 封板 <span class="up">+19.97%</span>／3.34 亿，电解液唯一 20cm。</li>
-<li><strong>广百股份</strong> 8.44 <span class="up">+10.04%</span>／15.17 亿，4 板，日内最低 7.88 后回封，连板高度唯一锚。</li>
-</ul>
+<h2>三、涨跌停：板价口径精确名单</h2>
+<p>11:30 涨停封板 <strong>41 只</strong>（沪深）＋ <strong>佳先股份</strong>（北交所 920489，−）＝ 42 只，与东财 <code>push2ex</code> 池 42 只<strong>逐一重合、无一漏项</strong>。20cm 6 只。炸板（触及未封）<strong>10 只</strong>、炸板率 19.6%。</p>
+<div class="table-wrapper"><table>
+<thead><tr><th>结构</th><th>个股</th><th class="num">只数</th></tr></thead>
+<tbody>
+<tr><td>4 板</td><td>广百股份（一般零售，09:30:03 首封）</td><td class="num">1</td></tr>
+<tr><td>3 板</td><td>华东重机（工程机械，竞价 09:25:00 封）</td><td class="num">1</td></tr>
+<tr><td>2 板</td><td>顺钠股份、长虹美菱、北投科技、瀛通通讯、小熊电器</td><td class="num">5</td></tr>
+<tr><td>首板</td><td>光学光电 4（芯瑞达/永新光学/波长光电/福晶科技）、电子化学 3（西陇科学/江化微/格林达）、环保设备 3、IT服务 3、半导体 2（有研新材/伟测科技）、化学制品 2、消费电子 2、小家电 2、通用设备 2、电网设备 2、综合Ⅱ 2 等</td><td class="num">34</td></tr>
+<tr><td>20cm</td><td>清研环境 +20.02、联合化学 +20.01、伟测科技 +20.00、波长光电 +19.99、怡达股份 +19.97、国林科技 +19.96</td><td class="num">6</td></tr>
+<tr><td>炸板</td><td>冰山冷热（收 +7.45）、深圳华强（+7.14）、凯撒文化（+6.65）、百合花（+6.28）、华立股份（+5.90）、皖通科技（+4.92）、天虹股份（+4.63）、深华发Ａ（+2.74）、华升股份（+1.26）、金逸影视（<span class="down">−5.97</span>）</td><td class="num">10</td></tr>
+</tbody></table></div>
+<p>跌停封板 <strong>25 只</strong>（全部具名，板价判定）：</p>
+<p style="font-size:13.5px;color:var(--gray-700);">金科股份 −10.31、岳阳林纸 −10.08、浙文影业 −10.08、百洋股份 −10.04、人民同泰 −10.03、上海九百 −10.01、电魂网络 −10.01、东方环宇 −10.01、岳阳兴长 −10.00、*ST启环 −10.00、横店影视 −10.00、华达科技 −10.00、金辰股份 −10.00、国机精工 −9.99、国统股份 −9.99、大业股份 −9.99、大东方 −9.98、龙版传媒 −9.98、通化金马 −9.97、湖北广电 −9.92、*ST东珠 −9.92、文投控股 −9.89、*ST华幸 −9.80、*ST瑞茂 −9.64、*ST美丽 −9.47。</p>
+<div class="note">另有 <strong>42 只触及跌停后打开</strong>（区间最低价触及板价、11:30 收盘未封），其中 35 只收盘仍在 −5% 以下——这是「跌停开盘 16 只 → 收盘仅 25 只封板」的中间过程。跌停名单里传媒链最密集：浙文影业、电魂网络、横店影视、龙版传媒、湖北广电、文投控股 6 只，与板块端短剧游戏 −3.47% 同源。</div>
+
+<h2>四、板块：268 个全样本，261 个在 09:40→11:30 改善</h2>
+<p><strong>268 个可算板块中 209 个红盘（78.0%）、成员涨幅中位为正 214 个、上涨占比 ≥60% 的 158 个</strong>；09:40 时这三个数分别只有 36 / 15 / ——，<strong>267 个可比板块里 261 个改善、仅 6 个恶化</strong>。这意味着上午是一次全市场同步修复，不是结构轮动。</p>
+<p>主线是<strong>半导体设备与存储链</strong>，且是真正的板块级宽度，不是龙头拉动：</p>
+<div class="table-wrapper"><table>
+<thead><tr><th>板块（通达信 880/881 口径）</th><th class="num">11:30 涨幅</th><th class="num">成分中位</th><th class="num">上涨占比</th><th class="num">成分数</th><th class="num">09:40→11:30</th><th>判读</th></tr></thead>
+<tbody>
+<tr><td>光刻机</td><td class="num up">+5.33%</td><td class="num up">+4.75%</td><td class="num">94.0%</td><td class="num">117</td><td class="num up">+3.79pp</td><td><strong>最强且最宽</strong></td></tr>
+<tr><td>存储芯片</td><td class="num up">+3.66%</td><td class="num up">+3.60%</td><td class="num">92.0%</td><td class="num">184</td><td class="num up">+2.62pp</td><td>宽度成立</td></tr>
+<tr><td>OLED概念</td><td class="num up">+3.49%</td><td class="num up">+2.98%</td><td class="num">89.0%</td><td class="num">149</td><td class="num up">+2.69pp</td><td>宽度成立</td></tr>
+<tr><td>先进封装</td><td class="num up">+3.45%</td><td class="num up">+3.26%</td><td class="num">91.0%</td><td class="num">161</td><td class="num up">+2.68pp</td><td>宽度成立</td></tr>
+<tr><td>MicroLED</td><td class="num up">+3.05%</td><td class="num up">+2.83%</td><td class="num">90.0%</td><td class="num">71</td><td class="num up">+2.78pp</td><td>宽度成立</td></tr>
+<tr><td>第三代半导体</td><td class="num up">+2.95%</td><td class="num up">+2.78%</td><td class="num">90.0%</td><td class="num">164</td><td class="num up">+2.51pp</td><td>宽度成立</td></tr>
+<tr><td>华为海思</td><td class="num up">+2.22%</td><td class="num up">+1.83%</td><td class="num">81.7%</td><td class="num">60</td><td class="num">—</td><td>强，但弱于设备链</td></tr>
+<tr><td>芯片（大类）</td><td class="num up">+2.32%</td><td class="num up">+1.97%</td><td class="num">81.0%</td><td class="num">840</td><td class="num up">+2.05pp</td><td>已扩散到全大类</td></tr>
+<tr><td>短剧游戏</td><td class="num down">−3.47%</td><td class="num down">−3.44%</td><td class="num">14.1%</td><td class="num">85</td><td class="num down">−0.75pp</td><td><strong>板块级崩塌</strong></td></tr>
+<tr><td>知识付费</td><td class="num down">−2.74%</td><td class="num down">−2.68%</td><td class="num">9.1%</td><td class="num">22</td><td class="num down">−0.95pp</td><td>一致性下跌</td></tr>
+<tr><td>AI营销</td><td class="num down">−1.98%</td><td class="num down">−2.07%</td><td class="num">16.3%</td><td class="num">43</td><td class="num down">−0.28pp</td><td>一致性下跌</td></tr>
+<tr><td>云游戏</td><td class="num down">−1.68%</td><td class="num down">−2.18%</td><td class="num">19.2%</td><td class="num">26</td><td class="num">—</td><td>板指强于中位＝个别大票撑指数</td></tr>
+</tbody></table></div>
+<div class="note">集中度判据：板指涨幅与成分中位同向、上涨占比 &gt;60% 才算宽度；<code>板指−中位≥0.5 且占比&lt;50%</code> 判单票拉动。268 个板块里<strong>只有 2 个</strong>满足单票拉动（含B股、云游戏），其余涨幅榜前列全部是成分同步上涨。<strong>本表为通达信 880/881 口径，与首稿新浪 <code>gn_*</code> 概念榜不可混排</strong>；首稿「只有华为概念、触摸屏两条干净宽度」的结论因此作废——那是新浪口径下的抽样，不是全样本。</div>
+
+<h2>五、急拉与跳水（5 分钟粒度，09:40→11:30）</h2>
+<p>个股层面变动 ≥6% 的 <strong>72 只</strong>，方向以上涨为主。急拉前列全部落在光学光电/电子化学：</p>
+<div class="table-wrapper"><table>
+<thead><tr><th>急拉</th><th class="num">09:40→11:30</th><th class="num">全日涨幅</th><th class="num">单根最大跳动</th></tr></thead>
+<tbody>
+<tr><td>波长光电</td><td class="num up">+15.67pp</td><td class="num up">+19.99%</td><td class="num">5.29%</td></tr>
+<tr><td>怡达股份</td><td class="num up">+13.35pp</td><td class="num up">+19.97%</td><td class="num">5.85%</td></tr>
+<tr><td>卡莱特</td><td class="num up">+13.26pp</td><td class="num up">+12.56%</td><td class="num">2.97%</td></tr>
+<tr><td>东方海洋</td><td class="num up">+12.79pp</td><td class="num up">+1.61%</td><td class="num">7.60%</td></tr>
+<tr><td>奥雅股份</td><td class="num up">+12.60pp</td><td class="num down">−0.94%</td><td class="num">4.47%</td></tr>
+<tr><td>影石创新</td><td class="num up">+12.39pp</td><td class="num up">+15.87%</td><td class="num">4.01%</td></tr>
+</tbody></table></div>
+<div class="table-wrapper"><table>
+<thead><tr><th>跳水</th><th class="num">09:40→11:30</th><th class="num">全日涨幅</th><th class="num">单根最大跳动</th></tr></thead>
+<tbody>
+<tr><td>翱捷科技-U</td><td class="num down">−9.79pp</td><td class="num down">−14.89%</td><td class="num">5.41%</td></tr>
+<tr><td>凡拓数创</td><td class="num down">−7.57pp</td><td class="num down">−9.30%</td><td class="num">2.61%</td></tr>
+<tr><td>岳阳林纸</td><td class="num down">−6.70pp</td><td class="num down">−10.08%</td><td class="num">4.92%</td></tr>
+<tr><td>锋龙股份</td><td class="num down">−6.07pp</td><td class="num down">−8.49%</td><td class="num">2.57%</td></tr>
+<tr><td>*ST发展</td><td class="num down">−5.47pp</td><td class="num down">−9.02%</td><td class="num">4.00%</td></tr>
+<tr><td>中国电影</td><td class="num down">−5.09pp</td><td class="num down">−6.40%</td><td class="num">1.64%</td></tr>
+</tbody></table></div>
+<div class="note">口径＝同源 5m 序列，09:40 与 11:30 两根收盘之比；「单根最大跳动」为上午任意相邻两根的最大变动。只能到 5 分钟粒度，<strong>不等于逐笔急拉</strong>，秒级脉冲与封单变化仍不可复原。</div>
 
 <h2>六、下午观察条件</h2>
 <div class="table-wrapper"><table>
-<thead><tr><th>观察项</th><th>当前值</th><th>生效阈值</th><th>含义</th></tr></thead>
+<thead><tr><th>观察项</th><th>当前值（11:30）</th><th>生效阈值</th><th>含义</th></tr></thead>
 <tbody>
 <tr><td>上证 3600</td><td class="num">3602.07（距昨收 0.5 点）</td><td>尾盘失守 3600</td><td>上午仅低开修复，非趋势</td></tr>
 <tr><td>科创50</td><td class="num up">+3.31%</td><td>退回 +2% 下方</td><td>电子链定性为脉冲</td></tr>
-<tr><td>炸板率</td><td class="num">14.3%（7 只）</td><td>收敛至 10% 内</td><td>承接转强</td></tr>
+<tr><td>炸板率</td><td class="num">19.6%（10 只）</td><td>收敛至 15% 内</td><td>承接转强</td></tr>
 <tr><td>连板高度</td><td class="num">4 板（广百股份）</td><td>出 5 板接力</td><td>情绪高度打开</td></tr>
-<tr><td>跌停家数</td><td class="num">31 只</td><td>破 40 只</td><td>翻红也难改结构性普跌</td></tr>
+<tr><td>跌停家数</td><td class="num">25 只（09:40 起零新增）</td><td>破 40 只</td><td>修复行情失效</td></tr>
+<tr><td>板块红盘数</td><td class="num">209／268</td><td>回落至 &lt;150</td><td>宽度收缩，只剩半导体单线</td></tr>
+<tr><td>光刻机宽度</td><td class="num">占比 94.0%／中位 +4.75%</td><td>占比 &lt;80% 或中位 &lt;+2%</td><td>主线由板块级退化为个股</td></tr>
 <tr><td>下午量能</td><td class="num">上午 8946 亿</td><td>≥5500 亿；14:00 前 &lt;4000 亿</td><td>前者落中枢，后者全天低于 1.35 万亿</td></tr>
-<tr><td>华为概念宽度</td><td class="num">占比 76.5%／中位 +1.86%</td><td>占比 &lt;70% 或中位 &lt;+1%</td><td>宽度主线不成立，只剩龙头</td></tr>
 </tbody></table></div>
 
-<div class="highlight"><strong>全天成交额预测 1.45 万亿（区间 1.35—1.55 万亿）。</strong>模型：上午 8946 亿 ÷ 上午占全天比 0.619 = 14452 亿；该比例取 11-09—11-13 五个完整交易日 5m 汇总均值（±0.043，剔除 11-06 仅 36 根 bar 的不完整样本），区间按上下界折算。<strong>假设</strong>：下午交易节奏与前五个完整日一致、无尾盘异常放量或缩量；若跌停扩散引发被动减仓，实际值可能低于区间下沿。此为数模推算，非简单翻倍。</div>
+<div class="highlight"><strong>全天成交额预测 1.45 万亿（区间 1.35—1.55 万亿）。</strong>模型：上午 8946 亿 ÷ 上午占全天比 0.619 = 14452 亿；该比例取 11-09—11-13 五个完整交易日 5m 汇总均值（±0.043，剔除 11-06 仅 36 根 bar 的不完整样本），区间按上下界折算。<strong>假设</strong>：下午交易节奏与前五个完整日一致、无尾盘异常放量或缩量；若半导体链午后加速引发追涨，可上摸区间上沿，反之缩量修复则贴下沿。此为数模推算，非简单翻倍。</div>
 
 <h2>七、对盘前／开盘观点的阶段验证</h2>
 <ul>
 <li><strong>盘前「科技承压」被反转：</strong>费半 −5% 后科创50 反 +3.31% 领涨、09:35 的 3572.87 即日内低；「反弹只是空头回补」待英伟达财报（11-18 凌晨）裁决。</li>
-<li><strong>竞价「权重扛指数、题材续跌」方向反了：</strong>实际权重钝化、题材领涨，竞价 80% 低开是当日宽度最低点。</li>
-<li><strong>开盘「半导体设备与存储链唯一有量级」成立并扩散：</strong>11:30 已从光刻机、存储芯片扩至消费电子与电子材料；两时点方向一致、口径不同，不作位次比较。弱势端同为传媒，短剧游戏 −2.72% → 广播影视 −6.23%，持续恶化。</li>
+<li><strong>竞价「权重扛指数、题材续跌」方向反了：</strong>实际权重钝化（沪深300 +0.05%）、题材领涨，竞价 80% 低开即当日宽度最低点。</li>
+<li><strong>开盘「半导体设备与存储链唯一有量级」成立并已扩散：</strong>09:40 光刻机 +1.54%、存储 +1.04%，11:30 已到 +5.33%／+3.66%，且「芯片」大类 840 只中位 +1.97% 说明扩散到大类而非停在设备端；<strong>同源比位次，不再是跨源方向参考</strong>。弱势端同为传媒，短剧游戏 09:40 −2.72% → 11:30 −3.47%，持续恶化且与 6 只传媒跌停同源。</li>
+<li><strong>首稿两处结论已作废：</strong>①「跌停 31 只、跌的也在扩散」——板价口径 25 只、零新增；②「只有华为概念与触摸屏两条干净宽度」——全样本下 209 个板块红盘、158 个上涨占比 ≥60%，宽度是全面的。</li>
 </ul>
 
 <h2>八、缺口声明（quality=degraded）</h2>
 <div class="table-wrapper"><table>
 <thead><tr><th>缺口</th><th>原因</th><th>处置</th></tr></thead>
 <tbody>
-<tr><td>无 5m 切片、无原生 up/down</td><td>本会话未挂通达信 MCP（<code>KeyError('tdx-connector')</code>）</td><td>宽度改新浪全 A 5577 只逐只统计，含北交所，与「沪+深分市场」口径不完全可比</td></tr>
-<tr><td>封单额、个股主力净额、东财板块榜</td><td>妙想 mx-ds-mcp 未挂载</td><td>不填 0，正文不引用</td></tr>
-<tr><td>跌停名单</td><td>只取到家数</td><td>仅报 31 只，不列个股</td></tr>
-<tr><td>两时点板块位次差</td><td>09:40 通达信 880/881 vs 11:30 新浪 gn_*，三套口径不可混排</td><td>只作方向一致性，排序差记 GAP</td></tr>
-<tr><td>急拉／跳水速度判断</td><td>无连续分钟数据</td><td>不做速度结论</td></tr>
+<tr><td>封单额／封单量、个股主力净额、东财概念行业榜</td><td>妙想 <code>mx-ds-mcp</code> 本会话未挂载</td><td>不填 0、正文不引用</td></tr>
+<tr><td>板块主力资金流</td><td><code>board-radar</code> 15:30 后才产出当日口径</td><td>午盘只做价格与宽度，不做资金结论</td></tr>
+<tr><td>秒级急拉与竞价挂单</td><td>只有 5m 切片；挂单量属不可复原字段</td><td>速度结论限 5 分钟粒度，已标注</td></tr>
+<tr><td>板块样本 268／269</td><td><code>880719</code>（地摊经济）服务端无板块线；<code>含可转债</code> 成员清单为空</td><td>恒定缺口，非本轮取数失败</td></tr>
+<tr><td>北交所宽度</td><td>本地 <code>.day</code> 清单不含北交所</td><td>北证50 点位与佳先股份涨停单列，不进 5217 只宽度</td></tr>
 </tbody></table></div>
 
 <footer>
-数据来源：指数与成交额 <code>quotes.sina.cn</code> 5m K 线（末根标签 11:30）；宽度、涨跌停、板块成分 <code>vip.stock.finance.sina.com.cn Market_Center.getHQNodeData</code> 全 A 与板块成员分页逐只（休市取数＝11:30 收盘态，时间戳 11:30:00）；板块榜 <code>money.finance.sina.com.cn newFLJK</code>（255 个有效板块，DoH + resolve 直连）；涨停池 <code>push2ex.eastmoney.com</code>（首封 ≤11:30，不含 ST）。<br>
-cutoff 2026-11-17T11:30:00+08:00 ｜ 名义生成 11:40 ｜ 实际生成 11:52 ｜ 全 A 样本 5577 只 ｜ 板块样本 255 个 ｜ quality degraded<br>
-板块与成分口径与 09:40 稿不同源，位次不可跨稿直接比较。资金指标不等于真实机构持仓。本报告为数据复盘，不构成投资建议。
+数据来源：<code>TQLEX TdxShare.PBFXT</code> 5m 直连（5217 只沪深个股 + 268 个板块 + 9 个指数，零 MCP 配额，失败 0）；昨收与交易所板价 <code>TQLEX TdxShare.PBHQInfo</code>（5217/5247，<code>ExtInfo.ZTPrice/DTPrice</code>）；涨停连板数与首封时间 <code>push2ex.eastmoney.com</code>（首封 ≤11:30，不含 ST，作字段来源不与板价口径互校）；板块成员清单 <code>板块资金雷达/data/boards_constituents.json</code>（269 个声明板块，268 个可算）。<br>
+cutoff 2026-11-17T11:30:00+08:00 ｜ 名义生成 11:40 ｜ 首稿 11:52 ｜ 本稿事后重建 12:52（休市，价格冻结于 11:30）｜ 个股样本 5217 ｜ 板块样本 268 ｜ quality degraded<br>
+涨跌停一律取交易所板价，跌停不用百分比阈值反推；ST 限幅不按 5% 猜。板块为通达信 880/881 口径，与新浪、东财三套不可混排。资金指标不等于真实机构持仓。本报告为数据复盘，不构成投资建议。
 </footer>
 </body>
 </html>
