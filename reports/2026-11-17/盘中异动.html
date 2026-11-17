@@ -129,7 +129,7 @@ code{font-size:12.5px;background:#f2f2f2;padding:1px 4px;border-radius:3px;}
 ③ 新浪 <code>Market_Center.getHQNodeData</code> 全 A 分页（<code>node=hs_a</code>，5577 只），11:30 于休市态采集、14:00 于 14:01:05 采集；成员中位数由板块成分代码逐只汇总。<br>
 ④ 亿信 <code>/v2/search</code> 检索 18 条新闻，逐条核对 <code>date</code> 字段，用于「是否为 cutoff 前催化」的判定，不作因果引用。<br>
 原始切片：<code>_raw/intraday_1130.json</code>、<code>_raw/intraday_1400.json</code>（指数／成交额／板块榜）、<code>_raw/mid_breadth_1130.json</code>、<code>_raw/breadth_1400.json</code>（宽度与成员中位）、<code>_raw/yx1400/</code>（亿信原始响应）。差值由 <code>tools/compare_snapshots.py</code> 计算，未手算。<br>
-本稿 quality=degraded：资金流全缺、板块逐板差值仅 22 个、集中度仅 5 个板块可比、宽度晚于 cutoff 1 分钟，缺口见第六节。<strong>资金指标不等于真实机构持仓。</strong>生成时刻 2026-11-17 14:07（Asia/Shanghai），行情 cutoff 14:00，14:00 之后的价格未参与任何判断。
+本稿 quality=degraded：资金流全缺、板块逐板差值仅 22 个、集中度仅 5 个板块可比、宽度晚于 cutoff 1 分钟，缺口见第六节。<strong>资金指标不等于真实机构持仓。</strong>生成时刻 2026-11-17 14:03（Asia/Shanghai），行情 cutoff 14:00，14:00 之后的价格未参与任何判断。
 </footer>
 </body>
 </html>
