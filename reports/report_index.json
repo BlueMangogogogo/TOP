@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-11-18T09:28:14",
-  "total": 343,
-  "daily_count": 259,
+  "last_updated": "2026-11-18T09:40:25",
+  "total": 344,
+  "daily_count": 260,
   "industry_count": 84,
   "reports": [
     {
@@ -24,6 +24,17 @@
       "type": "daily",
       "quality": "complete",
       "size_kb": 14.3,
+      "date": "2026-11-18"
+    },
+    {
+      "relative_path": "reports/2026-11-18/开盘速览.html",
+      "id": "2026-11-18-开盘速览",
+      "display_date": "11月18日",
+      "title": "开盘速览",
+      "category": "日常复盘",
+      "type": "daily",
+      "quality": "degraded",
+      "size_kb": 10.9,
       "date": "2026-11-18"
     },
     {
