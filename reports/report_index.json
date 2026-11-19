@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-11-19T09:40:25",
-  "total": 353,
-  "daily_count": 269,
+  "last_updated": "2026-11-19T11:49:07",
+  "total": 354,
+  "daily_count": 270,
   "industry_count": 84,
   "reports": [
     {
@@ -35,6 +35,17 @@
       "type": "daily",
       "quality": "degraded",
       "size_kb": 10.5,
+      "date": "2026-11-19"
+    },
+    {
+      "relative_path": "reports/2026-11-19/午盘扫描.html",
+      "id": "2026-11-19-午盘扫描",
+      "display_date": "11月19日",
+      "title": "午盘扫描",
+      "category": "日常复盘",
+      "type": "daily",
+      "quality": "degraded",
+      "size_kb": 16.3,
       "date": "2026-11-19"
     },
     {
