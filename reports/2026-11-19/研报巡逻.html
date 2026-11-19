@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11月19日 研报巡逻</title>
+<style>
+:root{--yellow:#ebb543;--yellow-light:#f7e8c5;--red:#c0392b;--red-light:#fdf0ef;--black:#1a1a1a;
+--gray-900:#2c2c2c;--gray-700:#555;--gray-500:#888;--gray-300:#bbb;--gray-100:#f0f0f0;--white:#fff;
+--font:"Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",system-ui,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font);font-size:15px;line-height:1.75;color:var(--gray-900);background:var(--white);
+max-width:820px;margin:0 auto;padding:40px 28px 60px;-webkit-font-smoothing:antialiased;}
+header{border-bottom:3px solid var(--yellow);padding-bottom:20px;margin-bottom:28px;}
+header h1{font-size:24px;font-weight:700;color:var(--black);margin-bottom:6px;letter-spacing:.5px;}
+header .meta{font-size:13px;color:var(--gray-500);}header .meta span{margin-right:16px;}
+h2{font-size:18px;font-weight:700;color:var(--black);margin:32px 0 10px;padding-left:12px;border-left:4px solid var(--yellow);}
+h3{font-size:16px;font-weight:700;color:var(--gray-900);margin:22px 0 8px;}
+p{margin:8px 0;}
+.table-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0 20px;border:1px solid var(--gray-300);border-radius:6px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:620px;}
+thead th{background:var(--yellow);color:var(--black);font-weight:700;padding:10px 12px;text-align:left;white-space:nowrap;border-bottom:2px solid #d4a734;}
+thead th:first-child{border-radius:5px 0 0 0;}thead th:last-child{border-radius:0 5px 0 0;}
+tbody td{padding:9px 12px;border-bottom:1px solid var(--gray-100);vertical-align:top;}
+tbody tr:nth-child(even){background:#fafafa;}tbody tr:hover{background:var(--yellow-light);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+.highlight{background:var(--yellow-light);border-left:4px solid var(--yellow);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;}
+.warning{background:var(--red-light);border-left:4px solid var(--red);padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;color:#8b1a1a;}
+ul,ol{margin:8px 0 8px 20px;}li{margin:4px 0;}
+hr{border:none;border-top:1px solid var(--gray-100);margin:24px 0;}
+.tag{display:inline-block;background:var(--yellow-light);color:#8b6914;font-size:12px;font-weight:600;padding:2px 8px;border-radius:3px;margin:0 4px 4px 0;}
+.tag-red{background:var(--red-light);color:var(--red);}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--gray-100);font-size:12px;color:var(--gray-500);line-height:1.6;}
+strong{color:var(--black);}em{color:var(--gray-700);}
+.up{color:#c0392b;font-weight:700;margin-left:3px;}
+.down{color:#1e8449;font-weight:700;margin-left:3px;}
+@media (max-width:600px){body{padding:20px 14px 40px;font-size:14px;}header h1{font-size:20px;}h2{font-size:16px;}table{font-size:12px;}thead th,tbody td{padding:7px 8px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>11月19日 研报巡逻</h1>
+  <div class="meta">
+    <span>目标日 2026-11-19（周四，交易日）</span><span>行情 cutoff 15:00</span>
+    <span>资讯 cutoff 22:30</span><span>生成 2026-11-19 23:10:00</span>
+  </div>
+</header>
+
+<div class="highlight">
+  <strong>状态：</strong>22:30 档正常出稿，无补跑；行情取 15:00 收盘、研报截至 22:30；质量 complete，缺口见第八节。
+</div>
+
+<h2>一、口径与校验</h2>
+<p><strong>门禁：</strong>radar-em.html 清单 as_of=20261119、complete、validated=true，sha256 <code>b7b77f08…</code> 与页面实测一致；hist_metrics.json 含当日 474 板，与 11-18 同口径。收盘横截面 HQDate=20261119、5217/5247 只有价。</p>
+<p><strong>榜单：</strong>Top30 按 score（字段 4）显式降序，无重复分值；avgInflow 全为 null，按缺失保留、不填 0；升降按同一份全榜比较，新板不计升降。</p>
+<p><strong>证据：</strong>只走亿信 report 通道 11 次（通用 3＋前 8 方向 8），全部 HTTP 200、success=true，返回 162 条、去重 138 条（11 月 109／10 月 29）。仅有标题、机构、日期、摘要，link 为空，按二手级使用。</p>
+
+<h2>二、三条结论</h2>
+<p><strong>1. 第三个指数分化、个股普跌日，且普跌极窄。</strong>涨 638／跌 4532／平 47，上占比 12.2%，涨停 28 而跌停 83；跌逾 5% 的 632 只，涨逾 5% 仅 67 只。上证 3577.617（−0.28%）、中证1000 −1.88%、北证50 −3.99%，科创50 逆势 +1.83%、沪深300 +0.03%。成交 13051.5 亿，较 11-18 缩 4.7%。474 板仅 8 板上涨，中位与均值同为 −2.52%；8 席里 6 席属半导体链（第四代半导体 +1.18% 领涨），余为白马标签。</p>
+<p><strong>2. Top30 是半导体单极榜，宽度与资金分处两端。</strong>前 10 席 8 席属半导体，30 席单日净额合计 130.2 亿，前 10 席占 127.7 亿（98%）；双正仅 11 席，连榜 11、换血 19。11-18 排 5—8 位的 AI芯片（→179）、华为鲲鹏（→384）、华为昇腾（→363）、智慧政务（→307）一日内全部出榜，属榜单反转而非趋势确认。</p>
+<p><strong>3. 资金与研报共同支持 6 条硬、3 条半。</strong>硬：大基金持股、中芯概念、先进封装、高带宽内存、华为海思、光刻机；半：光刻胶、氮化镓、第四代半导体，三者波段净额都在 ±0.3 亿内或为负、aDays 仅 2—4。新上榜 19 席中 17 席单日净额不足 2 亿且波段为负，是 score 分位效应，不构成独立资金信号。</p>
+
+<h2>三、Top30 简表（score 降序，净额单位：亿元）</h2>
+<div class="table-wrapper">
+<table>
+<thead><tr><th class="num">位次</th><th>板块</th><th class="num">当日</th><th class="num">score</th><th class="num">单日净额</th><th class="num">波段净额</th><th class="num">在榜</th><th class="num">11-18 位次</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td><strong>大基金持股</strong> <span style="color:#888;font-size:12px">BK1688</span></td><td class="num up">+0.66%</td><td class="num">993.2</td><td class="num" style="color:#c0392b">+31.3</td><td class="num" style="color:#c0392b">+57.1</td><td class="num">6</td><td class="num">4<span class="up">Δ+3</span></td></tr>
+<tr><td class="num">2</td><td><strong>中芯概念</strong> <span style="color:#888;font-size:12px">BK0935</span></td><td class="num up">+0.16%</td><td class="num">992.4</td><td class="num" style="color:#c0392b">+30.8</td><td class="num" style="color:#c0392b">+40.6</td><td class="num">7</td><td class="num">9<span class="up">Δ+7</span></td></tr>
+<tr><td class="num">3</td><td><strong>先进封装</strong> <span style="color:#888;font-size:12px">BK1101</span></td><td class="num down">-0.05%</td><td class="num">989.9</td><td class="num" style="color:#c0392b">+25.0</td><td class="num" style="color:#c0392b">+16.2</td><td class="num">7</td><td class="num">2<span class="down">Δ-1</span></td></tr>
+<tr><td class="num">4</td><td><strong>高带宽内存</strong> <span style="color:#888;font-size:12px">BK1152</span></td><td class="num up">+0.08%</td><td class="num">988.4</td><td class="num" style="color:#c0392b">+12.6</td><td class="num" style="color:#c0392b">+35.3</td><td class="num">7</td><td class="num">3<span class="down">Δ-1</span></td></tr>
+<tr><td class="num">5</td><td><strong>华为海思</strong> <span style="color:#888;font-size:12px">BK1180</span></td><td class="num down">-2.46%</td><td class="num">983.1</td><td class="num" style="color:#c0392b">+5.1</td><td class="num" style="color:#c0392b">+2.6</td><td class="num">6</td><td class="num">14<span class="up">Δ+9</span></td></tr>
+<tr><td class="num">6</td><td><strong>光刻机</strong> <span style="color:#888;font-size:12px">BK0884</span></td><td class="num down">-0.54%</td><td class="num">981.2</td><td class="num" style="color:#c0392b">+6.8</td><td class="num" style="color:#c0392b">+30.0</td><td class="num">6</td><td class="num">20<span class="up">Δ+14</span></td></tr>
+<tr><td class="num">7</td><td><strong>光刻胶</strong> <span style="color:#888;font-size:12px">BK1753</span></td><td class="num ">+0.00%</td><td class="num">980.8</td><td class="num" style="color:#c0392b">+5.0</td><td class="num" style="color:#c0392b">+0.3</td><td class="num">2</td><td class="num">81<span class="up">Δ+74</span></td></tr>
+<tr><td class="num">8</td><td><strong>氮化镓</strong> <span style="color:#888;font-size:12px">BK0916</span></td><td class="num down">-0.73%</td><td class="num">979.7</td><td class="num" style="color:#c0392b">+6.4</td><td class="num" style="color:#1e8449">-0.1</td><td class="num">2</td><td class="num">35<span class="up">Δ+27</span></td></tr>
+<tr><td class="num">9</td><td><strong>汽车一体化压铸</strong> <span style="color:#888;font-size:12px">BK1093</span></td><td class="num down">-1.87%</td><td class="num">977.2</td><td class="num" style="color:#c0392b">+2.9</td><td class="num" style="color:#c0392b">+0.4</td><td class="num">3</td><td class="num">106<span class="up">Δ+97</span></td></tr>
+<tr><td class="num">10</td><td><strong>第四代半导体</strong> <span style="color:#888;font-size:12px">BK1121</span></td><td class="num up">+1.18%</td><td class="num">975.9</td><td class="num" style="color:#c0392b">+1.8</td><td class="num" style="color:#c0392b">+1.1</td><td class="num">4</td><td class="num">25<span class="up">Δ+15</span></td></tr>
+<tr><td class="num">11</td><td><strong>造纸印刷</strong> <span style="color:#888;font-size:12px">BK0470</span></td><td class="num down">-2.74%</td><td class="num">970.0</td><td class="num" style="color:#c0392b">+2.0</td><td class="num" style="color:#1e8449">-0.7</td><td class="num">5</td><td class="num">239<span class="up">Δ+228</span></td></tr>
+<tr><td class="num">12</td><td><strong>托育服务</strong> <span style="color:#888;font-size:12px">BK1074</span></td><td class="num down">-4.69%</td><td class="num">964.1</td><td class="num" style="color:#c0392b">+0.2</td><td class="num" style="color:#c0392b">+0.4</td><td class="num">7</td><td class="num">19<span class="up">Δ+7</span></td></tr>
+<tr><td class="num">13</td><td><strong>B股</strong> <span style="color:#888;font-size:12px">BK0636</span></td><td class="num down">-1.28%</td><td class="num">954.6</td><td class="num" style="color:#c0392b">+0.0</td><td class="num" style="color:#c0392b">+0.1</td><td class="num">8</td><td class="num">22<span class="up">Δ+9</span></td></tr>
+<tr><td class="num">14</td><td><strong>EDA概念</strong> <span style="color:#888;font-size:12px">BK0946</span></td><td class="num down">-0.88%</td><td class="num">953.0</td><td class="num" style="color:#c0392b">+0.0</td><td class="num" style="color:#1e8449">-0.1</td><td class="num">5</td><td class="num">187<span class="up">Δ+173</span></td></tr>
+<tr><td class="num">15</td><td><strong>啤酒概念</strong> <span style="color:#888;font-size:12px">BK1073</span></td><td class="num down">-1.53%</td><td class="num">928.5</td><td class="num" style="color:#c0392b">+0.1</td><td class="num" style="color:#1e8449">-3.3</td><td class="num">3</td><td class="num">173<span class="up">Δ+158</span></td></tr>
+<tr><td class="num">16</td><td><strong>环氧丙烷</strong> <span style="color:#888;font-size:12px">BK1011</span></td><td class="num down">-0.92%</td><td class="num">926.4</td><td class="num" style="color:#c0392b">+1.1</td><td class="num" style="color:#1e8449">-4.7</td><td class="num">2</td><td class="num">212<span class="up">Δ+196</span></td></tr>
+<tr><td class="num">17</td><td><strong>同步磁阻电机</strong> <span style="color:#888;font-size:12px">BK1131</span></td><td class="num down">-3.06%</td><td class="num">926.2</td><td class="num" style="color:#1e8449">-0.1</td><td class="num" style="color:#1e8449">-2.5</td><td class="num">2</td><td class="num">68<span class="up">Δ+51</span></td></tr>
+<tr><td class="num">18</td><td><strong>水产概念</strong> <span style="color:#888;font-size:12px">BK0967</span></td><td class="num down">-3.24%</td><td class="num">900.6</td><td class="num" style="color:#c0392b">+1.7</td><td class="num" style="color:#1e8449">-6.9</td><td class="num">6</td><td class="num">283<span class="up">Δ+265</span></td></tr>
+<tr><td class="num">19</td><td><strong>3D摄像头</strong> <span style="color:#888;font-size:12px">BK0901</span></td><td class="num down">-2.11%</td><td class="num">895.4</td><td class="num" style="color:#c0392b">+0.7</td><td class="num" style="color:#1e8449">-6.9</td><td class="num">8</td><td class="num">303<span class="up">Δ+284</span></td></tr>
+<tr><td class="num">20</td><td><strong>地热能</strong> <span style="color:#888;font-size:12px">BK0622</span></td><td class="num down">-1.16%</td><td class="num">884.0</td><td class="num" style="color:#1e8449">-0.3</td><td class="num" style="color:#1e8449">-3.7</td><td class="num">3</td><td class="num">36<span class="up">Δ+16</span></td></tr>
+<tr><td class="num">21</td><td><strong>植物照明</strong> <span style="color:#888;font-size:12px">BK1007</span></td><td class="num down">-1.44%</td><td class="num">882.3</td><td class="num" style="color:#1e8449">-0.3</td><td class="num" style="color:#1e8449">-5.6</td><td class="num">1</td><td class="num">202<span class="up">Δ+181</span></td></tr>
+<tr><td class="num">22</td><td><strong>熔盐储能</strong> <span style="color:#888;font-size:12px">BK1103</span></td><td class="num down">-2.17%</td><td class="num">879.5</td><td class="num" style="color:#1e8449">-0.4</td><td class="num" style="color:#1e8449">-3.5</td><td class="num">2</td><td class="num">63<span class="up">Δ+41</span></td></tr>
+<tr><td class="num">23</td><td><strong>电子纸概念</strong> <span style="color:#888;font-size:12px">BK1057</span></td><td class="num down">-2.20%</td><td class="num">876.6</td><td class="num" style="color:#1e8449">-0.2</td><td class="num" style="color:#1e8449">-3.0</td><td class="num">2</td><td class="num">59<span class="up">Δ+36</span></td></tr>
+<tr><td class="num">24</td><td><strong>肝素概念</strong> <span style="color:#888;font-size:12px">BK0944</span></td><td class="num down">-1.58%</td><td class="num">867.9</td><td class="num" style="color:#1e8449">-0.4</td><td class="num" style="color:#1e8449">-5.8</td><td class="num">4</td><td class="num">211<span class="up">Δ+187</span></td></tr>
+<tr><td class="num">25</td><td><strong>工业气体</strong> <span style="color:#888;font-size:12px">BK0981</span></td><td class="num down">-1.47%</td><td class="num">866.9</td><td class="num" style="color:#1e8449">-0.5</td><td class="num" style="color:#1e8449">-6.0</td><td class="num">3</td><td class="num">227<span class="up">Δ+202</span></td></tr>
+<tr><td class="num">26</td><td><strong>长寿药</strong> <span style="color:#888;font-size:12px">BK0936</span></td><td class="num down">-1.70%</td><td class="num">864.6</td><td class="num" style="color:#1e8449">-0.5</td><td class="num" style="color:#1e8449">-2.6</td><td class="num">7</td><td class="num">172<span class="up">Δ+146</span></td></tr>
+<tr><td class="num">27</td><td><strong>调味品概念</strong> <span style="color:#888;font-size:12px">BK1026</span></td><td class="num down">-0.87%</td><td class="num">856.8</td><td class="num" style="color:#1e8449">-0.3</td><td class="num" style="color:#1e8449">-2.9</td><td class="num">2</td><td class="num">18<span class="down">Δ-9</span></td></tr>
+<tr><td class="num">28</td><td><strong>私募重仓</strong> <span style="color:#888;font-size:12px">BK1695</span></td><td class="num down">-2.72%</td><td class="num">855.7</td><td class="num" style="color:#c0392b">+0.7</td><td class="num" style="color:#1e8449">-10.1</td><td class="num">2</td><td class="num">23<span class="down">Δ-5</span></td></tr>
+<tr><td class="num">29</td><td><strong>SPD概念</strong> <span style="color:#888;font-size:12px">BK1147</span></td><td class="num down">-2.98%</td><td class="num">855.6</td><td class="num" style="color:#1e8449">-0.5</td><td class="num" style="color:#1e8449">-2.9</td><td class="num">6</td><td class="num">89<span class="up">Δ+60</span></td></tr>
+<tr><td class="num">30</td><td><strong>沪企改革</strong> <span style="color:#888;font-size:12px">BK0672</span></td><td class="num down">-1.98%</td><td class="num">855.3</td><td class="num" style="color:#1e8449">-0.5</td><td class="num" style="color:#1e8449">-5.6</td><td class="num">4</td><td class="num">261<span class="up">Δ+231</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>四、资金与研报共同支持</h2>
+<p><strong>大基金持股（#1，波段 +57.1／单日 +31.3 亿，aDays 6，前位 4）。</strong>招商 10-31 记「国家大基金三期将 70% 资金向设备材料国产化倾斜」；东吴 11-13 记三期累计注册资本 6868.5 亿元、撬动超 1.5 万亿社会资本；中信建投 10-22 记华虹宏力三期增资 41.7 亿美元、华芯鼎新联合入股。</p>
+<p><strong>中芯概念（#2，+40.6／+30.8 亿，aDays 7，前位 9）。</strong>中信证券 11-16 记 Q3 收入环比 +6% 至 31.9 亿美元、毛利率 +4.6pct 至 29.9%、Q4 指引 +4%~6%；中信建投 11-19 记半导体板块 Q1—Q3 营收 9032.87 亿元（+82.04%）、净利 2474.69 亿元（+632.99%）。<em>反证：</em>招商 11-15 记折旧同比增约三成，Q4 成本压力延续。</p>
+<p><strong>先进封装（#3，+16.2／+25.0 亿，aDays 7，前位 2）。</strong>国泰海通 11-17 科磊首覆给出硬约束：CoWoS-S 封装尺寸达光罩 3.3 倍、CoWoS-L 支持 12 颗 HBM 堆叠，刻蚀、电镀、高精度键合设备交期 8—12 个月。<em>宽度：</em>同名板块等权 −0.54%、中位 −1.10%、上占比 33.5%，首位蓝箭电子涨停，单票驱动。</p>
+<p><strong>高带宽内存（#4，+35.3／+12.6 亿，aDays 7，前位 3）。</strong>东吴 11-02 记 2025 年 HBM 市场 SK 海力士占 58.3%，预计长鑫 2027 年实现 HBM3e 量产。<em>反证：</em>中信建投 11-19 记存储（剔除长鑫）Q3 营收 +254.7% 而净利环比 −29.5%，涨价收敛叠加高价成本，利润率环比向下。</p>
+<p><strong>华为海思（#5，+2.6／+5.1 亿，aDays 6，前位 14）。</strong>国元 11-16 引 IDC：2026H1 国内数据中心 AI 芯片份额英伟达 34%、华为 28%；华龙 10-19 记非 GPU 加速器首超 GPU，英伟达在华出货 −44%；华创 11-19 记 BIS 已把 H200 等改为逐案审查，H100／Blackwell 仍推定拒绝。<em>宽度：</em>同名板块等权 −2.68%、上占比 16.7%，价格与资金相反。</p>
+<p><strong>光刻机（#6，+30.0／+6.8 亿，aDays 6，前位 20）。</strong>国盛 11-07 设备零部件专题、华源 11-03 晶圆厂扩产报告均把光刻与涂胶显影列为国产替代关键环节；中诚信 10-22 记 G／I 线光刻胶、电子特气、靶材国产化率中等。<em>宽度：</em>同名板块等权 −0.52%、上占比 29.1%。</p>
+<p><strong>半条三条。</strong>光刻胶（#7，+0.3／+5.0 亿，aDays 2，前位 81）对应东北 11-12 鼎龙股份「高端光刻胶由点及面迈向放量」，但当日走平、波段仅 +0.29 亿；氮化镓（#8，−0.1／+6.4 亿，aDays 2）对应中信建投 11-05：AI 服务器 PSU 升至 5.5／8／12kW，GaN 适配 LLC 软开关，但波段 −0.06 亿；第四代半导体（#10，+1.1／+1.8 亿，aDays 4）为榜内唯一上涨板块，仅检索到宽禁带材料综述级提及。</p>
+
+<h2>五、本次检索未命中</h2>
+<p>Top30 内 19 席对不上细分证据：托育服务 12、B股 13、EDA概念 14、啤酒 15、环氧丙烷 16、同步磁阻电机 17、水产 18、3D摄像头 19、地热能 20、植物照明 21、熔盐储能 22、电子纸 23、肝素 24、工业气体 25、长寿药 26、调味品 27、私募重仓 28、SPD 29、沪企改革 30。B股与私募重仓属风格标签；EDA 虽在检索词内，8 条返回无专题。</p>
+
+<h2>六、研报方向未进榜</h2>
+<p>反向也要记：机器人 437（波段 −443.5 亿、单日 −84.4，aDays 3）、液冷服务器 470（−147.1／−57.2，前位 163）、数据中心 469（−141.4／−65.2，前位 124）、军工 454（−163.4）、商业航天 432（−175.2）、固态电池 428（−150.7）、PCB 272（−162.6，前位 168）、CPO 173（−190.9）、创新药 359（−96.5，前位 469）。华为概念 473 居全榜末位（−349.4／−105.6）、人工智能 463（−401.2／−93.9，前位 254）。开源 11-08 仍把光、超节点、液冷列为 AI 算力三重奏，资金却是双负——未进榜不等于研报失效，只说明当日未确认。</p>
+
+<h2>七、三处背离</h2>
+<p><strong>存储芯片（#88）：</strong>单日 +43.66 亿居全场第一，波段 −69.92 亿、aDays 1、前位 125，未进 Top30；中信建投 11-19 同时记 Q3 存储营收 +254.7% 而净利环比 −29.5%，脉冲与撤出并存，不计入共同支持。<strong>保险新进（#89）：</strong>单日 +20.42 亿而波段 −65.12 亿，属风格资金换手。<strong>水产（#18）：</strong>单日 +1.72 亿、波段 −6.88 亿，同名板块 12 只全跌、上占比 0.0%，资金与股价背离，按规范不记板块信号。</p>
+
+<h2>八、缺口与来源</h2>
+<ul>
+<li>东财 BK 成分表未落地，30 席中仅 6 席可用通达信同名板块代理（先进封装、华为海思、光刻机、EDA概念、地热能、工业气体），两套成分不等同，宽度只作同向参考。</li>
+<li>亿信无 link 与正文，摘要截断于 500 字，证据等级为标题＋摘要；19 席未定向检索，不宣称「无研报」。</li>
+<li>来源：hist_metrics.json（em-local-v4.1，474 板 3bcf8dc2…）、radar-em.html 清单（b7b77f08…）、通达信 TQLEX 收盘横截面、board_close_stats_20261119.json、亿信 report 11 次 138 条。</li>
+</ul>
+
+<footer>
+radar score 为波段／集中度／单日百分位合成分，不等于涨幅；资金净额是供应商算法指标，不等于机构实际持仓。本页事实与机构观点分列，推断已标注。
+</footer>
+
+</body>
+</html>
