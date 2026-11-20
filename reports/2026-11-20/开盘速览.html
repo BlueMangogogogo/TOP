@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>开盘速览</title>
+<style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+</style>
+</head>
+<body>
+<header>
+  <h1>开盘速览</h1>
+  <div class="meta">📅 2026年11月20日 · 行情截止 09:40 · 通道 sina · 规则化准点渲染 09:40:23 | 投资小龙虾 AI | 仅供参考</div>
+</header>
+
+<h2>一、指数与量能</h2><p>截至 09:40，上证指数 3528.34 点（-1.38%）、深证成指 10386.54 点（-1.86%）、创业板指 2242.77 点（-2.21%）、科创50 1254.46 点（-1.28%）。两市成交额 <strong>2320 亿</strong>（沪 1068 / 深 1252），为上一交易日（20261119）同时点的 1.09 倍。涨跌家数缺项（通道无 up/down 字段），不作强弱推断。</p><div class="table-wrapper"><table><thead><tr><th>指数</th><th class="num">09:40 点位</th><th class="num">涨跌</th><th class="num">较开盘</th><th class="num">成交额(亿)</th></tr></thead><tbody><tr><td>上证指数</td><td class="num">3528.34</td><td class="num">-1.38%</td><td class="num">+0.03%</td><td class="num">1068</td></tr><tr><td>深证成指</td><td class="num">10386.54</td><td class="num">-1.86%</td><td class="num">-0.15%</td><td class="num">533</td></tr><tr><td>创业板指</td><td class="num">2242.77</td><td class="num">-2.21%</td><td class="num">-0.06%</td><td class="num">576</td></tr><tr><td>科创50</td><td class="num">1254.46</td><td class="num">-1.28%</td><td class="num">+1.99%</td><td class="num">155</td></tr><tr><td>北证50</td><td class="num">789.73</td><td class="num">-1.12%</td><td class="num">+0.76%</td><td class="num">16</td></tr><tr><td>沪深300</td><td class="num">3924.52</td><td class="num">-1.51%</td><td class="num">-0.03%</td><td class="num">556</td></tr></tbody></table></div><h2>二、涨停结构</h2><p>涨停 7 只，其中首封时间不晚于 09:40 的 7 只，炸板 1 只。最高板为 <strong>真视通（4 板，首封 09:30:21）</strong>。首封名单前列：真视通(4板)、荣联科技(1板)、华微电子(1板)、直真科技(1板)、中京电子(2板)、光华科技(1板)。</p><div class="table-wrapper"><table><thead><tr><th>代码</th><th>名称</th><th>首封</th><th class="num">连板</th><th>行业</th><th>≤cutoff</th></tr></thead><tbody><tr><td>002771</td><td>真视通</td><td>09:30:21</td><td class="num">4</td><td>IT服务Ⅱ</td><td>是</td></tr><tr><td>002642</td><td>荣联科技</td><td>09:31:33</td><td class="num">1</td><td>IT服务Ⅱ</td><td>是</td></tr><tr><td>600360</td><td>华微电子</td><td>09:32:36</td><td class="num">1</td><td>半导体</td><td>是</td></tr><tr><td>003007</td><td>直真科技</td><td>09:34:54</td><td class="num">1</td><td>软件开发</td><td>是</td></tr><tr><td>002579</td><td>中京电子</td><td>09:36:24</td><td class="num">2</td><td>元件</td><td>是</td></tr><tr><td>002741</td><td>光华科技</td><td>09:36:51</td><td class="num">1</td><td>电子化学</td><td>是</td></tr><tr><td>603948</td><td>建业股份</td><td>09:37:57</td><td class="num">1</td><td>化学制品</td><td>是</td></tr></tbody></table></div><h2>三、板块强弱</h2><p>板块层面，0/256 个有效板块为正（0%）。涨幅居前为 猪肉（-1.00%，21 只）、奢侈品（-1.08%，16 只）、超大盘（-1.14%，20 只）、基金重仓（-1.16%，100 只）、保险重仓（-1.18%，100 只）。头部板块未见单票拉动，涨幅由成分股共同贡献。但上涨板块占比不足三成，属<strong>弱势格局</strong>，头部涨幅的绝对水位偏低，不构成主线扩散。</p><div class="table-wrapper"><table><thead><tr><th>板块</th><th class="num">家数</th><th class="num">板块涨幅</th><th class="num">领涨股</th><th class="num">领涨幅</th><th>单票拉动</th></tr></thead><tbody><tr><td>猪肉</td><td class="num">21</td><td class="num">-1.00%</td><td>海大集团</td><td class="num">+1.12%</td><td>否</td></tr><tr><td>奢侈品</td><td class="num">16</td><td class="num">-1.08%</td><td>冰山冷热</td><td class="num">+0.00%</td><td>否</td></tr><tr><td>超大盘</td><td class="num">20</td><td class="num">-1.14%</td><td>中煤能源</td><td class="num">+0.44%</td><td>否</td></tr><tr><td>基金重仓</td><td class="num">100</td><td class="num">-1.16%</td><td>国投电力</td><td class="num">+1.61%</td><td>否</td></tr><tr><td>保险重仓</td><td class="num">100</td><td class="num">-1.18%</td><td>中南传媒</td><td class="num">+1.32%</td><td>否</td></tr><tr><td>QFII重仓</td><td class="num">100</td><td class="num">-1.23%</td><td>川投能源</td><td class="num">+0.32%</td><td>否</td></tr><tr><td>融资融券</td><td class="num">100</td><td class="num">-1.25%</td><td>综艺股份</td><td class="num">+2.55%</td><td>否</td></tr><tr><td>央企50</td><td class="num">50</td><td class="num">-1.25%</td><td>XD中信银</td><td class="num">+1.07%</td><td>否</td></tr></tbody></table></div><h2>四、方向判断</h2><p>上证自开盘后在开盘价附近 +0.03% 震荡，方向未选择；上述为 09:40 时点的存量读数，不含速度判断（连续分钟数据不完整时不写「急拉/跳水」）。</p><h2>五、口径与缺口</h2><ul><li>涨跌家数：新浪 5m 无 up/down 字段，需通达信通道</li><li>妙想涨停池失败：KeyError('CODEBUDDY_MCP_CONFIG')</li><li>妙想concept板块榜失败：KeyError('CODEBUDDY_MCP_CONFIG')</li><li>妙想industry板块榜失败：KeyError('CODEBUDDY_MCP_CONFIG')</li><li>妙想个股主力净额失败：KeyError('CODEBUDDY_MCP_CONFIG')</li><li>板块口径：该源无涨跌家数与成分股中位数，集中度按成分数＋最强股涨幅粗判，不能替代逐板块 5m 切片的中位数校验</li></ul><p>本稿由规则引擎直接渲染，数值来自通达信 5 分钟线与竞价快照切片，未经模型改写。</p>
+
+<footer>本报告由规则引擎在行情时点内自动生成，未经模型改写；数值口径见末节。
+投资小龙虾 AI · 仅供参考，不构成投资建议。</footer>
+</body>
+</html>
