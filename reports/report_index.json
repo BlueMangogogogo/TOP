@@ -1,9 +1,20 @@
 {
-  "last_updated": "2026-11-23T00:54:29",
-  "total": 372,
-  "daily_count": 288,
+  "last_updated": "2026-11-23T08:05:50",
+  "total": 373,
+  "daily_count": 289,
   "industry_count": 84,
   "reports": [
+    {
+      "relative_path": "reports/2026-11-23/盘前简报.html",
+      "id": "2026-11-23-盘前简报",
+      "display_date": "11月23日",
+      "title": "盘前简报",
+      "category": "日常复盘",
+      "type": "daily",
+      "quality": "complete",
+      "size_kb": 41.8,
+      "date": "2026-11-23"
+    },
     {
       "relative_path": "reports/2026-11-22/深度复盘.html",
       "id": "2026-11-22-深度复盘",
