@@ -1,9 +1,20 @@
 {
-  "last_updated": "2026-11-23T17:25:53",
-  "total": 379,
+  "last_updated": "2026-11-23T19:09:20",
+  "total": 380,
   "daily_count": 295,
-  "industry_count": 84,
+  "industry_count": 85,
   "reports": [
+    {
+      "relative_path": "reports/2026-11-23/行业调研_半导体算力硬件.html",
+      "id": "2026-11-23-行业调研_半导体算力硬件",
+      "display_date": "11月23日",
+      "title": "行业调研_半导体算力硬件",
+      "category": "深度研究",
+      "type": "industry",
+      "quality": "degraded",
+      "size_kb": 20.2,
+      "date": "2026-11-23"
+    },
     {
       "relative_path": "reports/2026-11-23/竞价快报.html",
       "id": "2026-11-23-竞价快报",
