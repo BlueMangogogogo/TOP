@@ -1,0 +1,529 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="review-schema" content="3"><title>2026-11-23 午盘扫描：缺口没落在科技，落在权重</title><style>
+/* report-builder v2.2.2 — centered organization roots
+   Brand DNA: yellow / red / gray / black
+   Direction: editorial paper, precise rules, no rounded color-bar cards
+*/
+:root {
+  --accent: #d7a62c;
+  --accent-strong: #b88712;
+  --accent-soft: #f7f0dd;
+  --signal: #a63a2e;
+  --signal-soft: #f8ece9;
+  --ink: #1d1c19;
+  --text: #37342f;
+  --muted: #777168;
+  --line: #d8d4cb;
+  --line-soft: #ebe8e1;
+  --canvas: #efede7;
+  --paper: #fffefa;
+  --paper-alt: #f6f4ee;
+  --code-bg: #22211e;
+  --code-text: #f4f1e8;
+  --font-sans: "Inter", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", "微软雅黑", "Noto Sans SC", system-ui, sans-serif;
+  --font-display: "Noto Serif SC", "Songti SC", STSong, serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --measure: 960px;
+}
+
+* { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+  background: var(--canvas);
+}
+body {
+  min-height: calc(100vh - 64px);
+  max-width: var(--measure);
+  margin: 32px auto 56px;
+  padding: 66px 66px 78px;
+  border: 1px solid #dedad1;
+  color: var(--text);
+  background: var(--paper);
+  box-shadow: 0 18px 44px rgba(46, 40, 30, 0.07);
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.82;
+  letter-spacing: 0.006em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Masthead */
+.report-header {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 38px 0 24px;
+  border-top: 5px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.report-header::before {
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  content: "";
+}
+.report-header h1 {
+  max-width: 800px;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 45px);
+  font-weight: 700;
+  line-height: 1.23;
+  letter-spacing: -0.035em;
+}
+.meta {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  color: var(--muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  letter-spacing: 0.085em;
+  white-space: nowrap;
+}
+
+main { display: block; }
+h2, h3, h4 {
+  color: var(--ink);
+  break-after: avoid-page;
+}
+h2 {
+  position: relative;
+  margin: 54px 0 18px;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--ink);
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: -0.018em;
+}
+h2::before {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 30px;
+  border-top: 4px solid var(--accent);
+  content: "";
+}
+h3 {
+  margin: 34px 0 12px;
+  font-size: 17.5px;
+  font-weight: 740;
+  line-height: 1.48;
+  letter-spacing: -0.008em;
+}
+h4 {
+  margin: 24px 0 9px;
+  color: #4a4640;
+  font-size: 14.5px;
+  font-weight: 740;
+  letter-spacing: 0.01em;
+}
+p { margin: 11px 0; }
+strong { color: var(--ink); font-weight: 740; }
+em { color: #57524b; }
+hr {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+/* Lists */
+ul, ol { margin: 12px 0 15px; padding-left: 1.5em; }
+li { margin: 5px 0; padding-left: 0.18em; }
+li::marker {
+  color: var(--accent-strong);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+/* Links and media */
+a {
+  color: #6d510f;
+  text-decoration-color: rgba(109, 81, 15, 0.38);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--signal); text-decoration-color: currentColor; }
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 26px auto;
+}
+figure { margin: 30px 0; }
+figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* Tables: editorial rules rather than dashboard cards */
+.table-wrapper {
+  margin: 24px 0 32px;
+  overflow-x: auto;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  box-shadow: none;
+  -webkit-overflow-scrolling: touch;
+}
+table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  line-height: 1.58;
+  font-variant-numeric: tabular-nums;
+}
+thead { display: table-header-group; }
+thead th {
+  padding: 12px 13px 11px;
+  border-right: 1px solid #ddd8ce;
+  border-bottom: 1px solid var(--ink);
+  background: #efede6;
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 760;
+  letter-spacing: 0.018em;
+  text-align: left;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+thead th:last-child { border-right: 0; }
+tbody td {
+  padding: 11px 13px;
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+tbody td:last-child { border-right: 0; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: #faf9f5; }
+tbody tr:hover { background: #f6f1e4; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Quotes and semantic notes: square, ruled, restrained */
+blockquote {
+  margin: 24px 0;
+  padding: 3px 0 3px 20px;
+  border-left: 2px solid #aaa399;
+  color: #5a554d;
+  font-family: var(--font-display);
+  font-size: 14.5px;
+}
+blockquote p:first-child, .highlight p:first-child, .warning p:first-child { margin-top: 0; }
+blockquote p:last-child, .highlight p:last-child, .warning p:last-child { margin-bottom: 0; }
+.highlight, .warning {
+  margin: 24px 0;
+  padding: 16px 18px;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+  font-size: 14px;
+  break-inside: avoid-page;
+}
+.highlight {
+  border-top: 2px solid var(--accent-strong);
+  border-bottom: 1px solid #d8c89d;
+  background: var(--accent-soft);
+  color: #55471f;
+}
+.warning {
+  border-top: 2px solid var(--signal);
+  border-bottom: 1px solid #d9bbb5;
+  background: var(--signal-soft);
+  color: #742e26;
+}
+
+/* Code */
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+:not(pre) > code {
+  padding: 0.1em 0.32em;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper-alt);
+  color: #693525;
+  overflow-wrap: anywhere;
+}
+pre, .codehilite {
+  margin: 22px 0 28px;
+  overflow: auto;
+  border-radius: 0;
+  background: var(--code-bg);
+  color: var(--code-text);
+  break-inside: avoid-page;
+}
+pre { padding: 17px 19px; line-height: 1.65; tab-size: 4; }
+.codehilite pre { margin: 0; }
+.codehilite .c, .codehilite .cm, .codehilite .c1 { color: #9a9a92; }
+.codehilite .k, .codehilite .kd, .codehilite .kn { color: #f0bf57; }
+.codehilite .s, .codehilite .s1, .codehilite .s2 { color: #a8d08d; }
+.codehilite .m, .codehilite .mi, .codehilite .mf { color: #d7a7d9; }
+
+/* Native process and hierarchy diagrams */
+.flow-diagram, .org-chart {
+  margin: 20px 0 30px;
+  padding: 8px 0 0;
+  overflow-x: auto;
+  border: 0;
+  break-inside: avoid-page;
+  -webkit-overflow-scrolling: touch;
+}
+.flow-lane {
+  display: flex;
+  min-width: max-content;
+  align-items: stretch;
+  gap: 8px;
+}
+.flow-lane + .flow-lane { margin-top: 14px; }
+.flow-step {
+  display: grid;
+  grid-template-columns: auto minmax(78px, 1fr);
+  min-width: 128px;
+  max-width: 200px;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: #faf9f5;
+}
+.flow-index {
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.flow-label { color: var(--ink); font-size: 13.5px; font-weight: 700; }
+.flow-arrow {
+  align-self: center;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 1;
+}
+.org-tree, .org-tree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.org-tree li { position: relative; margin: 0; padding: 0; }
+.org-tree > li + li { margin-top: 28px; }
+.org-tree > li > .org-root-node {
+  display: block;
+  width: max-content;
+  min-width: 150px;
+  margin: 0 auto 18px;
+}
+.org-tree > li > ul {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid #aaa399;
+}
+.org-tree > li > ul > li {
+  min-width: 0;
+  text-align: center;
+}
+.org-tree > li > ul > li::before {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  height: 18px;
+  border-left: 1px solid #aaa399;
+  content: "";
+}
+.org-tree > li > ul > li > .org-node { width: 100%; min-width: 0; }
+.org-tree > li > ul > li > ul {
+  display: grid;
+  gap: 6px;
+  margin-top: 7px;
+}
+.org-tree > li > ul > li > ul > li::before { display: none; }
+.org-tree > li > ul > li > ul > li > .org-node {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 8px;
+  border-color: var(--line);
+  background: transparent;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.org-tree ul ul ul {
+  display: block;
+  margin: 6px 0 0 10px;
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+  text-align: left;
+}
+.org-tree ul ul ul > li { margin: 3px 0; }
+.org-node {
+  display: inline-block;
+  min-width: 150px;
+  padding: 8px 12px;
+  border: 1px solid var(--ink);
+  background: var(--paper-alt);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+.org-root-node {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+}
+.diagram-empty { margin: 0; color: var(--muted); font-size: 13px; }
+
+/* Editorial table of contents and footnotes */
+.toc {
+  margin: 12px 0 44px;
+  padding: 20px 0 22px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+}
+.toc > span, .toc > p:first-child {
+  display: block;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+}
+.toc ul {
+  margin: 0;
+  padding-left: 1.25em;
+  columns: 2;
+  column-gap: 44px;
+}
+.toc li { break-inside: avoid; margin: 4px 0; }
+.toc a { color: var(--text); text-decoration: none; }
+.toc a:hover { color: var(--signal); }
+.footnote, .footnote-ref { font-variant-numeric: tabular-nums; }
+.footnote {
+  margin-top: 46px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink);
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+/* Small inline labels retained for existing reports */
+.tag, .tag-red {
+  display: inline-block;
+  margin: 0 5px 4px 0;
+  padding: 1px 5px 2px;
+  border-radius: 0;
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: 0.025em;
+}
+.tag { border-bottom: 2px solid var(--accent); background: transparent; color: #6a5116; }
+.tag-red { border-bottom: 2px solid var(--signal); background: transparent; color: var(--signal); }
+
+footer {
+  margin-top: 68px;
+  padding-top: 20px;
+  border-top: 3px solid var(--ink);
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.7;
+  break-inside: avoid-page;
+}
+footer p { margin: 4px 0; }
+footer .disclaimer strong { color: #514d46; }
+footer .provenance { font-variant-numeric: tabular-nums; letter-spacing: 0.015em; }
+
+@media (max-width: 720px) {
+  html { background: var(--paper); }
+  body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 18px 48px;
+    border: 0;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 1.76;
+  }
+  .report-header { margin-bottom: 36px; padding-top: 34px; padding-bottom: 20px; }
+  .report-header::before { top: -6px; width: 8px; height: 8px; }
+  .report-header h1 { font-size: 29px; letter-spacing: -0.025em; }
+  .meta { top: 11px; font-size: 10px; letter-spacing: 0.06em; }
+  h2 { margin-top: 44px; font-size: 22px; }
+  h3 { margin-top: 29px; font-size: 16.5px; }
+  .toc ul { columns: 1; }
+  .flow-lane { min-width: 0; flex-direction: column; gap: 8px; }
+  .flow-step { width: 100%; max-width: none; }
+  .flow-arrow { align-self: center; font-size: 0; }
+  .flow-arrow::before { content: "↓"; font-size: 16px; }
+  .org-chart { overflow-x: visible; }
+  .org-tree > li > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .org-node { min-width: 130px; }
+  table { min-width: 520px; font-size: 12px; }
+  thead th, tbody td { padding: 9px 10px; }
+}
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 17mm;
+}
+
+@media print {
+  :root { --measure: none; }
+  html { scroll-behavior: auto; background: #fff; }
+  body {
+    min-height: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #222;
+    background: #fff;
+    box-shadow: none;
+    font-size: 10.5pt;
+    line-height: 1.62;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .report-header { margin-bottom: 8mm; padding-top: 8mm; }
+  .report-header h1 { font-size: 25pt; }
+  .meta { top: 3mm; }
+  h2 { margin-top: 8mm; font-size: 15.5pt; }
+  h3 { font-size: 12pt; }
+  h2, h3, h4 { break-after: avoid-page; }
+  p, li { orphans: 3; widows: 3; }
+  a { color: inherit; text-decoration: none; }
+  .toc ul { columns: 2; }
+  .table-wrapper, .flow-diagram, .org-chart { overflow: visible; border-color: #777; box-shadow: none; }
+  .flow-lane { min-width: 0; gap: 2mm; }
+  .flow-step { min-width: 25mm; padding: 2.5mm 3mm; }
+  .flow-index { font-size: 7.5pt; }
+  .flow-label { font-size: 9pt; }
+  .org-tree > li > .org-root-node,
+  .org-tree > li > ul > li > .org-node { min-width: 28mm; }
+  table { min-width: 0; font-size: 8.3pt; }
+  thead { display: table-header-group; }
+  thead th { white-space: normal; overflow-wrap: anywhere; }
+  tr, img, blockquote, .highlight, .warning, pre, .codehilite,
+  .flow-diagram, .flow-step, .org-chart, .org-node { break-inside: avoid-page; }
+  tbody tr:hover { background: inherit; }
+  footer { margin-top: 10mm; }
+}
+
+</style></head><body class="profile-finance"><header class="report-header"><h1>2026-11-23 午盘扫描：缺口没落在科技，落在权重</h1><div class="meta">2026-11-23 · 行情截止 2026-11-23T11:30:00+08:00 · 资讯截止 2026-11-23T11:30:00+08:00<br>追踪同日盘前简报《缺口先到，政策后到》，用 09:40 归档快照做同口径对照。行情 cutoff 11:30，生成时刻在其后，两者不混写。 · 渲染 2026-11-23T11:58:30+08:00</div></header><main><section><h2>核心结论</h2><p>竞价 91.68% 低开是外盘缺口的一次性定价；但 11:30 拖累指数的是上证50 -1.21%、中特估 98 只仅 12.2% 上涨，不是芯片 876 只中位 -0.41%、涨停 18 只。盘前「科技补跌」框架已被它自己的失效条件推翻。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></p></section><section><h2>涨停与炸板结构：中间一小时是真空</h2><p>60 只涨停、13 只炸板，炸板率 17.8%。首封时间分布是今天最干净的一条证据：09:30—10:00 封 27 只，10:00—11:00 两段合计只封 10 只，11:00—11:30 又封 20 只，中间 60 分钟近乎真空，上午尾段才重新加速。连板梯队很薄：1 板 51 只、2 板 8 只、3 板只剩中京电子（元件）1 只，高度没形成。行业上汽车零部 9 只最集中，元件与通用设备各 5 只，与 CRO 领涨不是同一条线。 <a class="source-ref" href="#source-S1">S1</a></p></section><section><h2>市场概况</h2><div class="table-wrap"><table><thead><tr><th>指标</th><th>读数</th><th>单位</th><th>时点</th><th>口径</th><th>证据</th></tr></thead><tbody><tr><td>上证指数</td><td>3499.91（-0.96%）</td><td>点 / %</td><td>2026-11-23 11:30</td><td>新浪 5m 末根</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>深成 / 创业板</td><td>10280.58（+0.24%）/ 2239.11（+1.22%）</td><td>点 / %</td><td>2026-11-23 11:30</td><td>较开盘 +1.23 / +1.99 个百分点</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>科创50</td><td>1198.46（-2.65%）</td><td>点 / %</td><td>2026-11-23 11:30</td><td>09:40 为 -2.66%，全上午未修复</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S4">S4</a></td></tr><tr><td>上证50</td><td>2752.19（-1.21%）</td><td>点 / %</td><td>2026-11-23 11:30</td><td>清单外补取，已低于盘前 MA20 2772.26</td><td><a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>沪深上午成交额</td><td>9163.7（沪 4365.3 + 深 4798.4）</td><td>亿元</td><td>2026-11-23 11:30</td><td>11-20 同点 8557.7，比 1.07</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>全A 涨跌家数</td><td>涨 1717 / 跌 3762 / 平 96，占比 31.3%</td><td>只 / %</td><td>2026-11-23 11:30</td><td>5575 只含北交所，午休冻结态，非通达信 up/down</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>涨停 / 炸板</td><td>60 / 13（炸板率 17.8%），最高 3 板</td><td>只 / %</td><td>2026-11-23 11:30</td><td>push2ex 首封 &lt;=11:30；板价估算含 ST 为 66 / 30</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>全天成交额推算</td><td>1.48—1.52 万亿</td><td>亿元</td><td>2026-11-23 11:30</td><td>9163.7 ÷ 上午占比 0.602（11-20 当日）/ 0.619（11-09—11-13 五日均值），假设午后节奏与前几日一致</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr></tbody></table></div></section><section><h2>与上一时点对照</h2><div class="table-wrap"><table><thead><tr><th>对象</th><th>此前</th><th>当前</th><th>变化</th><th>证据</th></tr></thead><tbody><tr><td>板块正涨幅数</td><td>09:40：21 / 256</td><td>11:30：67 / 255</td><td>上涨板块数翻三倍，但成分中位多数仍负，属修复非扩散。</td><td><a class="source-ref" href="#source-S4">S4</a> <a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>上证与科创50</td><td>09:40：-1.38% / -2.66%</td><td>11:30：-0.96% / -2.65%</td><td>指数收回三分之一跌幅，科创50 未动，修复来自小盘。</td><td><a class="source-ref" href="#source-S4">S4</a> <a class="source-ref" href="#source-S1">S1</a></td></tr></tbody></table></div></section><section><h2>事件与盘面响应</h2><div class="table-wrap"><table><thead><tr><th>事件</th><th>盘面证据</th><th>解释</th><th>反证</th><th>证据</th></tr></thead><tbody><tr><td>11-20 纳指 -5.28%、费半 -10.73%，A股当日已收盘，缺口留到今日（引盘前稿，未重核原文）。</td><td>竞价高开 5.17%、低开 91.68%、中位 -1.41%，跌停开盘 14 只。</td><td>缺口在竞价一次性释放，随后分化，非持续单边抛售。</td><td>权重跌幅大于科技，与「科技补跌」路径相反；归因是假设，未排除调仓。</td><td><a class="source-ref" href="#source-S6">S6</a> <a class="source-ref" href="#source-S7">S7</a> <a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>11-22 两融保证金 80% 与降费，11-30 才施行（引盘前稿）。</td><td>创业板 +1.22%、北证50 +1.15%、中证1000 +0.14%，均强于沪深300 -0.62%。</td><td>政策预期托高弹性小盘，权重不参与。</td><td>占比仅 31.3%，无法区分政策买盘与超跌反抽。</td><td><a class="source-ref" href="#source-S6">S6</a> <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a></td></tr></tbody></table></div></section><section><h2>CRO / CXO（新浪概念口径）</h2><p><strong>阶段</strong>　启动</p><p><strong>变化</strong>　09:40 榜首是水产品 +3.23%，11:30 换成 CRO +3.19%、CXO +3.00%。</p><p><strong>价格与宽度</strong>　CRO 19 只中位 +2.78%、占比 73.7%、差 +0.41；CXO 24 只中位 +2.26%、占比 70.8%，均过宽度线。</p><p><strong>资金</strong>　未取板块资金，不写净流入。</p><p><strong>产业</strong>　无订单原文，不从价格反推景气。</p><p><strong>反证</strong>　两块领涨股同为博腾股份，是一条线；创新药 274 只中位 -1.13%、占比 26.0%，宽度只在外包服务子集。</p><p><strong>加强条件</strong>　15:00 占比仍 &gt;60%，创新药全集回到 40% 以上。</p><p><strong>减弱条件</strong>　CRO 占比跌破 50%，或博腾回吐过半。</p><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a></section><section><h2>芯片 880952（通达信口径）</h2><p><strong>阶段</strong>　分歧</p><p><strong>变化</strong>　盘前判中位补跌至 -6.43%，实际 -0.41%，降级条件先命中。</p><p><strong>价格与宽度</strong>　876/878 只等权 +0.12%、中位 -0.41%、占比 42.6%、涨停 18；但科创50 -2.65%，指数跌幅是中位 6 倍。</p><p><strong>资金</strong>　未取，缺口保留。</p><p><strong>产业</strong>　无新增披露。</p><p><strong>反证</strong>　涨停集中在中低价小票，大市值成分在跌；指数跌幅不代表板块宽度。</p><p><strong>加强条件</strong>　收盘中位转正且科创50 收窄到 -1.5% 内。</p><p><strong>减弱条件</strong>　中位跌幅扩至 2 个百分点以上，或涨停批量炸板。</p><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S1">S1</a></section><section><h2>代表公司比较</h2><div class="table-wrap"><table><thead><tr><th>公司</th><th>作用</th><th>观测</th><th>风险</th><th>证据</th></tr></thead><tbody><tr><td>中京电子（002579）</td><td>全场唯一 3 板</td><td>3 板，元件，09:25 竞价首封，是当前最高连板。</td><td>梯队只有它 1 家，2 板 8 只跟不上，高度随时断。</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>博腾股份</td><td>CRO 与 CXO 重叠证据</td><td>两榜同时领涨 +6.74%，说明两块是同一批票。</td><td>单票撑起两条板块名，宽度可信度打折。</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>山金国际</td><td>单票拉动反例</td><td>黄金领涨 +7.73%，但 26 只中位 +0.21%、占比 50.0%。</td><td>板块涨幅由一只票贡献，不能当贵金属行情。</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a></td></tr></tbody></table></div></section><section><h2>前期判断复核</h2><p>最近最多20条已评估预判：兑现 12 / 部分 1 / 落空 6 / 未触发 0 / 待核 1。</p><p>描述性兑现率 63.16%；部分兑现计入分母、不计为命中。这不是收益率或未来成功概率。</p><div class="table-wrap"><table><thead><tr><th>登记时刻/截止</th><th>原判断与判据</th><th>结果与原因</th></tr></thead><tbody><tr><td>2026-11-19T11:48:31.290921+08:00<br>2026-11-19T15:00:00+08:00</td><td>上午的指数修复没有宽度支撑，收盘全 A 上涨占比仍低于 22% 则应判为结构性修复而非行情回暖。<br>收盘同脚本同口径（新浪全 A 含北交所）：上涨占比 &lt;22% 记兑现；22%—25% 记部分。</td><td>hit<br>判据「&lt;22% 记兑现」，实际 12.2%，兑现。口径必须降级说明：登记时 target 写的是「新浪全 A 5579 只（含北交所）」，本轮收盘横截面改走 TQLEX 直连、样本为沪深 5217 只，缺 362 只且不含北交所，不是严格同口径；但今日北证50 -3.99%、跌破 800 点，若纳入只会进一步压低占比，故「&lt;22%」的方向结论不受样本差影响，不据此调整状态。</td></tr><tr><td>2026-11-19T11:48:32.151990+08:00<br>2026-11-19T15:00:00+08:00</td><td>算力租赁午盘三项反证同时触及，收盘中位仍为负则盘前「链内自证宽度」的假设作废。<br>收盘同成分 199 只：中位 &lt;0 记兑现；中位 ≥0 但上涨占比 &lt;30% 记部分。</td><td>hit<br>判据「中位 &lt;0 记兑现」，实际 -3.80%，兑现。午盘三项反证（中位转负、占比跌破 10%、涨停数下滑）在收盘全部延续，盘前「链内自证宽度」假设正式作废。样本说明：午盘登记写 199 只，收盘取到 196 只，成分清单相同、取价失败 3 只，不影响中位符号。</td></tr><tr><td>2026-11-18T15:38:00.836362+08:00<br>2026-11-19T15:00:00+08:00</td><td>算力租赁（880669）的宽度修复能延续到下一交易日，不是财报驱动的单日脉冲<br>下一交易日15:00同成分同源复核：等权涨幅&gt;0、成分中位&gt;0且上涨占比&gt;60%，三项同时满足记兑现；中位&gt;0但上涨占比落在50%—60%记部分；等权或中位转负记落空</td><td>miss<br>判据三项要求「等权&gt;0、中位&gt;0、占比&gt;60%」同时满足才记兑现，等权或中位转负即记落空。实盘等权与中位双双深度转负、占比仅 7.1%，三项全不成立，且已触发 invalidation 的「中位回到 0 以下」。11-18 的宽度修复被证伪为单日脉冲，原主线定性作废。</td></tr><tr><td>2026-11-18T15:38:25.370115+08:00<br>2026-11-19T15:00:00+08:00</td><td>今日的边际改善（跌停由84降到47、上涨占比由23.3%升到24.5%）能继续向全样本扩散，而非停在四分之三个股下跌的普跌格局<br>下一交易日15:00用 close_breadth_tdx.py 同脚本同口径（TQLEX 全样本、沪+深、不含北交所）复核：上涨占比&gt;40%且跌停&lt;20家记兑现（扩散）；上涨占比&lt;20%且跌停&gt;50家记落空（弱势延续）；其余落在两者之间记部分</td><td>miss<br>判据「占比&gt;40% 且跌停&lt;20 家记兑现；占比&lt;20% 且跌停&gt;50 家记落空」，实际 12.2% 低于 20% 且跌停 83 家高于 50 家，直接落入落空区间。invalidation 校验：TQLEX 全样本取价 5217/5247 只，成功率 99.4%，高于 95% 门槛，本次判据可比，予以结算。11-18 的边际改善未向全样本扩散，普跌格局反而加深。</td></tr><tr><td>2026-11-18T15:38:26.125038+08:00<br>2026-11-19T15:00:00+08:00</td><td>光刻机昨日的强势已被定性为一日游，今日从午盘-1.44%修到-0.58%只是回抽，下一交易日不会收复0轴<br>下一交易日15:00同成分同源（880716，117只有效成分，board_close_stats）复核：板块等权涨幅≥0记落空（修复升级，明日保留观察资格）；等权跌幅超过今日午盘的-1.44%记兑现（二次探底，一日游正式定案）；落在-1.44%至0之间记部分</td><td>partial<br>判据区间落在 -1.44% 至 0 之间即记部分。实际 -0.52%，方向与「不收复 0 轴」的原判断一致，但跌幅未扩大到午盘 -1.44% 以下，未构成二次探底，因此不能定案为「一日游」。invalidation 校验：有效成分 117 只与登记时一致，价格源仍为 TQLEX，复核成立。</td></tr><tr><td>2026-11-18T23:15:31.276398+08:00<br>2026-11-19T15:00:00+08:00</td><td>11-19 收盘算力租赁 880669 主力净额不低于 −35 亿，则今日 11-18 的回补可升格为修复第一段；若低于 −35 亿则今日仅为单日脉冲。<br>11-19 收盘后，通达信口径算力租赁 880669 当日主力净额 ≥ −35 亿。</td><td>unresolved<br>与 20261118-deep-compute-netfloor 为同一预判的重跑版本，判据逐字一致，结论同为主力净额字段缺失、不能判定，记未结算。</td></tr><tr><td>2026-11-18T23:15:32.032823+08:00<br>2026-11-19T15:00:00+08:00</td><td>11-19 收盘连板梯队中 3 板及以上达到 2 家，才算梯队断层修复；1 家及以下为断层延续。<br>11-19 收盘连板明细中，3 板及以上家数 ≥ 2 家。</td><td>hit<br>与 20261118-deep-3board-repair 为同一预判的重跑版本，判据逐字一致，实际 3 家 ≥2 家，记兑现。</td></tr><tr><td>2026-11-18T23:15:32.680640+08:00<br>2026-11-19T15:00:00+08:00</td><td>11-19 全 A 上涨占比回到 40% 且成交额回到 14577 亿，才确认宽度扩散；低于 30% 仍属结构性反抽。<br>11-19 收盘横截面全 A 上涨占比 ≥ 40%，且两市成交额 ≥ 14577 亿元。</td><td>miss<br>与 20261118-deep-breadth-40 为同一预判的重跑版本，判据逐字一致，占比与成交额双未达标且占比低于 30% 触发 invalidation，记落空。</td></tr><tr><td>2026-11-19T15:35:57.659525+08:00<br>2026-11-20T15:00:00+08:00</td><td>今日宽度塌到上涨占比 12.2%、跌停 83 家，属日间级别的出清而非日内波动；次日不会一日修复到 20% 以上，全 A 上涨占比仍将低于 20%。<br>次日 15:00 用同一 TQLEX 横截面脚本（同一 5217 只沪深样本）复核：上涨占比 &lt;20% 记兑现；20%—25% 记部分；&gt;25% 记落空。</td><td>hit<br>判据要求次日上涨占比 &lt;20% 记兑现；实际 5.7%，宽度不但未修复反而继续塌陷。</td></tr><tr><td>2026-11-19T15:35:58.339073+08:00<br>2026-11-20T15:00:00+08:00</td><td>光刻机收盘中位 -1.27%、上涨占比 29.1%、gap +0.74，仍属龙头集中而非板块主线；次日成分中位不会转正。<br>次日收盘同成分同价源（光刻机 880716）：成分中位 ≤0 记兑现；中位 &gt;0 但上涨占比 &lt;50% 记部分；中位 &gt;0 且占比 ≥50% 记落空。</td><td>hit<br>判据为次日成分中位 ≤0 记兑现；实际中位深度为负，龙头集中格局延续且整体退潮。</td></tr><tr><td>2026-11-19T15:35:59.090566+08:00<br>2026-11-20T15:00:00+08:00</td><td>AI 应用与传媒端是全体下跌式出清（AIGC 271 只中位 -4.06% 与等权 -4.18% 几乎相等，短剧游戏占比 1.2%），次日上涨占比仍低于 25%，尚未到可接反弹的位置。<br>次日收盘同成分：AIGC 概念（880645）与短剧游戏（880692）两块上涨占比均 &lt;25% 记兑现；仅一块 ≥25% 记部分；两块均 ≥25% 记落空。</td><td>hit<br>判据要求两块上涨占比均 &lt;25% 记兑现；实际两块均在 10% 以下，出清未转向。</td></tr><tr><td>2026-11-19T23:31:22.714010+08:00<br>2026-11-20T15:00:00+08:00</td><td>11-20 全 A 上涨占比仍低于 30%，宽度修复不成立，缩量普跌格局延续。<br>2026-11-20 15:00 收盘横截面 all_a_up_ratio &lt; 30.0%。</td><td>hit<br>判据为 &lt;30.0% 记兑现；实际 5.7%，缩量普跌格局延续且加深。</td></tr><tr><td>2026-11-19T23:31:23.466234+08:00<br>2026-11-20T15:00:00+08:00</td><td>光刻机 / 先进封装 / 存储芯片至少两个板块上涨占比低于 50%，板块级主线不成立，维持半导体头部单票集中。<br>2026-11-20 15:00 板块成分级统计，上述三板块中 ≥2 个 up_ratio &lt; 50%。</td><td>hit<br>判据为三块中 ≥2 块 up_ratio&lt;50%；实际三块全部远低于 50%，板块级主线不成立。</td></tr><tr><td>2026-11-19T23:31:24.123064+08:00<br>2026-11-20T15:00:00+08:00</td><td>11-20 3 板及以上家数不低于 2 家，连板梯队未归零。<br>2026-11-20 涨停池（首封时间与连板数）中 3 板及以上家数 ≥ 2。</td><td>hit<br>判据为 3 板及以上 ≥2 家；实际 2 家，梯队未归零。</td></tr><tr><td>2026-11-20T08:36:43.102803+08:00<br>2026-11-20T15:00:00+08:00</td><td>EDA 概念 880637 这条窄缝能连续第二日守住，不是 11-19 的单日反抽。<br>今日 15:00 用 board_close_stats 同脚本、同成分 17 只复核：中位涨幅 &gt;0 且上涨占比 &gt;50%，两项同时满足记兑现；中位 &gt;0 但上涨占比落在 40%—50% 记部分；中位 ≤0 或上涨占比 &lt;40% 记落空。</td><td>miss<br>判据为中位 ≤0 记落空；实际中位 -3.76%，连续第二日守住的假设被否，按一日反抽处理。</td></tr><tr><td>2026-11-20T08:36:44.165138+08:00<br>2026-11-20T15:00:00+08:00</td><td>全 A 宽度停止继续塌陷，上涨占比回到 25% 以上、跌停收缩到 50 家以下。<br>今日收盘用 close_breadth_tdx.py 同脚本同口径（沪深有效样本、不含北交所）复核：上涨占比 ≥25% 且跌停 &lt;50 家记兑现；上涨占比 10%—25% 且跌停 50—90 家记部分；上涨占比 &lt;10% 或跌停 &gt;90 家记落空。</td><td>miss<br>判据为上涨占比 &lt;10% 或跌停 &gt;90 家记落空；占比 5.7% 已低于 10%，宽度修复假设落空。</td></tr><tr><td>2026-11-20T08:36:44.841526+08:00<br>2026-11-20T15:00:00+08:00</td><td>连板梯队高度没有断，3 板及以上维持 2 家以上。<br>今日收盘连板明细：3 板及以上家数 ≥2 记兑现；等于 1 家记部分；归零且全天涨停 &lt;20 只记落空。</td><td>hit<br>判据为 ≥2 家记兑现；实际 2 家，连板高度未断。</td></tr><tr><td>2026-11-20T11:49:44.389543+08:00<br>2026-11-20T15:00:00+08:00</td><td>农业养殖簇是今日上午唯一有成分宽度的方向，宽度能撑到收盘，不是又一次日内脉冲。<br>收盘用 board_close_stats 同口径（通达信 6 位成分）复核：生物育种 14 只成分中位 &gt;0 且上涨占比 ≥50%，同时鸡肉 22 只上涨占比 ≥50%，两项同时满足记兑现；只有生物育种守住、鸡肉跌破 50% 记部分；生物育种中位 ≤0 或上涨占比 &lt;35% 记落空。</td><td>miss<br>判据为生物育种中位 ≤0 或占比 &lt;35% 记落空；实际中位转负、占比 21.4%，农业簇宽度到收盘已消失。</td></tr><tr><td>2026-11-20T11:49:45.217534+08:00<br>2026-11-20T15:00:00+08:00</td><td>上午 8557.7 亿的量能对应全天 1.38—1.42 万亿，下午不会出现放量下杀把全天推到 1.5 万亿以上。<br>收盘取沪深两市成交额（上证指数 + 深证综指，与上午 8557.7 亿同口径）：落在 1.35—1.45 万亿记兑现；落在 1.45—1.50 万亿或 1.30—1.35 万亿记部分；≥1.50 万亿或 &lt;1.30 万亿记落空。</td><td>hit<br>判据为落在 1.35—1.45 万亿记兑现；实际 1.42 万亿，午后放量但未把全天推到 1.5 万亿以上。</td></tr><tr><td>2026-11-20T11:49:46.023972+08:00<br>2026-11-20T15:00:00+08:00</td><td>涨停 28 只、炸板率 17.6% 属于弱势中继而非恐慌出清，下午涨停家数不会崩到 20 只以下。<br>收盘涨停池（不含 ST、含连板）≥25 只且炸板率 ≤30% 记兑现；涨停 20—25 只，或炸板率 30%—40% 记部分；涨停 &lt;20 只，或炸板率 &gt;40% 记落空。</td><td>hit<br>判据为涨停 ≥25 只且炸板率 ≤30% 记兑现；实际 28 只、20.0%，均达标。</td></tr></tbody></table></div></section><section><h2>风险与后续观察</h2><p>全A 上涨占比只回到 31.3%，下跌 3762 只；深强沪弱由创业板、北证50 带动，中位股仍在跌。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></p><p>15:00 若科创50 与上证50 跌幅差仍小于 2 个百分点、占比停在 30% 附近，「缺口定价」当日下架；占比跌破 25% 则上午修复按反抽失败记。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></p></section><section><h2>观察条件</h2><div class="table-wrap"><table><thead><tr><th>触发条件</th><th>当前状态</th><th>复查时点</th><th>判断调整</th><th>证据</th></tr></thead><tbody><tr><td>科创50 与上证50 跌幅差</td><td>11:30 为 1.44 个百分点</td><td>15:00 重算，预判 20261123-morning-gapdiff 到期</td><td>仍 &lt;2 则缺口定价下架，改按同向出清。</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>全A 上涨占比</td><td>31.3%（1717/5575）</td><td>14:00 与 15:00 各一次</td><td>守 30% 则修复有效，跌破 25% 按反抽失败记。</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>CRO 宽度</td><td>19 只占比 73.7%</td><td>14:00 与 15:00 各一次</td><td>跌破 60% 则外包服务主线降级为单日反抽。</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr></tbody></table></div></section><section><h2>可能路径</h2><div class="table-wrap"><table><thead><tr><th>情景</th><th>可观察条件</th><th>研究判断</th><th>证据</th></tr></thead><tbody><tr><td>宽度修复但不扩散</td><td>上涨占比 28%—35%，全天额 1.48—1.52 万亿。</td><td>存量换仓，权重让位小盘，非趋势反转。</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>权重二次释放</td><td>上证50 收在 2772.26 下方且中特估占比不回升，额超 1.55 万亿。</td><td>缺口从权重端继续出清，指数仍有下修空间。</td><td><a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S1">S1</a></td></tr></tbody></table></div></section><section><h2>待补数据</h2><table><tr><th>字段</th><th>读数</th><th>截至</th><th>已查资料</th><th>缺口原因</th></tr><tr><td>涨跌家数（通达信口径）</td><td>—</td><td>2026-11-23 11:30</td><td>通达信 MCP 不可用，改用新浪全A 分页在午休冻结态补算</td><td>5575 只含北交所，与通达信「沪+深」口径不完全可比</td></tr><tr><td>09:40 全A 上涨占比</td><td>—</td><td>2026-11-23 09:40</td><td>当日 _raw 无宽度文件；新浪 5m 无 up/down</td><td>上午宽度变化只能用板块正涨幅数 21/256 → 67/255 近似</td></tr><tr><td>跌停名单</td><td>—</td><td>2026-11-23 11:30</td><td>push2ex 跌停池未返回名单</td><td>只有板价估算 30 只，无个股明细</td></tr><tr><td>板块榜时点</td><td>—</td><td>2026-11-23 11:30</td><td>sina newFLJK 取数时刻 11:41</td><td>晚于 cutoff 11 分钟；午休无撮合，读回价等于 11:30 冻结态</td></tr><tr><td>板块与个股资金</td><td>—</td><td>2026-11-23 11:30</td><td>妙想未挂载；NeoData 因 cutoff 早于当前 12 分钟被跳过</td><td>无 11:30 资金流，不写净流入</td></tr><tr><td>涨停封单额</td><td>—</td><td>2026-11-23 11:30</td><td>push2ex 无此字段</td><td>只保留首封时间与连板标记这两个不变字段</td></tr><tr><td>板块口径混排</td><td>—</td><td>2026-11-23 11:30</td><td>新浪概念 172 + 行业 83；通达信 6 位成分表另算</td><td>CRO/CXO 与芯片/中特估分属两套口径，只做各自内部比较</td></tr></table></section><section id="sources"><h2>资料来源</h2><p id="source-S1"><b>S1 11:30 采集快照（指数/成交额/板块头尾/涨停炸板）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-23\_raw\intraday_1130.json<br>indices[]; amount{total,compare_total}; boards.ranked_head/tail; zt.zt/zb · 已对照原始字段，非独立核实全部市场事实</p><p id="source-S2"><b>S2 午休冻结态全A宽度与板块成员统计</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-23\_raw\mid_breadth_1130.json<br>breadth{up,down,flat,up_ratio}; boards[].{median,up_ratio,declared} · 新浪行情 + 通达信成分表，供应商不同</p><p id="source-S3"><b>S3 重点板块成员中位数（通达信 6 位成分清单）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-23\_raw\board_members_1130.json<br>boards[].{code,name,n,median,mean,up_ratio,zt} · 成分来自 boards_constituents.json，价格来自新浪 11:30 冻结价</p><p id="source-S4"><b>S4 09:40 已归档快照（同口径对照基准）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-23\_raw\intraday_0940.json<br>indices[].chg; boards.valid/positive · 同为新浪备用通道，可与 11:30 同口径做差</p><p id="source-S5"><b>S5 上证50 11:30 补取（九大指数清单外）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-23\_raw\sh50_1130.json<br>items[].{prev,open,last,chg_pct,last_bar} · 与 intraday_1130 同源，末根标签 11:30</p><p id="source-S6"><b>S6 同日盘前简报（被追踪的原判断）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-23\盘前简报.html<br>核心结论段；失效条件段 · 仅引用其判断与失效条件，事件原文未重核</p><p id="source-S7"><b>S7 同日竞价快报（09:25 口径）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-23\竞价快报.html<br>竞价分项表；涨跌停开盘明细 · 交易所 ZTPrice/DTPrice 直取</p></section></main><footer>基于所列证据形成研究观察；事实、推断与缺口分别呈现。页面渲染及结构检查不核实全部外部事实。</footer></body></html>
