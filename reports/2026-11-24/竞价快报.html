@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>竞价快报</title>
+<style>
+
+/* report-builder v2.2.2 — centered organization roots
+   Brand DNA: yellow / red / gray / black
+   Direction: editorial paper, precise rules, no rounded color-bar cards
+*/
+:root {
+  --accent: #d7a62c;
+  --accent-strong: #b88712;
+  --accent-soft: #f7f0dd;
+  --signal: #a63a2e;
+  --signal-soft: #f8ece9;
+  --ink: #1d1c19;
+  --text: #37342f;
+  --muted: #777168;
+  --line: #d8d4cb;
+  --line-soft: #ebe8e1;
+  --canvas: #efede7;
+  --paper: #fffefa;
+  --paper-alt: #f6f4ee;
+  --code-bg: #22211e;
+  --code-text: #f4f1e8;
+  --font-sans: "Inter", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", "微软雅黑", "Noto Sans SC", system-ui, sans-serif;
+  --font-display: "Noto Serif SC", "Songti SC", STSong, serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --measure: 960px;
+}
+
+* { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+  background: var(--canvas);
+}
+body {
+  min-height: calc(100vh - 64px);
+  max-width: var(--measure);
+  margin: 32px auto 56px;
+  padding: 66px 66px 78px;
+  border: 1px solid #dedad1;
+  color: var(--text);
+  background: var(--paper);
+  box-shadow: 0 18px 44px rgba(46, 40, 30, 0.07);
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.82;
+  letter-spacing: 0.006em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Masthead */
+.report-header {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 38px 0 24px;
+  border-top: 5px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.report-header::before {
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  content: "";
+}
+.report-header h1 {
+  max-width: 800px;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 45px);
+  font-weight: 700;
+  line-height: 1.23;
+  letter-spacing: -0.035em;
+}
+.meta {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  color: var(--muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  letter-spacing: 0.085em;
+  white-space: nowrap;
+}
+
+main { display: block; }
+h2, h3, h4 {
+  color: var(--ink);
+  break-after: avoid-page;
+}
+h2 {
+  position: relative;
+  margin: 54px 0 18px;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--ink);
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: -0.018em;
+}
+h2::before {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 30px;
+  border-top: 4px solid var(--accent);
+  content: "";
+}
+h3 {
+  margin: 34px 0 12px;
+  font-size: 17.5px;
+  font-weight: 740;
+  line-height: 1.48;
+  letter-spacing: -0.008em;
+}
+h4 {
+  margin: 24px 0 9px;
+  color: #4a4640;
+  font-size: 14.5px;
+  font-weight: 740;
+  letter-spacing: 0.01em;
+}
+p { margin: 11px 0; }
+strong { color: var(--ink); font-weight: 740; }
+em { color: #57524b; }
+hr {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+/* Lists */
+ul, ol { margin: 12px 0 15px; padding-left: 1.5em; }
+li { margin: 5px 0; padding-left: 0.18em; }
+li::marker {
+  color: var(--accent-strong);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+/* Links and media */
+a {
+  color: #6d510f;
+  text-decoration-color: rgba(109, 81, 15, 0.38);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--signal); text-decoration-color: currentColor; }
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 26px auto;
+}
+figure { margin: 30px 0; }
+figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* Tables: editorial rules rather than dashboard cards */
+.table-wrapper {
+  margin: 24px 0 32px;
+  overflow-x: auto;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  box-shadow: none;
+  -webkit-overflow-scrolling: touch;
+}
+table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  line-height: 1.58;
+  font-variant-numeric: tabular-nums;
+}
+thead { display: table-header-group; }
+thead th {
+  padding: 12px 13px 11px;
+  border-right: 1px solid #ddd8ce;
+  border-bottom: 1px solid var(--ink);
+  background: #efede6;
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 760;
+  letter-spacing: 0.018em;
+  text-align: left;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+thead th:last-child { border-right: 0; }
+tbody td {
+  padding: 11px 13px;
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+tbody td:last-child { border-right: 0; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: #faf9f5; }
+tbody tr:hover { background: #f6f1e4; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Quotes and semantic notes: square, ruled, restrained */
+blockquote {
+  margin: 24px 0;
+  padding: 3px 0 3px 20px;
+  border-left: 2px solid #aaa399;
+  color: #5a554d;
+  font-family: var(--font-display);
+  font-size: 14.5px;
+}
+blockquote p:first-child, .highlight p:first-child, .warning p:first-child { margin-top: 0; }
+blockquote p:last-child, .highlight p:last-child, .warning p:last-child { margin-bottom: 0; }
+.highlight, .warning {
+  margin: 24px 0;
+  padding: 16px 18px;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+  font-size: 14px;
+  break-inside: avoid-page;
+}
+.highlight {
+  border-top: 2px solid var(--accent-strong);
+  border-bottom: 1px solid #d8c89d;
+  background: var(--accent-soft);
+  color: #55471f;
+}
+.warning {
+  border-top: 2px solid var(--signal);
+  border-bottom: 1px solid #d9bbb5;
+  background: var(--signal-soft);
+  color: #742e26;
+}
+
+/* Code */
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+:not(pre) > code {
+  padding: 0.1em 0.32em;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper-alt);
+  color: #693525;
+  overflow-wrap: anywhere;
+}
+pre, .codehilite {
+  margin: 22px 0 28px;
+  overflow: auto;
+  border-radius: 0;
+  background: var(--code-bg);
+  color: var(--code-text);
+  break-inside: avoid-page;
+}
+pre { padding: 17px 19px; line-height: 1.65; tab-size: 4; }
+.codehilite pre { margin: 0; }
+.codehilite .c, .codehilite .cm, .codehilite .c1 { color: #9a9a92; }
+.codehilite .k, .codehilite .kd, .codehilite .kn { color: #f0bf57; }
+.codehilite .s, .codehilite .s1, .codehilite .s2 { color: #a8d08d; }
+.codehilite .m, .codehilite .mi, .codehilite .mf { color: #d7a7d9; }
+
+/* Native process and hierarchy diagrams */
+.flow-diagram, .org-chart {
+  margin: 20px 0 30px;
+  padding: 8px 0 0;
+  overflow-x: auto;
+  border: 0;
+  break-inside: avoid-page;
+  -webkit-overflow-scrolling: touch;
+}
+.flow-lane {
+  display: flex;
+  min-width: max-content;
+  align-items: stretch;
+  gap: 8px;
+}
+.flow-lane + .flow-lane { margin-top: 14px; }
+.flow-step {
+  display: grid;
+  grid-template-columns: auto minmax(78px, 1fr);
+  min-width: 128px;
+  max-width: 200px;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: #faf9f5;
+}
+.flow-index {
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.flow-label { color: var(--ink); font-size: 13.5px; font-weight: 700; }
+.flow-arrow {
+  align-self: center;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 1;
+}
+.org-tree, .org-tree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.org-tree li { position: relative; margin: 0; padding: 0; }
+.org-tree > li + li { margin-top: 28px; }
+.org-tree > li > .org-root-node {
+  display: block;
+  width: max-content;
+  min-width: 150px;
+  margin: 0 auto 18px;
+}
+.org-tree > li > ul {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid #aaa399;
+}
+.org-tree > li > ul > li {
+  min-width: 0;
+  text-align: center;
+}
+.org-tree > li > ul > li::before {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  height: 18px;
+  border-left: 1px solid #aaa399;
+  content: "";
+}
+.org-tree > li > ul > li > .org-node { width: 100%; min-width: 0; }
+.org-tree > li > ul > li > ul {
+  display: grid;
+  gap: 6px;
+  margin-top: 7px;
+}
+.org-tree > li > ul > li > ul > li::before { display: none; }
+.org-tree > li > ul > li > ul > li > .org-node {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 8px;
+  border-color: var(--line);
+  background: transparent;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.org-tree ul ul ul {
+  display: block;
+  margin: 6px 0 0 10px;
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+  text-align: left;
+}
+.org-tree ul ul ul > li { margin: 3px 0; }
+.org-node {
+  display: inline-block;
+  min-width: 150px;
+  padding: 8px 12px;
+  border: 1px solid var(--ink);
+  background: var(--paper-alt);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+.org-root-node {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+}
+.diagram-empty { margin: 0; color: var(--muted); font-size: 13px; }
+
+/* Editorial table of contents and footnotes */
+.toc {
+  margin: 12px 0 44px;
+  padding: 20px 0 22px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+}
+.toc > span, .toc > p:first-child {
+  display: block;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+}
+.toc ul {
+  margin: 0;
+  padding-left: 1.25em;
+  columns: 2;
+  column-gap: 44px;
+}
+.toc li { break-inside: avoid; margin: 4px 0; }
+.toc a { color: var(--text); text-decoration: none; }
+.toc a:hover { color: var(--signal); }
+.footnote, .footnote-ref { font-variant-numeric: tabular-nums; }
+.footnote {
+  margin-top: 46px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink);
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+/* Small inline labels retained for existing reports */
+.tag, .tag-red {
+  display: inline-block;
+  margin: 0 5px 4px 0;
+  padding: 1px 5px 2px;
+  border-radius: 0;
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: 0.025em;
+}
+.tag { border-bottom: 2px solid var(--accent); background: transparent; color: #6a5116; }
+.tag-red { border-bottom: 2px solid var(--signal); background: transparent; color: var(--signal); }
+
+footer {
+  margin-top: 68px;
+  padding-top: 20px;
+  border-top: 3px solid var(--ink);
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.7;
+  break-inside: avoid-page;
+}
+footer p { margin: 4px 0; }
+footer .disclaimer strong { color: #514d46; }
+footer .provenance { font-variant-numeric: tabular-nums; letter-spacing: 0.015em; }
+
+@media (max-width: 720px) {
+  html { background: var(--paper); }
+  body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 18px 48px;
+    border: 0;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 1.76;
+  }
+  .report-header { margin-bottom: 36px; padding-top: 34px; padding-bottom: 20px; }
+  .report-header::before { top: -6px; width: 8px; height: 8px; }
+  .report-header h1 { font-size: 29px; letter-spacing: -0.025em; }
+  .meta { top: 11px; font-size: 10px; letter-spacing: 0.06em; }
+  h2 { margin-top: 44px; font-size: 22px; }
+  h3 { margin-top: 29px; font-size: 16.5px; }
+  .toc ul { columns: 1; }
+  .flow-lane { min-width: 0; flex-direction: column; gap: 8px; }
+  .flow-step { width: 100%; max-width: none; }
+  .flow-arrow { align-self: center; font-size: 0; }
+  .flow-arrow::before { content: "↓"; font-size: 16px; }
+  .org-chart { overflow-x: visible; }
+  .org-tree > li > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .org-node { min-width: 130px; }
+  table { min-width: 520px; font-size: 12px; }
+  thead th, tbody td { padding: 9px 10px; }
+}
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 17mm;
+}
+
+@media print {
+  :root { --measure: none; }
+  html { scroll-behavior: auto; background: #fff; }
+  body {
+    min-height: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #222;
+    background: #fff;
+    box-shadow: none;
+    font-size: 10.5pt;
+    line-height: 1.62;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .report-header { margin-bottom: 8mm; padding-top: 8mm; }
+  .report-header h1 { font-size: 25pt; }
+  .meta { top: 3mm; }
+  h2 { margin-top: 8mm; font-size: 15.5pt; }
+  h3 { font-size: 12pt; }
+  h2, h3, h4 { break-after: avoid-page; }
+  p, li { orphans: 3; widows: 3; }
+  a { color: inherit; text-decoration: none; }
+  .toc ul { columns: 2; }
+  .table-wrapper, .flow-diagram, .org-chart { overflow: visible; border-color: #777; box-shadow: none; }
+  .flow-lane { min-width: 0; gap: 2mm; }
+  .flow-step { min-width: 25mm; padding: 2.5mm 3mm; }
+  .flow-index { font-size: 7.5pt; }
+  .flow-label { font-size: 9pt; }
+  .org-tree > li > .org-root-node,
+  .org-tree > li > ul > li > .org-node { min-width: 28mm; }
+  table { min-width: 0; font-size: 8.3pt; }
+  thead { display: table-header-group; }
+  thead th { white-space: normal; overflow-wrap: anywhere; }
+  tr, img, blockquote, .highlight, .warning, pre, .codehilite,
+  .flow-diagram, .flow-step, .org-chart, .org-node { break-inside: avoid-page; }
+  tbody tr:hover { background: inherit; }
+  footer { margin-top: 10mm; }
+}
+
+
+</style>
+</head>
+<body class="profile-finance">
+<header class="report-header">
+  <h1>竞价快报</h1>
+  <div class="meta">📅 2026年11月24日 · 行情截止 09:25 竞价口径 · 取数 09:26 · 规则化准点渲染 09:26:15 | 投资小龙虾 AI | 仅供参考</div>
+</header>
+<main><h2>竞价异常</h2><p>三大指数竞价：上证指数 3567.84（+0.82%）、深证成指 10708.62（+2.43%）、创业板指 2368.70（+3.88%）。5210 只可比个股中高开 4641 只（89.08%）、低开 420 只（8.06%）、平开 149 只，开盘涨跌幅中位数 +1.72%。按中位数归类为<strong>高开偏强</strong>；上行尾部（高开 2% 以上）2030 只、下行尾部（低开 2% 以上）49 只，上行尾部更厚。</p><p>涨停开盘 24 只（德龙汇能、魅视科技、一彬科技、联创电子、汇洲智能、宁波东力、东山精密、飞龙股份），跌停开盘 4 只（*ST美丽、英 力 特、ST欢瑞、*ST瑞茂）。涨跌停价直接取交易所 ZTPrice/DTPrice，ST 与新股按接口给价自然落入不计入分支，未按名称反推。</p><h2>09:40 核对什么</h2><p>竞价同时给出「宽度不差 + 涨停开盘家数偏高」，需防高开后回落的兑现盘：观察 09:30—09:35 首根 5 分钟线能否收在开盘价上方。本节只给观察条件，不预设结论。</p><p>跟踪开盘较昨收高开或低开至少2%的两组股票，看09:40仍在昨收同侧的比例。</p><details><summary>展开竞价数据与口径</summary><div class="table-wrapper"><table><thead><tr><th>指数</th><th class="num">竞价开盘</th><th class="num">昨收</th><th class="num">较昨收</th></tr></thead><tbody><tr><td>上证指数</td><td class="num">3567.84</td><td class="num">3538.95</td><td class="num">+0.82%</td></tr><tr><td>深证成指</td><td class="num">10708.62</td><td class="num">10454.37</td><td class="num">+2.43%</td></tr><tr><td>创业板指</td><td class="num">2368.70</td><td class="num">2280.20</td><td class="num">+3.88%</td></tr></tbody></table></div><div class="table-wrapper"><table><thead><tr><th>竞价分项（沪深 A 股 5210 只）</th><th class="num">家数</th><th class="num">占比</th></tr></thead><tbody><tr><td>高开（开盘价 &gt; 昨收）</td><td class="num">4641</td><td class="num">89.08%</td></tr><tr><td>低开（开盘价 &lt; 昨收）</td><td class="num">420</td><td class="num">8.06%</td></tr><tr><td>平开（开盘价 = 昨收）</td><td class="num">149</td><td class="num">2.86%</td></tr><tr><td>涨停开盘（开盘价 = 交易所涨停价）</td><td class="num">24</td><td class="num">0.46%</td></tr><tr><td>跌停开盘（开盘价 = 交易所跌停价）</td><td class="num">4</td><td class="num">0.08%</td></tr></tbody></table></div><div class="table-wrapper"><table><thead><tr><th>开盘涨跌幅区间</th><th class="num">家数</th><th class="num">占比</th></tr></thead><tbody><tr><td>≤-5%</td><td class="num">12</td><td class="num">0.23%</td></tr><tr><td>-5%~-2%</td><td class="num">37</td><td class="num">0.71%</td></tr><tr><td>-2%~0</td><td class="num">371</td><td class="num">7.12%</td></tr><tr><td>平开</td><td class="num">149</td><td class="num">2.86%</td></tr><tr><td>0~2%</td><td class="num">2611</td><td class="num">50.12%</td></tr><tr><td>2%~5%</td><td class="num">1623</td><td class="num">31.15%</td></tr><tr><td>≥5%</td><td class="num">407</td><td class="num">7.81%</td></tr></tbody></table></div><h2>涨跌停开盘明细</h2><div class="table-wrapper"><table><thead><tr><th>类别</th><th>名单</th></tr></thead><tbody><tr><td>涨停开盘（24）</td><td>000593 德龙汇能、001229 魅视科技、001278 一彬科技、002036 联创电子、002122 汇洲智能、002164 宁波东力、002384 东山精密、002536 飞龙股份、002579 中京电子、002642 荣联科技、002708 光洋股份、002851 麦格米特、002913 奥士康、002931 锋龙股份、002938 鹏鼎控股</td></tr><tr><td>跌停开盘（4）</td><td>000010 *ST美丽、000635 英 力 特、000892 ST欢瑞、600180 *ST瑞茂</td></tr></tbody></table></div><h2>数据口径与缺口</h2><ul><li>取数失败 37 只（池 5247，覆盖 99.29%），未落地个股不计入统计</li><li>竞价正成交且时标合格的金额仅覆盖 5210/5247，其余金额未知。</li></ul><p>本稿由规则引擎按快照直接渲染，数值可逐项复核；未经模型改写。</p><h2>集合竞价成交与买一队列</h2><p>撮合后、连续竞价前的累计成交额合计 278.30 亿元，有效正成交样本 5210/5247，行情时刻 092500 至 092606。</p><p>开盘价及买一价均等于涨停价的可见买单（共 16 只，列金额前三）（各股实际观测时刻）：002384（09:25:00，35.51 亿）、603960（09:26:06，30.52 亿）、603083（09:25:01，19.38 亿）。金额按买一价 × 买一手数 × 100 估算，仅反映买一队列；卖一缺报时封板状态待核。</p></details></main>
+<footer>本报告由规则引擎在行情时点内自动生成，未经模型改写；数值口径见末节。
+投资小龙虾 AI · 仅供参考，不构成投资建议。</footer>
+</body>
+</html>
