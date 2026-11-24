@@ -1,0 +1,529 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="review-schema" content="3"><title>盘中异动 · 2026-11-24</title><style>
+/* report-builder v2.2.2 — centered organization roots
+   Brand DNA: yellow / red / gray / black
+   Direction: editorial paper, precise rules, no rounded color-bar cards
+*/
+:root {
+  --accent: #d7a62c;
+  --accent-strong: #b88712;
+  --accent-soft: #f7f0dd;
+  --signal: #a63a2e;
+  --signal-soft: #f8ece9;
+  --ink: #1d1c19;
+  --text: #37342f;
+  --muted: #777168;
+  --line: #d8d4cb;
+  --line-soft: #ebe8e1;
+  --canvas: #efede7;
+  --paper: #fffefa;
+  --paper-alt: #f6f4ee;
+  --code-bg: #22211e;
+  --code-text: #f4f1e8;
+  --font-sans: "Inter", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", "微软雅黑", "Noto Sans SC", system-ui, sans-serif;
+  --font-display: "Noto Serif SC", "Songti SC", STSong, serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --measure: 960px;
+}
+
+* { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+  background: var(--canvas);
+}
+body {
+  min-height: calc(100vh - 64px);
+  max-width: var(--measure);
+  margin: 32px auto 56px;
+  padding: 66px 66px 78px;
+  border: 1px solid #dedad1;
+  color: var(--text);
+  background: var(--paper);
+  box-shadow: 0 18px 44px rgba(46, 40, 30, 0.07);
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.82;
+  letter-spacing: 0.006em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Masthead */
+.report-header {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 38px 0 24px;
+  border-top: 5px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.report-header::before {
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  content: "";
+}
+.report-header h1 {
+  max-width: 800px;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 45px);
+  font-weight: 700;
+  line-height: 1.23;
+  letter-spacing: -0.035em;
+}
+.meta {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  color: var(--muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  letter-spacing: 0.085em;
+  white-space: nowrap;
+}
+
+main { display: block; }
+h2, h3, h4 {
+  color: var(--ink);
+  break-after: avoid-page;
+}
+h2 {
+  position: relative;
+  margin: 54px 0 18px;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--ink);
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: -0.018em;
+}
+h2::before {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 30px;
+  border-top: 4px solid var(--accent);
+  content: "";
+}
+h3 {
+  margin: 34px 0 12px;
+  font-size: 17.5px;
+  font-weight: 740;
+  line-height: 1.48;
+  letter-spacing: -0.008em;
+}
+h4 {
+  margin: 24px 0 9px;
+  color: #4a4640;
+  font-size: 14.5px;
+  font-weight: 740;
+  letter-spacing: 0.01em;
+}
+p { margin: 11px 0; }
+strong { color: var(--ink); font-weight: 740; }
+em { color: #57524b; }
+hr {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+/* Lists */
+ul, ol { margin: 12px 0 15px; padding-left: 1.5em; }
+li { margin: 5px 0; padding-left: 0.18em; }
+li::marker {
+  color: var(--accent-strong);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+/* Links and media */
+a {
+  color: #6d510f;
+  text-decoration-color: rgba(109, 81, 15, 0.38);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--signal); text-decoration-color: currentColor; }
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 26px auto;
+}
+figure { margin: 30px 0; }
+figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* Tables: editorial rules rather than dashboard cards */
+.table-wrapper {
+  margin: 24px 0 32px;
+  overflow-x: auto;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  box-shadow: none;
+  -webkit-overflow-scrolling: touch;
+}
+table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  line-height: 1.58;
+  font-variant-numeric: tabular-nums;
+}
+thead { display: table-header-group; }
+thead th {
+  padding: 12px 13px 11px;
+  border-right: 1px solid #ddd8ce;
+  border-bottom: 1px solid var(--ink);
+  background: #efede6;
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 760;
+  letter-spacing: 0.018em;
+  text-align: left;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+thead th:last-child { border-right: 0; }
+tbody td {
+  padding: 11px 13px;
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+tbody td:last-child { border-right: 0; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: #faf9f5; }
+tbody tr:hover { background: #f6f1e4; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Quotes and semantic notes: square, ruled, restrained */
+blockquote {
+  margin: 24px 0;
+  padding: 3px 0 3px 20px;
+  border-left: 2px solid #aaa399;
+  color: #5a554d;
+  font-family: var(--font-display);
+  font-size: 14.5px;
+}
+blockquote p:first-child, .highlight p:first-child, .warning p:first-child { margin-top: 0; }
+blockquote p:last-child, .highlight p:last-child, .warning p:last-child { margin-bottom: 0; }
+.highlight, .warning {
+  margin: 24px 0;
+  padding: 16px 18px;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+  font-size: 14px;
+  break-inside: avoid-page;
+}
+.highlight {
+  border-top: 2px solid var(--accent-strong);
+  border-bottom: 1px solid #d8c89d;
+  background: var(--accent-soft);
+  color: #55471f;
+}
+.warning {
+  border-top: 2px solid var(--signal);
+  border-bottom: 1px solid #d9bbb5;
+  background: var(--signal-soft);
+  color: #742e26;
+}
+
+/* Code */
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+:not(pre) > code {
+  padding: 0.1em 0.32em;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper-alt);
+  color: #693525;
+  overflow-wrap: anywhere;
+}
+pre, .codehilite {
+  margin: 22px 0 28px;
+  overflow: auto;
+  border-radius: 0;
+  background: var(--code-bg);
+  color: var(--code-text);
+  break-inside: avoid-page;
+}
+pre { padding: 17px 19px; line-height: 1.65; tab-size: 4; }
+.codehilite pre { margin: 0; }
+.codehilite .c, .codehilite .cm, .codehilite .c1 { color: #9a9a92; }
+.codehilite .k, .codehilite .kd, .codehilite .kn { color: #f0bf57; }
+.codehilite .s, .codehilite .s1, .codehilite .s2 { color: #a8d08d; }
+.codehilite .m, .codehilite .mi, .codehilite .mf { color: #d7a7d9; }
+
+/* Native process and hierarchy diagrams */
+.flow-diagram, .org-chart {
+  margin: 20px 0 30px;
+  padding: 8px 0 0;
+  overflow-x: auto;
+  border: 0;
+  break-inside: avoid-page;
+  -webkit-overflow-scrolling: touch;
+}
+.flow-lane {
+  display: flex;
+  min-width: max-content;
+  align-items: stretch;
+  gap: 8px;
+}
+.flow-lane + .flow-lane { margin-top: 14px; }
+.flow-step {
+  display: grid;
+  grid-template-columns: auto minmax(78px, 1fr);
+  min-width: 128px;
+  max-width: 200px;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: #faf9f5;
+}
+.flow-index {
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.flow-label { color: var(--ink); font-size: 13.5px; font-weight: 700; }
+.flow-arrow {
+  align-self: center;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 1;
+}
+.org-tree, .org-tree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.org-tree li { position: relative; margin: 0; padding: 0; }
+.org-tree > li + li { margin-top: 28px; }
+.org-tree > li > .org-root-node {
+  display: block;
+  width: max-content;
+  min-width: 150px;
+  margin: 0 auto 18px;
+}
+.org-tree > li > ul {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid #aaa399;
+}
+.org-tree > li > ul > li {
+  min-width: 0;
+  text-align: center;
+}
+.org-tree > li > ul > li::before {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  height: 18px;
+  border-left: 1px solid #aaa399;
+  content: "";
+}
+.org-tree > li > ul > li > .org-node { width: 100%; min-width: 0; }
+.org-tree > li > ul > li > ul {
+  display: grid;
+  gap: 6px;
+  margin-top: 7px;
+}
+.org-tree > li > ul > li > ul > li::before { display: none; }
+.org-tree > li > ul > li > ul > li > .org-node {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 8px;
+  border-color: var(--line);
+  background: transparent;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.org-tree ul ul ul {
+  display: block;
+  margin: 6px 0 0 10px;
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+  text-align: left;
+}
+.org-tree ul ul ul > li { margin: 3px 0; }
+.org-node {
+  display: inline-block;
+  min-width: 150px;
+  padding: 8px 12px;
+  border: 1px solid var(--ink);
+  background: var(--paper-alt);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+.org-root-node {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+}
+.diagram-empty { margin: 0; color: var(--muted); font-size: 13px; }
+
+/* Editorial table of contents and footnotes */
+.toc {
+  margin: 12px 0 44px;
+  padding: 20px 0 22px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+}
+.toc > span, .toc > p:first-child {
+  display: block;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+}
+.toc ul {
+  margin: 0;
+  padding-left: 1.25em;
+  columns: 2;
+  column-gap: 44px;
+}
+.toc li { break-inside: avoid; margin: 4px 0; }
+.toc a { color: var(--text); text-decoration: none; }
+.toc a:hover { color: var(--signal); }
+.footnote, .footnote-ref { font-variant-numeric: tabular-nums; }
+.footnote {
+  margin-top: 46px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink);
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+/* Small inline labels retained for existing reports */
+.tag, .tag-red {
+  display: inline-block;
+  margin: 0 5px 4px 0;
+  padding: 1px 5px 2px;
+  border-radius: 0;
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: 0.025em;
+}
+.tag { border-bottom: 2px solid var(--accent); background: transparent; color: #6a5116; }
+.tag-red { border-bottom: 2px solid var(--signal); background: transparent; color: var(--signal); }
+
+footer {
+  margin-top: 68px;
+  padding-top: 20px;
+  border-top: 3px solid var(--ink);
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.7;
+  break-inside: avoid-page;
+}
+footer p { margin: 4px 0; }
+footer .disclaimer strong { color: #514d46; }
+footer .provenance { font-variant-numeric: tabular-nums; letter-spacing: 0.015em; }
+
+@media (max-width: 720px) {
+  html { background: var(--paper); }
+  body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 18px 48px;
+    border: 0;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 1.76;
+  }
+  .report-header { margin-bottom: 36px; padding-top: 34px; padding-bottom: 20px; }
+  .report-header::before { top: -6px; width: 8px; height: 8px; }
+  .report-header h1 { font-size: 29px; letter-spacing: -0.025em; }
+  .meta { top: 11px; font-size: 10px; letter-spacing: 0.06em; }
+  h2 { margin-top: 44px; font-size: 22px; }
+  h3 { margin-top: 29px; font-size: 16.5px; }
+  .toc ul { columns: 1; }
+  .flow-lane { min-width: 0; flex-direction: column; gap: 8px; }
+  .flow-step { width: 100%; max-width: none; }
+  .flow-arrow { align-self: center; font-size: 0; }
+  .flow-arrow::before { content: "↓"; font-size: 16px; }
+  .org-chart { overflow-x: visible; }
+  .org-tree > li > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .org-node { min-width: 130px; }
+  table { min-width: 520px; font-size: 12px; }
+  thead th, tbody td { padding: 9px 10px; }
+}
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 17mm;
+}
+
+@media print {
+  :root { --measure: none; }
+  html { scroll-behavior: auto; background: #fff; }
+  body {
+    min-height: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #222;
+    background: #fff;
+    box-shadow: none;
+    font-size: 10.5pt;
+    line-height: 1.62;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .report-header { margin-bottom: 8mm; padding-top: 8mm; }
+  .report-header h1 { font-size: 25pt; }
+  .meta { top: 3mm; }
+  h2 { margin-top: 8mm; font-size: 15.5pt; }
+  h3 { font-size: 12pt; }
+  h2, h3, h4 { break-after: avoid-page; }
+  p, li { orphans: 3; widows: 3; }
+  a { color: inherit; text-decoration: none; }
+  .toc ul { columns: 2; }
+  .table-wrapper, .flow-diagram, .org-chart { overflow: visible; border-color: #777; box-shadow: none; }
+  .flow-lane { min-width: 0; gap: 2mm; }
+  .flow-step { min-width: 25mm; padding: 2.5mm 3mm; }
+  .flow-index { font-size: 7.5pt; }
+  .flow-label { font-size: 9pt; }
+  .org-tree > li > .org-root-node,
+  .org-tree > li > ul > li > .org-node { min-width: 28mm; }
+  table { min-width: 0; font-size: 8.3pt; }
+  thead { display: table-header-group; }
+  thead th { white-space: normal; overflow-wrap: anywhere; }
+  tr, img, blockquote, .highlight, .warning, pre, .codehilite,
+  .flow-diagram, .flow-step, .org-chart, .org-node { break-inside: avoid-page; }
+  tbody tr:hover { background: inherit; }
+  footer { margin-top: 10mm; }
+}
+
+</style></head><body class="profile-finance"><header class="report-header"><h1>盘中异动 · 2026-11-24</h1><div class="meta">2026-11-24 · 行情截止 2026-11-24T14:00:00+08:00 · 资讯截止 2026-11-24T14:00:00+08:00<br>14:00 盘中异动研究，行情截止 14:00；11:30 与 14:00 为同源新浪 5m 快照，差值为脚本所算，未跨源硬比 · 渲染 2026-11-24T14:06:10+08:00</div></header><main><section><h2>相对午盘发生了什么变化</h2><p>午盘把上午定为两段式冲高回落、主线由加强转分歧，并留下三条 14:00 复核线：炸板回封过半、上证守住今开 3567.84、消费电子链上涨占比高于 80%。 <a class="source-ref" href="#source-S8">S8</a> <a class="source-ref" href="#source-S3">S3</a></p><p>三条全未兑现。上证 3549.40，较今开低 0.52%，仍在昨收上方；炸板 42 增至 61 只、涨停池 64 降至 58 只，午后新封仅 5 只且散在专用设备、消费电子、化学制品、照明、汽车零部件五个方向，无成簇；华为海思上涨占比 97.2% 掉到 75.0%，成分中位 1.62% 退至 0.87%，板块涨幅却仍 +2.87%，靠少数票撑住。指数只低 0.17%，上证50 几乎不动，个股在退潮：沪深上涨家数少 515 只，全A 上涨占比 57.9% 降到 41.9%，板块正涨幅 179 个减至 128 个。光伏三块中位由 0.52%—0.69% 转负至 -0.30%，午盘「非主线」被坐实；减速器中位 1.43%，是唯一还留在 1% 以上的主线。 <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S6">S6</a> <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S4">S4</a></p><p>15:00 只核三项：炸板能否收敛到 50 只以下、减速器中位能否守住 1%、上证能否收在昨收 3538.95 上方。三项同破按退潮记，否则维持分歧加深。 <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S5">S5</a></p></section><details><summary>展开行情明细、研究依据和核验记录</summary><section><h2>沪深涨跌家数与概念板块资金</h2><p>11:30 沪深两市上涨 2,856 家，下跌 2,257 家。上证50为 2772.59 点。 <a class="source-ref" href="#source-TDX1130">TDX1130</a></p><p>14:00 沪深两市上涨 2,341 家，下跌 2,803 家。上证50为 2771.87 点。 <a class="source-ref" href="#source-TDX1400">TDX1400</a></p><p>截至本机 13:55:01 采样，东财 554 个概念板块中，日内累计主力净额最高的三个为百元股（+114.90 亿元）、基金减仓（+113.31 亿元）、科技风格（+111.36 亿元），最低的三个为央国企改革（-61.53 亿元）、连续亏损（-21.75 亿元）、稀缺资源（-20.90 亿元）。板块成分有重叠，各板块金额不能相加。 <a class="source-ref" href="#source-EM1400">EM1400</a></p></section><section><h2>市场概况</h2><div class="table-wrap"><table><thead><tr><th>指标</th><th>读数</th><th>单位</th><th>时点</th><th>口径</th><th>证据</th></tr></thead><tbody><tr><td>上证指数</td><td>3549.396（+0.30%，较今开 -0.52%）</td><td>点</td><td>2026-11-24 14:00</td><td>新浪 5m</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>深证成指</td><td>10488.701（+0.33%）</td><td>点</td><td>2026-11-24 14:00</td><td>新浪 5m</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>创业板指</td><td>2301.778（+0.95%）</td><td>点</td><td>2026-11-24 14:00</td><td>新浪 5m</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>科创50</td><td>1259.112（+2.54%）</td><td>点</td><td>2026-11-24 14:00</td><td>新浪 5m</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>沪深两市成交额</td><td>13492.5（沪 6228.0 / 深 7264.5）</td><td>亿元</td><td>2026-11-24 14:00</td><td>累计，昨全天 12759.2</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>沪深涨跌家数</td><td>涨 2341 / 跌 2803</td><td>家</td><td>2026-11-24 14:00</td><td>通达信 000001+399106</td><td><a class="source-ref" href="#source-S6">S6</a></td></tr><tr><td>全A 上涨占比</td><td>41.9（跌停 8）</td><td>%</td><td>14:02:43 采样</td><td>新浪全A 5579 只，含北交所；涨停口径见下两行</td><td><a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>涨停池 / 炸板</td><td>58 / 61</td><td>只</td><td>2026-11-24 14:00</td><td>东财 push2ex，首封≤cutoff，不含 ST</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr></tbody></table></div></section><section><h2>与上一时点对照</h2><div class="table-wrap"><table><thead><tr><th>对象</th><th>此前</th><th>当前</th><th>变化</th><th>证据</th></tr></thead><tbody><tr><td>上证指数</td><td>3555.492（+0.47%）</td><td>3549.396（+0.30%）</td><td>回落 0.17%，仍在昨收 3538.95 上方</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>创业板指</td><td>2323.478（+1.90%）</td><td>2301.778（+0.95%）</td><td>退 0.95 个百分点，成长端回落最快</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>科创50</td><td>1261.259（+2.72%）</td><td>1259.112（+2.54%）</td><td>仅退 0.18 个百分点，最抗跌</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>沪深上涨家数</td><td>2856 / 跌 2257</td><td>2341 / 跌 2803</td><td>多空翻转，净减 515 只</td><td><a class="source-ref" href="#source-S6">S6</a></td></tr><tr><td>全A 上涨占比</td><td>57.9%</td><td>41.9%</td><td>同接口同分页，掉 16.0 个百分点</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>板块正涨幅数</td><td>179 / 256</td><td>128 / 256</td><td>过半板块翻绿</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>成交额（累计）</td><td>11210 亿</td><td>13492 亿</td><td>午后一小时 +2283 亿，已超昨日全天 5.7%</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>涨停池 / 炸板</td><td>64 / 42</td><td>58 / 61</td><td>炸板超涨停池，赚钱效应收缩</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a></td></tr></tbody></table></div></section><section><h2>机器人簇（减速器 / 人形机器人）</h2><p><strong>阶段</strong>　分歧</p><p><strong>变化</strong>　中位与宽度同时回落，仍是唯一中位在 1% 以上的方向</p><p><strong>价格与宽度</strong>　减速器中位 2.44%→1.43%、占比 84.4%→74.8%；人形机器人 2.03%→1.11%、占比 83.1%→70.1%</p><p><strong>反证</strong>　涨停 8→7、22→20，封板端没有新增供给，分歧靠在位筹码换手</p><p><strong>减弱条件</strong>　减速器中位跌破 1% 且占比低于 60%</p><a class="source-ref" href="#source-S4">S4</a> <a class="source-ref" href="#source-S5">S5</a></section><section><h2>消费电子链（华为海思 / 无线耳机）</h2><p><strong>阶段</strong>　分歧</p><p><strong>变化</strong>　板块涨幅守住但内部宽度破位</p><p><strong>价格与宽度</strong>　海思涨幅 2.88%→2.87%，中位 1.62%→0.87%、占比 97.2%→75.0%；无线耳机 3.07%→2.28%，占比 89.7%→82.1%</p><p><strong>反证</strong>　海思板块涨幅未退，慧博云通 +11.19% 为最强股，属单票拉动</p><p><strong>减弱条件</strong>　海思中位转负且占比跌破 70%</p><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></section><section><h2>光伏三块（HIT电池 / TOPCon / 充电桩）</h2><p><strong>阶段</strong>　退潮</p><p><strong>变化</strong>　成分中位由正转负，午盘判定的「非主线」被坐实</p><p><strong>价格与宽度</strong>　HIT电池中位 0.52%→-0.30%、占比 65.5%→34.5%；TOPCon 0.52%→-0.30%；充电桩 0.69%→0.00%</p><p><strong>反证</strong>　板块涨幅仍为正（2.36%/1.80%/1.82%），靠少数权重票维持</p><p><strong>减弱条件</strong>　三块中位同破 -0.5%</p><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></section><section><h2>代表公司比较</h2><div class="table-wrap"><table><thead><tr><th>公司</th><th>作用</th><th>观测</th><th>风险</th><th>证据</th></tr></thead><tbody><tr><td>慧博云通</td><td>华为海思最强股</td><td>+11.19%，海思板块涨幅持平的主要拉动</td><td>单票拉动，不能代表板块宽度</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>中京电子</td><td>4 板最高标</td><td>4 板，PCB 概念涨停之一</td><td>PCB 中位仅 0.19%，高度与板块宽度脱节</td><td><a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>罗博特科</td><td>HIT电池最强股</td><td>+5.53%，板块中位已转负</td><td>设备端个股与电池片环节走势分化</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr></tbody></table></div></section><p class="meta">暂无已登记且到期的预判，不生成命中率。</p><section><h2>风险与后续观察</h2><p>反证在科创50：14:00 仍 +2.54%，仅比午盘退 0.18 个百分点，半导体权重没有参与杀跌。 <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S6">S6</a></p><p>若 15:00 炸板回落到 50 只以下且减速器中位重回 2% 上方，按高位换手记；若上证失守 3538.95，则从分歧改记退潮。 <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S6">S6</a></p></section><section><h2>观察条件</h2><div class="table-wrap"><table><thead><tr><th>触发条件</th><th>当前状态</th><th>复查时点</th><th>判断调整</th><th>证据</th></tr></thead><tbody><tr><td>炸板数收敛到 50 只以下</td><td>61 只，较午盘增 19 只</td><td>15:00</td><td>维持分歧</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>减速器中位守住 1%</td><td>1.43%</td><td>15:00</td><td>主线未换</td><td><a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>上证失守昨收 3538.95</td><td>3549.396，未失守</td><td>15:00</td><td>尚未转入退潮</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr></tbody></table></div></section><section><h2>待补数据</h2><table><tr><th>字段</th><th>对判断的影响</th><th>截至</th><th>已查资料</th><th>说明</th></tr><tr><td>午后回落的即时催化</td><td>催化一栏记待核，正文不做归因</td><td>2026-11-24 14:00</td><td>亿信检索 10 条（reports-only），均无发布时间；妙想新闻通道未配置</td><td>无可定时刻的原文，不能把研报观点当 13:00—14:00 的因果</td></tr><tr><td>个股及其他分类资金</td><td>无法区分权重护盘与真实承接</td><td>2026-11-24 14:00</td><td>妙想个股主力净额与 NeoData sector_flow 均报 MCP 未配置；东财 push2 长期 000</td><td>缺个股与行业级净额</td></tr><tr><td>跌停名单</td><td>跌停端只能给家数</td><td>2026-11-24 14:00</td><td>push2ex 跌停池无明细；新浪全A板价估算 8 只</td><td>只有家数，无个股与 ST/非 ST 拆分</td></tr></table></section><section><h2>统计口径说明</h2><table><tr><th>字段</th><th>对判断的影响</th><th>截至</th><th>已查资料</th><th>说明</th></tr><tr><td>板块成分中位与全A宽度采样时点</td><td>中位与占比含 2.7 分钟漂移，方向可信、绝对值须按降级读</td><td>2026-11-24 14:00</td><td>新浪全A分页 14:02:43 取数</td><td>晚于 cutoff 2.7 分钟，属同接口降级采样</td></tr><tr><td>板块名跨源可比性</td><td>不与午盘通达信成分板块名互推</td><td>2026-11-24 14:00</td><td>14:00 板块榜为新浪 newFLJK，成员中位为新浪节点</td><td>通达信/新浪/东财三套板块名不可混排，本轮只用新浪一套</td></tr></table></section></details><section id="sources"><h2>资料来源</h2><p id="source-S1"><b>S1 11:30 采集快照（同源新浪 5m：指数/成交额/板块头尾/涨停炸板）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\intraday_1130.json<br>indices[]; amount{sh,sz,total}; boards.ranked_head/tail; zt.zt/zb; breadth · channel=sina，生成 11:41:19，cutoff 11:30</p><p id="source-S2"><b>S2 14:00 采集快照（同源新浪 5m，同一脚本同一口径）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\intraday_1400.json<br>indices[]; amount{sh,sz,total}; boards.ranked_head/tail; zt.zt/zb; limit_counts · channel=sina，生成 14:01:28，cutoff 14:00（真 50400 切片）</p><p id="source-S3"><b>S3 11:30 全A宽度与板块成分中位（新浪全A分页 5580 只）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\mid_breadth_1130.json<br>breadth_all/sh/sz/bj; boards[] · 休市态取数 11:41，与 14:00 同接口同分页</p><p id="source-S4"><b>S4 11:30 通达信成分板块成员级集中度（6 板块）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\board_members_1130.json<br>boards[].median/up_ratio/limit_up · 成分=boards_constituents.json，价格=新浪 11:30 收盘态</p><p id="source-S5"><b>S5 14:00 全A宽度与板块成分中位（同接口同分页 5579 只）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\breadth_1400.json<br>breadth_all; boards_tdx[]; boards_sina[] · 取数 14:02:43，晚于 cutoff 2.7 分钟</p><p id="source-S6"><b>S6 沪深综指五分钟切片 14:00（涨跌家数口径）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\沪深切片_1400.json<br>total_up/total_down/sh50 · 通达信 TQLEX 直连，retrieved 14:01:27</p><p id="source-S7"><b>S7 亿信检索：A股午后回落 板块分化（截至 14:00）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\yx_1400.json\retrieval.json<br>sources[]（状态 retrieved_unverified） · 仅返回无时点研报/纪要，无可定时刻催化</p><p id="source-S8"><b>S8 午盘扫描原判断底稿（本轮对照基准）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\午盘扫描.v3input.json<br>strategy_answers.next{confirm,invalidate,when} · 11:40 生成，行情截止 11:30</p><p id="source-TDX1130"><b>TDX1130 通达信沪深综指五分钟切片 11:30</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\沪深切片_1130.json<br>通达信沪深综指五分钟切片 11:30 · 已核对交易日及时间</p><p id="source-TDX1400"><b>TDX1400 通达信沪深综指五分钟切片 14:00</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\沪深切片_1400.json<br>通达信沪深综指五分钟切片 14:00 · 已核对交易日及时间</p><p id="source-EM1400"><b>EM1400 东财概念板块累计主力净额</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\板块资金采样\1355.json<br>东财概念板块累计主力净额 · 已核对交易日及时间</p></section></main><footer>基于所列证据形成研究观察；事实、推断与缺口分别呈现。页面渲染及结构检查不核实全部外部事实。</footer></body></html>
