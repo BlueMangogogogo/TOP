@@ -1,0 +1,195 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="review-schema" content="3"><title>盘前简报 · 2026-11-24</title><style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+
+.table-wrap{overflow-x:auto}.source-ref{white-space:nowrap}main section{margin-bottom:1rem}
+</style></head><body class="profile-finance"><header class="report-header"><h1>盘前简报 · 2026-11-24</h1><div class="meta">2026-11-24 · 行情截止 2026-11-23T15:00:00+08:00 · 资讯截止 2026-11-24T08:00:00+08:00<br>A股盘前研究 · 交易日 08:00 档 · 渲染 2026-11-24T08:09:21+08:00</div></header><main><p>行情口径为前一交易日 2026-11-23 收盘（15:00），本轮不重建盘前板块全扫；资讯截点为本日 08:00。A 股 08:00 尚无竞价，所有今日价格判断均为待验证。</p><section><h2>核心结论</h2><p>昨日普涨是存量换仓加内需政策叙事：沪深 5213 只上涨 4306、占比 82.6%，成交 15528.8 亿只增 9.2%；领涨的是机器人-工业母机簇（减速器 6.19%、人形机器人 5.89%，上涨占比 94.5-100%），AI 算力链只是第二梯队（CPO 4.70%、PCB 4.73%）。隔夜费半 +14%、英伟达 +31.05% 是这批价格里没有的变量，今天要答的不是涨不涨，而是排序换不换。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></p></section><section><h2>昨日复盘要点</h2><p>矛盾不在个股而在权重：宽度彻底修复，唯一没修的是蓝筹。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a></p><div class="table-wrapper"><table><thead><tr><th>项目</th><th>读数（2026-11-23 收盘）</th><th>判断</th><th>核对依据</th></tr></thead><tbody><tr><td>指数分化</td><td>上证 3538.95（+0.15%）、深成 10454.37（+1.93%）、创业板 2280.20（+3.08%）、科创50 -0.26%</td><td>分化在权重与科创，不在个股</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>市场宽度</td><td>4306 涨 / 780 跌 / 平 127，占比 82.6%</td><td>较 11-20 的 5.7% 完全对调</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>量能</td><td>15528.8 亿，为 11-20 的 1.092 倍</td><td>宽度翻 14 倍而量只增 9.2%，增量证据不足</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>涨停 / 跌停</td><td>151 / 7（本地池不含 ST 146 / 炸板 24）</td><td>尾部收缩，情绪回到中性偏强</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>落后方向</td><td>上证50 2762.10（-0.86%）；中特估 98 只中位 -0.70%、上涨 35.7%</td><td>268 个板块里唯一等权为负</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>昨晚最需今早验证</td><td>上涨占比能否守 60% 且涨停不少于 100 家</td><td>已登记 20261123-close-breadth-hold，15:00 核验</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr></tbody></table></div></section><section><h2>外围与亚太</h2><p>外盘只作背景，不单凭指数涨跌推断产业链；亚太 08:00 前后才开盘，暂无读数。 <a class="source-ref" href="#source-S4">S4</a> <a class="source-ref" href="#source-S5">S5</a></p><div class="table-wrapper"><table><thead><tr><th>市场与标的</th><th>时段与北京时间</th><th>涨跌</th><th>A 股对应环节</th><th>传导与验证</th><th>核对依据</th></tr></thead><tbody><tr><td>纳斯达克综合 / 标普500</td><td>美东 11-23 16:00 收盘＝北京 11-24 05:00</td><td>+6.51% / +4.74%（道指 +3.01%）</td><td>全市场风险偏好</td><td>只作背景，不据此推板块</td><td><a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>费城半导体指数</td><td>同上</td><td>+14%，2025 年以来最大单日涨幅</td><td>芯片、半导体设备、先进封装</td><td>芯片昨日中位 3.24%，今日需超 5% 才算接住</td><td><a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>英伟达 165.05 美元</td><td>同上</td><td>+31.05%，市值单日 +9520 亿美元创纪录</td><td>CPO、PCB、液冷服务器</td><td>触发为人事，看 CPO 中位能否超机器人簇</td><td><a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>阿斯麦 / 欧洲股市</td><td>欧股 11-23 收盘（北京 11-24 凌晨）</td><td>阿斯麦 +9%，欧股创逾两周最大涨幅</td><td>光刻机、半导体设备</td><td>亿信转述口径，未取欧股指数直读</td><td><a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>日经 / 韩国综合 / 台股</td><td>北京 08:00 前后开盘，截点内无成交</td><td>—</td><td>—</td><td>缺口：09:00 后另行观察</td><td>亚太现货指数无直取通道，截点内未开盘</td></tr><tr><td>SPY / QQQ / DIA / IWM</td><td>t=1795467600＝北京 11-24 05:00（美东 11-23 收盘）</td><td>+4.71% / +7.00% / +3.06% / +3.56%</td><td>宽基映射</td><td>直取报价，与媒体转述互校</td><td><a class="source-ref" href="#source-S4">S4</a></td></tr></tbody></table></div></section><section><h2>核心产业链映射</h2><p>四条映射只有前两条进今日判断，后两条属背景。 <a class="source-ref" href="#source-S3">S3</a></p><div class="table-wrapper"><table><thead><tr><th>外围代表</th><th>A 股环节（昨收）</th><th>可能改变的环节</th><th>国内验证点</th><th>核对依据</th></tr></thead><tbody><tr><td>英伟达 +31.05%（人事驱动）</td><td>CPO 4.70%/中位 4.42%/94.4%；PCB 4.73%/4.45%/95.9%</td><td>估值与情绪，不是 2027 资本开支</td><td>09:40 两块中位上穿机器人簇</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>费半 +14%</td><td>芯片 880952 中位 3.24%/上涨 90.4%（840 只）</td><td>扩产与订单预期需原文支撑</td><td>芯片中位 ≥5% 且上涨 ≥90%</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>阿斯麦 +9%</td><td>光刻机 880716 昨日未进前 20</td><td>设备进口与国产替代节奏</td><td>光刻机是否补涨</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>油价下跌（伊朗紧张缓和）</td><td>上游油气 vs 航空燃油</td><td>成本端反向传导</td><td>两板块中位反向才算成立</td><td><a class="source-ref" href="#source-S5">S5</a></td></tr></tbody></table></div></section><section><h2>隔夜新闻与公告</h2><p>窗口为昨收至 08:00；已发生与待生效分开，只有日期无时刻的公告不进判断。 <a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S7">S7</a></p><div class="table-wrapper"><table><thead><tr><th>时间（北京）</th><th>事实 / 原文</th><th>影响环节</th><th>待验证点</th><th>核对依据</th></tr></thead><tbody><tr><td>11-24 05:00</td><td>美股收盘：纳指 +6.51%、标普 +4.74%、道指 +3.01%；费半 +14%、英伟达 +31.05%；黄仁勋重返掌舵，特朗普介入</td><td>CPO/PCB/芯片</td><td>是否只是收回 11-20 跌幅</td><td><a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>11-24 05:00</td><td>热门中概普涨，纳斯达克中国金龙 +2.44%；阿里 +6%、拼多多 +4%、百度 +5%</td><td>港股映射、中概相关</td><td>A 股开盘是否同向</td><td><a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>11-24（时刻不详）</td><td>黄仁勋 12-03 赴参议院作证（出口管制）；众议院候任议长称将全面调查英伟达</td><td>算力链反向风险</td><td>未来事件，不进今日定价</td><td><a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>11-23 15:10</td><td>四部门鼓励养老场景 AI 体/服务机器人/智能穿戴/外骨骼；工信部 274 项标准含 5 项人形机器人标准，即日实施</td><td>机器人、外骨骼</td><td>昨已定价，看宽度能否守 90%</td><td><a class="source-ref" href="#source-S6">S6</a></td></tr><tr><td>11-23 16:16</td><td>融资保证金比例下调至 80%；深交所创业板做市业务细则等四大利好</td><td>券商、两融标的</td><td>已报道待生效，不改今日筹码</td><td><a class="source-ref" href="#source-S6">S6</a></td></tr><tr><td>11-24（日期粒度）</td><td>中际旭创：关于回购公司股份方案的公告；第六届董事会第六次会议决议公告</td><td>光模块</td><td>时刻不详、未下载 PDF，检索到≠已核实</td><td><a class="source-ref" href="#source-S7">S7</a></td></tr></tbody></table></div></section><section><h2>昨日主线与连板天梯</h2><p>排序按等权涨幅，宽度用成分中位与上涨占比同时校验，单票拉动不算主线。 <a class="source-ref" href="#source-S3">S3</a></p><div class="table-wrapper"><table><thead><tr><th>对象</th><th>涨幅 / 板数</th><th>成分中位 / 上涨占比</th><th>判断</th><th>核对依据</th></tr></thead><tbody><tr><td>减速器 880675</td><td>+6.19%</td><td>5.88% / 96.8%（125 只）</td><td>剔除龙头后 6.07，宽度真实</td><td><a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>人形机器人 880703</td><td>+5.89%</td><td>5.01% / 96.0%（426 只）</td><td>簇内样本最大，主线核心</td><td><a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>工业软件 880660</td><td>+5.63%</td><td>5.01% / 100.0%（35 只）</td><td>样本仅 35 只，不作独立主线</td><td><a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>工业母机 880736</td><td>+5.40%</td><td>4.61% / 94.5%（109 只）</td><td>簇内第四</td><td><a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>CPO 880656</td><td>+4.70%</td><td>4.42% / 94.4%（179 只）</td><td>第二梯队，隔夜新增外部催化</td><td><a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>中特估 880671</td><td>-0.61%</td><td>-0.70% / 35.7%（98 只）</td><td>唯一等权为负，权重未修复</td><td><a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>连板天梯</td><td>5 板：真视通、盛剑科技；3 板：中京电子；2 板 13；首板 130；炸板 24</td><td>无 4 板</td><td>高度未断，但与宽度分裂</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr></tbody></table></div></section><section><h2>竞价与轮动观察</h2><p>08:00 无竞价读数，以下待 09:25 撮合后填写，不拿指示价当成交价。 <a class="source-ref" href="#source-S2">S2</a></p><div class="table-wrapper"><table><thead><tr><th>观察对象</th><th>延续条件</th><th>反证条件</th><th>时点</th><th>核对依据</th></tr></thead><tbody><tr><td>CPO / PCB 排序</td><td>成分中位超过减速器、人形机器人</td><td>冲高后 10:00 前中位回落至 3% 以下</td><td>09:25 撮合后、09:40 复核</td><td>09:25 撮合完成后取全市场竞价快照</td></tr><tr><td>机器人簇宽度</td><td>上涨占比仍 ≥90%、中位 ≥4%</td><td>占比跌破 85% 且中位 &lt;3%</td><td>09:40</td><td>09:40 用成分中位同口径复核</td></tr><tr><td>中特估 / 上证50</td><td>中位转正、占比过 50%</td><td>中位仍负、占比 &lt;40%</td><td>09:40、15:00</td><td>15:00 收盘核验 20261123-close-zte-mid-turn</td></tr><tr><td>竞价宽度</td><td>上涨家数占比 ≥55%</td><td>低于 40%</td><td>09:25（当前无读数）</td><td>09:25 全市场 5247 只撮合后统计</td></tr></tbody></table></div></section><section><h2>风险与今日关键观察点</h2><p>原判断为机器人簇在先、算力链第二梯队；下列四条任一触发即改写。 <a class="source-ref" href="#source-S3">S3</a></p><div class="table-wrapper"><table><thead><tr><th>时点</th><th>指标</th><th>基准</th><th>何种结果推翻原判断</th><th>核对依据</th></tr></thead><tbody><tr><td>09:25</td><td>竞价上涨占比（全市场撮合）</td><td>昨收 82.6%</td><td>低于 50%：隔夜外部利好未被认领</td><td>09:25 竞价快照</td></tr><tr><td>09:40</td><td>CPO 与 PCB 成分中位</td><td>4.42% / 4.45%</td><td>低于 3% 且被机器人簇反超：情绪脉冲</td><td>09:40 盘中快照</td></tr><tr><td>10:00</td><td>算力链上涨占比</td><td>94.4% / 95.9%</td><td>跌破 85%：外部叙事只值一小时</td><td>10:00 复核</td></tr><tr><td>15:00</td><td>中特估中位与占比</td><td>-0.70% / 35.7%</td><td>仍为负：普涨仍是成长单边，指数上沿受限</td><td>15:00 收盘核验</td></tr></tbody></table></div></section><section><h2>市场概况</h2><div class="table-wrap"><table><thead><tr><th>指标</th><th>读数</th><th>单位</th><th>时点</th><th>口径</th><th>证据</th></tr></thead><tbody><tr><td>上证指数</td><td>3538.95（+0.15%）</td><td>点</td><td>2026-11-23 15:00</td><td>收盘；不叠加成分成交额</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>深证成指 / 创业板指</td><td>10454.37（+1.93%） / 2280.20（+3.08%）</td><td>点</td><td>2026-11-23 15:00</td><td>收盘</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>科创50 / 北证50</td><td>1227.89（-0.26%） / 795.38（+4.67%）</td><td>点</td><td>2026-11-23 15:00</td><td>收盘；北交所独立口径</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>上证50 / 沪深300</td><td>2762.10（-0.86%） / 3958.29（+0.09%）</td><td>点</td><td>2026-11-23 15:00</td><td>收盘；权重端唯一显著下跌</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>沪深涨跌家数</td><td>4306 / 780 / 127</td><td>只</td><td>2026-11-23 收盘</td><td>有效样本 5213，失败 34；不含北交所</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>涨停 / 跌停</td><td>151 / 7</td><td>家</td><td>2026-11-23 收盘</td><td>全市场含 ST；东财风格池不含 ST 为 146</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>沪深成交额</td><td>15528.8</td><td>亿元</td><td>2026-11-23 15:00</td><td>沪 7385.0 + 深 8143.8，5m 累计；为 11-20 的 1.092 倍</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr></tbody></table></div></section><section><h2>与上一时点对照</h2><div class="table-wrap"><table><thead><tr><th>对象</th><th>此前</th><th>当前</th><th>变化</th><th>证据</th></tr></thead><tbody><tr><td>沪深上涨占比</td><td>5.7%（2026-11-20）</td><td>82.6%（2026-11-23）</td><td>宽度完全对调，属方向反转；但同口径成交只增 9.2%，增量资金证据不足。</td><td><a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>涨停 / 跌停家数</td><td>30 / 68（2026-11-20）</td><td>151 / 7（2026-11-23）</td><td>尾部收缩、封板扩散，情绪由恐慌回到中性偏强。</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>费城半导体指数</td><td>-10.73%（美东 2026-11-20 收盘）</td><td>+14%（美东 2026-11-23 收盘）</td><td>两日净约 +1.8%，属暴跌后的情绪修复而非新高的突破。</td><td><a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S8">S8</a></td></tr></tbody></table></div></section><section><h2>事件与盘面响应</h2><div class="table-wrap"><table><thead><tr><th>事件</th><th>盘面证据</th><th>解释</th><th>反证</th><th>证据</th></tr></thead><tbody><tr><td>美东 11-23 收盘：黄仁勋重返英伟达掌舵，英伟达 +31.05% 至 165.05 美元、市值单日增 9520 亿美元创纪录，费半 +14%，纳指 +6.51%（北京 11-24 05:00）</td><td>A 股 08:00 未开盘，无价格响应；昨日 CPO 4.70%、PCB 4.73% 均低于机器人簇，属第二梯队。</td><td>假设一：今日 A 股把算力链提前到首位，属外部叙事接棒。</td><td>假设二：这只是 11-20 暴跌的对称修复，排序不变。区分证据是 09:40 两组中位涨幅的相对位置。</td><td><a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>11-23：四部门发文鼓励养老场景 AI 体与机器人；工信部 274 项标准含 5 项人形机器人标准即日实施</td><td>同日减速器 6.19%、人形机器人 5.89%、工业软件 5.63%、工业母机 5.40%，上涨占比 94.5-100%。</td><td>内需政策叙事是昨日第一主线的直接依据，已被价格确认。</td><td>文件本身无量化订单，产业证据仍只有研报摘要，宽度可能先于业绩。</td><td><a class="source-ref" href="#source-S6">S6</a> <a class="source-ref" href="#source-S3">S3</a></td></tr></tbody></table></div></section><section><h2>AI 算力链（CPO / PCB / 液冷服务器）</h2><p><strong>阶段</strong>　加强</p><p><strong>变化</strong>　昨日为第二梯队：CPO 880656 涨 4.70%、中位 4.42%、上涨 94.4%（179 只）；PCB 880550 涨 4.73%、中位 4.45%、上涨 95.9%（194 只）。隔夜费半 +14%、英伟达 +31.05% 属新增外部催化。</p><p><strong>价格与宽度</strong>　两块中位与等权差 0.28、0.28 个百分点，无明显单票拉动；昨日前五席位仍由机器人簇占据。</p><p><strong>资金</strong>　本轮未取个股与板块资金流，不以主力净额判断，避免与昨收口径混用。</p><p><strong>产业</strong>　只有人事与情绪层面的触发，没有订单、指引或资本开支上修的原文。</p><p><strong>反证</strong>　触发是人事事件；纳指两日净 +0.9%，费半 +1.8%，不构成需求改善证据。</p><p><strong>加强条件</strong>　09:40 CPO、PCB 成分中位上穿机器人簇，且上涨占比仍 ≥90%。</p><p><strong>减弱条件</strong>　冲高后 10:00 前中位回落至 3% 以下，或被机器人簇反超。</p><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S1">S1</a></section><section><h2>机器人-工业母机簇</h2><p><strong>阶段</strong>　加强</p><p><strong>变化</strong>　四块同进全样本前五，上涨占比 94.5-100%；剔除各自最大贡献股后仍为 6.07/5.85/5.20/5.26，降幅 0.03-0.42 个百分点。</p><p><strong>价格与宽度</strong>　减速器 125 只有效、人形机器人 426 只、工业软件 35 只、工业母机 109 只，宽度真实；工业软件样本仅 35 只。</p><p><strong>资金</strong>　本轮不复用昨日资金口径，缺口留白。</p><p><strong>产业</strong>　政策文件与标准已落地，产业侧量化订单仍缺原文。</p><p><strong>反证</strong>　连续两日加速后，宽度已到 94.5-100% 的上限区，进一步提升空间有限。</p><p><strong>加强条件</strong>　09:40 上涨占比仍 ≥90%、中位 ≥4%。</p><p><strong>减弱条件</strong>　占比跌破 85% 且中位 &lt;3%。</p><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S6">S6</a></section><section><h2>中特估 / 权重端</h2><p><strong>阶段</strong>　退潮</p><p><strong>变化</strong>　中特估 880671 等权 -0.61%、中位 -0.70%、上涨占比 35.7%（98 只），是 268 个板块里唯一等权为负；上证50 -0.86%，九大指数唯一显著下跌。11-20 占比 43.9% 已降至 35.7%。</p><p><strong>价格与宽度</strong>　等权与中位同步为负，不是单票拖累；上涨占比连续两个口径下行。</p><p><strong>资金</strong>　无本轮成员级资金流，不以板块级净额替代。</p><p><strong>产业</strong>　不涉及产业变量，纯结构观察。</p><p><strong>反证</strong>　若今日补涨，说明昨日的独跌只是资金临时挪向成长，不是分层。</p><p><strong>加强条件</strong>　中位转正且上涨占比过 50%，按高低切换记。</p><p><strong>减弱条件</strong>　占比跌破 30%，防守位进一步失效。</p><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S1">S1</a></section><section><h2>代表公司比较</h2><div class="table-wrap"><table><thead><tr><th>公司</th><th>作用</th><th>观测</th><th>风险</th><th>证据</th></tr></thead><tbody><tr><td>真视通 002771</td><td>连板高度标的</td><td>昨日 5 板，与盛剑科技同为最高高度；全市场无 4 板。</td><td>高度与宽度分裂，接力依赖单一情绪，不构成产业证据。</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>中京电子 002579</td><td>PCB 连板标的</td><td>昨日 3 板，是当日唯一 3 板；PCB 概念同日涨 4.73%、上涨 95.9%。</td><td>个股连板与板块宽度不同步时，容易把情绪当产业。</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>中际旭创 300308</td><td>光模块龙头</td><td>巨潮 11-24 披露《关于回购公司股份方案的公告》与第六届董事会第六次会议决议。</td><td>公告只有日期粒度、发布时刻不详，且未下载 PDF 核对金额与期限，检索到不等于已核实。</td><td><a class="source-ref" href="#source-S7">S7</a></td></tr></tbody></table></div></section><section><h2>前期判断复核</h2><p>最近最多20条已评估预判：兑现 11 / 部分 3 / 落空 5 / 未触发 0 / 待核 1。</p><p>描述性兑现率 57.89%；部分兑现计入分母、不计为命中。这不是收益率或未来成功概率。</p><div class="table-wrap"><table><thead><tr><th>登记时刻/截止</th><th>原判断与判据</th><th>结果与原因</th></tr></thead><tbody><tr><td>2026-11-20T08:36:44.841526+08:00<br>2026-11-20T15:00:00+08:00</td><td>连板梯队高度没有断，3 板及以上维持 2 家以上。<br>今日收盘连板明细：3 板及以上家数 ≥2 记兑现；等于 1 家记部分；归零且全天涨停 &lt;20 只记落空。</td><td>hit<br>判据为 ≥2 家记兑现；实际 2 家，连板高度未断。</td></tr><tr><td>2026-11-20T11:49:44.389543+08:00<br>2026-11-20T15:00:00+08:00</td><td>农业养殖簇是今日上午唯一有成分宽度的方向，宽度能撑到收盘，不是又一次日内脉冲。<br>收盘用 board_close_stats 同口径（通达信 6 位成分）复核：生物育种 14 只成分中位 &gt;0 且上涨占比 ≥50%，同时鸡肉 22 只上涨占比 ≥50%，两项同时满足记兑现；只有生物育种守住、鸡肉跌破 50% 记部分；生物育种中位 ≤0 或上涨占比 &lt;35% 记落空。</td><td>miss<br>判据为生物育种中位 ≤0 或占比 &lt;35% 记落空；实际中位转负、占比 21.4%，农业簇宽度到收盘已消失。</td></tr><tr><td>2026-11-20T11:49:45.217534+08:00<br>2026-11-20T15:00:00+08:00</td><td>上午 8557.7 亿的量能对应全天 1.38—1.42 万亿，下午不会出现放量下杀把全天推到 1.5 万亿以上。<br>收盘取沪深两市成交额（上证指数 + 深证综指，与上午 8557.7 亿同口径）：落在 1.35—1.45 万亿记兑现；落在 1.45—1.50 万亿或 1.30—1.35 万亿记部分；≥1.50 万亿或 &lt;1.30 万亿记落空。</td><td>hit<br>判据为落在 1.35—1.45 万亿记兑现；实际 1.42 万亿，午后放量但未把全天推到 1.5 万亿以上。</td></tr><tr><td>2026-11-20T11:49:46.023972+08:00<br>2026-11-20T15:00:00+08:00</td><td>涨停 28 只、炸板率 17.6% 属于弱势中继而非恐慌出清，下午涨停家数不会崩到 20 只以下。<br>收盘涨停池（不含 ST、含连板）≥25 只且炸板率 ≤30% 记兑现；涨停 20—25 只，或炸板率 30%—40% 记部分；涨停 &lt;20 只，或炸板率 &gt;40% 记落空。</td><td>hit<br>判据为涨停 ≥25 只且炸板率 ≤30% 记兑现；实际 28 只、20.0%，均达标。</td></tr><tr><td>2026-11-20T15:49:35.752692+08:00<br>2026-11-23T15:00:00+08:00</td><td>今日的放量出清是单日事件：下一交易日沪深上涨占比会回到 10% 以上，同时跌停家数回落到 40 家以内。<br>2026-11-23 收盘用 close_breadth_tdx.py 同接口沪深全样本复核：上涨占比 &gt;10% 且跌停 &lt;=40 家记兑现；占比 5%—10%，或跌停 41—60 家记部分；占比 &lt;5%，或跌停 &gt;60 家记落空。</td><td>hit<br>占比远高于 10%、跌停远低于 40 家，两项判据同时兑现。</td></tr><tr><td>2026-11-20T15:49:36.479633+08:00<br>2026-11-23T15:00:00+08:00</td><td>猪肉的 +0.30% 是龙头托起来的横盘，剔除金新农后中位回到 0.00%，下一交易日不会成为有宽度的主线。<br>2026-11-23 收盘同口径（880936，等权 6 位成分，剔除当日涨幅最大成分后重算）：中位 &lt;=0 或上涨占比 &lt;40% 记兑现；中位 0—0.5% 且上涨占比 40%—50% 记部分；中位 &gt;0.5% 且上涨占比 &gt;=50% 记落空。</td><td>miss<br>判据要求「中位 ≤0 或上涨占比 &lt;40%」才算宽度不足；实际两项都反向越过，按落空记录。剔除龙头后宽度基本不变，说明不是单票拉动，原判断方向被证伪。</td></tr><tr><td>2026-11-20T15:49:37.187295+08:00<br>2026-11-23T15:00:00+08:00</td><td>权重抗跌是顺序问题：今日沪深300 只跌 0.76%，下一交易日权重端会补跌，午盘那条未触发的指数失效线会补上。<br>2026-11-23 收盘：沪深300 跌幅 &gt;1.5%，或中特估 98 只中位 &lt;-1.0%，两项任一成立记兑现；沪深300 跌幅 &lt;=0.5% 且中特估中位 &gt;=-0.5% 记落空；其余记部分。</td><td>partial<br>两项判据都落在中间区间：权重没补跌、但也没转正，中特估仍是唯一等权为负的板块。按部分记录。</td></tr><tr><td>2026-11-20T23:16:17.121143+08:00<br>2026-11-23T15:00:00+08:00</td><td>上证50 在 2026-11-23 收盘不跌破 2026-10-22 前低 2724.81，本轮权重抗跌是市值维度的分层（结构）而不是还没轮到（顺序）；此判断与收盘 15:49 登记的那条顺序假设方向相反。<br>2026-11-23 收盘：上证50（000016.SH）收盘点位 &gt; 2724.81 记兑现；&lt;= 2724.81 记落空。</td><td>hit<br>收盘点位守住判据线，权重端未破前低。</td></tr><tr><td>2026-11-20T23:16:17.832385+08:00<br>2026-11-23T15:00:00+08:00</td><td>中特估（880671）防守位在 2026-11-23 仍然有效：98 只成分的收盘上涨占比维持在 40% 以上。<br>2026-11-23 收盘：中特估成分上涨占比 &gt;= 40% 记兑现；30% 至 40% 记部分；&lt; 30% 记落空。</td><td>partial<br>落在 30%—40% 的 partial 区间：防守位没有整体失守，但已明显低于 40% 的兑现线，且是当日唯一等权为负板块。</td></tr><tr><td>2026-11-20T23:16:18.504256+08:00<br>2026-11-23T15:00:00+08:00</td><td>跌停尾部在 2026-11-23 收敛而非继续扩散：跌停家数回落至 40 家以下，且重新出现 3 板股。<br>2026-11-23 收盘：跌停 &lt; 40 家且最高连板 &gt;= 3 记兑现；两项只满足一项记部分；跌停 &gt;= 68 家或最高连板仍为 0 记落空。</td><td>hit<br>跌停家数与连板高度两项判据同时达标，尾部收缩成立。</td></tr><tr><td>2026-11-21T23:19:21.145379+08:00<br>2026-11-23T15:00:00+08:00</td><td>11-23 上证50 收盘仍站在 MA20（2772.26）之上<br>上证50 指数 11-23 收盘点位 ≥ 2772.26</td><td>miss<br>收盘点位未达判据线，按落空记录。</td></tr><tr><td>2026-11-21T23:19:21.832910+08:00<br>2026-11-23T15:00:00+08:00</td><td>11-23 中特估 880671 主力净额转正或流出继续收窄至本周最小以下<br>中特估 880671 当日主力净额 ≥ 0</td><td>partial<br>原定口径取不到，代理口径为正但两套供应商的主力净额定义不同，不足以按原口径判 hit，按部分记录并声明口径降级。</td></tr><tr><td>2026-11-21T23:19:22.501512+08:00<br>2026-11-23T15:00:00+08:00</td><td>11-23 全市场上涨家数占比回到 20% 以上<br>沪深全样本上涨家数占比 ≥ 20%</td><td>hit<br>远高于 20% 判据线。样本为沪深 5213 只、不含北交所，与判据口径一致。</td></tr><tr><td>2026-11-22T23:14:24.935904+08:00<br>2026-11-23T15:00:00+08:00</td><td>（承接 20261122-deep-width-not-buy；因两份核证底稿定稿更新导致源哈希位移，按凭证重登记，判据不变）11-23 中特估 880671 的收涨批合计主力净额仍 ≤0，说明 11-20 的 43.9% 上涨占比属抛压消失（没人卖），不是承接（有人买）。<br>2026-11-23 收盘后用同一成员级口径（boards_constituents 880671 成分 × 当日 stock_flow）重算收涨批净额：≤0 记 hit；&gt;+10 亿且剔除中国平安、紫金矿业后仍过半记 miss；落在 0 至 +10 亿之间、或 &gt;+10 亿但由平安/紫金主导记 partial。</td><td>unresolved<br>r2 与首版判据完全相同，同因缺字段不可评估；不用板块级 f62 替代。</td></tr><tr><td>2026-11-22T23:14:25.607189+08:00<br>2026-11-23T15:00:00+08:00</td><td>（承接 20261122-deep-chip-gap；同上原因重登记，判据不变）11-23 芯片 880952 成分中位补跌至 −6.43% 或更低，同时科创50 收在 MA20 上方，外盘缺口按成分属性路径释放而非全市场同向出清。<br>2026-11-23 收盘重算 880952 成分中位涨跌幅与科创50 相对 MA20 位置：中位 ≤−6.43% 且科创50 不低于 MA20 记 hit；中位跌幅不足 4.43%（即小于 2 个百分点）记 miss；其余记 partial。</td><td>miss<br>与首版同判据，中位为正使「跌幅不足 4.43%」分支成立，记落空。</td></tr><tr><td>2026-11-23T08:04:14.265238+08:00<br>2026-11-23T15:00:00+08:00</td><td>11-23 若为外部缺口补做，科创50 相对上证50 的跌幅差应达 5 个百分点以上；缺口差收敛到 2 个百分点以内则说明政策预期已对冲掉外盘定价。<br>11-23 收盘重算科创50（000688）涨跌幅减去上证50（000016）涨跌幅：差值 ≥5.0 个百分点记 hit；2.0—5.0 记 partial；&lt;2.0 记 miss。</td><td>miss<br>差值远低于 2.0 个百分点的落空线：权重与科技同向、幅度接近，上午的「属性路径释放缺口」框架在指数层面没有兑现，缺口改由宽度修复消化。</td></tr><tr><td>2026-11-23T08:04:14.933097+08:00<br>2026-11-23T15:00:00+08:00</td><td>11-23 若属缺口定价而非存量换仓，沪深成交额不应低于 11-20 的 14222 亿；明显缩量至 13500 亿以下则说明卖压在 11-20 已集中释放。<br>11-23 收盘沪深 5m 累计成交额：≥14222 亿记 hit；13500—14222 亿记 partial；&lt;13500 亿记 miss。口径与 11-20 相同（沪 sh000001 + 深 sz399106）。</td><td>hit<br>高于 14222 亿判据线，属放量而非缩量，外部缺口未在 11-20 一并出清。</td></tr><tr><td>2026-11-23T11:56:52.239086+08:00<br>2026-11-23T15:00:00+08:00</td><td>上午 CRO 外包服务的宽度（19 只成分上涨占比 73.7%）能否守到收盘，决定它是当日主线还是单日反抽。<br>15:00 收盘 CRO 概念 19 只成分上涨占比 ≥60% 记 hit；50%—60% 记 partial；&lt;50% 记 miss。</td><td>hit<br>原判据为新浪 CRO 19 只占比，该字段无接口；代理口径 97.3% 远高于 60% 兑现线，方向无歧义，按 hit 记录并声明口径降级（19 只 vs 75 只，供应商不同）。</td></tr><tr><td>2026-11-23T11:56:53.106379+08:00<br>2026-11-23T15:00:00+08:00</td><td>上午拖累指数的是权重端（上证50 -1.21%，已跌破盘前 MA20 2772.26），午后是否继续走弱。<br>15:00 上证50 收盘 ≤2772.26 记 hit（权重缺口未修复）；2772.26—2790 记 partial；&gt;2790 记 miss。</td><td>hit<br>收盘落在 ≤2772.26 区间，权重缺口未修复的判断成立。</td></tr><tr><td>2026-11-23T11:56:53.780986+08:00<br>2026-11-23T15:00:00+08:00</td><td>全A 上涨占比从竞价低开 91.68% 修复到 11:30 的 31.3%，能否守到收盘决定上午是修复还是反抽。<br>15:00 收盘全A 上涨占比 ≥30% 记 hit；25%—30% 记 partial；&lt;25% 记 miss。</td><td>hit<br>远高于 30% 判据线，上午的修复守到了收盘，不是反抽。</td></tr></tbody></table></div></section><section><h2>风险与后续观察</h2><p>隔夜大涨只是把 11-20 暴跌收回：纳指两日净约 +0.9%、费半 +1.8%，英伟达 +31% 的触发是黄仁勋复职（特朗普介入），不是订单或资本开支上修。人事波动不等于需求改善。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></p><p>09:40 同口径看两条：CPO 与 PCB 中位能否超过机器人簇；算力链上涨占比能否守 90%。两条都成按外部叙事接棒记、算力链提为第一主线；10:00 前中位回落至 3% 以下则按情绪脉冲记、维持机器人簇优先。只调研究优先级，不预设仓位。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></p></section><section><h2>观察条件</h2><div class="table-wrap"><table><thead><tr><th>触发条件</th><th>当前状态</th><th>复查时点</th><th>判断调整</th><th>证据</th></tr></thead><tbody><tr><td>CPO / PCB 与机器人簇的相对排序</td><td>昨收 CPO 中位 4.42%、PCB 4.45%，低于减速器 5.88%、人形机器人 5.01%</td><td>09:25 撮合后看方向，09:40 用成分中位复核</td><td>上穿则把算力链提为第一主线；仍落后则维持机器人簇优先。</td><td><a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>竞价宽度</td><td>昨收上涨占比 82.6%；08:00 无竞价数据</td><td>09:25 全市场撮合后</td><td>低于 50% 说明隔夜外部利好未被认领，下调今日强度预期。</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>中特估中位与上涨占比</td><td>-0.70% / 35.7%（2026-11-23）</td><td>15:00 收盘，同 98 只成分口径</td><td>转正且过 50% 按高低切换记；仍为负则普涨仍是成长单边。</td><td><a class="source-ref" href="#source-S3">S3</a></td></tr></tbody></table></div></section><section><h2>可能路径</h2><div class="table-wrap"><table><thead><tr><th>情景</th><th>可观察条件</th><th>研究判断</th><th>证据</th></tr></thead><tbody><tr><td>外部叙事接棒</td><td>09:40 CPO、PCB 中位超过机器人簇，且算力链上涨占比 ≥90%。</td><td>把算力链提为第一主线，机器人簇降为同步主线；仍需 15:00 收盘确认。</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>内需叙事延续</td><td>机器人簇中位仍高于算力链，上涨占比保持 90% 以上。</td><td>维持昨日排序，外部催化只带来一日跟涨，不改变主线归属。</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S6">S6</a></td></tr><tr><td>冲高回落</td><td>算力链高开后 10:00 前中位回落至 3% 以下，或竞价宽度低于 50%。</td><td>按情绪脉冲记，记录为把人事事件误当需求改善的样本。</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S5">S5</a></td></tr></tbody></table></div></section><section><h2>待补数据</h2><table><tr><th>字段</th><th>对判断的影响</th><th>截至</th><th>已查资料</th><th>说明</th></tr><tr><td>亚太现货（日经、韩国综合、台股）</td><td>无法判断亚太早盘是否跟随隔夜美股</td><td>2026-11-24T08:00+08:00</td><td>无直取通道；截点内未开盘</td><td>未开盘或无直取报价，留空不填 0</td></tr><tr><td>VIX、A50 期货、欧股指数现货</td><td>波动率与外资预期缺直读，只能用媒体转述</td><td>2026-11-24T08:00+08:00</td><td>Finnhub 免费档对指数类返回订阅限制</td><td>订阅限制，属既有限制非本轮缺数据</td></tr><tr><td>账本 5 条过期未核验预判</td><td>不影响今日判断，但兑现率统计不完整</td><td>2026-11-24T08:00+08:00</td><td>核对源文件 sha256 全部失配</td><td>20261118-deep-* 三条与 20261122-deep-*-首版两条，源 HTML 已被当日重渲染覆盖，review_history 硬拦，永久不可核验</td></tr></table></section><section><h2>统计口径说明</h2><table><tr><th>字段</th><th>对判断的影响</th><th>截至</th><th>已查资料</th><th>说明</th></tr><tr><td>中际旭创公告发布时刻与正文</td><td>无法证明公告在 08:00 前已公开，不进核心判断</td><td>2026-11-24T08:00+08:00</td><td>巨潮检索，publication_precision=date_only_or_unspecified</td><td>只给日期粒度，未下载 PDF 核验金额与期限</td></tr><tr><td>个股与板块资金流</td><td>本轮不做资金判断，不以板块级净额替代成员级</td><td>2026-11-23T15:00+08:00</td><td>复用昨收快照，未新增资金通道调用</td><td>盘前不重建资金全扫，配额留给当日盘中</td></tr></table></section><section id="sources"><h2>资料来源</h2><p id="source-S1"><b>S1 2026-11-23 收盘指数与成交快照</b><br>C:\Users\57613\WorkBuddy\finance\分析报告汇总\2026-11-23\_raw\intraday_1500.json<br>indices(name/last/chg/amt); amount.total; zt.zt[].lbc · 已对照原始字段；未独立核实全部市场事实</p><p id="source-S2"><b>S2 2026-11-23 沪深收盘广度</b><br>C:\Users\57613\WorkBuddy\finance\分析报告汇总\2026-11-23\_raw\close_breadth_20261123.json<br>breadth(up/down/flat/limit_up/limit_down/up_ratio); complete=5213 · TQLEX 直连全样本；失败 34 只</p><p id="source-S3"><b>S3 2026-11-23 板块成分收盘统计</b><br>C:\Users\57613\WorkBuddy\finance\分析报告汇总\2026-11-23\_raw\board_close_stats_20261123.json<br>boards[](name/avg/median/up_ratio/n_used/top_pct) · 6 位成分清单等权自算；单板未取满时记 n_used</p><p id="source-S4"><b>S4 隔夜美股四只 ETF 报价（Finnhub 直取）</b><br>C:\Users\57613\WorkBuddy\finance\分析报告汇总\2026-11-24\_raw\finnhub_0759.json<br>SPY/QQQ/DIA/IWM 的 c/dp/t；t=1795467600 · HTTP 200；t 指向美东 11-23 16:00 收盘，非盘中实时</p><p id="source-S5"><b>S5 亿信检索：隔夜美股与要闻</b><br>C:\Users\57613\WorkBuddy\finance\分析报告汇总\2026-11-24\_raw\yx_01.json<br>response.result[].content[](title/snippet/date) · 媒体转述口径，未逐条回到交易所原始行情</p><p id="source-S6"><b>S6 亿信检索：A 股政策与机器人</b><br>C:\Users\57613\WorkBuddy\finance\分析报告汇总\2026-11-24\_raw\yx_02.json<br>response.result[].content[](title/snippet/date) · 含 11-23 15:10、16:16 等带分钟发布时间</p><p id="source-S7"><b>S7 巨潮公告检索：中际旭创 300308</b><br>C:\Users\57613\WorkBuddy\finance\分析报告汇总\2026-11-24\_raw\cninfo_300308\retrieval.json<br>sources[](id/title/published_date/publication_precision/content_level) · 只有日期粒度；未下载 PDF，content_level=document</p><p id="source-S8"><b>S8 2026-11-23 盘前简报（两日净变动基准）</b><br>C:\Users\57613\WorkBuddy\finance\分析报告汇总\2026-11-23\盘前简报.html<br>正文：美东 11-20 纳指 -5.28%、费半 -10.73%、英伟达 -14.01% · 已发布稿，原样引用其外盘跌幅口径</p></section></main><footer>基于所列证据形成研究观察；事实、推断与缺口分别呈现。页面渲染及结构检查不核实全部外部事实。</footer></body></html>
