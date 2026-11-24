@@ -1,0 +1,195 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="review-schema" content="3"><title>午盘扫描 · 2026-11-24</title><style>
+/* ============================================================
+   TdxClaw Report Style — 红·黄·灰·黑 简洁风
+   品牌黄: #ebb543 (rgb 235,189,67)
+   ============================================================ */
+
+:root {
+  --yellow:  #ebb543;
+  --yellow-light: #f7e8c5;
+  --red:     #c0392b;
+  --red-light: #fdf0ef;
+  --black:   #1a1a1a;
+  --gray-900:#2c2c2c;
+  --gray-700:#555;
+  --gray-500:#888;
+  --gray-300:#bbb;
+  --gray-100:#f0f0f0;
+  --white:   #fff;
+  --font:    "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray-900);
+  background: var(--white);
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== 头部 ===== */
+header {
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+header .meta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+header .meta span {
+  margin-right: 16px;
+}
+
+/* ===== 小标题 ===== */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 32px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--yellow);
+}
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 22px 0 8px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin: 16px 0 6px;
+}
+
+/* ===== 段落 ===== */
+p {
+  margin: 8px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 500px;
+}
+thead th {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #d4a734;
+}
+thead th:first-child { border-radius: 5px 0 0 0; }
+thead th:last-child  { border-radius: 0 5px 0 0; }
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: #fafafa; }
+tbody tr:hover { background: var(--yellow-light); }
+
+/* 数字列右对齐 */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== 高亮/警告框 ===== */
+.highlight {
+  background: var(--yellow-light);
+  border-left: 4px solid var(--yellow);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+}
+.warning {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #8b1a1a;
+}
+
+/* ===== 列表 ===== */
+ul, ol {
+  margin: 8px 0 8px 20px;
+}
+li {
+  margin: 4px 0;
+}
+
+/* ===== 分隔线 ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 24px 0;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  background: var(--yellow-light);
+  color: #8b6914;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px 4px 0;
+}
+.tag-red {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* ===== 底部 ===== */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== 加粗/强调 ===== */
+strong { color: var(--black); }
+em { color: var(--gray-700); }
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 14px 40px; font-size: 14px; }
+  header h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 7px 8px; }
+}
+
+
+.table-wrap{overflow-x:auto}.source-ref{white-space:nowrap}main section{margin-bottom:1rem}
+</style></head><body class="profile-finance"><header class="report-header"><h1>午盘扫描 · 2026-11-24</h1><div class="meta">2026-11-24 · 行情截止 2026-11-24T11:30:00+08:00 · 资讯截止 2026-11-24T11:30:00+08:00<br>11:40 名义时刻生成的午盘研究，行情截止 11:30；表格标注采样时点与供应商口径，跨源数据不混算 · 渲染 2026-11-24T11:51:03+08:00</div></header><main><section><h2>核心结论</h2><p>上午是单边收敛的高开回落：竞价 89.08% 高开，09:40 沪深 4889 只上涨，到 11:30 只剩 2856 只；主要指数仍红，但涨幅较今开全线回吐，创业板由 +4.01% 退到 +1.90%。半日成交 11210 亿、为昨日同期 1.22 倍，量增价滞，主导变化是宽度流失而不是方向反转。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S5">S5</a></p><ul><li>09:40 沪深涨 4889、跌 332，板块 247/256 正涨 <a class="source-ref" href="#source-S5">S5</a></li><li>11:30 沪深涨 2856、跌 2257，板块 179/256 正涨 <a class="source-ref" href="#source-S1">S1</a></li></ul></section><section><h2>早盘判断验收｜对照 08:00 盘前简报的三条观察条件</h2><div class="table-wrapper"><table><thead><tr><th>08:00 观察条件</th><th>11:30 实测</th><th>结论</th><th>核对依据</th></tr></thead><tbody><tr><td>外部叙事接棒：CPO、PCB 中位超减速器与人形机器人，且算力链上涨占比≥90%</td><td>CPO 中位 2.02%、PCB 1.16%；减速器 2.44%、人形机器人 2.03%。CPO 占比 88.6%、PCB 76.8%</td><td>被推翻：排序未换位，占比也未达 90%</td><td><a class="source-ref" href="#source-S6">S6</a> <a class="source-ref" href="#source-S4">S4</a></td></tr><tr><td>内需叙事延续：机器人簇中位仍最高、上涨占比守 90%</td><td>减速器中位 2.44% 居首、涨停 8 只；上涨占比 84.4%</td><td>部分支持：居首成立，宽度已破 90%</td><td><a class="source-ref" href="#source-S6">S6</a> <a class="source-ref" href="#source-S4">S4</a></td></tr><tr><td>冲高回落：算力链高开后 10:00 前中位回落至 3% 以下</td><td>CPO 2.02%、PCB 1.16% 均在 3% 以下；创业板较今开 -1.91%</td><td>成立，按情绪脉冲记</td><td><a class="source-ref" href="#source-S6">S6</a> <a class="source-ref" href="#source-S4">S4</a> <a class="source-ref" href="#source-S1">S1</a></td></tr></tbody></table></div></section><section><h2>指数与半日成交</h2><p>半日 11210 亿（沪 5121.3、深综 6088.3），为昨日同期 9163.7 亿的 1.22 倍。全天额模型：上午额除以上午占比，取昨日 0.590 与 11-09 至 11-13 五日均值 0.619 作区间，得 1.81 至 1.90 万亿；这是假设推算，午后若缩量则区间偏高。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S7">S7</a></p><div class="table-wrapper"><table><thead><tr><th>指数</th><th>11:30 点位</th><th>较昨收</th><th>较今开</th><th>半日成交</th><th>核对依据</th></tr></thead><tbody><tr><td>上证指数</td><td>3555.49</td><td>+0.47%</td><td>-0.35%</td><td>5121.3 亿</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>深证成指</td><td>10550.87</td><td>+0.92%</td><td>-1.47%</td><td>不含（用深综）</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>创业板指</td><td>2323.48</td><td>+1.90%</td><td>-1.91%</td><td>3162.1 亿</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>科创50</td><td>1261.26</td><td>+2.72%</td><td>-0.51%</td><td>695.1 亿</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>沪深300</td><td>3980.91</td><td>+0.57%</td><td>-0.58%</td><td>3381.8 亿</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr></tbody></table></div></section><section><h2>热点板块｜新浪 256 板块，午休 11:43 冻结态</h2><p>涨幅前三都不是干净宽度：HIT电池、充电桩、TOPCon 的成分中位只有 0.52 至 0.69%，靠阳光电源 +8.22%、罗博特科 +7.36%、鹿山新材 +9.14% 单点拉动，不算板块级主线。真有宽度的是消费电子与华为链：无线耳机占比 89.7%、华为海思 97.2%、智能穿戴 89.5%，中位与板块涨幅只差 0.06 至 0.35 个百分点。 <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S2">S2</a></p><div class="table-wrapper"><table><thead><tr><th>板块</th><th>涨幅</th><th>成分数</th><th>成分中位</th><th>上涨占比</th><th>集中度判断</th><th>核对依据</th></tr></thead><tbody><tr><td>无线耳机</td><td>+3.07%</td><td>39</td><td>+3.01%</td><td>89.7%</td><td>干净宽度，差 0.06</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>华为海思</td><td>+2.88%</td><td>36</td><td>+1.62%</td><td>97.2%</td><td>干净宽度，差 1.26</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>智能穿戴</td><td>+2.64%</td><td>19</td><td>+2.29%</td><td>89.5%</td><td>干净宽度，差 0.35</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>华为汽车</td><td>+2.79%</td><td>96</td><td>+1.39%</td><td>79.2%</td><td>有宽度，差 1.40</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>HIT电池</td><td>+3.31%</td><td>29</td><td>+0.52%</td><td>65.5%</td><td>单票拉动，差 2.79</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>充电桩</td><td>+3.25%</td><td>45</td><td>+0.69%</td><td>64.4%</td><td>单票拉动，差 2.56</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>TOPCon</td><td>+2.89%</td><td>33</td><td>+0.52%</td><td>69.7%</td><td>单票拉动，差 2.38</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>石油和天然气开采</td><td>-1.85%</td><td>16</td><td>—</td><td>—</td><td>尾部，缺中位</td><td><a class="source-ref" href="#source-S3">S3</a></td></tr></tbody></table></div></section><section><h2>涨停与炸板结构</h2><p>封板动能在 11:00 断档：11:00 后新封 0 只，同一时段炸板扩到 42 只，炸板率 39.6%（09:40 仅 8.0%）。涨停家数上升与封板质量恶化同时出现，是上午最硬的转弱证据。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S5">S5</a></p><div class="table-wrapper"><table><thead><tr><th>项目</th><th>读数</th><th>结构说明</th><th>核对依据</th></tr></thead><tbody><tr><td>涨停家数</td><td>64 只</td><td>push2ex 口径，不含 ST，按首封≤11:30 计；板价估算 74 只（含 ST），差 10 只未逐一核对</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>连板梯队</td><td>34 只</td><td>1 板 30、2 板 28、3 板 5、4 板 1（中京电子）</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>首封时点</td><td>64 只</td><td>竞价 14、10:00 前 35、11:00 前 15、11:00 后 0</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>炸板</td><td>42 只</td><td>09:40 为 4 只；炸板率 42/106 = 39.6%</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>涨停行业</td><td>汽车零部 12、通用设备 6、消费电子 3</td><td>方向仍集中在机器人链与汽零</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>跌停</td><td>7 只</td><td>板价估算含 ST，无名单</td><td>跌停名单未取到：push2ex 跌停池未返回明细</td></tr></tbody></table></div></section><section><h2>资金与轮动</h2><div class="table-wrapper"><table><thead><tr><th>比较</th><th>上午事实</th><th>如何解读</th><th>核对依据</th></tr></thead><tbody><tr><td>板块净额（东财 554 概念，11:25:01 采样）</td><td>基金减仓 +126.40 亿、融资融券 +112.30 亿、MSCI中国 +112.24 亿、CPO概念 +83.23 亿；央国企改革 -52.12 亿</td><td>概念成分重叠，金额不可相加，只能读方向</td><td><a class="source-ref" href="#source-S8">S8</a></td></tr><tr><td>转弱到承接</td><td>转弱：石油和天然气开采 -1.85%、有色金属矿采选 -1.95%；承接：消费电子链涨停 3 只、汽零 12 只</td><td>价格与宽度两项支持，净流入一项未取得</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>待验证假设</td><td>高开资金在 10:00 后由光伏设备转向消费电子与汽零</td><td>只有板块涨幅与占比，无成分级资金，暂列假设</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S8">S8</a></td></tr></tbody></table></div></section><section><h2>消息与政策</h2><div class="table-wrapper"><table><thead><tr><th>状态</th><th>事实与时点</th><th>上午反应</th><th>核对依据</th></tr></thead><tbody><tr><td>此前已知｜11-23</td><td>四部门鼓励养老场景 AI 与照护机器人；工信部 274 项标准含 5 项人形机器人标准即日实施</td><td>机器人链仍是涨停最集中方向，但减速器占比从昨日 96.8% 降到 84.4%，属兑现不是新催化</td><td><a class="source-ref" href="#source-S6">S6</a> <a class="source-ref" href="#source-S4">S4</a></td></tr><tr><td>未取得｜08:00-11:30 新增</td><td>妙想 MCP 本会话未挂载、亿信本轮未重跑，未取到该区间新增原文</td><td>按缺口处理，不用网页摘要替代</td><td>08:00-11:30 新增新闻原文未取得</td></tr></tbody></table></div></section><section><h2>午后观察与反证</h2><div class="table-wrapper"><table><thead><tr><th>时点</th><th>观察对象与基准</th><th>推翻条件</th><th>核对依据</th></tr></thead><tbody><tr><td>13:00-14:00</td><td>42 只炸板回封数，基准 11:30 的 42 只</td><td>回封不足 4 只且新封仍为 0，则按退潮记，上午的 64 只涨停改判为尾段</td><td>14:00 同口径切片复核</td></tr><tr><td>13:00-14:00</td><td>上证对今开 3567.84 与昨收 3538.95 的位置</td><td>收复今开则按换手不按退潮；跌破昨收则确认为一日脉冲</td><td>14:00 指数切片</td></tr><tr><td>14:00 前</td><td>华为海思 97.2%、无线耳机 89.7% 的上涨占比能否守 80%；HIT电池中位 0.52% 能否向 3.31% 收敛</td><td>宽度跌破 80% 且光伏中位不收敛，消费电子链与光伏同时失去主线资格</td><td>14:00 板块成员重算</td></tr></tbody></table></div></section><section><h2>沪深涨跌家数与概念板块资金</h2><p>09:40 沪深两市上涨 4,889 家，下跌 332 家。上证50为 2779.55 点。 <a class="source-ref" href="#source-TDX0940">TDX0940</a></p><p>11:30 沪深两市上涨 2,856 家，下跌 2,257 家。上证50为 2772.59 点。 <a class="source-ref" href="#source-TDX1130">TDX1130</a></p><p>截至本机 11:25:01 采样，东财 554 个概念板块中，日内累计主力净额最高的三个为基金减仓（+126.40 亿元）、融资融券（+112.30 亿元）、MSCI中国（+112.24 亿元），最低的三个为央国企改革（-52.12 亿元）、稀缺资源（-18.06 亿元）、昨日高换手（-16.23 亿元）。板块成分有重叠，各板块金额不能相加。 <a class="source-ref" href="#source-EM1130">EM1130</a></p></section><section><h2>前期判断复核</h2><p>最近最多20条已评估预判：兑现 11 / 部分 3 / 落空 5 / 未触发 0 / 待核 1。</p><p>描述性兑现率 57.89%；部分兑现计入分母、不计为命中。这不是收益率或未来成功概率。</p><div class="table-wrap"><table><thead><tr><th>登记时刻/截止</th><th>原判断与判据</th><th>结果与原因</th></tr></thead><tbody><tr><td>2026-11-20T08:36:44.841526+08:00<br>2026-11-20T15:00:00+08:00</td><td>连板梯队高度没有断，3 板及以上维持 2 家以上。<br>今日收盘连板明细：3 板及以上家数 ≥2 记兑现；等于 1 家记部分；归零且全天涨停 &lt;20 只记落空。</td><td>hit<br>判据为 ≥2 家记兑现；实际 2 家，连板高度未断。</td></tr><tr><td>2026-11-20T11:49:44.389543+08:00<br>2026-11-20T15:00:00+08:00</td><td>农业养殖簇是今日上午唯一有成分宽度的方向，宽度能撑到收盘，不是又一次日内脉冲。<br>收盘用 board_close_stats 同口径（通达信 6 位成分）复核：生物育种 14 只成分中位 &gt;0 且上涨占比 ≥50%，同时鸡肉 22 只上涨占比 ≥50%，两项同时满足记兑现；只有生物育种守住、鸡肉跌破 50% 记部分；生物育种中位 ≤0 或上涨占比 &lt;35% 记落空。</td><td>miss<br>判据为生物育种中位 ≤0 或占比 &lt;35% 记落空；实际中位转负、占比 21.4%，农业簇宽度到收盘已消失。</td></tr><tr><td>2026-11-20T11:49:45.217534+08:00<br>2026-11-20T15:00:00+08:00</td><td>上午 8557.7 亿的量能对应全天 1.38—1.42 万亿，下午不会出现放量下杀把全天推到 1.5 万亿以上。<br>收盘取沪深两市成交额（上证指数 + 深证综指，与上午 8557.7 亿同口径）：落在 1.35—1.45 万亿记兑现；落在 1.45—1.50 万亿或 1.30—1.35 万亿记部分；≥1.50 万亿或 &lt;1.30 万亿记落空。</td><td>hit<br>判据为落在 1.35—1.45 万亿记兑现；实际 1.42 万亿，午后放量但未把全天推到 1.5 万亿以上。</td></tr><tr><td>2026-11-20T11:49:46.023972+08:00<br>2026-11-20T15:00:00+08:00</td><td>涨停 28 只、炸板率 17.6% 属于弱势中继而非恐慌出清，下午涨停家数不会崩到 20 只以下。<br>收盘涨停池（不含 ST、含连板）≥25 只且炸板率 ≤30% 记兑现；涨停 20—25 只，或炸板率 30%—40% 记部分；涨停 &lt;20 只，或炸板率 &gt;40% 记落空。</td><td>hit<br>判据为涨停 ≥25 只且炸板率 ≤30% 记兑现；实际 28 只、20.0%，均达标。</td></tr><tr><td>2026-11-20T15:49:35.752692+08:00<br>2026-11-23T15:00:00+08:00</td><td>今日的放量出清是单日事件：下一交易日沪深上涨占比会回到 10% 以上，同时跌停家数回落到 40 家以内。<br>2026-11-23 收盘用 close_breadth_tdx.py 同接口沪深全样本复核：上涨占比 &gt;10% 且跌停 &lt;=40 家记兑现；占比 5%—10%，或跌停 41—60 家记部分；占比 &lt;5%，或跌停 &gt;60 家记落空。</td><td>hit<br>占比远高于 10%、跌停远低于 40 家，两项判据同时兑现。</td></tr><tr><td>2026-11-20T15:49:36.479633+08:00<br>2026-11-23T15:00:00+08:00</td><td>猪肉的 +0.30% 是龙头托起来的横盘，剔除金新农后中位回到 0.00%，下一交易日不会成为有宽度的主线。<br>2026-11-23 收盘同口径（880936，等权 6 位成分，剔除当日涨幅最大成分后重算）：中位 &lt;=0 或上涨占比 &lt;40% 记兑现；中位 0—0.5% 且上涨占比 40%—50% 记部分；中位 &gt;0.5% 且上涨占比 &gt;=50% 记落空。</td><td>miss<br>判据要求「中位 ≤0 或上涨占比 &lt;40%」才算宽度不足；实际两项都反向越过，按落空记录。剔除龙头后宽度基本不变，说明不是单票拉动，原判断方向被证伪。</td></tr><tr><td>2026-11-20T15:49:37.187295+08:00<br>2026-11-23T15:00:00+08:00</td><td>权重抗跌是顺序问题：今日沪深300 只跌 0.76%，下一交易日权重端会补跌，午盘那条未触发的指数失效线会补上。<br>2026-11-23 收盘：沪深300 跌幅 &gt;1.5%，或中特估 98 只中位 &lt;-1.0%，两项任一成立记兑现；沪深300 跌幅 &lt;=0.5% 且中特估中位 &gt;=-0.5% 记落空；其余记部分。</td><td>partial<br>两项判据都落在中间区间：权重没补跌、但也没转正，中特估仍是唯一等权为负的板块。按部分记录。</td></tr><tr><td>2026-11-20T23:16:17.121143+08:00<br>2026-11-23T15:00:00+08:00</td><td>上证50 在 2026-11-23 收盘不跌破 2026-10-22 前低 2724.81，本轮权重抗跌是市值维度的分层（结构）而不是还没轮到（顺序）；此判断与收盘 15:49 登记的那条顺序假设方向相反。<br>2026-11-23 收盘：上证50（000016.SH）收盘点位 &gt; 2724.81 记兑现；&lt;= 2724.81 记落空。</td><td>hit<br>收盘点位守住判据线，权重端未破前低。</td></tr><tr><td>2026-11-20T23:16:17.832385+08:00<br>2026-11-23T15:00:00+08:00</td><td>中特估（880671）防守位在 2026-11-23 仍然有效：98 只成分的收盘上涨占比维持在 40% 以上。<br>2026-11-23 收盘：中特估成分上涨占比 &gt;= 40% 记兑现；30% 至 40% 记部分；&lt; 30% 记落空。</td><td>partial<br>落在 30%—40% 的 partial 区间：防守位没有整体失守，但已明显低于 40% 的兑现线，且是当日唯一等权为负板块。</td></tr><tr><td>2026-11-20T23:16:18.504256+08:00<br>2026-11-23T15:00:00+08:00</td><td>跌停尾部在 2026-11-23 收敛而非继续扩散：跌停家数回落至 40 家以下，且重新出现 3 板股。<br>2026-11-23 收盘：跌停 &lt; 40 家且最高连板 &gt;= 3 记兑现；两项只满足一项记部分；跌停 &gt;= 68 家或最高连板仍为 0 记落空。</td><td>hit<br>跌停家数与连板高度两项判据同时达标，尾部收缩成立。</td></tr><tr><td>2026-11-21T23:19:21.145379+08:00<br>2026-11-23T15:00:00+08:00</td><td>11-23 上证50 收盘仍站在 MA20（2772.26）之上<br>上证50 指数 11-23 收盘点位 ≥ 2772.26</td><td>miss<br>收盘点位未达判据线，按落空记录。</td></tr><tr><td>2026-11-21T23:19:21.832910+08:00<br>2026-11-23T15:00:00+08:00</td><td>11-23 中特估 880671 主力净额转正或流出继续收窄至本周最小以下<br>中特估 880671 当日主力净额 ≥ 0</td><td>partial<br>原定口径取不到，代理口径为正但两套供应商的主力净额定义不同，不足以按原口径判 hit，按部分记录并声明口径降级。</td></tr><tr><td>2026-11-21T23:19:22.501512+08:00<br>2026-11-23T15:00:00+08:00</td><td>11-23 全市场上涨家数占比回到 20% 以上<br>沪深全样本上涨家数占比 ≥ 20%</td><td>hit<br>远高于 20% 判据线。样本为沪深 5213 只、不含北交所，与判据口径一致。</td></tr><tr><td>2026-11-22T23:14:24.935904+08:00<br>2026-11-23T15:00:00+08:00</td><td>（承接 20261122-deep-width-not-buy；因两份核证底稿定稿更新导致源哈希位移，按凭证重登记，判据不变）11-23 中特估 880671 的收涨批合计主力净额仍 ≤0，说明 11-20 的 43.9% 上涨占比属抛压消失（没人卖），不是承接（有人买）。<br>2026-11-23 收盘后用同一成员级口径（boards_constituents 880671 成分 × 当日 stock_flow）重算收涨批净额：≤0 记 hit；&gt;+10 亿且剔除中国平安、紫金矿业后仍过半记 miss；落在 0 至 +10 亿之间、或 &gt;+10 亿但由平安/紫金主导记 partial。</td><td>unresolved<br>r2 与首版判据完全相同，同因缺字段不可评估；不用板块级 f62 替代。</td></tr><tr><td>2026-11-22T23:14:25.607189+08:00<br>2026-11-23T15:00:00+08:00</td><td>（承接 20261122-deep-chip-gap；同上原因重登记，判据不变）11-23 芯片 880952 成分中位补跌至 −6.43% 或更低，同时科创50 收在 MA20 上方，外盘缺口按成分属性路径释放而非全市场同向出清。<br>2026-11-23 收盘重算 880952 成分中位涨跌幅与科创50 相对 MA20 位置：中位 ≤−6.43% 且科创50 不低于 MA20 记 hit；中位跌幅不足 4.43%（即小于 2 个百分点）记 miss；其余记 partial。</td><td>miss<br>与首版同判据，中位为正使「跌幅不足 4.43%」分支成立，记落空。</td></tr><tr><td>2026-11-23T08:04:14.265238+08:00<br>2026-11-23T15:00:00+08:00</td><td>11-23 若为外部缺口补做，科创50 相对上证50 的跌幅差应达 5 个百分点以上；缺口差收敛到 2 个百分点以内则说明政策预期已对冲掉外盘定价。<br>11-23 收盘重算科创50（000688）涨跌幅减去上证50（000016）涨跌幅：差值 ≥5.0 个百分点记 hit；2.0—5.0 记 partial；&lt;2.0 记 miss。</td><td>miss<br>差值远低于 2.0 个百分点的落空线：权重与科技同向、幅度接近，上午的「属性路径释放缺口」框架在指数层面没有兑现，缺口改由宽度修复消化。</td></tr><tr><td>2026-11-23T08:04:14.933097+08:00<br>2026-11-23T15:00:00+08:00</td><td>11-23 若属缺口定价而非存量换仓，沪深成交额不应低于 11-20 的 14222 亿；明显缩量至 13500 亿以下则说明卖压在 11-20 已集中释放。<br>11-23 收盘沪深 5m 累计成交额：≥14222 亿记 hit；13500—14222 亿记 partial；&lt;13500 亿记 miss。口径与 11-20 相同（沪 sh000001 + 深 sz399106）。</td><td>hit<br>高于 14222 亿判据线，属放量而非缩量，外部缺口未在 11-20 一并出清。</td></tr><tr><td>2026-11-23T11:56:52.239086+08:00<br>2026-11-23T15:00:00+08:00</td><td>上午 CRO 外包服务的宽度（19 只成分上涨占比 73.7%）能否守到收盘，决定它是当日主线还是单日反抽。<br>15:00 收盘 CRO 概念 19 只成分上涨占比 ≥60% 记 hit；50%—60% 记 partial；&lt;50% 记 miss。</td><td>hit<br>原判据为新浪 CRO 19 只占比，该字段无接口；代理口径 97.3% 远高于 60% 兑现线，方向无歧义，按 hit 记录并声明口径降级（19 只 vs 75 只，供应商不同）。</td></tr><tr><td>2026-11-23T11:56:53.106379+08:00<br>2026-11-23T15:00:00+08:00</td><td>上午拖累指数的是权重端（上证50 -1.21%，已跌破盘前 MA20 2772.26），午后是否继续走弱。<br>15:00 上证50 收盘 ≤2772.26 记 hit（权重缺口未修复）；2772.26—2790 记 partial；&gt;2790 记 miss。</td><td>hit<br>收盘落在 ≤2772.26 区间，权重缺口未修复的判断成立。</td></tr><tr><td>2026-11-23T11:56:53.780986+08:00<br>2026-11-23T15:00:00+08:00</td><td>全A 上涨占比从竞价低开 91.68% 修复到 11:30 的 31.3%，能否守到收盘决定上午是修复还是反抽。<br>15:00 收盘全A 上涨占比 ≥30% 记 hit；25%—30% 记 partial；&lt;25% 记 miss。</td><td>hit<br>远高于 30% 判据线，上午的修复守到了收盘，不是反抽。</td></tr></tbody></table></div></section><section><h2>风险与后续观察</h2><p>最强反证在涨停端：涨停由 09:40 的 46 只增至 64 只、连板 34 只、最高 4 板，赚钱效应仍在少数票上加强，宽度收敛不等于情绪破裂。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S5">S5</a></p><p>若 14:00 前 42 只炸板回封过半、且上证重回今开 3567.84 上方，上午按高位换手记；若上证跌破昨收 3538.95，则按一日情绪脉冲记。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S5">S5</a></p></section><section><h2>待补数据</h2><table><tr><th>字段</th><th>对判断的影响</th><th>截至</th><th>已查资料</th><th>说明</th></tr><tr><td>跌停名单</td><td>跌停端只能给家数</td><td>2026-11-24 11:30</td><td>push2ex 跌停池未返回明细；新浪全A板价估算得 7 只（含 ST）</td><td>只有家数，无个股与 ST/非 ST 拆分</td></tr><tr><td>08:00-11:30 新增新闻原文</td><td>外部催化只能定性</td><td>2026-11-24 11:30</td><td>妙想 MCP 本会话未挂载（mx_tool_not_advertised）；亿信本轮未重跑</td><td>未取到区间增量原文，只列此前已知政策，不用网页摘要替代</td></tr><tr><td>板块级主力净额与成分资金</td><td>轮动只能靠价格与宽度两项</td><td>2026-11-24 11:30</td><td>NeoData 因 cutoff 早于当前 11 分钟跳过；妙想跳过；仅东财 11:25:01 概念采样可用</td><td>东财 554 概念重叠不可相加，且与新浪板块口径不可混排</td></tr></table></section><section><h2>已用其他来源核对</h2><table><tr><th>字段</th><th>对判断的影响</th><th>截至</th><th>已查资料</th><th>说明</th></tr><tr><td>涨跌家数跨源口径</td><td>无</td><td>2026-11-24 11:30</td><td>通达信 TQLEX 沪深综指 2856/2257；新浪全A 含北交所 3122/2273</td><td>两源样本范围不同，正文只用通达信「沪+深」口径，新浪数据作对照不混算</td></tr></table></section><section><h2>统计口径说明</h2><table><tr><th>字段</th><th>对判断的影响</th><th>截至</th><th>已查资料</th><th>说明</th></tr><tr><td>板块成分中位（通达信口径）</td><td>减速器、CPO 等板块只能用此替代口径</td><td>2026-11-24 11:30</td><td>用 boards_constituents 6 位成分表乘新浪 11:30 冻结价重算 6 个板块</td><td>成分与价格来自不同供应商，结论只表述为该成分集合的等权、中位与上涨占比，不与通达信板块涨幅混算</td></tr><tr><td>全天成交额</td><td>午后缩量则 1.81 至 1.90 万亿偏高</td><td>2026-11-24</td><td>按上午占比 0.59 至 0.62 推算</td><td>模型推算非实测，占比取昨日 0.590 与 11-09 至 11-13 五日均 0.619</td></tr><tr><td>账本积压预判</td><td>兑现率样本仍偏少</td><td>2026-11-24 11:40</td><td>review_history 账本中 11-19、11-23 到期未核验 4 条</td><td>其中 20261122-deep-chip-gap 的源 HTML 哈希已变，resolve 被拒；其余缺对应日期成员级横截面，留深层复盘补记</td></tr></table></section><section id="sources"><h2>资料来源</h2><p id="source-S1"><b>S1 11:30 采集快照（指数/成交额/板块头尾/涨停炸板）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\intraday_1130.json<br>indices[]; amount{total,compare_total}; boards.ranked_head/tail; zt.zt/zb; breadth · 新浪 5m 与通达信 TQLEX 五分钟切片；生成时刻 11:41:19，cutoff 11:30</p><p id="source-S2"><b>S2 11:30 宽度与板块成员中位数（午休冻结态重算）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\mid_breadth_1130.json<br>breadth_all{up,down,flat,up_ratio,limit_up,limit_down}; boards[].median/up_ratio/gap_vs_median · 新浪 getHQNodeData 全A 5579 只分页，个股时标 11:30:00</p><p id="source-S3"><b>S3 新浪板块全清单 256 个（概念 172 + 行业 84）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\sina_boards.json<br>groups.concept[]/industry[] 的 name/chg/count/lead_name/lead_chg · newFLJK via DoH+resolve，取数 11:43 冻结态，零配额</p><p id="source-S4"><b>S4 盘前主线板块成分中位（通达信成分 × 新浪 11:30 价）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\board_members_1130.json<br>boards[]: 880675 减速器 / 880703 人形机器人 / 880656 CPO / 880550 PCB / 880736 工业母机 / 880660 工业软件 · 成分来自 boards_constituents.json，价格 11:30 冻结；跨供应商口径已声明</p><p id="source-S5"><b>S5 09:40 开盘速览与宽度基线</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\intraday_0940.json<br>indices[]; breadth{total_up,total_down}; boards.positive; zt.zt/zb · 同源新浪 5m + TQLEX 切片，cutoff 09:40</p><p id="source-S6"><b>S6 08:00 盘前简报输入（三条观察条件原文）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\盘前简报.v3input.json<br>overview.change_condition; scenarios[]; strategy_answers.leadership/next · 本日 08:09 生成，昨日收盘与隔夜外盘数据</p><p id="source-S7"><b>S7 11-23 收盘基线与昨日同期成交</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\intraday_1130.json<br>amount.compare_total=9163.7（11-23 同点）；昨日全天 15528.8 亿见盘前简报 S1 · 昨日全天额来自 11-23 收盘稿，上午占比按 9163.7/15528.8=0.590 计</p><p id="source-S8"><b>S8 东财板块资金采样 554 概念（11:25:01）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\板块资金采样\1125.json<br>boards{}: BK1689 基金减仓 / BK0596 融资融券 / BK0821 MSCI中国 / BK1128 CPO概念 / 央国企改革 · 交易所时钟 20261124112457；早于 cutoff 5 分钟，概念重叠不可相加</p><p id="source-TDX0940"><b>TDX0940 通达信沪深综指五分钟切片 09:40</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\沪深切片_0940.json<br>通达信沪深综指五分钟切片 09:40 · 已核对交易日及时间</p><p id="source-TDX1130"><b>TDX1130 通达信沪深综指五分钟切片 11:30</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\沪深切片_1130.json<br>通达信沪深综指五分钟切片 11:30 · 已核对交易日及时间</p><p id="source-EM1130"><b>EM1130 东财概念板块累计主力净额</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-24\_raw\板块资金采样\1125.json<br>东财概念板块累计主力净额 · 已核对交易日及时间</p></section></main><footer>基于所列证据形成研究观察；事实、推断与缺口分别呈现。页面渲染及结构检查不核实全部外部事实。</footer></body></html>
