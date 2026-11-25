@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-11-25T23:36:38",
-  "total": 399,
-  "daily_count": 314,
+  "last_updated": "2026-11-26T00:10:16",
+  "total": 400,
+  "daily_count": 315,
   "industry_count": 85,
   "reports": [
     {
@@ -53,6 +53,17 @@
       "id": "2026-11-25-深度复盘_r2",
       "display_date": "11月25日",
       "title": "深度复盘_r2",
+      "category": "日常复盘",
+      "type": "daily",
+      "quality": "degraded",
+      "size_kb": 109.4,
+      "date": "2026-11-25"
+    },
+    {
+      "relative_path": "reports/2026-11-25/深度复盘.html",
+      "id": "2026-11-25-深度复盘",
+      "display_date": "11月25日",
+      "title": "深度复盘",
       "category": "日常复盘",
       "type": "daily",
       "quality": "degraded",
