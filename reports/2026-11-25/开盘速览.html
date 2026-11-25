@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>开盘速览</title>
+<style>
+
+/* report-builder v2.2.2 — centered organization roots
+   Brand DNA: yellow / red / gray / black
+   Direction: editorial paper, precise rules, no rounded color-bar cards
+*/
+:root {
+  --accent: #d7a62c;
+  --accent-strong: #b88712;
+  --accent-soft: #f7f0dd;
+  --signal: #a63a2e;
+  --signal-soft: #f8ece9;
+  --ink: #1d1c19;
+  --text: #37342f;
+  --muted: #777168;
+  --line: #d8d4cb;
+  --line-soft: #ebe8e1;
+  --canvas: #efede7;
+  --paper: #fffefa;
+  --paper-alt: #f6f4ee;
+  --code-bg: #22211e;
+  --code-text: #f4f1e8;
+  --font-sans: "Inter", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", "微软雅黑", "Noto Sans SC", system-ui, sans-serif;
+  --font-display: "Noto Serif SC", "Songti SC", STSong, serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --measure: 960px;
+}
+
+* { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+  background: var(--canvas);
+}
+body {
+  min-height: calc(100vh - 64px);
+  max-width: var(--measure);
+  margin: 32px auto 56px;
+  padding: 66px 66px 78px;
+  border: 1px solid #dedad1;
+  color: var(--text);
+  background: var(--paper);
+  box-shadow: 0 18px 44px rgba(46, 40, 30, 0.07);
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.82;
+  letter-spacing: 0.006em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Masthead */
+.report-header {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 38px 0 24px;
+  border-top: 5px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.report-header::before {
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  content: "";
+}
+.report-header h1 {
+  max-width: 800px;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 45px);
+  font-weight: 700;
+  line-height: 1.23;
+  letter-spacing: -0.035em;
+}
+.meta {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  color: var(--muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  letter-spacing: 0.085em;
+  white-space: nowrap;
+}
+
+main { display: block; }
+h2, h3, h4 {
+  color: var(--ink);
+  break-after: avoid-page;
+}
+h2 {
+  position: relative;
+  margin: 54px 0 18px;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--ink);
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: -0.018em;
+}
+h2::before {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 30px;
+  border-top: 4px solid var(--accent);
+  content: "";
+}
+h3 {
+  margin: 34px 0 12px;
+  font-size: 17.5px;
+  font-weight: 740;
+  line-height: 1.48;
+  letter-spacing: -0.008em;
+}
+h4 {
+  margin: 24px 0 9px;
+  color: #4a4640;
+  font-size: 14.5px;
+  font-weight: 740;
+  letter-spacing: 0.01em;
+}
+p { margin: 11px 0; }
+strong { color: var(--ink); font-weight: 740; }
+em { color: #57524b; }
+hr {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+/* Lists */
+ul, ol { margin: 12px 0 15px; padding-left: 1.5em; }
+li { margin: 5px 0; padding-left: 0.18em; }
+li::marker {
+  color: var(--accent-strong);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+/* Links and media */
+a {
+  color: #6d510f;
+  text-decoration-color: rgba(109, 81, 15, 0.38);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--signal); text-decoration-color: currentColor; }
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 26px auto;
+}
+figure { margin: 30px 0; }
+figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* Tables: editorial rules rather than dashboard cards */
+.table-wrapper {
+  margin: 24px 0 32px;
+  overflow-x: auto;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  box-shadow: none;
+  -webkit-overflow-scrolling: touch;
+}
+table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  line-height: 1.58;
+  font-variant-numeric: tabular-nums;
+}
+thead { display: table-header-group; }
+thead th {
+  padding: 12px 13px 11px;
+  border-right: 1px solid #ddd8ce;
+  border-bottom: 1px solid var(--ink);
+  background: #efede6;
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 760;
+  letter-spacing: 0.018em;
+  text-align: left;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+thead th:last-child { border-right: 0; }
+tbody td {
+  padding: 11px 13px;
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+tbody td:last-child { border-right: 0; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: #faf9f5; }
+tbody tr:hover { background: #f6f1e4; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Quotes and semantic notes: square, ruled, restrained */
+blockquote {
+  margin: 24px 0;
+  padding: 3px 0 3px 20px;
+  border-left: 2px solid #aaa399;
+  color: #5a554d;
+  font-family: var(--font-display);
+  font-size: 14.5px;
+}
+blockquote p:first-child, .highlight p:first-child, .warning p:first-child { margin-top: 0; }
+blockquote p:last-child, .highlight p:last-child, .warning p:last-child { margin-bottom: 0; }
+.highlight, .warning {
+  margin: 24px 0;
+  padding: 16px 18px;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+  font-size: 14px;
+  break-inside: avoid-page;
+}
+.highlight {
+  border-top: 2px solid var(--accent-strong);
+  border-bottom: 1px solid #d8c89d;
+  background: var(--accent-soft);
+  color: #55471f;
+}
+.warning {
+  border-top: 2px solid var(--signal);
+  border-bottom: 1px solid #d9bbb5;
+  background: var(--signal-soft);
+  color: #742e26;
+}
+
+/* Code */
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+:not(pre) > code {
+  padding: 0.1em 0.32em;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper-alt);
+  color: #693525;
+  overflow-wrap: anywhere;
+}
+pre, .codehilite {
+  margin: 22px 0 28px;
+  overflow: auto;
+  border-radius: 0;
+  background: var(--code-bg);
+  color: var(--code-text);
+  break-inside: avoid-page;
+}
+pre { padding: 17px 19px; line-height: 1.65; tab-size: 4; }
+.codehilite pre { margin: 0; }
+.codehilite .c, .codehilite .cm, .codehilite .c1 { color: #9a9a92; }
+.codehilite .k, .codehilite .kd, .codehilite .kn { color: #f0bf57; }
+.codehilite .s, .codehilite .s1, .codehilite .s2 { color: #a8d08d; }
+.codehilite .m, .codehilite .mi, .codehilite .mf { color: #d7a7d9; }
+
+/* Native process and hierarchy diagrams */
+.flow-diagram, .org-chart {
+  margin: 20px 0 30px;
+  padding: 8px 0 0;
+  overflow-x: auto;
+  border: 0;
+  break-inside: avoid-page;
+  -webkit-overflow-scrolling: touch;
+}
+.flow-lane {
+  display: flex;
+  min-width: max-content;
+  align-items: stretch;
+  gap: 8px;
+}
+.flow-lane + .flow-lane { margin-top: 14px; }
+.flow-step {
+  display: grid;
+  grid-template-columns: auto minmax(78px, 1fr);
+  min-width: 128px;
+  max-width: 200px;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: #faf9f5;
+}
+.flow-index {
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.flow-label { color: var(--ink); font-size: 13.5px; font-weight: 700; }
+.flow-arrow {
+  align-self: center;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 1;
+}
+.org-tree, .org-tree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.org-tree li { position: relative; margin: 0; padding: 0; }
+.org-tree > li + li { margin-top: 28px; }
+.org-tree > li > .org-root-node {
+  display: block;
+  width: max-content;
+  min-width: 150px;
+  margin: 0 auto 18px;
+}
+.org-tree > li > ul {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid #aaa399;
+}
+.org-tree > li > ul > li {
+  min-width: 0;
+  text-align: center;
+}
+.org-tree > li > ul > li::before {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  height: 18px;
+  border-left: 1px solid #aaa399;
+  content: "";
+}
+.org-tree > li > ul > li > .org-node { width: 100%; min-width: 0; }
+.org-tree > li > ul > li > ul {
+  display: grid;
+  gap: 6px;
+  margin-top: 7px;
+}
+.org-tree > li > ul > li > ul > li::before { display: none; }
+.org-tree > li > ul > li > ul > li > .org-node {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 8px;
+  border-color: var(--line);
+  background: transparent;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.org-tree ul ul ul {
+  display: block;
+  margin: 6px 0 0 10px;
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+  text-align: left;
+}
+.org-tree ul ul ul > li { margin: 3px 0; }
+.org-node {
+  display: inline-block;
+  min-width: 150px;
+  padding: 8px 12px;
+  border: 1px solid var(--ink);
+  background: var(--paper-alt);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+.org-root-node {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+}
+.diagram-empty { margin: 0; color: var(--muted); font-size: 13px; }
+
+/* Editorial table of contents and footnotes */
+.toc {
+  margin: 12px 0 44px;
+  padding: 20px 0 22px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+}
+.toc > span, .toc > p:first-child {
+  display: block;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+}
+.toc ul {
+  margin: 0;
+  padding-left: 1.25em;
+  columns: 2;
+  column-gap: 44px;
+}
+.toc li { break-inside: avoid; margin: 4px 0; }
+.toc a { color: var(--text); text-decoration: none; }
+.toc a:hover { color: var(--signal); }
+.footnote, .footnote-ref { font-variant-numeric: tabular-nums; }
+.footnote {
+  margin-top: 46px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink);
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+/* Small inline labels retained for existing reports */
+.tag, .tag-red {
+  display: inline-block;
+  margin: 0 5px 4px 0;
+  padding: 1px 5px 2px;
+  border-radius: 0;
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: 0.025em;
+}
+.tag { border-bottom: 2px solid var(--accent); background: transparent; color: #6a5116; }
+.tag-red { border-bottom: 2px solid var(--signal); background: transparent; color: var(--signal); }
+
+footer {
+  margin-top: 68px;
+  padding-top: 20px;
+  border-top: 3px solid var(--ink);
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.7;
+  break-inside: avoid-page;
+}
+footer p { margin: 4px 0; }
+footer .disclaimer strong { color: #514d46; }
+footer .provenance { font-variant-numeric: tabular-nums; letter-spacing: 0.015em; }
+
+@media (max-width: 720px) {
+  html { background: var(--paper); }
+  body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 18px 48px;
+    border: 0;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 1.76;
+  }
+  .report-header { margin-bottom: 36px; padding-top: 34px; padding-bottom: 20px; }
+  .report-header::before { top: -6px; width: 8px; height: 8px; }
+  .report-header h1 { font-size: 29px; letter-spacing: -0.025em; }
+  .meta { top: 11px; font-size: 10px; letter-spacing: 0.06em; }
+  h2 { margin-top: 44px; font-size: 22px; }
+  h3 { margin-top: 29px; font-size: 16.5px; }
+  .toc ul { columns: 1; }
+  .flow-lane { min-width: 0; flex-direction: column; gap: 8px; }
+  .flow-step { width: 100%; max-width: none; }
+  .flow-arrow { align-self: center; font-size: 0; }
+  .flow-arrow::before { content: "↓"; font-size: 16px; }
+  .org-chart { overflow-x: visible; }
+  .org-tree > li > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .org-node { min-width: 130px; }
+  table { min-width: 520px; font-size: 12px; }
+  thead th, tbody td { padding: 9px 10px; }
+}
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 17mm;
+}
+
+@media print {
+  :root { --measure: none; }
+  html { scroll-behavior: auto; background: #fff; }
+  body {
+    min-height: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #222;
+    background: #fff;
+    box-shadow: none;
+    font-size: 10.5pt;
+    line-height: 1.62;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .report-header { margin-bottom: 8mm; padding-top: 8mm; }
+  .report-header h1 { font-size: 25pt; }
+  .meta { top: 3mm; }
+  h2 { margin-top: 8mm; font-size: 15.5pt; }
+  h3 { font-size: 12pt; }
+  h2, h3, h4 { break-after: avoid-page; }
+  p, li { orphans: 3; widows: 3; }
+  a { color: inherit; text-decoration: none; }
+  .toc ul { columns: 2; }
+  .table-wrapper, .flow-diagram, .org-chart { overflow: visible; border-color: #777; box-shadow: none; }
+  .flow-lane { min-width: 0; gap: 2mm; }
+  .flow-step { min-width: 25mm; padding: 2.5mm 3mm; }
+  .flow-index { font-size: 7.5pt; }
+  .flow-label { font-size: 9pt; }
+  .org-tree > li > .org-root-node,
+  .org-tree > li > ul > li > .org-node { min-width: 28mm; }
+  table { min-width: 0; font-size: 8.3pt; }
+  thead { display: table-header-group; }
+  thead th { white-space: normal; overflow-wrap: anywhere; }
+  tr, img, blockquote, .highlight, .warning, pre, .codehilite,
+  .flow-diagram, .flow-step, .org-chart, .org-node { break-inside: avoid-page; }
+  tbody tr:hover { background: inherit; }
+  footer { margin-top: 10mm; }
+}
+
+
+</style>
+</head>
+<body class="profile-finance">
+<header class="report-header">
+  <h1>开盘速览</h1>
+  <div class="meta">📅 2026年11月25日 · 行情截止 09:40 · 通道 sina · 规则化准点渲染 09:40:19 | 投资小龙虾 AI | 仅供参考</div>
+</header>
+<main><h2>A股与港日韩现在怎样</h2><div class="table-wrapper"><table><tr><th>市场</th><th>指数或盘面</th><th>北京时间与判断范围</th></tr><tr><td>A股</td><td>上证指数 -0.77%、深证成指 -0.98%、创业板指 -1.49%、科创50 -2.99%</td><td>09:40 截点</td></tr><tr><td>香港恒生指数</td><td>前收 22383.74（2026-11-23）</td><td>无当日已完成五分钟线</td></tr><tr><td>日本日经225</td><td>57226.21（较昨收 +1.40%）</td><td>09:30 五分钟线结束 </td></tr><tr><td>韩国KOSPI</td><td>4766.64（较昨收 +1.23%）</td><td>09:25 五分钟线结束 报价滞后，不能确认当前同步走势</td></tr></table></div><p>日本日经225高于前收。用A股自己的宽度与量价确认强弱，海外同向只能作旁证。</p><p>海外指数来源为 Yahoo Finance；仅取截点前已结束的五分钟线。前收仅作背景。</p><h2>A股接下来更像哪种走法</h2><p>上证较开盘 -0.04%，256 个有效板块中 86 个上涨。截至09:40，弱势延续比全面修复更符合盘面。若指数收回开盘价且多数板块翻红，改看修复扩散。</p><p>机会观察：内贸规划、超级细菌暂处板块前列。午盘复查同一板块的成员中位涨幅和上涨占比；若只有领涨股维持强势，调低对板块机会的判断。</p><h2>昨晚和盘前的判断，经得住现在的盘面吗？</h2><p><a href="../2026-11-24/深度复盘.html">2026-11-24 深度复盘</a></p><p>原稿判断：收盘总结写「宽度崩塌、指数由权重托住」，那是相对昨收的口径，不假但不完整。把日内 OHLC 摆出来，是另一件事：创业板指开在 2368.70（+3.88%）、最高 2376.34（+4.22%）、收盘 2278.99（-0.05%），收在全天最低点；深成高开 +2.43% 收 -0.29%；科创50 高开 +3.25% 收 +1.81%，回吐 2.39 个百分点。八只指数里凡是高开的全部回吐，只有上证50 高开仅 0.25%、几乎不回吐、收在 MA5/MA10/MA20 三线上方。同日 0AMV 高开 +3.15%、10:00 见峰 138846.30（+5.03%）、收 133517.00（+1.00%），距高点 -3.84%，收盘距全天最低只有 0.18%。所以今天的准确定性不是「权重托住指数的换手日」，是「高开四个点、被全数兑现的高开低走日」；指数那点红色残值来自昨收这个低起点，不来自今天的买盘。</p><div class="table-wrapper"><table><tr><th>原稿要验证什么</th><th>原先定的条件</th><th>应该何时核验</th><th>本轮结果</th></tr><tr><td>创业板指能否站回 2278.99</td><td>站回 2290 上方且不再创当日新低，按高开兑现后的消化记；再破 2278.99 且收在当日最低附近，按高开出货延续记。</td><td>2026-11-25 收盘，同新浪 48 根 5m 口径</td><td>未到原定核验时点。早盘读数只能观察方向。</td></tr><tr><td>外资三线的收盘符号</td><td>三条不再同时为负，按开盘兑现告一段落记；继续同时为负且净卖出扩大，按减仓延续记。</td><td>2026-11-25 收盘同东财 bkzj 一分钟采样口径</td><td>未到原定核验时点。早盘读数只能观察方向。</td></tr></table></div><p><a href="盘前简报.html">2026-11-25 盘前简报</a></p><p>原稿判断：隔夜美股把 11-24 给 A 股的外部锚反向打回去：费半收 8996.18、跌 7.88%，30 只成分全绿，英伟达回吐 5.86%，存储与光通信全链重挫。A 股 11-24 在 15:00 收盘，美东尚未开盘，这轮下跌一点没定价，今日是首次定价日。同日央行 1.3 万亿 MLF 加逆回购、深圳 40 家公司回购座谈会落地。外部锚向下、流动性锚向上，竞价是两者第一次对撞。</p><div class="table-wrapper"><table><tr><th>原稿要验证什么</th><th>原先定的条件</th><th>应该何时核验</th><th>本轮结果</th></tr><tr><td>09:25 竞价：科创50 与上证50 的价差</td><td>价差收窄至 0 以内且科创50 跌幅小于 3.2%，按外部冲击被吸收记；价差反转超 -4pp，按二次定价未完成记。</td><td>2026-11-25 09:25 撮合后，同指数口径</td><td>截至09:40尚无匹配原指标、样本和时点的自动核验结果。</td></tr><tr><td>10:00 前 −3% 至 −1% 的中段家数</td><td>低于 1864 只记宽度未继续恶化；高于 2000 只记退潮延续，昨日主线候选降级。</td><td>2026-11-25 10:00，同 5219 只样本与同分档口径</td><td>截至09:40尚无匹配原指标、样本和时点的自动核验结果。</td></tr></table></div><p><strong>本轮核验：</strong>当前可核验的是开盘后指数方向与板块强弱。科创50较昨收 -2.99%，创业板指 -1.49%。板块上涨占比不能代替全A个股上涨占比，收盘资金条件继续留到收盘检验。</p><h2>竞价异常延续了吗？</h2><p>高开至少2%的股票共 50 只，09:40可核对 50 只，仍在昨收同侧 46 只（92.0%）。</p><p>低开至少2%的股票共 718 只，09:40可核对 718 只，仍在昨收同侧 601 只（83.7%）。</p><h2>竞价后的第一轮验证</h2><p>上证相对竞价开盘价 -0.04%，当前有效板块中 86/256 个上涨。两项分别描述指数路径与板块宽度，个股延续率须用竞价原名单逐股复核。</p><p>午盘复核同组板块的成分中位数和上涨占比，两项均回落时应调低对行情扩散的判断。</p><details><summary>展开指数、板块及数据口径</summary><h2>核心结论</h2><p>上证自开盘后在开盘价附近 -0.04% 震荡，方向未选择；上述为 09:40 时点的存量读数，不含速度判断（连续分钟数据不完整时不写「急拉/跳水」）。</p><h2>指数与量能</h2><p>截至 09:40，上证指数 3521.04 点（-0.77%）、深证成指 10321.85 点（-0.98%）、创业板指 2245.13 点（-1.49%）、科创50 1212.69 点（-2.99%）。两市成交额 <strong>2250 亿</strong>（沪 1017 / 深 1233），为上一交易日（20261124）同时点的 0.62 倍。涨 2725 家 / 跌 2317 家（通达信 TQLEX 沪深综指五分钟切片）。</p><div class="table-wrapper"><table><thead><tr><th>指数</th><th class="num">09:40 点位</th><th class="num">涨跌</th><th class="num">较开盘</th><th class="num">成交额(亿)</th></tr></thead><tbody><tr><td>上证指数</td><td class="num">3521.04</td><td class="num">-0.77%</td><td class="num">-0.04%</td><td class="num">1017</td></tr><tr><td>深证成指</td><td class="num">10321.85</td><td class="num">-0.98%</td><td class="num">+0.48%</td><td class="num">526</td></tr><tr><td>创业板指</td><td class="num">2245.13</td><td class="num">-1.49%</td><td class="num">+0.54%</td><td class="num">605</td></tr><tr><td>科创50</td><td class="num">1212.69</td><td class="num">-2.99%</td><td class="num">-0.49%</td><td class="num">143</td></tr><tr><td>北证50</td><td class="num">787.27</td><td class="num">-0.80%</td><td class="num">+0.58%</td><td class="num">18</td></tr><tr><td>沪深300</td><td class="num">3932.47</td><td class="num">-0.79%</td><td class="num">+0.07%</td><td class="num">564</td></tr></tbody></table></div><h2>涨停结构</h2><p>返回名单中有 31 只首封记录不晚于 09:40；当时封住及炸板家数仍需对应时点快照。最高板为 <strong>克来机电（4 板，首封 09:25:01）</strong>。首封名单前列：汇洲智能(3板)、天圣制药(2板)、克来机电(4板)、全筑股份(2板)、利君股份(2板)、钛能化学(1板)。</p><div class="table-wrapper"><table><thead><tr><th>代码</th><th>名称</th><th>首封</th><th class="num">连板</th><th>行业</th><th>≤cutoff</th></tr></thead><tbody><tr><td>002122</td><td>汇洲智能</td><td>09:25:00</td><td class="num">3</td><td>通用设备</td><td>是</td></tr><tr><td>002872</td><td>天圣制药</td><td>09:25:00</td><td class="num">2</td><td>化学制药</td><td>是</td></tr><tr><td>603960</td><td>克来机电</td><td>09:25:01</td><td class="num">4</td><td>汽车零部</td><td>是</td></tr><tr><td>603030</td><td>全筑股份</td><td>09:25:02</td><td class="num">2</td><td>装修装饰</td><td>是</td></tr><tr><td>002651</td><td>利君股份</td><td>09:30:00</td><td class="num">2</td><td>航空装备</td><td>是</td></tr><tr><td>002145</td><td>钛能化学</td><td>09:30:03</td><td class="num">1</td><td>化学原料</td><td>是</td></tr><tr><td>600814</td><td>杭州解百</td><td>09:30:03</td><td class="num">3</td><td>一般零售</td><td>是</td></tr><tr><td>002164</td><td>宁波东力</td><td>09:30:09</td><td class="num">3</td><td>通用设备</td><td>是</td></tr><tr><td>605018</td><td>长华集团</td><td>09:30:11</td><td class="num">4</td><td>汽车零部</td><td>是</td></tr><tr><td>000593</td><td>德龙汇能</td><td>09:30:18</td><td class="num">1</td><td>燃气Ⅱ</td><td>是</td></tr><tr><td>000702</td><td>正虹科技</td><td>09:30:21</td><td class="num">1</td><td>饲料</td><td>是</td></tr><tr><td>603178</td><td>圣龙股份</td><td>09:30:34</td><td class="num">1</td><td>汽车零部</td><td>是</td></tr><tr><td>002190</td><td>成飞集成</td><td>09:31:18</td><td class="num">1</td><td>汽车零部</td><td>是</td></tr><tr><td>002728</td><td>特一药业</td><td>09:31:33</td><td class="num">1</td><td>中药Ⅱ</td><td>是</td></tr><tr><td>605136</td><td>丽人丽妆</td><td>09:32:20</td><td class="num">1</td><td>互联网电</td><td>是</td></tr></tbody></table></div><h2>板块强弱</h2><p>板块层面，86/256 个有效板块为正（34%）。涨幅居前为 内贸规划（+1.71%，30 只）、超级细菌（+1.47%，13 只）、振兴沈阳（+1.38%，25 只）、维生素（+1.32%，13 只）、草甘膦（+1.19%，11 只）。头部板块的持续性仍需核对成员分布。上涨板块占比在三成到六成之间，属<strong>结构性分化</strong>。</p><div class="table-wrapper"><table><thead><tr><th>板块</th><th class="num">家数</th><th class="num">板块涨幅</th><th class="num">领涨股</th><th class="num">领涨幅</th><th>单票拉动</th></tr></thead><tbody><tr><td>内贸规划</td><td class="num">30</td><td class="num">+1.71%</td><td>杭州解百</td><td class="num">+10.01%</td><td>待核</td></tr><tr><td>超级细菌</td><td class="num">13</td><td class="num">+1.47%</td><td>联环药业</td><td class="num">+4.34%</td><td>待核</td></tr><tr><td>振兴沈阳</td><td class="num">25</td><td class="num">+1.38%</td><td>冰山冷热</td><td class="num">+7.38%</td><td>待核</td></tr><tr><td>维生素</td><td class="num">13</td><td class="num">+1.32%</td><td>北大医药</td><td class="num">+2.65%</td><td>待核</td></tr><tr><td>草甘膦</td><td class="num">11</td><td class="num">+1.19%</td><td>胜利股份</td><td class="num">+3.48%</td><td>待核</td></tr><tr><td>三沙概念</td><td class="num">15</td><td class="num">+1.15%</td><td>海南海药</td><td class="num">+9.88%</td><td>待核</td></tr><tr><td>仿制药</td><td class="num">22</td><td class="num">+1.12%</td><td>康芝药业</td><td class="num">+13.37%</td><td>待核</td></tr><tr><td>基因测序</td><td class="num">10</td><td class="num">+1.11%</td><td>荣联科技</td><td class="num">+4.00%</td><td>待核</td></tr></tbody></table></div><h2>数据口径与缺口</h2><ul><li>NeoData 脚本入口缺少宿主配置（host_config_missing），成员及资金字段需单独核验</li><li>妙想脚本入口不可用（host_config_missing），需由 WorkBuddy 任务调用原生工具</li><li>板块口径：该源无涨跌家数与成分股中位数，集中度按成分数＋最强股涨幅粗判，不能替代逐板块 5m 切片的中位数校验</li></ul><p>本稿由规则引擎直接渲染，指数切片来源：sina。</p><h2>沪深样本的涨跌分布</h2><p>QMT 实际行情时刻 09:39:00—09:40:00，每股取窗口内最新一笔。5215 只有效成交样本中，2758 涨、2269 跌、188 平。未纳入北交所和窗口内无有效报价的股票。</p><p>通达信成分清单中，有价成员至少5只且覆盖至少80%的板块，按成员涨幅中位数列前五。</p><table><tr><th>板块</th><th>覆盖</th><th>中位涨幅</th><th>上涨占比</th></tr><tr><td>维生素</td><td>74/76</td><td>+1.28%</td><td>91.9%</td></tr><tr><td>幽门螺杆菌</td><td>73/74</td><td>+1.23%</td><td>87.7%</td></tr><tr><td>肝炎概念</td><td>134/137</td><td>+1.13%</td><td>90.3%</td></tr><tr><td>NMN概念</td><td>27/28</td><td>+1.10%</td><td>92.6%</td></tr><tr><td>仿制药</td><td>73/73</td><td>+1.10%</td><td>90.4%</td></tr></table></details><h2>概念板块资金</h2><p>东财 09:35:01 实采，覆盖 554 个概念，日内累计净额前三与后三为破净股 +3.42亿元、裸眼3D +2.55亿元、乡村振兴 +2.26亿元、融资融券 -51.85亿元、基金减仓 -41.03亿元、MSCI中国 -33.11亿元。板块成分重叠，不能相加。个股资金需另核。</p></main>
+<footer>本报告由规则引擎在行情时点内自动生成，未经模型改写；数值口径见末节。
+投资小龙虾 AI · 仅供参考，不构成投资建议。</footer>
+</body>
+</html>
