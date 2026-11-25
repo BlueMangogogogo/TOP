@@ -1,0 +1,529 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="review-schema" content="3"><title>2026-11-25 收盘总结</title><style>
+/* report-builder v2.2.2 — centered organization roots
+   Brand DNA: yellow / red / gray / black
+   Direction: editorial paper, precise rules, no rounded color-bar cards
+*/
+:root {
+  --accent: #d7a62c;
+  --accent-strong: #b88712;
+  --accent-soft: #f7f0dd;
+  --signal: #a63a2e;
+  --signal-soft: #f8ece9;
+  --ink: #1d1c19;
+  --text: #37342f;
+  --muted: #777168;
+  --line: #d8d4cb;
+  --line-soft: #ebe8e1;
+  --canvas: #efede7;
+  --paper: #fffefa;
+  --paper-alt: #f6f4ee;
+  --code-bg: #22211e;
+  --code-text: #f4f1e8;
+  --font-sans: "Inter", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", "微软雅黑", "Noto Sans SC", system-ui, sans-serif;
+  --font-display: "Noto Serif SC", "Songti SC", STSong, serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --measure: 960px;
+}
+
+* { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+  background: var(--canvas);
+}
+body {
+  min-height: calc(100vh - 64px);
+  max-width: var(--measure);
+  margin: 32px auto 56px;
+  padding: 66px 66px 78px;
+  border: 1px solid #dedad1;
+  color: var(--text);
+  background: var(--paper);
+  box-shadow: 0 18px 44px rgba(46, 40, 30, 0.07);
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.82;
+  letter-spacing: 0.006em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Masthead */
+.report-header {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 38px 0 24px;
+  border-top: 5px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.report-header::before {
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  content: "";
+}
+.report-header h1 {
+  max-width: 800px;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 45px);
+  font-weight: 700;
+  line-height: 1.23;
+  letter-spacing: -0.035em;
+}
+.meta {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  color: var(--muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  letter-spacing: 0.085em;
+  white-space: nowrap;
+}
+
+main { display: block; }
+h2, h3, h4 {
+  color: var(--ink);
+  break-after: avoid-page;
+}
+h2 {
+  position: relative;
+  margin: 54px 0 18px;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--ink);
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: -0.018em;
+}
+h2::before {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 30px;
+  border-top: 4px solid var(--accent);
+  content: "";
+}
+h3 {
+  margin: 34px 0 12px;
+  font-size: 17.5px;
+  font-weight: 740;
+  line-height: 1.48;
+  letter-spacing: -0.008em;
+}
+h4 {
+  margin: 24px 0 9px;
+  color: #4a4640;
+  font-size: 14.5px;
+  font-weight: 740;
+  letter-spacing: 0.01em;
+}
+p { margin: 11px 0; }
+strong { color: var(--ink); font-weight: 740; }
+em { color: #57524b; }
+hr {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+/* Lists */
+ul, ol { margin: 12px 0 15px; padding-left: 1.5em; }
+li { margin: 5px 0; padding-left: 0.18em; }
+li::marker {
+  color: var(--accent-strong);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+/* Links and media */
+a {
+  color: #6d510f;
+  text-decoration-color: rgba(109, 81, 15, 0.38);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--signal); text-decoration-color: currentColor; }
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 26px auto;
+}
+figure { margin: 30px 0; }
+figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* Tables: editorial rules rather than dashboard cards */
+.table-wrapper {
+  margin: 24px 0 32px;
+  overflow-x: auto;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  box-shadow: none;
+  -webkit-overflow-scrolling: touch;
+}
+table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  line-height: 1.58;
+  font-variant-numeric: tabular-nums;
+}
+thead { display: table-header-group; }
+thead th {
+  padding: 12px 13px 11px;
+  border-right: 1px solid #ddd8ce;
+  border-bottom: 1px solid var(--ink);
+  background: #efede6;
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 760;
+  letter-spacing: 0.018em;
+  text-align: left;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+thead th:last-child { border-right: 0; }
+tbody td {
+  padding: 11px 13px;
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+tbody td:last-child { border-right: 0; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: #faf9f5; }
+tbody tr:hover { background: #f6f1e4; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Quotes and semantic notes: square, ruled, restrained */
+blockquote {
+  margin: 24px 0;
+  padding: 3px 0 3px 20px;
+  border-left: 2px solid #aaa399;
+  color: #5a554d;
+  font-family: var(--font-display);
+  font-size: 14.5px;
+}
+blockquote p:first-child, .highlight p:first-child, .warning p:first-child { margin-top: 0; }
+blockquote p:last-child, .highlight p:last-child, .warning p:last-child { margin-bottom: 0; }
+.highlight, .warning {
+  margin: 24px 0;
+  padding: 16px 18px;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+  font-size: 14px;
+  break-inside: avoid-page;
+}
+.highlight {
+  border-top: 2px solid var(--accent-strong);
+  border-bottom: 1px solid #d8c89d;
+  background: var(--accent-soft);
+  color: #55471f;
+}
+.warning {
+  border-top: 2px solid var(--signal);
+  border-bottom: 1px solid #d9bbb5;
+  background: var(--signal-soft);
+  color: #742e26;
+}
+
+/* Code */
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+:not(pre) > code {
+  padding: 0.1em 0.32em;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper-alt);
+  color: #693525;
+  overflow-wrap: anywhere;
+}
+pre, .codehilite {
+  margin: 22px 0 28px;
+  overflow: auto;
+  border-radius: 0;
+  background: var(--code-bg);
+  color: var(--code-text);
+  break-inside: avoid-page;
+}
+pre { padding: 17px 19px; line-height: 1.65; tab-size: 4; }
+.codehilite pre { margin: 0; }
+.codehilite .c, .codehilite .cm, .codehilite .c1 { color: #9a9a92; }
+.codehilite .k, .codehilite .kd, .codehilite .kn { color: #f0bf57; }
+.codehilite .s, .codehilite .s1, .codehilite .s2 { color: #a8d08d; }
+.codehilite .m, .codehilite .mi, .codehilite .mf { color: #d7a7d9; }
+
+/* Native process and hierarchy diagrams */
+.flow-diagram, .org-chart {
+  margin: 20px 0 30px;
+  padding: 8px 0 0;
+  overflow-x: auto;
+  border: 0;
+  break-inside: avoid-page;
+  -webkit-overflow-scrolling: touch;
+}
+.flow-lane {
+  display: flex;
+  min-width: max-content;
+  align-items: stretch;
+  gap: 8px;
+}
+.flow-lane + .flow-lane { margin-top: 14px; }
+.flow-step {
+  display: grid;
+  grid-template-columns: auto minmax(78px, 1fr);
+  min-width: 128px;
+  max-width: 200px;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: #faf9f5;
+}
+.flow-index {
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.flow-label { color: var(--ink); font-size: 13.5px; font-weight: 700; }
+.flow-arrow {
+  align-self: center;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 1;
+}
+.org-tree, .org-tree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.org-tree li { position: relative; margin: 0; padding: 0; }
+.org-tree > li + li { margin-top: 28px; }
+.org-tree > li > .org-root-node {
+  display: block;
+  width: max-content;
+  min-width: 150px;
+  margin: 0 auto 18px;
+}
+.org-tree > li > ul {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid #aaa399;
+}
+.org-tree > li > ul > li {
+  min-width: 0;
+  text-align: center;
+}
+.org-tree > li > ul > li::before {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  height: 18px;
+  border-left: 1px solid #aaa399;
+  content: "";
+}
+.org-tree > li > ul > li > .org-node { width: 100%; min-width: 0; }
+.org-tree > li > ul > li > ul {
+  display: grid;
+  gap: 6px;
+  margin-top: 7px;
+}
+.org-tree > li > ul > li > ul > li::before { display: none; }
+.org-tree > li > ul > li > ul > li > .org-node {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 8px;
+  border-color: var(--line);
+  background: transparent;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.org-tree ul ul ul {
+  display: block;
+  margin: 6px 0 0 10px;
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+  text-align: left;
+}
+.org-tree ul ul ul > li { margin: 3px 0; }
+.org-node {
+  display: inline-block;
+  min-width: 150px;
+  padding: 8px 12px;
+  border: 1px solid var(--ink);
+  background: var(--paper-alt);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+.org-root-node {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+}
+.diagram-empty { margin: 0; color: var(--muted); font-size: 13px; }
+
+/* Editorial table of contents and footnotes */
+.toc {
+  margin: 12px 0 44px;
+  padding: 20px 0 22px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+}
+.toc > span, .toc > p:first-child {
+  display: block;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+}
+.toc ul {
+  margin: 0;
+  padding-left: 1.25em;
+  columns: 2;
+  column-gap: 44px;
+}
+.toc li { break-inside: avoid; margin: 4px 0; }
+.toc a { color: var(--text); text-decoration: none; }
+.toc a:hover { color: var(--signal); }
+.footnote, .footnote-ref { font-variant-numeric: tabular-nums; }
+.footnote {
+  margin-top: 46px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink);
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+/* Small inline labels retained for existing reports */
+.tag, .tag-red {
+  display: inline-block;
+  margin: 0 5px 4px 0;
+  padding: 1px 5px 2px;
+  border-radius: 0;
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: 0.025em;
+}
+.tag { border-bottom: 2px solid var(--accent); background: transparent; color: #6a5116; }
+.tag-red { border-bottom: 2px solid var(--signal); background: transparent; color: var(--signal); }
+
+footer {
+  margin-top: 68px;
+  padding-top: 20px;
+  border-top: 3px solid var(--ink);
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.7;
+  break-inside: avoid-page;
+}
+footer p { margin: 4px 0; }
+footer .disclaimer strong { color: #514d46; }
+footer .provenance { font-variant-numeric: tabular-nums; letter-spacing: 0.015em; }
+
+@media (max-width: 720px) {
+  html { background: var(--paper); }
+  body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 18px 48px;
+    border: 0;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 1.76;
+  }
+  .report-header { margin-bottom: 36px; padding-top: 34px; padding-bottom: 20px; }
+  .report-header::before { top: -6px; width: 8px; height: 8px; }
+  .report-header h1 { font-size: 29px; letter-spacing: -0.025em; }
+  .meta { top: 11px; font-size: 10px; letter-spacing: 0.06em; }
+  h2 { margin-top: 44px; font-size: 22px; }
+  h3 { margin-top: 29px; font-size: 16.5px; }
+  .toc ul { columns: 1; }
+  .flow-lane { min-width: 0; flex-direction: column; gap: 8px; }
+  .flow-step { width: 100%; max-width: none; }
+  .flow-arrow { align-self: center; font-size: 0; }
+  .flow-arrow::before { content: "↓"; font-size: 16px; }
+  .org-chart { overflow-x: visible; }
+  .org-tree > li > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .org-node { min-width: 130px; }
+  table { min-width: 520px; font-size: 12px; }
+  thead th, tbody td { padding: 9px 10px; }
+}
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 17mm;
+}
+
+@media print {
+  :root { --measure: none; }
+  html { scroll-behavior: auto; background: #fff; }
+  body {
+    min-height: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #222;
+    background: #fff;
+    box-shadow: none;
+    font-size: 10.5pt;
+    line-height: 1.62;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .report-header { margin-bottom: 8mm; padding-top: 8mm; }
+  .report-header h1 { font-size: 25pt; }
+  .meta { top: 3mm; }
+  h2 { margin-top: 8mm; font-size: 15.5pt; }
+  h3 { font-size: 12pt; }
+  h2, h3, h4 { break-after: avoid-page; }
+  p, li { orphans: 3; widows: 3; }
+  a { color: inherit; text-decoration: none; }
+  .toc ul { columns: 2; }
+  .table-wrapper, .flow-diagram, .org-chart { overflow: visible; border-color: #777; box-shadow: none; }
+  .flow-lane { min-width: 0; gap: 2mm; }
+  .flow-step { min-width: 25mm; padding: 2.5mm 3mm; }
+  .flow-index { font-size: 7.5pt; }
+  .flow-label { font-size: 9pt; }
+  .org-tree > li > .org-root-node,
+  .org-tree > li > ul > li > .org-node { min-width: 28mm; }
+  table { min-width: 0; font-size: 8.3pt; }
+  thead { display: table-header-group; }
+  thead th { white-space: normal; overflow-wrap: anywhere; }
+  tr, img, blockquote, .highlight, .warning, pre, .codehilite,
+  .flow-diagram, .flow-step, .org-chart, .org-node { break-inside: avoid-page; }
+  tbody tr:hover { background: inherit; }
+  footer { margin-top: 10mm; }
+}
+
+</style></head><body class="profile-finance"><header class="report-header"><h1>2026-11-25 收盘总结</h1><div class="meta">2026-11-25 · 行情截止 2026-11-25T15:00:00+08:00 · 资讯截止 2026-11-25T15:00:00+08:00<br>2026-11-25 收盘复盘。通达信云端 MCP 收盘全扫 269 块耗时 2821 秒，打印阶段崩溃但 JSON 已落盘，其成分抽样返回的是指数代码，集中度不采信；268 块集中度改用 TQLEX 直连的 5216 只收盘横截面重算（零 MCP 配额）。指数与成交额取新浪 5m，板块主力净额取东财 bkzj 5 分钟采样（51 点），涨停池取东财 push2ex。板块名三套供应商不并表。 · 渲染 2026-11-25T17:44:05+08:00</div></header><main><section><h2>核心结论</h2><p>收盘把 14:00 的退潮推到底，且首次没有一块板块能自证：上证 3476.470、-2.03%，比今开 3522.588 低 1.31%；沪深 5216 只里涨 567、跌 4588，上涨占比 10.9%，全样本中位 -3.678%；深证成指与创业板指双双收在全天最低点，创业板指 -4.19%、科创50 -5.12%。268 个成分板块等权为正只剩 3 块，成分中位为正 0 块，上涨占比最高的仿制药也只有 49.3%，没有一块过半。成交 13831.0 亿，为昨日 16550.9 亿的 0.836。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a></p></section><section><h2>概念板块主力资金趋势</h2><p>2026-11-25 · 本机采样 09:30—14:55，共 49 个时点，单位亿元。东财日内累计净额按实际读取时刻绘制，供应商延迟未知。按最后一次采样选两端各四板块。</p><svg role="img" aria-label="板块主力净流入趋势，单位亿元" style="width:100%;height:auto" viewBox="0 0 900 320"><path d="M74 270.00H865" stroke="#d5d4ce"/><text x="66" y="274.00" text-anchor="end" font-size="12">-484.7</text><path d="M74 208.50H865" stroke="#d5d4ce"/><text x="66" y="212.50" text-anchor="end" font-size="12">-360.4</text><path d="M74 147.00H865" stroke="#d5d4ce"/><text x="66" y="151.00" text-anchor="end" font-size="12">-236.1</text><path d="M74 85.50H865" stroke="#d5d4ce"/><text x="66" y="89.50" text-anchor="end" font-size="12">-111.8</text><path d="M74 30.17H865" stroke="#d5d4ce"/><text x="66" y="34.17" text-anchor="end" font-size="12">0.0</text><path d="M74 24.00H865" stroke="#d5d4ce"/><text x="66" y="28.00" text-anchor="end" font-size="12">12.5</text><text x="74.0" y="296" text-anchor="middle" font-size="12">09:30</text><text x="172.9" y="296" text-anchor="middle" font-size="12">10:00</text><text x="271.8" y="296" text-anchor="middle" font-size="12">10:30</text><text x="370.6" y="296" text-anchor="middle" font-size="12">11:00</text><text x="469.5" y="296" text-anchor="middle" font-size="12">11:30</text><text x="584.9" y="296" text-anchor="middle" font-size="12">13:30</text><text x="683.7" y="296" text-anchor="middle" font-size="12">14:00</text><text x="782.6" y="296" text-anchor="middle" font-size="12">14:30</text><path fill="none" stroke="#aa321c" stroke-width="2" d="M74.00,30.17 L90.48,29.10 L106.96,28.38 L123.44,27.22 L139.92,27.22 L156.40,27.13 L172.88,26.92 L189.35,26.34 L205.83,25.82 L222.31,25.73 L238.79,25.57 L255.27,25.31 L271.75,25.27 L288.23,25.14 L304.71,25.15 L321.19,24.84 L337.67,24.70 L354.15,24.76 L370.62,24.68 L387.10,24.69 L403.58,24.72 L420.06,24.69 L436.54,24.66 L453.02,24.60 L469.50,24.37 M485.98,24.36 L502.46,24.31 L518.94,24.24 L535.42,24.24 L551.90,24.15 L568.38,24.00 L584.85,24.11 L601.33,24.16 L617.81,24.17 L634.29,24.15 L650.77,24.27 L667.25,24.38 L683.73,24.44 L700.21,24.65 L716.69,24.68 L733.17,24.67 L749.65,24.88 L766.12,25.03 L782.60,25.05 L799.08,24.99 L815.56,25.07 L832.04,25.26 L848.52,25.16 L865.00,24.60"/><circle cx="74.00" cy="30.17" r="2" fill="#aa321c"><title>新零售 09:30　+0.00 亿元</title></circle><circle cx="90.48" cy="29.10" r="2" fill="#aa321c"><title>新零售 09:35　+2.16 亿元</title></circle><circle cx="106.96" cy="28.38" r="2" fill="#aa321c"><title>新零售 09:40　+3.63 亿元</title></circle><circle cx="123.44" cy="27.22" r="2" fill="#aa321c"><title>新零售 09:45　+5.96 亿元</title></circle><circle cx="139.92" cy="27.22" r="2" fill="#aa321c"><title>新零售 09:50　+5.97 亿元</title></circle><circle cx="156.40" cy="27.13" r="2" fill="#aa321c"><title>新零售 09:55　+6.15 亿元</title></circle><circle cx="172.88" cy="26.92" r="2" fill="#aa321c"><title>新零售 10:00　+6.58 亿元</title></circle><circle cx="189.35" cy="26.34" r="2" fill="#aa321c"><title>新零售 10:05　+7.76 亿元</title></circle><circle cx="205.83" cy="25.82" r="2" fill="#aa321c"><title>新零售 10:10　+8.79 亿元</title></circle><circle cx="222.31" cy="25.73" r="2" fill="#aa321c"><title>新零售 10:15　+8.97 亿元</title></circle><circle cx="238.79" cy="25.57" r="2" fill="#aa321c"><title>新零售 10:20　+9.30 亿元</title></circle><circle cx="255.27" cy="25.31" r="2" fill="#aa321c"><title>新零售 10:25　+9.83 亿元</title></circle><circle cx="271.75" cy="25.27" r="2" fill="#aa321c"><title>新零售 10:30　+9.90 亿元</title></circle><circle cx="288.23" cy="25.14" r="2" fill="#aa321c"><title>新零售 10:35　+10.17 亿元</title></circle><circle cx="304.71" cy="25.15" r="2" fill="#aa321c"><title>新零售 10:40　+10.14 亿元</title></circle><circle cx="321.19" cy="24.84" r="2" fill="#aa321c"><title>新零售 10:45　+10.78 亿元</title></circle><circle cx="337.67" cy="24.70" r="2" fill="#aa321c"><title>新零售 10:50　+11.06 亿元</title></circle><circle cx="354.15" cy="24.76" r="2" fill="#aa321c"><title>新零售 10:55　+10.94 亿元</title></circle><circle cx="370.62" cy="24.68" r="2" fill="#aa321c"><title>新零售 11:00　+11.09 亿元</title></circle><circle cx="387.10" cy="24.69" r="2" fill="#aa321c"><title>新零售 11:05　+11.09 亿元</title></circle><circle cx="403.58" cy="24.72" r="2" fill="#aa321c"><title>新零售 11:10　+11.02 亿元</title></circle><circle cx="420.06" cy="24.69" r="2" fill="#aa321c"><title>新零售 11:15　+11.08 亿元</title></circle><circle cx="436.54" cy="24.66" r="2" fill="#aa321c"><title>新零售 11:20　+11.15 亿元</title></circle><circle cx="453.02" cy="24.60" r="2" fill="#aa321c"><title>新零售 11:25　+11.26 亿元</title></circle><circle cx="469.50" cy="24.37" r="2" fill="#aa321c"><title>新零售 11:30　+11.74 亿元</title></circle><circle cx="485.98" cy="24.36" r="2" fill="#aa321c"><title>新零售 13:00　+11.74 亿元</title></circle><circle cx="502.46" cy="24.31" r="2" fill="#aa321c"><title>新零售 13:05　+11.85 亿元</title></circle><circle cx="518.94" cy="24.24" r="2" fill="#aa321c"><title>新零售 13:10　+12.00 亿元</title></circle><circle cx="535.42" cy="24.24" r="2" fill="#aa321c"><title>新零售 13:15　+11.98 亿元</title></circle><circle cx="551.90" cy="24.15" r="2" fill="#aa321c"><title>新零售 13:20　+12.16 亿元</title></circle><circle cx="568.38" cy="24.00" r="2" fill="#aa321c"><title>新零售 13:25　+12.48 亿元</title></circle><circle cx="584.85" cy="24.11" r="2" fill="#aa321c"><title>新零售 13:30　+12.25 亿元</title></circle><circle cx="601.33" cy="24.16" r="2" fill="#aa321c"><title>新零售 13:35　+12.15 亿元</title></circle><circle cx="617.81" cy="24.17" r="2" fill="#aa321c"><title>新零售 13:40　+12.13 亿元</title></circle><circle cx="634.29" cy="24.15" r="2" fill="#aa321c"><title>新零售 13:45　+12.17 亿元</title></circle><circle cx="650.77" cy="24.27" r="2" fill="#aa321c"><title>新零售 13:50　+11.92 亿元</title></circle><circle cx="667.25" cy="24.38" r="2" fill="#aa321c"><title>新零售 13:55　+11.70 亿元</title></circle><circle cx="683.73" cy="24.44" r="2" fill="#aa321c"><title>新零售 14:00　+11.59 亿元</title></circle><circle cx="700.21" cy="24.65" r="2" fill="#aa321c"><title>新零售 14:05　+11.16 亿元</title></circle><circle cx="716.69" cy="24.68" r="2" fill="#aa321c"><title>新零售 14:10　+11.10 亿元</title></circle><circle cx="733.17" cy="24.67" r="2" fill="#aa321c"><title>新零售 14:15　+11.11 亿元</title></circle><circle cx="749.65" cy="24.88" r="2" fill="#aa321c"><title>新零售 14:20　+10.69 亿元</title></circle><circle cx="766.12" cy="25.03" r="2" fill="#aa321c"><title>新零售 14:25　+10.40 亿元</title></circle><circle cx="782.60" cy="25.05" r="2" fill="#aa321c"><title>新零售 14:30　+10.36 亿元</title></circle><circle cx="799.08" cy="24.99" r="2" fill="#aa321c"><title>新零售 14:35　+10.48 亿元</title></circle><circle cx="815.56" cy="25.07" r="2" fill="#aa321c"><title>新零售 14:40　+10.31 亿元</title></circle><circle cx="832.04" cy="25.26" r="2" fill="#aa321c"><title>新零售 14:45　+9.92 亿元</title></circle><circle cx="848.52" cy="25.16" r="2" fill="#aa321c"><title>新零售 14:50　+10.14 亿元</title></circle><circle cx="865.00" cy="24.60" r="2" fill="#aa321c"><title>新零售 14:55　+11.27 亿元</title></circle><path fill="none" stroke="#c26218" stroke-width="2" d="M74.00,30.17 L90.48,29.08 L106.96,28.46 L123.44,28.07 L139.92,27.90 L156.40,27.87 L172.88,27.47 L189.35,27.07 L205.83,26.85 L222.31,26.76 L238.79,26.72 L255.27,26.49 L271.75,26.18 L288.23,25.77 L304.71,25.64 L321.19,25.50 L337.67,25.30 L354.15,25.20 L370.62,25.11 L387.10,25.06 L403.58,25.05 L420.06,25.03 L436.54,25.04 L453.02,25.01 L469.50,25.01 M485.98,25.02 L502.46,24.98 L518.94,24.96 L535.42,24.89 L551.90,24.84 L568.38,24.86 L584.85,24.88 L601.33,24.89 L617.81,24.91 L634.29,24.96 L650.77,24.94 L667.25,24.93 L683.73,24.97 L700.21,25.04 L716.69,25.08 L733.17,25.19 L749.65,25.22 L766.12,25.16 L782.60,25.29 L799.08,25.33 L815.56,25.42 L832.04,25.47 L848.52,25.64 L865.00,25.76"/><circle cx="74.00" cy="30.17" r="2" fill="#c26218"><title>流感 09:30　+0.00 亿元</title></circle><circle cx="90.48" cy="29.08" r="2" fill="#c26218"><title>流感 09:35　+2.21 亿元</title></circle><circle cx="106.96" cy="28.46" r="2" fill="#c26218"><title>流感 09:40　+3.47 亿元</title></circle><circle cx="123.44" cy="28.07" r="2" fill="#c26218"><title>流感 09:45　+4.24 亿元</title></circle><circle cx="139.92" cy="27.90" r="2" fill="#c26218"><title>流感 09:50　+4.60 亿元</title></circle><circle cx="156.40" cy="27.87" r="2" fill="#c26218"><title>流感 09:55　+4.66 亿元</title></circle><circle cx="172.88" cy="27.47" r="2" fill="#c26218"><title>流感 10:00　+5.46 亿元</title></circle><circle cx="189.35" cy="27.07" r="2" fill="#c26218"><title>流感 10:05　+6.26 亿元</title></circle><circle cx="205.83" cy="26.85" r="2" fill="#c26218"><title>流感 10:10　+6.72 亿元</title></circle><circle cx="222.31" cy="26.76" r="2" fill="#c26218"><title>流感 10:15　+6.90 亿元</title></circle><circle cx="238.79" cy="26.72" r="2" fill="#c26218"><title>流感 10:20　+6.98 亿元</title></circle><circle cx="255.27" cy="26.49" r="2" fill="#c26218"><title>流感 10:25　+7.45 亿元</title></circle><circle cx="271.75" cy="26.18" r="2" fill="#c26218"><title>流感 10:30　+8.07 亿元</title></circle><circle cx="288.23" cy="25.77" r="2" fill="#c26218"><title>流感 10:35　+8.91 亿元</title></circle><circle cx="304.71" cy="25.64" r="2" fill="#c26218"><title>流感 10:40　+9.16 亿元</title></circle><circle cx="321.19" cy="25.50" r="2" fill="#c26218"><title>流感 10:45　+9.44 亿元</title></circle><circle cx="337.67" cy="25.30" r="2" fill="#c26218"><title>流感 10:50　+9.86 亿元</title></circle><circle cx="354.15" cy="25.20" r="2" fill="#c26218"><title>流感 10:55　+10.04 亿元</title></circle><circle cx="370.62" cy="25.11" r="2" fill="#c26218"><title>流感 11:00　+10.23 亿元</title></circle><circle cx="387.10" cy="25.06" r="2" fill="#c26218"><title>流感 11:05　+10.33 亿元</title></circle><circle cx="403.58" cy="25.05" r="2" fill="#c26218"><title>流感 11:10　+10.35 亿元</title></circle><circle cx="420.06" cy="25.03" r="2" fill="#c26218"><title>流感 11:15　+10.39 亿元</title></circle><circle cx="436.54" cy="25.04" r="2" fill="#c26218"><title>流感 11:20　+10.38 亿元</title></circle><circle cx="453.02" cy="25.01" r="2" fill="#c26218"><title>流感 11:25　+10.44 亿元</title></circle><circle cx="469.50" cy="25.01" r="2" fill="#c26218"><title>流感 11:30　+10.43 亿元</title></circle><circle cx="485.98" cy="25.02" r="2" fill="#c26218"><title>流感 13:00　+10.42 亿元</title></circle><circle cx="502.46" cy="24.98" r="2" fill="#c26218"><title>流感 13:05　+10.50 亿元</title></circle><circle cx="518.94" cy="24.96" r="2" fill="#c26218"><title>流感 13:10　+10.54 亿元</title></circle><circle cx="535.42" cy="24.89" r="2" fill="#c26218"><title>流感 13:15　+10.68 亿元</title></circle><circle cx="551.90" cy="24.84" r="2" fill="#c26218"><title>流感 13:20　+10.77 亿元</title></circle><circle cx="568.38" cy="24.86" r="2" fill="#c26218"><title>流感 13:25　+10.74 亿元</title></circle><circle cx="584.85" cy="24.88" r="2" fill="#c26218"><title>流感 13:30　+10.69 亿元</title></circle><circle cx="601.33" cy="24.89" r="2" fill="#c26218"><title>流感 13:35　+10.67 亿元</title></circle><circle cx="617.81" cy="24.91" r="2" fill="#c26218"><title>流感 13:40　+10.63 亿元</title></circle><circle cx="634.29" cy="24.96" r="2" fill="#c26218"><title>流感 13:45　+10.54 亿元</title></circle><circle cx="650.77" cy="24.94" r="2" fill="#c26218"><title>流感 13:50　+10.58 亿元</title></circle><circle cx="667.25" cy="24.93" r="2" fill="#c26218"><title>流感 13:55　+10.60 亿元</title></circle><circle cx="683.73" cy="24.97" r="2" fill="#c26218"><title>流感 14:00　+10.51 亿元</title></circle><circle cx="700.21" cy="25.04" r="2" fill="#c26218"><title>流感 14:05　+10.37 亿元</title></circle><circle cx="716.69" cy="25.08" r="2" fill="#c26218"><title>流感 14:10　+10.28 亿元</title></circle><circle cx="733.17" cy="25.19" r="2" fill="#c26218"><title>流感 14:15　+10.06 亿元</title></circle><circle cx="749.65" cy="25.22" r="2" fill="#c26218"><title>流感 14:20　+10.01 亿元</title></circle><circle cx="766.12" cy="25.16" r="2" fill="#c26218"><title>流感 14:25　+10.12 亿元</title></circle><circle cx="782.60" cy="25.29" r="2" fill="#c26218"><title>流感 14:30　+9.86 亿元</title></circle><circle cx="799.08" cy="25.33" r="2" fill="#c26218"><title>流感 14:35　+9.78 亿元</title></circle><circle cx="815.56" cy="25.42" r="2" fill="#c26218"><title>流感 14:40　+9.61 亿元</title></circle><circle cx="832.04" cy="25.47" r="2" fill="#c26218"><title>流感 14:45　+9.50 亿元</title></circle><circle cx="848.52" cy="25.64" r="2" fill="#c26218"><title>流感 14:50　+9.16 亿元</title></circle><circle cx="865.00" cy="25.76" r="2" fill="#c26218"><title>流感 14:55　+8.92 亿元</title></circle><path fill="none" stroke="#ba8722" stroke-width="2" d="M74.00,30.17 L90.48,30.30 L106.96,30.01 L123.44,30.15 L139.92,30.11 L156.40,30.23 L172.88,28.86 L189.35,28.17 L205.83,27.78 L222.31,27.39 L238.79,27.29 L255.27,27.13 L271.75,26.71 L288.23,26.17 L304.71,25.94 L321.19,25.84 L337.67,25.63 L354.15,25.56 L370.62,25.47 L387.10,25.38 L403.58,25.35 L420.06,25.33 L436.54,25.34 L453.02,25.29 L469.50,25.29 M485.98,25.29 L502.46,25.25 L518.94,25.14 L535.42,25.01 L551.90,25.04 L568.38,25.02 L584.85,24.99 L601.33,24.89 L617.81,24.89 L634.29,24.93 L650.77,24.95 L667.25,25.01 L683.73,24.86 L700.21,24.95 L716.69,24.99 L733.17,25.06 L749.65,25.09 L766.12,25.07 L782.60,25.24 L799.08,25.20 L815.56,25.34 L832.04,25.36 L848.52,25.58 L865.00,25.94"/><circle cx="74.00" cy="30.17" r="2" fill="#ba8722"><title>中药概念 09:30　+0.00 亿元</title></circle><circle cx="90.48" cy="30.30" r="2" fill="#ba8722"><title>中药概念 09:35　-0.26 亿元</title></circle><circle cx="106.96" cy="30.01" r="2" fill="#ba8722"><title>中药概念 09:40　+0.33 亿元</title></circle><circle cx="123.44" cy="30.15" r="2" fill="#ba8722"><title>中药概念 09:45　+0.04 亿元</title></circle><circle cx="139.92" cy="30.11" r="2" fill="#ba8722"><title>中药概念 09:50　+0.13 亿元</title></circle><circle cx="156.40" cy="30.23" r="2" fill="#ba8722"><title>中药概念 09:55　-0.11 亿元</title></circle><circle cx="172.88" cy="28.86" r="2" fill="#ba8722"><title>中药概念 10:00　+2.66 亿元</title></circle><circle cx="189.35" cy="28.17" r="2" fill="#ba8722"><title>中药概念 10:05　+4.05 亿元</title></circle><circle cx="205.83" cy="27.78" r="2" fill="#ba8722"><title>中药概念 10:10　+4.84 亿元</title></circle><circle cx="222.31" cy="27.39" r="2" fill="#ba8722"><title>中药概念 10:15　+5.62 亿元</title></circle><circle cx="238.79" cy="27.29" r="2" fill="#ba8722"><title>中药概念 10:20　+5.83 亿元</title></circle><circle cx="255.27" cy="27.13" r="2" fill="#ba8722"><title>中药概念 10:25　+6.15 亿元</title></circle><circle cx="271.75" cy="26.71" r="2" fill="#ba8722"><title>中药概念 10:30　+6.99 亿元</title></circle><circle cx="288.23" cy="26.17" r="2" fill="#ba8722"><title>中药概念 10:35　+8.09 亿元</title></circle><circle cx="304.71" cy="25.94" r="2" fill="#ba8722"><title>中药概念 10:40　+8.55 亿元</title></circle><circle cx="321.19" cy="25.84" r="2" fill="#ba8722"><title>中药概念 10:45　+8.75 亿元</title></circle><circle cx="337.67" cy="25.63" r="2" fill="#ba8722"><title>中药概念 10:50　+9.17 亿元</title></circle><circle cx="354.15" cy="25.56" r="2" fill="#ba8722"><title>中药概念 10:55　+9.32 亿元</title></circle><circle cx="370.62" cy="25.47" r="2" fill="#ba8722"><title>中药概念 11:00　+9.50 亿元</title></circle><circle cx="387.10" cy="25.38" r="2" fill="#ba8722"><title>中药概念 11:05　+9.68 亿元</title></circle><circle cx="403.58" cy="25.35" r="2" fill="#ba8722"><title>中药概念 11:10　+9.75 亿元</title></circle><circle cx="420.06" cy="25.33" r="2" fill="#ba8722"><title>中药概念 11:15　+9.80 亿元</title></circle><circle cx="436.54" cy="25.34" r="2" fill="#ba8722"><title>中药概念 11:20　+9.77 亿元</title></circle><circle cx="453.02" cy="25.29" r="2" fill="#ba8722"><title>中药概念 11:25　+9.86 亿元</title></circle><circle cx="469.50" cy="25.29" r="2" fill="#ba8722"><title>中药概念 11:30　+9.86 亿元</title></circle><circle cx="485.98" cy="25.29" r="2" fill="#ba8722"><title>中药概念 13:00　+9.86 亿元</title></circle><circle cx="502.46" cy="25.25" r="2" fill="#ba8722"><title>中药概念 13:05　+9.95 亿元</title></circle><circle cx="518.94" cy="25.14" r="2" fill="#ba8722"><title>中药概念 13:10　+10.17 亿元</title></circle><circle cx="535.42" cy="25.01" r="2" fill="#ba8722"><title>中药概念 13:15　+10.43 亿元</title></circle><circle cx="551.90" cy="25.04" r="2" fill="#ba8722"><title>中药概念 13:20　+10.38 亿元</title></circle><circle cx="568.38" cy="25.02" r="2" fill="#ba8722"><title>中药概念 13:25　+10.41 亿元</title></circle><circle cx="584.85" cy="24.99" r="2" fill="#ba8722"><title>中药概念 13:30　+10.47 亿元</title></circle><circle cx="601.33" cy="24.89" r="2" fill="#ba8722"><title>中药概念 13:35　+10.67 亿元</title></circle><circle cx="617.81" cy="24.89" r="2" fill="#ba8722"><title>中药概念 13:40　+10.69 亿元</title></circle><circle cx="634.29" cy="24.93" r="2" fill="#ba8722"><title>中药概念 13:45　+10.59 亿元</title></circle><circle cx="650.77" cy="24.95" r="2" fill="#ba8722"><title>中药概念 13:50　+10.55 亿元</title></circle><circle cx="667.25" cy="25.01" r="2" fill="#ba8722"><title>中药概念 13:55　+10.43 亿元</title></circle><circle cx="683.73" cy="24.86" r="2" fill="#ba8722"><title>中药概念 14:00　+10.74 亿元</title></circle><circle cx="700.21" cy="24.95" r="2" fill="#ba8722"><title>中药概念 14:05　+10.55 亿元</title></circle><circle cx="716.69" cy="24.99" r="2" fill="#ba8722"><title>中药概念 14:10　+10.48 亿元</title></circle><circle cx="733.17" cy="25.06" r="2" fill="#ba8722"><title>中药概念 14:15　+10.33 亿元</title></circle><circle cx="749.65" cy="25.09" r="2" fill="#ba8722"><title>中药概念 14:20　+10.28 亿元</title></circle><circle cx="766.12" cy="25.07" r="2" fill="#ba8722"><title>中药概念 14:25　+10.31 亿元</title></circle><circle cx="782.60" cy="25.24" r="2" fill="#ba8722"><title>中药概念 14:30　+9.97 亿元</title></circle><circle cx="799.08" cy="25.20" r="2" fill="#ba8722"><title>中药概念 14:35　+10.05 亿元</title></circle><circle cx="815.56" cy="25.34" r="2" fill="#ba8722"><title>中药概念 14:40　+9.77 亿元</title></circle><circle cx="832.04" cy="25.36" r="2" fill="#ba8722"><title>中药概念 14:45　+9.72 亿元</title></circle><circle cx="848.52" cy="25.58" r="2" fill="#ba8722"><title>中药概念 14:50　+9.29 亿元</title></circle><circle cx="865.00" cy="25.94" r="2" fill="#ba8722"><title>中药概念 14:55　+8.55 亿元</title></circle><path fill="none" stroke="#a84a66" stroke-width="2" d="M74.00,30.17 L90.48,29.25 L106.96,29.08 L123.44,28.67 L139.92,28.60 L156.40,28.51 L172.88,28.42 L189.35,28.32 L205.83,28.27 L222.31,28.26 L238.79,28.30 L255.27,28.23 L271.75,28.11 L288.23,28.00 L304.71,27.86 L321.19,27.63 L337.67,27.39 L354.15,27.43 L370.62,27.38 L387.10,27.37 L403.58,27.36 L420.06,27.33 L436.54,27.33 L453.02,27.30 L469.50,27.29 M485.98,27.29 L502.46,27.25 L518.94,27.12 L535.42,27.08 L551.90,27.03 L568.38,26.97 L584.85,26.92 L601.33,26.82 L617.81,26.87 L634.29,26.72 L650.77,26.78 L667.25,26.80 L683.73,26.85 L700.21,26.89 L716.69,26.95 L733.17,26.95 L749.65,26.85 L766.12,26.78 L782.60,26.80 L799.08,26.85 L815.56,26.99 L832.04,27.02 L848.52,27.31 L865.00,26.70"/><circle cx="74.00" cy="30.17" r="2" fill="#a84a66"><title>白酒 09:30　+0.00 亿元</title></circle><circle cx="90.48" cy="29.25" r="2" fill="#a84a66"><title>白酒 09:35　+1.87 亿元</title></circle><circle cx="106.96" cy="29.08" r="2" fill="#a84a66"><title>白酒 09:40　+2.20 亿元</title></circle><circle cx="123.44" cy="28.67" r="2" fill="#a84a66"><title>白酒 09:45　+3.04 亿元</title></circle><circle cx="139.92" cy="28.60" r="2" fill="#a84a66"><title>白酒 09:50　+3.17 亿元</title></circle><circle cx="156.40" cy="28.51" r="2" fill="#a84a66"><title>白酒 09:55　+3.36 亿元</title></circle><circle cx="172.88" cy="28.42" r="2" fill="#a84a66"><title>白酒 10:00　+3.54 亿元</title></circle><circle cx="189.35" cy="28.32" r="2" fill="#a84a66"><title>白酒 10:05　+3.75 亿元</title></circle><circle cx="205.83" cy="28.27" r="2" fill="#a84a66"><title>白酒 10:10　+3.86 亿元</title></circle><circle cx="222.31" cy="28.26" r="2" fill="#a84a66"><title>白酒 10:15　+3.86 亿元</title></circle><circle cx="238.79" cy="28.30" r="2" fill="#a84a66"><title>白酒 10:20　+3.79 亿元</title></circle><circle cx="255.27" cy="28.23" r="2" fill="#a84a66"><title>白酒 10:25　+3.92 亿元</title></circle><circle cx="271.75" cy="28.11" r="2" fill="#a84a66"><title>白酒 10:30　+4.17 亿元</title></circle><circle cx="288.23" cy="28.00" r="2" fill="#a84a66"><title>白酒 10:35　+4.39 亿元</title></circle><circle cx="304.71" cy="27.86" r="2" fill="#a84a66"><title>白酒 10:40　+4.68 亿元</title></circle><circle cx="321.19" cy="27.63" r="2" fill="#a84a66"><title>白酒 10:45　+5.13 亿元</title></circle><circle cx="337.67" cy="27.39" r="2" fill="#a84a66"><title>白酒 10:50　+5.62 亿元</title></circle><circle cx="354.15" cy="27.43" r="2" fill="#a84a66"><title>白酒 10:55　+5.54 亿元</title></circle><circle cx="370.62" cy="27.38" r="2" fill="#a84a66"><title>白酒 11:00　+5.65 亿元</title></circle><circle cx="387.10" cy="27.37" r="2" fill="#a84a66"><title>白酒 11:05　+5.66 亿元</title></circle><circle cx="403.58" cy="27.36" r="2" fill="#a84a66"><title>白酒 11:10　+5.68 亿元</title></circle><circle cx="420.06" cy="27.33" r="2" fill="#a84a66"><title>白酒 11:15　+5.74 亿元</title></circle><circle cx="436.54" cy="27.33" r="2" fill="#a84a66"><title>白酒 11:20　+5.75 亿元</title></circle><circle cx="453.02" cy="27.30" r="2" fill="#a84a66"><title>白酒 11:25　+5.81 亿元</title></circle><circle cx="469.50" cy="27.29" r="2" fill="#a84a66"><title>白酒 11:30　+5.83 亿元</title></circle><circle cx="485.98" cy="27.29" r="2" fill="#a84a66"><title>白酒 13:00　+5.82 亿元</title></circle><circle cx="502.46" cy="27.25" r="2" fill="#a84a66"><title>白酒 13:05　+5.90 亿元</title></circle><circle cx="518.94" cy="27.12" r="2" fill="#a84a66"><title>白酒 13:10　+6.16 亿元</title></circle><circle cx="535.42" cy="27.08" r="2" fill="#a84a66"><title>白酒 13:15　+6.26 亿元</title></circle><circle cx="551.90" cy="27.03" r="2" fill="#a84a66"><title>白酒 13:20　+6.36 亿元</title></circle><circle cx="568.38" cy="26.97" r="2" fill="#a84a66"><title>白酒 13:25　+6.47 亿元</title></circle><circle cx="584.85" cy="26.92" r="2" fill="#a84a66"><title>白酒 13:30　+6.58 亿元</title></circle><circle cx="601.33" cy="26.82" r="2" fill="#a84a66"><title>白酒 13:35　+6.77 亿元</title></circle><circle cx="617.81" cy="26.87" r="2" fill="#a84a66"><title>白酒 13:40　+6.67 亿元</title></circle><circle cx="634.29" cy="26.72" r="2" fill="#a84a66"><title>白酒 13:45　+6.97 亿元</title></circle><circle cx="650.77" cy="26.78" r="2" fill="#a84a66"><title>白酒 13:50　+6.85 亿元</title></circle><circle cx="667.25" cy="26.80" r="2" fill="#a84a66"><title>白酒 13:55　+6.82 亿元</title></circle><circle cx="683.73" cy="26.85" r="2" fill="#a84a66"><title>白酒 14:00　+6.72 亿元</title></circle><circle cx="700.21" cy="26.89" r="2" fill="#a84a66"><title>白酒 14:05　+6.63 亿元</title></circle><circle cx="716.69" cy="26.95" r="2" fill="#a84a66"><title>白酒 14:10　+6.51 亿元</title></circle><circle cx="733.17" cy="26.95" r="2" fill="#a84a66"><title>白酒 14:15　+6.51 亿元</title></circle><circle cx="749.65" cy="26.85" r="2" fill="#a84a66"><title>白酒 14:20　+6.71 亿元</title></circle><circle cx="766.12" cy="26.78" r="2" fill="#a84a66"><title>白酒 14:25　+6.87 亿元</title></circle><circle cx="782.60" cy="26.80" r="2" fill="#a84a66"><title>白酒 14:30　+6.82 亿元</title></circle><circle cx="799.08" cy="26.85" r="2" fill="#a84a66"><title>白酒 14:35　+6.71 亿元</title></circle><circle cx="815.56" cy="26.99" r="2" fill="#a84a66"><title>白酒 14:40　+6.43 亿元</title></circle><circle cx="832.04" cy="27.02" r="2" fill="#a84a66"><title>白酒 14:45　+6.38 亿元</title></circle><circle cx="848.52" cy="27.31" r="2" fill="#a84a66"><title>白酒 14:50　+5.79 亿元</title></circle><circle cx="865.00" cy="26.70" r="2" fill="#a84a66"><title>白酒 14:55　+7.02 亿元</title></circle><path fill="none" stroke="#007a60" stroke-width="2" d="M74.00,30.17 L90.48,41.68 L106.96,44.40 L123.44,46.94 L139.92,49.04 L156.40,51.37 L172.88,51.31 L189.35,51.36 L205.83,50.35 L222.31,50.56 L238.79,51.66 L255.27,52.85 L271.75,52.89 L288.23,52.73 L304.71,54.37 L321.19,55.00 L337.67,55.59 L354.15,58.75 L370.62,61.05 L387.10,62.13 L403.58,62.13 L420.06,62.39 L436.54,62.00 L453.02,61.75 L469.50,61.29 M485.98,61.33 L502.46,64.70 L518.94,67.07 L535.42,69.78 L551.90,73.72 L568.38,74.85 L584.85,77.34 L601.33,80.11 L617.81,82.70 L634.29,85.50 L650.77,87.82 L667.25,90.18 L683.73,92.64 L700.21,98.14 L716.69,102.50 L733.17,105.31 L749.65,107.05 L766.12,109.15 L782.60,112.58 L799.08,114.48 L815.56,119.80 L832.04,127.03 L848.52,137.63 L865.00,155.90"/><circle cx="74.00" cy="30.17" r="2" fill="#007a60"><title>沪股通 09:30　+0.00 亿元</title></circle><circle cx="90.48" cy="41.68" r="2" fill="#007a60"><title>沪股通 09:35　-23.27 亿元</title></circle><circle cx="106.96" cy="44.40" r="2" fill="#007a60"><title>沪股通 09:40　-28.75 亿元</title></circle><circle cx="123.44" cy="46.94" r="2" fill="#007a60"><title>沪股通 09:45　-33.88 亿元</title></circle><circle cx="139.92" cy="49.04" r="2" fill="#007a60"><title>沪股通 09:50　-38.13 亿元</title></circle><circle cx="156.40" cy="51.37" r="2" fill="#007a60"><title>沪股通 09:55　-42.85 亿元</title></circle><circle cx="172.88" cy="51.31" r="2" fill="#007a60"><title>沪股通 10:00　-42.73 亿元</title></circle><circle cx="189.35" cy="51.36" r="2" fill="#007a60"><title>沪股通 10:05　-42.81 亿元</title></circle><circle cx="205.83" cy="50.35" r="2" fill="#007a60"><title>沪股通 10:10　-40.79 亿元</title></circle><circle cx="222.31" cy="50.56" r="2" fill="#007a60"><title>沪股通 10:15　-41.21 亿元</title></circle><circle cx="238.79" cy="51.66" r="2" fill="#007a60"><title>沪股通 10:20　-43.44 亿元</title></circle><circle cx="255.27" cy="52.85" r="2" fill="#007a60"><title>沪股通 10:25　-45.84 亿元</title></circle><circle cx="271.75" cy="52.89" r="2" fill="#007a60"><title>沪股通 10:30　-45.91 亿元</title></circle><circle cx="288.23" cy="52.73" r="2" fill="#007a60"><title>沪股通 10:35　-45.60 亿元</title></circle><circle cx="304.71" cy="54.37" r="2" fill="#007a60"><title>沪股通 10:40　-48.90 亿元</title></circle><circle cx="321.19" cy="55.00" r="2" fill="#007a60"><title>沪股通 10:45　-50.18 亿元</title></circle><circle cx="337.67" cy="55.59" r="2" fill="#007a60"><title>沪股通 10:50　-51.37 亿元</title></circle><circle cx="354.15" cy="58.75" r="2" fill="#007a60"><title>沪股通 10:55　-57.76 亿元</title></circle><circle cx="370.62" cy="61.05" r="2" fill="#007a60"><title>沪股通 11:00　-62.41 亿元</title></circle><circle cx="387.10" cy="62.13" r="2" fill="#007a60"><title>沪股通 11:05　-64.58 亿元</title></circle><circle cx="403.58" cy="62.13" r="2" fill="#007a60"><title>沪股通 11:10　-64.60 亿元</title></circle><circle cx="420.06" cy="62.39" r="2" fill="#007a60"><title>沪股通 11:15　-65.11 亿元</title></circle><circle cx="436.54" cy="62.00" r="2" fill="#007a60"><title>沪股通 11:20　-64.34 亿元</title></circle><circle cx="453.02" cy="61.75" r="2" fill="#007a60"><title>沪股通 11:25　-63.83 亿元</title></circle><circle cx="469.50" cy="61.29" r="2" fill="#007a60"><title>沪股通 11:30　-62.89 亿元</title></circle><circle cx="485.98" cy="61.33" r="2" fill="#007a60"><title>沪股通 13:00　-62.98 亿元</title></circle><circle cx="502.46" cy="64.70" r="2" fill="#007a60"><title>沪股通 13:05　-69.78 亿元</title></circle><circle cx="518.94" cy="67.07" r="2" fill="#007a60"><title>沪股通 13:10　-74.57 亿元</title></circle><circle cx="535.42" cy="69.78" r="2" fill="#007a60"><title>沪股通 13:15　-80.06 亿元</title></circle><circle cx="551.90" cy="73.72" r="2" fill="#007a60"><title>沪股通 13:20　-88.01 亿元</title></circle><circle cx="568.38" cy="74.85" r="2" fill="#007a60"><title>沪股通 13:25　-90.31 亿元</title></circle><circle cx="584.85" cy="77.34" r="2" fill="#007a60"><title>沪股通 13:30　-95.34 亿元</title></circle><circle cx="601.33" cy="80.11" r="2" fill="#007a60"><title>沪股通 13:35　-100.93 亿元</title></circle><circle cx="617.81" cy="82.70" r="2" fill="#007a60"><title>沪股通 13:40　-106.16 亿元</title></circle><circle cx="634.29" cy="85.50" r="2" fill="#007a60"><title>沪股通 13:45　-111.82 亿元</title></circle><circle cx="650.77" cy="87.82" r="2" fill="#007a60"><title>沪股通 13:50　-116.51 亿元</title></circle><circle cx="667.25" cy="90.18" r="2" fill="#007a60"><title>沪股通 13:55　-121.29 亿元</title></circle><circle cx="683.73" cy="92.64" r="2" fill="#007a60"><title>沪股通 14:00　-126.26 亿元</title></circle><circle cx="700.21" cy="98.14" r="2" fill="#007a60"><title>沪股通 14:05　-137.38 亿元</title></circle><circle cx="716.69" cy="102.50" r="2" fill="#007a60"><title>沪股通 14:10　-146.20 亿元</title></circle><circle cx="733.17" cy="105.31" r="2" fill="#007a60"><title>沪股通 14:15　-151.88 亿元</title></circle><circle cx="749.65" cy="107.05" r="2" fill="#007a60"><title>沪股通 14:20　-155.39 亿元</title></circle><circle cx="766.12" cy="109.15" r="2" fill="#007a60"><title>沪股通 14:25　-159.64 亿元</title></circle><circle cx="782.60" cy="112.58" r="2" fill="#007a60"><title>沪股通 14:30　-166.56 亿元</title></circle><circle cx="799.08" cy="114.48" r="2" fill="#007a60"><title>沪股通 14:35　-170.40 亿元</title></circle><circle cx="815.56" cy="119.80" r="2" fill="#007a60"><title>沪股通 14:40　-181.15 亿元</title></circle><circle cx="832.04" cy="127.03" r="2" fill="#007a60"><title>沪股通 14:45　-195.78 亿元</title></circle><circle cx="848.52" cy="137.63" r="2" fill="#007a60"><title>沪股通 14:50　-217.19 亿元</title></circle><circle cx="865.00" cy="155.90" r="2" fill="#007a60"><title>沪股通 14:55　-254.12 亿元</title></circle><path fill="none" stroke="#28798d" stroke-width="2" d="M74.00,30.17 L90.48,46.55 L106.96,51.70 L123.44,54.53 L139.92,54.65 L156.40,56.28 L172.88,56.01 L189.35,57.00 L205.83,54.98 L222.31,55.27 L238.79,56.76 L255.27,59.26 L271.75,60.13 L288.23,60.96 L304.71,63.09 L321.19,62.99 L337.67,63.88 L354.15,67.70 L370.62,70.50 L387.10,72.32 L403.58,71.82 L420.06,71.74 L436.54,71.43 L453.02,70.96 L469.50,70.50 M485.98,70.54 L502.46,76.36 L518.94,80.23 L535.42,84.51 L551.90,90.67 L568.38,92.31 L584.85,95.63 L601.33,99.20 L617.81,102.53 L634.29,105.83 L650.77,108.35 L667.25,110.96 L683.73,114.15 L700.21,121.44 L716.69,126.98 L733.17,131.12 L749.65,132.92 L766.12,135.38 L782.60,139.97 L799.08,142.63 L815.56,149.06 L832.04,157.04 L848.52,166.55 L865.00,179.17"/><circle cx="74.00" cy="30.17" r="2" fill="#28798d"><title>MSCI中国 09:30　+0.00 亿元</title></circle><circle cx="90.48" cy="46.55" r="2" fill="#28798d"><title>MSCI中国 09:35　-33.11 亿元</title></circle><circle cx="106.96" cy="51.70" r="2" fill="#28798d"><title>MSCI中国 09:40　-43.52 亿元</title></circle><circle cx="123.44" cy="54.53" r="2" fill="#28798d"><title>MSCI中国 09:45　-49.22 亿元</title></circle><circle cx="139.92" cy="54.65" r="2" fill="#28798d"><title>MSCI中国 09:50　-49.47 亿元</title></circle><circle cx="156.40" cy="56.28" r="2" fill="#28798d"><title>MSCI中国 09:55　-52.77 亿元</title></circle><circle cx="172.88" cy="56.01" r="2" fill="#28798d"><title>MSCI中国 10:00　-52.23 亿元</title></circle><circle cx="189.35" cy="57.00" r="2" fill="#28798d"><title>MSCI中国 10:05　-54.22 亿元</title></circle><circle cx="205.83" cy="54.98" r="2" fill="#28798d"><title>MSCI中国 10:10　-50.14 亿元</title></circle><circle cx="222.31" cy="55.27" r="2" fill="#28798d"><title>MSCI中国 10:15　-50.73 亿元</title></circle><circle cx="238.79" cy="56.76" r="2" fill="#28798d"><title>MSCI中国 10:20　-53.74 亿元</title></circle><circle cx="255.27" cy="59.26" r="2" fill="#28798d"><title>MSCI中国 10:25　-58.79 亿元</title></circle><circle cx="271.75" cy="60.13" r="2" fill="#28798d"><title>MSCI中国 10:30　-60.55 亿元</title></circle><circle cx="288.23" cy="60.96" r="2" fill="#28798d"><title>MSCI中国 10:35　-62.23 亿元</title></circle><circle cx="304.71" cy="63.09" r="2" fill="#28798d"><title>MSCI中国 10:40　-66.53 亿元</title></circle><circle cx="321.19" cy="62.99" r="2" fill="#28798d"><title>MSCI中国 10:45　-66.33 亿元</title></circle><circle cx="337.67" cy="63.88" r="2" fill="#28798d"><title>MSCI中国 10:50　-68.13 亿元</title></circle><circle cx="354.15" cy="67.70" r="2" fill="#28798d"><title>MSCI中国 10:55　-75.85 亿元</title></circle><circle cx="370.62" cy="70.50" r="2" fill="#28798d"><title>MSCI中国 11:00　-81.51 亿元</title></circle><circle cx="387.10" cy="72.32" r="2" fill="#28798d"><title>MSCI中国 11:05　-85.20 亿元</title></circle><circle cx="403.58" cy="71.82" r="2" fill="#28798d"><title>MSCI中国 11:10　-84.17 亿元</title></circle><circle cx="420.06" cy="71.74" r="2" fill="#28798d"><title>MSCI中国 11:15　-84.02 亿元</title></circle><circle cx="436.54" cy="71.43" r="2" fill="#28798d"><title>MSCI中国 11:20　-83.39 亿元</title></circle><circle cx="453.02" cy="70.96" r="2" fill="#28798d"><title>MSCI中国 11:25　-82.44 亿元</title></circle><circle cx="469.50" cy="70.50" r="2" fill="#28798d"><title>MSCI中国 11:30　-81.51 亿元</title></circle><circle cx="485.98" cy="70.54" r="2" fill="#28798d"><title>MSCI中国 13:00　-81.60 亿元</title></circle><circle cx="502.46" cy="76.36" r="2" fill="#28798d"><title>MSCI中国 13:05　-93.35 亿元</title></circle><circle cx="518.94" cy="80.23" r="2" fill="#28798d"><title>MSCI中国 13:10　-101.18 亿元</title></circle><circle cx="535.42" cy="84.51" r="2" fill="#28798d"><title>MSCI中国 13:15　-109.84 亿元</title></circle><circle cx="551.90" cy="90.67" r="2" fill="#28798d"><title>MSCI中国 13:20　-122.27 亿元</title></circle><circle cx="568.38" cy="92.31" r="2" fill="#28798d"><title>MSCI中国 13:25　-125.59 亿元</title></circle><circle cx="584.85" cy="95.63" r="2" fill="#28798d"><title>MSCI中国 13:30　-132.30 亿元</title></circle><circle cx="601.33" cy="99.20" r="2" fill="#28798d"><title>MSCI中国 13:35　-139.51 亿元</title></circle><circle cx="617.81" cy="102.53" r="2" fill="#28798d"><title>MSCI中国 13:40　-146.25 亿元</title></circle><circle cx="634.29" cy="105.83" r="2" fill="#28798d"><title>MSCI中国 13:45　-152.92 亿元</title></circle><circle cx="650.77" cy="108.35" r="2" fill="#28798d"><title>MSCI中国 13:50　-158.01 亿元</title></circle><circle cx="667.25" cy="110.96" r="2" fill="#28798d"><title>MSCI中国 13:55　-163.29 亿元</title></circle><circle cx="683.73" cy="114.15" r="2" fill="#28798d"><title>MSCI中国 14:00　-169.74 亿元</title></circle><circle cx="700.21" cy="121.44" r="2" fill="#28798d"><title>MSCI中国 14:05　-184.47 亿元</title></circle><circle cx="716.69" cy="126.98" r="2" fill="#28798d"><title>MSCI中国 14:10　-195.66 亿元</title></circle><circle cx="733.17" cy="131.12" r="2" fill="#28798d"><title>MSCI中国 14:15　-204.03 亿元</title></circle><circle cx="749.65" cy="132.92" r="2" fill="#28798d"><title>MSCI中国 14:20　-207.68 亿元</title></circle><circle cx="766.12" cy="135.38" r="2" fill="#28798d"><title>MSCI中国 14:25　-212.65 亿元</title></circle><circle cx="782.60" cy="139.97" r="2" fill="#28798d"><title>MSCI中国 14:30　-221.92 亿元</title></circle><circle cx="799.08" cy="142.63" r="2" fill="#28798d"><title>MSCI中国 14:35　-227.30 亿元</title></circle><circle cx="815.56" cy="149.06" r="2" fill="#28798d"><title>MSCI中国 14:40　-240.31 亿元</title></circle><circle cx="832.04" cy="157.04" r="2" fill="#28798d"><title>MSCI中国 14:45　-256.42 亿元</title></circle><circle cx="848.52" cy="166.55" r="2" fill="#28798d"><title>MSCI中国 14:50　-275.66 亿元</title></circle><circle cx="865.00" cy="179.17" r="2" fill="#28798d"><title>MSCI中国 14:55　-301.16 亿元</title></circle><path fill="none" stroke="#3354a6" stroke-width="2" d="M74.00,30.17 L90.48,50.47 L106.96,55.15 L123.44,57.22 L139.92,57.01 L156.40,58.12 L172.88,57.63 L189.35,57.86 L205.83,55.00 L222.31,54.54 L238.79,55.38 L255.27,58.28 L271.75,58.88 L288.23,59.34 L304.71,62.10 L321.19,62.60 L337.67,64.05 L354.15,68.13 L370.62,71.62 L387.10,73.47 L403.58,73.33 L420.06,73.44 L436.54,73.74 L453.02,73.51 L469.50,73.32 M485.98,73.35 L502.46,79.00 L518.94,82.71 L535.42,87.15 L551.90,93.35 L568.38,95.76 L584.85,99.76 L601.33,104.39 L617.81,108.64 L634.29,112.51 L650.77,115.55 L667.25,118.61 L683.73,122.26 L700.21,130.69 L716.69,136.63 L733.17,141.14 L749.65,143.12 L766.12,146.00 L782.60,150.71 L799.08,152.60 L815.56,158.83 L832.04,166.60 L848.52,174.17 L865.00,182.46"/><circle cx="74.00" cy="30.17" r="2" fill="#3354a6"><title>基金减仓 09:30　+0.00 亿元</title></circle><circle cx="90.48" cy="50.47" r="2" fill="#3354a6"><title>基金减仓 09:35　-41.03 亿元</title></circle><circle cx="106.96" cy="55.15" r="2" fill="#3354a6"><title>基金减仓 09:40　-50.48 亿元</title></circle><circle cx="123.44" cy="57.22" r="2" fill="#3354a6"><title>基金减仓 09:45　-54.66 亿元</title></circle><circle cx="139.92" cy="57.01" r="2" fill="#3354a6"><title>基金减仓 09:50　-54.24 亿元</title></circle><circle cx="156.40" cy="58.12" r="2" fill="#3354a6"><title>基金减仓 09:55　-56.49 亿元</title></circle><circle cx="172.88" cy="57.63" r="2" fill="#3354a6"><title>基金减仓 10:00　-55.51 亿元</title></circle><circle cx="189.35" cy="57.86" r="2" fill="#3354a6"><title>基金减仓 10:05　-55.96 亿元</title></circle><circle cx="205.83" cy="55.00" r="2" fill="#3354a6"><title>基金减仓 10:10　-50.19 亿元</title></circle><circle cx="222.31" cy="54.54" r="2" fill="#3354a6"><title>基金减仓 10:15　-49.25 亿元</title></circle><circle cx="238.79" cy="55.38" r="2" fill="#3354a6"><title>基金减仓 10:20　-50.94 亿元</title></circle><circle cx="255.27" cy="58.28" r="2" fill="#3354a6"><title>基金减仓 10:25　-56.82 亿元</title></circle><circle cx="271.75" cy="58.88" r="2" fill="#3354a6"><title>基金减仓 10:30　-58.02 亿元</title></circle><circle cx="288.23" cy="59.34" r="2" fill="#3354a6"><title>基金减仓 10:35　-58.96 亿元</title></circle><circle cx="304.71" cy="62.10" r="2" fill="#3354a6"><title>基金减仓 10:40　-64.54 亿元</title></circle><circle cx="321.19" cy="62.60" r="2" fill="#3354a6"><title>基金减仓 10:45　-65.54 亿元</title></circle><circle cx="337.67" cy="64.05" r="2" fill="#3354a6"><title>基金减仓 10:50　-68.47 亿元</title></circle><circle cx="354.15" cy="68.13" r="2" fill="#3354a6"><title>基金减仓 10:55　-76.71 亿元</title></circle><circle cx="370.62" cy="71.62" r="2" fill="#3354a6"><title>基金减仓 11:00　-83.78 亿元</title></circle><circle cx="387.10" cy="73.47" r="2" fill="#3354a6"><title>基金减仓 11:05　-87.50 亿元</title></circle><circle cx="403.58" cy="73.33" r="2" fill="#3354a6"><title>基金减仓 11:10　-87.22 亿元</title></circle><circle cx="420.06" cy="73.44" r="2" fill="#3354a6"><title>基金减仓 11:15　-87.45 亿元</title></circle><circle cx="436.54" cy="73.74" r="2" fill="#3354a6"><title>基金减仓 11:20　-88.06 亿元</title></circle><circle cx="453.02" cy="73.51" r="2" fill="#3354a6"><title>基金减仓 11:25　-87.59 亿元</title></circle><circle cx="469.50" cy="73.32" r="2" fill="#3354a6"><title>基金减仓 11:30　-87.21 亿元</title></circle><circle cx="485.98" cy="73.35" r="2" fill="#3354a6"><title>基金减仓 13:00　-87.27 亿元</title></circle><circle cx="502.46" cy="79.00" r="2" fill="#3354a6"><title>基金减仓 13:05　-98.69 亿元</title></circle><circle cx="518.94" cy="82.71" r="2" fill="#3354a6"><title>基金减仓 13:10　-106.18 亿元</title></circle><circle cx="535.42" cy="87.15" r="2" fill="#3354a6"><title>基金减仓 13:15　-115.16 亿元</title></circle><circle cx="551.90" cy="93.35" r="2" fill="#3354a6"><title>基金减仓 13:20　-127.70 亿元</title></circle><circle cx="568.38" cy="95.76" r="2" fill="#3354a6"><title>基金减仓 13:25　-132.57 亿元</title></circle><circle cx="584.85" cy="99.76" r="2" fill="#3354a6"><title>基金减仓 13:30　-140.65 亿元</title></circle><circle cx="601.33" cy="104.39" r="2" fill="#3354a6"><title>基金减仓 13:35　-150.00 亿元</title></circle><circle cx="617.81" cy="108.64" r="2" fill="#3354a6"><title>基金减仓 13:40　-158.60 亿元</title></circle><circle cx="634.29" cy="112.51" r="2" fill="#3354a6"><title>基金减仓 13:45　-166.42 亿元</title></circle><circle cx="650.77" cy="115.55" r="2" fill="#3354a6"><title>基金减仓 13:50　-172.57 亿元</title></circle><circle cx="667.25" cy="118.61" r="2" fill="#3354a6"><title>基金减仓 13:55　-178.74 亿元</title></circle><circle cx="683.73" cy="122.26" r="2" fill="#3354a6"><title>基金减仓 14:00　-186.13 亿元</title></circle><circle cx="700.21" cy="130.69" r="2" fill="#3354a6"><title>基金减仓 14:05　-203.16 亿元</title></circle><circle cx="716.69" cy="136.63" r="2" fill="#3354a6"><title>基金减仓 14:10　-215.18 亿元</title></circle><circle cx="733.17" cy="141.14" r="2" fill="#3354a6"><title>基金减仓 14:15　-224.29 亿元</title></circle><circle cx="749.65" cy="143.12" r="2" fill="#3354a6"><title>基金减仓 14:20　-228.30 亿元</title></circle><circle cx="766.12" cy="146.00" r="2" fill="#3354a6"><title>基金减仓 14:25　-234.12 亿元</title></circle><circle cx="782.60" cy="150.71" r="2" fill="#3354a6"><title>基金减仓 14:30　-243.63 亿元</title></circle><circle cx="799.08" cy="152.60" r="2" fill="#3354a6"><title>基金减仓 14:35　-247.45 亿元</title></circle><circle cx="815.56" cy="158.83" r="2" fill="#3354a6"><title>基金减仓 14:40　-260.03 亿元</title></circle><circle cx="832.04" cy="166.60" r="2" fill="#3354a6"><title>基金减仓 14:45　-275.75 亿元</title></circle><circle cx="848.52" cy="174.17" r="2" fill="#3354a6"><title>基金减仓 14:50　-291.05 亿元</title></circle><circle cx="865.00" cy="182.46" r="2" fill="#3354a6"><title>基金减仓 14:55　-307.80 亿元</title></circle><path fill="none" stroke="#635095" stroke-width="2" d="M74.00,30.17 L90.48,55.82 L106.96,63.83 L123.44,67.31 L139.92,68.38 L156.40,71.82 L172.88,71.22 L189.35,70.87 L205.83,67.87 L222.31,68.39 L238.79,70.28 L255.27,73.77 L271.75,74.49 L288.23,75.44 L304.71,79.69 L321.19,80.99 L337.67,83.20 L354.15,89.69 L370.62,94.82 L387.10,97.57 L403.58,97.71 L420.06,97.62 L436.54,97.74 L453.02,97.29 L469.50,96.72 M485.98,96.79 L502.46,105.27 L518.94,110.11 L535.42,116.87 L551.90,126.55 L568.38,129.55 L584.85,136.35 L601.33,143.17 L617.81,149.67 L634.29,155.75 L650.77,160.62 L667.25,165.59 L683.73,171.39 L700.21,183.79 L716.69,193.10 L733.17,200.20 L749.65,203.57 L766.12,208.44 L782.60,215.74 L799.08,219.25 L815.56,229.37 L832.04,242.23 L848.52,255.23 L865.00,270.00"/><circle cx="74.00" cy="30.17" r="2" fill="#635095"><title>融资融券 09:30　+0.00 亿元</title></circle><circle cx="90.48" cy="55.82" r="2" fill="#635095"><title>融资融券 09:35　-51.85 亿元</title></circle><circle cx="106.96" cy="63.83" r="2" fill="#635095"><title>融资融券 09:40　-68.03 亿元</title></circle><circle cx="123.44" cy="67.31" r="2" fill="#635095"><title>融资融券 09:45　-75.06 亿元</title></circle><circle cx="139.92" cy="68.38" r="2" fill="#635095"><title>融资融券 09:50　-77.22 亿元</title></circle><circle cx="156.40" cy="71.82" r="2" fill="#635095"><title>融资融券 09:55　-84.17 亿元</title></circle><circle cx="172.88" cy="71.22" r="2" fill="#635095"><title>融资融券 10:00　-82.98 亿元</title></circle><circle cx="189.35" cy="70.87" r="2" fill="#635095"><title>融资融券 10:05　-82.27 亿元</title></circle><circle cx="205.83" cy="67.87" r="2" fill="#635095"><title>融资融券 10:10　-76.20 亿元</title></circle><circle cx="222.31" cy="68.39" r="2" fill="#635095"><title>融资融券 10:15　-77.24 亿元</title></circle><circle cx="238.79" cy="70.28" r="2" fill="#635095"><title>融资融券 10:20　-81.07 亿元</title></circle><circle cx="255.27" cy="73.77" r="2" fill="#635095"><title>融资融券 10:25　-88.13 亿元</title></circle><circle cx="271.75" cy="74.49" r="2" fill="#635095"><title>融资融券 10:30　-89.58 亿元</title></circle><circle cx="288.23" cy="75.44" r="2" fill="#635095"><title>融资融券 10:35　-91.50 亿元</title></circle><circle cx="304.71" cy="79.69" r="2" fill="#635095"><title>融资融券 10:40　-100.09 亿元</title></circle><circle cx="321.19" cy="80.99" r="2" fill="#635095"><title>融资融券 10:45　-102.70 亿元</title></circle><circle cx="337.67" cy="83.20" r="2" fill="#635095"><title>融资融券 10:50　-107.19 亿元</title></circle><circle cx="354.15" cy="89.69" r="2" fill="#635095"><title>融资融券 10:55　-120.31 亿元</title></circle><circle cx="370.62" cy="94.82" r="2" fill="#635095"><title>融资融券 11:00　-130.66 亿元</title></circle><circle cx="387.10" cy="97.57" r="2" fill="#635095"><title>融资融券 11:05　-136.23 亿元</title></circle><circle cx="403.58" cy="97.71" r="2" fill="#635095"><title>融资融券 11:10　-136.50 亿元</title></circle><circle cx="420.06" cy="97.62" r="2" fill="#635095"><title>融资融券 11:15　-136.32 亿元</title></circle><circle cx="436.54" cy="97.74" r="2" fill="#635095"><title>融资融券 11:20　-136.56 亿元</title></circle><circle cx="453.02" cy="97.29" r="2" fill="#635095"><title>融资融券 11:25　-135.66 亿元</title></circle><circle cx="469.50" cy="96.72" r="2" fill="#635095"><title>融资融券 11:30　-134.50 亿元</title></circle><circle cx="485.98" cy="96.79" r="2" fill="#635095"><title>融资融券 13:00　-134.65 亿元</title></circle><circle cx="502.46" cy="105.27" r="2" fill="#635095"><title>融资融券 13:05　-151.79 亿元</title></circle><circle cx="518.94" cy="110.11" r="2" fill="#635095"><title>融资融券 13:10　-161.57 亿元</title></circle><circle cx="535.42" cy="116.87" r="2" fill="#635095"><title>融资融券 13:15　-175.23 亿元</title></circle><circle cx="551.90" cy="126.55" r="2" fill="#635095"><title>融资融券 13:20　-194.81 亿元</title></circle><circle cx="568.38" cy="129.55" r="2" fill="#635095"><title>融资融券 13:25　-200.87 亿元</title></circle><circle cx="584.85" cy="136.35" r="2" fill="#635095"><title>融资融券 13:30　-214.60 亿元</title></circle><circle cx="601.33" cy="143.17" r="2" fill="#635095"><title>融资融券 13:35　-228.39 亿元</title></circle><circle cx="617.81" cy="149.67" r="2" fill="#635095"><title>融资融券 13:40　-241.54 亿元</title></circle><circle cx="634.29" cy="155.75" r="2" fill="#635095"><title>融资融券 13:45　-253.82 亿元</title></circle><circle cx="650.77" cy="160.62" r="2" fill="#635095"><title>融资融券 13:50　-263.66 亿元</title></circle><circle cx="667.25" cy="165.59" r="2" fill="#635095"><title>融资融券 13:55　-273.71 亿元</title></circle><circle cx="683.73" cy="171.39" r="2" fill="#635095"><title>融资融券 14:00　-285.44 亿元</title></circle><circle cx="700.21" cy="183.79" r="2" fill="#635095"><title>融资融券 14:05　-310.50 亿元</title></circle><circle cx="716.69" cy="193.10" r="2" fill="#635095"><title>融资融券 14:10　-329.30 亿元</title></circle><circle cx="733.17" cy="200.20" r="2" fill="#635095"><title>融资融券 14:15　-343.66 亿元</title></circle><circle cx="749.65" cy="203.57" r="2" fill="#635095"><title>融资融券 14:20　-350.47 亿元</title></circle><circle cx="766.12" cy="208.44" r="2" fill="#635095"><title>融资融券 14:25　-360.32 亿元</title></circle><circle cx="782.60" cy="215.74" r="2" fill="#635095"><title>融资融券 14:30　-375.07 亿元</title></circle><circle cx="799.08" cy="219.25" r="2" fill="#635095"><title>融资融券 14:35　-382.17 亿元</title></circle><circle cx="815.56" cy="229.37" r="2" fill="#635095"><title>融资融券 14:40　-402.62 亿元</title></circle><circle cx="832.04" cy="242.23" r="2" fill="#635095"><title>融资融券 14:45　-428.61 亿元</title></circle><circle cx="848.52" cy="255.23" r="2" fill="#635095"><title>融资融券 14:50　-454.89 亿元</title></circle><circle cx="865.00" cy="270.00" r="2" fill="#635095"><title>融资融券 14:55　-484.74 亿元</title></circle></svg><div><span style="display:inline-block;margin-right:1em;color:#aa321c">● 新零售 +11.27 亿</span><span style="display:inline-block;margin-right:1em;color:#c26218">● 流感 +8.92 亿</span><span style="display:inline-block;margin-right:1em;color:#ba8722">● 中药概念 +8.55 亿</span><span style="display:inline-block;margin-right:1em;color:#a84a66">● 白酒 +7.02 亿</span><span style="display:inline-block;margin-right:1em;color:#007a60">● 沪股通 -254.12 亿</span><span style="display:inline-block;margin-right:1em;color:#28798d">● MSCI中国 -301.16 亿</span><span style="display:inline-block;margin-right:1em;color:#3354a6">● 基金减仓 -307.80 亿</span><span style="display:inline-block;margin-right:1em;color:#635095">● 融资融券 -484.74 亿</span></div></section><section><h2>14:00 三条观察条件的收盘判定</h2><p>14:00 留的三条全部落空：上证收在今开下方 1.31%，越 1% 线 0.31 个百分点；沪深上涨家数 567 只，离 1500 只差 933 只；14:00 后只新封 3 只涨停，炸板由 29 只增到 30 只，没有回封。两条互斥条款今天同时局部触发：退潮升级条款成立——3476.470 在 3480 下方、跌停 49 只远超 20 只；「改记分歧」条款只兑现一半——push2ex 涨停 51 只未到 55 只，横截面含 ST 为 58 只，而医药上涨占比收盘 49.3%，没回到 60%。按升级条款执行，定性维持退潮并再下调一档。两处修正：14:00 记「跌的是小盘」在收盘更彻底，中证1000 -4.44% 已深于创业板指；14:00 拿「医药没被卖」当反证，收盘只剩流感 +8.75 亿、中药概念 +8.38 亿撑着，量级不足，反证作废。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S6">S6</a> <a class="source-ref" href="#source-S7">S7</a></p></section><section><h2>板块强弱与集中度校验</h2><p>268 块里等权为正 3 块：仿制药 +0.45%、免税概念 +0.22%、肝炎概念 +0.10%，中位为正 0 块、上涨占比过半 0 块，174 块上涨占比不到 10%。集中度按剔除最大贡献股重算：仿制药 73 只减到 72 只，等权 0.45→0.18、中位 0.00→-0.10、上涨占比 49.3→48.6，康芝药业一只 +20.05% 就撑起整块正号；免税概念剔杭州解百后等权 0.22→0.01。跌幅端不是单点：存储芯片 -7.38%、中位 -7.52%、上涨占比 2.2%（184 只），光刻机 -7.32%/-7.77/5.1，先进封装 -6.78%/-7.17/3.1，剔除最强股后中位几乎不动，是整块下沉。结论：今日无主线。 <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S4">S4</a> <a class="source-ref" href="#source-S11">S11</a></p></section><section><h2>三只核心个股</h2><p>克来机电（603960）4 板，09:25:01 竞价即封、全天未开板，封单 3.06 亿，收 18.60。中京电子（002579）5 板为全场最高，但 14:54:48 才首次封上、只封了 6 分钟，封单 1.07 亿，收 17.82；它同时是 PCB 与先进封装的成分，板块在崩而个股在顶。康芝药业（300086）收 20.05%，09:59 首封、14:29 才回封，封单只剩 393 万。三只的共同点是高度靠尾盘补：14:00 后全市场只新封 3 只，5 板与 20cm 都落在最后半小时。 <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S7">S7</a> <a class="source-ref" href="#source-S3">S3</a></p></section><section><h2>成交额与尾盘半小时</h2><p>成交闭合 13831.0 亿，沪 6527.1 加深 7303.9，为昨日 16550.9 亿的 0.836。分时段：上午 7630.5 亿占 55.2%，13:00 至 14:00 为 2416.7 亿，14:05 至 14:30 为 1564.0 亿，14:35 至 15:00 为 2219.9 亿。最后半小时占全天 16.1%，是前 55 分钟的 1.42 倍，尾盘确有放量，但方向是下跌：同期创业板指收在全天最低 2183.584。 <a class="source-ref" href="#source-S1">S1</a></p></section><section><h2>留给晚间的问题</h2><p>跌幅按半导体敞口分层能解释大半，但解释不了北证50 -4.75%：北交所几乎没有半导体权重，却跌得比创业板指还多。是外盘二次定价还是内部资金撤离，要看晚间席位与两融；今天亿信 5 条线索全是研报摘要、问财新闻未配置、QMT 导出 degraded，没有一条可对齐的原文，在此之前不用「出货」定性。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S10">S10</a> <a class="source-ref" href="#source-S12">S12</a></p></section><section><h2>市场概况</h2><div class="table-wrap"><table><thead><tr><th>指标</th><th>读数</th><th>单位</th><th>时点</th><th>口径</th><th>证据</th></tr></thead><tbody><tr><td>上证指数</td><td>3476.470（-2.03%）</td><td>点 / %</td><td>2026-11-25 15:00</td><td>较今开 3522.588 低 1.31%；14:45 见全天低点 3468.652 后回抽 7.8 点</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>深证成指</td><td>10086.355（-3.24%）</td><td>点 / %</td><td>2026-11-25 15:00</td><td>收在全天最低点（15:00 那一根 low=close）</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>创业板指</td><td>2183.584（-4.19%）</td><td>点 / %</td><td>2026-11-25 15:00</td><td>同样收在全天最低；昨日收 2278.994，今日直接破前低</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>科创50</td><td>1186.142（-5.12%）</td><td>点 / %</td><td>2026-11-25 15:00</td><td>九只指数中最弱，隔夜费半 -7.88% 的定价主体</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S9">S9</a></td></tr><tr><td>北证50</td><td>755.868（-4.75%）</td><td>点 / %</td><td>2026-11-25 15:00</td><td>跌幅超过创业板指，但北交所半导体权重极低，属待核项</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>沪深300</td><td>3898.236（-1.65%）</td><td>点 / %</td><td>2026-11-25 15:00</td><td>权重端最抗跌；与 QMT 日线收盘完全一致，两源交叉通过</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S12">S12</a></td></tr><tr><td>中证1000</td><td>5541.550（-4.44%）</td><td>点 / %</td><td>2026-11-25 15:00</td><td>小盘跌幅已深于创业板指</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>沪深涨跌家数</td><td>涨 567 / 跌 4588 / 平 61</td><td>只</td><td>2026-11-25 15:00</td><td>上涨占比 10.9%，有效样本 5216 只（全库 5247 只，31 只无成交或停牌）</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>全样本涨跌幅中位</td><td>-3.678%</td><td>%</td><td>2026-11-25 15:00</td><td>5216 只逐股涨跌幅中位；跌超 5% 共 1713 只</td><td><a class="source-ref" href="#source-S2">S2</a></td></tr><tr><td>涨跌停</td><td>涨停 58 / 跌停 49</td><td>只</td><td>2026-11-25 15:00</td><td>横截面口径含 ST、含北交所；push2ex 同池不含 ST 为 51 只，两口径不并表</td><td><a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S7">S7</a></td></tr><tr><td>沪深成交额</td><td>13831.0（沪 6527.1 / 深 7303.9）</td><td>亿元</td><td>2026-11-25 15:00</td><td>为昨日同段 16550.9 亿的 0.836；最后半小时 2219.9 亿占 16.1%</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr><tr><td>板块结构（268 块）</td><td>等权为正 3 块 / 中位为正 0 块 / 上涨占比最高 49.3%</td><td>块</td><td>2026-11-25 15:00</td><td>6 位代码口径，成员集合固定；single_driven 标记 268 块全中，本轮不采信该字段</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S4">S4</a></td></tr></tbody></table></div></section><section><h2>与上一时点对照</h2><div class="table-wrap"><table><thead><tr><th>对象</th><th>此前</th><th>当前</th><th>变化</th><th>证据</th></tr></thead><tbody><tr><td>上证相对今开</td><td>14:00 为 -1.03%（3486.217）</td><td>收盘 -1.31%（3476.470）</td><td>最后一小时再跌 0.28 个百分点，收在今开下方 46.1 点。</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S6">S6</a></td></tr><tr><td>沪深上涨家数</td><td>738（14.3%，14:00）</td><td>567（10.9%，收盘）</td><td>再少 171 只，宽度单向收缩，全天没有出现过一次回升拐点。</td><td><a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S6">S6</a></td></tr><tr><td>涨停与炸板（push2ex 同池）</td><td>涨停 49 / 炸板 29（14:00）</td><td>涨停 51 / 炸板 30（收盘）</td><td>一小时内只新封 3 只、1 只炸板，封板动能几乎停摆。</td><td><a class="source-ref" href="#source-S7">S7</a> <a class="source-ref" href="#source-S6">S6</a></td></tr><tr><td>正涨幅板块</td><td>24 块（14:00）</td><td>3 块（收盘，268 块口径）</td><td>21 块在一小时内转负，中位为正的一块也没有。</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S6">S6</a></td></tr><tr><td>半导体概念主力净额</td><td>-122.31 亿（14:00）</td><td>-193.88 亿（收盘）</td><td>最后 60 分钟再流出 71.57 亿，全天 09:35 起单边扩大，无一次回头。</td><td><a class="source-ref" href="#source-S5">S5</a></td></tr><tr><td>成交额</td><td>14:00 累计 10047.2 亿</td><td>收盘 13831.0 亿</td><td>末 60 分钟 3783.9 亿占 27.4%，其中最后半小时 2219.9 亿。</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S6">S6</a></td></tr></tbody></table></div></section><section><h2>事件与盘面响应</h2><div class="table-wrap"><table><thead><tr><th>事件</th><th>盘面证据</th><th>解释</th><th>反证</th><th>证据</th></tr></thead><tbody><tr><td>本轮未取得发布时间不晚于 15:00 的当日事件原文：亿信 5 条线索均为研报或新闻摘要（verified=false），问财新闻接口因 IWENCAI_API_KEY 未配置不可用，妙想涨停池接口未挂载，QMT 导出 status=degraded（18 项 gaps）。可对齐的外部锚只有隔夜盘面。</td><td>跌幅完全按半导体敞口排序：科创50 -5.12%、创业板指 -4.19%、中证1000 -4.44%、深证成指 -3.24%，而上证 -2.03%、沪深300 只 -1.65%。板块端跌幅前十有八块属芯片链，存储芯片 -7.38%、中位 -7.52%、上涨占比 2.2%。</td><td>归因停在资金分层：半导体概念全天净流出 193.88 亿、存储芯片 -117.05 亿、CPO -59.22 亿，外资三线（深股通 -224.92、富时罗素 -255.65、标准普尔 -183.35）同时为负且单条都超 60 亿。医药是唯一等权为正的簇，但流感 +8.75 亿、中药概念 +8.38 亿的量级接不住千亿级外流。</td><td>若纯属外盘单向传导，跌幅不该按市值分层得这么整齐：北证50 -4.75% 几乎无半导体权重，跌得却比创业板指还多；权重端只跌 1.65% 也说明有资金在指数上做防守。这一层外盘解释不了，记待核。</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S9">S9</a> <a class="source-ref" href="#source-S10">S10</a> <a class="source-ref" href="#source-S12">S12</a></td></tr></tbody></table></div></section><section><h2>医药簇（仿制药 / 肝炎概念 / 维生素）</h2><p><strong>阶段</strong>　退潮</p><p><strong>变化</strong>　14:00 已把主线由发酵改记退潮，收盘只确认没修回来：仿制药 +0.45%、中位 0.00%、上涨占比 49.3%（73 只）；肝炎概念 +0.10%/-0.64/38.1（134 只）；维生素 -0.07%/-0.70/32.4（74 只）；免疫治疗 -2.08%/-2.05/17.7（62 只）。</p><p><strong>价格与宽度</strong>　剔除最大贡献股重算：仿制药 73 只减到 72 只，等权 0.45→0.18、中位 0.00→-0.10、上涨占比 49.3→48.6；肝炎概念剔康芝药业后等权 0.10→-0.05。整块正号由一只 20cm 支撑。</p><p><strong>资金</strong>　流感 +8.75 亿、中药概念 +8.38 亿是 554 块里唯二进前十的医药口径，合计不到半导体净流出的 9%。</p><p><strong>产业</strong>　无产业原文可用，不从单日价格反推景气。</p><p><strong>反证</strong>　医药是今天唯一还有正等权的方向，按「跌得少就是强」可以记主线；但上涨占比 49.3% 未过半、剔除龙头后中位转负，按 11-24 自己写的判据不成立。</p><p><strong>加强条件</strong>　下一交易日若仿制药剔除康芝药业后中位 &gt;0 且上涨占比 &gt;=60%，升为「启动」。</p><p><strong>减弱条件</strong>　若仿制药等权转负、免疫治疗上涨占比跌破 15%，记「结束」。</p><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S4">S4</a> <a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S8">S8</a></section><section><h2>半导体—存储链（存储芯片 / 光刻机 / 先进封装 / 汽车芯片）</h2><p><strong>阶段</strong>　退潮</p><p><strong>变化</strong>　隔夜费半 -7.88% 的定价没有打折：存储芯片 -7.38%/中位 -7.52/上涨占比 2.2%（184 只）、光刻机 -7.32%/-7.77/5.1（117 只）、先进封装 -6.78%/-7.17/3.1（161 只）、汽车芯片 -6.73%/-7.25/2.5（118 只）、第三代半导体 -6.74%/-6.85/2.5（163 只）。</p><p><strong>价格与宽度</strong>　268 块跌幅前十有八块属芯片链；184 只存储成分只有 4 只上涨，上涨占比 2.2% 是全天最低一档，剔除最强股后中位由 -7.52 到 -7.53，几乎不动。</p><p><strong>资金</strong>　半导体概念净额 09:35 为 -28.43 亿，11:25 -75.26、14:00 -122.31、14:55 -190.81、收盘 -193.88 亿；存储芯片 -117.05、第三代半导体 -35.60、光刻机 -13.07。</p><p><strong>产业</strong>　高盛下调 2028 年 DRAM/NAND 均价约 20% 属研报口径（亿信摘要、verified=false），不作为已发生的产业事实。</p><p><strong>反证</strong>　若是一次性定价，尾盘该收敛；实际最后 5 分钟净额还从 -190.81 扩到 -193.88，仍在恶化，收敛假设不成立。</p><p><strong>加强条件</strong>　净额单日回补 100 亿以上且中位转正，改记「分歧」。</p><p><strong>减弱条件</strong>　已在下沿，无更差档位。</p><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S5">S5</a> <a class="source-ref" href="#source-S9">S9</a> <a class="source-ref" href="#source-S10">S10</a></section><section><h2>算力—机器人链（人形机器人 / 减速器 / CPO / PCB / 算力租赁）</h2><p><strong>阶段</strong>　退潮</p><p><strong>变化</strong>　人形机器人 -5.73%/中位 -5.92/上涨占比 3.5%（426 只）、减速器 -5.33%/-5.66/4.0（125 只）、CPO -5.48%/-5.99/7.8（179 只）、PCB -6.10%/-6.05/4.1（194 只）、算力租赁 -4.15%/-4.30/10.7（196 只）。</p><p><strong>价格与宽度</strong>　剔除最大贡献股后中位几乎不动（CPO -6.00→-6.04、PCB -6.05→-6.06、人形机器人 -5.92→-5.92），是整块下沉而非龙头塌方。</p><p><strong>资金</strong>　人形机器人 -78.69、PCB -69.13、CPO -59.22、算力概念 -55.49、算力租赁 -25.78、减速器 -11.69，六块合计约 -300 亿。</p><p><strong>产业</strong>　无。</p><p><strong>反证</strong>　算力租赁上涨占比 10.7% 是链内最高，若明天先修，修复顺序会从下游往上游走。</p><p><strong>加强条件</strong>　上涨占比回到 50% 以上且中位转正。</p><p><strong>减弱条件</strong>　中位跌破 -7% 记「结束」。</p><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S4">S4</a> <a class="source-ref" href="#source-S5">S5</a></section><section><h2>代表公司比较</h2><div class="table-wrap"><table><thead><tr><th>公司</th><th>作用</th><th>观测</th><th>风险</th><th>证据</th></tr></thead><tbody><tr><td>克来机电（603960）</td><td>4 板里质量最硬的一只</td><td>09:25:01 竞价即封、全天未开板，封单 3.06 亿，收 18.60（+9.99%），属汽车零部。</td><td>4 板只有 2 家，另一家金新农 09:57 就开过板；汽车零部同类口径今日普跌，它在孤岛上方。</td><td><a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S7">S7</a></td></tr><tr><td>中京电子（002579）</td><td>全场最高 5 板，但高度是尾盘补的</td><td>14:54:48 才首次封上、只封了 6 分钟，封单 1.07 亿，收 17.82（+10.00%），属元件。</td><td>前 4 小时一次都没封住；PCB -6.10%、先进封装 -6.78%，它同时是这两块成分，板块在崩而个股在顶，次日承接最脆。</td><td><a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S7">S7</a></td></tr><tr><td>康芝药业（300086）</td><td>医药还有一口气的全部证据</td><td>收 20.05%，09:59 首封、14:29 才回封，封单只剩 393 万，是 73 只仿制药里唯一 20cm。</td><td>一只票撑起整块正号，剔除后仿制药中位 -0.10；393 万封单在 20cm 票上不算厚，破板即证据作废。</td><td><a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S7">S7</a></td></tr></tbody></table></div></section><section><h2>前期判断复核</h2><p>最近最多20条已评估预判：兑现 9 / 部分 2 / 落空 7 / 未触发 0 / 待核 2。</p><p>描述性兑现率 50.0%；部分兑现计入分母、不计为命中。这不是收益率或未来成功概率。</p><div class="table-wrap"><table><thead><tr><th>登记时刻/截止</th><th>原判断与判据</th><th>结果与原因</th></tr></thead><tbody><tr><td>2026-11-22T23:14:24.935904+08:00<br>2026-11-23T15:00:00+08:00</td><td>（承接 20261122-deep-width-not-buy；因两份核证底稿定稿更新导致源哈希位移，按凭证重登记，判据不变）11-23 中特估 880671 的收涨批合计主力净额仍 ≤0，说明 11-20 的 43.9% 上涨占比属抛压消失（没人卖），不是承接（有人买）。<br>2026-11-23 收盘后用同一成员级口径（boards_constituents 880671 成分 × 当日 stock_flow）重算收涨批净额：≤0 记 hit；&gt;+10 亿且剔除中国平安、紫金矿业后仍过半记 miss；落在 0 至 +10 亿之间、或 &gt;+10 亿但由平安/紫金主导记 partial。</td><td>unresolved<br>r2 与首版判据完全相同，同因缺字段不可评估；不用板块级 f62 替代。</td></tr><tr><td>2026-11-22T23:14:25.607189+08:00<br>2026-11-23T15:00:00+08:00</td><td>（承接 20261122-deep-chip-gap；同上原因重登记，判据不变）11-23 芯片 880952 成分中位补跌至 −6.43% 或更低，同时科创50 收在 MA20 上方，外盘缺口按成分属性路径释放而非全市场同向出清。<br>2026-11-23 收盘重算 880952 成分中位涨跌幅与科创50 相对 MA20 位置：中位 ≤−6.43% 且科创50 不低于 MA20 记 hit；中位跌幅不足 4.43%（即小于 2 个百分点）记 miss；其余记 partial。</td><td>miss<br>与首版同判据，中位为正使「跌幅不足 4.43%」分支成立，记落空。</td></tr><tr><td>2026-11-23T08:04:14.265238+08:00<br>2026-11-23T15:00:00+08:00</td><td>11-23 若为外部缺口补做，科创50 相对上证50 的跌幅差应达 5 个百分点以上；缺口差收敛到 2 个百分点以内则说明政策预期已对冲掉外盘定价。<br>11-23 收盘重算科创50（000688）涨跌幅减去上证50（000016）涨跌幅：差值 ≥5.0 个百分点记 hit；2.0—5.0 记 partial；&lt;2.0 记 miss。</td><td>miss<br>差值远低于 2.0 个百分点的落空线：权重与科技同向、幅度接近，上午的「属性路径释放缺口」框架在指数层面没有兑现，缺口改由宽度修复消化。</td></tr><tr><td>2026-11-23T08:04:14.933097+08:00<br>2026-11-23T15:00:00+08:00</td><td>11-23 若属缺口定价而非存量换仓，沪深成交额不应低于 11-20 的 14222 亿；明显缩量至 13500 亿以下则说明卖压在 11-20 已集中释放。<br>11-23 收盘沪深 5m 累计成交额：≥14222 亿记 hit；13500—14222 亿记 partial；&lt;13500 亿记 miss。口径与 11-20 相同（沪 sh000001 + 深 sz399106）。</td><td>hit<br>高于 14222 亿判据线，属放量而非缩量，外部缺口未在 11-20 一并出清。</td></tr><tr><td>2026-11-23T11:56:52.239086+08:00<br>2026-11-23T15:00:00+08:00</td><td>上午 CRO 外包服务的宽度（19 只成分上涨占比 73.7%）能否守到收盘，决定它是当日主线还是单日反抽。<br>15:00 收盘 CRO 概念 19 只成分上涨占比 ≥60% 记 hit；50%—60% 记 partial；&lt;50% 记 miss。</td><td>hit<br>原判据为新浪 CRO 19 只占比，该字段无接口；代理口径 97.3% 远高于 60% 兑现线，方向无歧义，按 hit 记录并声明口径降级（19 只 vs 75 只，供应商不同）。</td></tr><tr><td>2026-11-23T11:56:53.106379+08:00<br>2026-11-23T15:00:00+08:00</td><td>上午拖累指数的是权重端（上证50 -1.21%，已跌破盘前 MA20 2772.26），午后是否继续走弱。<br>15:00 上证50 收盘 ≤2772.26 记 hit（权重缺口未修复）；2772.26—2790 记 partial；&gt;2790 记 miss。</td><td>hit<br>收盘落在 ≤2772.26 区间，权重缺口未修复的判断成立。</td></tr><tr><td>2026-11-23T11:56:53.780986+08:00<br>2026-11-23T15:00:00+08:00</td><td>全A 上涨占比从竞价低开 91.68% 修复到 11:30 的 31.3%，能否守到收盘决定上午是修复还是反抽。<br>15:00 收盘全A 上涨占比 ≥30% 记 hit；25%—30% 记 partial；&lt;25% 记 miss。</td><td>hit<br>远高于 30% 判据线，上午的修复守到了收盘，不是反抽。</td></tr><tr><td>2026-11-23T15:55:56.484723+08:00<br>2026-11-24T15:00:00+08:00</td><td>普涨日里唯一等权为负的中特估，下一交易日大概率仍无法把中位拉回正值以上，权重缺口延续。<br>2026-11-24 收盘，中特估 98 只（6 位成分口径）中位涨跌幅转正且上涨占比超过 50%，判为权重补涨兑现（hit）。</td><td>hit<br>claim 预测中位无法拉回正值、权重缺口延续；收盘中位 -0.44% 仍为负、上涨占比 31.6% 远低于 50%，claim 成立。原判据把「中位转正且占比&gt;50%」写成 hit 分支，措辞方向与 claim 相反，此处按 claim 方向判定，判据数值门槛一致。</td></tr><tr><td>2026-11-23T15:55:57.249370+08:00<br>2026-11-24T15:00:00+08:00</td><td>82.6% 的上涨占比是一次方向反转而非单日脉冲，下一交易日宽度不会退回到 60% 下方。<br>2026-11-24 收盘，沪深上涨占比仍高于 60% 且涨停不少于 100 家，判为反转延续（hit）。</td><td>miss<br>判据为上涨占比仍高于 60% 且涨停不少于 100 家；实测 35.2% 与 55—64 只，两项同时落空，82.6% 确属单日脉冲而非方向反转。</td></tr><tr><td>2026-11-23T15:55:57.950932+08:00<br>2026-11-24T15:00:00+08:00</td><td>机器人—工业母机簇的强势由宽度驱动，剔除各自最大贡献股后仍能维持 4% 以上的中位涨幅。<br>2026-11-24 收盘，减速器、人形机器人、工业软件、工业母机四块剔除当日最大贡献股后中位仍高于 4%，且上涨占比不低于 90%，判为主线确认（hit）。</td><td>miss<br>判据要求四块剔最大股后中位均高于 4% 且上涨占比不低于 90%；四块中位全部低于 1.2%、占比全部低于 70%，主线确认不成立，机器人—工业母机簇当日为宽度退潮而非延续。</td></tr><tr><td>2026-11-23T23:18:53.039391+08:00<br>2026-11-24T15:00:00+08:00</td><td>11-24 中特估 880671 成分中位仍为负、上涨占比仍不足 50%，权重缺口延续而非当日补上。<br>11-24 收盘用 板块资金雷达/data/boards_constituents.json 的 880671 成分清单，对 6 位代码逐只取当日涨跌幅（close_breadth_tdx.py 同接口），中位 &lt;0 且上涨占比 &lt;50% 记兑现。</td><td>hit<br>判据为中位 &lt;0 且上涨占比 &lt;50% 记兑现；两项同时满足，权重缺口延续、当日未补上，claim 成立。</td></tr><tr><td>2026-11-23T23:18:54.100397+08:00<br>2026-11-24T15:00:00+08:00</td><td>11-24 收盘连板梯队仍无 4 板，最高高度停在 5 板或以下，宽度与高度的分裂延续。<br>11-24 收盘取东财涨停池（getTopicZTPool，与 11-23 补证同源），lbc≥4 的个股家数为 0 记兑现。</td><td>miss<br>判据为 lbc≥4 家数为 0 记兑现；实测 4 板 1 家，claim「仍无 4 板」落空。高度去到了 4 板，但 3 板仅 4 家且成交均薄，厚度与高度的分裂并未消除，只是分裂位置上移一格。</td></tr><tr><td>2026-11-23T23:18:54.716310+08:00<br>2026-11-24T15:00:00+08:00</td><td>11-24 板块中位涨幅与 11-20 中位跌幅的相关系数仍在 −0.5 以下，定价依据未从跌幅排名切到方向选择。<br>11-24 收盘用 268 个通达信板块同一集合重算：11-20 基线固定为 board_close_stats_20261120，只换 11-24 的中位，corr ≤ −0.5 记兑现。</td><td>miss<br>判据为 corr ≤ -0.5 记兑现；实测 -0.497805 未达线，属临界落空。11-20 跌幅排名反向定价的强度已衰减到接近噪声边界，定价依据正在从「跌幅排名」切向「方向选择」，但尚未完成切换。</td></tr><tr><td>2026-11-24T08:10:29.354147+08:00<br>2026-11-24T15:00:00+08:00</td><td>11-24 收盘，CPO 与 PCB 的成分中位涨幅仍双双低于减速器中位，机器人簇优先的排序不换。<br>15:00 收盘用 11-23 同源口径（6 位成分等权自算）取 CPO 880656、PCB 880550、减速器 880675 三块中位：max(CPO,PCB) 小于减速器中位记兑现。</td><td>hit<br>判据为 max(CPO 中位, PCB 中位) 小于减速器中位记兑现；0.37 &lt; 1.15，机器人簇优先的排序收盘未换。</td></tr><tr><td>2026-11-24T08:10:29.901911+08:00<br>2026-11-24T15:00:00+08:00</td><td>11-24 收盘减速器与人形机器人两块上涨占比仍在 90% 以上，机器人簇宽度未被外部叙事挤掉。<br>15:00 收盘同源口径：减速器 880675、人形机器人 880703 的 up_ratio 同时不低于 90% 记兑现；一块跌破 90% 记部分；两块均跌破记落空。</td><td>miss<br>判据为两块 up_ratio 同时不低于 90% 记兑现、一块跌破记部分、两块均跌破记落空；两块分别落在 69.6% 与 63.8%，均跌破 90%，机器人簇宽度被外部叙事与权重分流挤掉，claim 落空。</td></tr><tr><td>2026-11-24T08:10:30.483055+08:00<br>2026-11-24T15:00:00+08:00</td><td>11-24 收盘中特估 98 只等权与中位仍为负，权重端不补涨，指数上沿继续受限。<br>15:00 收盘同源口径：中特估 880671 等权不高于 0 且成分中位低于 0 记兑现；一正一负记部分；两者均为正记落空。</td><td>hit<br>判据为等权不高于 0 且中位低于 0 记兑现；两者均为负，权重端全天未补涨，指数上沿始终受权重缺口压制，claim 成立。</td></tr><tr><td>2026-11-24T11:54:18.406805+08:00<br>2026-11-24T15:00:00+08:00</td><td>11:30 的 64 只涨停是午后再加一把的基数，收盘涨停家数不会低于 11:30，赚钱效应仍在少数票上加强而不是退潮。<br>15:00 收盘用 push2ex 同口径（不含 ST、含连板、首封≤15:00）统计涨停家数：≥64 只记 hit；55—63 只记 partial；&lt;55 只记 miss。</td><td>partial<br>按预登记分档 55—63 只记 partial，55 只落在该档下沿；claim 的「不低于 11:30 的 64 只」实际未达成，赚钱效应收盘反而收缩 9 只，只是未触及 &lt;55 的落空线。</td></tr><tr><td>2026-11-24T11:54:19.228218+08:00<br>2026-11-24T15:00:00+08:00</td><td>上证守住昨收 3538.95，午后不出现放量下杀，上午的宽度流失按高位换手记而非一日情绪脉冲。<br>15:00 收盘上证指数 ≥3538.95 记 hit；3500—3538.95 记 partial；&lt;3500 记 miss。</td><td>hit<br>判据为收盘 ≥3538.95 记 hit；3548.369 达标，午后未出现放量下杀，最后 60 分钟成交 3058.3 亿、占全天 18.5%，属缩量。</td></tr><tr><td>2026-11-24T11:54:19.877646+08:00<br>2026-11-24T15:00:00+08:00</td><td>减速器上涨占比从昨日 96.8% 落到 84.4% 属兑现不是破裂，收盘等权上涨占比仍在 70% 以上。<br>15:00 用 close_breadth_tdx.py 同口径（880675、boards_constituents 6 位成分、等权）重算收盘上涨占比：≥70% 记 hit；60%—70% 记 partial；&lt;60% 记 miss。</td><td>partial<br>判据 ≥70% 记 hit、60%—70% 记 partial；69.6% 差 0.4 个百分点落在 partial 档。宽度是逐段衰减而非一次性破裂，但收盘已跌破 70% 的守线。</td></tr><tr><td>2026-11-25T08:06:09.806208+08:00<br>2026-11-25T10:00:00+08:00</td><td>外部锚向下的定价会在开盘一小时内在宽度上被稀释，而不是演变成比 11-24 更深的宽度塌陷；10:00 时点「-3% 至 -1%」中段家数不应高于 11-24 收盘的 1864 只太多。<br>10:00 时点快照取沪深全样本（不含北交所）涨跌幅落在 -3% 至 -1% 的家数：&lt;1864 记 hit；1864—2000 记 partial；&gt;2000 记 miss。</td><td>unresolved<br>当日未落 10:00 全样本横截面，NeoData 分档边界为 0/-2/-5/-7，与原判据 -3~-1% 不同，不能插值替代；按无法评估记 unresolved，不做事后方向补记</td></tr></tbody></table></div></section><section><h2>风险与后续观察</h2><p>两处反证。跌停 49 只对 1713 只跌超 5%，比例仍不对等，是减仓不是流动性断裂；上证 14:45 见全天低点 3468.652 后回抽 7.8 点收在 3476.470，尾盘不是无抵抗下坠。缩量 16.4% 而非放量，最后半小时 2219.9 亿占全天 16.1%，只比均匀分布多 3.6 个百分点，够不上恐慌换手。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a></p><p>下一交易日若出现成分中位 &gt;0 且上涨占比 &gt;=60% 的板块、且沪深上涨占比回到 30% 以上，按超跌反抽记；若中位仍全负且跌停再超 50 只，按出清延续记；两条都不成立记缩量僵持。 <a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a></p></section><section><h2>观察条件</h2><div class="table-wrap"><table><thead><tr><th>触发条件</th><th>当前状态</th><th>复查时点</th><th>判断调整</th><th>证据</th></tr></thead><tbody><tr><td>板块中位能否修复</td><td>268 块中位为正 0 块、上涨占比最高 49.3%</td><td>2026-11-26 收盘，同 268 块与同成员集合重算</td><td>出现至少 1 块中位 &gt;0 且上涨占比 &gt;=60% 记超跌反抽；仍为 0 块记出清延续。</td><td><a class="source-ref" href="#source-S3">S3</a> <a class="source-ref" href="#source-S4">S4</a></td></tr><tr><td>尾盘补封的高度能否站住</td><td>中京电子 14:54:48 首封 5 板；14:00 后全市场只新封 3 只</td><td>2026-11-26 收盘 push2ex 的 lbc&gt;=5 家数与炸板率</td><td>5 板断板且炸板率破 40% 记高度与宽度同步退；5 板续板记分歧。</td><td><a class="source-ref" href="#source-S7">S7</a></td></tr><tr><td>成交能否守住地量</td><td>13831.0 亿，为昨日 0.836，最后半小时放量到全天 16.1%</td><td>2026-11-26 收盘同口径 5m 累加</td><td>低于 12500 亿记缩量僵持确认；回到 14500 亿以上记二次定价。</td><td><a class="source-ref" href="#source-S1">S1</a></td></tr></tbody></table></div></section><section><h2>可能路径</h2><div class="table-wrap"><table><thead><tr><th>情景</th><th>可观察条件</th><th>研究判断</th><th>证据</th></tr></thead><tbody><tr><td>超跌反抽，宽度先修</td><td>下一交易日出现至少 1 块中位 &gt;0 且上涨占比 &gt;=60%，沪深上涨占比回到 30% 以上，跌停收缩到 20 只以内。</td><td>把今日记成外盘二次定价的单日出清，重心放在修复顺序：先看算力租赁（10.7%）再看医药（49.3%）。</td><td><a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>出清延续，尾部再扩</td><td>跌停再超 50 只，跌超 5% 家数超过今日 1713 只，板块中位仍全负。</td><td>记「缩量不等于止跌」，观察点从板块移到跌停与深跌家数，不再讨论主线。</td><td><a class="source-ref" href="#source-S2">S2</a> <a class="source-ref" href="#source-S3">S3</a></td></tr><tr><td>缩量僵持，宽度不动</td><td>指数振幅收窄到 1% 以内，成交继续低于 13000 亿，板块中位在 0 附近来回。</td><td>记存量博弈，不作方向判断，只记录资金在医药与零售之间的低量轮动。</td><td><a class="source-ref" href="#source-S1">S1</a> <a class="source-ref" href="#source-S5">S5</a></td></tr></tbody></table></div></section><section><h2>待补数据</h2><table><tr><th>字段</th><th>对判断的影响</th><th>截至</th><th>已查资料</th><th>说明</th></tr><tr><td>板块成分中位数（通达信 MCP 抽样口径）</td><td>—</td><td>2026-11-25T15:00:00+08:00</td><td>intraday_1500.json 的 boards.ranked_head[].mem_check 每块只抽到 2 至 7 只，且抽出的成员代码是 000153 上民红利、000011 基金指数等指数代码</td><td>抽样口径错误，不能用于集中度判断；本轮 268 块集中度全部改用 close_breadth_20261125.json 的 5216 只横截面乘 boards_constituents.json 重算，成员覆盖率 100%。</td></tr><tr><td>10:00 时点横截面（中段家数）</td><td>—</td><td>2026-11-25T10:00:00+08:00</td><td>_raw 内只有 09:40 与 11:30 两个横截面，10:00 未采集；板块资金采样虽有 1000.json，但那是资金净额不是涨跌幅分布</td><td>预判 20261125-morning-width-not-spread 无法按 10:00 口径判定，记 unresolved；不用 09:40 或 11:30 事后替代。</td></tr><tr><td>涨跌停第二来源交叉</td><td>—</td><td>2026-11-25T15:00:00+08:00</td><td>本地 push2ex 51 只（不含 ST）、横截面 58 只（含 ST）、NeoData 无当日快照、妙想接口未挂载（mx_tool_not_advertised）</td><td>三源口径不同不并表；正文与指标一律写明口径与 ST 处理方式，不合并计数。</td></tr><tr><td>QMT 原始证据</td><td>—</td><td>2026-11-25T15:00:00+08:00</td><td>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\qmt_review_20261125.json：status=degraded、verified=false、18 项 gaps</td><td>仅 000300.SH 日线可用（收 3898.236，与新浪 5m 完全一致），000001.SH 为当日单点且 volume=0 无效，不能顶替指数与成交额。</td></tr><tr><td>当日事件原文</td><td>—</td><td>2026-11-25T15:00:00+08:00</td><td>亿信 5 条线索均为研报摘要（verified=false）；问财 IWENCAI_API_KEY 未配置；妙想涨停池未挂载</td><td>不指认具体触发事件，归因只写到资金与外盘，不向上追因果。</td></tr><tr><td>板块供应商口径</td><td>—</td><td>2026-11-25T15:00:00+08:00</td><td>通达信 6 位代码 269 块（剔除 2 个：碳纤维 name_mismatch、地摊经济 no_data）、新浪概念行业、东财 861xxx 三套互不兼容</td><td>三套不并表；本稿板块排序与集中度只用通达信 6 位代码清单，东财只用于资金净额，新浪只用于 14:00 成员宽度。</td></tr><tr><td>通达信云端收盘全扫完整性</td><td>—</td><td>2026-11-25T15:00:00+08:00</td><td>板块扫描 2821 秒完成 269 块后，print_boards 抛 TypeError（median_chg 为 str）退出；intraday_1500.json 已落盘</td><td>JSON 可用但指数与成交额仍取新浪 5m：其深市成交额字段截断（收盘仅 645 亿，新浪为 7303.9 亿），沪市 6527 亿与新浪一致。</td></tr><tr><td>历史预判积压</td><td>—</td><td>2026-11-25T15:00:00+08:00</td><td>账本中 11-18 至 11-24 到期的未核验预判仍有 48 条，缺对应日期的本地证据文件</td><td>按来源纪律不以推测补记方向，本轮只核验 11-25 到期的 12 条；积压项需按日期回溯证据后单独处理。</td></tr></table></section><section id="sources"><h2>资料来源</h2><p id="source-S1"><b>S1 收盘指数与成交额（新浪 5m K 线）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\index_close_1500.json<br>9 只指数 48 根 5m 收盘切片，sec=54000 即 15:00；成交额按 5m amount 累加，沪市 6527.1 亿与通达信云端 amt 字段完全一致；沪深300 收 3898.236 与 QMT 日线一致 · </p><p id="source-S2"><b>S2 全 A 收盘横截面与宽度（通达信 TQLEX 直连，零配额）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\close_breadth_20261125.json<br>5247 只中成功 5216 只、31 只失败；HQDate 20261125、HQTime 153000-153322，为收盘后冻结横截面 · </p><p id="source-S3"><b>S3 268 个成分板块收盘集中度（同上横截面重算）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\board_close_stats_20261125.json<br>板块代码取自 boards_constituents.json 的 269 个 6 位清单（剔除 2 个 name_mismatch/no_data），不按代码段盲扫；中位与上涨占比由 5216 只逐股原始涨跌幅重算，非板块指数 · </p><p id="source-S4"><b>S4 板块成分清单（6 位代码口径）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\../../../板块资金雷达/data/boards_constituents.json<br>剔除最大贡献股重算所用成员集合；与通达信板块指数 880xxx 同源，不与新浪概念行业、东财 861xxx 混排 · </p><p id="source-S5"><b>S5 东财板块主力净额 5 分钟采样（51 个时点）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\板块资金采样/1500.json<br>09:30-15:00 每 5 分钟一点，共 51 点；收盘 554 块；半导体概念 -193.88 亿、存储芯片 -117.05 亿、CPO 概念 -59.22 亿 · </p><p id="source-S6"><b>S6 14:00 盘中快照（对照基准）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\intraday_1400.json<br>cutoff_actual 14:00；本稿所有「与 14:00 对照」均取该文件同字段，不自实时值回填 · </p><p id="source-S7"><b>S7 东财 push2ex 涨停池与炸板池（首封/封单/连板）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\index_close_1500.json<br>首封 fbt 为 HHMMSS 整数，已换算为时刻；本地池不含 ST、按首封不晚于 15:00 切；与横截面口径的 58 只（含 ST）不可并表 · </p><p id="source-S8"><b>S8 14:00 医药簇成员宽度（同成员集合重算）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\board_members_1400.json<br>与 board_members_1130.json 完全相同的板块节点与成分集合，只换定价时点，用于判定宽度是否修复 · </p><p id="source-S9"><b>S9 隔夜外盘（finnhub 报价）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\finnhub_0800.json<br>SPY -0.486%、QQQ -1.986%、NVDA -5.855%；费半 8996.18（-7.88%）取自盘前简报稿，非本文件 · </p><p id="source-S10"><b>S10 亿信研报线索（事件原文可用性核查）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\yx_01.json<br>5 条线索均为研报/新闻摘要，verified=false，故本稿不引用具体事件原文，只记录不可用 · </p><p id="source-S11"><b>S11 通达信云端收盘全扫 JSON（269 块）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\intraday_1500.json<br>耗时 2821 秒完成，打印阶段因 median_chg 为 str 抛 TypeError 退出，但 JSON 已落盘；其 mem_check 抽到的「成分」为指数代码，集中度不采信 · </p><p id="source-S12"><b>S12 QMT 本地导出（收盘核对）</b><br>D:\库\Desktop\投资小龙虾\分析报告汇总\2026-11-25\_raw\qmt_review_20261125.json<br>status=degraded、verified=false、18 项 gaps；仅 000300.SH 日线可用（收 3898.236，与新浪一致），000001.SH 单点 volume=0 无效 · </p></section></main><footer>基于所列证据形成研究观察；事实、推断与缺口分别呈现。页面渲染及结构检查不核实全部外部事实。</footer></body></html>

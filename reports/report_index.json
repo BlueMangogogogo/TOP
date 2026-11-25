@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-11-25T14:09:56",
-  "total": 395,
-  "daily_count": 310,
+  "last_updated": "2026-11-25T17:47:09",
+  "total": 397,
+  "daily_count": 312,
   "industry_count": 85,
   "reports": [
     {
@@ -38,6 +38,17 @@
       "date": "2026-11-25"
     },
     {
+      "relative_path": "reports/2026-11-25/收盘总结.html",
+      "id": "2026-11-25-收盘总结",
+      "display_date": "11月25日",
+      "title": "收盘总结",
+      "category": "日常复盘",
+      "type": "daily",
+      "quality": "degraded",
+      "size_kb": 103.7,
+      "date": "2026-11-25"
+    },
+    {
       "relative_path": "reports/2026-11-25/开盘速览.html",
       "id": "2026-11-25-开盘速览",
       "display_date": "11月25日",
@@ -46,6 +57,17 @@
       "type": "daily",
       "quality": "degraded",
       "size_kb": 26.7,
+      "date": "2026-11-25"
+    },
+    {
+      "relative_path": "reports/2026-11-25/宏观择时日报_MTIv3_20261125.html",
+      "id": "2026-11-25-宏观择时日报_MTIv3_20261125",
+      "display_date": "11月25日",
+      "title": "宏观择时日报_MTIv3_20261125",
+      "category": "宏观择时",
+      "type": "daily",
+      "quality": "degraded",
+      "size_kb": 81.3,
       "date": "2026-11-25"
     },
     {
