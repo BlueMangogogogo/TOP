@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T17:47:09",
+  "last_updated": "2026-11-25T18:08:01",
   "total": 397,
   "daily_count": 312,
   "industry_count": 85,
@@ -67,7 +67,7 @@
       "category": "宏观择时",
       "type": "daily",
       "quality": "degraded",
-      "size_kb": 81.3,
+      "size_kb": 77.0,
       "date": "2026-11-25"
     },
     {
