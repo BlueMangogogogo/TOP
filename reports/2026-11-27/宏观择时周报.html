@@ -1,0 +1,123 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>宏观择时周报 · 2026-11-23 至 2026-11-27</title><style>
+:root{--ink:#1b1f24;--muted:#5c6672;--line:#e2e6ea;--bg:#fff;--soft:#f6f8fa;--red:#c0392b;--green:#1e8449}
+body{margin:0;padding:32px 20px 64px;background:var(--bg);color:var(--ink);
+font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.75;font-size:15px}
+main{max-width:920px;margin:0 auto}
+h1{font-size:26px;margin:0 0 6px;letter-spacing:.01em}
+h2{font-size:18px;margin:34px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+h3{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}
+.meta{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--soft)}
+.meta b{color:var(--ink);font-weight:600}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:600;white-space:nowrap}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.up{color:var(--red)} .dn{color:var(--green)}
+.ev{color:var(--muted);font-size:13px}
+ol,ul{padding-left:22px} li{margin:6px 0}
+.warn{border-left:3px solid #d9a441;background:#fdf8ec;padding:10px 14px;margin:14px 0;font-size:14px}
+footer{margin-top:38px;border-top:1px solid var(--line);padding-top:14px;font-size:12.5px;color:var(--muted)}
+code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:12.5px}
+.k{font-weight:600}
+</style></head><body><main>
+
+<h1>宏观择时周报 · 2026-11-23 至 2026-11-27</h1>
+
+<div class="meta">
+<p><b>目标周期</b>　2026-11-23 — 2026-11-27（本周期 5 个交易日均开市，交易日历取 000300.SH 实际成交日）<br>
+<b>数据 cutoff</b>　2026-11-27T15:58:26.017799+08:00（mti_result.generated_at）<br>
+<b>生成时间</b>　2026-11-27 16:15<br>
+<b>是否迟到</b>　否（16:10 触发，使用 15:58 完成的当日 MTI 计算）<br>
+<b>质量</b>　degraded（有效因子 8/9，有效权重 0.90，综合 MTI 未成立）<br>
+<b>算法</b>　research-v4.1，未校准研究，decision_ready=false</p>
+</div>
+
+<h2>核心结论</h2>
+
+<h3>一、本周的周涨幅全部来自 11/27 一天，前四个交易日累计仍是下跌</h3>
+<p><span class="k">事实</span>　上证 11/20 收 3533.79，四个交易日后 11/26 收 3476.88（−1.61%），11/27 单日 +3.73% 收 3606.49，全周 +2.06%。同一结构在其余指数上一致：沪深300 −1.37% 加 +4.17% 得 +2.74%，创业板指 −1.01% 加 +11.61% 得 +10.48%，国证2000 −1.38% 加 +8.35% 得 +6.85%（<span class="ev">E1：data/index_daily.json，20261120 / 20261126 / 20261127 三列收盘价逐项计算</span>）。11/27 当日 5219 只样本中 5025 只上涨、中位 +6.76%、涨停 417 只、跌停 0 只（<span class="ev">E2：分析报告汇总/2026-11-27/收盘总结_r2.html 宽度段；涨停家数另见 data/limit_series.json 20261127 行</span>）。</p>
+<p><span class="k">反证</span>　单日贡献不等于单日噪音：成交额同日放大到沪市 9297.8 亿元，前四日均 6941.0 亿元；268 个板块中 267 个等权上涨、220 个中位不低于 5%（<span class="ev">E3：收盘总结_r2.html 板块段</span>）。宽度是饱和的，不是少数权重股拉抬。若只写「一天涨完」，会漏掉这一天的覆盖面本身已经改变了市场的横截面结构。</p>
+
+<h3>二、活跃市值与价格连续两周背离，且 11/25 的 −4.31% 是本轮第五次触发防守阈值，两日后指数暴涨</h3>
+<p><span class="k">事实</span>　0AMV 从 11/13 的 14.579 万亿降至 11/26 的 12.703 万亿，两周 −12.87%（上周为 −9.04%）；本周四个可用日 +3.64%、+1.00%、−4.31%、−0.57%，四日累计 -0.42%（<span class="ev">E4：data/amv_history.json，Compass Z_SK0AMV；11/25 与 11/26 来自 __.cde 收盘快照</span>）。同期沪深300 两周 +1.16%、国证2000 −6.16%（<span class="ev">E5：data/index_daily.json 1113 与 1127 收盘</span>）。11/25 单日 −4.31% 低于本地防守观察阈值 −2.3%（<span class="ev">E6：宏观择时/macro_timing.py active_mv_verdict 规则</span>），是 11/13 起 7 个交易日中第 5 次满足该阈值（11/13 −3.00%、11/16 −4.14%、11/19 −2.39%、11/20 −3.81%、11/25 −4.31%）。</p>
+<p><span class="k">反证</span>　0AMV 是等权活跃市值代理，含换手收缩的成分；两周跌幅约为国证2000 的两倍，说明它对活跃度下降的敏感度高于价格，读成「资金净流出金额」会高估规模。且 11/27 当日值缺失，涨幅最大的一天没有进入这条序列，−12.87% 只结算到 11/26；防守阈值在 11/25 触发后，11/27 中位 +6.76%，规则与结果方向相反 —— 这条阈值在本周是失效的，不能反过来用它解释 11/27。</p>
+
+<h3>三、MTI 仍未成立，但缺口权重从 0.35 降到 0.10，缺的因子换了对象</h3>
+<p><span class="k">事实</span>　11/27 有效因子 8/9、有效权重 0.90、partial_mti −0.0705、mti 为 null（<span class="ev">E7：data/mti_result.json，2026-11-27T15:58:26</span>）。上周卡住的 dispersion（行业离散度）与 rotation（轮动速度）本周已恢复：11/27 行业矩阵有当日行，dispersion raw 3.674、ma5 2.124、20 日分位 99.8%、score −0.996；rotation 0.843、score −0.687（<span class="ev">E8：data/mti_result.json factors 段；data/industry_matrix.json 末键 20261127</span>）。现在缺的是 active_mv（权重 0.10，close 停在 20261126）与 erp（000300.SH 的 20261127 行 pe 为 null，末值 20261126 13.61）（<span class="ev">E9：data/index_dailybasic.json；data/mti_result.json data_status</span>）。</p>
+<p><span class="k">反证</span>　「缺口权重变小」不等于「更接近可交易」：composite() 要求 9/9，8/9 与 6/9 一样返回 null，本周 MTI 可计算日数为 0/5，比上周的 2/5 更少。而且 dispersion 的 99.8 分位本身由 11/27 单日造成 —— 由 ma5 与 raw 反推，11/23—11/26 四日均值 (5×2.124−3.674)/4 = 1.736，与 11/13 的 1.818 同量级（<span class="ev">E10：data/mti_result.json dispersion.raw/ma5 的算术反推，口径为最近 750 样本分位</span>）。用它做周度定性，会把单日事件读成趋势。</p>
+
+<h2>本周交易日覆盖（预期 vs 实际）</h2>
+<p>交易日历按 000300.SH 实际成交日核定，本周 5 天全部开市，非节假日调整周。「未计算」指有记录但 9 因子合成被拦，不等于「无信号」。</p>
+<table><tr><th>日期</th><th>星期</th><th>交易日</th><th>mti_history_v4</th><th>quality</th><th>MTI</th><th>有效权重</th><th>0AMV 当日</th></tr><tr><td>20261123</td><td>周一</td><td>是</td><td>有记录</td><td>degraded</td><td>—（未计算）</td><td class=num>0.75</td><td>13.220 万亿 +3.64%</td></tr><tr><td>20261124</td><td>周二</td><td>是</td><td>有记录</td><td>degraded</td><td>—（未计算）</td><td class=num>0.75</td><td>13.352 万亿 +1.00%</td></tr><tr><td>20261125</td><td>周三</td><td>是</td><td>有记录</td><td>degraded</td><td>—（未计算）</td><td class=num>0.75</td><td>12.776 万亿 -4.31%</td></tr><tr><td>20261126</td><td>周四</td><td>是</td><td>有记录</td><td>degraded</td><td>—（未计算）</td><td class=num>0.65</td><td>12.703 万亿 -0.57%</td></tr><tr><td>20261127</td><td>周五</td><td>是</td><td>有记录</td><td>degraded</td><td>—（未计算）</td><td class=num>0.90</td><td>未取得</td></tr></table>
+<p>覆盖率：记录 5/5（100%），完整记录 0/5（0%），MTI 可计算 0/5（0%）。上周为记录 5/5、完整 1/5、可计算 2/5。行数齐不构成整周完整，本周的缺口在行内与行内共同的 active_mv 上。</p>
+
+<h2>指数与成交额：一周变化</h2>
+<table><tr><th>指标</th><th>11/20 收盘</th><th>11/26 收盘</th><th>11/27 收盘</th><th>前四日累计</th><th>11/27 单日</th><th>全周</th></tr><tr><td>上证指数</td><td class=num>3533.79</td><td class=num>3476.88</td><td class=num>3606.49</td><td class='num dn'>-1.61%</td><td class='num up'>+3.73%</td><td class='num up'><b>+2.06%</b></td></tr><tr><td>沪深300</td><td class=num>3954.57</td><td class=num>3900.55</td><td class=num>4063.06</td><td class='num dn'>-1.37%</td><td class='num up'>+4.17%</td><td class='num up'><b>+2.74%</b></td></tr><tr><td>深证成指</td><td class=num>10256.39</td><td class=num>10084.04</td><td class=num>10814.02</td><td class='num dn'>-1.68%</td><td class='num up'>+7.24%</td><td class='num up'><b>+5.44%</b></td></tr><tr><td>创业板指</td><td class=num>2212.13</td><td class=num>2189.82</td><td class=num>2443.96</td><td class='num dn'>-1.01%</td><td class='num up'>+11.61%</td><td class='num up'><b>+10.48%</b></td></tr><tr><td>中证1000</td><td class=num>5648.63</td><td class=num>5531.84</td><td class=num>5982.91</td><td class='num dn'>-2.07%</td><td class='num up'>+8.15%</td><td class='num up'><b>+5.92%</b></td></tr><tr><td>国证2000</td><td class=num>7431.20</td><td class=num>7328.40</td><td class=num>7940.41</td><td class='num dn'>-1.38%</td><td class='num up'>+8.35%</td><td class='num up'><b>+6.85%</b></td></tr></table>
+<p>沪市本周成交额合计 37061.8 亿元；11/27 单日 9297.8 亿元，上周五 11/20 为 7025.7 亿元，环比 +32.3%。成交额是活动代理，不是净流入。</p>
+
+<h2>活跃市值逐日（0AMV，单位：万亿）</h2>
+<table><tr><th>日期</th><th>星期</th><th>收盘</th><th>单日</th><th>来源</th></tr><tr><td>20261123</td><td>周一</td><td class=num>13.220</td><td class='num up'>+3.64%</td><td>day.vdat</td></tr><tr><td>20261124</td><td>周二</td><td class=num>13.352</td><td class='num up'>+1.00%</td><td>day.vdat</td></tr><tr><td>20261125</td><td>周三</td><td class=num>12.776</td><td class='num dn'>-4.31%</td><td>Z_SK0AMV__.cde（cde 快照）</td></tr><tr><td>20261126</td><td>周四</td><td class=num>12.703</td><td class='num dn'>-0.57%</td><td>Z_SK0AMV__.cde（cde 快照）</td></tr><tr><td>20261127</td><td>周五</td><td class=num>—</td><td class=num>—</td><td>未取得（见缺口表）</td></tr></table>
+<p>0AMV 与指数在 11/23 同步反弹（+3.64%，同日上证 +0.15%），11/25 反向（−4.31%，同日上证 −2.03%、国证2000 −4.43%），11/26 持平，11/27 缺失。四个可用日的净变化 -0.42%，与同期沪深300 的 -1.37% 不同向。</p>
+
+<h2>因子层：上周五与本周五对照</h2>
+<p>左列取 2026-11-20 首版 mti_result（16:03，6/9、权重 0.65）的因子层，右列为 2026-11-27（15:58，8/9、权重 0.90）。缺失一律留「—」，不填 0，也不用后一日值回填。</p>
+<table>
+<tr><th>因子</th><th>20261120</th><th>20261127</th><th>as_of</th><th>状态</th></tr>
+<tr><td>dispersion 行业离散度（.20）</td><td>—（矩阵末日 20261119）</td><td>raw 3.674，ma5 2.124，20 日分位 99.8%，score −0.996</td><td>20261127</td><td>observed（本周恢复）</td></tr>
+<tr><td>size 大小盘偏离（.10）</td><td>分位 96.7%，score −0.933</td><td>分位 66.9%，score −0.337</td><td>20261127</td><td>observed</td></tr>
+<tr><td>rotation 轮动速度（.05）</td><td>—（依赖 dispersion）</td><td>0.843，score −0.687</td><td>20261127</td><td>observed（本周恢复）</td></tr>
+<tr><td>margin 两融（.15）</td><td>60.5% 分位，score −0.10</td><td>59% 分位，score −0.10</td><td>20261126（滞后 1 日）</td><td>lagged</td></tr>
+<tr><td>inflow 成交额（.15）</td><td>score −0.700，20 日 −27%</td><td>score +0.700，20 日 +19%</td><td>20261127</td><td>observed</td></tr>
+<tr><td>active_mv 活跃市值（.10）</td><td>—（序列末 20261119；当日值 16:35 才入库）</td><td>—（close 停 20261126）</td><td>未取得</td><td>缺失</td></tr>
+<tr><td>ld 涨跌停比（.10）</td><td>5 日均值 35.4%，score −0.293</td><td>5 日均值 87.4%，score +0.749</td><td>20261127</td><td>observed</td></tr>
+<tr><td>break_rate 炸板率（.10）</td><td>20.0%，score 0.308</td><td>9.2%（42 家），score 0.420</td><td>20261127</td><td>observed</td></tr>
+<tr><td>turnover_pos 换手分位（.05）</td><td>50% 分位，score 0.00</td><td>79% 分位，score −0.20</td><td>20261127</td><td>observed</td></tr>
+</table>
+<p>方向变化最清楚的三项：5 日涨跌停比从 35.4% 升到 87.4%（11/27 单日 涨停/(涨停+跌停+1) = 417/418 = 0.998），炸板率从 20.0% 降到 9.2%，20 日成交额趋势从 −27% 转 +19%。大小盘偏离分位从 96.7% 回落到 66.9%，是本周与上周方向相反的唯一一项 —— 上周是「小盘单边补跌」，本周是「小盘弹性更大」。换手分位从 50% 升到 79%，score 从 0.00 转 −0.20，属同一分档内的档位描述，不宜读成升降档。</p>
+
+<h2>上周判断回测：一条到期预测</h2>
+<p>上周正文写明「不做仓位推断」，但留下了三条带触发值的可观测条件，其中条件③是唯一带方向结算的，本周到期。</p>
+<table>
+<tr><th>项目</th><th>内容</th></tr>
+<tr><td>原判断</td><td>2026-11-20 周报「改变判断的可观测条件③」：下周若大小盘偏离分位回落至 80% 以下、5 日涨停占比回升至 50% 以上，则「小盘补跌」判断失效（来源：分析报告汇总/2026-11-20/宏观择时周报.html）</td></tr>
+<tr><td>本周结果</td><td>size 分位 96.7% → 66.9%（−29.8pp，已低于 80%）；ld 5 日均值 35.4% → 87.4%（+52.0pp，已高于 50%）。两个条件同时满足，按原设定「小盘补跌」失效。盘面同步：国证2000 全周 +6.85%，沪深300 +2.74%，小盘反超 4.11pp</td></tr>
+<tr><td>基准</td><td>沪深300 全周 +2.74%；上周同一口径为 −1.54%</td></tr>
+<tr><td>判定</td><td>hit（撤销条件被正确触发）。这是「上周定性被撤销」，不是「新的方向判断成立」—— 条件原文只定义失效，没有给出替代方向</td></tr>
+<tr><td>误差来源</td><td>①两条判据都是 5 日平滑的分位与均值，11/27 单日使 5 日窗口整体位移，触发集中在最后一日，无法区分「渐进修复」与「单日重置」；②结算只到 11/27 收盘，无后续样本，撤销本身可能也是单日噪音；③上周「小盘补跌」同样建立在重叠的 5 日窗口上，两次判断共享同一批观测日，独立信息量低于表面样本数</td></tr>
+</table>
+<p><span class="k">附带两条（非方向结算）</span>　条件①「行业矩阵出现 20261120 及之后行、0AMV 与 PE 补齐当日值，则 9 因子齐备、MTI 恢复成立」：行业矩阵已恢复（11/27 有行，dispersion 与 rotation 可用），0AMV 与 PE 的当日值仍缺，<b>未达成</b>，MTI 未恢复。条件②「0AMV 若在 11/20 补入后单日 ≤−2.3%，防守规则将再次触发」：11/20 实际值 127,560.30、单日 −3.81%（16:35 入库），<b>已达成</b>；本周 11/25 再 −4.31%，第二次达成。防守阈值与 11/27 的价格方向相反，见第二节反证。</p>
+
+<h2>缺口与降级原因</h2>
+<table>
+<tr><th>字段</th><th>状态</th><th>时点</th><th>已查来源</th><th>原因</th></tr>
+<tr><td>active_mv（权重 .10）</td><td>未取得</td><td>20261127</td><td>data/mti_result.json data_status；data/amv_history.json 末行 20261126；分析报告汇总/2026-11-27/宏观择时日报_MTIv3_20261127.html.manifest.json 的 amv_note</td><td>day.vdat 于当晚 20:10 落盘，本轮 15:58 计算与 16:10 出稿两个时点均未到位；未用 11/26 值顶替当日，未反向推算</td></tr>
+<tr><td>erp 风险溢价</td><td>未取得</td><td>20261127</td><td>data/index_dailybasic.json（000300.SH 20261127 行 pe=null，末值 20261126 13.61）；data/bond_yield.json</td><td>当日 PE 未发布，序列滞后 1 个交易日</td></tr>
+<tr><td>margin（权重 .15）</td><td>滞后 1 日，用 20261126 值</td><td>20261127</td><td>data/fetch_status.json（2026-11-27T15:55:38 status=failed，「两融口径或日期不可信」）；data/margin.json</td><td>两融按 T+1 披露；当日采集另报口径校验失败，未取得有效行</td></tr>
+<tr><td>涨停口径差</td><td>两口径差 18 只，未消除</td><td>20261127</td><td>收盘总结_r2.html（TQLEX 板价口径 435 只）；data/limit_series.json（push2ex 口径 417 只）</td><td>push2ex 池上限 300 只存在截断，两口径不可互相替代；本报告因子段用 417，宽度段引用 435</td></tr>
+<tr><td>综合 MTI</td><td>未成立</td><td>20261123—20261127</td><td>data/mti_result.json；data/mti_history_v4.json；宏观择时/macro_timing.py composite()</td><td>要求 9/9；全周缺 active_mv（.10），11/26 另缺 dispersion 与 rotation，11/23—11/25 同理</td></tr>
+<tr><td>整周完整性</td><td>0/5 完整</td><td>20261123—20261127</td><td>data/mti_history_v4.json</td><td>5 行全 degraded；本周不以「有记录的 5 行」代替「有效的 0 行」</td></tr>
+</table>
+
+<div class="warn"><b>机制修正（上周判断的自我更正）</b>　上周把「0AMV 当日值在 16:00 后结构性取不到」写成机制性结论，本周出现两次反例：11/20 与 11/23 均在 16:35 从 day.vdat 提取到当日值（12.756 万亿、单日 −3.81%；13.220 万亿、单日 +3.64%），见两日日报 manifest 的 amv_note。因此正确表述是：<b>入库时点与报告时点的竞争</b>，day.vdat 何时释放决定当日能否取到，不是固定不可得。11/26、11/27 未取到属当晚 20:10 才落盘。推论：周报若移到 16:40 之后执行，active_mv 大概率可补（两日样本），但 erp 的当日 PE 与 T+1 的两融不会因此解决。</div>
+
+<h2>结论边界</h2>
+<ul>
+<li>本周不给 MTI 周度定性，不做仓位推断；核心结论限于已观测分项：单日贡献结构、活跃市值背离、涨停与炸板结构、因子层变化。</li>
+<li>所有阈值属工程阈值，未经策略收益校准（strategy_status=uncalibrated_research），不构成交易指令；有效权重 0.90 是研究口径的补齐程度，不是信号强度。</li>
+<li>0AMV 与成交额是供应商算法口径与活动代理，不等于机构实际持仓或全市场新增资金。11/25、11/26 的 0AMV 值取自 Z_SK0AMV__.cde 收盘快照（amount 与 volume 两列无效，仅市值列可用），与 11/20—11/24 的 day.vdat 存在跨源拼接，单日变化按不可分辨处理更稳妥。</li>
+<li>本周只有 11/27 一个交易日的宽度是饱和的，其余四日为常规状态；用本周横截面推断下周结构会高估连续性。</li>
+<li>观测日期回算不等于当时已知：11/23—11/27 的 null 反映当日合成被拦，不是当日「看空」或「无信号」。</li>
+</ul>
+
+<h2>附录：build_weekly.py 原始产出表</h2>
+<p>未改写，仅把空值 None 显示为「—（未计算）」。</p>
+<table><tr><th>日期</th><th>MTI</th><th>观察分级</th><th>质量</th><th>有效权重</th><th>活跃市值日涨跌幅</th></tr><tr><td>20261123</td><td>—（未计算）</td><td>数据不完整：仅供观察，暂停自动仓位建议</td><td>degraded</td><td>0.75</td><td>+3.64%</td></tr><tr><td>20261124</td><td>—（未计算）</td><td>数据不完整：仅供观察，暂停自动仓位建议</td><td>degraded</td><td>0.75</td><td>+1.00%</td></tr><tr><td>20261125</td><td>—（未计算）</td><td>数据不完整：仅供观察，暂停自动仓位建议</td><td>degraded</td><td>0.75</td><td>-4.31%</td></tr><tr><td>20261126</td><td>—（未计算）</td><td>数据不完整：仅供观察，暂停自动仓位建议</td><td>degraded</td><td>0.65</td><td>-0.57%</td></tr><tr><td>20261127</td><td>—（未计算）</td><td>数据不完整：仅供观察，暂停自动仓位建议</td><td>degraded</td><td>0.90</td><td>—</td></tr></table>
+
+<footer>
+<p><b>来源清单</b>：data/mti_result.json（2026-11-27T15:58:26.017799+08:00）· data/mti_history_v4.json · data/index_daily.json（000001.SH / 000300.SH / 399001.SZ / 399006.SZ / 000852.SH / 399303.SZ）· data/industry_matrix.json（末键 20261127）· data/amv_history.json 与 data/amv_0amv.json（Compass Z_SK0AMV）· data/index_dailybasic.json · data/bond_yield.json · data/margin.json · data/limit_series.json · data/broken_series.json · data/fetch_status.json · 分析报告汇总/2026-11-27/收盘总结_r2.html · 分析报告汇总/2026-11-2x/宏观择时日报_MTIv3_*.html.manifest.json · 分析报告汇总/2026-11-20/宏观择时周报.html（上周判断原文）</p>
+<p><b>生成方式</b>：宏观择时/build_weekly.py --period week 产出基础表，再由 宏观择时/_tmp/weekly_aug_20261127.py 追加覆盖表、指数与成交额、0AMV 逐日、因子对照、判断回测与缺口章节；所有数值来自上列本地文件，未新增未观测的叙事。</p>
+<p>research-v4.1 · 未校准研究 · 本页为研究记录，非投资建议。</p>
+</footer>
+</main></body></html>
