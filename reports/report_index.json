@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-11-27T14:07:46",
-  "total": 414,
-  "daily_count": 329,
+  "last_updated": "2026-11-27T15:46:43",
+  "total": 415,
+  "daily_count": 330,
   "industry_count": 85,
   "reports": [
     {
@@ -35,6 +35,17 @@
       "type": "daily",
       "quality": "degraded",
       "size_kb": 35.9,
+      "date": "2026-11-27"
+    },
+    {
+      "relative_path": "reports/2026-11-27/收盘总结_r2.html",
+      "id": "2026-11-27-收盘总结_r2",
+      "display_date": "11月27日",
+      "title": "收盘总结_r2",
+      "category": "日常复盘",
+      "type": "daily",
+      "quality": "degraded",
+      "size_kb": 289.8,
       "date": "2026-11-27"
     },
     {
